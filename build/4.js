@@ -185,6 +185,9 @@ var PrioritizationPage = /** @class */ (function () {
             case "Pontos fracos da rua":
                 this.itemView = true;
                 break;
+            case "Frequência de uso dos espaços públicos":
+                this.itemView = true;
+                break;
         }
     };
     PrioritizationPage.prototype.getDescriptionByPriorization = function () {
@@ -379,7 +382,7 @@ var PrioritizationPage = /** @class */ (function () {
     };
     PrioritizationPage.prototype.navigatePrioritizationPage = function (plan, respondent, questionary, neighborhoods, questions, metricItems, currentMetricItem, currentMetricItemIndex, currentQuestionIndex, currentQuestion, answers, answersNeighborhoods, prioritizations) {
         // Navegação para página do questinário
-        this.navCtrl.push('PrioritizationPage', {
+        this.navCtrl.setRoot('PrioritizationPage', {
             points: this.points,
             plan: plan,
             respondent: respondent,
@@ -398,7 +401,7 @@ var PrioritizationPage = /** @class */ (function () {
     };
     PrioritizationPage.prototype.navigateThankYouPage = function () {
         //Navegação para pagina de agradecimento
-        this.navCtrl.push('ThankyouPage', {
+        this.navCtrl.setRoot('ThankyouPage', {
             questions: this.questions,
             questionary: this.questionary,
             points: this.points,
@@ -409,7 +412,7 @@ var PrioritizationPage = /** @class */ (function () {
     };
     PrioritizationPage.prototype.navigateQuestionaryPage = function () {
         //Navegação para página do questionário
-        this.navCtrl.push('QuestionaryPage', {
+        this.navCtrl.setRoot('QuestionaryPage', {
             points: this.points,
             respondent: this.respondent,
             questionary: this.questionary,

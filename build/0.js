@@ -572,18 +572,18 @@ BrMaskerIonicServices3.ctorParameters = function () { return []; };
 /* unused harmony export ResidenceTime */
 /* unused harmony export SalaryRange */
 /* unused harmony export Respondent */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_observable_of__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_observable_of__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operators_map__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operators_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_operators_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_city_city__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_neighborhood_neighborhood__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_database_database__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__home_home__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_respondent_respondent__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__intro_intro__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_of__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_observable_of__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operators_map__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operators_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_operators_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_city_city__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_neighborhood_neighborhood__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_database_database__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_respondent_respondent__ = __webpack_require__(215);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_prioritization_prioritization__ = __webpack_require__(209);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_storage__ = __webpack_require__(35);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -620,6 +620,8 @@ var RespondentProfilePage = /** @class */ (function () {
         this.alertCtrl = alertCtrl;
         this.storage = storage;
         this.loadingCtrl = loadingCtrl;
+        this.age = 0;
+        this.genderList = [];
         this.cities = [];
         this.residenceTimeList = [];
         this.salaryRangeList = [];
@@ -634,14 +636,29 @@ var RespondentProfilePage = /** @class */ (function () {
         this.loadMetrics();
         this.loadResidenceTime();
         this.loadSalaryRange();
+        this.createGenderList();
+        this.loader = this.loadingCtrl.create();
+        this.loader.present();
         setTimeout(function () {
             _this.existsRespondent();
         }, 1000);
     }
+    RespondentProfilePage.prototype.createGenderList = function () {
+        var gender1 = {
+            value: "Masculino"
+        };
+        this.genderList.push(gender1);
+        var gender2 = {
+            value: "Feminino"
+        };
+        this.genderList.push(gender2);
+        var gender3 = {
+            value: "Outro"
+        };
+        this.genderList.push(gender3);
+    };
     RespondentProfilePage.prototype.existsRespondent = function () {
         var _this = this;
-        this.loader = this.loadingCtrl.create();
-        this.loader.present();
         this.storage.get('respondent')
             .then(function (respondent) {
             _this.setFormData();
@@ -652,6 +669,11 @@ var RespondentProfilePage = /** @class */ (function () {
                 _this.respondentForm.controls['salaryRange'].setValue(respondent.salaryRange);
                 _this.respondentForm.controls['residenceNeighborhood'].setValue(respondent.residenceNeighborhood);
                 _this.respondentForm.controls['jobCity'].setValue(respondent.jobCity);
+                _this.respondentForm.controls['age'].setValue(respondent.age);
+                _this.respondentForm.controls['gender'].setValue(respondent.gender);
+                _this.respondentForm.controls['name'].setValue(respondent.name);
+                _this.respondentForm.controls['phone'].setValue(respondent.phone);
+                _this.age = respondent.age;
                 if (respondent.jobNeighborhood != null) {
                     _this.respondentForm.controls['jobNeighborhood'].setValue(respondent.jobNeighborhood);
                     _this.jobCity = respondent.jobCity;
@@ -659,9 +681,6 @@ var RespondentProfilePage = /** @class */ (function () {
                     _this.isSameJobCity = "";
                 }
             }
-        })
-            .catch(function () {
-            _this.navigateBack();
         });
     };
     RespondentProfilePage.prototype.setFormData = function () {
@@ -681,7 +700,7 @@ var RespondentProfilePage = /** @class */ (function () {
         });
     };
     RespondentProfilePage.prototype.navigateBack = function () {
-        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_8__home_home__["a" /* HomePage */], {}).then(this.loader.dismiss());
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_0__intro_intro__["a" /* IntroPage */], {}).then(this.loader.dismiss());
     };
     RespondentProfilePage.prototype.setEntities = function () {
         var _this = this;
@@ -697,8 +716,24 @@ var RespondentProfilePage = /** @class */ (function () {
                         _this.storage.get('questionaries')
                             .then(function (data) {
                             _this.questionaries = data;
-                            _this.loadResidenceNeighborhoods();
-                        });
+                            if (data != null) {
+                                _this.storage.get('points')
+                                    .then(function (data) {
+                                    if (data != null) {
+                                        _this.points = data;
+                                        _this.loadResidenceNeighborhoods();
+                                    }
+                                    else {
+                                        _this.navigateBack();
+                                    }
+                                })
+                                    .catch(function () { return _this.navigateBack(); });
+                            }
+                            else {
+                                _this.navigateBack();
+                            }
+                        })
+                            .catch(function () { return _this.navigateBack(); });
                     }
                     else {
                         _this.navigateBack();
@@ -800,13 +835,17 @@ var RespondentProfilePage = /** @class */ (function () {
     };
     RespondentProfilePage.prototype.createForm = function () {
         this.respondentForm = this.formBuilder.group({
-            cpf: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required], this.validateCPF.bind(this)],
+            cpf: ['', [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required], this.validateCPF.bind(this)],
             email: [''],
             residenceTimeRange: [''],
-            residenceNeighborhood: ['', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required]],
+            residenceNeighborhood: ['', [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required]],
             jobCity: [''],
             jobNeighborhood: [''],
-            salaryRange: ['']
+            salaryRange: [''],
+            age: [''],
+            gender: [''],
+            name: [''],
+            phone: ['']
         });
         this.respondentForm.controls['residenceTimeRange'].setValue(0);
         this.respondentForm.controls['salaryRange'].setValue(0);
@@ -928,7 +967,7 @@ var RespondentProfilePage = /** @class */ (function () {
     };
     RespondentProfilePage.prototype.validateCPF = function (control) {
         var isValid = this.validate(control.value.toString());
-        return Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_observable_of__["of"])(!isValid).pipe(Object(__WEBPACK_IMPORTED_MODULE_4_rxjs_operators_map__["map"])(function (result) { return result ? { invalid: true } : null; }));
+        return Object(__WEBPACK_IMPORTED_MODULE_4_rxjs_observable_of__["of"])(!isValid).pipe(Object(__WEBPACK_IMPORTED_MODULE_5_rxjs_operators_map__["map"])(function (result) { return result ? { invalid: true } : null; }));
     };
     RespondentProfilePage.prototype.sortAscCollection = function (collection) {
         return collection.sort(function (a, b) {
@@ -946,6 +985,10 @@ var RespondentProfilePage = /** @class */ (function () {
         var jobCity = this.respondentForm.controls['jobCity'];
         var jobNeighborhood = this.respondentForm.controls['jobNeighborhood'];
         var salaryRange = this.respondentForm.controls['salaryRange'];
+        var age = this.respondentForm.controls['age'];
+        var gender = this.respondentForm.controls['gender'];
+        var name = this.respondentForm.controls['name'];
+        var phone = this.respondentForm.controls['phone'];
         if (!this.respondentForm.valid) {
             if (!cpf.valid) {
                 cpf.markAsTouched();
@@ -964,6 +1007,10 @@ var RespondentProfilePage = /** @class */ (function () {
             respondent_1.jobCity = jobCity.value;
             respondent_1.jobNeighborhood = jobNeighborhood.value;
             respondent_1.salaryRange = salaryRange.value;
+            respondent_1.age = age.value;
+            respondent_1.gender = gender.value;
+            respondent_1.name = name.value;
+            respondent_1.phone = phone.value;
             this.respondentProvider.getRespondentByCPF(respondent_1.cpf)
                 .then(function (result) {
                 // respondente já está cadastrado
@@ -976,6 +1023,7 @@ var RespondentProfilePage = /** @class */ (function () {
                         .catch(function () {
                         _this.tryAgainSaveRespondent();
                     });
+                    // respondente não está cadastrado
                 }
                 else {
                     _this.respondentProvider.insertRespondent(respondent_1)
@@ -987,6 +1035,7 @@ var RespondentProfilePage = /** @class */ (function () {
                         _this.tryAgainSaveRespondent();
                     });
                 }
+                //Ativar ou desativar a gamificação
                 if (respondent_1.id % 2 == 0) {
                     _this.storage.set('useGame', true);
                 }
@@ -1025,6 +1074,9 @@ var RespondentProfilePage = /** @class */ (function () {
     RespondentProfilePage.prototype.getSalaryRangeNameByValue = function (event) {
         var salaryRangeChosen = event.value;
         this.salaryRangeName = this.salaryRangeList[salaryRangeChosen].name;
+    };
+    RespondentProfilePage.prototype.getAgeRangeByValue = function (event) {
+        this.age = event.value;
     };
     RespondentProfilePage.prototype.loadResidenceTime = function () {
         var residenceTime = new ResidenceTime();
@@ -1076,10 +1128,10 @@ var RespondentProfilePage = /** @class */ (function () {
         return e1 && e2 ? e1.id === e2.id : e1 === e2;
     };
     RespondentProfilePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-respondent-profile',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\respondent-profile\respondent-profile.html"*/'<ion-header>\n  <ion-navbar>\n    <div offset-3 col-6 text-center>\n      <img class="img-responsive" src="assets/imgs/header-logo.png" />\n    </div>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <h2 col-12 text-center>Perfil do respondente</h2>\n  <ion-title>{{cityName}}</ion-title>\n  <form [formGroup]="respondentForm" (submit)="saveRespondentInfo()">\n    <ion-item>\n      <ion-label floating>CPF</ion-label>\n      <ion-input [formControl]="respondentForm.controls[\'cpf\']" type="text"\n        [brmasker]="{mask: \'000.000.000-00\', type:\'num\', len: 14}" required></ion-input>\n    </ion-item>\n    <div class="validator-error"\n      *ngIf="respondentForm.controls[\'cpf\'].hasError(\'required\') && respondentForm.controls[\'cpf\'].touched">* CPF é\n      obrigatório!\n    </div>\n    <div class="validator-error"\n      *ngIf="respondentForm.controls[\'cpf\'].hasError(\'invalid\') && respondentForm.controls[\'cpf\'].touched">* CPF é\n      inválido!\n    </div>\n    <ion-item>\n      <ion-label floating>Bairro de Residência</ion-label>\n      <ion-select [formControl]="respondentForm.controls[\'residenceNeighborhood\']" [compareWith]="compareFn">\n        <ion-option *ngFor="let residenceNeighborhood of residenceNeighborhoods" [value]="residenceNeighborhood">\n          {{residenceNeighborhood.name}}\n        </ion-option>\n      </ion-select>\n    </ion-item>\n    <div class="validator-error"\n      *ngIf="respondentForm.controls[\'residenceNeighborhood\'].hasError(\'required\') && respondentForm.controls[\'residenceNeighborhood\'].touched">\n      * Bairro de Residência é obrigatório!\n    </div>\n\n    <ion-item>\n      <ion-label floating>Cidade de Trabalho</ion-label>\n      <ion-select [formControl]="respondentForm.controls[\'jobCity\']" (ionChange)="loadJobNeighborhoods()"\n        [compareWith]="compareFn">\n        <ion-option *ngFor="let jobCity of cities" [value]="jobCity" (ionSelect)="selectCity(jobCity)">\n          {{jobCity.name}}\n        </ion-option>\n      </ion-select>\n    </ion-item>\n\n    <div class="{{isSameJobCity}}">\n      <ion-item>\n        <ion-label floating>Bairro de Trabalho</ion-label>\n        <ion-select [formControl]="respondentForm.controls[\'jobNeighborhood\']" [disabled]="jobNeighborhoodDisabled"\n          [compareWith]="compareFn">\n          <ion-option *ngFor="let jobNeighborhood of jobNeighborhoods" [value]="jobNeighborhood">\n            {{jobNeighborhood.name}}\n          </ion-option>\n        </ion-select>\n      </ion-item>\n    </div>\n\n    <ion-item>\n      <ion-label floating>Email</ion-label>\n      <ion-input [formControl]="respondentForm.controls[\'email\']" type="email"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Tempo de Residência</ion-label>\n      <ion-range [min]="0" [max]="4" [step]="1" (ionChange)="getResidenceTimeNameByValue($event)"\n        [formControl]="respondentForm.controls[\'residenceTimeRange\']">\n        <ion-icon small range-left name="ios-home-outline"></ion-icon>\n      </ion-range>\n      <ion-label>{{residenceTimeName}}</ion-label>\n    </ion-item>\n    <ion-item>\n      <ion-label>Renda</ion-label>\n      <ion-range [min]="0" [max]="4" [step]="1" (ionChange)="getSalaryRangeNameByValue($event)"\n        [formControl]="respondentForm.controls[\'salaryRange\']">\n        <ion-icon small range-left name="logo-usd"></ion-icon>\n      </ion-range>\n      <ion-label>{{salaryRangeName}}</ion-label>\n    </ion-item>\n    <ion-row>\n      <ion-col text-center>\n        <button ion-button block class="button-background" type="submit" [disabled]="!respondentForm.valid">\n          Salvar\n        </button>\n      </ion-col>\n    </ion-row>\n  </form>\n</ion-content>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\respondent-profile\respondent-profile.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
+            selector: 'page-respondent-profile',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\respondent-profile\respondent-profile.html"*/'<ion-header>\n  <ion-navbar>\n    <div offset-3 col-6 text-center>\n      <img class="img-responsive" src="assets/imgs/header-logo.png" />\n    </div>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <h2 col-12 text-center>Perfil do respondente</h2>\n  <ion-item>\n    <ion-label>Pontuação {{points}}</ion-label>\n  </ion-item>\n  <form [formGroup]="respondentForm" (submit)="saveRespondentInfo()">\n    <ion-item>\n      <ion-label floating>CPF</ion-label>\n      <ion-input [formControl]="respondentForm.controls[\'cpf\']" type="text"\n        [brmasker]="{mask: \'000.000.000-00\', type:\'num\', len: 14}" required></ion-input>\n      <div class="validator-error"\n        *ngIf="respondentForm.controls[\'cpf\'].hasError(\'required\') && respondentForm.controls[\'cpf\'].touched">* CPF é\n        obrigatório!\n      </div>\n      <div class="validator-error"\n        *ngIf="respondentForm.controls[\'cpf\'].hasError(\'invalid\') && respondentForm.controls[\'cpf\'].touched">* CPF é\n        inválido!\n      </div>\n    </ion-item>\n    <ion-item>\n      <ion-label floating>Nome</ion-label>\n      <ion-input [formControl]="respondentForm.controls[\'name\']"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label floating>Gênero</ion-label>\n      <ion-select [formControl]="respondentForm.controls[\'gender\']">\n        <ion-option *ngFor="let gender of genderList" [value]="gender.value">\n          {{gender.value}}\n        </ion-option>\n      </ion-select>\n    </ion-item>\n\n    <ion-item>\n      <ion-label floating>Email</ion-label>\n      <ion-input [email]="true" [formControl]="respondentForm.controls[\'email\']" type="email"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label floating>Telefone</ion-label>\n      <ion-input [brmasker]="{mask: \'(00)00000-0000\', type:\'num\', len: 15}" [formControl]="respondentForm.controls[\'phone\']"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label floating>Bairro de Residência</ion-label>\n      <ion-select [formControl]="respondentForm.controls[\'residenceNeighborhood\']" [compareWith]="compareFn">\n        <ion-option *ngFor="let residenceNeighborhood of residenceNeighborhoods" [value]="residenceNeighborhood">\n          {{residenceNeighborhood.name}}\n        </ion-option>\n      </ion-select>\n      <div class="validator-error"\n        *ngIf="respondentForm.controls[\'residenceNeighborhood\'].hasError(\'required\') && respondentForm.controls[\'residenceNeighborhood\'].touched">\n        * Bairro de Residência é obrigatório!\n      </div>\n    </ion-item>\n\n    <ion-item>\n      <ion-label floating>Cidade de Trabalho</ion-label>\n      <ion-select [formControl]="respondentForm.controls[\'jobCity\']" (ionChange)="loadJobNeighborhoods()"\n        [compareWith]="compareFn">\n        <ion-option *ngFor="let jobCity of cities" [value]="jobCity" (ionSelect)="selectCity(jobCity)">\n          {{jobCity.name}}\n        </ion-option>\n      </ion-select>\n    </ion-item>\n\n    <div class="{{isSameJobCity}}">\n      <ion-item>\n        <ion-label floating>Bairro de Trabalho</ion-label>\n        <ion-select [formControl]="respondentForm.controls[\'jobNeighborhood\']" [disabled]="jobNeighborhoodDisabled"\n          [compareWith]="compareFn">\n          <ion-option *ngFor="let jobNeighborhood of jobNeighborhoods" [value]="jobNeighborhood">\n            {{jobNeighborhood.name}}\n          </ion-option>\n        </ion-select>\n      </ion-item>\n    </div>\n\n    <ion-item>\n      <ion-label>Idade</ion-label>\n      <ion-range [min]="0" [max]="125" [step]="1" (ionChange)="getAgeRangeByValue($event)"\n        [formControl]="respondentForm.controls[\'age\']">\n        <ion-icon small range-left name="contact"></ion-icon>\n      </ion-range>\n      <ion-label>{{age}}</ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Tempo de Residência</ion-label>\n      <ion-range [min]="0" [max]="4" [step]="1" (ionChange)="getResidenceTimeNameByValue($event)"\n        [formControl]="respondentForm.controls[\'residenceTimeRange\']">\n        <ion-icon small range-left name="ios-home-outline"></ion-icon>\n      </ion-range>\n      <ion-label>{{residenceTimeName}}</ion-label>\n    </ion-item>\n    <ion-item>\n      <ion-label>Renda</ion-label>\n      <ion-range [min]="0" [max]="4" [step]="1" (ionChange)="getSalaryRangeNameByValue($event)"\n        [formControl]="respondentForm.controls[\'salaryRange\']">\n        <ion-icon small range-left name="logo-usd"></ion-icon>\n      </ion-range>\n      <ion-label>{{salaryRangeName}}</ion-label>\n    </ion-item>\n    <ion-row>\n      <ion-col text-center>\n        <button ion-button block class="button-background" type="submit" [disabled]="!respondentForm.valid">\n          Salvar\n        </button>\n      </ion-col>\n    </ion-row>\n  </form>\n</ion-content>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\respondent-profile\respondent-profile.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_7__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_5__providers_city_city__["a" /* CityProvider */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_9__providers_respondent_respondent__["a" /* RespondentProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_neighborhood_neighborhood__["a" /* NeighborhoodProvider */], __WEBPACK_IMPORTED_MODULE_10__providers_prioritization_prioritization__["a" /* PrioritizationProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_11__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_8__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_city_city__["a" /* CityProvider */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_9__providers_respondent_respondent__["a" /* RespondentProvider */], __WEBPACK_IMPORTED_MODULE_7__providers_neighborhood_neighborhood__["a" /* NeighborhoodProvider */], __WEBPACK_IMPORTED_MODULE_10__providers_prioritization_prioritization__["a" /* PrioritizationProvider */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_11__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* LoadingController */]])
     ], RespondentProfilePage);
     return RespondentProfilePage;
 }());

@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 295:
+/***/ 297:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuestionaryPageModule", function() { return QuestionaryPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__questionary__ = __webpack_require__(303);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__questionary__ = __webpack_require__(308);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +38,7 @@ var QuestionaryPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 303:
+/***/ 308:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -48,7 +48,7 @@ var QuestionaryPageModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_questionary_questionary__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_question_question__ = __webpack_require__(210);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_database_database__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_database_database__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_prioritization_prioritization__ = __webpack_require__(209);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -144,7 +144,7 @@ var QuestionaryPage = /** @class */ (function () {
                 _this.totalQuestions = _this.questions.length;
                 //-----------ARRUMANDO AS RESPOSTAS-------------------
                 var id = _this.currentQuestion.id;
-                if (id == "1003" || id == "1008" || id == "1019") {
+                if (id == "1003" || id == "1008" || id == "1019" || id == "1020") {
                     _this.showDontNow = false;
                 }
                 //-----------ARRUMANDO AS RESPOSTAS-------------------
@@ -316,8 +316,8 @@ var QuestionaryPage = /** @class */ (function () {
         else {
             if (this.currentQuestionIndex + 1 < this.questions.length) {
                 //se metric_id for nulo, navega para página de questionário
+                this.points = this.points + 1;
                 if (this.questions[this.currentQuestionIndex + 1].metricId == null) {
-                    this.points = this.points + 1;
                     this.navigateQuestionaryPage();
                     //Se houver metric_id, carrega as métricas específicas  e navega para página de priorization
                 }
@@ -337,7 +337,7 @@ var QuestionaryPage = /** @class */ (function () {
     };
     QuestionaryPage.prototype.navigateThankYouPage = function () {
         //Navegação para pagina de agradecimento
-        this.navCtrl.push('ThankyouPage', {
+        this.navCtrl.setRoot('ThankyouPage', {
             questions: this.questions,
             questionary: this.questionary,
             points: this.points,
@@ -348,7 +348,7 @@ var QuestionaryPage = /** @class */ (function () {
     };
     QuestionaryPage.prototype.navigateQuestionaryPage = function () {
         //Navegação para página do questionário
-        this.navCtrl.push('QuestionaryPage', {
+        this.navCtrl.setRoot('QuestionaryPage', {
             points: this.points,
             respondent: this.respondent,
             questionary: this.questionary,
@@ -363,7 +363,7 @@ var QuestionaryPage = /** @class */ (function () {
     };
     QuestionaryPage.prototype.navigatePrioritizationPage = function (plan, respondent, questionary, neighborhoods, questions, metricItems, currentMetricItem, currentMetricItemIndex, currentQuestionIndex, currentQuestion, answers, answersNeighborhoods, prioritizations) {
         // Navegação para página do questinário
-        this.navCtrl.push('PrioritizationPage', {
+        this.navCtrl.setRoot('PrioritizationPage', {
             points: this.points,
             plan: plan,
             respondent: respondent,
