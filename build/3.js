@@ -1,6 +1,6 @@
 webpackJsonp([3],{
 
-/***/ 295:
+/***/ 294:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -73,8 +73,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var QuestionariesListPage = /** @class */ (function () {
-    function QuestionariesListPage(navCtrl, databaseProvider, questionProvider, storage, questionaryProvider, loadingCtrl, alertCtrl, priorizationProvider) {
+    function QuestionariesListPage(toastCtrl, menuCtrl, navCtrl, databaseProvider, questionProvider, storage, questionaryProvider, loadingCtrl, alertCtrl, priorizationProvider) {
         var _this = this;
+        this.toastCtrl = toastCtrl;
+        this.menuCtrl = menuCtrl;
         this.navCtrl = navCtrl;
         this.databaseProvider = databaseProvider;
         this.questionProvider = questionProvider;
@@ -101,7 +103,24 @@ var QuestionariesListPage = /** @class */ (function () {
             }
         })
             .catch(function () { return _this.navigateBack(); });
+        this.storage.get('helpHome')
+            .then(function (data) {
+            if (data == null) {
+                _this.help();
+            }
+        });
     }
+    QuestionariesListPage.prototype.openMenu = function () {
+        this.menuCtrl.open();
+    };
+    QuestionariesListPage.prototype.presentToast = function () {
+        var toast = this.toastCtrl.create({
+            message: 'Clique no icone em caso de dúvidas!',
+            duration: 4000,
+            position: 'top'
+        });
+        toast.present();
+    };
     //Verifica se as entidades estão armazenadas no IONIC Storage
     QuestionariesListPage.prototype.setEntities = function () {
         var _this = this;
@@ -121,6 +140,24 @@ var QuestionariesListPage = /** @class */ (function () {
                             // data[0].answered = true;
                             // data[2].answered = true;
                             //--------------Temporario--------------
+                            if (_this.respondent.type == "comerciante") {
+                                var temp_1 = [];
+                                data.forEach(function (quest) {
+                                    //ID do questionário do comerciante
+                                    if (quest.id == 660)
+                                        temp_1.push(quest);
+                                });
+                                data = temp_1;
+                            }
+                            else {
+                                var temp_2 = [];
+                                data.forEach(function (quest) {
+                                    //ID do questionário dos questionários de diagnóstico
+                                    if (quest.id == 666 || quest.id == 661)
+                                        temp_2.push(quest);
+                                });
+                                data = temp_2;
+                            }
                             for (var i = 0; i < data.length; i++) {
                                 if (data[i].answered)
                                     _this.progress = _this.progress + 1;
@@ -133,7 +170,7 @@ var QuestionariesListPage = /** @class */ (function () {
                         }
                         else {
                             _this.questionaries = [];
-                            var alert_1 = _this.alertCtrl.create({
+                            var alert = _this.alertCtrl.create({
                                 title: 'Oops!',
                                 message: 'Não foi possível acessar os dados do servidor. Por favor, tente novamente.',
                                 buttons: [{
@@ -143,7 +180,7 @@ var QuestionariesListPage = /** @class */ (function () {
                                         }
                                     }]
                             });
-                            alert_1.present();
+                            alert.present();
                         }
                     })
                         .catch(function () {
@@ -243,7 +280,7 @@ var QuestionariesListPage = /** @class */ (function () {
                     }
                 }
                 else {
-                    var alert_2 = _this.alertCtrl.create({
+                    var alert = _this.alertCtrl.create({
                         title: 'Oops!',
                         message: 'Não foi possível acessar os dados do servidor. Por favor, tente novamente.',
                         buttons: [{
@@ -253,7 +290,7 @@ var QuestionariesListPage = /** @class */ (function () {
                                 }
                             }]
                     });
-                    alert_2.present();
+                    alert.present();
                 }
             })
                 .catch(function () {
@@ -381,7 +418,7 @@ var QuestionariesListPage = /** @class */ (function () {
                 _this.questions = result;
             }
             else {
-                var alert_3 = _this.alertCtrl.create({
+                var alert = _this.alertCtrl.create({
                     title: 'Oops!',
                     message: 'Não foi possível acessar os dados do servidor. Por favor, tente novamente.',
                     buttons: [{
@@ -391,7 +428,7 @@ var QuestionariesListPage = /** @class */ (function () {
                             }
                         }]
                 });
-                alert_3.present();
+                alert.present();
             }
         })
             .catch(function () {
@@ -426,15 +463,25 @@ var QuestionariesListPage = /** @class */ (function () {
     };
     //Mensagem motivadora da narrativa
     QuestionariesListPage.prototype.help = function () {
+        var _this = this;
         var alert = this.alertCtrl.create({
             title: '<div text-center>Olá! Bem vindo ao Opina Aí</div>',
-            message: '<div class="alert-align-center"><img class="img-alert" src="assets/imgs/publicdomainq-presenter.png"/></div>'
+            message: '<div class="alert-align-center"><img class="img-alert" src="assets/imgs/person1.png"/></div>'
+                + '<div class="dialogue-box"><div class="tdialogue-box-text">'
                 + '<div><strong>Bem vindo ao Opina Aí!</strong></div>'
                 + '<div text-center>Sinta-se a vontade para contribuir com sua <strong>cidade</strong> respondendo os questionários!</div>'
-                + '<div text-center>Sua <strong>participação</strong> é muito importante!</div>',
+                + '<div text-center>Sua <strong>participação</strong> é muito importante!</div>'
+                + '</div></div>',
             buttons: [{
                     text: "Entendi, quero participar!",
                     handler: function () {
+                        _this.storage.get('helpHome')
+                            .then(function (data) {
+                            if (data == null) {
+                                _this.presentToast();
+                                _this.storage.set('helpHome', true);
+                            }
+                        });
                     }
                 }]
         });
@@ -442,11 +489,12 @@ var QuestionariesListPage = /** @class */ (function () {
     };
     QuestionariesListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({
-            selector: 'page-questionaries-list',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\questionaries-list\questionaries-list.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col offset-2 col-6>\n        <img class="img-responsive" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col offset-1 col-2>\n        <button ion-button clear (click)="help()">\n          <ion-icon class="icon-help" name="help-circle"></ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-12 text-center class="text-questionary-list">\n        <h1>Questionários - {{plan.name}}</h1>\n        <h5>Escolha um questionário abaixo para nos contar quais são os problemas que você identifica na sua\n          cidade</h5>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12>\n        <!-- Lista de questionários -->\n        <ion-list radio-group>\n          <!-- Item da lista -->\n          <ion-item *ngFor="let questionary of questionaries" class="questionary-item-list">\n            <ion-thumbnail item-start>\n              <img class="questionary-img-list" src="assets/imgs/{{questionary.icon}}">\n            </ion-thumbnail>\n            <ion-label>\n              <h2>{{questionary.name}}</h2>\n              <div *ngIf="questionary.answered">\n                <p>Respondido!</p>\n              </div>\n            </ion-label>\n            <ion-radio disabled="{{questionary.answered}}" (ionSelect)="setQuestionary(questionary)"></ion-radio>\n          </ion-item>\n          <!-- Item da lista -->\n        </ion-list>\n        <!-- Lista de questionários -->\n      </ion-col>\n    </ion-row>\n\n  </ion-grid>\n</ion-content>\n<ion-footer>\n  <ion-grid>\n    <ion-row>\n      <button ion-button full class="button-background" (click)="navigate()" [disabled]="btnContinueDisabled">\n        Continuar\n      </button>\n    </ion-row>\n  </ion-grid>\n  <ion-navbar class="toolbar-progress">\n    <ion-title text-center class="toolbar-point">\n      <ion-icon range-right name="md-ribbon"></ion-icon>\n      {{points}} pontos\n    </ion-title>\n    <ion-range class="progress-bar" [min]="0" [max]="100" [step]="1" [(ngModel)]="progress" disabled>\n      <ion-icon range-left name="logo-buffer"></ion-icon>\n      <ion-icon range-right></ion-icon>\n    </ion-range>\n    <div text-center class="progres-text-uper">{{answeredQuestionaries}} de {{totalQuestionaries}} questionários respondidos</div>\n  </ion-navbar>\n</ion-footer>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\questionaries-list\questionaries-list.html"*/,
+            selector: 'page-questionaries-list',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\questionaries-list\questionaries-list.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col offset-1 col-2 class="menu-icon-col">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-6>\n        <img class="img-responsive" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col col-2>\n        <button ion-button clear (click)="help()">\n          <ion-icon class="icon-help" name="help-circle"></ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <h1 class="text-questionary-list" text-center>Questionários - {{plan.name}}</h1>\n      <ion-col col-3 class="text-questionary-list">\n        <img class="text-img" src="assets/imgs/person1b.png">\n      </ion-col>\n      <ion-col col-9 class="text-questionary-list">\n        <h5>Responda os questionários para conseguir <strong>pontos</strong> para aumentar seu <strong>nível</strong> de participação!</h5>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12>\n        <!-- Lista de questionários -->\n        <ion-list radio-group>\n          <!-- Item da lista -->\n          <ion-item *ngFor="let questionary of questionaries" class="questionary-item-list">\n            <ion-thumbnail item-start>\n              <img class="questionary-img-list" src="assets/imgs/{{questionary.icon}}">\n            </ion-thumbnail>\n            <ion-label>\n              <h2>{{questionary.name}}</h2>\n              <div *ngIf="questionary.answered">\n                <p>Respondido!</p>\n              </div>\n            </ion-label>\n            <ion-radio disabled="{{questionary.answered}}" (ionSelect)="setQuestionary(questionary)"></ion-radio>\n          </ion-item>\n          <!-- Item da lista -->\n        </ion-list>\n        <!-- Lista de questionários -->\n      </ion-col>\n    </ion-row>\n\n  </ion-grid>\n</ion-content>\n<ion-footer>\n  <ion-grid>\n    <ion-row>\n      <button ion-button full class="button-background" (click)="navigate()" [disabled]="btnContinueDisabled">\n        Continuar\n      </button>\n    </ion-row>\n  </ion-grid>\n  <ion-navbar class="toolbar-progress">\n    <ion-title text-center class="toolbar-point">\n      <ion-icon range-right name="md-ribbon"></ion-icon>\n      {{points}} pontos\n    </ion-title>\n    <ion-range class="progress-bar" [min]="0" [max]="100" [step]="1" [(ngModel)]="progress" disabled>\n      <ion-icon range-left name="logo-buffer"></ion-icon>\n      <ion-icon range-right></ion-icon>\n    </ion-range>\n    <div text-center class="progres-text-uper">{{answeredQuestionaries}} de {{totalQuestionaries}} questionários\n      respondidos</div>\n  </ion-navbar>\n</ion-footer>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\questionaries-list\questionaries-list.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_5__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_8__providers_question_question__["b" /* QuestionProvider */], __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_4__providers_questionary_questionary__["c" /* QuestionaryProvider */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_9__providers_prioritization_prioritization__["a" /* PrioritizationProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* ToastController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* MenuController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* NavController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__providers_database_database__["a" /* DatabaseProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_database_database__["a" /* DatabaseProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_8__providers_question_question__["b" /* QuestionProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__providers_question_question__["b" /* QuestionProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__providers_questionary_questionary__["c" /* QuestionaryProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_questionary_questionary__["c" /* QuestionaryProvider */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* LoadingController */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_9__providers_prioritization_prioritization__["a" /* PrioritizationProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9__providers_prioritization_prioritization__["a" /* PrioritizationProvider */]) === "function" && _k || Object])
     ], QuestionariesListPage);
     return QuestionariesListPage;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
 }());
 
 //# sourceMappingURL=questionaries-list.js.map

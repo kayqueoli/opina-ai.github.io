@@ -1,6 +1,6 @@
 webpackJsonp([4],{
 
-/***/ 294:
+/***/ 293:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66,7 +66,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var PrioritizationPage = /** @class */ (function () {
-    function PrioritizationPage(navCtrl, navParams, storage, alertCtrl, loadingCtrl, priorizationProvider) {
+    function PrioritizationPage(toastCtrl, menuCtrl, navCtrl, navParams, storage, alertCtrl, loadingCtrl, priorizationProvider) {
+        this.toastCtrl = toastCtrl;
+        this.menuCtrl = menuCtrl;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.storage = storage;
@@ -102,6 +104,17 @@ var PrioritizationPage = /** @class */ (function () {
         this.totalQuestions = this.questions.length;
         this.resolveMetricItem();
     }
+    PrioritizationPage.prototype.presentToast = function () {
+        var toast = this.toastCtrl.create({
+            message: 'Clique no icone em caso de dúvidas!',
+            duration: 5000,
+            position: 'top'
+        });
+        toast.present();
+    };
+    PrioritizationPage.prototype.openMenu = function () {
+        this.menuCtrl.open();
+    };
     PrioritizationPage.prototype.resolveMetricItem = function () {
         switch (this.currentMetricItem.name) {
             case "Gravidade":
@@ -436,8 +449,10 @@ var PrioritizationPage = /** @class */ (function () {
     PrioritizationPage.prototype.help = function () {
         var alert = this.alertCtrl.create({
             title: '<div text-center>Então, vamos soltar a imaginação!</div>',
-            message: '<div text-center>' + this.currentQuestion.narrative + '</div>'
-                + '<div class="alert-align-center"><img class="img-alert" src="https://azpng.com/png/2019/08/01/thinking-clipart-student-collection-transparent.png" /></div>',
+            message: '<div class="dialogue-box"><div class="tdialogue-box-text">'
+                + '<div text-center>' + this.currentQuestion.narrative + '</div>'
+                + '</div></div>'
+                + '<div class="alert-align-center"><img class="img-alert" src="assets/imgs/person2a.png" /></div>',
             buttons: [{
                     text: "Ok!",
                     handler: function () {
@@ -452,9 +467,9 @@ var PrioritizationPage = /** @class */ (function () {
     ], PrioritizationPage.prototype, "content", void 0);
     PrioritizationPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-prioritization',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\prioritization\prioritization.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col offset-2 col-6>\n        <img class="img-responsive" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col offset-1 col-2>\n        <button *ngIf="currentQuestion.useNarrative" ion-button clear (click)="help()">\n          <ion-icon class="icon-help" name="alert"></ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row class="context-area">\n      <ion-col col-12 class="context-area-container">\n        <img class="context-area-icon" src="assets/imgs/{{currentQuestion.contextAreaIcon}}" />\n        <ion-label class="context-area-title">\n          {{currentQuestion.contextArea}}\n        </ion-label>\n      </ion-col>\n    </ion-row>\n    <!-- Enunciado da questão -->\n    <div class="hr"></div>\n    <ion-row class="margin-top-30">\n      <ion-col col-12 text-center class="question">\n        <h1>{{currentQuestion.question}}</h1>\n        <h3>{{getDescriptionByPriorization()}}</h3>\n        <h2 *ngIf="scaleView" class="{{metricValueColor}}">{{selectedMetricValue.name}}</h2>\n      </ion-col>\n    </ion-row>\n    <!-- Enunciado da questão -->\n    <!-- Seleção pela escala do emotion -->\n    <ion-row *ngIf="scaleView" padding-top margin-top  text-center>\n      <ion-col *ngFor="let metricValue of currentMetricItem.metricValues">\n        <img *ngIf="!isMetricValueSelected(metricValue)" class="img-responsive" src="assets/imgs/{{metricValue.icon}}"\n          (click)="selectMetricValue(metricValue)" />\n        <img *ngIf="isMetricValueSelected(metricValue)" class="img-responsive"\n          src="assets/imgs/{{metricValue.iconSelected}}" (click)="selectMetricValue(metricValue)" />\n      </ion-col>\n    </ion-row>\n    <!-- Seleção pela escala do emotion -->\n    <!-- Seleção por itens -->\n    <ion-row *ngIf="itemView" padding-top>\n      <!-- <div offset-1></div> -->\n      <ion-col col-12>\n        <ion-list radio-group>\n          <ion-item *ngFor="let metricValue of currentMetricItem.metricValues">\n            <ion-radio (ionSelect)="selectMetricValue(metricValue)"></ion-radio>\n            <ion-label>{{metricValue.name}}</ion-label>\n          </ion-item>\n        </ion-list>\n      </ion-col>\n    </ion-row>\n    <!-- Seleção por itens -->\n    <ion-row>\n      <ion-col col-12 text-center class="margin-top-30">\n        <button ion-button full class="button-background" (click)="nextStep()"\n          [disabled]="btnContinueDisabled">Continuar\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n<ion-footer>\n  <ion-navbar class="toolbar-progress">\n    <div *ngIf="!disableSteps" text-center class="progres-text-uper">{{step}} de {{totalSteps}}</div>\n    <ion-range *ngIf="!disableSteps" class="step-bar" [min]="0" [max]="metricItems.length" [step]="1" [(ngModel)]="step"\n      disabled>\n      <ion-icon range-right></ion-icon>\n    </ion-range>\n    <ion-title text-center>\n      <ion-icon range-right name="md-ribbon"></ion-icon>\n      {{points}} pontos\n    </ion-title>\n    <ion-range class="progress-bar" [min]="0" [max]="100" [step]="1" [(ngModel)]="progress" disabled>\n      <ion-icon range-left name="md-clipboard"></ion-icon>\n      <ion-icon range-right></ion-icon>\n    </ion-range>\n    <div text-center class="progres-text-down">{{currentQuestionIndex + 1}} de {{totalQuestions}} questões</div>\n  </ion-navbar>\n</ion-footer>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\prioritization\prioritization.html"*/,
+            selector: 'page-prioritization',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\prioritization\prioritization.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col offset-1 col-2 class="menu-icon-col">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-6>\n        <img class="img-responsive" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col col-2>\n        <button *ngIf="currentQuestion.useNarrative" ion-button clear (click)="help()">\n          <ion-icon class="icon-help" name="alert"></ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row class="context-area">\n      <ion-col col-12 class="context-area-container">\n        <img class="context-area-icon" src="assets/imgs/{{currentQuestion.contextAreaIcon}}" />\n        <ion-label class="context-area-title">\n          {{currentQuestion.contextArea}}\n        </ion-label>\n      </ion-col>\n    </ion-row>\n    <!-- Enunciado da questão -->\n    <div class="hr"></div>\n    <ion-row class="margin-top-30">\n      <ion-col col-12 text-justify class="question">\n        <h1>{{currentQuestion.question}}</h1>\n      </ion-col>\n      <ion-col col-12 text-center *ngIf="scaleView">\n        <h3>{{getDescriptionByPriorization()}}</h3>\n        <h2  class="{{metricValueColor}}">{{selectedMetricValue.name}}</h2>\n      </ion-col>\n    </ion-row>\n    <!-- Enunciado da questão -->\n    <!-- Seleção pela escala do emotion -->\n    <ion-row *ngIf="scaleView" padding-top margin-top text-center>\n      <ion-col *ngFor="let metricValue of currentMetricItem.metricValues">\n        <img *ngIf="!isMetricValueSelected(metricValue)" class="img-responsive" src="assets/imgs/{{metricValue.icon}}"\n          (click)="selectMetricValue(metricValue)" />\n        <img *ngIf="isMetricValueSelected(metricValue)" class="img-responsive"\n          src="assets/imgs/{{metricValue.iconSelected}}" (click)="selectMetricValue(metricValue)" />\n      </ion-col>\n    </ion-row>\n    <!-- Seleção pela escala do emotion -->\n    <!-- Seleção por itens -->\n    <ion-row *ngIf="itemView">\n      <!-- <div offset-1></div> -->\n      <ion-col col-12>\n        <ion-list radio-group>\n          <ion-item *ngFor="let metricValue of currentMetricItem.metricValues" class="radio-item">\n            <ion-label>{{metricValue.name}}</ion-label>\n            <ion-radio (ionSelect)="selectMetricValue(metricValue)"></ion-radio>\n          </ion-item>\n        </ion-list>\n      </ion-col>\n    </ion-row>\n    <!-- Seleção por itens -->\n    <ion-row>\n      <ion-col col-12 text-center>\n        <button ion-button full class="button-background" (click)="nextStep()"\n          [disabled]="btnContinueDisabled">Continuar\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n<ion-footer>\n  <ion-navbar class="toolbar-progress">\n    <div *ngIf="!disableSteps" text-center class="progres-text-uper">{{step}} de {{totalSteps}}</div>\n    <ion-range *ngIf="!disableSteps" class="step-bar" [min]="0" [max]="metricItems.length" [step]="1" [(ngModel)]="step"\n      disabled>\n      <ion-icon range-right></ion-icon>\n    </ion-range>\n    <ion-title text-center>\n      <ion-icon range-right name="md-ribbon"></ion-icon>\n      {{points}} pontos\n    </ion-title>\n    <ion-range class="progress-bar" [min]="0" [max]="100" [step]="1" [(ngModel)]="progress" disabled>\n      <ion-icon range-left name="md-clipboard"></ion-icon>\n      <ion-icon range-right></ion-icon>\n    </ion-range>\n    <div text-center class="progres-text-down">{{currentQuestionIndex + 1}} de {{totalQuestions}} questões</div>\n  </ion-navbar>\n</ion-footer>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\prioritization\prioritization.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3__providers_prioritization_prioritization__["a" /* PrioritizationProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* MenuController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3__providers_prioritization_prioritization__["a" /* PrioritizationProvider */]])
     ], PrioritizationPage);
     return PrioritizationPage;
 }());

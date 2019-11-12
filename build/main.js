@@ -373,7 +373,7 @@ var HomePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'page-home',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col offset-2 col-6>\n        <img class="img-responsive" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col offset-1 col-2>\n        <button ion-button clear (click)="help()">\n          <ion-icon class="icon-help" name="help-circle"></ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-12 text-center class="text-home">\n        <h1>Bem vindo!</h1>\n        <h5>Por favor, nos informe quem é você e selecione uma cidade para responder os questionários.</h5>\n      </ion-col>\n    </ion-row>\n    <ion-row class="margin-top-30-percent">\n      <ion-col col-12>\n\n        <ion-item>\n          <ion-label>Quem é você?</ion-label>\n          <ion-select [(ngModel)]="userType">\n            <ion-option *ngFor="let userType of userTypes" [value]="userType" (ionSelect)="selectUserType(userType)">\n              {{userType.name}}</ion-option>\n          </ion-select>\n        </ion-item>\n\n        <ion-item class="margin-top-30">\n          <ion-label>Selecione a cidade</ion-label>\n          <ion-select [(ngModel)]="city" disabled="{{userType == null}}">\n            <ion-option *ngFor="let city of cities" [value]="city" (ionSelect)="getAllPlansByCity(city)">{{city.name}}\n            </ion-option>\n          </ion-select>\n        </ion-item>\n\n        <ion-item class="margin-top-30">\n          <ion-label>Selecione o plano</ion-label>\n          <ion-select [(ngModel)]="plan" disabled="{{city == null}}">\n            <ion-option *ngFor="let plan of plans" [value]="plan"\n              (ionSelect)="getAllQuestionariesByPlan(plan); enableBtnContinue();">{{plan.name}}</ion-option>\n          </ion-select>\n        </ion-item>\n\n        <ion-item class="margin-top-30">\n          <ion-label>Você reside em zona rural?</ion-label>\n          <ion-toggle [disabled]="btnContinueDisabled" (ionChange)="changeZone()" [(ngModel)]="isRuralZone"\n            checked="false"></ion-toggle>\n        </ion-item>\n        \n        <button ion-button full class="button-background margin-top-30" (click)="navigateProfilePage()"\n          [disabled]="btnContinueDisabled">Continuar</button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */], __WEBPACK_IMPORTED_MODULE_3__providers_city_city__["a" /* CityProvider */], __WEBPACK_IMPORTED_MODULE_4__providers_plan_plan__["b" /* PlanProvider */], __WEBPACK_IMPORTED_MODULE_5__providers_questionary_questionary__["c" /* QuestionaryProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_6__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_7__providers_rest_rest__["a" /* RestProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */], __WEBPACK_IMPORTED_MODULE_3__providers_city_city__["a" /* CityProvider */], __WEBPACK_IMPORTED_MODULE_4__providers_plan_plan__["b" /* PlanProvider */], __WEBPACK_IMPORTED_MODULE_5__providers_questionary_questionary__["c" /* QuestionaryProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_6__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_7__providers_rest_rest__["a" /* RestProvider */]])
     ], HomePage);
     return HomePage;
 }());
@@ -587,7 +587,13 @@ var RestProvider = /** @class */ (function () {
                                                 .then(function () {
                                                 _this.storage.remove('isCaseTest')
                                                     .then(function () {
-                                                    nav.setRoot(__WEBPACK_IMPORTED_MODULE_7__pages_intro_intro__["a" /* IntroPage */], {});
+                                                    _this.storage.remove('helpHome')
+                                                        .then(function () {
+                                                        nav.setRoot(__WEBPACK_IMPORTED_MODULE_7__pages_intro_intro__["a" /* IntroPage */], {});
+                                                    })
+                                                        .catch(function (error) {
+                                                        console.log(error);
+                                                    });
                                                 })
                                                     .catch(function (error) {
                                                     console.log(error);
@@ -635,7 +641,7 @@ var RestProvider = /** @class */ (function () {
     };
     RestProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_network__["a" /* Network */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_6__ionic_native_app_version__["a" /* AppVersion */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_network__["a" /* Network */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["l" /* Platform */], __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_6__ionic_native_app_version__["a" /* AppVersion */]])
     ], RestProvider);
     return RestProvider;
 }());
@@ -682,19 +688,19 @@ var map = {
 		5
 	],
 	"../pages/intro/intro.module": [
-		293,
+		297,
 		6
 	],
 	"../pages/prioritization/prioritization.module": [
-		294,
+		293,
 		4
 	],
 	"../pages/questionaries-list/questionaries-list.module": [
-		295,
+		294,
 		3
 	],
 	"../pages/questionary/questionary.module": [
-		297,
+		295,
 		2
 	],
 	"../pages/respondent-profile/respondent-profile.module": [
@@ -753,6 +759,7 @@ var PrioritizationProvider = /** @class */ (function () {
             //metricID : 1 - GUT | 2 - Escala qualitativa | (3-17) - Métricas do questionário de teste
             _this.http.get("https://api.neiru.org/get-metric-items-by-metric.php?metric=" + metricId, { headers: _this.restProvider.headers })
                 .subscribe(function (data) {
+                // Metric Itens temporários [x]
                 //------------------TEMPORÁRIO-------------------
                 var itens = [];
                 switch (metricId) {
@@ -939,6 +946,7 @@ var PrioritizationProvider = /** @class */ (function () {
         return new Promise(function (resolve) {
             _this.http.get("https://api.neiru.org/get-all-metric-values.php", { headers: _this.restProvider.headers })
                 .subscribe(function (data) {
+                // Metric values temporários [x]
                 //------------------TEMPORÁRIO-------------------
                 data = _this.resolveItens(data);
                 //------------------TEMPORÁRIO-------------------
@@ -948,6 +956,7 @@ var PrioritizationProvider = /** @class */ (function () {
             });
         });
     };
+    //Adição de itens em tempo de execução
     //------------------TEMPORÁRIO-------------------
     PrioritizationProvider.prototype.resolveItens = function (data) {
         var metrics = [];
@@ -2088,6 +2097,7 @@ var QuestionProvider = /** @class */ (function () {
             //Essa api que vai ser alterada para vir com atributo Answered (true, false)
             _this.http.get("https://api.neiru.org/get-all-questions-by-questionary.php?questionary=" + questionary.id + "&isRuralZone=" + isRuralZone, { headers: _this.restProvider.headers })
                 .subscribe(function (data) {
+                // Questões temporárias [x]
                 //-----------------TEMPORÁRIO-------------------
                 //Diagnóstico Geral
                 if (questionary.id == 666) {
@@ -2345,7 +2355,7 @@ var QuestionProvider = /** @class */ (function () {
                 if (questionary.id == 660) {
                     var questions = [];
                     var q1 = {
-                        id: "1020",
+                        id: "1021",
                         name: "1.	Qual o ramo da sua atividade comercial?",
                         description: "",
                         question: "1.	Qual o ramo da sua atividade comercial?",
@@ -2357,7 +2367,7 @@ var QuestionProvider = /** @class */ (function () {
                     };
                     questions.push(q1);
                     var q2 = {
-                        id: "1021",
+                        id: "1022",
                         name: "2.	Porque você escolheu essa rua para seu comércio? ",
                         description: "",
                         question: "2.	Porque você escolheu essa rua para seu comércio? ",
@@ -2369,7 +2379,7 @@ var QuestionProvider = /** @class */ (function () {
                     };
                     questions.push(q2);
                     var q3 = {
-                        id: "1022",
+                        id: "1023",
                         name: "3.	Quanto você está satisfeito com a infraestrutura básica da rua?",
                         description: "",
                         question: "3.	Quanto você está satisfeito com a infraestrutura básica da rua?",
@@ -2381,7 +2391,7 @@ var QuestionProvider = /** @class */ (function () {
                     };
                     questions.push(q3);
                     var q4 = {
-                        id: "1023",
+                        id: "1024",
                         name: "4.	Quais melhorias poderiam ser feitas para atender suas necessidades?",
                         description: "",
                         question: "4.	Quais melhorias poderiam ser feitas para atender suas necessidades?",
@@ -2393,7 +2403,7 @@ var QuestionProvider = /** @class */ (function () {
                     };
                     questions.push(q4);
                     var q5 = {
-                        id: "1024",
+                        id: "1025",
                         name: "5.	O que as pessoas costumam fazer nessa rua?",
                         description: "",
                         question: "5.	O que as pessoas costumam fazer nessa rua?",
@@ -2405,7 +2415,7 @@ var QuestionProvider = /** @class */ (function () {
                     };
                     questions.push(q5);
                     var q6 = {
-                        id: "1025",
+                        id: "1026",
                         name: "6.	Quais são os pontos fortes da sua rua? ",
                         description: "",
                         question: "6.	Quais são os pontos fortes da sua rua? ",
@@ -2417,7 +2427,7 @@ var QuestionProvider = /** @class */ (function () {
                     };
                     questions.push(q6);
                     var q7 = {
-                        id: "1026",
+                        id: "1027",
                         name: "7.	Quais são os pontos fracos da sua rua? ",
                         description: "",
                         question: "7.	Quais são os pontos fracos da sua rua? ",
@@ -2429,7 +2439,7 @@ var QuestionProvider = /** @class */ (function () {
                     };
                     questions.push(q7);
                     var q8 = {
-                        id: "1027",
+                        id: "1028",
                         name: "8.	O que você pensa sobre a seguinte afirmação: “Não trocaria a minha rua por nenhum outro local da cidade”",
                         description: "",
                         question: "8.	O que você pensa sobre a seguinte afirmação: “Não trocaria a minha rua por nenhum outro local da cidade”",
@@ -2471,47 +2481,143 @@ var QuestionProvider = /** @class */ (function () {
             //-------------------------APLICAÇÃO DA NARRATIVA-------------------------
             switch (quest.id) {
                 case "1001":
-                    q.narrative = "Supondo que você esta em uma roda de conversa com os vizinhos, é comum ouvir alguém se queixar sobre falta de calçamento nas ruas ou acesso a água no bairro? Você sente falta desses serviços?";
+                    q.narrative = "No seu dia-a-dia, você costuma ir bastante ao centro ou poucas vezes? Você passa com frequência por lá?";
                     q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
                     q.useNarrative = true;
                     break;
                 case "1002":
-                    q.narrative = "Quando você faz um passeio pelas ruas do seu bairro você vê com frequência problemas de loteamento?";
+                    q.narrative = "Sua casa fica no centro? Caso você não more no centro, você costuma ir para lá a trabalho, compras ou para atividades de lazer?";
                     q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
                     q.useNarrative = true;
                     break;
                 case "1003":
-                    q.narrative = "Quando você esta em casa com sua família, ou quando precisa sair para trabalhar ou fazer atividades de lazer, existe algum problema de habitação que interfere na sua vida?";
+                    q.narrative = "As atividades para serem feitas no centro também podem ser feitas a noite! Você costuma ir ao centro a noite com alguma frequência?";
                     q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
                     q.useNarrative = true;
                     break;
                 case "1004":
-                    q.narrative = "Você esta saindo de casa em direção ao trabalho ou escola. Você ficaria mais satisfeito se pudesse encontrar serviços mais próximos, como supermercado e escola?";
+                    q.narrative = "Você pode ter seus próprios motivos para não ir ao centro a noite, nos ajude a descobrir qual é.";
                     q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
                     q.useNarrative = true;
                     break;
                 case "1005":
-                    q.narrative = "Vamos supor que a agua consumida em sua casa vem de uma mina próxima  e o esgoto é enviado para a cisterna. Esses dois fatos são rotineiros no seu dia-a-dia ou falta algum deles? Você acha que a urbanização pode resolver esse problema?";
+                    q.narrative = "O centro possui serviços, comércios e espaços de lazer para a população. Quais desses tipos de atrações você leva em consideração quando esta passeando no centro da cidade?";
                     q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
                     q.useNarrative = true;
                     break;
                 case "1006":
-                    q.narrative = "Em uma manhã de sol você sai de casa para ir ao trabalho ou escola e na maior parte do tempo você esta andando por vias que não estão pavimentadas. Você acha que a urbanização pode contribuir para resolver esse problema ou isso não tem importância?";
+                    q.narrative = "Conte-nos o que lhe faz falta no centro! Que tipo de benefício você sente falta quando esta passeando com sua família pelo centro? Se você mora no centro, o é preciso para atender suas necessidades?";
                     q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
                     q.useNarrative = true;
                     break;
                 case "1007":
-                    q.narrative = "Novos vizinhos estão aparecendo, você conhece novas pessoas e sua rua fica mais movimentada e barulhenta. Você acha que isso pode ser prejudicial para seu dia-a-dia?";
+                    q.narrative = "Qual sua avaliação das lojas levando em consideração as suas necessidades, atendimentos dos serviços e disponibilidade? Quando você esta satisfeito quando precisa fazer compras no centro da cidade?";
                     q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
                     q.useNarrative = true;
                     break;
                 case "1008":
-                    q.narrative = "Talvez se mais pessoas se mudassem para perto da sua casa, isso poderia trazer problemas como desmatamento e poluição, com a criação de novos terrenos.  Você acha que a urbanização contribui com isso?";
+                    q.narrative = "Se você costuma ir ao centro por lazer, você faz passeio no parque? Você faz caminhadas pelas calçadas ou andar em veículos pelas ruas? ";
                     q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
                     q.useNarrative = true;
                     break;
                 case "1009":
-                    q.narrative = "A urbanização pode trazer benefícios como saneamento, acesso á agua, pavimentação de vias. Por outro lado , pode haver aumento do fluxo de pessoas e veículos, e causar perturbações com ruídos. Levando isso em consideração, o que você acha mais importante para sua vida e moradia?";
+                    q.narrative = "As obras de requalificação tem como objetivo adequar o espaço urbano do centro da cidade a mobilidade das vias com objetivo de atender a necessidade da população. Você considera esse tipo de obra necessária?";
+                    q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
+                    q.useNarrative = true;
+                    break;
+                case "1010":
+                    q.narrative = "Como você acha que estão as calçadas quando você anda pelo centro? O espaço esta adequado? Possui acessibilidade?";
+                    q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
+                    q.useNarrative = true;
+                    break;
+                case "1011":
+                    q.narrative = "Você costuma deparar com as rampas de acessibilidade para cadeirantes quando esta no centro? Como você acha que esta o estado de conservação dessas rampas? Acha que  existem rampas o suficiente?";
+                    q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
+                    q.useNarrative = true;
+                    break;
+                case "1012":
+                    q.narrative = "Você costuma deparar com pisos elevados para deficientes quando esta caminhando no centro da cidade? Os pisos táteis estão em todas as calçadas, acha que são suficientes?";
+                    q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
+                    q.useNarrative = true;
+                    break;
+                case "1013":
+                    q.narrative = "Caso você vá ao centro de carro, você encontra problemas em estacionar a ponto de ficar um tempo procurando vaga ou não encontrar quando precisa?";
+                    q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
+                    q.useNarrative = true;
+                    break;
+                case "1014":
+                    q.narrative = "Você costuma deparar com locais de descanço, como bancos, quando esta caminhando pelo centro? Como você acha que esta o estado de conservação dessas rampas? Acha que  existem rampas o suficiente?";
+                    q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
+                    q.useNarrative = true;
+                    break;
+                case "1015":
+                    q.narrative = "Você costuma deparar com lixeiras quando vai no centro? Como você acha que esta o estado de conservação dessas rampas? Acha que  existem rampas o suficiente?";
+                    q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
+                    q.useNarrative = true;
+                    break;
+                case "1016":
+                    q.narrative = "Você costuma deparar com ruas arborizadas quando vai no centro? Como você acha que esta o estado de conservação dessas rampas? Acha que  existem rampas o suficiente?";
+                    q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
+                    q.useNarrative = true;
+                    break;
+                case "1017":
+                    q.narrative = "Quando você vai ao centro a noite as ruas estão bem iluminadas? Como você acha que esta o estado de conservação dessas rampas? Acha que  existem rampas o suficiente?";
+                    q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
+                    q.useNarrative = true;
+                    break;
+                case "1018":
+                    q.narrative = "Você se depara com pontos de ônibus quando vai ao centro? Como você acha que esta o estado de conservação dessas rampas? Acha que  existem rampas o suficiente?";
+                    q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
+                    q.useNarrative = true;
+                    break;
+                case "1019":
+                    q.narrative = "Você costuma comprar alguma coisa para sua casa ou presente para alguém das barracas do comércio de rua?";
+                    q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
+                    q.useNarrative = true;
+                    break;
+                case "1020":
+                    q.narrative = "Você já parou nas kombis de alimentação durante seu passeio no centro? O que acha desse tipo de comércio?";
+                    q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
+                    q.useNarrative = true;
+                    break;
+                case "1021":
+                    q.narrative = "Conte-nos sobre o seu negócio, qual o tipo do seu comércio? ";
+                    q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
+                    q.useNarrative = true;
+                    break;
+                case "1022":
+                    q.narrative = "O que te fez escolher essa rua para estabelecer seu negócio?";
+                    q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
+                    q.useNarrative = true;
+                    break;
+                case "1023":
+                    q.narrative = "A infraestrutura da rua de seu comércio como calçadas, iluminação, caçadas, lixeiras  é satisfatória para sua atividade comercial?";
+                    q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
+                    q.useNarrative = true;
+                    break;
+                case "1024":
+                    q.narrative = "Quais melhorias apresentadas você acha que pode melhor atender as suas necessidades durante suas atividades diárias?";
+                    q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
+                    q.useNarrative = true;
+                    break;
+                case "1025":
+                    q.narrative = "Quando você conversa com os clientes de seu negócio, o que as pessoas costumam dizer que as atraem para sua rua?";
+                    q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
+                    q.useNarrative = true;
+                    break;
+                case "1026":
+                    q.narrative = "Quais os pontos fortes que você acha que sua rua tem?";
+                    q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
+                    q.useNarrative = true;
+                    break;
+                case "1027":
+                    q.narrative = "Quais os pontos fracos você acha que podem ser melhorado na sua rua?";
+                    q.narrative = "Você esta satisfeito com sua rua quando esta trabalhando? Ou pretendente trocar o local de seu estabelecimento se encontrar um local melhor?";
+                    q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
+                    q.useNarrative = true;
+                    break;
+                case "1028":
+                    q.narrative = "Você esta satisfeito com sua rua quando esta trabalhando? Ou pretendente trocar o local de seu estabelecimento se encontrar um local melhor?";
                     q.sound = "https://soundcloud.com/kito-1/stone-temple-pilots-interstate-love-song_kito-mp3";
                     q.useNarrative = true;
                     break;
@@ -2743,7 +2849,12 @@ var RespondentProvider = /** @class */ (function () {
                 "job_neighborhood_id": respondent.jobNeighborhood.id,
                 "salary_range": respondent.salaryRange,
                 "updated_at": updatedAt,
-                "token": token
+                "token": token,
+                //Novos campos
+                "age": respondent.age,
+                "gender": respondent.gender,
+                "name": respondent.name,
+                "phone": respondent.phone
             };
             // this.http.post("https://api.neiru.org/update-respondent.php", data, {headers: this.restProvider.headers})
             //   .subscribe(data => {
@@ -2767,6 +2878,11 @@ var RespondentProvider = /** @class */ (function () {
                 "job_neighborhood_id": respondent.jobNeighborhood.id,
                 "salary_range": respondent.salaryRange,
                 "created_at": createdAt,
+                //Novos campos
+                "age": respondent.age,
+                "gender": respondent.gender,
+                "name": respondent.name,
+                "phone": respondent.phone,
                 "token": token
             };
             // this.http.post("https://api.neiru.org/insert-respondent.php", data, {headers: this.restProvider.headers})
@@ -2873,11 +2989,11 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/about/about.module#AboutPageModule', name: 'AboutPage', segment: 'about', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/thankyou/thankyou.module#ThankyouPageModule', name: 'ThankyouPage', segment: 'thankyou', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/intro/intro.module#IntroPageModule', name: 'IntroPage', segment: 'intro', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/prioritization/prioritization.module#PrioritizationPageModule', name: 'PrioritizationPage', segment: 'prioritization', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/questionaries-list/questionaries-list.module#QuestionariesListPageModule', name: 'QuestionariesListPage', segment: 'questionaries-list', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/questionary/questionary.module#QuestionaryPageModule', name: 'QuestionaryPage', segment: 'questionary', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/respondent-profile/respondent-profile.module#RespondentProfilePageModule', name: 'RespondentProfilePage', segment: 'respondent-profile', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/questionary/questionary.module#QuestionaryPageModule', name: 'QuestionaryPage', segment: 'questionary', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/intro/intro.module#IntroPageModule', name: 'IntroPage', segment: 'intro', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_15__angular_common_http__["b" /* HttpClientModule */],
@@ -2963,10 +3079,10 @@ var MyApp = /** @class */ (function () {
         this.nav.setRoot('QuestionariesListPage', {});
     };
     MyApp.prototype.navigateToAbout = function () {
-        this.nav.push('AboutPage', {});
+        this.nav.setRoot('AboutPage', {});
     };
     MyApp.prototype.navigateProfile = function () {
-        this.nav.push('RespondentProfilePage', {});
+        this.nav.setRoot('RespondentProfilePage', {});
     };
     MyApp.prototype.refreshData = function () {
         var _this = this;
@@ -2985,13 +3101,13 @@ var MyApp = /** @class */ (function () {
         alert.present();
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* Nav */])
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* Nav */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\app\app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button ion-item (click)="navigateQuestionaryList()" menuClose>\n        <ion-icon range-left name="ios-list"></ion-icon>\n        Questionários\n      </button>\n      <button ion-item (click)="navigateProfile()" menuClose>\n        <ion-icon range-left name="md-person"></ion-icon>\n        Perfil\n      </button>\n      <button ion-item (click)="navigateToAbout()" menuClose>\n        <ion-icon range-left name="md-information-circle"></ion-icon>\n        Sobre\n      </button>\n      <button ion-item (click)="refreshData()" menuClose>\n        <ion-icon range-left name="md-remove-circle"></ion-icon>\n        Limpar dados\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<ion-nav id="nav" #content [root]="rootPage"></ion-nav>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\app\app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_5__providers_rest_rest__["a" /* RestProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* Platform */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_5__providers_rest_rest__["a" /* RestProvider */]])
     ], MyApp);
     return MyApp;
 }());
@@ -3298,6 +3414,15 @@ var IntroPage = /** @class */ (function () {
     IntroPage.prototype.changeZone = function () {
         this.storage.set('isRuralZone', this.isRuralZone ? 1 : 0);
     };
+    IntroPage.prototype.nextSlide = function (event) {
+        // console.log(event);
+        if (event._touches.startX > 180) {
+            this.slides.slideNext();
+        }
+        else {
+            this.slides.slidePrev();
+        }
+    };
     IntroPage.prototype.skip = function () {
         var _this = this;
         this.loader = this.loadingCtrl.create();
@@ -3325,6 +3450,8 @@ var IntroPage = /** @class */ (function () {
                             .then(function (plans) {
                             if (plans != null) {
                                 _this.storage.set('city', _this.city).then(function () {
+                                    // Plano temporário [x]
+                                    //----------------------------TEMPORÁRIO---------------------------------
                                     var p = {
                                         city: _this.city,
                                         id: 666,
@@ -3332,6 +3459,7 @@ var IntroPage = /** @class */ (function () {
                                         usePrioritization: false
                                     };
                                     plans.push(p);
+                                    //----------------------------TEMPORÁRIO---------------------------------
                                     _this.plans = plans;
                                     _this.questionaries = [];
                                     _this.plans.forEach(function (p) {
@@ -3478,7 +3606,13 @@ var IntroPage = /** @class */ (function () {
                                                 .then(function () {
                                                 _this.storage.remove('isCaseTest')
                                                     .then(function () {
-                                                    console.log("Remoção de dados concluída");
+                                                    _this.storage.remove('helpHome')
+                                                        .then(function () {
+                                                        console.log("Remoção de dados concluída");
+                                                    })
+                                                        .catch(function (error) {
+                                                        console.log(error);
+                                                    });
                                                 })
                                                     .catch(function (error) {
                                                     console.log(error);
@@ -3579,11 +3713,15 @@ var IntroPage = /** @class */ (function () {
         });
         alert.present();
     };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Slides */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Slides */])
+    ], IntroPage.prototype, "slides", void 0);
     IntroPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-intro',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\intro\intro.html"*/'<ion-header>\n  <ion-navbar>\n    <div offset-3 col-6 text-center>\n      <img class="img-responsive" src="assets/imgs/header-logo.png" />\n    </div>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-slides pager>\n    <ion-slide class="slide-img" padding>\n      <ion-header class="slide-header">\n        <div padding-bottom text-right>\n          <a (click)="skip()">pular</a>\n          <ion-icon name="arrow-dropright"></ion-icon>\n        </div>\n      </ion-header>\n      <img class="img-responsive"\n        src="https://image.freepik.com/free-vector/young-couple-smiling-greeting_18591-53613.jpg" />\n      <h2>Olá, bem vindo!</h2>\n      <p>\n        Que bom que você quer <strong>participar</strong>! \n        Agora você pode contribuir com sua <strong>cidade</strong>!\n      </p>\n      <p> Vamos conhecer essa <strong>possibilidade</strong>?</p>\n    </ion-slide>\n    <ion-slide class="slide-img" padding>\n      <ion-header class="slide-header">\n        <div margin-bottom text-right>\n          <a (click)="skip()">pular</a>\n          <ion-icon name="arrow-dropright"></ion-icon>\n        </div>\n      </ion-header>\n      <img class="img-responsive"\n        src="https://image.freepik.com/free-vector/young-people-walking-street-characters_24640-46245.jpg" />\n      <h4>Você conhece o Plano Diretor da sua ciade?</h4>\n      <p>\n        O <strong>Plano Diretor</strong> determina o uso e ocupação do solo da sua <strong>cidade</strong> contribuindo com seu <strong>desenvolvimento</strong>\n      </p>\n    </ion-slide>\n    <ion-slide class="slide-img" padding>\n      <ion-header class="slide-header">\n        <div margin-bottom text-right>\n          <a (click)="skip()">pular</a>\n          <ion-icon name="arrow-dropright"></ion-icon>\n        </div>\n      </ion-header>\n      <img class="img-responsive"\n        src="https://image.freepik.com/free-vector/character-illustration-people-holding-speech-bubbles_53876-64665.jpg" />\n      <h2>Sua opinião é importante!</h2>\n        <p>\n          Participe da <strong>revisão do Plano Diretor</strong> da sua cidade! \n        </p>\n      <p> Nos envie sua <strong>opnião</strong> respondendo os questinários com o <strong>Opina Aí!</strong></p>\n    </ion-slide>\n    <ion-slide class="slide-img" padding>\n      <div class="slide-img-last">\n        <img class="img-responsive"\n          src="https://image.freepik.com/free-vector/group-people-park_24877-52707.jpg" />\n        <h2>Vamos lá!</h2>\n        <p>\n          Hora de contribuir com sua <strong>cidade</strong>! \n          <strong>Participe</strong> agora nos enviando sua <strong>opnião</strong>!\n        </p>\n      </div>\n      <ion-footer class="slide-footer">\n        <a ion-button margin-bottom (click)="skip()">\n          Participar!\n        </a>\n      </ion-footer>\n    </ion-slide>\n  </ion-slides>\n</ion-content>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\intro\intro.html"*/,
+            selector: 'page-intro',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\intro\intro.html"*/'<ion-header>\n  <ion-navbar>\n    <div offset-3 col-6 text-center>\n      <img class="img-responsive" src="assets/imgs/header-logo.png" />\n    </div>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-slides pager (ionSlideTap)="nextSlide($event)">\n    <!-- Slide 1 -->\n    <ion-slide class="slide-img" padding>\n      <div class="slide-header">\n        <ion-header class="slide-header">\n          <div padding-bottom text-right>\n            <a (click)="skip()">pular</a>\n            <ion-icon name="arrow-dropright"></ion-icon>\n          </div>\n        </ion-header>\n        <h1 class="title-box">Olá, seja bem vindo!</h1>\n      </div>\n\n      <img class="img-responsive"\n        src="assets/imgs/intro1.jpg" />\n      <div class="dialogue-box">\n        <div class="tdialogue-box-text">\n          <p class="text-dialog"> \n            Olá! Que bom que você quer <strong>participar</strong> na requalificação do <strong>centro</strong> de <strong>Pouso Alegre</strong>!\n          </p>\n          <p class="text-dialog"> \n            Vamos conhecer essa <strong>possibilidade</strong>?\n          </p>\n        </div>\n      </div>\n    </ion-slide>\n    <!-- Slide 1 -->\n    <!-- Slide 2 -->\n    <ion-slide class="slide-img" padding>\n      <ion-header class="slide-header">\n        <div margin-bottom text-right>\n          <a (click)="skip()">pular</a>\n          <ion-icon name="arrow-dropright"></ion-icon>\n        </div>\n      </ion-header>\n      <h3 class="title-box">Você sabe o que é requalificação urbana?</h3>\n      <img class="img-responsive"\n        src="assets/imgs/intro2.jpg"  />\n      <div class="dialogue-box">\n        <div class="tdialogue-box-text">\n          <p class="text-dialog">\n            Com o <strong>crescimento</strong> da cidade, a <strong>área central</strong> tem apresentado problemas como\n            desgaste da <strong>pavimentação</strong>, falta de padronização dos <strong>passeios</strong> e <strong>calçadas</strong> estreitas.</p>\n        </div>\n      </div>\n    </ion-slide>\n    <!-- Slide 2 -->\n    <!-- Slide 3 -->\n    <ion-slide class="slide-img" padding>\n      <ion-header class="slide-header">\n        <div margin-bottom text-right>\n          <a (click)="skip()">pular</a>\n          <ion-icon name="arrow-dropright"></ion-icon>\n        </div>\n      </ion-header>\n      <h3 class="title-box">A requalificação da áraea central</h3>\n      <img class="img-responsive"\n      src="assets/imgs/intro5.jpg" />\n      <div class="dialogue-box">\n        <div class="tdialogue-box-text">\n          <p class="text-dialog">\n            Para resolver este problema as <strong>obras de requalificação</strong> tem como  <strong>objetivo:</strong> troca de <strong>pavimento</strong>, alargamento de <strong>calçadas</strong>,\n            instalação de <strong>equipamentos</strong> urbanos, <strong>arborização</strong>, <strong>faixas elevadas</strong> e <strong>semáforos</strong>. \n          </p>\n        </div>\n      </div>\n    </ion-slide>\n    <!-- Slide 3 -->\n    <!-- Slide 4 -->\n    <ion-slide class="slide-img" padding>\n      <ion-header class="slide-header">\n        <div margin-bottom text-right>\n          <a (click)="skip()">pular</a>\n          <ion-icon name="arrow-dropright"></ion-icon>\n        </div>\n      </ion-header>\n      <h3 class="title-box">A requalificação da áraea central</h3>\n      <img class="img-responsive"\n      src="assets/imgs/intro6.jpg" />\n      <div class="dialogue-box">\n        <div class="tdialogue-box-text">\n          <p class="text-dialog">\n            Assim, a <strong>requalificação</strong> pode ampliar a <strong>mobilidade urbana</strong> e tornar a <strong>área central</strong> de <strong>Pouso Alegre</strong> mais <strong>atrativa</strong> para os <strong>pedestres</strong> e <strong>visitantes</strong>.</p>\n        </div>\n      </div>\n    </ion-slide>\n    <!-- Slide 4 -->\n    <!-- Slide 5 -->\n    <ion-slide class="slide-img" padding>\n      <ion-header class="slide-header">\n        <div margin-bottom text-right>\n          <a (click)="skip()">pular</a>\n          <ion-icon name="arrow-dropright"></ion-icon>\n        </div>\n      </ion-header>\n      <h2 class="title-box">Sua opinião é importante!</h2>\n      <img class="img-responsive"\n      src="assets/imgs/intro3.jpg" />\n      <div class="dialogue-box">\n        <div class="tdialogue-box-text">\n          <p class="text-dialog">\n            Sua <strong>participação</strong> possui grande importância. Essa <strong>pesquisa de opinião</strong>\n            possibilitará uma analise detalhada das necessidades da <strong>população</strong> de <strong>Pouso Alegre</strong>.\n          </p>\n        </div>\n      </div>\n    </ion-slide>\n    <!-- Slide 5 -->\n    <!-- Slide 6 -->\n    <ion-slide class="slide-img" padding>\n       <!-- Pontuação -->\n       <ion-grid>\n          <ion-row>\n            <ion-col col-3>\n              <img src="assets/imgs/premio1.png" />\n            </ion-col>\n            <ion-col text-justify col-9>\n              <h5 class="title-box-last">Consiga <strong>pontos</strong> para aumentar seu nível de <strong>participação</strong>!</h5>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n        <!-- Pontuação -->\n      <img class="img-responsive" src="assets/imgs/intro4.jpg" />\n      <div class="dialogue-box-last">\n        <div class="tdialogue-box-text">\n          <p class="text-dialog">\n            Respondendo os questionários você coleta <strong>pontos</strong> que refletem sua <strong>participação</strong>!\n            <strong>Participe</strong> agora nos enviando sua <strong>opinião</strong>!\n          </p>\n        </div>\n      </div>\n      <a ion-button margin-bottom (click)="skip()">\n        Participar!\n      </a>\n    </ion-slide>\n    <!-- Slide 6 -->\n  </ion-slides>\n</ion-content>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\intro\intro.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5__providers_city_city__["a" /* CityProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_plan_plan__["b" /* PlanProvider */], __WEBPACK_IMPORTED_MODULE_4__providers_questionary_questionary__["c" /* QuestionaryProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_7__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_8__providers_rest_rest__["a" /* RestProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5__providers_city_city__["a" /* CityProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_plan_plan__["b" /* PlanProvider */], __WEBPACK_IMPORTED_MODULE_4__providers_questionary_questionary__["c" /* QuestionaryProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_7__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_8__providers_rest_rest__["a" /* RestProvider */]])
     ], IntroPage);
     return IntroPage;
 }());

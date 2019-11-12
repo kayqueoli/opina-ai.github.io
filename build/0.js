@@ -8,8 +8,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RespondentProfilePageModule", function() { return RespondentProfilePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__respondent_profile__ = __webpack_require__(304);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__respondent_profile__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(306);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -564,7 +564,7 @@ BrMaskerIonicServices3.ctorParameters = function () { return []; };
 
 /***/ }),
 
-/***/ 304:
+/***/ 305:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -608,8 +608,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var RespondentProfilePage = /** @class */ (function () {
-    function RespondentProfilePage(navCtrl, databaseProvider, cityProvider, formBuilder, respondentProvider, neighborhoodProvider, priorizationProvider, alertCtrl, storage, loadingCtrl) {
+    function RespondentProfilePage(menuCtrl, navCtrl, databaseProvider, cityProvider, formBuilder, respondentProvider, neighborhoodProvider, priorizationProvider, alertCtrl, storage, loadingCtrl) {
         var _this = this;
+        this.menuCtrl = menuCtrl;
         this.navCtrl = navCtrl;
         this.databaseProvider = databaseProvider;
         this.cityProvider = cityProvider;
@@ -620,6 +621,8 @@ var RespondentProfilePage = /** @class */ (function () {
         this.alertCtrl = alertCtrl;
         this.storage = storage;
         this.loadingCtrl = loadingCtrl;
+        this.isCommerce = false;
+        this.userType = "cidadão";
         this.age = 0;
         this.genderList = [];
         this.cities = [];
@@ -643,6 +646,32 @@ var RespondentProfilePage = /** @class */ (function () {
             _this.existsRespondent();
         }, 1000);
     }
+    RespondentProfilePage.prototype.changeUserType = function () {
+        if (this.userType == "comerciante") {
+            this.respondentForm.controls['isCommerce'].setValue(false);
+            this.isCommerce = false;
+            this.userType = "cidadão";
+        }
+        else {
+            this.respondentForm.controls['isCommerce'].setValue(true);
+            this.isCommerce = true;
+            this.userType = "comerciante";
+        }
+    };
+    RespondentProfilePage.prototype.openMenu = function () {
+        this.menuCtrl.open();
+    };
+    RespondentProfilePage.prototype.verifyLevel = function () {
+        if (this.points > 0 && this.points <= 7) {
+            this.level = "Bronze";
+        }
+        if (this.points > 7 && this.points <= 13) {
+            this.level = "Prata";
+        }
+        if (this.points > 13) {
+            this.level = "Ouro";
+        }
+    };
     RespondentProfilePage.prototype.createGenderList = function () {
         var gender1 = {
             value: "Masculino"
@@ -673,6 +702,15 @@ var RespondentProfilePage = /** @class */ (function () {
                 _this.respondentForm.controls['gender'].setValue(respondent.gender);
                 _this.respondentForm.controls['name'].setValue(respondent.name);
                 _this.respondentForm.controls['phone'].setValue(respondent.phone);
+                _this.userType = respondent.type;
+                if (respondent.type == "comerciante") {
+                    _this.respondentForm.controls['isCommerce'].setValue(true);
+                    _this.isCommerce = true;
+                }
+                else {
+                    _this.respondentForm.controls['isCommerce'].setValue(false);
+                    _this.isCommerce = false;
+                }
                 _this.age = respondent.age;
                 if (respondent.jobNeighborhood != null) {
                     _this.respondentForm.controls['jobNeighborhood'].setValue(respondent.jobNeighborhood);
@@ -680,6 +718,9 @@ var RespondentProfilePage = /** @class */ (function () {
                     _this.loadJobNeighborhoods();
                     _this.isSameJobCity = "";
                 }
+            }
+            else {
+                _this.isCommerce = false;
             }
         });
     };
@@ -721,6 +762,7 @@ var RespondentProfilePage = /** @class */ (function () {
                                     .then(function (data) {
                                     if (data != null) {
                                         _this.points = data;
+                                        _this.verifyLevel();
                                         _this.loadResidenceNeighborhoods();
                                     }
                                     else {
@@ -845,7 +887,8 @@ var RespondentProfilePage = /** @class */ (function () {
             age: [''],
             gender: [''],
             name: [''],
-            phone: ['']
+            phone: [''],
+            isCommerce: ['']
         });
         this.respondentForm.controls['residenceTimeRange'].setValue(0);
         this.respondentForm.controls['salaryRange'].setValue(0);
@@ -1011,6 +1054,7 @@ var RespondentProfilePage = /** @class */ (function () {
             respondent_1.gender = gender.value;
             respondent_1.name = name.value;
             respondent_1.phone = phone.value;
+            respondent_1.type = this.userType;
             this.respondentProvider.getRespondentByCPF(respondent_1.cpf)
                 .then(function (result) {
                 // respondente já está cadastrado
@@ -1129,9 +1173,9 @@ var RespondentProfilePage = /** @class */ (function () {
     };
     RespondentProfilePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
-            selector: 'page-respondent-profile',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\respondent-profile\respondent-profile.html"*/'<ion-header>\n  <ion-navbar>\n    <div offset-3 col-6 text-center>\n      <img class="img-responsive" src="assets/imgs/header-logo.png" />\n    </div>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <h2 col-12 text-center>Perfil do respondente</h2>\n  <ion-item>\n    <ion-label>Pontuação {{points}}</ion-label>\n  </ion-item>\n  <form [formGroup]="respondentForm" (submit)="saveRespondentInfo()">\n    <ion-item>\n      <ion-label floating>CPF</ion-label>\n      <ion-input [formControl]="respondentForm.controls[\'cpf\']" type="text"\n        [brmasker]="{mask: \'000.000.000-00\', type:\'num\', len: 14}" required></ion-input>\n      <div class="validator-error"\n        *ngIf="respondentForm.controls[\'cpf\'].hasError(\'required\') && respondentForm.controls[\'cpf\'].touched">* CPF é\n        obrigatório!\n      </div>\n      <div class="validator-error"\n        *ngIf="respondentForm.controls[\'cpf\'].hasError(\'invalid\') && respondentForm.controls[\'cpf\'].touched">* CPF é\n        inválido!\n      </div>\n    </ion-item>\n    <ion-item>\n      <ion-label floating>Nome</ion-label>\n      <ion-input [formControl]="respondentForm.controls[\'name\']"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label floating>Gênero</ion-label>\n      <ion-select [formControl]="respondentForm.controls[\'gender\']">\n        <ion-option *ngFor="let gender of genderList" [value]="gender.value">\n          {{gender.value}}\n        </ion-option>\n      </ion-select>\n    </ion-item>\n\n    <ion-item>\n      <ion-label floating>Email</ion-label>\n      <ion-input [email]="true" [formControl]="respondentForm.controls[\'email\']" type="email"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label floating>Telefone</ion-label>\n      <ion-input [brmasker]="{mask: \'(00)00000-0000\', type:\'num\', len: 15}" [formControl]="respondentForm.controls[\'phone\']"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label floating>Bairro de Residência</ion-label>\n      <ion-select [formControl]="respondentForm.controls[\'residenceNeighborhood\']" [compareWith]="compareFn">\n        <ion-option *ngFor="let residenceNeighborhood of residenceNeighborhoods" [value]="residenceNeighborhood">\n          {{residenceNeighborhood.name}}\n        </ion-option>\n      </ion-select>\n      <div class="validator-error"\n        *ngIf="respondentForm.controls[\'residenceNeighborhood\'].hasError(\'required\') && respondentForm.controls[\'residenceNeighborhood\'].touched">\n        * Bairro de Residência é obrigatório!\n      </div>\n    </ion-item>\n\n    <ion-item>\n      <ion-label floating>Cidade de Trabalho</ion-label>\n      <ion-select [formControl]="respondentForm.controls[\'jobCity\']" (ionChange)="loadJobNeighborhoods()"\n        [compareWith]="compareFn">\n        <ion-option *ngFor="let jobCity of cities" [value]="jobCity" (ionSelect)="selectCity(jobCity)">\n          {{jobCity.name}}\n        </ion-option>\n      </ion-select>\n    </ion-item>\n\n    <div class="{{isSameJobCity}}">\n      <ion-item>\n        <ion-label floating>Bairro de Trabalho</ion-label>\n        <ion-select [formControl]="respondentForm.controls[\'jobNeighborhood\']" [disabled]="jobNeighborhoodDisabled"\n          [compareWith]="compareFn">\n          <ion-option *ngFor="let jobNeighborhood of jobNeighborhoods" [value]="jobNeighborhood">\n            {{jobNeighborhood.name}}\n          </ion-option>\n        </ion-select>\n      </ion-item>\n    </div>\n\n    <ion-item>\n      <ion-label>Idade</ion-label>\n      <ion-range [min]="0" [max]="125" [step]="1" (ionChange)="getAgeRangeByValue($event)"\n        [formControl]="respondentForm.controls[\'age\']">\n        <ion-icon small range-left name="contact"></ion-icon>\n      </ion-range>\n      <ion-label>{{age}}</ion-label>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Tempo de Residência</ion-label>\n      <ion-range [min]="0" [max]="4" [step]="1" (ionChange)="getResidenceTimeNameByValue($event)"\n        [formControl]="respondentForm.controls[\'residenceTimeRange\']">\n        <ion-icon small range-left name="ios-home-outline"></ion-icon>\n      </ion-range>\n      <ion-label>{{residenceTimeName}}</ion-label>\n    </ion-item>\n    <ion-item>\n      <ion-label>Renda</ion-label>\n      <ion-range [min]="0" [max]="4" [step]="1" (ionChange)="getSalaryRangeNameByValue($event)"\n        [formControl]="respondentForm.controls[\'salaryRange\']">\n        <ion-icon small range-left name="logo-usd"></ion-icon>\n      </ion-range>\n      <ion-label>{{salaryRangeName}}</ion-label>\n    </ion-item>\n    <ion-row>\n      <ion-col text-center>\n        <button ion-button block class="button-background" type="submit" [disabled]="!respondentForm.valid">\n          Salvar\n        </button>\n      </ion-col>\n    </ion-row>\n  </form>\n</ion-content>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\respondent-profile\respondent-profile.html"*/,
+            selector: 'page-respondent-profile',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\respondent-profile\respondent-profile.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col offset-1 col-2 class="menu-icon-col">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col offset-1 col-6>\n        <img class="img-responsive" src="assets/imgs/header-logo.png" />\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <h2 col-12 text-center>Perfil do respondente</h2>\n  <!-- Pontuação -->\n  <ion-item *ngIf="points > 0">\n    <ion-thumbnail item-start>\n      <img *ngIf="level == \'Ouro\'" class="img-responsive" src="assets/imgs/level3.png" />\n      <img *ngIf="level == \'Prata\'" class="img-responsive" src="assets/imgs/level2.png" />\n      <img *ngIf="level == \'Bronze\'" class="img-responsive" src="assets/imgs/level1.png" />\n    </ion-thumbnail>\n    <h2>Você esta no nível {{level}} de</h2>\n    <h2>participação!</h2>\n    <p>Sua pontuação</p>\n    <ion-badge>{{points}} pontos</ion-badge>\n  </ion-item>\n  <!-- Pontuação -->\n  <!-- Pontuação -->\n  <ion-item *ngIf="points == 0">\n    <ion-thumbnail item-start>\n      <img class="img-responsive" src="assets/imgs/level0.png" />\n    </ion-thumbnail>\n    <h2>Responda os questionários </h2>\n    <h2>para aumentar</h2>\n    <h2>o <b>nível</b> de participação!</h2>\n    <p>Sua pontuação</p>\n    <ion-badge>{{points}} pontos</ion-badge>\n  </ion-item>\n  <!-- Pontuação -->\n\n  <!-- Comerciante ou não -->\n  <ion-item>\n    <ion-icon class="item-commerce" name="ios-basket-outline" item-start></ion-icon>\n    <ion-label>Possui comércio no centro?</ion-label>\n    <ion-checkbox item-end (ionChange)="changeUserType()" [(ngModel)]="isCommerce"></ion-checkbox>\n  </ion-item>\n  <!-- Comerciante ou não -->\n\n  <form [formGroup]="respondentForm" (submit)="saveRespondentInfo()">\n    <!-- CPF -->\n    <ion-item>\n      <ion-icon name="ios-card" item-start></ion-icon>\n      <ion-label floating>CPF</ion-label>\n      <ion-input [formControl]="respondentForm.controls[\'cpf\']" type="text"\n        [brmasker]="{mask: \'000.000.000-00\', type:\'num\', len: 14}" required>\n      </ion-input>\n      <div class="validator-error"\n        *ngIf="respondentForm.controls[\'cpf\'].hasError(\'required\') && respondentForm.controls[\'cpf\'].touched">* CPF é\n        obrigatório!\n      </div>\n      <div class="validator-error"\n        *ngIf="respondentForm.controls[\'cpf\'].hasError(\'invalid\') && respondentForm.controls[\'cpf\'].touched">* CPF é\n        inválido!\n      </div>\n    </ion-item>\n    <!-- CPF -->\n    <!-- Nome -->\n    <ion-item>\n      <ion-icon name="ios-create-outline" item-start></ion-icon>\n      <ion-label floating>Nome</ion-label>\n      <ion-input [formControl]="respondentForm.controls[\'name\']"></ion-input>\n    </ion-item>\n    <!-- Nome -->\n    <!-- Genero -->\n    <ion-item>\n      <ion-icon name="ios-people" item-start></ion-icon>\n      <ion-label floating>Gênero</ion-label>\n      <ion-select [formControl]="respondentForm.controls[\'gender\']">\n        <ion-option *ngFor="let gender of genderList" [value]="gender.value">\n          {{gender.value}}\n        </ion-option>\n      </ion-select>\n    </ion-item>\n    <!-- Genero -->\n    <!-- Email -->\n    <ion-item>\n      <ion-icon name="ios-at-outline" item-start></ion-icon>\n      <ion-label floating>Email</ion-label>\n      <ion-input [email]="true" [formControl]="respondentForm.controls[\'email\']" type="email"></ion-input>\n    </ion-item>\n    <!-- Email -->\n    <!-- Telefone -->\n    <ion-item>\n      <ion-icon name="ios-phone-portrait" item-start></ion-icon>\n      <ion-label floating>Telefone</ion-label>\n      <ion-input [brmasker]="{mask: \'(00)00000-0000\', type:\'num\', len: 15}"\n        [formControl]="respondentForm.controls[\'phone\']"></ion-input>\n    </ion-item>\n    <!-- Telefone -->\n    <!-- Bairro de residencia -->\n    <ion-item>\n      <ion-icon name="ios-home" item-start></ion-icon>\n      <ion-label floating>Bairro de Residência</ion-label>\n      <ion-select [formControl]="respondentForm.controls[\'residenceNeighborhood\']" [compareWith]="compareFn">\n        <ion-option *ngFor="let residenceNeighborhood of residenceNeighborhoods" [value]="residenceNeighborhood">\n          {{residenceNeighborhood.name}}\n        </ion-option>\n      </ion-select>\n      <div class="validator-error"\n        *ngIf="respondentForm.controls[\'residenceNeighborhood\'].hasError(\'required\') && respondentForm.controls[\'residenceNeighborhood\'].touched">\n        * Bairro de Residência é obrigatório!\n      </div>\n    </ion-item>\n    <!-- Bairro de residencia -->\n    <!-- Cidade de trabalho -->\n    <ion-item>\n      <ion-icon name="ios-stats" item-start></ion-icon>\n      <ion-label floating>Cidade de Trabalho</ion-label>\n      <ion-select [formControl]="respondentForm.controls[\'jobCity\']" (ionChange)="loadJobNeighborhoods()"\n        [compareWith]="compareFn">\n        <ion-option *ngFor="let jobCity of cities" [value]="jobCity" (ionSelect)="selectCity(jobCity)">\n          {{jobCity.name}}\n        </ion-option>\n      </ion-select>\n    </ion-item>\n    <!-- Cidade de trabalho -->\n    <!-- Bairro de trabalho -->\n    <div class="{{isSameJobCity}}">\n      <ion-item>\n        <ion-icon name="logo-twitter" item-start></ion-icon>\n        <ion-label floating>Bairro de Trabalho</ion-label>\n        <ion-select [formControl]="respondentForm.controls[\'jobNeighborhood\']" [disabled]="jobNeighborhoodDisabled"\n          [compareWith]="compareFn">\n          <ion-option *ngFor="let jobNeighborhood of jobNeighborhoods" [value]="jobNeighborhood">\n            {{jobNeighborhood.name}}\n          </ion-option>\n        </ion-select>\n      </ion-item>\n    </div>\n    <!-- Bairro de trabalho -->\n    <!-- Idade -->\n    <ion-item>\n      <ion-label>Idade</ion-label>\n      <ion-range [min]="0" [max]="125" [step]="1" (ionChange)="getAgeRangeByValue($event)"\n        [formControl]="respondentForm.controls[\'age\']">\n        <ion-icon range-left name="contact"></ion-icon>\n      </ion-range>\n      <ion-label>{{age}} anos</ion-label>\n    </ion-item>\n    <!-- Idade -->\n    <!-- Tempo de residência -->\n    <ion-item>\n      <ion-label>Tempo de Residência</ion-label>\n      <ion-range [min]="0" [max]="4" [step]="1" (ionChange)="getResidenceTimeNameByValue($event)"\n        [formControl]="respondentForm.controls[\'residenceTimeRange\']">\n        <ion-icon range-left name="ios-home-outline"></ion-icon>\n      </ion-range>\n      <ion-label>{{residenceTimeName}}</ion-label>\n    </ion-item>\n    <!-- Tempo de residência -->\n    <!-- Renda -->\n    <ion-item>\n      <ion-label>Renda</ion-label>\n      <ion-range [min]="0" [max]="4" [step]="1" (ionChange)="getSalaryRangeNameByValue($event)"\n        [formControl]="respondentForm.controls[\'salaryRange\']">\n        <ion-icon range-left name="logo-usd"></ion-icon>\n      </ion-range>\n      <ion-label>{{salaryRangeName}}</ion-label>\n    </ion-item>\n    <!-- Renda -->\n    <ion-row>\n      <ion-col text-center>\n        <button ion-button block class="button-background" type="submit" [disabled]="!respondentForm.valid">\n          Salvar\n        </button>\n      </ion-col>\n    </ion-row>\n  </form>\n</ion-content>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\respondent-profile\respondent-profile.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_8__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_city_city__["a" /* CityProvider */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_9__providers_respondent_respondent__["a" /* RespondentProvider */], __WEBPACK_IMPORTED_MODULE_7__providers_neighborhood_neighborhood__["a" /* NeighborhoodProvider */], __WEBPACK_IMPORTED_MODULE_10__providers_prioritization_prioritization__["a" /* PrioritizationProvider */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_11__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* LoadingController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* MenuController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_8__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_city_city__["a" /* CityProvider */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_9__providers_respondent_respondent__["a" /* RespondentProvider */], __WEBPACK_IMPORTED_MODULE_7__providers_neighborhood_neighborhood__["a" /* NeighborhoodProvider */], __WEBPACK_IMPORTED_MODULE_10__providers_prioritization_prioritization__["a" /* PrioritizationProvider */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_11__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* LoadingController */]])
     ], RespondentProfilePage);
     return RespondentProfilePage;
 }());
@@ -1158,13 +1202,13 @@ var Respondent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 305:
+/***/ 306:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_module__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_module__ = __webpack_require__(307);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__app_module__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives__ = __webpack_require__(307);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives__ = __webpack_require__(308);
 /* unused harmony namespace reexport */
 
 
@@ -1172,7 +1216,7 @@ var Respondent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 306:
+/***/ 307:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1216,7 +1260,7 @@ BrMaskerModule.ctorParameters = function () { return []; };
 
 /***/ }),
 
-/***/ 307:
+/***/ 308:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
