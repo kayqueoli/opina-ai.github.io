@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuestionariesListPageModule", function() { return QuestionariesListPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__questionaries_list__ = __webpack_require__(303);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__questionaries_list__ = __webpack_require__(302);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -27,7 +27,7 @@ var QuestionariesListPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__questionaries_list__["a" /* QuestionariesListPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__questionaries_list__["a" /* QuestionariesListPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__questionaries_list__["a" /* QuestionariesListPage */]),
             ],
         })
     ], QuestionariesListPageModule);
@@ -38,7 +38,7 @@ var QuestionariesListPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 303:
+/***/ 302:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -88,6 +88,7 @@ var QuestionariesListPage = /** @class */ (function () {
         this.questionaries = [];
         this.btnContinueDisabled = true;
         this.answers = [];
+        this.useGame = false;
         this.answeredQuestionaries = 0;
         this.totalQuestionaries = 0;
         this.progress = 0;
@@ -124,6 +125,8 @@ var QuestionariesListPage = /** @class */ (function () {
     //Verifica se as entidades estão armazenadas no IONIC Storage
     QuestionariesListPage.prototype.setEntities = function () {
         var _this = this;
+        this.loader = this.loadingCtrl.create();
+        this.loader.present();
         this.storage.get('plan')
             .then(function (data) {
             _this.plan = data;
@@ -140,24 +143,15 @@ var QuestionariesListPage = /** @class */ (function () {
                             // data[0].answered = true;
                             // data[2].answered = true;
                             //--------------Temporario--------------
+                            // Verificação do tipo de questionário [x]
+                            //--------------IMPORTANTE---------------
                             if (_this.respondent.type == "comerciante") {
-                                var temp_1 = [];
-                                data.forEach(function (quest) {
-                                    //ID do questionário do comerciante
-                                    if (quest.id == 660)
-                                        temp_1.push(quest);
-                                });
-                                data = temp_1;
+                                data = data.filter(function (item) { return item.id === 660; });
                             }
                             else {
-                                var temp_2 = [];
-                                data.forEach(function (quest) {
-                                    //ID do questionário dos questionários de diagnóstico
-                                    if (quest.id == 666 || quest.id == 661)
-                                        temp_2.push(quest);
-                                });
-                                data = temp_2;
+                                data = data.filter(function (item) { return item.id === 666 || item.id === 661; });
                             }
+                            //--------------IMPORTANTE---------------
                             for (var i = 0; i < data.length; i++) {
                                 if (data[i].answered)
                                     _this.progress = _this.progress + 1;
@@ -167,6 +161,7 @@ var QuestionariesListPage = /** @class */ (function () {
                             _this.progress = _this.progress / data.length;
                             _this.progress = _this.progress * 100;
                             _this.questionaries = _this.questionaryProvider.resolveQuestionaryIcon(data);
+                            _this.loader.dismiss();
                         }
                         else {
                             _this.questionaries = [];
@@ -256,14 +251,15 @@ var QuestionariesListPage = /** @class */ (function () {
         var _this = this;
         this.loader = this.loadingCtrl.create();
         this.loader.present();
-        //Temporário priorização do plano
-        //-----------------------------------------------
+        // Ajuste de priorização do plano [x]
+        //----------------MUITO IMPORTANTE--------------------
         if (this.plan.id == 666 && (this.questionary.id == 666 || this.questionary.id == 660 || this.questionary.id == 661)) {
             this.plan.usePrioritization = "0";
         }
         else {
             this.plan.usePrioritization = "1";
         }
+        //----------------MUITO IMPORTANTE--------------------
         this.storage.set('plan', this.plan).then(function () {
             //Consulta as questões do questionário
             _this.questionProvider.getAllQuestionsByQuestionary(_this.questionary, 0)
@@ -491,7 +487,7 @@ var QuestionariesListPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({
             selector: 'page-questionaries-list',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\questionaries-list\questionaries-list.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col offset-1 col-2 class="menu-icon-col">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-6>\n        <img class="img-responsive" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col col-2>\n        <button ion-button clear (click)="help()">\n          <ion-icon class="icon-help" name="help-circle"></ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <h1 class="text-questionary-list" text-center>Questionários - {{plan.name}}</h1>\n      <ion-col col-3 class="text-questionary-list">\n        <img class="text-img" src="assets/imgs/person1b.png">\n      </ion-col>\n      <ion-col col-9 class="text-questionary-list">\n        <h5>Responda os questionários para conseguir <strong>pontos</strong> para aumentar seu <strong>nível</strong> de participação!</h5>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12>\n        <!-- Lista de questionários -->\n        <ion-list radio-group>\n          <!-- Item da lista -->\n          <ion-item *ngFor="let questionary of questionaries" class="questionary-item-list">\n            <ion-thumbnail item-start>\n              <img class="questionary-img-list" src="assets/imgs/{{questionary.icon}}">\n            </ion-thumbnail>\n            <ion-label>\n              <h2>{{questionary.name}}</h2>\n              <div *ngIf="questionary.answered">\n                <p>Respondido!</p>\n              </div>\n            </ion-label>\n            <ion-radio disabled="{{questionary.answered}}" (ionSelect)="setQuestionary(questionary)"></ion-radio>\n          </ion-item>\n          <!-- Item da lista -->\n        </ion-list>\n        <!-- Lista de questionários -->\n      </ion-col>\n    </ion-row>\n\n  </ion-grid>\n</ion-content>\n<ion-footer>\n  <ion-grid>\n    <ion-row>\n      <button ion-button full class="button-background" (click)="navigate()" [disabled]="btnContinueDisabled">\n        Continuar\n      </button>\n    </ion-row>\n  </ion-grid>\n  <ion-navbar class="toolbar-progress">\n    <ion-title text-center class="toolbar-point">\n      <ion-icon range-right name="md-ribbon"></ion-icon>\n      {{points}} pontos\n    </ion-title>\n    <ion-range class="progress-bar" [min]="0" [max]="100" [step]="1" [(ngModel)]="progress" disabled>\n      <ion-icon range-left name="logo-buffer"></ion-icon>\n      <ion-icon range-right></ion-icon>\n    </ion-range>\n    <div text-center class="progres-text-uper">{{answeredQuestionaries}} de {{totalQuestionaries}} questionários\n      respondidos</div>\n  </ion-navbar>\n</ion-footer>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\questionaries-list\questionaries-list.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* ToastController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* MenuController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* NavController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__providers_database_database__["a" /* DatabaseProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_database_database__["a" /* DatabaseProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_8__providers_question_question__["b" /* QuestionProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__providers_question_question__["b" /* QuestionProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__providers_questionary_questionary__["c" /* QuestionaryProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_questionary_questionary__["c" /* QuestionaryProvider */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* LoadingController */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_9__providers_prioritization_prioritization__["a" /* PrioritizationProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9__providers_prioritization_prioritization__["a" /* PrioritizationProvider */]) === "function" && _k || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* ToastController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* MenuController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* NavController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__providers_database_database__["a" /* DatabaseProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_database_database__["a" /* DatabaseProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_8__providers_question_question__["b" /* QuestionProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__providers_question_question__["b" /* QuestionProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__providers_questionary_questionary__["c" /* QuestionaryProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_questionary_questionary__["c" /* QuestionaryProvider */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* LoadingController */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_9__providers_prioritization_prioritization__["a" /* PrioritizationProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9__providers_prioritization_prioritization__["a" /* PrioritizationProvider */]) === "function" && _k || Object])
     ], QuestionariesListPage);
     return QuestionariesListPage;
     var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;

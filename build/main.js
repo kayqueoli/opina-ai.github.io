@@ -51,7 +51,7 @@ var HomePage = /** @class */ (function () {
         this.btnContinueDisabled = true;
         this.btnCaseTestDisabled = false;
         this.isRuralZone = false;
-        this.isCaseTest = false;
+        this.useGame = false;
         this.loader = this.loadingCtrl.create();
         this.loader.present();
         this.restProvider.checkConnectionLocalVersion(this.navCtrl.getActiveChildNav());
@@ -139,6 +139,7 @@ var HomePage = /** @class */ (function () {
             .then(function (plans) {
             if (plans != null) {
                 _this.storage.set('city', city).then(function () {
+                    // Plano de mobilidade temporário [x]
                     //-----------------------TEMPORÁRIO-----------------------
                     var p = {
                         city: city,
@@ -320,7 +321,7 @@ var HomePage = /** @class */ (function () {
                                             .then(function () {
                                             _this.storage.remove('intro')
                                                 .then(function () {
-                                                _this.storage.remove('isCaseTest')
+                                                _this.storage.remove('useGame')
                                                     .then(function () {
                                                     console.log("Remoção de dados concluída");
                                                 })
@@ -373,7 +374,7 @@ var HomePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'page-home',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col offset-2 col-6>\n        <img class="img-responsive" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col offset-1 col-2>\n        <button ion-button clear (click)="help()">\n          <ion-icon class="icon-help" name="help-circle"></ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-12 text-center class="text-home">\n        <h1>Bem vindo!</h1>\n        <h5>Por favor, nos informe quem é você e selecione uma cidade para responder os questionários.</h5>\n      </ion-col>\n    </ion-row>\n    <ion-row class="margin-top-30-percent">\n      <ion-col col-12>\n\n        <ion-item>\n          <ion-label>Quem é você?</ion-label>\n          <ion-select [(ngModel)]="userType">\n            <ion-option *ngFor="let userType of userTypes" [value]="userType" (ionSelect)="selectUserType(userType)">\n              {{userType.name}}</ion-option>\n          </ion-select>\n        </ion-item>\n\n        <ion-item class="margin-top-30">\n          <ion-label>Selecione a cidade</ion-label>\n          <ion-select [(ngModel)]="city" disabled="{{userType == null}}">\n            <ion-option *ngFor="let city of cities" [value]="city" (ionSelect)="getAllPlansByCity(city)">{{city.name}}\n            </ion-option>\n          </ion-select>\n        </ion-item>\n\n        <ion-item class="margin-top-30">\n          <ion-label>Selecione o plano</ion-label>\n          <ion-select [(ngModel)]="plan" disabled="{{city == null}}">\n            <ion-option *ngFor="let plan of plans" [value]="plan"\n              (ionSelect)="getAllQuestionariesByPlan(plan); enableBtnContinue();">{{plan.name}}</ion-option>\n          </ion-select>\n        </ion-item>\n\n        <ion-item class="margin-top-30">\n          <ion-label>Você reside em zona rural?</ion-label>\n          <ion-toggle [disabled]="btnContinueDisabled" (ionChange)="changeZone()" [(ngModel)]="isRuralZone"\n            checked="false"></ion-toggle>\n        </ion-item>\n        \n        <button ion-button full class="button-background margin-top-30" (click)="navigateProfilePage()"\n          [disabled]="btnContinueDisabled">Continuar</button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */], __WEBPACK_IMPORTED_MODULE_3__providers_city_city__["a" /* CityProvider */], __WEBPACK_IMPORTED_MODULE_4__providers_plan_plan__["b" /* PlanProvider */], __WEBPACK_IMPORTED_MODULE_5__providers_questionary_questionary__["c" /* QuestionaryProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_6__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_7__providers_rest_rest__["a" /* RestProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ToastController */], __WEBPACK_IMPORTED_MODULE_3__providers_city_city__["a" /* CityProvider */], __WEBPACK_IMPORTED_MODULE_4__providers_plan_plan__["b" /* PlanProvider */], __WEBPACK_IMPORTED_MODULE_5__providers_questionary_questionary__["c" /* QuestionaryProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_6__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_7__providers_rest_rest__["a" /* RestProvider */]])
     ], HomePage);
     return HomePage;
 }());
@@ -585,7 +586,7 @@ var RestProvider = /** @class */ (function () {
                                             .then(function () {
                                             _this.storage.remove('intro')
                                                 .then(function () {
-                                                _this.storage.remove('isCaseTest')
+                                                _this.storage.remove('useGame')
                                                     .then(function () {
                                                     _this.storage.remove('helpHome')
                                                         .then(function () {
@@ -641,7 +642,7 @@ var RestProvider = /** @class */ (function () {
     };
     RestProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_network__["a" /* Network */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["l" /* Platform */], __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_6__ionic_native_app_version__["a" /* AppVersion */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_network__["a" /* Network */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["m" /* Platform */], __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_6__ionic_native_app_version__["a" /* AppVersion */]])
     ], RestProvider);
     return RestProvider;
 }());
@@ -688,11 +689,11 @@ var map = {
 		5
 	],
 	"../pages/intro/intro.module": [
-		297,
+		293,
 		6
 	],
 	"../pages/prioritization/prioritization.module": [
-		293,
+		295,
 		4
 	],
 	"../pages/questionaries-list/questionaries-list.module": [
@@ -700,11 +701,11 @@ var map = {
 		3
 	],
 	"../pages/questionary/questionary.module": [
-		295,
+		296,
 		2
 	],
 	"../pages/respondent-profile/respondent-profile.module": [
-		296,
+		297,
 		0
 	],
 	"../pages/thankyou/thankyou.module": [
@@ -753,10 +754,11 @@ var PrioritizationProvider = /** @class */ (function () {
         this.http = http;
         this.restProvider = restProvider;
     }
+    //-----------------------------IMPORTANTE-----------------------------
     PrioritizationProvider.prototype.getMetricItems = function (metricId) {
         var _this = this;
         return new Promise(function (resolve) {
-            //metricID : 1 - GUT | 2 - Escala qualitativa | (3-17) - Métricas do questionário de teste
+            //metricID : 1 - GUT | 2 - Escala qualitativa | (3-18) - Métricas do questionário de teste
             _this.http.get("https://api.neiru.org/get-metric-items-by-metric.php?metric=" + metricId, { headers: _this.restProvider.headers })
                 .subscribe(function (data) {
                 // Metric Itens temporários [x]
@@ -786,7 +788,7 @@ var PrioritizationProvider = /** @class */ (function () {
                     case "5":
                         var item4 = {
                             id: "7",
-                            name: "Atrações do Centro 2",
+                            name: "Motivos de não ir ao centro",
                             metric_id: "5",
                             metricValues: []
                         };
@@ -796,7 +798,7 @@ var PrioritizationProvider = /** @class */ (function () {
                     case "6":
                         var item5 = {
                             id: "8",
-                            name: "Ausências do Centro",
+                            name: "Atrações do Centro 2",
                             metric_id: "6",
                             metricValues: []
                         };
@@ -886,7 +888,7 @@ var PrioritizationProvider = /** @class */ (function () {
                     case "15":
                         var item14 = {
                             id: "17",
-                            name: "Concordancia e discordancia",
+                            name: "Atividades dos pedestres no Centro",
                             metric_id: "15",
                             metricValues: []
                         };
@@ -941,6 +943,7 @@ var PrioritizationProvider = /** @class */ (function () {
             });
         });
     };
+    //-----------------------------IMPORTANTE-----------------------------
     PrioritizationProvider.prototype.getMetricValues = function () {
         var _this = this;
         return new Promise(function (resolve) {
@@ -2479,6 +2482,7 @@ var QuestionProvider = /** @class */ (function () {
                 useNarrative: false
             };
             //-------------------------APLICAÇÃO DA NARRATIVA-------------------------
+            //----------------------------IMPORTANTE--------------------------------
             switch (quest.id) {
                 case "1001":
                     q.narrative = "No seu dia-a-dia, você costuma ir bastante ao centro ou poucas vezes? Você passa com frequência por lá?";
@@ -2629,6 +2633,7 @@ var QuestionProvider = /** @class */ (function () {
             }
             newQuestions.push(q);
             //-------------------------APLICAÇÃO DA NARRATIVA-------------------------
+            //----------------------------IMPORTANTE----------------------------------
         });
         return newQuestions;
     };
@@ -2850,11 +2855,12 @@ var RespondentProvider = /** @class */ (function () {
                 "salary_range": respondent.salaryRange,
                 "updated_at": updatedAt,
                 "token": token,
-                //Novos campos
+                //-----------------NOVOS CAMPOS-----------------
                 "age": respondent.age,
                 "gender": respondent.gender,
                 "name": respondent.name,
                 "phone": respondent.phone
+                //-----------------NOVOS CAMPOS-----------------
             };
             // this.http.post("https://api.neiru.org/update-respondent.php", data, {headers: this.restProvider.headers})
             //   .subscribe(data => {
@@ -2878,11 +2884,12 @@ var RespondentProvider = /** @class */ (function () {
                 "job_neighborhood_id": respondent.jobNeighborhood.id,
                 "salary_range": respondent.salaryRange,
                 "created_at": createdAt,
-                //Novos campos
+                //-----------------NOVOS CAMPOS-----------------
                 "age": respondent.age,
                 "gender": respondent.gender,
                 "name": respondent.name,
                 "phone": respondent.phone,
+                //-----------------NOVOS CAMPOS-----------------
                 "token": token
             };
             // this.http.post("https://api.neiru.org/insert-respondent.php", data, {headers: this.restProvider.headers})
@@ -2985,21 +2992,21 @@ var AppModule = /** @class */ (function () {
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/about/about.module#AboutPageModule', name: 'AboutPage', segment: 'about', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/thankyou/thankyou.module#ThankyouPageModule', name: 'ThankyouPage', segment: 'thankyou', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/prioritization/prioritization.module#PrioritizationPageModule', name: 'PrioritizationPage', segment: 'prioritization', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/intro/intro.module#IntroPageModule', name: 'IntroPage', segment: 'intro', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/questionaries-list/questionaries-list.module#QuestionariesListPageModule', name: 'QuestionariesListPage', segment: 'questionaries-list', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/prioritization/prioritization.module#PrioritizationPageModule', name: 'PrioritizationPage', segment: 'prioritization', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/questionary/questionary.module#QuestionaryPageModule', name: 'QuestionaryPage', segment: 'questionary', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/respondent-profile/respondent-profile.module#RespondentProfilePageModule', name: 'RespondentProfilePage', segment: 'respondent-profile', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/intro/intro.module#IntroPageModule', name: 'IntroPage', segment: 'intro', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/respondent-profile/respondent-profile.module#RespondentProfilePageModule', name: 'RespondentProfilePage', segment: 'respondent-profile', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_15__angular_common_http__["b" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_9__ionic_storage__["a" /* IonicStorageModule */].forRoot()
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicApp */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicApp */]],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */],
@@ -3008,7 +3015,7 @@ var AppModule = /** @class */ (function () {
             providers: [
                 __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_6__ionic_native_splash_screen__["a" /* SplashScreen */],
-                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicErrorHandler */] },
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicErrorHandler */] },
                 __WEBPACK_IMPORTED_MODULE_7__providers_database_database__["a" /* DatabaseProvider */],
                 __WEBPACK_IMPORTED_MODULE_8__providers_rest_rest__["a" /* RestProvider */],
                 __WEBPACK_IMPORTED_MODULE_10__providers_city_city__["a" /* CityProvider */],
@@ -3101,13 +3108,13 @@ var MyApp = /** @class */ (function () {
         alert.present();
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* Nav */])
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* Nav */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\app\app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button ion-item (click)="navigateQuestionaryList()" menuClose>\n        <ion-icon range-left name="ios-list"></ion-icon>\n        Questionários\n      </button>\n      <button ion-item (click)="navigateProfile()" menuClose>\n        <ion-icon range-left name="md-person"></ion-icon>\n        Perfil\n      </button>\n      <button ion-item (click)="navigateToAbout()" menuClose>\n        <ion-icon range-left name="md-information-circle"></ion-icon>\n        Sobre\n      </button>\n      <button ion-item (click)="refreshData()" menuClose>\n        <ion-icon range-left name="md-remove-circle"></ion-icon>\n        Limpar dados\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<ion-nav id="nav" #content [root]="rootPage"></ion-nav>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\app\app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* Platform */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_5__providers_rest_rest__["a" /* RestProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* Platform */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_5__providers_rest_rest__["a" /* RestProvider */]])
     ], MyApp);
     return MyApp;
 }());
@@ -3185,6 +3192,8 @@ var QuestionaryProvider = /** @class */ (function () {
             });
         });
     };
+    //-------------------AJUSTE NO ÍCONE DO QUESTIONÁRIO-------------------
+    //-----------------------------IMPORTANTE------------------------------
     QuestionaryProvider.prototype.resolveQuestionaryIcon = function (questionaries) {
         var questionariesParse = [];
         questionaries.forEach(function (questionary) {
@@ -3333,6 +3342,8 @@ var QuestionaryProvider = /** @class */ (function () {
     return QuestionaryProvider;
 }());
 
+//-------------------AJUSTE NO ÍCONE DO QUESTIONÁRIO-------------------
+//-------------------------IMPORTANTE-------------------------
 var Questionary = /** @class */ (function () {
     function Questionary() {
     }
@@ -3405,7 +3416,7 @@ var IntroPage = /** @class */ (function () {
         this.plans = [];
         this.questionaries = [];
         this.isRuralZone = false;
-        this.isCaseTest = false;
+        this.useGame = false;
         this.changeZone();
         setTimeout(function () {
             _this.existsAppCityPlan();
@@ -3714,14 +3725,14 @@ var IntroPage = /** @class */ (function () {
         alert.present();
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Slides */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Slides */])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Slides */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Slides */])
     ], IntroPage.prototype, "slides", void 0);
     IntroPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'page-intro',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\intro\intro.html"*/'<ion-header>\n  <ion-navbar>\n    <div offset-3 col-6 text-center>\n      <img class="img-responsive" src="assets/imgs/header-logo.png" />\n    </div>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-slides pager (ionSlideTap)="nextSlide($event)">\n    <!-- Slide 1 -->\n    <ion-slide class="slide-img" padding>\n      <div class="slide-header">\n        <ion-header class="slide-header">\n          <div padding-bottom text-right>\n            <a (click)="skip()">pular</a>\n            <ion-icon name="arrow-dropright"></ion-icon>\n          </div>\n        </ion-header>\n        <h1 class="title-box">Olá, seja bem vindo!</h1>\n      </div>\n\n      <img class="img-responsive"\n        src="assets/imgs/intro1.jpg" />\n      <div class="dialogue-box">\n        <div class="tdialogue-box-text">\n          <p class="text-dialog"> \n            Olá! Que bom que você quer <strong>participar</strong> na requalificação do <strong>centro</strong> de <strong>Pouso Alegre</strong>!\n          </p>\n          <p class="text-dialog"> \n            Vamos conhecer essa <strong>possibilidade</strong>?\n          </p>\n        </div>\n      </div>\n    </ion-slide>\n    <!-- Slide 1 -->\n    <!-- Slide 2 -->\n    <ion-slide class="slide-img" padding>\n      <ion-header class="slide-header">\n        <div margin-bottom text-right>\n          <a (click)="skip()">pular</a>\n          <ion-icon name="arrow-dropright"></ion-icon>\n        </div>\n      </ion-header>\n      <h3 class="title-box">Você sabe o que é requalificação urbana?</h3>\n      <img class="img-responsive"\n        src="assets/imgs/intro2.jpg"  />\n      <div class="dialogue-box">\n        <div class="tdialogue-box-text">\n          <p class="text-dialog">\n            Com o <strong>crescimento</strong> da cidade, a <strong>área central</strong> tem apresentado problemas como\n            desgaste da <strong>pavimentação</strong>, falta de padronização dos <strong>passeios</strong> e <strong>calçadas</strong> estreitas.</p>\n        </div>\n      </div>\n    </ion-slide>\n    <!-- Slide 2 -->\n    <!-- Slide 3 -->\n    <ion-slide class="slide-img" padding>\n      <ion-header class="slide-header">\n        <div margin-bottom text-right>\n          <a (click)="skip()">pular</a>\n          <ion-icon name="arrow-dropright"></ion-icon>\n        </div>\n      </ion-header>\n      <h3 class="title-box">A requalificação da áraea central</h3>\n      <img class="img-responsive"\n      src="assets/imgs/intro5.jpg" />\n      <div class="dialogue-box">\n        <div class="tdialogue-box-text">\n          <p class="text-dialog">\n            Para resolver este problema as <strong>obras de requalificação</strong> tem como  <strong>objetivo:</strong> troca de <strong>pavimento</strong>, alargamento de <strong>calçadas</strong>,\n            instalação de <strong>equipamentos</strong> urbanos, <strong>arborização</strong>, <strong>faixas elevadas</strong> e <strong>semáforos</strong>. \n          </p>\n        </div>\n      </div>\n    </ion-slide>\n    <!-- Slide 3 -->\n    <!-- Slide 4 -->\n    <ion-slide class="slide-img" padding>\n      <ion-header class="slide-header">\n        <div margin-bottom text-right>\n          <a (click)="skip()">pular</a>\n          <ion-icon name="arrow-dropright"></ion-icon>\n        </div>\n      </ion-header>\n      <h3 class="title-box">A requalificação da áraea central</h3>\n      <img class="img-responsive"\n      src="assets/imgs/intro6.jpg" />\n      <div class="dialogue-box">\n        <div class="tdialogue-box-text">\n          <p class="text-dialog">\n            Assim, a <strong>requalificação</strong> pode ampliar a <strong>mobilidade urbana</strong> e tornar a <strong>área central</strong> de <strong>Pouso Alegre</strong> mais <strong>atrativa</strong> para os <strong>pedestres</strong> e <strong>visitantes</strong>.</p>\n        </div>\n      </div>\n    </ion-slide>\n    <!-- Slide 4 -->\n    <!-- Slide 5 -->\n    <ion-slide class="slide-img" padding>\n      <ion-header class="slide-header">\n        <div margin-bottom text-right>\n          <a (click)="skip()">pular</a>\n          <ion-icon name="arrow-dropright"></ion-icon>\n        </div>\n      </ion-header>\n      <h2 class="title-box">Sua opinião é importante!</h2>\n      <img class="img-responsive"\n      src="assets/imgs/intro3.jpg" />\n      <div class="dialogue-box">\n        <div class="tdialogue-box-text">\n          <p class="text-dialog">\n            Sua <strong>participação</strong> possui grande importância. Essa <strong>pesquisa de opinião</strong>\n            possibilitará uma analise detalhada das necessidades da <strong>população</strong> de <strong>Pouso Alegre</strong>.\n          </p>\n        </div>\n      </div>\n    </ion-slide>\n    <!-- Slide 5 -->\n    <!-- Slide 6 -->\n    <ion-slide class="slide-img" padding>\n       <!-- Pontuação -->\n       <ion-grid>\n          <ion-row>\n            <ion-col col-3>\n              <img src="assets/imgs/premio1.png" />\n            </ion-col>\n            <ion-col text-justify col-9>\n              <h5 class="title-box-last">Consiga <strong>pontos</strong> para aumentar seu nível de <strong>participação</strong>!</h5>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n        <!-- Pontuação -->\n      <img class="img-responsive" src="assets/imgs/intro4.jpg" />\n      <div class="dialogue-box-last">\n        <div class="tdialogue-box-text">\n          <p class="text-dialog">\n            Respondendo os questionários você coleta <strong>pontos</strong> que refletem sua <strong>participação</strong>!\n            <strong>Participe</strong> agora nos enviando sua <strong>opinião</strong>!\n          </p>\n        </div>\n      </div>\n      <a ion-button margin-bottom (click)="skip()">\n        Participar!\n      </a>\n    </ion-slide>\n    <!-- Slide 6 -->\n  </ion-slides>\n</ion-content>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\intro\intro.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5__providers_city_city__["a" /* CityProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_plan_plan__["b" /* PlanProvider */], __WEBPACK_IMPORTED_MODULE_4__providers_questionary_questionary__["c" /* QuestionaryProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_7__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_8__providers_rest_rest__["a" /* RestProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5__providers_city_city__["a" /* CityProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_plan_plan__["b" /* PlanProvider */], __WEBPACK_IMPORTED_MODULE_4__providers_questionary_questionary__["c" /* QuestionaryProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */], __WEBPACK_IMPORTED_MODULE_7__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_8__providers_rest_rest__["a" /* RestProvider */]])
     ], IntroPage);
     return IntroPage;
 }());

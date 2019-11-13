@@ -1,6 +1,6 @@
 webpackJsonp([4],{
 
-/***/ 293:
+/***/ 295:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrioritizationPageModule", function() { return PrioritizationPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__prioritization__ = __webpack_require__(302);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__prioritization__ = __webpack_require__(303);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -27,7 +27,7 @@ var PrioritizationPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__prioritization__["a" /* PrioritizationPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__prioritization__["a" /* PrioritizationPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__prioritization__["a" /* PrioritizationPage */]),
             ],
         })
     ], PrioritizationPageModule);
@@ -38,7 +38,7 @@ var PrioritizationPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 302:
+/***/ 303:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -81,6 +81,8 @@ var PrioritizationPage = /** @class */ (function () {
         this.disableSteps = false;
         this.scaleView = false;
         this.itemView = false;
+        this.checkBoxView = false;
+        this.useGame = false;
         this.prioritizations = navParams.get('prioritizations');
         this.answers = navParams.get('answers');
         this.answersNeighborhoods = navParams.get('answersNeighborhoods');
@@ -102,7 +104,9 @@ var PrioritizationPage = /** @class */ (function () {
             this.disableSteps = true;
         this.progress = ((this.currentQuestionIndex + 1) / this.questions.length) * 100;
         this.totalQuestions = this.questions.length;
+        //---------------------MUITO IMPORTANTE---------------------
         this.resolveMetricItem();
+        //---------------------MUITO IMPORTANTE---------------------
     }
     PrioritizationPage.prototype.presentToast = function () {
         var toast = this.toastCtrl.create({
@@ -115,6 +119,8 @@ var PrioritizationPage = /** @class */ (function () {
     PrioritizationPage.prototype.openMenu = function () {
         this.menuCtrl.open();
     };
+    //---------------------MUITO IMPORTANTE---------------------
+    //---------------DEFINE A EXIBIÇÃO DA RESPOSTA---------------
     PrioritizationPage.prototype.resolveMetricItem = function () {
         switch (this.currentMetricItem.name) {
             case "Gravidade":
@@ -160,13 +166,13 @@ var PrioritizationPage = /** @class */ (function () {
                 this.itemView = true;
                 break;
             case "Atrações do Centro":
-                this.itemView = true;
+                this.checkBoxView = true;
                 break;
             case "Motivos de não ir ao centro":
-                this.itemView = true;
+                this.checkBoxView = true;
                 break;
             case "Atrações do Centro 2":
-                this.itemView = true;
+                this.checkBoxView = true;
                 break;
             case "Equipamentos e comércios":
                 this.itemView = true;
@@ -181,28 +187,33 @@ var PrioritizationPage = /** @class */ (function () {
                 this.itemView = true;
                 break;
             case "Pontos fortes para o comerciante":
-                this.itemView = true;
+                this.checkBoxView = true;
                 break;
             case "Pontos fracos para o comerciante":
-                this.itemView = true;
+                this.checkBoxView = true;
                 break;
             case "Ausências do Centro":
                 this.itemView = true;
                 break;
             case "Necessidades do Centro":
-                this.itemView = true;
+                this.checkBoxView = true;
+                break;
+            case "Atividades dos pedestres no Centro":
+                this.checkBoxView = true;
                 break;
             case "Pontos fortes da rua":
-                this.itemView = true;
+                this.checkBoxView = true;
                 break;
             case "Pontos fracos da rua":
-                this.itemView = true;
+                this.checkBoxView = true;
                 break;
             case "Frequência de uso dos espaços públicos":
                 this.itemView = true;
                 break;
         }
     };
+    //---------------DEFINE A EXIBIÇÃO DA RESPOSTA---------------
+    //---------------------MUITO IMPORTANTE---------------------
     PrioritizationPage.prototype.getDescriptionByPriorization = function () {
         //------------------------------DEFINIÇÃO DE MÉTRICA------------------------------
         switch (this.currentMetricItem.name) {
@@ -261,9 +272,67 @@ var PrioritizationPage = /** @class */ (function () {
             return false;
         }
     };
+    PrioritizationPage.prototype.updateMultiMetricValue = function (metricValue, checked) {
+        var _this = this;
+        if (checked) {
+            if (metricValue.name == "Nenhum dos anteriores" || metricValue.name == "Nenhuma das anteriores") {
+                this.currentMetricItem.metricValues.forEach(function (metric) {
+                    _this.removeMultiMetricValue(metric);
+                });
+                var length_1 = this.checkBox.length;
+                var cont_1 = 1;
+                this.checkBox.forEach(function (box) {
+                    if (cont_1 < length_1) {
+                        box.checked = false;
+                        cont_1++;
+                    }
+                });
+            }
+            else {
+                if (this.checkBox.last.checked) {
+                    this.checkBox.last.checked = false;
+                    var metricRemove = this.currentMetricItem.metricValues.find(function (metric) {
+                        metric.name == "Nenhum dos anteriores" || metric.name == "Nenhuma das anteriores";
+                    });
+                    this.removeMultiMetricValue(metricRemove);
+                }
+            }
+            this.createMultiMetricValue(metricValue);
+        }
+        else {
+            this.removeMultiMetricValue(metricValue);
+        }
+        this.scrollToBottom();
+    };
+    PrioritizationPage.prototype.createMultiMetricValue = function (metricValue) {
+        var prioritization = new Prioritization();
+        prioritization.plan = this.plan;
+        prioritization.questionary = this.questionary;
+        prioritization.question = this.currentQuestion;
+        prioritization.respondent = this.respondent;
+        prioritization.metricItem = this.currentMetricItem;
+        prioritization.metricValue = metricValue;
+        prioritization.created_at = new Date().toISOString();
+        this.prioritizations.push(prioritization);
+        this.btnContinueDisabled = false;
+    };
+    PrioritizationPage.prototype.removeMultiMetricValue = function (metricValue) {
+        var _this = this;
+        this.prioritizations =
+            this.prioritizations.filter(function (prioritization) {
+                return !(prioritization.plan.id == _this.plan.id
+                    && prioritization.questionary.id == _this.questionary.id
+                    && prioritization.respondent.id == _this.respondent.id
+                    && prioritization.question.id == _this.currentQuestion.id
+                    && prioritization.metricItem.id == _this.currentMetricItem.id
+                    && prioritization.metricValue.id == metricValue.id);
+            });
+    };
     PrioritizationPage.prototype.nextStep = function () {
-        this.deletePrioritization();
-        this.createPrioritization();
+        if (!this.checkBoxView) {
+            this.deletePrioritization();
+            this.createPrioritization();
+        }
         this.navigate();
     };
     PrioritizationPage.prototype.createPrioritization = function () {
@@ -279,7 +348,14 @@ var PrioritizationPage = /** @class */ (function () {
     };
     PrioritizationPage.prototype.deletePrioritization = function () {
         var _this = this;
-        this.prioritizations = this.prioritizations.filter(function (prioritization) { return !(prioritization.plan.id == _this.plan.id && prioritization.questionary.id == _this.questionary.id && prioritization.respondent.id == _this.respondent.id && prioritization.question.id == _this.currentQuestion.id && prioritization.metricItem.id == _this.currentMetricItem.id); });
+        this.prioritizations =
+            this.prioritizations.filter(function (prioritization) {
+                return !(prioritization.plan.id == _this.plan.id
+                    && prioritization.questionary.id == _this.questionary.id
+                    && prioritization.respondent.id == _this.respondent.id
+                    && prioritization.question.id == _this.currentQuestion.id
+                    && prioritization.metricItem.id == _this.currentMetricItem.id);
+            });
     };
     PrioritizationPage.prototype.createAnswer = function (plan, questionary, currentQuestion, respondent, questionAnswer) {
         var answer = new __WEBPACK_IMPORTED_MODULE_2__providers_questionary_questionary__["a" /* Answer */]();
@@ -462,16 +538,21 @@ var PrioritizationPage = /** @class */ (function () {
         alert.present();
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Content */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Content */])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Content */]),
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Content */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Content */]) === "function" && _a || Object)
     ], PrioritizationPage.prototype, "content", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* ViewChildren */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Checkbox */]),
+        __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* QueryList */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* QueryList */]) === "function" && _b || Object)
+    ], PrioritizationPage.prototype, "checkBox", void 0);
     PrioritizationPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-prioritization',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\prioritization\prioritization.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col offset-1 col-2 class="menu-icon-col">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-6>\n        <img class="img-responsive" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col col-2>\n        <button *ngIf="currentQuestion.useNarrative" ion-button clear (click)="help()">\n          <ion-icon class="icon-help" name="alert"></ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row class="context-area">\n      <ion-col col-12 class="context-area-container">\n        <img class="context-area-icon" src="assets/imgs/{{currentQuestion.contextAreaIcon}}" />\n        <ion-label class="context-area-title">\n          {{currentQuestion.contextArea}}\n        </ion-label>\n      </ion-col>\n    </ion-row>\n    <!-- Enunciado da questão -->\n    <div class="hr"></div>\n    <ion-row class="margin-top-30">\n      <ion-col col-12 text-justify class="question">\n        <h1>{{currentQuestion.question}}</h1>\n      </ion-col>\n      <ion-col col-12 text-center *ngIf="scaleView">\n        <h3>{{getDescriptionByPriorization()}}</h3>\n        <h2  class="{{metricValueColor}}">{{selectedMetricValue.name}}</h2>\n      </ion-col>\n    </ion-row>\n    <!-- Enunciado da questão -->\n    <!-- Seleção pela escala do emotion -->\n    <ion-row *ngIf="scaleView" padding-top margin-top text-center>\n      <ion-col *ngFor="let metricValue of currentMetricItem.metricValues">\n        <img *ngIf="!isMetricValueSelected(metricValue)" class="img-responsive" src="assets/imgs/{{metricValue.icon}}"\n          (click)="selectMetricValue(metricValue)" />\n        <img *ngIf="isMetricValueSelected(metricValue)" class="img-responsive"\n          src="assets/imgs/{{metricValue.iconSelected}}" (click)="selectMetricValue(metricValue)" />\n      </ion-col>\n    </ion-row>\n    <!-- Seleção pela escala do emotion -->\n    <!-- Seleção por itens -->\n    <ion-row *ngIf="itemView">\n      <!-- <div offset-1></div> -->\n      <ion-col col-12>\n        <ion-list radio-group>\n          <ion-item *ngFor="let metricValue of currentMetricItem.metricValues" class="radio-item">\n            <ion-label>{{metricValue.name}}</ion-label>\n            <ion-radio (ionSelect)="selectMetricValue(metricValue)"></ion-radio>\n          </ion-item>\n        </ion-list>\n      </ion-col>\n    </ion-row>\n    <!-- Seleção por itens -->\n    <ion-row>\n      <ion-col col-12 text-center>\n        <button ion-button full class="button-background" (click)="nextStep()"\n          [disabled]="btnContinueDisabled">Continuar\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n<ion-footer>\n  <ion-navbar class="toolbar-progress">\n    <div *ngIf="!disableSteps" text-center class="progres-text-uper">{{step}} de {{totalSteps}}</div>\n    <ion-range *ngIf="!disableSteps" class="step-bar" [min]="0" [max]="metricItems.length" [step]="1" [(ngModel)]="step"\n      disabled>\n      <ion-icon range-right></ion-icon>\n    </ion-range>\n    <ion-title text-center>\n      <ion-icon range-right name="md-ribbon"></ion-icon>\n      {{points}} pontos\n    </ion-title>\n    <ion-range class="progress-bar" [min]="0" [max]="100" [step]="1" [(ngModel)]="progress" disabled>\n      <ion-icon range-left name="md-clipboard"></ion-icon>\n      <ion-icon range-right></ion-icon>\n    </ion-range>\n    <div text-center class="progres-text-down">{{currentQuestionIndex + 1}} de {{totalQuestions}} questões</div>\n  </ion-navbar>\n</ion-footer>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\prioritization\prioritization.html"*/,
+            selector: 'page-prioritization',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\prioritization\prioritization.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col offset-1 col-2 class="menu-icon-col">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-6>\n        <img class="img-responsive" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col col-2>\n        <button *ngIf="currentQuestion.useNarrative" ion-button clear (click)="help()">\n          <ion-icon class="icon-help" name="alert"></ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row class="context-area">\n      <ion-col col-12 class="context-area-container">\n        <img class="context-area-icon" src="assets/imgs/{{currentQuestion.contextAreaIcon}}" />\n        <ion-label class="context-area-title">\n          {{currentQuestion.contextArea}}\n        </ion-label>\n      </ion-col>\n    </ion-row>\n    <!-- Enunciado da questão -->\n    <div class="hr"></div>\n    <ion-row class="margin-top-30">\n      <ion-col col-12 text-justify class="question">\n        <h1>{{currentQuestion.question}}</h1>\n      </ion-col>\n      <ion-col col-12 text-center *ngIf="scaleView">\n        <h3>{{getDescriptionByPriorization()}}</h3>\n        <h2 class="{{metricValueColor}}">{{selectedMetricValue.name}}</h2>\n      </ion-col>\n    </ion-row>\n    <!-- Enunciado da questão -->\n    <!-- Seleção pela escala do emotion -->\n    <ion-row *ngIf="scaleView" padding-top margin-top text-center>\n      <ion-col *ngFor="let metricValue of currentMetricItem.metricValues">\n        <img *ngIf="!isMetricValueSelected(metricValue)" class="img-responsive" src="assets/imgs/{{metricValue.icon}}"\n          (click)="selectMetricValue(metricValue)" />\n        <img *ngIf="isMetricValueSelected(metricValue)" class="img-responsive"\n          src="assets/imgs/{{metricValue.iconSelected}}" (click)="selectMetricValue(metricValue)" />\n      </ion-col>\n    </ion-row>\n    <!-- Seleção pela escala do emotion -->\n    <!-- Seleção por itens -->\n    <ion-row *ngIf="itemView">\n      <ion-col col-12>\n        <ion-list radio-group>\n          <ion-item *ngFor="let metricValue of currentMetricItem.metricValues" class="radio-item">\n            <ion-label>{{metricValue.name}}</ion-label>\n            <ion-radio (ionSelect)="selectMetricValue(metricValue)"></ion-radio>\n          </ion-item>\n        </ion-list>\n      </ion-col>\n    </ion-row>\n    <!-- Seleção por itens -->\n    <!-- Seleção por checkbox -->\n    <ion-row *ngIf="checkBoxView">\n      <ion-col col-12>\n        <ion-list radio-group>\n          <ion-item *ngFor="let metricValue of currentMetricItem.metricValues">\n            <ion-label>{{metricValue.name}}</ion-label>\n            <ion-checkbox (ionChange)="updateMultiMetricValue(metricValue,$event.checked)"></ion-checkbox>\n          </ion-item>\n        </ion-list>\n      </ion-col>\n    </ion-row>\n    <!-- Seleção por checkbox -->\n    <ion-row>\n      <ion-col col-12 text-center>\n        <button ion-button full class="button-background" (click)="nextStep()"\n          [disabled]="btnContinueDisabled">Continuar\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n<ion-footer>\n  <ion-navbar class="toolbar-progress">\n    <div *ngIf="!disableSteps" text-center class="progres-text-uper">{{step}} de {{totalSteps}}</div>\n    <ion-range *ngIf="!disableSteps" class="step-bar" [min]="0" [max]="metricItems.length" [step]="1" [(ngModel)]="step"\n      disabled>\n      <ion-icon range-right></ion-icon>\n    </ion-range>\n    <ion-title text-center>\n      <ion-icon range-right name="md-ribbon"></ion-icon>\n      {{points}} pontos\n    </ion-title>\n    <ion-range class="progress-bar" [min]="0" [max]="100" [step]="1" [(ngModel)]="progress" disabled>\n      <ion-icon range-left name="md-clipboard"></ion-icon>\n      <ion-icon range-right></ion-icon>\n    </ion-range>\n    <div text-center class="progres-text-down">{{currentQuestionIndex + 1}} de {{totalQuestions}} questões</div>\n  </ion-navbar>\n</ion-footer>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\prioritization\prioritization.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* MenuController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3__providers_prioritization_prioritization__["a" /* PrioritizationProvider */]])
+        __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ToastController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* MenuController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_3__providers_prioritization_prioritization__["a" /* PrioritizationProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_prioritization_prioritization__["a" /* PrioritizationProvider */]) === "function" && _k || Object])
     ], PrioritizationPage);
     return PrioritizationPage;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
 }());
 
 var Prioritization = /** @class */ (function () {

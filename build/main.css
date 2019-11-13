@@ -25734,7 +25734,6 @@ ion-footer .toolbar-background {
 .hr {
   border-bottom: 1px solid #ccc;
   margin: 20px 0 0 0;
-  width: 100%;
 }
 
 .center-logo {
@@ -26149,6 +26148,21 @@ page-prioritization ion-icon.menu-icon.icon.icon-md.ion-md-menu {
 
 page-prioritization ion-col.menu-icon-col.col {
   margin-left: 7%;
+}
+
+page-prioritization .checkbox-md .checkbox-icon {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+page-prioritization .checkbox-md .checkbox-checked .checkbox-inner {
+  left: 5.5px;
+  top: 2px;
+}
+
+page-prioritization ion-item.item.item-block.item-md.item-checkbox.item-checkbox-checked {
+  color: #005bff;
 }
 
 page-questionaries-list .button-md {
