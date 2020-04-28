@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 296:
+/***/ 295:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuestionaryPageModule", function() { return QuestionaryPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__questionary__ = __webpack_require__(304);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__questionary__ = __webpack_require__(303);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +38,7 @@ var QuestionaryPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 304:
+/***/ 303:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -46,10 +46,12 @@ var QuestionaryPageModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_questionary_questionary__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_question_question__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_question_question__ = __webpack_require__(211);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_database_database__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_prioritization_prioritization__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_answer_answer__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__home_home__ = __webpack_require__(109);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -59,6 +61,44 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
 
 
 
@@ -67,7 +107,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var QuestionaryPage = /** @class */ (function () {
-    function QuestionaryPage(toastCtrl, menuCtrl, navCtrl, navParams, questionProvider, storage, databaseProvider, loadingCtrl, alertCtrl, priorizationProvider) {
+    function QuestionaryPage(toastCtrl, menuCtrl, navCtrl, navParams, questionProvider, storage, databaseProvider, loadingCtrl, alertCtrl, priorizationProvider, answerProvider, keyboard, platform) {
         var _this = this;
         this.toastCtrl = toastCtrl;
         this.menuCtrl = menuCtrl;
@@ -79,6 +119,9 @@ var QuestionaryPage = /** @class */ (function () {
         this.loadingCtrl = loadingCtrl;
         this.alertCtrl = alertCtrl;
         this.priorizationProvider = priorizationProvider;
+        this.answerProvider = answerProvider;
+        this.keyboard = keyboard;
+        this.platform = platform;
         this.neighborhoodsSelected = [];
         this.questionAnswer = -1;
         this.showNeighborhoodList = false;
@@ -87,13 +130,19 @@ var QuestionaryPage = /** @class */ (function () {
         this.isDontKnowSelected = false;
         this.btnContinueDisabled = true;
         this.showDontNow = true;
+        this.showAnswerText = false;
+        this.showYesNo = false;
+        this.answerText = "";
         this.useGame = false;
+        this.endQuestion = false;
         this.NO = 0;
         this.YES = 1;
         this.DONT_KNOW = 2;
         this.MANY_NEIGHBORHOODS_PROBLEM = 0;
         this.CITY_PROBLEM = 1;
         this.RESPONDENT_NEIGHBORHOOD_PROBLEM = 2;
+        this.storage.get('useGame').then(function (data) { return _this.useGame = data; });
+        this.getUserType();
         this.progress = 0;
         this.answers = navParams.get('answers');
         this.answersNeighborhoods = navParams.get('answersNeighborhoods');
@@ -112,10 +161,29 @@ var QuestionaryPage = /** @class */ (function () {
             else {
                 _this.navigateBack();
             }
-        })
-            .catch(function () { return _this.navigateBack(); });
-        console.log("Criei página Questionário");
+        }).catch(function () { return _this.navigateBack(); });
     }
+    QuestionaryPage.prototype.getUserType = function () {
+        var _this = this;
+        this.storage.get('userType')
+            .then(function (data) {
+            if (data != null) {
+                _this.userType = data;
+            }
+            else {
+                var userType = new __WEBPACK_IMPORTED_MODULE_8__home_home__["b" /* UserType */]();
+                userType.id = null;
+                userType.name = null;
+                _this.userType = userType;
+            }
+        })
+            .catch(function () {
+            var userType = new __WEBPACK_IMPORTED_MODULE_8__home_home__["b" /* UserType */]();
+            userType.id = null;
+            userType.name = null;
+            _this.userType = userType;
+        });
+    };
     QuestionaryPage.prototype.presentToast = function () {
         var toast = this.toastCtrl.create({
             message: 'Clique no icone em caso de dúvidas!',
@@ -123,6 +191,14 @@ var QuestionaryPage = /** @class */ (function () {
             position: 'top'
         });
         toast.present();
+    };
+    QuestionaryPage.prototype.ionViewDidLeave = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                this.points = this.points - 1;
+                return [2 /*return*/];
+            });
+        });
     };
     QuestionaryPage.prototype.openMenu = function () {
         this.menuCtrl.open();
@@ -156,14 +232,33 @@ var QuestionaryPage = /** @class */ (function () {
                 _this.currentQuestion = _this.questions[currentIndex];
                 _this.progress = ((currentIndex + 1) / _this.questions.length) * 100;
                 _this.totalQuestions = _this.questions.length;
-                //------------------------MUITO IMPORTANTE------------------------
-                //-----------OCULTANDO O DONT NOW PARA DETERMINADAS PERGUNTAS-------------------
-                var id = _this.currentQuestion.id;
-                if (id == "1003" || id == "1008" || id == "1019" || id == "1020") {
+                if (_this.currentQuestion.showDontNow == "0") {
                     _this.showDontNow = false;
+                    _this.showYesNo = true;
                 }
-                //-----------OCULTANDO O DONT NOW PARA DETERMINADAS PERGUNTAS-------------------
-                //------------------------MUITO IMPORTANTE------------------------
+                else {
+                    _this.showDontNow = true;
+                    _this.showYesNo = true;
+                }
+                if (_this.currentQuestion.useAnswerText == "0") {
+                    _this.showAnswerText = false;
+                    _this.showYesNo = true;
+                }
+                else {
+                    _this.showAnswerText = true;
+                    _this.showYesNo = false;
+                    _this.questionAnswer = _this.YES;
+                    _this.btnContinueDisabled = false;
+                }
+                if (_this.currentQuestionIndex + 1 >= _this.questions.length) {
+                    _this.endQuestion = true;
+                }
+                if (_this.currentQuestion.useNarrative == "0") {
+                    _this.currentQuestion.useNarrative = false;
+                }
+                else {
+                    _this.currentQuestion.useNarrative = true;
+                }
             }
             else {
                 var alert_1 = _this.alertCtrl.create({
@@ -267,8 +362,10 @@ var QuestionaryPage = /** @class */ (function () {
         answer.question = currentQuestion;
         answer.respondent = respondent;
         answer.answer = questionAnswer;
-        answer.created_at = new Date().toISOString();
+        var dateTime = new Date();
+        answer.created_at = new Date(dateTime.valueOf() - dateTime.getTimezoneOffset() * 60000).toISOString();
         answer.isCompleted = false;
+        answer.answer_text = this.answerText;
         this.answers.push(answer);
     };
     QuestionaryPage.prototype.createAnswersNeighborhoods = function () {
@@ -281,7 +378,8 @@ var QuestionaryPage = /** @class */ (function () {
                 answerNeighborhood.question = _this.currentQuestion;
                 answerNeighborhood.respondent = _this.respondent;
                 answerNeighborhood.neighborhood = neighborhood;
-                answerNeighborhood.created_at = new Date().toISOString();
+                var dateTime = new Date();
+                answerNeighborhood.created_at = new Date(dateTime.valueOf() - dateTime.getTimezoneOffset() * 60000).toISOString();
                 _this.answersNeighborhoods.push(answerNeighborhood);
             });
         }
@@ -351,7 +449,45 @@ var QuestionaryPage = /** @class */ (function () {
         this.createAnswer(this.plan, this.questionary, this.questions[this.currentQuestionIndex + 1], this.respondent, this.YES);
         this.navigatePrioritizationPage(this.plan, this.respondent, this.questionary, this.neighborhoods, this.questions, this.metricItems, this.metricItems[0], 0, this.currentQuestionIndex + 1, this.questions[this.currentQuestionIndex + 1], this.answers, this.answersNeighborhoods, this.prioritizations);
     };
+    QuestionaryPage.prototype.finishQuestionary = function () {
+        var _this = this;
+        this.answerProvider.insertAnswersData(this.answers, this.answersNeighborhoods, this.prioritizations, this.userType, this.useGame, this.points)
+            .then(function (data) {
+            if (data != null) {
+                _this.storage.set('points', _this.points);
+            }
+            else {
+                var alert_2 = _this.alertCtrl.create({
+                    title: 'Oops!',
+                    message: 'Não foi possível enviar os dados para o servidor. Por favor, tente novamente.',
+                    buttons: [{
+                            text: "Tentar novamente",
+                            handler: function () {
+                                _this.finishQuestionary();
+                            }
+                        }]
+                });
+                alert_2.present();
+                _this.loader.dismiss();
+            }
+        })
+            .catch(function () {
+            var alert = _this.alertCtrl.create({
+                title: 'Oops!',
+                message: 'Não foi possível enviar os dados para o servidor. Por favor, tente novamente.',
+                buttons: [{
+                        text: "Tentar novamente",
+                        handler: function () {
+                            _this.finishQuestionary();
+                        }
+                    }]
+            });
+            alert.present();
+            _this.loader.dismiss();
+        });
+    };
     QuestionaryPage.prototype.navigateThankYouPage = function () {
+        this.finishQuestionary();
         //Navegação para pagina de agradecimento
         this.navCtrl.setRoot('ThankyouPage', {
             questions: this.questions,
@@ -364,7 +500,7 @@ var QuestionaryPage = /** @class */ (function () {
     };
     QuestionaryPage.prototype.navigateQuestionaryPage = function () {
         //Navegação para página do questionário
-        this.navCtrl.setRoot('QuestionaryPage', {
+        this.navCtrl.push('QuestionaryPage', {
             points: this.points,
             respondent: this.respondent,
             questionary: this.questionary,
@@ -379,7 +515,7 @@ var QuestionaryPage = /** @class */ (function () {
     };
     QuestionaryPage.prototype.navigatePrioritizationPage = function (plan, respondent, questionary, neighborhoods, questions, metricItems, currentMetricItem, currentMetricItemIndex, currentQuestionIndex, currentQuestion, answers, answersNeighborhoods, prioritizations) {
         // Navegação para página do questinário
-        this.navCtrl.setRoot('PrioritizationPage', {
+        this.navCtrl.push('PrioritizationPage', {
             points: this.points,
             plan: plan,
             respondent: respondent,
@@ -464,10 +600,10 @@ var QuestionaryPage = /** @class */ (function () {
     QuestionaryPage.prototype.help = function () {
         var alert = this.alertCtrl.create({
             title: '<div text-center>Então, vamos soltar a imaginação!</div>',
-            message: '<div class="dialogue-box"><div class="tdialogue-box-text">'
+            message: '<div class="dialogue-box box-question"><div class="tdialogue-box-text">'
                 + '<div text-center>' + this.currentQuestion.narrative + '</div>'
                 + '</div></div>'
-                + '<div class="alert-align-center"><img class="img-alert" src="assets/imgs/person2a.png" /></div>',
+                + '<div class="alert-align-center"><img class="img-alert img-question" src="assets/imgs/person5.png" /></div>',
             buttons: [{
                     text: "Ok!",
                     handler: function () {
@@ -482,9 +618,9 @@ var QuestionaryPage = /** @class */ (function () {
     ], QuestionaryPage.prototype, "content", void 0);
     QuestionaryPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-questionary',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\questionary\questionary.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col offset-1 col-2 class="menu-icon-col">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-6>\n        <img class="img-responsive" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col col-2>\n        <button *ngIf="currentQuestion.useNarrative" ion-button clear (click)="help()">\n          <ion-icon class="icon-help" name="alert"></ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row class="context-area">\n      <ion-col col-12 class="context-area-container">\n        <img class="context-area-icon" src="assets/imgs/{{currentQuestion.contextAreaIcon}}" />\n        <ion-label class="context-area-title" >\n          {{currentQuestion.contextArea}}\n        </ion-label>\n      </ion-col>\n    </ion-row>\n    <div class="hr"></div>\n    <ion-row class="margin-top-30">\n      <ion-col col-12 text-justify class="question">\n        <h1>{{currentQuestion.name}}</h1>\n        <h3>{{currentQuestion.description}}</h3>\n      </ion-col>\n    </ion-row>\n    <ion-row class="margin-top-30" *ngIf="showDontNow">\n      <ion-col col-4 text-center>\n        <div *ngIf="!isYesSelected"><img class="img-responsive max-width-200" src="assets/imgs/yes.png"\n            (click)="answerToQuestion(1)" /></div>\n        <div *ngIf="isYesSelected"><img class="img-responsive max-width-200" src="assets/imgs/yes-selected.png"\n            (click)="answerToQuestion(1)" /></div>\n        <p><b>Sim</b></p>\n      </ion-col>\n      <ion-col col-4 text-center>\n        <div *ngIf="!isNoSelected"><img class="img-responsive max-width-200" src="assets/imgs/no.png"\n            (click)="answerToQuestion(0)" /></div>\n        <div *ngIf="isNoSelected"><img class="img-responsive max-width-200" src="assets/imgs/no-selected.png"\n            (click)="answerToQuestion(0)" /></div>\n        <p><b>Não</b></p>\n      </ion-col>\n      <ion-col col-4 text-center>\n        <div *ngIf="!isDontKnowSelected"><img class="img-responsive max-width-200" src="assets/imgs/question-mark.png"\n            (click)="answerToQuestion(2)" /></div>\n        <div *ngIf="isDontKnowSelected"><img class="img-responsive max-width-200"\n            src="assets/imgs/question-mark-selected.png" (click)="answerToQuestion(2)" /></div>\n        <p><b>Não sei</b></p>\n      </ion-col>\n    </ion-row>\n    <ion-row class="margin-top-30" *ngIf="!showDontNow">\n      <ion-col col-6 text-center>\n        <div *ngIf="!isYesSelected"><img class="img-responsive max-width-200" src="assets/imgs/yes.png"\n            (click)="answerToQuestion(1)" /></div>\n        <div *ngIf="isYesSelected"><img class="img-responsive max-width-200" src="assets/imgs/yes-selected.png"\n            (click)="answerToQuestion(1)" /></div>\n        <p><b>Sim</b></p>\n      </ion-col>\n      <ion-col col-6 text-center>\n        <div *ngIf="!isNoSelected"><img class="img-responsive max-width-200" src="assets/imgs/no.png"\n            (click)="answerToQuestion(0)" /></div>\n        <div *ngIf="isNoSelected"><img class="img-responsive max-width-200" src="assets/imgs/no-selected.png"\n            (click)="answerToQuestion(0)" /></div>\n        <p><b>Não</b></p>\n      </ion-col>\n    </ion-row>\n    <!-- <ion-row class="margin-top-30" *ngIf="isYesSelected">\n      <ion-col col-12 text-center>\n        <h3>Você acredita que mais algum bairro também tem esse problema?</h3>\n        <ion-list radio-group>\n          <ion-item>\n            <ion-label>Sim/citar (quais bairros?)</ion-label>\n            <ion-radio value="0" (ionSelect)="neighborhoodRadioSelected(0)"></ion-radio>\n          </ion-item>\n          <ion-item>\n            <ion-label>Sim/todos (cidade)</ion-label>\n            <ion-radio value="1" (ionSelect)="neighborhoodRadioSelected(1)"></ion-radio>\n          </ion-item>\n          <ion-item>\n            <ion-label>Não (somente o meu bairro)</ion-label>\n            <ion-radio value="2" (ionSelect)="neighborhoodRadioSelected(2)"></ion-radio>\n          </ion-item>\n        </ion-list>\n      </ion-col>\n    </ion-row> -->\n    <ion-row *ngIf="showNeighborhoodList && isYesSelected">\n      <ion-col col-12 text-center>\n        <h4>Selecione os bairros abaixo</h4>\n        <ion-item>\n          <ion-label floating>Bairros</ion-label>\n          <ion-select [(ngModel)]="neighborhoodsSelected" multiple="true" (ionChange)="enableContinueButton()">\n            <ion-option *ngFor="let neighborhood of neighborhoods" [value]="neighborhood">{{neighborhood.name}}\n            </ion-option>\n          </ion-select>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 text-center>\n        <button ion-button full class="button-background" (click)="nextStep()" [disabled]="btnContinueDisabled">\n          Continuar\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n<ion-footer>\n  <ion-navbar class="toolbar-progress">\n    <ion-title text-center class="toolbar-point">\n      <ion-icon range-right name="md-ribbon"></ion-icon>\n      {{points}} pontos\n    </ion-title>\n    <ion-range class="progress-bar" [min]="0" [max]="100" [step]="1" [(ngModel)]="progress" disabled>\n      <ion-icon range-left name="md-clipboard"></ion-icon>\n      <ion-icon range-right></ion-icon>\n    </ion-range>\n    <div text-center class="progres-text-uper">{{currentQuestionIndex + 1}} de {{totalQuestions}} questões</div>\n  </ion-navbar>\n</ion-footer>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\questionary\questionary.html"*/,
+            selector: 'page-questionary',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\questionary\questionary.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col col-2 class="menu-icon-col" *ngIf="useGame">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-2 class="menu-icon-col-not-game" *ngIf="!useGame">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-6 *ngIf="useGame">\n        <img class="img-responsive" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col col-6 *ngIf="!useGame">\n        <img class="img-responsive img-not-game" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col col-2>\n        <button class="button-help-question" *ngIf="currentQuestion.useNarrative && useGame" ion-button clear\n          (click)="help()">\n          <ion-icon class="icon-help button-help-question" name="alert"></ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row class="context-area">\n      <ion-col col-3 class="context-area-img">\n        <img class="context-area-icon" src="assets/imgs/{{currentQuestion.contextAreaIcon}}" />\n      </ion-col>\n      <ion-col col-9 class="context-area-container">\n        <h1>\n          {{currentQuestion.contextArea}}\n        </h1>\n      </ion-col>\n    </ion-row>\n    <div class="hr"></div>\n    <ion-row class="margin-top-30">\n      <ion-col *ngIf="!useGame" col-12 text-justify class="question">\n        <h1>{{currentQuestion.name}}</h1>\n        <h3>{{currentQuestion.description}}</h3>\n      </ion-col>\n      <ion-col *ngIf="useGame" col-12 text-justify class="question">\n        <h1>{{currentQuestion.question}}</h1>\n        <h3>{{currentQuestion.description}}</h3>\n      </ion-col>\n    </ion-row>\n    <ion-grid class="grid-questionary">\n      <ion-row *ngIf="showYesNo && showDontNow && !showAnswerText">\n        <ion-col col-4 text-center>\n          <div *ngIf="!isYesSelected"><img class="img-responsive max-width-200" src="assets/imgs/yes.png"\n              (click)="answerToQuestion(1)" /></div>\n          <div *ngIf="isYesSelected"><img class="img-responsive max-width-200" src="assets/imgs/yes-selected.png"\n              (click)="answerToQuestion(1)" /></div>\n          <p><b>Sim</b></p>\n        </ion-col>\n        <ion-col col-4 text-center>\n          <div *ngIf="!isNoSelected"><img class="img-responsive max-width-200" src="assets/imgs/no.png"\n              (click)="answerToQuestion(0)" /></div>\n          <div *ngIf="isNoSelected"><img class="img-responsive max-width-200" src="assets/imgs/no-selected.png"\n              (click)="answerToQuestion(0)" /></div>\n          <p><b>Não</b></p>\n        </ion-col>\n        <ion-col col-4 text-center>\n          <div *ngIf="!isDontKnowSelected"><img class="img-responsive max-width-200" src="assets/imgs/question-mark.png"\n              (click)="answerToQuestion(2)" /></div>\n          <div *ngIf="isDontKnowSelected"><img class="img-responsive max-width-200"\n              src="assets/imgs/question-mark-selected.png" (click)="answerToQuestion(2)" /></div>\n          <p><b>Não sei</b></p>\n        </ion-col>\n      </ion-row>\n      <ion-row *ngIf="showYesNo && !showDontNow && !showAnswerText">\n        <ion-col col-6 text-center>\n          <div *ngIf="!isYesSelected"><img class="img-responsive max-width-200" src="assets/imgs/yes.png"\n              (click)="answerToQuestion(1)" /></div>\n          <div *ngIf="isYesSelected"><img class="img-responsive max-width-200" src="assets/imgs/yes-selected.png"\n              (click)="answerToQuestion(1)" /></div>\n          <p><b>Sim</b></p>\n        </ion-col>\n        <ion-col col-6 text-center>\n          <div *ngIf="!isNoSelected"><img class="img-responsive max-width-200" src="assets/imgs/no.png"\n              (click)="answerToQuestion(0)" /></div>\n          <div *ngIf="isNoSelected"><img class="img-responsive max-width-200" src="assets/imgs/no-selected.png"\n              (click)="answerToQuestion(0)" /></div>\n          <p><b>Não</b></p>\n        </ion-col>\n      </ion-row>\n      <ion-row *ngIf="!showYesNo && showAnswerText" class="row-text-area">\n        <ion-col col-12 text-center>\n          <ion-item>\n            <ion-textarea class="text-area-questionary" placeholder="Comente aqui" [(ngModel)]="answerText"\n              name="answerText" autocomplete="on" autocorrect="on">\n            </ion-textarea >\n          </ion-item>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n    <!-- <ion-row class="margin-top-30" *ngIf="isYesSelected">\n      <ion-col col-12 text-center>\n        <h3>Você acredita que mais algum bairro também tem esse problema?</h3>\n        <ion-list radio-group>\n          <ion-item>\n            <ion-label>Sim/citar (quais bairros?)</ion-label>\n            <ion-radio value="0" (ionSelect)="neighborhoodRadioSelected(0)"></ion-radio>\n          </ion-item>\n          <ion-item>\n            <ion-label>Sim/todos (cidade)</ion-label>\n            <ion-radio value="1" (ionSelect)="neighborhoodRadioSelected(1)"></ion-radio>\n          </ion-item>\n          <ion-item>\n            <ion-label>Não (somente o meu bairro)</ion-label>\n            <ion-radio value="2" (ionSelect)="neighborhoodRadioSelected(2)"></ion-radio>\n          </ion-item>\n        </ion-list>\n      </ion-col>\n    </ion-row> -->\n    <ion-row *ngIf="showNeighborhoodList && isYesSelected">\n      <ion-col col-12 text-center>\n        <h4>Selecione os bairros abaixo</h4>\n        <ion-item>\n          <ion-label floating>Bairros</ion-label>\n          <ion-select [(ngModel)]="neighborhoodsSelected" multiple="true" (ionChange)="enableContinueButton()">\n            <ion-option *ngFor="let neighborhood of neighborhoods" [value]="neighborhood">{{neighborhood.name}}\n            </ion-option>\n          </ion-select>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="useGame && !endQuestion">\n      <ion-col col-12 text-center>\n        <button ion-button full class="button-background-game" (click)="nextStep()" [disabled]="btnContinueDisabled">\n          <ion-icon id="button-question-game-{{currentQuestion.id}}" class="text-button">\n            Continuar\n          </ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="!useGame && !endQuestion">\n      <ion-col col-12 text-center>\n        <button ion-button full class="button-background-no-game" (click)="nextStep()" [disabled]="btnContinueDisabled">\n          <ion-icon id="button-question-{{currentQuestion.id}}" class="text-button">\n            Continuar\n          </ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="useGame && endQuestion">\n      <ion-col col-12 text-center class="margin-top-10">\n        <button ion-button full class="button-background-game" (click)="nextStep()" [disabled]="btnContinueDisabled">\n          <ion-icon id="button-finish-game-{{questionary.id}}" class="text-button">\n            Finalizar\n          </ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="!useGame && endQuestion">\n      <ion-col col-12 text-center class="margin-top-10">\n        <button ion-button full class="button-background-no-game" (click)="nextStep()" [disabled]="btnContinueDisabled">\n          <ion-icon id="button-finish-{{questionary.id}}" class="text-button">\n            Finalizar\n          </ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n<ion-footer [hidden]="keyboard.isOpen() && platform.width() < 500">\n  <ion-navbar class="toolbar-progress">\n    <ion-title *ngIf="useGame" text-center class="toolbar-point">\n      <ion-icon range-right name="md-ribbon"></ion-icon>\n      {{points}} pontos\n    </ion-title>\n    <ion-range *ngIf="useGame" class="progress-bar" [min]="0" [max]="100" [step]="1" [(ngModel)]="progress" disabled>\n      <ion-icon range-left name="md-clipboard"></ion-icon>\n      <ion-icon range-right></ion-icon>\n    </ion-range>\n    <div *ngIf="useGame" text-center class="progres-text-uper">{{currentQuestionIndex + 1}} de {{totalQuestions}}\n      questões</div>\n  </ion-navbar>\n</ion-footer>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\questionary\questionary.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* MenuController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_question_question__["b" /* QuestionProvider */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_5__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_6__providers_prioritization_prioritization__["a" /* PrioritizationProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* MenuController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_question_question__["b" /* QuestionProvider */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_5__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_6__providers_prioritization_prioritization__["a" /* PrioritizationProvider */], __WEBPACK_IMPORTED_MODULE_7__providers_answer_answer__["a" /* AnswerProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Keyboard */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Platform */]])
     ], QuestionaryPage);
     return QuestionaryPage;
 }());
