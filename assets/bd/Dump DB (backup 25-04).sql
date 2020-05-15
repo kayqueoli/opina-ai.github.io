@@ -1607,7 +1607,7 @@ ALTER TABLE `plan_user`
 -- Índices de tabela `prioritization`
 --
 ALTER TABLE `prioritization`
-  ADD PRIMARY KEY (`plan_id`,`questionary_id`,`question_id`,`respondent_id`,`metric_item`),
+  ADD PRIMARY KEY (`plan_id`,`questionary_id`,`question_id`,`respondent_id`,`metric_item`,`metric_value`),
   ADD KEY `questionary_id` (`questionary_id`),
   ADD KEY `question_id` (`question_id`),
   ADD KEY `respondent_id` (`respondent_id`);
