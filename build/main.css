@@ -27153,6 +27153,9 @@ page-questionaries-list ion-footer.footer-not-game.footer.footer-md {
 }
 
 @media only screen and (min-device-width: 320px) {
+  page-questionaries-list .label-result-button {
+    margin-left: 26%;
+  }
   page-questionaries-list .item-md ion-thumbnail {
     min-width: 0;
     min-height: 0;
@@ -27190,6 +27193,7 @@ page-questionaries-list ion-footer.footer-not-game.footer.footer-md {
   }
   page-questionaries-list .label-result-button {
     max-width: 40%;
+    margin-left: 30%;
   }
   page-questionaries-list .item-md ion-thumbnail img {
     width: 60px;
@@ -27595,6 +27599,14 @@ page-questionary textarea.text-input.text-input-md {
 page-questionary ion-col.context-area-container.col {
   margin-top: 4%;
   max-width: 700px;
+}
+
+page-questionary .fixed-content {
+  margin-bottom: 0;
+}
+
+page-questionary .scroll-content {
+  margin-bottom: 0;
 }
 
 @media only screen and (min-device-width: 320px) {
