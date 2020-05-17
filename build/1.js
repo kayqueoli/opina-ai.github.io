@@ -1,1 +1,1967 @@
-webpackJsonp([1],{268:function(l,n,u){"use strict";function e(l){return S._19(0,[(l()(),S.Z(0,0,null,null,9,"ion-col",[["class","menu-icon-col col"],["col-2",""]],null,null,null,null,null)),S.Y(1,16384,null,0,nl.a,[],null,null),(l()(),S._18(-1,null,["\n        "])),(l()(),S.Z(3,0,null,null,5,"button",[["clear",""],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.openMenu()&&e}return e},ul.b,ul.a)),S.Y(4,1097728,null,0,el.a,[[8,""],tl.a,S.j,S.z],{clear:[0,"clear"]},null),(l()(),S._18(-1,0,["\n          "])),(l()(),S.Z(6,0,null,0,1,"ion-icon",[["class","menu-icon"],["name","md-menu"],["role","img"]],[[2,"hide",null]],null,null,null,null)),S.Y(7,147456,null,0,il.a,[tl.a,S.j,S.z],{name:[0,"name"]},null),(l()(),S._18(-1,0,["\n        "])),(l()(),S._18(-1,null,["\n      "]))],function(l,n){l(n,4,0,"");l(n,7,0,"md-menu")},function(l,n){l(n,6,0,S._11(n,7)._hidden)})}function t(l){return S._19(0,[(l()(),S.Z(0,0,null,null,9,"ion-col",[["class","menu-icon-col-not-game col"],["col-2",""]],null,null,null,null,null)),S.Y(1,16384,null,0,nl.a,[],null,null),(l()(),S._18(-1,null,["\n        "])),(l()(),S.Z(3,0,null,null,5,"button",[["clear",""],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.openMenu()&&e}return e},ul.b,ul.a)),S.Y(4,1097728,null,0,el.a,[[8,""],tl.a,S.j,S.z],{clear:[0,"clear"]},null),(l()(),S._18(-1,0,["\n          "])),(l()(),S.Z(6,0,null,0,1,"ion-icon",[["class","menu-icon"],["name","md-menu"],["role","img"]],[[2,"hide",null]],null,null,null,null)),S.Y(7,147456,null,0,il.a,[tl.a,S.j,S.z],{name:[0,"name"]},null),(l()(),S._18(-1,0,["\n        "])),(l()(),S._18(-1,null,["\n      "]))],function(l,n){l(n,4,0,"");l(n,7,0,"md-menu")},function(l,n){l(n,6,0,S._11(n,7)._hidden)})}function i(l){return S._19(0,[(l()(),S.Z(0,0,null,null,4,"ion-col",[["class","col"],["col-6",""]],null,null,null,null,null)),S.Y(1,16384,null,0,nl.a,[],null,null),(l()(),S._18(-1,null,["\n        "])),(l()(),S.Z(3,0,null,null,0,"img",[["class","img-responsive"],["src","assets/imgs/header-logo.png"]],null,null,null,null,null)),(l()(),S._18(-1,null,["\n      "]))],null,null)}function o(l){return S._19(0,[(l()(),S.Z(0,0,null,null,4,"ion-col",[["class","col"],["col-6",""]],null,null,null,null,null)),S.Y(1,16384,null,0,nl.a,[],null,null),(l()(),S._18(-1,null,["\n        "])),(l()(),S.Z(3,0,null,null,0,"img",[["class","img-responsive img-not-game"],["src","assets/imgs/header-logo.png"]],null,null,null,null,null)),(l()(),S._18(-1,null,["\n      "]))],null,null)}function s(l){return S._19(0,[(l()(),S.Z(0,0,null,null,5,"button",[["class","button-help-question"],["clear",""],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.help()&&e}return e},ul.b,ul.a)),S.Y(1,1097728,null,0,el.a,[[8,""],tl.a,S.j,S.z],{clear:[0,"clear"]},null),(l()(),S._18(-1,0,["\n          "])),(l()(),S.Z(3,0,null,0,1,"ion-icon",[["class","icon-help button-help-question"],["name","alert"],["role","img"]],[[2,"hide",null]],null,null,null,null)),S.Y(4,147456,null,0,il.a,[tl.a,S.j,S.z],{name:[0,"name"]},null),(l()(),S._18(-1,0,["\n        "]))],function(l,n){l(n,1,0,"");l(n,4,0,"alert")},function(l,n){l(n,3,0,S._11(n,4)._hidden)})}function r(l){return S._19(0,[(l()(),S.Z(0,0,null,null,8,"ion-col",[["class","question col"],["col-12",""],["text-justify",""]],null,null,null,null,null)),S.Y(1,16384,null,0,nl.a,[],null,null),(l()(),S._18(-1,null,["\n        "])),(l()(),S.Z(3,0,null,null,1,"h1",[],null,null,null,null,null)),(l()(),S._18(4,null,["",""])),(l()(),S._18(-1,null,["\n        "])),(l()(),S.Z(6,0,null,null,1,"h3",[],null,null,null,null,null)),(l()(),S._18(7,null,["",""])),(l()(),S._18(-1,null,["\n      "]))],null,function(l,n){var u=n.component;l(n,4,0,u.currentQuestion.name);l(n,7,0,u.currentQuestion.description)})}function a(l){return S._19(0,[(l()(),S.Z(0,0,null,null,8,"ion-col",[["class","question col"],["col-12",""],["text-justify",""]],null,null,null,null,null)),S.Y(1,16384,null,0,nl.a,[],null,null),(l()(),S._18(-1,null,["\n        "])),(l()(),S.Z(3,0,null,null,1,"h1",[],null,null,null,null,null)),(l()(),S._18(4,null,["",""])),(l()(),S._18(-1,null,["\n        "])),(l()(),S.Z(6,0,null,null,1,"h3",[],null,null,null,null,null)),(l()(),S._18(7,null,["",""])),(l()(),S._18(-1,null,["\n      "]))],null,function(l,n){var u=n.component;l(n,4,0,u.currentQuestion.question);l(n,7,0,u.currentQuestion.description)})}function c(l){return S._19(0,[(l()(),S.Z(0,0,null,null,1,"div",[],null,null,null,null,null)),(l()(),S.Z(1,0,null,null,0,"img",[["class","img-responsive max-width-200"],["src","assets/imgs/yes.png"]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.answerToQuestion(1)&&e}return e},null,null))],null,null)}function d(l){return S._19(0,[(l()(),S.Z(0,0,null,null,1,"div",[],null,null,null,null,null)),(l()(),S.Z(1,0,null,null,0,"img",[["class","img-responsive max-width-200"],["src","assets/imgs/yes-selected.png"]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.answerToQuestion(1)&&e}return e},null,null))],null,null)}function h(l){return S._19(0,[(l()(),S.Z(0,0,null,null,1,"div",[],null,null,null,null,null)),(l()(),S.Z(1,0,null,null,0,"img",[["class","img-responsive max-width-200"],["src","assets/imgs/no.png"]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.answerToQuestion(0)&&e}return e},null,null))],null,null)}function g(l){return S._19(0,[(l()(),S.Z(0,0,null,null,1,"div",[],null,null,null,null,null)),(l()(),S.Z(1,0,null,null,0,"img",[["class","img-responsive max-width-200"],["src","assets/imgs/no-selected.png"]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.answerToQuestion(0)&&e}return e},null,null))],null,null)}function p(l){return S._19(0,[(l()(),S.Z(0,0,null,null,1,"div",[],null,null,null,null,null)),(l()(),S.Z(1,0,null,null,0,"img",[["class","img-responsive max-width-200"],["src","assets/imgs/question-mark.png"]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.answerToQuestion(2)&&e}return e},null,null))],null,null)}function _(l){return S._19(0,[(l()(),S.Z(0,0,null,null,1,"div",[],null,null,null,null,null)),(l()(),S.Z(1,0,null,null,0,"img",[["class","img-responsive max-width-200"],["src","assets/imgs/question-mark-selected.png"]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.answerToQuestion(2)&&e}return e},null,null))],null,null)}function f(l){return S._19(0,[(l()(),S.Z(0,0,null,null,44,"ion-row",[["class","row"]],null,null,null,null,null)),S.Y(1,16384,null,0,ol.a,[],null,null),(l()(),S._18(-1,null,["\n        "])),(l()(),S.Z(3,0,null,null,12,"ion-col",[["class","col"],["col-4",""],["text-center",""]],null,null,null,null,null)),S.Y(4,16384,null,0,nl.a,[],null,null),(l()(),S._18(-1,null,["\n          "])),(l()(),S.U(16777216,null,null,1,null,c)),S.Y(7,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,null,["\n          "])),(l()(),S.U(16777216,null,null,1,null,d)),S.Y(10,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,null,["\n          "])),(l()(),S.Z(12,0,null,null,2,"p",[],null,null,null,null,null)),(l()(),S.Z(13,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),S._18(-1,null,["Sim"])),(l()(),S._18(-1,null,["\n        "])),(l()(),S._18(-1,null,["\n        "])),(l()(),S.Z(17,0,null,null,12,"ion-col",[["class","col"],["col-4",""],["text-center",""]],null,null,null,null,null)),S.Y(18,16384,null,0,nl.a,[],null,null),(l()(),S._18(-1,null,["\n          "])),(l()(),S.U(16777216,null,null,1,null,h)),S.Y(21,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,null,["\n          "])),(l()(),S.U(16777216,null,null,1,null,g)),S.Y(24,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,null,["\n          "])),(l()(),S.Z(26,0,null,null,2,"p",[],null,null,null,null,null)),(l()(),S.Z(27,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),S._18(-1,null,["Não"])),(l()(),S._18(-1,null,["\n        "])),(l()(),S._18(-1,null,["\n        "])),(l()(),S.Z(31,0,null,null,12,"ion-col",[["class","col"],["col-4",""],["text-center",""]],null,null,null,null,null)),S.Y(32,16384,null,0,nl.a,[],null,null),(l()(),S._18(-1,null,["\n          "])),(l()(),S.U(16777216,null,null,1,null,p)),S.Y(35,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,null,["\n          "])),(l()(),S.U(16777216,null,null,1,null,_)),S.Y(38,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,null,["\n          "])),(l()(),S.Z(40,0,null,null,2,"p",[],null,null,null,null,null)),(l()(),S.Z(41,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),S._18(-1,null,["Não sei"])),(l()(),S._18(-1,null,["\n        "])),(l()(),S._18(-1,null,["\n      "]))],function(l,n){var u=n.component;l(n,7,0,!u.isYesSelected);l(n,10,0,u.isYesSelected);l(n,21,0,!u.isNoSelected);l(n,24,0,u.isNoSelected);l(n,35,0,!u.isDontKnowSelected);l(n,38,0,u.isDontKnowSelected)},null)}function m(l){return S._19(0,[(l()(),S.Z(0,0,null,null,1,"div",[],null,null,null,null,null)),(l()(),S.Z(1,0,null,null,0,"img",[["class","img-responsive max-width-200"],["src","assets/imgs/yes.png"]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.answerToQuestion(1)&&e}return e},null,null))],null,null)}function b(l){return S._19(0,[(l()(),S.Z(0,0,null,null,1,"div",[],null,null,null,null,null)),(l()(),S.Z(1,0,null,null,0,"img",[["class","img-responsive max-width-200"],["src","assets/imgs/yes-selected.png"]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.answerToQuestion(1)&&e}return e},null,null))],null,null)}function v(l){return S._19(0,[(l()(),S.Z(0,0,null,null,1,"div",[],null,null,null,null,null)),(l()(),S.Z(1,0,null,null,0,"img",[["class","img-responsive max-width-200"],["src","assets/imgs/no.png"]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.answerToQuestion(0)&&e}return e},null,null))],null,null)}function w(l){return S._19(0,[(l()(),S.Z(0,0,null,null,1,"div",[],null,null,null,null,null)),(l()(),S.Z(1,0,null,null,0,"img",[["class","img-responsive max-width-200"],["src","assets/imgs/no-selected.png"]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.answerToQuestion(0)&&e}return e},null,null))],null,null)}function I(l){return S._19(0,[(l()(),S.Z(0,0,null,null,30,"ion-row",[["class","row"]],null,null,null,null,null)),S.Y(1,16384,null,0,ol.a,[],null,null),(l()(),S._18(-1,null,["\n        "])),(l()(),S.Z(3,0,null,null,12,"ion-col",[["class","col"],["col-6",""],["text-center",""]],null,null,null,null,null)),S.Y(4,16384,null,0,nl.a,[],null,null),(l()(),S._18(-1,null,["\n          "])),(l()(),S.U(16777216,null,null,1,null,m)),S.Y(7,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,null,["\n          "])),(l()(),S.U(16777216,null,null,1,null,b)),S.Y(10,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,null,["\n          "])),(l()(),S.Z(12,0,null,null,2,"p",[],null,null,null,null,null)),(l()(),S.Z(13,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),S._18(-1,null,["Sim"])),(l()(),S._18(-1,null,["\n        "])),(l()(),S._18(-1,null,["\n        "])),(l()(),S.Z(17,0,null,null,12,"ion-col",[["class","col"],["col-6",""],["text-center",""]],null,null,null,null,null)),S.Y(18,16384,null,0,nl.a,[],null,null),(l()(),S._18(-1,null,["\n          "])),(l()(),S.U(16777216,null,null,1,null,v)),S.Y(21,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,null,["\n          "])),(l()(),S.U(16777216,null,null,1,null,w)),S.Y(24,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,null,["\n          "])),(l()(),S.Z(26,0,null,null,2,"p",[],null,null,null,null,null)),(l()(),S.Z(27,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),S._18(-1,null,["Não"])),(l()(),S._18(-1,null,["\n        "])),(l()(),S._18(-1,null,["\n      "]))],function(l,n){var u=n.component;l(n,7,0,!u.isYesSelected);l(n,10,0,u.isYesSelected);l(n,21,0,!u.isNoSelected);l(n,24,0,u.isNoSelected)},null)}function y(l){return S._19(0,[(l()(),S.Z(0,0,null,null,21,"ion-row",[["class","row-text-area row"]],null,null,null,null,null)),S.Y(1,16384,null,0,ol.a,[],null,null),(l()(),S._18(-1,null,["\n        "])),(l()(),S.Z(3,0,null,null,17,"ion-col",[["class","col"],["col-12",""],["text-center",""]],null,null,null,null,null)),S.Y(4,16384,null,0,nl.a,[],null,null),(l()(),S._18(-1,null,["\n          "])),(l()(),S.Z(6,0,null,null,13,"ion-item",[["class","item item-block"]],null,null,null,rl.b,rl.a)),S.Y(7,1097728,null,3,al.a,[cl.a,tl.a,S.j,S.z,[2,dl.a]],null,null),S._16(335544320,2,{contentLabel:0}),S._16(603979776,3,{_buttons:1}),S._16(603979776,4,{_icons:1}),S.Y(11,16384,null,0,hl.a,[],null,null),(l()(),S._18(-1,2,["\n            "])),(l()(),S.Z(13,0,null,3,5,"ion-textarea",[["autocomplete","on"],["autocorrect","on"],["class","text-area-questionary"],["name","answerText"],["placeholder","Comente aqui"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var e=!0;if("ngModelChange"===n){e=!1!==(l.component.answerText=u)&&e}return e},gl.b,gl.a)),S.Y(14,671744,null,0,pl.m,[[8,null],[8,null],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),S._14(2048,null,pl.j,null,[pl.m]),S.Y(16,16384,null,0,pl.k,[pl.j],null,null),S.Y(17,5423104,null,0,_l.a,[tl.a,fl.a,cl.a,ml.a,S.j,S.z,[2,bl.a],[2,al.a],[2,pl.j],vl.a],{autocomplete:[0,"autocomplete"],autocorrect:[1,"autocorrect"],placeholder:[2,"placeholder"]},null),(l()(),S._18(-1,null,["\n            "])),(l()(),S._18(-1,2,["\n          "])),(l()(),S._18(-1,null,["\n        "])),(l()(),S._18(-1,null,["\n      "]))],function(l,n){l(n,14,0,"answerText",n.component.answerText);l(n,17,0,"on","on","Comente aqui")},function(l,n){l(n,13,0,S._11(n,16).ngClassUntouched,S._11(n,16).ngClassTouched,S._11(n,16).ngClassPristine,S._11(n,16).ngClassDirty,S._11(n,16).ngClassValid,S._11(n,16).ngClassInvalid,S._11(n,16).ngClassPending)})}function Y(l){return S._19(0,[(l()(),S.Z(0,0,null,null,2,"ion-option",[],null,null,null,null,null)),S.Y(1,16384,[[8,4]],0,wl.a,[S.j],{value:[0,"value"]},null),(l()(),S._18(2,null,["","\n            "]))],function(l,n){l(n,1,0,n.context.$implicit)},function(l,n){l(n,2,0,n.context.$implicit.name)})}function x(l){return S._19(0,[(l()(),S.Z(0,0,null,null,33,"ion-row",[["class","row"]],null,null,null,null,null)),S.Y(1,16384,null,0,ol.a,[],null,null),(l()(),S._18(-1,null,["\n      "])),(l()(),S.Z(3,0,null,null,29,"ion-col",[["class","col"],["col-12",""],["text-center",""]],null,null,null,null,null)),S.Y(4,16384,null,0,nl.a,[],null,null),(l()(),S._18(-1,null,["\n        "])),(l()(),S.Z(6,0,null,null,1,"h4",[],null,null,null,null,null)),(l()(),S._18(-1,null,["Selecione os bairros abaixo"])),(l()(),S._18(-1,null,["\n        "])),(l()(),S.Z(9,0,null,null,22,"ion-item",[["class","item item-block"]],null,null,null,rl.b,rl.a)),S.Y(10,1097728,null,3,al.a,[cl.a,tl.a,S.j,S.z,[2,dl.a]],null,null),S._16(335544320,5,{contentLabel:0}),S._16(603979776,6,{_buttons:1}),S._16(603979776,7,{_icons:1}),S.Y(14,16384,null,0,hl.a,[],null,null),(l()(),S._18(-1,2,["\n          "])),(l()(),S.Z(16,0,null,1,2,"ion-label",[["floating",""]],null,null,null,null,null)),S.Y(17,16384,[[5,4]],0,Il.a,[tl.a,S.j,S.z,[8,""],[8,null],[8,null],[8,null]],null,null),(l()(),S._18(-1,null,["Bairros"])),(l()(),S._18(-1,2,["\n          "])),(l()(),S.Z(20,0,null,3,10,"ion-select",[["multiple","true"]],[[2,"select-disabled",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"ionChange"],[null,"click"],[null,"keyup.space"]],function(l,n,u){var e=!0,t=l.component;if("click"===n){e=!1!==S._11(l,21)._click(u)&&e}if("keyup.space"===n){e=!1!==S._11(l,21)._keyup()&&e}if("ngModelChange"===n){e=!1!==(t.neighborhoodsSelected=u)&&e}if("ionChange"===n){e=!1!==t.enableContinueButton()&&e}return e},yl.b,yl.a)),S.Y(21,1228800,null,1,Yl.a,[ml.a,cl.a,tl.a,S.j,S.z,[2,al.a],xl.a],{multiple:[0,"multiple"]},{ionChange:"ionChange"}),S._16(603979776,8,{options:1}),S._14(1024,null,pl.i,function(l){return[l]},[Yl.a]),S.Y(24,671744,null,0,pl.m,[[8,null],[8,null],[8,null],[2,pl.i]],{model:[0,"model"]},{update:"ngModelChange"}),S._14(2048,null,pl.j,null,[pl.m]),S.Y(26,16384,null,0,pl.k,[pl.j],null,null),(l()(),S._18(-1,null,["\n            "])),(l()(),S.U(16777216,null,null,1,null,Y)),S.Y(29,802816,null,0,sl.h,[S.I,S.F,S.p],{ngForOf:[0,"ngForOf"]},null),(l()(),S._18(-1,null,["\n          "])),(l()(),S._18(-1,2,["\n        "])),(l()(),S._18(-1,null,["\n      "])),(l()(),S._18(-1,null,["\n    "]))],function(l,n){var u=n.component;l(n,21,0,"true");l(n,24,0,u.neighborhoodsSelected);l(n,29,0,u.neighborhoods)},function(l,n){l(n,20,0,S._11(n,21)._disabled,S._11(n,26).ngClassUntouched,S._11(n,26).ngClassTouched,S._11(n,26).ngClassPristine,S._11(n,26).ngClassDirty,S._11(n,26).ngClassValid,S._11(n,26).ngClassInvalid,S._11(n,26).ngClassPending)})}function Z(l){return S._19(0,[(l()(),S.Z(0,0,null,null,14,"ion-row",[["class","row"]],null,null,null,null,null)),S.Y(1,16384,null,0,ol.a,[],null,null),(l()(),S._18(-1,null,["\n      "])),(l()(),S.Z(3,0,null,null,10,"ion-col",[["class","col"],["col-12",""],["text-center",""]],null,null,null,null,null)),S.Y(4,16384,null,0,nl.a,[],null,null),(l()(),S._18(-1,null,["\n        "])),(l()(),S.Z(6,0,null,null,6,"button",[["class","button-background-game"],["full",""],["ion-button",""]],[[8,"disabled",0]],[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.nextStep()&&e}return e},ul.b,ul.a)),S.Y(7,1097728,null,0,el.a,[[8,""],tl.a,S.j,S.z],{full:[0,"full"]},null),(l()(),S._18(-1,0,["\n          "])),(l()(),S.Z(9,0,null,0,2,"ion-icon",[["class","text-button"],["role","img"]],[[8,"id",0],[2,"hide",null]],null,null,null,null)),S.Y(10,147456,null,0,il.a,[tl.a,S.j,S.z],null,null),(l()(),S._18(-1,null,["\n            Continuar\n          "])),(l()(),S._18(-1,0,["\n        "])),(l()(),S._18(-1,null,["\n      "])),(l()(),S._18(-1,null,["\n    "]))],function(l,n){l(n,7,0,"")},function(l,n){var u=n.component;l(n,6,0,u.btnContinueDisabled);l(n,9,0,S._2(1,"button-question-game-",u.currentQuestion.id,""),S._11(n,10)._hidden)})}function k(l){return S._19(0,[(l()(),S.Z(0,0,null,null,14,"ion-row",[["class","row"]],null,null,null,null,null)),S.Y(1,16384,null,0,ol.a,[],null,null),(l()(),S._18(-1,null,["\n      "])),(l()(),S.Z(3,0,null,null,10,"ion-col",[["class","col"],["col-12",""],["text-center",""]],null,null,null,null,null)),S.Y(4,16384,null,0,nl.a,[],null,null),(l()(),S._18(-1,null,["\n        "])),(l()(),S.Z(6,0,null,null,6,"button",[["class","button-background-no-game"],["full",""],["ion-button",""]],[[8,"disabled",0]],[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.nextStep()&&e}return e},ul.b,ul.a)),S.Y(7,1097728,null,0,el.a,[[8,""],tl.a,S.j,S.z],{full:[0,"full"]},null),(l()(),S._18(-1,0,["\n          "])),(l()(),S.Z(9,0,null,0,2,"ion-icon",[["class","text-button"],["role","img"]],[[8,"id",0],[2,"hide",null]],null,null,null,null)),S.Y(10,147456,null,0,il.a,[tl.a,S.j,S.z],null,null),(l()(),S._18(-1,null,["\n            Continuar\n          "])),(l()(),S._18(-1,0,["\n        "])),(l()(),S._18(-1,null,["\n      "])),(l()(),S._18(-1,null,["\n    "]))],function(l,n){l(n,7,0,"")},function(l,n){var u=n.component;l(n,6,0,u.btnContinueDisabled);l(n,9,0,S._2(1,"button-question-",u.currentQuestion.id,""),S._11(n,10)._hidden)})}function Q(l){return S._19(0,[(l()(),S.Z(0,0,null,null,14,"ion-row",[["class","row"]],null,null,null,null,null)),S.Y(1,16384,null,0,ol.a,[],null,null),(l()(),S._18(-1,null,["\n      "])),(l()(),S.Z(3,0,null,null,10,"ion-col",[["class","margin-top-10 col"],["col-12",""],["text-center",""]],null,null,null,null,null)),S.Y(4,16384,null,0,nl.a,[],null,null),(l()(),S._18(-1,null,["\n        "])),(l()(),S.Z(6,0,null,null,6,"button",[["class","button-background-game"],["full",""],["ion-button",""]],[[8,"disabled",0]],[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.nextStep()&&e}return e},ul.b,ul.a)),S.Y(7,1097728,null,0,el.a,[[8,""],tl.a,S.j,S.z],{full:[0,"full"]},null),(l()(),S._18(-1,0,["\n          "])),(l()(),S.Z(9,0,null,0,2,"ion-icon",[["class","text-button"],["role","img"]],[[8,"id",0],[2,"hide",null]],null,null,null,null)),S.Y(10,147456,null,0,il.a,[tl.a,S.j,S.z],null,null),(l()(),S._18(-1,null,["\n            Finalizar\n          "])),(l()(),S._18(-1,0,["\n        "])),(l()(),S._18(-1,null,["\n      "])),(l()(),S._18(-1,null,["\n    "]))],function(l,n){l(n,7,0,"")},function(l,n){var u=n.component;l(n,6,0,u.btnContinueDisabled);l(n,9,0,S._2(1,"button-finish-game-",u.questionary.id,""),S._11(n,10)._hidden)})}function C(l){return S._19(0,[(l()(),S.Z(0,0,null,null,14,"ion-row",[["class","row"]],null,null,null,null,null)),S.Y(1,16384,null,0,ol.a,[],null,null),(l()(),S._18(-1,null,["\n      "])),(l()(),S.Z(3,0,null,null,10,"ion-col",[["class","margin-top-10 col"],["col-12",""],["text-center",""]],null,null,null,null,null)),S.Y(4,16384,null,0,nl.a,[],null,null),(l()(),S._18(-1,null,["\n        "])),(l()(),S.Z(6,0,null,null,6,"button",[["class","button-background-no-game"],["full",""],["ion-button",""]],[[8,"disabled",0]],[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.nextStep()&&e}return e},ul.b,ul.a)),S.Y(7,1097728,null,0,el.a,[[8,""],tl.a,S.j,S.z],{full:[0,"full"]},null),(l()(),S._18(-1,0,["\n          "])),(l()(),S.Z(9,0,null,0,2,"ion-icon",[["class","text-button"],["role","img"]],[[8,"id",0],[2,"hide",null]],null,null,null,null)),S.Y(10,147456,null,0,il.a,[tl.a,S.j,S.z],null,null),(l()(),S._18(-1,null,["\n            Finalizar\n          "])),(l()(),S._18(-1,0,["\n        "])),(l()(),S._18(-1,null,["\n      "])),(l()(),S._18(-1,null,["\n    "]))],function(l,n){l(n,7,0,"")},function(l,n){var u=n.component;l(n,6,0,u.btnContinueDisabled);l(n,9,0,S._2(1,"button-finish-",u.questionary.id,""),S._11(n,10)._hidden)})}function N(l){return S._19(0,[(l()(),S.Z(0,0,null,null,5,"ion-title",[["class","toolbar-point"],["text-center",""]],null,null,null,Zl.b,Zl.a)),S.Y(1,49152,null,0,kl.a,[tl.a,S.j,S.z,[2,Ql.a],[2,Cl.a]],null,null),(l()(),S._18(-1,0,["\n      "])),(l()(),S.Z(3,0,null,0,1,"ion-icon",[["name","md-ribbon"],["range-right",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),S.Y(4,147456,null,0,il.a,[tl.a,S.j,S.z],{name:[0,"name"]},null),(l()(),S._18(5,0,["\n      "," pontos\n    "]))],function(l,n){l(n,4,0,"md-ribbon")},function(l,n){var u=n.component;l(n,3,0,S._11(n,4)._hidden);l(n,5,0,u.points)})}function q(l){return S._19(0,[(l()(),S.Z(0,0,null,null,12,"ion-range",[["class","progress-bar"],["disabled",""]],[[2,"range-disabled",null],[2,"range-pressed",null],[2,"range-has-pin",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var e=!0;if("ngModelChange"===n){e=!1!==(l.component.progress=u)&&e}return e},Nl.b,Nl.a)),S.Y(1,1228800,null,0,ql.a,[cl.a,Pl.a,[2,al.a],tl.a,fl.a,S.j,S.z,vl.a,S.g],{disabled:[0,"disabled"],min:[1,"min"],max:[2,"max"],step:[3,"step"]},null),S._14(1024,null,pl.i,function(l){return[l]},[ql.a]),S.Y(3,671744,null,0,pl.m,[[8,null],[8,null],[8,null],[2,pl.i]],{isDisabled:[0,"isDisabled"],model:[1,"model"]},{update:"ngModelChange"}),S._14(2048,null,pl.j,null,[pl.m]),S.Y(5,16384,null,0,pl.k,[pl.j],null,null),(l()(),S._18(-1,null,["\n      "])),(l()(),S.Z(7,0,null,0,1,"ion-icon",[["name","md-clipboard"],["range-left",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),S.Y(8,147456,null,0,il.a,[tl.a,S.j,S.z],{name:[0,"name"]},null),(l()(),S._18(-1,null,["\n      "])),(l()(),S.Z(10,0,null,1,1,"ion-icon",[["range-right",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),S.Y(11,147456,null,0,il.a,[tl.a,S.j,S.z],null,null),(l()(),S._18(-1,null,["\n    "]))],function(l,n){var u=n.component;l(n,1,0,"",0,100,1);l(n,3,0,"",u.progress);l(n,8,0,"md-clipboard")},function(l,n){l(n,0,0,S._11(n,1)._disabled,S._11(n,1)._pressed,S._11(n,1)._pin,S._11(n,5).ngClassUntouched,S._11(n,5).ngClassTouched,S._11(n,5).ngClassPristine,S._11(n,5).ngClassDirty,S._11(n,5).ngClassValid,S._11(n,5).ngClassInvalid,S._11(n,5).ngClassPending);l(n,7,0,S._11(n,8)._hidden);l(n,10,0,S._11(n,11)._hidden)})}function P(l){return S._19(0,[(l()(),S.Z(0,0,null,null,1,"div",[["class","progres-text-uper"],["text-center",""]],null,null,null,null,null)),(l()(),S._18(1,null,[""," de ","\n      questões"]))],null,function(l,n){var u=n.component;l(n,1,0,u.currentQuestionIndex+1,u.totalQuestions)})}function A(l){return S._19(0,[S._16(402653184,1,{content:0}),(l()(),S.Z(1,0,null,null,29,"ion-header",[],null,null,null,null,null)),S.Y(2,16384,null,0,Al.a,[tl.a,S.j,S.z,[2,Sl.a]],null,null),(l()(),S._18(-1,null,["\n  "])),(l()(),S.Z(4,0,null,null,25,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,Tl.b,Tl.a)),S.Y(5,49152,null,0,Cl.a,[ml.a,[2,Sl.a],[2,Dl.a],tl.a,S.j,S.z],null,null),(l()(),S._18(-1,3,["\n    "])),(l()(),S.Z(7,0,null,3,21,"ion-row",[["class","row"]],null,null,null,null,null)),S.Y(8,16384,null,0,ol.a,[],null,null),(l()(),S._18(-1,null,["\n      "])),(l()(),S.U(16777216,null,null,1,null,e)),S.Y(11,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,null,["\n      "])),(l()(),S.U(16777216,null,null,1,null,t)),S.Y(14,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,null,["\n      "])),(l()(),S.U(16777216,null,null,1,null,i)),S.Y(17,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,null,["\n      "])),(l()(),S.U(16777216,null,null,1,null,o)),S.Y(20,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,null,["\n      "])),(l()(),S.Z(22,0,null,null,5,"ion-col",[["class","col"],["col-2",""]],null,null,null,null,null)),S.Y(23,16384,null,0,nl.a,[],null,null),(l()(),S._18(-1,null,["\n        "])),(l()(),S.U(16777216,null,null,1,null,s)),S.Y(26,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,null,["\n      "])),(l()(),S._18(-1,null,["\n    "])),(l()(),S._18(-1,3,["\n  "])),(l()(),S._18(-1,null,["\n"])),(l()(),S._18(-1,null,["\n\n"])),(l()(),S.Z(32,0,null,null,64,"ion-content",[["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,zl.b,zl.a)),S.Y(33,4374528,[[1,4]],0,bl.a,[tl.a,fl.a,vl.a,S.j,S.z,ml.a,Ol.a,S.u,[2,Sl.a],[2,Dl.a]],null,null),(l()(),S._18(-1,1,["\n  "])),(l()(),S.Z(35,0,null,1,60,"ion-grid",[["class","grid"]],null,null,null,null,null)),S.Y(36,16384,null,0,Fl.a,[],null,null),(l()(),S._18(-1,null,["\n    "])),(l()(),S.Z(38,0,null,null,15,"ion-row",[["class","context-area row"]],null,null,null,null,null)),S.Y(39,16384,null,0,ol.a,[],null,null),(l()(),S._18(-1,null,["\n      "])),(l()(),S.Z(41,0,null,null,4,"ion-col",[["class","context-area-img col"],["col-3",""]],null,null,null,null,null)),S.Y(42,16384,null,0,nl.a,[],null,null),(l()(),S._18(-1,null,["\n        "])),(l()(),S.Z(44,0,null,null,0,"img",[["class","context-area-icon"]],[[8,"src",4]],null,null,null,null)),(l()(),S._18(-1,null,["\n      "])),(l()(),S._18(-1,null,["\n      "])),(l()(),S.Z(47,0,null,null,5,"ion-col",[["class","context-area-container col"],["col-9",""]],null,null,null,null,null)),S.Y(48,16384,null,0,nl.a,[],null,null),(l()(),S._18(-1,null,["\n        "])),(l()(),S.Z(50,0,null,null,1,"h1",[],null,null,null,null,null)),(l()(),S._18(51,null,["\n          ","\n        "])),(l()(),S._18(-1,null,["\n      "])),(l()(),S._18(-1,null,["\n    "])),(l()(),S._18(-1,null,["\n    "])),(l()(),S.Z(55,0,null,null,0,"div",[["class","hr"]],null,null,null,null,null)),(l()(),S._18(-1,null,["\n    "])),(l()(),S.Z(57,0,null,null,8,"ion-row",[["class","margin-top-30 row"]],null,null,null,null,null)),S.Y(58,16384,null,0,ol.a,[],null,null),(l()(),S._18(-1,null,["\n      "])),(l()(),S.U(16777216,null,null,1,null,r)),S.Y(61,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,null,["\n      "])),(l()(),S.U(16777216,null,null,1,null,a)),S.Y(64,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,null,["\n    "])),(l()(),S._18(-1,null,["\n    "])),(l()(),S.Z(67,0,null,null,11,"ion-grid",[["class","grid-questionary grid"]],null,null,null,null,null)),S.Y(68,16384,null,0,Fl.a,[],null,null),(l()(),S._18(-1,null,["\n      "])),(l()(),S.U(16777216,null,null,1,null,f)),S.Y(71,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,null,["\n      "])),(l()(),S.U(16777216,null,null,1,null,I)),S.Y(74,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,null,["\n      "])),(l()(),S.U(16777216,null,null,1,null,y)),S.Y(77,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,null,["\n    "])),(l()(),S._18(-1,null,["\n    "])),(l()(),S._18(-1,null,["\n    "])),(l()(),S.U(16777216,null,null,1,null,x)),S.Y(82,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,null,["\n    "])),(l()(),S.U(16777216,null,null,1,null,Z)),S.Y(85,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,null,["\n    "])),(l()(),S.U(16777216,null,null,1,null,k)),S.Y(88,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,null,["\n    "])),(l()(),S.U(16777216,null,null,1,null,Q)),S.Y(91,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,null,["\n    "])),(l()(),S.U(16777216,null,null,1,null,C)),S.Y(94,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,null,["\n  "])),(l()(),S._18(-1,1,["\n"])),(l()(),S._18(-1,null,["\n"])),(l()(),S.Z(98,0,null,null,15,"ion-footer",[],[[8,"hidden",0]],null,null,null,null)),S.Y(99,16384,null,0,jl.a,[tl.a,S.j,S.z,[2,Sl.a]],null,null),(l()(),S._18(-1,null,["\n  "])),(l()(),S.Z(101,0,null,null,11,"ion-navbar",[["class","toolbar-progress toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,Tl.b,Tl.a)),S.Y(102,49152,null,0,Cl.a,[ml.a,[2,Sl.a],[2,Dl.a],tl.a,S.j,S.z],null,null),(l()(),S._18(-1,3,["\n    "])),(l()(),S.U(16777216,null,3,1,null,N)),S.Y(105,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,3,["\n    "])),(l()(),S.U(16777216,null,3,1,null,q)),S.Y(108,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,3,["\n    "])),(l()(),S.U(16777216,null,3,1,null,P)),S.Y(111,16384,null,0,sl.i,[S.I,S.F],{ngIf:[0,"ngIf"]},null),(l()(),S._18(-1,3,["\n  "])),(l()(),S._18(-1,null,["\n"]))],function(l,n){var u=n.component;l(n,11,0,u.useGame);l(n,14,0,!u.useGame);l(n,17,0,u.useGame);l(n,20,0,!u.useGame);l(n,26,0,u.currentQuestion.useNarrative&&u.useGame);l(n,61,0,!u.useGame);l(n,64,0,u.useGame);l(n,71,0,u.showYesNo&&u.showDontNow&&!u.showAnswerText);l(n,74,0,u.showYesNo&&!u.showDontNow&&!u.showAnswerText);l(n,77,0,!u.showYesNo&&u.showAnswerText);l(n,82,0,u.showNeighborhoodList&&u.isYesSelected);l(n,85,0,u.useGame&&!u.endQuestion);l(n,88,0,!u.useGame&&!u.endQuestion);l(n,91,0,u.useGame&&u.endQuestion);l(n,94,0,!u.useGame&&u.endQuestion);l(n,105,0,u.useGame);l(n,108,0,u.useGame);l(n,111,0,u.useGame)},function(l,n){var u=n.component;l(n,4,0,S._11(n,5)._hidden,S._11(n,5)._sbPadding);l(n,32,0,S._11(n,33).statusbarPadding,S._11(n,33)._hasRefresher);l(n,44,0,S._2(1,"assets/imgs/",u.currentQuestion.contextAreaIcon,""));l(n,51,0,u.currentQuestion.contextArea);l(n,98,0,u.keyboard.isOpen()&&u.platform.width()<500);l(n,101,0,S._11(n,102)._hidden,S._11(n,102)._sbPadding)})}Object.defineProperty(n,"__esModule",{value:!0});var S=u(0),T=(u(3),u(54),u(44)),D=u(144),z=u(32),O=u(46),F=u(138),j=u(141),B=u(97),U=u(18),E=this&&this.__awaiter||function(l,n,u,e){return new(u||(u=Promise))(function(t,i){function o(l){try{r(e.next(l))}catch(l){i(l)}}function s(l){try{r(e.throw(l))}catch(l){i(l)}}function r(l){l.done?t(l.value):new u(function(n){n(l.value)}).then(o,s)}r((e=e.apply(l,n||[])).next())})},M=this&&this.__generator||function(l,n){function u(u){return function(o){return function(u){if(e)throw new TypeError("Generator is already executing.");for(;s;)try{if(e=1,t&&(i=t[2&u[0]?"return":u[0]?"throw":"next"])&&!(i=i.call(t,u[1])).done)return i;switch(t=0,i&&(u=[0,i.value]),u[0]){case 0:case 1:i=u;break;case 4:return s.label++,{value:u[1],done:!1};case 5:s.label++,t=u[1],u=[0];continue;case 7:u=s.ops.pop(),s.trys.pop();continue;default:if(i=s.trys,!(i=i.length>0&&i[i.length-1])&&(6===u[0]||2===u[0])){s=0;continue}if(3===u[0]&&(!i||u[1]>i[0]&&u[1]<i[3])){s.label=u[1];break}if(6===u[0]&&s.label<i[1]){s.label=i[1],i=u;break}if(i&&s.label<i[2]){s.label=i[2],s.ops.push(u);break}i[2]&&s.ops.pop(),s.trys.pop();continue}u=n.call(l,s)}catch(l){u=[6,l],t=0}finally{e=i=0}if(5&u[0])throw u[1];return{value:u[0]?u[1]:void 0,done:!0}}([u,o])}}var e,t,i,o,s={label:0,sent:function(){if(1&i[0])throw i[1];return i[1]},trys:[],ops:[]};return o={next:u(0),throw:u(1),return:u(2)},"function"==typeof Symbol&&(o[Symbol.iterator]=function(){return this}),o},G=function(){function l(l,n,u,e,t,i,o,s,r,a,c,d,h,g){var p=this;this.toastCtrl=l,this.menuCtrl=n,this.navCtrl=u,this.navParams=e,this.questionProvider=t,this.storage=i,this.databaseProvider=o,this.loadingCtrl=s,this.alertCtrl=r,this.priorizationProvider=a,this.answerProvider=c,this.keyboard=d,this.platform=h,this.restProvider=g,this.neighborhoodsSelected=[],this.questionAnswer=-1,this.showNeighborhoodList=!1,this.isYesSelected=!1,this.isNoSelected=!1,this.isDontKnowSelected=!1,this.btnContinueDisabled=!0,this.showDontNow=!0,this.showAnswerText=!1,this.showYesNo=!1,this.answerText="",this.useGame=!1,this.endQuestion=!1,this.NO=0,this.YES=1,this.DONT_KNOW=2,this.MANY_NEIGHBORHOODS_PROBLEM=0,this.CITY_PROBLEM=1,this.RESPONDENT_NEIGHBORHOOD_PROBLEM=2,this.storage.get("useGame").then(function(l){return p.useGame=l}),this.getUserType(),this.progress=0,this.answers=e.get("answers"),this.answersNeighborhoods=e.get("answersNeighborhoods"),this.prioritizations=e.get("prioritizations"),this.questionary=e.get("questionary"),this.currentQuestionIndex=e.get("currentQuestionIndex"),this.currentQuestion=e.get("currentQuestion"),this.points=e.get("points"),this.isRuralZone();this.databaseProvider.verifyEntities(["neighborhoods","metricItems","respondent"]).then(function(l){l.length>0&&0==l.filter(function(l){return 0==l}).length?p.setEntities():p.navigateBack()}).catch(function(){return p.navigateBack()})}return l.prototype.getUserType=function(){var l=this;this.storage.get("userType").then(function(n){if(null!=n)l.userType=n;else{var u=new B.b;u.id=null,u.name=null,l.userType=u}}).catch(function(){var n=new B.b;n.id=null,n.name=null,l.userType=n})},l.prototype.presentToast=function(){this.toastCtrl.create({message:"Clique no icone em caso de dúvidas!",duration:5e3,position:"top"}).present()},l.prototype.ionViewDidLeave=function(){return E(this,void 0,void 0,function(){return M(this,function(l){return this.points=this.points-1,[2]})})},l.prototype.openMenu=function(){this.menuCtrl.open()},l.prototype.navigateBack=function(){this.loader=this.loadingCtrl.create(),this.loader.present(),this.navCtrl.setRoot("QuestionariesListPage",{}).then(this.loader.dismiss())},l.prototype.setEntities=function(){var l=this;this.storage.get("neighborhoods").then(function(n){return l.neighborhoods=n}),this.storage.get("metricItems").then(function(n){return l.metricItems=n}),this.storage.get("respondent").then(function(n){return l.respondent=n}),this.storage.get("plan").then(function(n){return l.plan=n})},l.prototype.getAllQuestionsByQuestionary=function(l,n,u){var e=this;this.questionProvider.getAllQuestionsByQuestionary(l,u).then(function(t){null!=t?(e.questions=t,e.currentQuestion=e.questions[n],e.progress=(n+1)/e.questions.length*100,e.totalQuestions=e.questions.length,"0"==e.currentQuestion.showDontNow?(e.showDontNow=!1,e.showYesNo=!0):(e.showDontNow=!0,e.showYesNo=!0),"0"==e.currentQuestion.useAnswerText?(e.showAnswerText=!1,e.showYesNo=!0):(e.showAnswerText=!0,e.showYesNo=!1,e.questionAnswer=e.YES,e.btnContinueDisabled=!1),e.currentQuestionIndex+1>=e.questions.length&&(e.endQuestion=!0),e.currentQuestion.useNarrative="0"!=e.currentQuestion.useNarrative):e.showAlertGetAllQuestionsByQuestionary(l,n,u)}).catch(function(t){console.error(t),e.restProvider.sendGoogleAnalyticsErrorData("QuestionaryPage","getAllQuestionsByQuestionary",t),e.showAlertGetAllQuestionsByQuestionary(l,n,u)})},l.prototype.isRuralZone=function(){var l=this;this.storage.get("isRuralZone").then(function(n){l.getAllQuestionsByQuestionary(l.questionary,l.currentQuestionIndex,n)},function(n){console.error(n),l.restProvider.sendGoogleAnalyticsErrorData("QuestionaryPage","isRuralZone",n),l.getAllQuestionsByQuestionary(l.questionary,l.currentQuestionIndex,0)}).catch(function(n){console.error(n),l.restProvider.sendGoogleAnalyticsErrorData("QuestionaryPage","isRuralZone",n),l.getAllQuestionsByQuestionary(l.questionary,l.currentQuestionIndex,0)})},l.prototype.answerToQuestion=function(l){switch(this.questionAnswer=l,l){case this.NO:this.isNoSelected=!0,this.isYesSelected=!1,this.isDontKnowSelected=!1;break;case this.YES:this.isNoSelected=!1,this.isYesSelected=!0,this.isDontKnowSelected=!1;break;case this.DONT_KNOW:this.isNoSelected=!1,this.isYesSelected=!1,this.isDontKnowSelected=!0}this.enableContinueButton(),this.scrollToBottom()},l.prototype.neighborhoodRadioSelected=function(l){this.neighborhoodsSelected=[],l==this.CITY_PROBLEM?this.neighborhoodsSelected=[]:l==this.RESPONDENT_NEIGHBORHOOD_PROBLEM&&this.neighborhoodsSelected.push(this.respondent.residenceNeighborhood),this.neighborhoodAnswer=l,this.showNeighborhoodList=l==this.MANY_NEIGHBORHOODS_PROBLEM,this.enableContinueButton(),this.scrollToBottom()},l.prototype.enableContinueButton=function(){this.btnContinueDisabled=!(this.isNoSelected||this.isDontKnowSelected||this.isYesSelected)&&(!this.isYesSelected||this.neighborhoodAnswer!=this.CITY_PROBLEM&&this.neighborhoodAnswer!=this.RESPONDENT_NEIGHBORHOOD_PROBLEM&&(this.neighborhoodAnswer!=this.MANY_NEIGHBORHOODS_PROBLEM||!(this.neighborhoodsSelected&&this.neighborhoodsSelected.length>0)))},l.prototype.createAnswer=function(l,n,u,e,t){var i=new T.a;i.plan=l,i.questionary=n,i.question=u,i.respondent=e,i.answer=t;var o=new Date;i.created_at=new Date(o.valueOf()-6e4*o.getTimezoneOffset()).toISOString(),i.isCompleted=!1,i.answer_text=this.answerText,this.answers.push(i)},l.prototype.createAnswersNeighborhoods=function(){var l=this;this.neighborhoodsSelected.length>0&&this.neighborhoodsSelected.forEach(function(n){var u=new T.b;u.plan=l.plan,u.questionary=l.questionary,u.question=l.currentQuestion,u.respondent=l.respondent,u.neighborhood=n;var e=new Date;u.created_at=new Date(e.valueOf()-6e4*e.getTimezoneOffset()).toISOString(),l.answersNeighborhoods.push(u)})},l.prototype.nextStep=function(){this.deleteAnswer(),this.createAnswer(this.plan,this.questionary,this.currentQuestion,this.respondent,this.questionAnswer),this.deleteAnswersNeighborhoods(),this.createAnswersNeighborhoods(),this.navigate()},l.prototype.deleteAnswer=function(){var l=this;this.answers=this.answers.filter(function(n){return!(n.plan.id==l.plan.id&&n.questionary.id==l.questionary.id&&n.respondent.id==l.respondent.id&&n.question.id==l.currentQuestion.id)})},l.prototype.deleteAnswersNeighborhoods=function(){var l=this;this.answersNeighborhoods=this.answersNeighborhoods.filter(function(n){return!(n.plan.id==l.plan.id&&n.questionary.id==l.questionary.id&&n.respondent.id==l.respondent.id&&n.question.id==l.currentQuestion.id)})},l.prototype.navigate=function(){this.loader=this.loadingCtrl.create(),this.loader.present(),1==this.plan.usePrioritization?this.questionAnswer==this.YES?this.metricItems.length>0?this.navigatePrioritizationPage(this.plan,this.respondent,this.questionary,this.neighborhoods,this.questions,this.metricItems,this.metricItems[0],0,this.currentQuestionIndex,this.currentQuestion,this.answers,this.answersNeighborhoods,this.prioritizations):(this.points=this.points+1,this.navigateThankYouPage()):(this.points=this.points+1,this.currentQuestionIndex+1<this.questions.length?this.navigateQuestionaryPage():this.navigateThankYouPage()):this.currentQuestionIndex+1<this.questions.length?(this.points=this.points+1,null==this.questions[this.currentQuestionIndex+1].metricId?this.navigateQuestionaryPage():this.loadMetrics(this.questions[this.currentQuestionIndex+1].metricId)):(this.points=this.points+1,this.navigateThankYouPage())},l.prototype.insertAnswerAndNavigateToPrioritization=function(){this.createAnswer(this.plan,this.questionary,this.questions[this.currentQuestionIndex+1],this.respondent,this.YES),this.navigatePrioritizationPage(this.plan,this.respondent,this.questionary,this.neighborhoods,this.questions,this.metricItems,this.metricItems[0],0,this.currentQuestionIndex+1,this.questions[this.currentQuestionIndex+1],this.answers,this.answersNeighborhoods,this.prioritizations)},l.prototype.finishQuestionary=function(){var l=this;this.answerProvider.insertAnswersData(this.answers,this.answersNeighborhoods,this.prioritizations,this.userType,this.useGame,this.points).then(function(n){null!=n?l.storage.set("points",l.points):(l.showAlertFinishQuestionary(),l.loader.dismiss())}).catch(function(n){console.error(n),l.restProvider.sendGoogleAnalyticsErrorData("QuestionaryPage","finishQuestionary",n),l.showAlertFinishQuestionary(),l.loader.dismiss()})},l.prototype.navigateThankYouPage=function(){this.finishQuestionary(),this.navCtrl.setRoot("ThankyouPage",{questions:this.questions,questionary:this.questionary,points:this.points,answers:this.answers,answersNeighborhoods:this.answersNeighborhoods,prioritizations:this.prioritizations}).then(this.loader.dismiss())},l.prototype.navigateQuestionaryPage=function(){this.navCtrl.push("QuestionaryPage",{points:this.points,respondent:this.respondent,questionary:this.questionary,neighborhoods:this.neighborhoods,currentQuestionIndex:this.currentQuestionIndex+1,currentQuestion:this.questions[this.currentQuestionIndex+1],metricItems:this.metricItems,answers:this.answers,answersNeighborhoods:this.answersNeighborhoods,prioritizations:this.prioritizations}).then(this.loader.dismiss())},l.prototype.navigatePrioritizationPage=function(l,n,u,e,t,i,o,s,r,a,c,d,h){this.navCtrl.push("PrioritizationPage",{points:this.points,plan:l,respondent:n,questionary:u,neighborhoods:e,questions:t,metricItems:i,currentMetricItem:o,currentMetricItemIndex:s,currentQuestionIndex:r,currentQuestion:a,answers:c,answersNeighborhoods:d,prioritizations:h}).then(this.loader.dismiss())},l.prototype.loadMetrics=function(l){var n=this;this.priorizationProvider.getMetricItems(l).then(function(u){null!=u?(n.metricItems=u,n.priorizationProvider.getMetricValues().then(function(u){if(null!=u){for(var e=0;e<n.metricItems.length;e++)for(var t=n.metricItems[e],i=0;i<u.length;i++){var o=u[i];t.id==o.metricItemId&&n.metricItems[e].metricValues.push(o)}n.storage.set("metricItems",n.metricItems),n.insertAnswerAndNavigateToPrioritization()}else n.showAlertLoadMetrics(l)}).catch(function(u){console.error(u),n.restProvider.sendGoogleAnalyticsErrorData("QuestionaryPage","loadMetrics",u),n.showAlertLoadMetrics(l)})):n.showAlertLoadMetrics(l)}).catch(function(u){console.error(u),n.restProvider.sendGoogleAnalyticsErrorData("QuestionaryPage","loadMetrics",u),n.showAlertLoadMetrics(l)})},l.prototype.showAlertLoadMetrics=function(l){var n=this;this.metricItems=[];this.alertCtrl.create({title:"Oops!",message:"Não foi possível acessar os dados do servidor. Por favor, tente novamente.",buttons:[{text:"Tentar novamente",handler:function(){n.loadMetrics(l)}}]}).present()},l.prototype.showAlertGetAllQuestionsByQuestionary=function(l,n,u){var e=this;this.alertCtrl.create({title:"Oops!",message:"Não foi possível acessar os dados das questões do questionário. Por favor, tente novamente.",buttons:[{text:"Tentar novamente",handler:function(){e.getAllQuestionsByQuestionary(l,n,u)}}]}).present()},l.prototype.showAlertFinishQuestionary=function(){var l=this;this.alertCtrl.create({title:"Oops!",message:"Não foi possível enviar os dados para o servidor. Por favor, tente novamente.",buttons:[{text:"Tentar novamente",handler:function(){l.finishQuestionary()}}]}).present()},l.prototype.scrollToBottom=function(){if(this.content){var l=this.content;setTimeout(function(){l.scrollToBottom(100)},100)}},l.prototype.help=function(){this.alertCtrl.create({title:"<div text-center>Então, vamos soltar a imaginação!</div>",message:'<div class="dialogue-box box-question"><div class="tdialogue-box-text"><div text-center>'+this.currentQuestion.narrative+'</div></div></div><div class="alert-align-center"><img class="img-alert img-question" src="assets/gifs/gif-c-2.gif" /></div>',buttons:[{text:"Ok!",handler:function(){}}]}).present()},l}(),R=function(){return function(){}}(),L=u(207),H=u(208),K=u(209),V=u(210),X=u(211),$=u(212),W=u(213),J=u(214),ll=u(215),nl=u(66),ul=u(25),el=u(17),tl=u(1),il=u(30),ol=u(68),sl=u(10),rl=u(96),al=u(13),cl=u(12),dl=u(39),hl=u(56),gl=u(273),pl=u(16),_l=u(143),fl=u(4),ml=u(7),bl=u(22),vl=u(9),wl=u(71),Il=u(45),yl=u(217),Yl=u(72),xl=u(14),Zl=u(216),kl=u(69),Ql=u(40),Cl=u(28),Nl=u(271),ql=u(136),Pl=u(26),Al=u(55),Sl=u(5),Tl=u(139),Dl=u(20),zl=u(95),Ol=u(24),Fl=u(67),jl=u(140),Bl=u(73),Ul=u(27),El=u(11),Ml=u(57),Gl=u(47),Rl=S.X({encapsulation:2,styles:[],data:{}}),Ll=S.V("page-questionary",G,function(l){return S._19(0,[(l()(),S.Z(0,0,null,null,1,"page-questionary",[],null,null,null,A,Rl)),S.Y(1,49152,null,0,G,[Bl.a,Ul.a,Dl.a,El.a,D.b,z.b,O.a,Ml.a,Gl.a,F.a,j.a,Ol.a,fl.a,U.a],null,null)],null,null)},{},{},[]),Hl=u(135),Kl=u(43);u.d(n,"QuestionaryPageModuleNgFactory",function(){return Vl});var Vl=S.W(R,[],function(l){return S._7([S._8(512,S.i,S.S,[[8,[L.a,H.a,K.a,V.a,X.a,$.a,W.a,J.a,ll.a,Ll]],[3,S.i],S.s]),S._8(4608,sl.k,sl.j,[S.r,[2,sl.s]]),S._8(4608,pl.r,pl.r,[]),S._8(4608,pl.d,pl.d,[]),S._8(512,sl.b,sl.b,[]),S._8(512,pl.p,pl.p,[]),S._8(512,pl.g,pl.g,[]),S._8(512,pl.n,pl.n,[]),S._8(512,Hl.a,Hl.a,[]),S._8(512,Hl.b,Hl.b,[]),S._8(512,R,R,[]),S._8(256,Kl.a,G,[])])})},271:function(l,n,u){"use strict";function e(l){return r._19(0,[(l()(),r.Z(0,0,null,null,1,"div",[["class","range-pin"],["role","presentation"]],null,null,null,null,null)),(l()(),r._18(1,null,["",""]))],null,function(l,n){l(n,1,0,n.component.val)})}function t(l){return r._19(0,[(l()(),r.U(16777216,null,null,1,null,e)),r.Y(1,16384,null,0,a.i,[r.I,r.F],{ngIf:[0,"ngIf"]},null),(l()(),r.Z(2,0,null,null,0,"div",[["class","range-knob"],["role","presentation"]],null,null,null,null,null))],function(l,n){l(n,1,0,n.component.pin)},null)}function i(l){return r._19(0,[(l()(),r.Z(0,0,null,null,0,"div",[["class","range-tick"],["role","presentation"]],[[4,"left",null],[2,"range-tick-active",null]],null,null,null,null))],null,function(l,n){l(n,0,0,n.context.$implicit.left,n.context.$implicit.active)})}function o(l){return r._19(0,[(l()(),r.Z(0,0,null,null,1,"div",[["class","range-knob-handle"],["role","slider"]],[[2,"range-knob-pressed",null],[2,"range-knob-min",null],[2,"range-knob-max",null],[4,"left",null],[1,"aria-valuenow",0],[1,"aria-valuemin",0],[1,"aria-valuemax",0],[1,"aria-disabled",0],[1,"aria-labelledby",0],[8,"tabIndex",0]],[[null,"ionIncrease"],[null,"ionDecrease"],[null,"keydown"]],function(l,n,u){var e=!0,t=l.component;if("keydown"===n){e=!1!==r._11(l,1)._keyup(u)&&e}if("ionIncrease"===n){e=!1!==t._keyChg(!0,!0)&&e}if("ionDecrease"===n){e=!1!==t._keyChg(!1,!0)&&e}return e},t,d)),r.Y(1,49152,null,0,c.a,[],{ratio:[0,"ratio"],pressed:[1,"pressed"],pin:[2,"pin"],min:[3,"min"],max:[4,"max"],val:[5,"val"],disabled:[6,"disabled"],labelId:[7,"labelId"]},{ionIncrease:"ionIncrease",ionDecrease:"ionDecrease"})],function(l,n){var u=n.component;l(n,1,0,u._ratioB,u._pressedB,u._pin,u._min,u._max,u._valB,u._disabled,u._labelId)},function(l,n){l(n,0,0,r._11(n,1).pressed,r._11(n,1).val===r._11(n,1).min||void 0===r._11(n,1).val,r._11(n,1).val===r._11(n,1).max,r._11(n,1)._x,r._11(n,1).val,r._11(n,1).min,r._11(n,1).max,r._11(n,1).disabled,r._11(n,1).labelId,r._11(n,1).disabled?-1:0)})}function s(l){return r._19(0,[r._16(402653184,1,{_slider:0}),r._10(null,0),(l()(),r.Z(2,0,[[1,0],["slider",1]],null,8,"div",[["class","range-slider"]],null,null,null,null,null)),(l()(),r.U(16777216,null,null,1,null,i)),r.Y(4,802816,null,0,a.h,[r.I,r.F,r.p],{ngForOf:[0,"ngForOf"]},null),(l()(),r.Z(5,0,null,null,0,"div",[["class","range-bar"],["role","presentation"]],null,null,null,null,null)),(l()(),r.Z(6,0,[["bar",1]],null,0,"div",[["class","range-bar range-bar-active"],["role","presentation"]],[[4,"left",null],[4,"right",null]],null,null,null,null)),(l()(),r.Z(7,0,null,null,1,"div",[["class","range-knob-handle"],["role","slider"]],[[2,"range-knob-pressed",null],[2,"range-knob-min",null],[2,"range-knob-max",null],[4,"left",null],[1,"aria-valuenow",0],[1,"aria-valuemin",0],[1,"aria-valuemax",0],[1,"aria-disabled",0],[1,"aria-labelledby",0],[8,"tabIndex",0]],[[null,"ionIncrease"],[null,"ionDecrease"],[null,"keydown"]],function(l,n,u){var e=!0,t=l.component;if("keydown"===n){e=!1!==r._11(l,8)._keyup(u)&&e}if("ionIncrease"===n){e=!1!==t._keyChg(!0,!1)&&e}if("ionDecrease"===n){e=!1!==t._keyChg(!1,!1)&&e}return e},t,d)),r.Y(8,49152,null,0,c.a,[],{ratio:[0,"ratio"],pressed:[1,"pressed"],pin:[2,"pin"],min:[3,"min"],max:[4,"max"],val:[5,"val"],disabled:[6,"disabled"],labelId:[7,"labelId"]},{ionIncrease:"ionIncrease",ionDecrease:"ionDecrease"}),(l()(),r.U(16777216,null,null,1,null,o)),r.Y(10,16384,null,0,a.i,[r.I,r.F],{ngIf:[0,"ngIf"]},null),r._10(null,1)],function(l,n){var u=n.component;l(n,4,0,u._ticks);l(n,8,0,u._ratioA,u._pressedA,u._pin,u._min,u._max,u._valA,u._disabled,u._labelId);l(n,10,0,u._dual)},function(l,n){var u=n.component;l(n,6,0,u._barL,u._barR);l(n,7,0,r._11(n,8).pressed,r._11(n,8).val===r._11(n,8).min||void 0===r._11(n,8).val,r._11(n,8).val===r._11(n,8).max,r._11(n,8)._x,r._11(n,8).val,r._11(n,8).min,r._11(n,8).max,r._11(n,8).disabled,r._11(n,8).labelId,r._11(n,8).disabled?-1:0)})}var r=u(0),a=u(10),c=u(137),d=r.X({encapsulation:2,styles:[],data:{}});u(16),u(136),u(12),u(26),u(13),u(1),u(4),u(9);u.d(n,"a",function(){return h}),n.b=s;var h=r.X({encapsulation:2,styles:[],data:{}})},273:function(l,n,u){"use strict";function e(l){return r._19(0,[(l()(),r.Z(0,0,[[1,0],["textInput",1]],null,1,"input",[["class","text-input"],["dir","auto"]],[[8,"type",0],[1,"aria-labelledby",0],[1,"min",0],[1,"max",0],[1,"step",0],[1,"autocomplete",0],[1,"autocorrect",0],[8,"placeholder",0],[8,"disabled",0],[8,"readOnly",0]],[[null,"input"],[null,"blur"],[null,"focus"],[null,"keydown"]],function(l,n,u){var e=!0,t=l.component;if("input"===n){e=!1!==t.onInput(u)&&e}if("blur"===n){e=!1!==t.onBlur(u)&&e}if("focus"===n){e=!1!==t.onFocus(u)&&e}if("keydown"===n){e=!1!==t.onKeydown(u)&&e}return e},null,null)),r.Y(1,278528,null,0,a.g,[r.p,r.q,r.j,r.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null)],function(l,n){l(n,1,0,"text-input","text-input-"+n.component._mode)},function(l,n){var u=n.component;l(n,0,0,u._type,u._labelId,u.min,u.max,u.step,u.autocomplete,u.autocorrect,u.placeholder,u._disabled,u._readonly)})}function t(l){return r._19(0,[(l()(),r.Z(0,0,[[1,0],["textInput",1]],null,1,"textarea",[["class","text-input"]],[[1,"aria-labelledby",0],[1,"autocomplete",0],[1,"autocorrect",0],[8,"placeholder",0],[8,"disabled",0],[8,"readOnly",0]],[[null,"input"],[null,"blur"],[null,"focus"],[null,"keydown"]],function(l,n,u){var e=!0,t=l.component;if("input"===n){e=!1!==t.onInput(u)&&e}if("blur"===n){e=!1!==t.onBlur(u)&&e}if("focus"===n){e=!1!==t.onFocus(u)&&e}if("keydown"===n){e=!1!==t.onKeydown(u)&&e}return e},null,null)),r.Y(1,278528,null,0,a.g,[r.p,r.q,r.j,r.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null)],function(l,n){l(n,1,0,"text-input","text-input-"+n.component._mode)},function(l,n){var u=n.component;l(n,0,0,u._labelId,u.autocomplete,u.autocorrect,u.placeholder,u._disabled,u._readonly)})}function i(l){return r._19(0,[(l()(),r.Z(0,0,null,null,1,"button",[["class","text-input-clear-icon"],["clear",""],["ion-button",""],["tabindex","-1"],["type","button"]],null,[[null,"click"],[null,"mousedown"]],function(l,n,u){var e=!0,t=l.component;if("click"===n){e=!1!==t.clearTextInput(u)&&e}if("mousedown"===n){e=!1!==t.clearTextInput(u)&&e}return e},c.b,c.a)),r.Y(1,1097728,null,0,d.a,[[8,""],h.a,r.j,r.z],{clear:[0,"clear"]},null)],function(l,n){l(n,1,0,"")},null)}function o(l){return r._19(0,[(l()(),r.Z(0,0,null,null,0,"div",[["class","input-cover"]],null,[[null,"touchstart"],[null,"touchend"],[null,"mousedown"],[null,"mouseup"]],function(l,n,u){var e=!0,t=l.component;if("touchstart"===n){e=!1!==t._pointerStart(u)&&e}if("touchend"===n){e=!1!==t._pointerEnd(u)&&e}if("mousedown"===n){e=!1!==t._pointerStart(u)&&e}if("mouseup"===n){e=!1!==t._pointerEnd(u)&&e}return e},null,null))],null,null)}function s(l){return r._19(2,[r._16(671088640,1,{_native:0}),(l()(),r.U(16777216,null,null,1,null,e)),r.Y(2,16384,null,0,a.i,[r.I,r.F],{ngIf:[0,"ngIf"]},null),(l()(),r.U(16777216,null,null,1,null,t)),r.Y(4,16384,null,0,a.i,[r.I,r.F],{ngIf:[0,"ngIf"]},null),(l()(),r.U(16777216,null,null,1,null,i)),r.Y(6,16384,null,0,a.i,[r.I,r.F],{ngIf:[0,"ngIf"]},null),(l()(),r.U(16777216,null,null,1,null,o)),r.Y(8,16384,null,0,a.i,[r.I,r.F],{ngIf:[0,"ngIf"]},null)],function(l,n){var u=n.component;l(n,2,0,!u._isTextarea);l(n,4,0,u._isTextarea);l(n,6,0,u._clearInput);l(n,8,0,u._useAssist)},null)}u.d(n,"a",function(){return g}),n.b=s;var r=u(0),a=u(10),c=u(25),d=u(17),h=u(1),g=(u(4),u(12),u(9),r.X({encapsulation:2,styles:[],data:{}}))}});
+webpackJsonp([1],{
+
+/***/ 298:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RespondentProfilePageModule", function() { return RespondentProfilePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__respondent_profile__ = __webpack_require__(443);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(444);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var RespondentProfilePageModule = /** @class */ (function () {
+    function RespondentProfilePageModule() {
+    }
+    RespondentProfilePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__respondent_profile__["a" /* RespondentProfilePage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__respondent_profile__["a" /* RespondentProfilePage */]),
+                __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__["a" /* BrMaskerModule */]
+            ],
+        })
+    ], RespondentProfilePageModule);
+    return RespondentProfilePageModule;
+}());
+
+//# sourceMappingURL=respondent-profile.module.js.map
+
+/***/ }),
+
+/***/ 432:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export BrMaskModel */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BrMaskerIonic3; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(17);
+
+
+var BrMaskModel = (function () {
+    function BrMaskModel() {
+        this.type = 'alfa';
+        this.decimal = 2;
+        this.decimalCaracter = ",";
+        this.userCaracters = false;
+        this.numberAndTousand = false;
+    }
+    return BrMaskModel;
+}());
+
+var BrMaskerIonic3 = (function () {
+    function BrMaskerIonic3(_renderer, _elementRef) {
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this.brmasker = new BrMaskModel();
+    }
+    BrMaskerIonic3.prototype.inputKeyup = function (event) {
+        var value = this.returnValue(event.target.value);
+        this.writeValue(value);
+        event.target.value = value;
+    };
+    BrMaskerIonic3.prototype.inputOnblur = function (event) {
+        var value = this.returnValue(event.value);
+        this.writeValue(value);
+        event.value = value;
+    };
+    BrMaskerIonic3.prototype.inputFocus = function (event) {
+        var value = this.returnValue(event.value);
+        this.writeValue(value);
+        event.value = value;
+    };
+    BrMaskerIonic3.prototype.ngOnInit = function () {
+        if (!this.brmasker.type) {
+            this.brmasker.type = 'all';
+        }
+        if (!this.brmasker.decimal) {
+            this.brmasker.decimal = 2;
+        }
+        if (!this.brmasker.decimalCaracter) {
+            this.brmasker.decimalCaracter = ',';
+        }
+    };
+    BrMaskerIonic3.prototype.writeValue = function (fn) {
+        this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', fn);
+    };
+    BrMaskerIonic3.prototype.registerOnChange = function (fn) {
+        return;
+    };
+    BrMaskerIonic3.prototype.registerOnTouched = function (fn) {
+        return;
+    };
+    BrMaskerIonic3.prototype.setDisabledState = function (isDisabled) {
+        if (isDisabled) {
+            this._renderer.setElementAttribute(this._elementRef.nativeElement, 'disabled', 'true');
+        }
+        else {
+            this._renderer.setElementAttribute(this._elementRef.nativeElement, 'disabled', 'false');
+        }
+    };
+    BrMaskerIonic3.prototype.writeCreateValue = function (value, config) {
+        if (config === void 0) { config = new BrMaskModel(); }
+        if (value && config.phone) {
+            return value.replace(/^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/gi, '$1 ($2) $3-$4');
+        }
+        if (value && config.money) {
+            return this.writeValueMoney(value, config);
+        }
+        if (value && config.person) {
+            return this.writeValuePerson(value);
+        }
+        if (value && config.percent) {
+            return this.writeValuePercent(value);
+        }
+        if (value && config.mask) {
+            this.brmasker.mask = config.mask;
+            if (config.len) {
+                this.brmasker.len = config.len;
+            }
+            return this.onInput(value);
+        }
+        return value;
+    };
+    BrMaskerIonic3.prototype.writeValuePercent = function (value) {
+        value.replace(/\D/gi, '');
+        value.replace(/%/gi, '');
+        return value.replace(/([0-9]{0})$/gi, '%$1');
+    };
+    BrMaskerIonic3.prototype.writeValuePerson = function (value) {
+        if (value.length <= 11) {
+            return value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/gi, '\$1.\$2.\$3\-\$4');
+        }
+        else {
+            return value.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/gi, '\$1.\$2.\$3\/\$4\-\$5');
+        }
+    };
+    BrMaskerIonic3.prototype.writeValueMoney = function (value, config) {
+        if (config === void 0) { config = new BrMaskModel(); }
+        return this.moneyMask(value, config);
+    };
+    BrMaskerIonic3.prototype.returnValue = function (value) {
+        if (!this.brmasker.mask) {
+            this.brmasker.mask = '';
+        }
+        if (value) {
+            var v = value;
+            if (this.brmasker.type == 'alfa') {
+                v = v.replace(/\d/gi, '');
+            }
+            if (this.brmasker.type == 'num') {
+                v = v.replace(/\D/gi, '');
+            }
+            if (this.brmasker.money) {
+                return this.moneyMask(this.onInput(v), this.brmasker);
+            }
+            if (this.brmasker.phone) {
+                return this.phoneMask(v);
+            }
+            if (this.brmasker.phoneNotDDD) {
+                return this.phoneNotDDDMask(v);
+            }
+            if (this.brmasker.person) {
+                return this.peapollMask(v);
+            }
+            if (this.brmasker.percent) {
+                return this.percentMask(v);
+            }
+            if (this.brmasker.numberAndTousand) {
+                return this.thousand(v);
+            }
+            if (this.brmasker.userCaracters) {
+                return this.usingSpecialCharacters(v, this.brmasker.mask, this.brmasker.len);
+            }
+            return this.onInput(v);
+        }
+        else {
+            return '';
+        }
+    };
+    BrMaskerIonic3.prototype.percentMask = function (v) {
+        var tmp = v;
+        tmp = tmp.replace(/\D/gi, '');
+        tmp = tmp.replace(/%/gi, '');
+        tmp = tmp.replace(/([0-9]{0})$/gi, '%$1');
+        return tmp;
+    };
+    BrMaskerIonic3.prototype.phoneMask = function (v) {
+        var n = v;
+        if (n.length > 14) {
+            this.brmasker.len = 15;
+            this.brmasker.mask = '(99) 99999-9999';
+            n = n.replace(/\D/gi, '');
+            n = n.replace(/(\d{2})(\d)/gi, '$1 $2');
+            n = n.replace(/(\d{5})(\d)/gi, '$1-$2');
+            n = n.replace(/(\d{4})(\d)/gi, '$1$2');
+        }
+        else {
+            this.brmasker.len = 14;
+            this.brmasker.mask = '(99) 9999-9999';
+            n = n.replace(/\D/gi, '');
+            n = n.replace(/(\d{2})(\d)/gi, '$1 $2');
+            n = n.replace(/(\d{4})(\d)/gi, '$1-$2');
+            n = n.replace(/(\d{4})(\d)/gi, '$1$2');
+        }
+        return this.onInput(n);
+    };
+    BrMaskerIonic3.prototype.phoneNotDDDMask = function (v) {
+        var n = v;
+        if (n.length > 9) {
+            this.brmasker.len = 10;
+            this.brmasker.mask = '99999-9999';
+            n = n.replace(/\D/gi, '');
+            n = n.replace(/(\d{5})(\d)/gi, '$1-$2');
+            n = n.replace(/(\d{4})(\d)/gi, '$1$2');
+        }
+        else {
+            this.brmasker.len = 9;
+            this.brmasker.mask = '9999-9999';
+            n = n.replace(/\D/gi, '');
+            n = n.replace(/(\d{4})(\d)/gi, '$1-$2');
+            n = n.replace(/(\d{4})(\d)/gi, '$1$2');
+        }
+        return this.onInput(n);
+    };
+    BrMaskerIonic3.prototype.peapollMask = function (v) {
+        var n = v;
+        if (n.length > 14) {
+            this.brmasker.len = 18;
+            this.brmasker.mask = '99.999.999/9999-99';
+            n = n.replace(/\D/gi, '');
+            n = n.replace(/(\d{2})(\d)/gi, '$1.$2');
+            n = n.replace(/(\d{3})(\d)/gi, '$1.$2');
+            n = n.replace(/(\d{3})(\d)/gi, '$1/$2');
+            n = n.replace(/(\d{4})(\d{1,4})$/gi, '$1-$2');
+            n = n.replace(/(\d{2})(\d{1,2})$/gi, '$1$2');
+        }
+        else {
+            this.brmasker.len = 14;
+            this.brmasker.mask = '999.999.999-99';
+            n = n.replace(/\D/gi, '');
+            n = n.replace(/(\d{3})(\d)/gi, '$1.$2');
+            n = n.replace(/(\d{3})(\d)/gi, '$1.$2');
+            n = n.replace(/(\d{3})(\d{1,2})$/gi, '$1-$2');
+        }
+        return this.onInput(n);
+    };
+    BrMaskerIonic3.prototype.moneyMask = function (value, config) {
+        var decimal = config.decimal || this.brmasker.decimal;
+        value = value
+            .replace(/\D/gi, '')
+            .replace(new RegExp("([0-9]{" + decimal + "})$", "g"), config.decimalCaracter + '$1');
+        if (value.length === decimal + 1) {
+            return "0" + value; // leading 0 so we're not left with something weird like ",50"
+        }
+        else if (value.length > decimal + 2 && value.charAt(0) === '0') {
+            return value.substr(1); // remove leading 0 when we don't need it anymore
+        }
+        if (config.thousand && value.length > (Number(4) + Number(config.decimal))) {
+            value = value.replace(new RegExp("([0-9]{3})" + config.decimalCaracter + "([0-9]{" + config.decimal + "}$)", "g"), config.thousand + "$1" + config.decimalCaracter + "$2");
+        }
+        if (config.thousand && value.length > (Number(8) + Number(config.decimal))) {
+            value = value.replace(new RegExp("([0-9]{3})" + config.thousand + "([0-9]{3})" + config.decimalCaracter + "([0-9]{" + config.decimal + "}$)", "g"), config.thousand + "$1" + config.thousand + "$2" + config.decimalCaracter + "$3");
+        }
+        return value;
+    };
+    BrMaskerIonic3.prototype.onInput = function (value) {
+        var ret = this.formatField(value, this.brmasker.mask, this.brmasker.len);
+        return ret;
+        // if (ret) {
+        //   this.element.nativeElement.value = ret;
+        // }
+    };
+    BrMaskerIonic3.prototype.thousand = function (value) {
+        var val = value.replace(/\D/gi, '');
+        var reverse = val.toString().split('').reverse().join('');
+        var thousands = reverse.match(/\d{1,3}/g);
+        if (thousands) {
+            return thousands.join("" + (this.brmasker.thousand || '.')).split('').reverse().join('');
+        }
+        return val;
+    };
+    BrMaskerIonic3.prototype.usingSpecialCharacters = function (campo, Mascara, tamanho) {
+        if (!tamanho) {
+            tamanho = 99999999999;
+        }
+        var boleanoMascara;
+        var exp = /\-|\.|\,| /gi;
+        var campoSoNumeros = campo.toString().replace(exp, '');
+        var posicaoCampo = 0;
+        var NovoValorCampo = '';
+        var TamanhoMascara = campoSoNumeros.length;
+        for (var i = 0; i < TamanhoMascara; i++) {
+            if (i < tamanho) {
+                boleanoMascara = ((Mascara.charAt(i) === '-') || (Mascara.charAt(i) === '.') || (Mascara.charAt(i) === ','));
+                if (boleanoMascara) {
+                    NovoValorCampo += Mascara.charAt(i);
+                    TamanhoMascara++;
+                }
+                else {
+                    NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
+                    posicaoCampo++;
+                }
+            }
+        }
+        return NovoValorCampo;
+    };
+    BrMaskerIonic3.prototype.formatField = function (campo, Mascara, tamanho) {
+        if (!tamanho) {
+            tamanho = 99999999999;
+        }
+        var boleanoMascara;
+        var exp = /\-|\.|\/|\(|\)|\,|\*|\+|\@|\#|\$|\&|\%|\:| /gi;
+        var campoSoNumeros = campo.toString().replace(exp, '');
+        var posicaoCampo = 0;
+        var NovoValorCampo = '';
+        var TamanhoMascara = campoSoNumeros.length;
+        for (var i = 0; i < TamanhoMascara; i++) {
+            if (i < tamanho) {
+                boleanoMascara = ((Mascara.charAt(i) === '-') || (Mascara.charAt(i) === '.') || (Mascara.charAt(i) === '/'));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '(') || (Mascara.charAt(i) === ')') || (Mascara.charAt(i) === ' '));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === ',') || (Mascara.charAt(i) === '*') || (Mascara.charAt(i) === '+'));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '@') || (Mascara.charAt(i) === '#') || (Mascara.charAt(i) === ':'));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '$') || (Mascara.charAt(i) === '&') || (Mascara.charAt(i) === '%'));
+                if (boleanoMascara) {
+                    NovoValorCampo += Mascara.charAt(i);
+                    TamanhoMascara++;
+                }
+                else {
+                    NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
+                    posicaoCampo++;
+                }
+            }
+        }
+        return NovoValorCampo;
+    };
+    return BrMaskerIonic3;
+}());
+
+BrMaskerIonic3.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
+                selector: '[brmasker]',
+                providers: [
+                    {
+                        provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* NG_VALUE_ACCESSOR */],
+                        useExisting: BrMaskerIonic3,
+                        multi: true
+                    }
+                ]
+            },] },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
+];
+/** @nocollapse */
+BrMaskerIonic3.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["W" /* Renderer */], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
+]; };
+BrMaskerIonic3.propDecorators = {
+    'brmasker': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
+    'inputKeyup': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* HostListener */], args: ['keyup', ['$event'],] },],
+    'inputOnblur': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* HostListener */], args: ['ionBlur', ['$event'],] },],
+    'inputFocus': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* HostListener */], args: ['ionFocus', ['$event'],] },],
+};
+//# sourceMappingURL=brmasker-ionic-3.js.map
+
+/***/ }),
+
+/***/ 433:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export BrMaskServicesModel */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BrMaskerIonicServices3; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+
+var BrMaskServicesModel = (function () {
+    function BrMaskServicesModel() {
+        this.type = 'alfa';
+        this.decimal = 2;
+        this.decimalCaracter = ",";
+        this.userCaracters = false;
+        this.numberAndTousand = false;
+    }
+    return BrMaskServicesModel;
+}());
+
+var BrMaskerIonicServices3 = (function () {
+    function BrMaskerIonicServices3() {
+        this.brmasker = new BrMaskServicesModel();
+    }
+    BrMaskerIonicServices3.prototype.ngOnInit = function () {
+        if (!this.brmasker.type) {
+            this.brmasker.type = 'all';
+        }
+        if (!this.brmasker.decimal) {
+            this.brmasker.decimal = 2;
+        }
+        if (!this.brmasker.decimalCaracter) {
+            this.brmasker.decimalCaracter = ',';
+        }
+    };
+    BrMaskerIonicServices3.prototype.writeCreateValue = function (value, config) {
+        if (config === void 0) { config = new BrMaskServicesModel(); }
+        if (value && config.phone) {
+            return value.replace(/^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/gi, '$1 ($2) $3-$4');
+        }
+        if (value && config.money) {
+            return this.writeValueMoney(value, config);
+        }
+        if (value && config.person) {
+            return this.writeValuePerson(value);
+        }
+        if (value && config.percent) {
+            return this.writeValuePercent(value);
+        }
+        if (value && config.numberAndTousand) {
+            return this.writeValueNumberAndThousand(value);
+        }
+        if (value && config.userCaracters) {
+            return this.writeValueusingSpecialCharacters(value);
+        }
+        if (value && config.mask) {
+            this.brmasker.mask = config.mask;
+            if (config.len) {
+                this.brmasker.len = config.len;
+            }
+            return this.onInput(value);
+        }
+        return value;
+    };
+    BrMaskerIonicServices3.prototype.writeValuePercent = function (value) {
+        value.replace(/\D/gi, '');
+        value.replace(/%/gi, '');
+        return value.replace(/([0-9]{0})$/gi, '%$1');
+    };
+    BrMaskerIonicServices3.prototype.writeValuePerson = function (value) {
+        if (value.length <= 11) {
+            return value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/gi, '\$1.\$2.\$3\-\$4');
+        }
+        else {
+            return value.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/gi, '\$1.\$2.\$3\/\$4\-\$5');
+        }
+    };
+    BrMaskerIonicServices3.prototype.writeValueMoney = function (value, config) {
+        if (config === void 0) { config = new BrMaskServicesModel(); }
+        return this.moneyMask(value, config);
+    };
+    BrMaskerIonicServices3.prototype.writeValueNumberAndThousand = function (value, config) {
+        if (config === void 0) { config = new BrMaskServicesModel(); }
+        return this.thousand(value);
+    };
+    BrMaskerIonicServices3.prototype.writeValueusingSpecialCharacters = function (value, config) {
+        if (config === void 0) { config = new BrMaskServicesModel(); }
+        return this.usingSpecialCharacters(value, config.mask, config.len);
+    };
+    BrMaskerIonicServices3.prototype.moneyMask = function (value, config) {
+        var decimal = config.decimal || this.brmasker.decimal;
+        value = value
+            .replace(/\D/gi, '')
+            .replace(new RegExp("([0-9]{" + decimal + "})$", "g"), config.decimalCaracter + '$1');
+        if (value.length === decimal + 1) {
+            return "0" + value; // leading 0 so we're not left with something weird like ",50"
+        }
+        else if (value.length > decimal + 2 && value.charAt(0) === '0') {
+            return value.substr(1); // remove leading 0 when we don't need it anymore
+        }
+        if (config.thousand && value.length > (Number(4) + Number(config.decimal))) {
+            value = value.replace(new RegExp("([0-9]{3})" + config.decimalCaracter + "([0-9]{" + config.decimal + "}$)", "g"), config.thousand + "$1" + config.decimalCaracter + "$2");
+        }
+        if (config.thousand && value.length > (Number(8) + Number(config.decimal))) {
+            value = value.replace(new RegExp("([0-9]{3})" + config.thousand + "([0-9]{3})" + config.decimalCaracter + "([0-9]{" + config.decimal + "}$)", "g"), config.thousand + "$1" + config.thousand + "$2" + config.decimalCaracter + "$3");
+        }
+        return value;
+    };
+    BrMaskerIonicServices3.prototype.onInput = function (value) {
+        var ret = this.formatField(value, this.brmasker.mask, this.brmasker.len);
+        return ret;
+    };
+    BrMaskerIonicServices3.prototype.thousand = function (value) {
+        var val = value.replace(/\D/gi, '');
+        var reverse = val.toString().split('').reverse().join('');
+        var thousands = reverse.match(/\d{1,3}/g);
+        val = thousands.join("" + (this.brmasker.thousand || '.')).split('').reverse().join('');
+        return val;
+    };
+    BrMaskerIonicServices3.prototype.usingSpecialCharacters = function (campo, Mascara, tamanho) {
+        if (!tamanho) {
+            tamanho = 99999999999;
+        }
+        var boleanoMascara;
+        var exp = /\-|\.|\,| /gi;
+        var campoSoNumeros = campo.toString().replace(exp, '');
+        var posicaoCampo = 0;
+        var NovoValorCampo = '';
+        var TamanhoMascara = campoSoNumeros.length;
+        for (var i = 0; i < TamanhoMascara; i++) {
+            if (i < tamanho) {
+                boleanoMascara = ((Mascara.charAt(i) === '-') || (Mascara.charAt(i) === '.') || (Mascara.charAt(i) === ','));
+                if (boleanoMascara) {
+                    NovoValorCampo += Mascara.charAt(i);
+                    TamanhoMascara++;
+                }
+                else {
+                    NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
+                    posicaoCampo++;
+                }
+            }
+        }
+        return NovoValorCampo;
+    };
+    BrMaskerIonicServices3.prototype.formatField = function (campo, Mascara, tamanho) {
+        if (!tamanho) {
+            tamanho = 99999999999;
+        }
+        var boleanoMascara;
+        var exp = /\-|\.|\/|\(|\)|\,|\*|\+|\@|\#|\$|\&|\%|\:| /gi;
+        var campoSoNumeros = campo.toString().replace(exp, '');
+        var posicaoCampo = 0;
+        var NovoValorCampo = '';
+        var TamanhoMascara = campoSoNumeros.length;
+        for (var i = 0; i < TamanhoMascara; i++) {
+            if (i < tamanho) {
+                boleanoMascara = ((Mascara.charAt(i) === '-') || (Mascara.charAt(i) === '.') || (Mascara.charAt(i) === '/'));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '(') || (Mascara.charAt(i) === ')') || (Mascara.charAt(i) === ' '));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === ',') || (Mascara.charAt(i) === '*') || (Mascara.charAt(i) === '+'));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '@') || (Mascara.charAt(i) === '#') || (Mascara.charAt(i) === ':'));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '$') || (Mascara.charAt(i) === '&') || (Mascara.charAt(i) === '%'));
+                if (boleanoMascara) {
+                    NovoValorCampo += Mascara.charAt(i);
+                    TamanhoMascara++;
+                }
+                else {
+                    NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
+                    posicaoCampo++;
+                }
+            }
+        }
+        return NovoValorCampo;
+    };
+    return BrMaskerIonicServices3;
+}());
+
+BrMaskerIonicServices3.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
+                selector: '[brmasker]',
+            },] },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
+];
+/** @nocollapse */
+BrMaskerIonicServices3.ctorParameters = function () { return []; };
+//# sourceMappingURL=brmasker-ionic-services.js.map
+
+/***/ }),
+
+/***/ 443:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RespondentProfilePage; });
+/* unused harmony export ResidenceTime */
+/* unused harmony export SalaryRange */
+/* unused harmony export AgeRange */
+/* unused harmony export Discipline */
+/* unused harmony export Respondent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__intro_intro__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_of__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_observable_of__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operators_map__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operators_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_operators_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_city_city__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_neighborhood_neighborhood__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_database_database__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_respondent_respondent__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_prioritization_prioritization__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_storage__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_rest_rest__ = __webpack_require__(12);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+var RespondentProfilePage = /** @class */ (function () {
+    function RespondentProfilePage(menuCtrl, navCtrl, databaseProvider, cityProvider, formBuilder, respondentProvider, neighborhoodProvider, priorizationProvider, alertCtrl, storage, loadingCtrl, restProvider) {
+        var _this = this;
+        this.menuCtrl = menuCtrl;
+        this.navCtrl = navCtrl;
+        this.databaseProvider = databaseProvider;
+        this.cityProvider = cityProvider;
+        this.formBuilder = formBuilder;
+        this.respondentProvider = respondentProvider;
+        this.neighborhoodProvider = neighborhoodProvider;
+        this.priorizationProvider = priorizationProvider;
+        this.alertCtrl = alertCtrl;
+        this.storage = storage;
+        this.loadingCtrl = loadingCtrl;
+        this.restProvider = restProvider;
+        this.respondentId = 0;
+        this.respondentCode = null;
+        this.isCommerce = false;
+        this.userType = "cidadão";
+        this.case_test = "POSCOMP";
+        this.ageRangeName = "";
+        this.disciplineList = [];
+        this.disciplineSelected = [];
+        this.genderList = [];
+        this.courseEntryList = [];
+        this.courseLeftList = [];
+        this.courseNameList = [];
+        this.userTypeList = [];
+        this.cities = [];
+        this.residenceTimeList = [];
+        this.salaryRangeList = [];
+        this.ageRangeList = [];
+        this.residenceTimeName = "";
+        this.salaryRangeName = "";
+        this.metricItems = [];
+        this.jobNeighborhoodDisabled = true;
+        this.courseDisabled = true;
+        this.isSameJobCity = "hide";
+        this.useGame = false;
+        this.editing = false;
+        this.hideField = false;
+        this.isDiscent = false;
+        this.isDiscentEvaded = false;
+        this.isDiscentConcluded = false;
+        this.isDocent = false;
+        this.storage.get('useGame').then(function (data) { return _this.useGame = data; });
+        this.storage.set('isRuralZone', false);
+        this.createForm();
+        this.createDisciplineList();
+        this.createCourseList();
+        this.createUserTypeList();
+        this.loadMetrics();
+        // this.getAllCities();
+        // this.loadResidenceTime();
+        // this.loadSalaryRange();
+        // this.loadAgeRange();
+        // this.createGenderList();
+        this.loader = this.loadingCtrl.create();
+        this.loader.present();
+        setTimeout(function () {
+            _this.existsRespondent();
+        }, 1000);
+    }
+    RespondentProfilePage.prototype.createForm = function () {
+        this.respondentForm = this.formBuilder.group({
+            code: [''],
+            courseEntry: [''],
+            courseLeft: [''],
+            userType: [''],
+            name: [''],
+            isDiscentConcluded: ['']
+            // cpf: ['', [Validators.required], this.validateCPF.bind(this)],
+            // email: [''],
+            // courseName: [''],
+            // residenceCity: [''],
+            // jobAddress: [''],
+            // jobName: [''],
+            // whatsapp: [''],
+            // residenceTimeRange: [''],
+            // residenceNeighborhood: ['', [Validators.required]],
+            // jobCity: [''],
+            // jobNeighborhood: [''],
+            // salaryRange: [''],
+            // age: [''],
+            // gender: [''],
+            // phone: [''],
+            // isCommerce: ['']
+        });
+        // this.respondentForm.controls['residenceTimeRange'].setValue(0);
+        // this.respondentForm.controls['salaryRange'].setValue(0);
+    };
+    RespondentProfilePage.prototype.existsRespondent = function () {
+        var _this = this;
+        this.storage.get('respondent')
+            .then(function (respondent) {
+            _this.setFormData();
+            if (respondent != null) {
+                _this.editing = true;
+                _this.respondentId = respondent.id;
+                _this.respondentCode = respondent.code;
+                _this.respondentForm.controls['name'].setValue(respondent.name);
+                _this.respondentForm.controls['code'].setValue(respondent.code);
+                _this.respondentForm.controls['courseEntry'].setValue(respondent.courseEntry);
+                _this.respondentForm.controls['courseLeft'].setValue(respondent.courseLeft);
+                _this.respondentForm.controls['userType'].setValue(respondent.type);
+                // this.respondentForm.controls['cpf'].setValue(respondent.cpf);
+                // this.respondentForm.controls['email'].setValue(respondent.email);
+                // this.respondentForm.controls['residenceTimeRange'].setValue(respondent.residenceTimeRange);
+                // this.respondentForm.controls['salaryRange'].setValue(respondent.salaryRange);
+                // this.respondentForm.controls['residenceNeighborhood'].setValue(respondent.residenceNeighborhood);
+                // this.respondentForm.controls['jobCity'].setValue(respondent.jobCity);
+                // this.respondentForm.controls['age'].setValue(respondent.ageRange);
+                // this.respondentForm.controls['gender'].setValue(respondent.gender);
+                // this.respondentForm.controls['phone'].setValue(respondent.phone);
+                // this.respondentForm.controls['courseName'].setValue(respondent.courseName);
+                // this.respondentForm.controls['residenceCity'].setValue(respondent.residenceCity);
+                // this.respondentForm.controls['jobAddress'].setValue(respondent.jobAddress);
+                // this.respondentForm.controls['jobName'].setValue(respondent.jobName);
+                // this.respondentForm.controls['whatsapp'].setValue(respondent.whatsapp);
+                _this.userType = respondent.type;
+                _this.resolveUsertype();
+                _this.resolveCheckBox();
+                // if (respondent.type == "comerciante") {
+                //   this.respondentForm.controls['isCommerce'].setValue(true);
+                //   this.isCommerce = true;
+                // } else {
+                //   this.respondentForm.controls['isCommerce'].setValue(false);
+                //   this.isCommerce = false;
+                // }
+                // if (respondent.jobNeighborhood != null) {
+                //   this.respondentForm.controls['jobNeighborhood'].setValue(respondent.jobNeighborhood);
+                //   this.jobCity = respondent.jobCity;
+                //   this.loadJobNeighborhoods();
+                //   this.isSameJobCity = "";
+                // }
+            }
+            else {
+                _this.isCommerce = false;
+            }
+        });
+    };
+    RespondentProfilePage.prototype.saveRespondentInfo = function () {
+        var _this = this;
+        this.loader = this.loadingCtrl.create();
+        this.loader.present();
+        //-----------------------MANTER SEMPRE TODOS OS CAMPOS--------------------------
+        var cpf = this.respondentForm.controls['cpf'];
+        var email = this.respondentForm.controls['email'];
+        var residenceNeighborhood = this.respondentForm.controls['residenceNeighborhood'];
+        var residenceTimeRange = this.respondentForm.controls['residenceTimeRange'];
+        var jobCity = this.respondentForm.controls['jobCity'];
+        var jobNeighborhood = this.respondentForm.controls['jobNeighborhood'];
+        var salaryRange = this.respondentForm.controls['salaryRange'];
+        var age = this.respondentForm.controls['age'];
+        var gender = this.respondentForm.controls['gender'];
+        var name = this.respondentForm.controls['name'];
+        var phone = this.respondentForm.controls['phone'];
+        var code = this.respondentForm.controls['code'];
+        var courseEntry = this.respondentForm.controls['courseEntry'];
+        var courseLeft = this.respondentForm.controls['courseLeft'];
+        var courseName = this.respondentForm.controls['courseName'];
+        var residenceCity = this.respondentForm.controls['residenceCity'];
+        var jobAddress = this.respondentForm.controls['jobAddress'];
+        var jobName = this.respondentForm.controls['jobName'];
+        var whatsapp = this.respondentForm.controls['whatsapp'];
+        //-----------------------MANTER SEMPRE TODOS OS CAMPOS--------------------------
+        var gameType = null;
+        if (this.useGame) {
+            gameType = "game";
+        }
+        else {
+            gameType = "not game";
+        }
+        if (!this.respondentForm.valid) {
+            if (!cpf.valid) {
+                cpf.markAsTouched();
+            }
+            if (!residenceNeighborhood.valid) {
+                residenceNeighborhood.markAsTouched();
+            }
+            this.loader.dismiss();
+        }
+        else {
+            var respondent_1 = new Respondent();
+            respondent_1.cpf = cpf ? cpf.value : null;
+            respondent_1.email = email ? email.value : null;
+            respondent_1.residenceTimeRange = residenceTimeRange ? residenceTimeRange.value : null;
+            respondent_1.residenceNeighborhood = residenceNeighborhood ? residenceNeighborhood.value : null;
+            respondent_1.jobCity = jobCity ? jobCity.value : null;
+            respondent_1.jobNeighborhood = jobNeighborhood ? jobNeighborhood.value : null;
+            respondent_1.salaryRange = salaryRange ? salaryRange.value : null;
+            respondent_1.ageRange = age ? age.value : null;
+            respondent_1.gender = gender ? gender.value : null;
+            respondent_1.name = name ? name.value : null;
+            respondent_1.phone = phone ? phone.value : null;
+            respondent_1.code = code ? code.value : null;
+            respondent_1.courseEntry = courseEntry ? courseEntry.value : null;
+            respondent_1.courseLeft = courseLeft ? courseLeft.value : null;
+            respondent_1.courseName = courseName ? courseName.value : null;
+            respondent_1.residenceCity = residenceCity ? residenceCity.value : null;
+            respondent_1.jobAddress = jobAddress ? jobAddress.value : null;
+            respondent_1.jobName = jobName ? jobName.value : null;
+            respondent_1.whatsapp = whatsapp ? whatsapp.value : null;
+            respondent_1.type = this.userType;
+            respondent_1.caseTest = this.case_test;
+            respondent_1.points = this.points;
+            respondent_1.gameType = gameType;
+            //---------------------- VERIFICA SE JA EXISTE UM ALUNO COM A MATRICULA -------------------------
+            this.respondentProvider.getRespondentByCode(respondent_1.code, this.respondentCode).then(function (repondentCode) {
+                if (!repondentCode) {
+                    //---------------------- VERIFICA SE O RESPONDENTE ESTÁ CADASTRADO -------------------------
+                    _this.respondentProvider.getRespondentById(_this.respondentId).then(function (result) {
+                        _this.storage.set("disciplineSelected", _this.disciplineSelected);
+                        if (!result) {
+                            //------------- INSERE O RESPONDENTE  -------------
+                            _this.respondentProvider.insertRespondent(respondent_1)
+                                .then(function (data) {
+                                respondent_1.id = data.id;
+                                _this.navigate(respondent_1);
+                            }).catch(function (error) {
+                                console.error(error);
+                                _this.restProvider.sendGoogleAnalyticsErrorData('RespondentProfilePage', 'saveRespondentInfo', error);
+                                _this.tryAgainSaveRespondent();
+                            });
+                        }
+                        else {
+                            //------------- ATUALIZA O RESPONDENTE -------------
+                            respondent_1.id = result.id;
+                            respondent_1.type = result.type;
+                            _this.respondentProvider.updateRespondent(respondent_1)
+                                .then(function () {
+                                _this.navigate(respondent_1);
+                            }).catch(function (error) {
+                                console.error(error);
+                                _this.restProvider.sendGoogleAnalyticsErrorData('RespondentProfilePage', 'saveRespondentInfo', error);
+                                _this.tryAgainSaveRespondent();
+                            });
+                        }
+                    }).catch(function (error) {
+                        console.error(error);
+                        _this.restProvider.sendGoogleAnalyticsErrorData('RespondentProfilePage', 'saveRespondentInfo', error);
+                        _this.tryAgainSaveRespondent();
+                    });
+                }
+                else {
+                    //------------- ATUALIZA O RESPONDENTE -------------
+                    respondent_1.id = repondentCode.id;
+                    respondent_1.type = repondentCode.type;
+                    _this.respondentProvider.updateRespondent(respondent_1)
+                        .then(function () {
+                        _this.navigate(respondent_1);
+                    }).catch(function (error) {
+                        console.error(error);
+                        _this.restProvider.sendGoogleAnalyticsErrorData('RespondentProfilePage', 'saveRespondentInfo', error);
+                        _this.tryAgainSaveRespondent();
+                    });
+                }
+            });
+        }
+    };
+    RespondentProfilePage.prototype.resolveUsertype = function () {
+        if (this.userType == "Discente formado") {
+            this.isDiscent = true;
+            this.isDiscentConcluded = true;
+            this.isDiscentEvaded = true;
+            this.isDocent = false;
+            this.respondentForm.controls['isDiscentConcluded'].setValue(true);
+            this.respondentForm.controls['userType'].setValue("Ex-aluno");
+        }
+        else if (this.userType == "Discente evadido") {
+            this.isDiscent = true;
+            this.isDiscentConcluded = false;
+            this.isDiscentEvaded = true;
+            this.isDocent = false;
+            this.respondentForm.controls['isDiscentConcluded'].setValue(false);
+            this.respondentForm.controls['userType'].setValue("Ex-aluno");
+        }
+        else if (this.userType == "Discente") {
+            this.isDiscent = true;
+            this.isDiscentConcluded = false;
+            this.isDiscentEvaded = false;
+            this.isDocent = false;
+            this.respondentForm.controls['isDiscentConcluded'].setValue(false);
+        }
+        else if (this.userType == "Docente") {
+            this.isDiscent = false;
+            this.isDiscentConcluded = false;
+            this.isDiscentEvaded = false;
+            this.isDocent = true;
+            this.respondentForm.controls['isDiscentConcluded'].setValue(false);
+        }
+    };
+    RespondentProfilePage.prototype.resolveCheckBox = function () {
+        var _this = this;
+        if (this.isDiscent && !this.isDiscentEvaded && !this.isDiscentConcluded) {
+            this.storage.get('disciplineSelected').then(function (data) {
+                if (data) {
+                    data.forEach(function (disc) {
+                        _this.checkBox.toArray()[disc.value].checked = true;
+                    });
+                }
+            });
+        }
+    };
+    RespondentProfilePage.prototype.selectUserType = function (userType) {
+        this.userType = userType.value;
+        // if (this.userType == "Graduação") {
+        //   this.courseDisabled = false;
+        //   this.createCourseNameListGrad();
+        //   this.createCourseList();
+        // } else if (this.userType == "Pós-Graduação") {
+        //   this.courseDisabled = false;
+        //   this.createCourseNameListPosGrad();
+        //   this.createCourseList();
+        // }else{
+        //   this.courseDisabled = true;
+        //   // this.respondentForm.controls['courseName'].setValue(null);
+        //   this.respondentForm.controls['courseEntry'].setValue(null);
+        //   this.respondentForm.controls['courseLeft'].setValue(null);
+        //   this.courseNameList = [];
+        // }
+        if (this.userType == "Discente") {
+            this.isDiscent = true;
+            this.isDiscentEvaded = false;
+            this.isDiscentConcluded = false;
+            this.isDocent = false;
+            this.respondentForm.controls['courseEntry'].enable();
+            this.respondentForm.controls['courseEntry'].setValue(null);
+            this.respondentForm.controls['code'].enable();
+            this.respondentForm.controls['code'].setValue(null);
+            this.respondentForm.controls['courseLeft'].setValue(null);
+            this.respondentForm.controls['courseLeft'].disable();
+            this.respondentForm.controls['isDiscentConcluded'].setValue(false);
+        }
+        else if (this.userType == "Ex-aluno") {
+            this.userType = "Discente evadido";
+            this.isDiscent = true;
+            this.isDiscentEvaded = true;
+            this.isDiscentConcluded = false;
+            this.isDocent = false;
+            this.respondentForm.controls['courseEntry'].enable();
+            this.respondentForm.controls['courseEntry'].setValue(null);
+            this.respondentForm.controls['courseLeft'].enable();
+            this.respondentForm.controls['courseLeft'].setValue(null);
+            this.respondentForm.controls['code'].setValue(null);
+            this.respondentForm.controls['code'].disable();
+            this.respondentForm.controls['isDiscentConcluded'].setValue(false);
+        }
+        else {
+            this.isDiscent = false;
+            this.isDiscentEvaded = false;
+            this.isDiscentConcluded = false;
+            this.isDocent = true;
+            this.respondentForm.controls['courseEntry'].setValue(null);
+            this.respondentForm.controls['courseEntry'].disable();
+            this.respondentForm.controls['courseLeft'].setValue(null);
+            this.respondentForm.controls['courseLeft'].disable();
+            this.respondentForm.controls['code'].enable();
+            this.respondentForm.controls['code'].setValue(null);
+            this.respondentForm.controls['isDiscentConcluded'].setValue(false);
+        }
+        // this.scrollToBottom();
+    };
+    RespondentProfilePage.prototype.changeUserType = function () {
+        if (this.userType == "comerciante") {
+            // this.respondentForm.controls['isCommerce'].setValue(false);
+            this.isCommerce = false;
+            this.userType = "cidadão";
+        }
+        else {
+            // this.respondentForm.controls['isCommerce'].setValue(true);
+            this.isCommerce = true;
+            this.userType = "comerciante";
+        }
+    };
+    RespondentProfilePage.prototype.changeDiscentType = function () {
+        if (this.userType == "Discente formado") {
+            this.userType = "Discente evadido";
+            this.isDiscentConcluded = false;
+            this.respondentForm.controls['courseLeft'].setValue(null);
+            this.respondentForm.controls['courseLeft'].disable();
+            this.respondentForm.controls['isDiscentConcluded'].setValue(false);
+        }
+        else {
+            this.userType = "Discente formado";
+            this.isDiscentConcluded = true;
+            this.respondentForm.controls['courseLeft'].enable();
+            this.respondentForm.controls['courseLeft'].setValue(null);
+            this.respondentForm.controls['isDiscentConcluded'].setValue(true);
+        }
+        this.scrollToBottom();
+    };
+    RespondentProfilePage.prototype.updateDisciplineValue = function (disciplineSelect, checked) {
+        this.checkBox;
+        if (checked) {
+            this.disciplineSelected.push(disciplineSelect);
+        }
+        else {
+            this.disciplineSelected =
+                this.disciplineSelected.filter(function (discipline) { return !(discipline === disciplineSelect); });
+        }
+    };
+    RespondentProfilePage.prototype.verifyLevel = function () {
+        if (this.points > 0 && this.points <= 12) {
+            this.level = "Bronze";
+        }
+        if (this.points > 12 && this.points <= 21) {
+            this.level = "Prata";
+        }
+        if (this.points > 21) {
+            this.level = "Ouro";
+        }
+    };
+    RespondentProfilePage.prototype.createGenderList = function () {
+        var gender1 = {
+            value: "Masculino"
+        };
+        this.genderList.push(gender1);
+        var gender2 = {
+            value: "Feminino"
+        };
+        this.genderList.push(gender2);
+        var gender3 = {
+            value: "Outro"
+        };
+        this.genderList.push(gender3);
+    };
+    RespondentProfilePage.prototype.createUserTypeList = function () {
+        // let type1 = {
+        //   value: "Graduação"
+        // };
+        // this.userTypeList.push(type1);
+        // let type2 = {
+        //   value: "Pós-Graduação"
+        // };
+        // this.userTypeList.push(type2);
+        // let type3 = {
+        //   value: "Docente Graduação"
+        // };
+        // this.userTypeList.push(type3);
+        // let type4 = {
+        //   value: "Docente Pós-Graduação"
+        // };
+        // this.userTypeList.push(type4);
+        var type4 = {
+            value: "Docente"
+        };
+        this.userTypeList.push(type4);
+        var type5 = {
+            value: "Discente"
+        };
+        this.userTypeList.push(type5);
+        // let type7 = {
+        //   value: "Cidadão"
+        // };
+        // this.userTypeList.push(type7);
+        // let type8 = {
+        //   value: "Profissional"
+        // };
+        // this.userTypeList.push(type8);
+        // let type9 = {
+        //   value: "Voluntário"
+        // };
+        // this.userTypeList.push(type9);
+        var type10 = {
+            value: "Ex-aluno"
+        };
+        this.userTypeList.push(type10);
+    };
+    RespondentProfilePage.prototype.createCourseList = function () {
+        this.courseEntryList = [];
+        this.courseLeftList = [];
+        var courseEntry1 = {
+            value: "1º semestre - 2010"
+        };
+        this.courseEntryList.push(courseEntry1);
+        this.courseLeftList.push(courseEntry1);
+        var courseEntry2 = {
+            value: "2º semestre - 2010"
+        };
+        this.courseEntryList.push(courseEntry2);
+        this.courseLeftList.push(courseEntry2);
+        var courseEntry3 = {
+            value: "1º semestre - 2011"
+        };
+        this.courseEntryList.push(courseEntry3);
+        this.courseLeftList.push(courseEntry3);
+        var courseEntry4 = {
+            value: "2º semestre - 2011"
+        };
+        this.courseEntryList.push(courseEntry4);
+        this.courseLeftList.push(courseEntry4);
+        var courseEntry5 = {
+            value: "1º semestre - 2012"
+        };
+        this.courseEntryList.push(courseEntry5);
+        this.courseLeftList.push(courseEntry5);
+        var courseEntry6 = {
+            value: "2º semestre - 2012"
+        };
+        this.courseEntryList.push(courseEntry6);
+        this.courseLeftList.push(courseEntry6);
+        var courseEntry7 = {
+            value: "1º semestre - 2013"
+        };
+        this.courseEntryList.push(courseEntry7);
+        this.courseLeftList.push(courseEntry7);
+        var courseEntry8 = {
+            value: "2º semestre - 2013"
+        };
+        this.courseEntryList.push(courseEntry8);
+        this.courseLeftList.push(courseEntry8);
+        var courseEntry9 = {
+            value: "1º semestre - 2014"
+        };
+        this.courseEntryList.push(courseEntry9);
+        this.courseLeftList.push(courseEntry9);
+        var courseEntry10 = {
+            value: "2º semestre - 2014"
+        };
+        this.courseEntryList.push(courseEntry10);
+        this.courseLeftList.push(courseEntry10);
+        var courseEntry11 = {
+            value: "1º semestre - 2015"
+        };
+        this.courseEntryList.push(courseEntry11);
+        this.courseLeftList.push(courseEntry11);
+        var courseEntry12 = {
+            value: "2º semestre - 2015"
+        };
+        this.courseEntryList.push(courseEntry12);
+        this.courseLeftList.push(courseEntry12);
+        var courseEntry13 = {
+            value: "1º semestre - 2016"
+        };
+        this.courseEntryList.push(courseEntry13);
+        this.courseLeftList.push(courseEntry13);
+        var courseEntry14 = {
+            value: "2º semestre - 2016"
+        };
+        this.courseEntryList.push(courseEntry14);
+        this.courseLeftList.push(courseEntry14);
+        var courseEntry15 = {
+            value: "1º semestre - 2017"
+        };
+        this.courseEntryList.push(courseEntry15);
+        this.courseLeftList.push(courseEntry15);
+        var courseEntry16 = {
+            value: "2º semestre - 2017"
+        };
+        this.courseEntryList.push(courseEntry16);
+        this.courseLeftList.push(courseEntry16);
+        var courseEntry17 = {
+            value: "1º semestre - 2018"
+        };
+        this.courseEntryList.push(courseEntry17);
+        this.courseLeftList.push(courseEntry17);
+        var courseEntry18 = {
+            value: "2º semestre - 2018"
+        };
+        this.courseEntryList.push(courseEntry18);
+        this.courseLeftList.push(courseEntry18);
+        var courseEntry19 = {
+            value: "1º semestre - 2019"
+        };
+        this.courseEntryList.push(courseEntry19);
+        this.courseLeftList.push(courseEntry19);
+        var courseEntry20 = {
+            value: "2º semestre - 2019"
+        };
+        this.courseEntryList.push(courseEntry20);
+        this.courseLeftList.push(courseEntry20);
+        var courseEntry21 = {
+            value: "1º semestre - 2020"
+        };
+        this.courseEntryList.push(courseEntry21);
+        this.courseLeftList.push(courseEntry21);
+    };
+    RespondentProfilePage.prototype.createCourseNameListGrad = function () {
+        this.courseNameList = [];
+        var courseEntry1 = {
+            value: "Administração"
+        };
+        this.courseNameList.push(courseEntry1);
+        var courseEntry2 = {
+            value: "Ciência da Computação"
+        };
+        this.courseNameList.push(courseEntry2);
+        var courseEntry3 = {
+            value: "Ciências Atmosféricas"
+        };
+        this.courseNameList.push(courseEntry3);
+        var courseEntry4 = {
+            value: "Ciências Biológicas"
+        };
+        this.courseNameList.push(courseEntry4);
+        var courseEntry5 = {
+            value: "Engenharia Ambiental"
+        };
+        this.courseNameList.push(courseEntry5);
+        var courseEntry6 = {
+            value: "Engenharia Ambiental – Itabira"
+        };
+        this.courseNameList.push(courseEntry6);
+        var courseEntry7 = {
+            value: "Engenharia Civil"
+        };
+        this.courseNameList.push(courseEntry7);
+        var courseEntry8 = {
+            value: "Engenharia da Mobilidade – Itabira"
+        };
+        this.courseNameList.push(courseEntry8);
+        var courseEntry9 = {
+            value: "Engenharia de Bioprocessos"
+        };
+        this.courseNameList.push(courseEntry9);
+        var courseEntry10 = {
+            value: "Engenharia de Computação"
+        };
+        this.courseNameList.push(courseEntry10);
+        var courseEntry11 = {
+            value: "Engenharia de Computação – Itabira"
+        };
+        this.courseNameList.push(courseEntry11);
+        var courseEntry12 = {
+            value: "Engenharia de Controle e Automação"
+        };
+        this.courseNameList.push(courseEntry12);
+        var courseEntry13 = {
+            value: "Engenharia de Controle e Automação – Itabira"
+        };
+        this.courseNameList.push(courseEntry13);
+        var courseEntry14 = {
+            value: "Engenharia de Energia"
+        };
+        this.courseNameList.push(courseEntry14);
+        var courseEntry15 = {
+            value: "Engenharia de Materiais"
+        };
+        this.courseNameList.push(courseEntry15);
+        var courseEntry16 = {
+            value: "Engenharia de Materiais – Itabira"
+        };
+        this.courseNameList.push(courseEntry16);
+        var courseEntry17 = {
+            value: "Engenharia de Produção"
+        };
+        this.courseNameList.push(courseEntry17);
+        var courseEntry18 = {
+            value: "Engenharia de Produção – Itabira"
+        };
+        this.courseNameList.push(courseEntry18);
+        var courseEntry19 = {
+            value: "Engenharia de Saúde e Segurança – Itabira"
+        };
+        this.courseNameList.push(courseEntry19);
+        var courseEntry20 = {
+            value: "Engenharia Elétrica"
+        };
+        this.courseNameList.push(courseEntry20);
+        var courseEntry21 = {
+            value: "Engenharia Elétrica – Itabira"
+        };
+        this.courseNameList.push(courseEntry21);
+        var courseEntry22 = {
+            value: "Engenharia Eletrônica"
+        };
+        this.courseNameList.push(courseEntry22);
+        var courseEntry23 = {
+            value: "Engenharia Hídrica"
+        };
+        this.courseNameList.push(courseEntry23);
+        var courseEntry24 = {
+            value: "Engenharia Mecânica"
+        };
+        this.courseNameList.push(courseEntry24);
+        var courseEntry25 = {
+            value: "Engenharia Mecânica – Itabira"
+        };
+        this.courseNameList.push(courseEntry25);
+        var courseEntry26 = {
+            value: "Engenharia Mecânica Aeronáutica"
+        };
+        this.courseNameList.push(courseEntry26);
+        var courseEntry27 = {
+            value: "Engenharia Química"
+        };
+        this.courseNameList.push(courseEntry27);
+        var courseEntry28 = {
+            value: "Física Bacharelado"
+        };
+        this.courseNameList.push(courseEntry28);
+        var courseEntry29 = {
+            value: "Física Licenciatura"
+        };
+        this.courseNameList.push(courseEntry29);
+        var courseEntry30 = {
+            value: "Matemática Bacharelado"
+        };
+        this.courseNameList.push(courseEntry30);
+        var courseEntry31 = {
+            value: "Matemática Licenciatura"
+        };
+        this.courseNameList.push(courseEntry31);
+        var courseEntry32 = {
+            value: "Química Bacharelado"
+        };
+        this.courseNameList.push(courseEntry32);
+        var courseEntry33 = {
+            value: "Química Licenciatura"
+        };
+        this.courseNameList.push(courseEntry33);
+        var courseEntry34 = {
+            value: "Sistemas de Informação"
+        };
+        this.courseNameList.push(courseEntry34);
+    };
+    RespondentProfilePage.prototype.createCourseNameListPosGrad = function () {
+        this.courseNameList = [];
+        var courseEntry1 = {
+            value: "Engenharia Elétrica (mestrado)"
+        };
+        this.courseNameList.push(courseEntry1);
+        var courseEntry2 = {
+            value: "Engenharia Elétrica (doutorado)"
+        };
+        this.courseNameList.push(courseEntry2);
+        var courseEntry3 = {
+            value: "Engenharia Mecânica (mestrado) "
+        };
+        this.courseNameList.push(courseEntry3);
+        var courseEntry4 = {
+            value: "Engenharia Mecânica (doutorado) "
+        };
+        this.courseNameList.push(courseEntry4);
+        var courseEntry5 = {
+            value: "Engenharia de Produção (mestrado)"
+        };
+        this.courseNameList.push(courseEntry5);
+        var courseEntry6 = {
+            value: "Engenharia de Produção (doutorado)"
+        };
+        this.courseNameList.push(courseEntry6);
+        var courseEntry7 = {
+            value: "Multicêntrico em Química de Minas Gerais (mestrado) "
+        };
+        this.courseNameList.push(courseEntry7);
+        var courseEntry8 = {
+            value: "Multicêntrico em Química de Minas Gerais (doutorado) "
+        };
+        this.courseNameList.push(courseEntry8);
+        var courseEntry9 = {
+            value: "Meio Ambiente e Recursos Hídricos (mestrado)"
+        };
+        this.courseNameList.push(courseEntry9);
+        var courseEntry10 = {
+            value: "Meio Ambiente e Recursos Hídricos (doutorado)"
+        };
+        this.courseNameList.push(courseEntry10);
+        var courseEntry11 = {
+            value: "Materiais para a Engenharia (mestrado)"
+        };
+        this.courseNameList.push(courseEntry11);
+        var courseEntry12 = {
+            value: "Materiais para a Engenharia (doutorado)"
+        };
+        this.courseNameList.push(courseEntry12);
+        var courseEntry13 = {
+            value: "Educação em Ciências (mestrado)"
+        };
+        this.courseNameList.push(courseEntry13);
+        var courseEntry14 = {
+            value: "Engenharia de Energia (mestrado)"
+        };
+        this.courseNameList.push(courseEntry14);
+        var courseEntry15 = {
+            value: "Ciência e Tecnologia da Computação (mestrado)"
+        };
+        this.courseNameList.push(courseEntry15);
+        var courseEntry16 = {
+            value: "Desenvolvimento, Tecnologias e Sociedade (mestrado)"
+        };
+        this.courseNameList.push(courseEntry16);
+        var courseEntry17 = {
+            value: "Matemática (mestrado)"
+        };
+        this.courseNameList.push(courseEntry17);
+        var courseEntry18 = {
+            value: "Física (mestrado)"
+        };
+        this.courseNameList.push(courseEntry18);
+    };
+    RespondentProfilePage.prototype.createDisciplineList = function () {
+        this.disciplineList = [];
+        var disc1 = {
+            value: 0,
+            name: "Algoritmos e Estruturas de Dados"
+        };
+        this.disciplineList.push(disc1);
+        var disc2 = {
+            value: 1,
+            name: "Empreendedorismo Tecnológico"
+        };
+        this.disciplineList.push(disc2);
+        var disc3 = {
+            value: 2,
+            name: "Introdução a Otimização Inteira"
+        };
+        this.disciplineList.push(disc3);
+        var disc4 = {
+            value: 3,
+            name: "Robótica Móvel II"
+        };
+        this.disciplineList.push(disc4);
+        var disc5 = {
+            value: 4,
+            name: "Sistemas Operacionais"
+        };
+        this.disciplineList.push(disc5);
+        var disc6 = {
+            value: 5,
+            name: "Tópicos em Engenharia de Software"
+        };
+        this.disciplineList.push(disc6);
+        var disc7 = {
+            value: 6,
+            name: "Visualização de Informação"
+        };
+        this.disciplineList.push(disc7);
+    };
+    RespondentProfilePage.prototype.setFormData = function () {
+        var _this = this;
+        var entities = ['city', 'plan', 'isRuralZone', 'questionaries'];
+        this.databaseProvider.verifyEntities(entities)
+            .then(function (data) {
+            if (data.length > 0 && data.filter(function (data) { return data == false; }).length == 0) {
+                _this.setEntities();
+            }
+            else {
+                _this.navigateBack();
+            }
+        })
+            .catch(function (error) {
+            console.error(error);
+            _this.restProvider.sendGoogleAnalyticsErrorData('RespondentProfilePage', 'setFormData', error);
+            _this.navigateBack();
+        });
+    };
+    RespondentProfilePage.prototype.setEntities = function () {
+        var _this = this;
+        this.storage.get('city')
+            .then(function (data) {
+            if (data != null) {
+                _this.city = data;
+                _this.cityName = _this.city.name;
+                _this.storage.get('plan')
+                    .then(function (data) {
+                    if (data != null) {
+                        _this.plan = data;
+                        _this.storage.get('questionaries')
+                            .then(function (data) {
+                            _this.questionaries = data;
+                            if (data != null) {
+                                _this.storage.get('points')
+                                    .then(function (data) {
+                                    if (data != null) {
+                                        _this.points = data;
+                                        _this.verifyLevel();
+                                        _this.loadResidenceNeighborhoods();
+                                    }
+                                    else {
+                                        _this.navigateBack();
+                                    }
+                                })
+                                    .catch(function () { return _this.navigateBack(); });
+                            }
+                            else {
+                                _this.navigateBack();
+                            }
+                        })
+                            .catch(function () { return _this.navigateBack(); });
+                    }
+                    else {
+                        _this.navigateBack();
+                    }
+                })
+                    .catch(function () { return _this.navigateBack(); });
+            }
+            else {
+                _this.navigateBack();
+            }
+        })
+            .catch(function () { return _this.navigateBack(); });
+    };
+    RespondentProfilePage.prototype.getAllCities = function () {
+        var _this = this;
+        this.cityProvider.getAllCities()
+            .then(function (cities) {
+            if (cities != null) {
+                _this.cities = _this.sortAscCollection(cities);
+            }
+            else {
+                _this.showAlertGetAllCities();
+            }
+        })
+            .catch(function (error) {
+            console.error(error);
+            _this.restProvider.sendGoogleAnalyticsErrorData('RespondentProfilePage', 'getAllCities', error);
+            _this.showAlertGetAllCities();
+        });
+    };
+    RespondentProfilePage.prototype.showAlertGetAllCities = function () {
+        var _this = this;
+        this.cities = [];
+        var alert = this.alertCtrl.create({
+            title: 'Oops!',
+            message: 'Não foi possível acessar os dados do servidor. Por favor, tente novamente.',
+            buttons: [{
+                    text: "Tentar novamente",
+                    handler: function () {
+                        _this.getAllCities();
+                    }
+                }]
+        });
+        alert.present();
+    };
+    RespondentProfilePage.prototype.loadMetrics = function () {
+        var _this = this;
+        //------------------------CARREGA OS ITENS DE MÉTRICAS-----------------------------
+        //1 - GUT, 2 - ESCALA QUALITATIVA, (3-17) - Métricas do questionário de teste
+        this.priorizationProvider.getMetricItems(1)
+            .then(function (metricItems) {
+            if (metricItems != null) {
+                _this.metricItems = metricItems;
+                //------------------------CARREGA OS VALORES DE MÉTRICA-----------------------------
+                _this.priorizationProvider.getMetricValues()
+                    .then(function (result) {
+                    if (result != null) {
+                        //------------------------ASSOCIA OS VALORES AOS ITENS-----------------------------
+                        for (var i = 0; i < _this.metricItems.length; i++) {
+                            var metricItem = _this.metricItems[i];
+                            for (var j = 0; j < result.length; j++) {
+                                var metricValue = result[j];
+                                if (metricItem.id == metricValue.metricItemId) {
+                                    _this.metricItems[i].metricValues.push(metricValue);
+                                }
+                            }
+                        }
+                        //------------------------SALVA OS ITENS DE MÉTRICA-----------------------------
+                        _this.storage.set('metricItems', _this.metricItems);
+                    }
+                    else {
+                        _this.showAlertLoadMetrics();
+                    }
+                }).catch(function (error) {
+                    console.error(error);
+                    _this.restProvider.sendGoogleAnalyticsErrorData('RespondentProfilePage', 'loadMetrics', error);
+                    _this.showAlertLoadMetrics();
+                });
+            }
+            else {
+                _this.showAlertLoadMetrics();
+            }
+        }).catch(function (error) {
+            console.error(error);
+            _this.restProvider.sendGoogleAnalyticsErrorData('RespondentProfilePage', 'loadMetrics', error);
+            _this.showAlertLoadMetrics();
+        });
+    };
+    RespondentProfilePage.prototype.showAlertLoadMetrics = function () {
+        var _this = this;
+        this.metricItems = [];
+        var alert = this.alertCtrl.create({
+            title: 'Oops!',
+            message: 'Não foi possível acessar os dados do servidor. Por favor, tente novamente.',
+            buttons: [{
+                    text: "Tentar novamente",
+                    handler: function () {
+                        _this.loadMetrics();
+                    }
+                }]
+        });
+        alert.present();
+    };
+    RespondentProfilePage.prototype.loadResidenceNeighborhoods = function () {
+        var _this = this;
+        this.neighborhoodProvider.getAllNeighborhoodsByCity(this.city)
+            .then(function (neighborhoods) {
+            if (neighborhoods != null) {
+                _this.residenceNeighborhoods = _this.sortAscCollection(neighborhoods);
+                _this.storage.set('neighborhoods', _this.residenceNeighborhoods);
+                _this.loader.dismiss();
+            }
+            else {
+                _this.showAlertLoadResidenceNeighborhoods();
+            }
+        })
+            .catch(function (error) {
+            console.error(error);
+            _this.restProvider.sendGoogleAnalyticsErrorData('RespondentProfilePage', 'loadResidenceNeighborhoods', error);
+            _this.showAlertLoadResidenceNeighborhoods();
+        });
+    };
+    RespondentProfilePage.prototype.showAlertLoadResidenceNeighborhoods = function () {
+        var _this = this;
+        this.loader.dismiss();
+        this.residenceNeighborhoods = [];
+        var alert = this.alertCtrl.create({
+            title: 'Oops!',
+            message: 'Não foi possível acessar os dados do servidor. Por favor, tente novamente.',
+            buttons: [{
+                    text: "Tentar novamente",
+                    handler: function () {
+                        _this.loadResidenceNeighborhoods();
+                    }
+                }]
+        });
+        alert.present();
+    };
+    RespondentProfilePage.prototype.selectCity = function (city) {
+        this.jobCity = city;
+        if (this.compareFn(this.jobCity, this.city)) {
+            this.isSameJobCity = "";
+            // this.respondentForm.controls['jobNeighborhood'].setValue('');
+        }
+        else {
+            this.isSameJobCity = "hide";
+        }
+    };
+    RespondentProfilePage.prototype.loadJobNeighborhoods = function () {
+        var _this = this;
+        this.neighborhoodProvider.getAllNeighborhoodsByCity(this.jobCity)
+            .then(function (neighborhoods) {
+            if (neighborhoods != null) {
+                _this.jobNeighborhoodDisabled = false;
+                _this.jobNeighborhoods = _this.sortAscCollection(neighborhoods);
+                if (_this.compareFn(_this.jobCity, _this.city)) {
+                    _this.isSameJobCity = "";
+                }
+                else {
+                    _this.isSameJobCity = "hide";
+                }
+            }
+            else {
+                _this.showAlertLoadJobNeighborhoods();
+            }
+        })
+            .catch(function (error) {
+            console.error(error);
+            _this.restProvider.sendGoogleAnalyticsErrorData('RespondentProfilePage', 'loadJobNeighborhoods', error);
+            _this.showAlertLoadJobNeighborhoods();
+        });
+    };
+    RespondentProfilePage.prototype.showAlertLoadJobNeighborhoods = function () {
+        var _this = this;
+        this.jobNeighborhoods = [];
+        var alert = this.alertCtrl.create({
+            title: 'Oops!',
+            message: 'Não foi possível acessar os dados do servidor. Por favor, tente novamente.',
+            buttons: [{
+                    text: "Tentar novamente",
+                    handler: function () {
+                        _this.loadJobNeighborhoods();
+                    }
+                }]
+        });
+        alert.present();
+    };
+    RespondentProfilePage.prototype.validate = function (cpf) {
+        cpf = cpf.replace(/[^\d]+/g, '');
+        if (cpf == '')
+            return false;
+        // Elimina CPFs invalidos conhecidos
+        if (cpf.length != 11 ||
+            cpf == "00000000000" ||
+            cpf == "11111111111" ||
+            cpf == "22222222222" ||
+            cpf == "33333333333" ||
+            cpf == "44444444444" ||
+            cpf == "55555555555" ||
+            cpf == "66666666666" ||
+            cpf == "77777777777" ||
+            cpf == "88888888888" ||
+            cpf == "99999999999")
+            return false;
+        // Valida 1o digito
+        var add = 0;
+        for (var i = 0; i < 9; i++)
+            add += parseInt(cpf.charAt(i)) * (10 - i);
+        var rev = 11 - (add % 11);
+        if (rev == 10 || rev == 11)
+            rev = 0;
+        if (rev != parseInt(cpf.charAt(9)))
+            return false;
+        // Valida 2o digito
+        add = 0;
+        for (var i = 0; i < 10; i++)
+            add += parseInt(cpf.charAt(i)) * (11 - i);
+        rev = 11 - (add % 11);
+        if (rev == 10 || rev == 11)
+            rev = 0;
+        return rev == parseInt(cpf.charAt(10));
+    };
+    RespondentProfilePage.prototype.validateCPF = function (control) {
+        var isValid = this.validate(control.value.toString());
+        return Object(__WEBPACK_IMPORTED_MODULE_4_rxjs_observable_of__["of"])(!isValid).pipe(Object(__WEBPACK_IMPORTED_MODULE_5_rxjs_operators_map__["map"])(function (result) { return result ? { invalid: true } : null; }));
+    };
+    RespondentProfilePage.prototype.sortAscCollection = function (collection) {
+        return collection.sort(function (a, b) {
+            return a.name.localeCompare(b.name);
+        });
+    };
+    RespondentProfilePage.prototype.tryAgainSaveRespondent = function () {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'Oops!',
+            message: 'Não foi possível salvar os seus dados. Por favor, tente novamente.',
+            buttons: [{
+                    text: "Tentar novamente",
+                    handler: function () {
+                        _this.saveRespondentInfo();
+                    }
+                }]
+        });
+        this.loader.dismiss();
+        alert.present();
+    };
+    RespondentProfilePage.prototype.getResidenceTimeNameByValue = function (event) {
+        var residenceTimeChosen = event.value;
+        this.residenceTimeName = this.residenceTimeList[residenceTimeChosen].name;
+    };
+    RespondentProfilePage.prototype.getSalaryRangeNameByValue = function (event) {
+        var salaryRangeChosen = event.value;
+        this.salaryRangeName = this.salaryRangeList[salaryRangeChosen].name;
+    };
+    RespondentProfilePage.prototype.getAgeRangeByValue = function (event) {
+        var ageRageChoosen = event.value;
+        this.ageRangeName = this.ageRangeList[ageRageChoosen].name;
+    };
+    RespondentProfilePage.prototype.loadResidenceTime = function () {
+        var residenceTime = new ResidenceTime();
+        residenceTime.name = "Menos de um 1 ano";
+        residenceTime.value = 0;
+        this.residenceTimeList.push(residenceTime);
+        residenceTime = new ResidenceTime();
+        residenceTime.name = "De 1 a 5 anos";
+        residenceTime.value = 1;
+        this.residenceTimeList.push(residenceTime);
+        residenceTime = new ResidenceTime();
+        residenceTime.name = "De 5 a 10 anos";
+        residenceTime.value = 2;
+        this.residenceTimeList.push(residenceTime);
+        residenceTime = new ResidenceTime();
+        residenceTime.name = "De 10 a 20 anos";
+        residenceTime.value = 3;
+        this.residenceTimeList.push(residenceTime);
+        residenceTime = new ResidenceTime();
+        residenceTime.name = "Mais de 20 anos";
+        residenceTime.value = 4;
+        this.residenceTimeList.push(residenceTime);
+        this.residenceTimeName = this.residenceTimeList[0].name;
+    };
+    RespondentProfilePage.prototype.loadAgeRange = function () {
+        var ageRange = new AgeRange();
+        ageRange.name = "Até 16 anos";
+        ageRange.value = 0;
+        this.ageRangeList.push(ageRange);
+        ageRange = new AgeRange();
+        ageRange.name = "Entre 16 e 25 anos";
+        ageRange.value = 1;
+        this.ageRangeList.push(ageRange);
+        ageRange = new AgeRange();
+        ageRange.name = "Entre 25 e 40 anos";
+        ageRange.value = 2;
+        this.ageRangeList.push(ageRange);
+        ageRange = new AgeRange();
+        ageRange.name = "Entre 40 e 60 anos";
+        ageRange.value = 3;
+        this.ageRangeList.push(ageRange);
+        ageRange = new AgeRange();
+        ageRange.name = "Acima de 60 anos";
+        ageRange.value = 4;
+        this.ageRangeList.push(ageRange);
+        this.ageRangeName = this.ageRangeList[0].name;
+    };
+    RespondentProfilePage.prototype.loadSalaryRange = function () {
+        var salaryRange = new SalaryRange();
+        salaryRange.name = "Até 2 Salários Mínimos";
+        salaryRange.value = 0;
+        this.salaryRangeList.push(salaryRange);
+        salaryRange = new SalaryRange();
+        salaryRange.name = "De 2 a 4 Salários Mínimos";
+        salaryRange.value = 1;
+        this.salaryRangeList.push(salaryRange);
+        salaryRange = new SalaryRange();
+        salaryRange.name = "De 4 a 10 Salários Mínimos";
+        salaryRange.value = 2;
+        this.salaryRangeList.push(salaryRange);
+        salaryRange = new SalaryRange();
+        salaryRange.name = "De 10 a 20 Salários Mínimos";
+        salaryRange.value = 3;
+        this.salaryRangeList.push(salaryRange);
+        salaryRange = new SalaryRange();
+        salaryRange.name = "Acima de 20 Salários Mínimos";
+        salaryRange.value = 4;
+        this.salaryRangeList.push(salaryRange);
+        this.salaryRangeName = this.salaryRangeList[0].name;
+    };
+    RespondentProfilePage.prototype.navigate = function (respondent) {
+        this.storage.set('respondent', respondent);
+        this.navCtrl.setRoot('QuestionariesListPage', {}).then(this.loader.dismiss());
+    };
+    RespondentProfilePage.prototype.navigateBack = function () {
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_0__intro_intro__["a" /* IntroPage */], {}).then(this.loader.dismiss());
+    };
+    RespondentProfilePage.prototype.openMenu = function () {
+        this.menuCtrl.open();
+    };
+    RespondentProfilePage.prototype.compareFn = function (e1, e2) {
+        return e1 && e2 ? e1.id === e2.id : e1 === e2;
+    };
+    RespondentProfilePage.prototype.scrollToBottom = function () {
+        if (!!this.content) {
+            var content_1 = this.content;
+            setTimeout(function () {
+                content_1.scrollToBottom(100);
+            }, 100);
+        }
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* Content */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* Content */])
+    ], RespondentProfilePage.prototype, "content", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_10" /* ViewChildren */])(__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* Checkbox */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__angular_core__["U" /* QueryList */])
+    ], RespondentProfilePage.prototype, "checkBox", void 0);
+    RespondentProfilePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
+            selector: 'page-respondent-profile',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\respondent-profile\respondent-profile.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col offset-1 col-2 class="menu-icon-col-not-game" *ngIf="!useGame">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col offset-1 col-2 class="menu-icon-col" *ngIf="useGame">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-6 *ngIf="!useGame">\n        <img class="img-responsive img-not-game" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col col-6 *ngIf="useGame">\n        <img class="img-responsive" src="assets/imgs/header-logo.png" />\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <h2 *ngIf="useGame" class="profile-title profile-title-game" col-12 text-center>Perfil do respondente</h2>\n  <h2 *ngIf="!useGame" class="profile-title" col-12 text-center>Perfil do respondente</h2>\n  <!-- Pontuação -->\n  <div *ngIf="useGame" class="level-panel">\n    <!-- Com Pontuação -->\n    <ion-item *ngIf="points > 0" text-wrap>\n      <ion-thumbnail item-start>\n        <img *ngIf="level == \'Ouro\'" class="img-responsive" src="assets/imgs/level3.png" />\n        <img *ngIf="level == \'Prata\'" class="img-responsive" src="assets/imgs/level2.png" />\n        <img *ngIf="level == \'Bronze\'" class="img-responsive" src="assets/imgs/level1.png" />\n      </ion-thumbnail>\n      <ion-label>\n        <h2>Você está no nível <strong>{{level}}</strong> de Participação!</h2>\n        <p><b>Sua pontuação</b></p>\n        <ion-badge>{{points}} pontos</ion-badge>\n      </ion-label>\n    </ion-item>\n    <!-- Com Pontuação -->\n    <!-- Sem pontuação -->\n    <ion-item *ngIf="points == 0" text-wrap>\n      <ion-thumbnail item-start>\n        <img class="img-responsive" src="assets/imgs/level0.png" />\n      </ion-thumbnail>\n      <ion-label>\n        <h2>Responda os questionários para aumentar o <b>nível</b> de <b>Participação</b>!</h2>\n        <p><b>Sua pontuação</b></p>\n        <ion-badge>{{points}} pontos</ion-badge>\n      </ion-label>\n    </ion-item>\n    <!-- Sem pontuação -->\n  </div>\n  <!-- Pontuação -->\n  <h3 *ngIf="useGame" class="subtitle subtitle-game" col-12 text-center>Por favor informe os seus dados</h3>\n  <h3 *ngIf="!useGame" class="subtitle" col-12 text-center>Por favor informe os seus dados</h3>\n  <form [formGroup]="respondentForm">\n    <!-----------------------CASE POSCOMP----------------------->\n    <!-- Tipo de Respondente -->\n    <ion-item>\n      <ion-label floating>Por favor, selecione o tipo de respondente</ion-label>\n      <ion-select [formControl]="respondentForm.controls[\'userType\']" required >\n        <ion-option *ngFor="let userType of userTypeList" [value]="userType.value"\n          (ionSelect)="selectUserType(userType)">\n          {{userType.value}}\n        </ion-option>\n      </ion-select>\n    </ion-item>\n    <!-- Tipo de Respondente -->\n    <!-- Nome -->\n    <ion-item>\n      <ion-label floating>Nome</ion-label>\n      <ion-input [formControl]="respondentForm.controls[\'name\']" required></ion-input>\n    </ion-item>\n    <!-- Nome -->\n    <!-- Discente formado ou evadido -->\n    <ion-item *ngIf="isDiscent && isDiscentEvaded">\n      <ion-label>você se formou no curso?</ion-label>\n      <ion-checkbox item-end (ionChange)="changeDiscentType()"\n        [formControl]="respondentForm.controls[\'isDiscentConcluded\']"></ion-checkbox>\n    </ion-item>\n    <!-- Discente formado ou evadido -->\n    <!-- Ano e semestre de ingresso -->\n    <ion-item *ngIf="isDiscent">\n      <ion-label floating>Por favor, selecione o ano e semestre de ingresso</ion-label>\n      <ion-select [formControl]="respondentForm.controls[\'courseEntry\']" required>\n        <ion-option *ngFor="let courseEntry of courseEntryList" [value]="courseEntry.value">\n          {{courseEntry.value}}\n        </ion-option>\n      </ion-select>\n    </ion-item>\n    <!-- Ano e semestre de ingresso -->\n    <!-- Ano e semestre de conclusão -->\n    <ion-item *ngIf="isDiscent && isDiscentConcluded">\n      <ion-label floating>Por favor, selecione o ano e semestre de conclusão</ion-label>\n      <ion-select [formControl]="respondentForm.controls[\'courseLeft\']" required>\n        <ion-option *ngFor="let courseLeft of courseLeftList" [value]="courseLeft.value">\n          {{courseLeft.value}}\n        </ion-option>\n      </ion-select>\n    </ion-item>\n    <!-- Ano e semestre de conclusão -->\n    <!-- Número de matricula -->\n    <ion-item *ngIf="isDiscent && !isDiscentEvaded && !isDiscentConcluded">\n      <ion-label floating>Número de matrícula</ion-label>\n      <ion-input [formControl]="respondentForm.controls[\'code\']"\n        [brmasker]="{mask: \'000000000000\', type:\'num\', len: 12}" type="text" required>\n      </ion-input>\n    </ion-item>\n    <!-- Número de matricula -->\n    <!-- SIAPE -->\n    <ion-item *ngIf="isDocent">\n      <ion-label floating>SIAPE</ion-label>\n      <ion-input [formControl]="respondentForm.controls[\'code\']"\n        [brmasker]="{mask: \'000000000000\', type:\'num\', len: 15}" type="text" required>\n      </ion-input>\n    </ion-item>\n    <!-- SIAPE -->\n    <!-- Disciplinas -->\n    <ion-row class="metric-row" *ngIf="isDiscent && !isDiscentEvaded && !isDiscentConcluded">\n      <ion-col col-12>\n        <h3 class="subtitle check-box-subtitle" col-12 text-center>Quais disciplinas você cursou no 2º semestre de 2019?\n        </h3>\n        <ion-list radio-group>\n          <ion-item *ngFor="let discipline of disciplineList" class="item-checkbox">\n            <ion-label text-wrap text-left class="item-checkbox-text">{{discipline.name}}</ion-label>\n            <ion-checkbox (ionChange)="updateDisciplineValue(discipline,$event.checked)"></ion-checkbox>\n          </ion-item>\n        </ion-list>\n      </ion-col>\n    </ion-row>\n    <!-- Disciplinas -->\n    <!-----------------------CASE POSCOMP----------------------->\n    <!------------------------ TODOS OS CAMPOS ------------------------->\n    <!-----------------------INFORMAÇÕES PESSOAIS----------------------->\n    <!-- CPF -->\n    <!-- <ion-item>\n      <ion-label floating>CPF</ion-label>\n      <ion-input [formControl]="respondentForm.controls[\'cpf\']" type="text"\n        [brmasker]="{mask: \'000.000.000-00\', type:\'num\', len: 14}" required>\n      </ion-input>\n      <div class="validator-error"\n        *ngIf="respondentForm.controls[\'cpf\'].hasError(\'required\') && respondentForm.controls[\'cpf\'].touched">* CPF é\n        obrigatório!\n      </div>\n      <div class="validator-error"\n        *ngIf="respondentForm.controls[\'cpf\'].hasError(\'invalid\') && respondentForm.controls[\'cpf\'].touched">* CPF é\n        inválido!\n      </div>\n    </ion-item> -->\n    <!-- CPF -->\n    <!-- Nome -->\n    <!-- <ion-item>\n      <ion-label floating>Nome</ion-label>\n      <ion-input [formControl]="respondentForm.controls[\'name\']"></ion-input>\n    </ion-item> -->\n    <!-- Nome -->\n    <!-- Genero -->\n    <!-- <ion-item>\n      <ion-label floating>Gênero</ion-label>\n      <ion-select [formControl]="respondentForm.controls[\'gender\']">\n        <ion-option *ngFor="let gender of genderList" [value]="gender.value">\n          {{gender.value}}\n        </ion-option>\n      </ion-select>\n    </ion-item> -->\n    <!-- Genero -->\n    <!-- Email -->\n    <!-- <ion-item>\n      <ion-label floating>Email</ion-label>\n      <ion-input [email]="true" [formControl]="respondentForm.controls[\'email\']" type="email"></ion-input>\n    </ion-item> -->\n    <!-- Email -->\n    <!-- Telefone -->\n    <!-- <ion-item>\n      <ion-label floating>Telefone</ion-label>\n      <ion-input [brmasker]="{mask: \'(00)00000-0000\', type:\'num\', len: 15}"\n        [formControl]="respondentForm.controls[\'phone\']"></ion-input>\n    </ion-item> -->\n    <!-- Telefone -->\n    <!-- WhatsApp -->\n    <!-- <ion-item>\n      <ion-label floating>WhatsApp</ion-label>\n      <ion-input [brmasker]="{mask: \'(00)00000-0000\', type:\'num\', len: 15}"\n        [formControl]="respondentForm.controls[\'whatsapp\']"></ion-input>\n    </ion-item> -->\n    <!-- WhatsApp -->\n    <!-- Cidade de residência -->\n    <!-- <ion-item>\n      <ion-label floating>Cidade de Residência</ion-label>\n      <ion-select [formControl]="respondentForm.controls[\'residenceCity\']">\n        <ion-option *ngFor="let residenceCity of cities" [value]="residenceCity">\n          {{residenceCity.name}}\n        </ion-option>\n      </ion-select>\n    </ion-item> -->\n    <!-- Cidade de residência -->\n    <!-- Bairro de residencia -->\n    <!-- <ion-item>\n      <ion-label floating>Bairro de Residência</ion-label>\n      <ion-select [formControl]="respondentForm.controls[\'residenceNeighborhood\']" [compareWith]="compareFn">\n        <ion-option *ngFor="let residenceNeighborhood of residenceNeighborhoods" [value]="residenceNeighborhood">\n          {{residenceNeighborhood.name}}\n        </ion-option>\n      </ion-select>\n      <div class="validator-error"\n        *ngIf="respondentForm.controls[\'residenceNeighborhood\'].hasError(\'required\') && respondentForm.controls[\'residenceNeighborhood\'].touched">\n        * Bairro de Residência é obrigatório!\n      </div>\n    </ion-item> -->\n    <!-- Bairro de residencia -->\n    <!-----------------------INFORMAÇÕES PESSOAIS----------------------->\n    <!-----------------------INFORMAÇÕES DE TRABALHO----------------------->\n    <!-- Comerciante ou não -->\n    <!-- <ion-item>\n    <ion-label>Possui comércio no centro?</ion-label>\n    <ion-checkbox item-end (ionChange)="changeUserType()" [(ngModel)]="isCommerce"></ion-checkbox>\n  </ion-item> -->\n    <!-- Comerciante ou não -->\n    <!-- Cidade de trabalho -->\n    <!-- <ion-item>\n      <ion-label floating>Cidade de Trabalho</ion-label>\n      <ion-select [formControl]="respondentForm.controls[\'jobCity\']" (ionChange)="loadJobNeighborhoods()"\n        [compareWith]="compareFn">\n        <ion-option *ngFor="let jobCity of cities" [value]="jobCity" (ionSelect)="selectCity(jobCity)">\n          {{jobCity.name}}\n        </ion-option>\n      </ion-select>\n    </ion-item> -->\n    <!-- Cidade de trabalho -->\n    <!-- Nome da Empresa -->\n    <!-- <ion-item>\n      <ion-label floating>Nome da empresa</ion-label>\n      <ion-input [formControl]="respondentForm.controls[\'jobName\']"></ion-input>\n    </ion-item> -->\n    <!-- Nome da Empresa -->\n    <!-- Endereço da Empresa -->\n    <!-- <ion-item>\n      <ion-label floating>Endereço da empresa</ion-label>\n      <ion-input [formControl]="respondentForm.controls[\'jobAddress\']"></ion-input>\n    </ion-item> -->\n    <!-- Endereço da Empresa -->\n    <!-- Bairro de trabalho -->\n    <!-- <div class="{{isSameJobCity}}">\n      <ion-item>\n        <ion-label floating>Bairro de Trabalho</ion-label>\n        <ion-select [formControl]="respondentForm.controls[\'jobNeighborhood\']" [disabled]="jobNeighborhoodDisabled"\n          [compareWith]="compareFn">\n          <ion-option *ngFor="let jobNeighborhood of jobNeighborhoods" [value]="jobNeighborhood">\n            {{jobNeighborhood.name}}\n          </ion-option>\n        </ion-select>\n      </ion-item>\n    </div> -->\n    <!-- Bairro de trabalho -->\n    <!-----------------------INFORMAÇÕES DE TRABALHO----------------------->\n    <!-----------------------INFORMAÇÕES ACADÊMICAS----------------------->\n    <!-- Tipo de Respondente -->\n    <!-- <ion-item>\n      <ion-label floating>Nível</ion-label>\n      <ion-select [formControl]="respondentForm.controls[\'userType\']">\n        <ion-option *ngFor="let userType of userTypeList" [value]="userType.value"\n          (ionSelect)="selectUserType(userType)">\n          {{userType.value}}\n        </ion-option>\n      </ion-select>\n    </ion-item> -->\n    <!-- Tipo de Respondente -->\n    <!-- Discente formado ou evadido -->\n    <!-- <ion-item *ngIf="isDiscent">\n      <ion-label>Formou no curso?</ion-label>\n      <ion-checkbox item-end (ionChange)="changeDiscentType()"></ion-checkbox>\n    </ion-item> -->\n    <!-- Discente formado ou evadido -->\n    <!-- Número de matricula -->\n    <!-- <ion-item>\n      <ion-label floating>Número de matrícula</ion-label>\n      <ion-input [formControl]="respondentForm.controls[\'code\']"\n        [brmasker]="{mask: \'000000000000\', type:\'num\', len: 12}" type ="text" required>\n      </ion-input>\n    </ion-item> -->\n    <!-- Número de matricula -->\n    <!-- Curso -->\n    <!-- <ion-item>\n      <ion-label floating>Curso</ion-label>\n      <ion-select [formControl]="respondentForm.controls[\'courseName\']" [disabled]="courseDisabled">\n        <ion-option *ngFor="let courseName of courseNameList" [value]="courseName.value">\n          {{courseName.value}}\n        </ion-option>\n      </ion-select>\n    </ion-item> -->\n    <!-- Curso -->\n    <!-- Ano e semestre de ingresso -->\n    <!-- <ion-item *ngIf="isDiscent">\n      <ion-label floating>Ano e semestre de ingresso</ion-label>\n      <ion-select [formControl]="respondentForm.controls[\'courseEntry\']" [disabled]="courseDisabled">\n        <ion-option *ngFor="let courseEntry of courseEntryList" [value]="courseEntry.value">\n          {{courseEntry.value}}\n        </ion-option>\n      </ion-select>\n    </ion-item> -->\n    <!-- Ano e semestre de ingresso -->\n    <!-- Ano e semestre de conclusão -->\n    <!-- <ion-item *ngIf="isDiscent && isDiscentEvaded">\n      <ion-label floating>Ano e semestre de conclusão</ion-label>\n      <ion-select [formControl]="respondentForm.controls[\'courseLeft\']">\n        <ion-option *ngFor="let courseLeft of courseLeftList" [value]="courseLeft.value">\n          {{courseLeft.value}}\n        </ion-option>\n      </ion-select>\n    </ion-item> -->\n    <!-- Ano e semestre de conclusão -->\n    <!-- Idade -->\n    <!-- <ion-item>\n      <ion-label>Idade</ion-label>\n      <ion-range snaps="true" [min]="0" [max]="4" [step]="1" (ionChange)="getAgeRangeByValue($event)"\n        [formControl]="respondentForm.controls[\'age\']">\n      </ion-range>\n      <ion-label>{{ageRangeName}}</ion-label>\n    </ion-item> -->\n    <!-- Idade -->\n    <!-----------------------INFORMAÇÕES ACADÊMICAS----------------------->\n    <!-------------------------------RANGES-------------------------------->\n    <!-- Tempo de residência -->\n    <!-- <ion-item>\n      <ion-label>Tempo de Residência</ion-label>\n      <ion-range snaps="true" [min]="0" [max]="4" [step]="1" (ionChange)="getResidenceTimeNameByValue($event)"\n        [formControl]="respondentForm.controls[\'residenceTimeRange\']">\n      </ion-range>\n      <ion-label>{{residenceTimeName}}</ion-label>\n    </ion-item> -->\n    <!-- Tempo de residência -->\n    <!-- Renda -->\n    <!-- <ion-item>\n      <ion-label>Renda</ion-label>\n      <ion-range snaps="true" [min]="0" [max]="4" [step]="1" (ionChange)="getSalaryRangeNameByValue($event)"\n        [formControl]="respondentForm.controls[\'salaryRange\']">\n      </ion-range>\n      <ion-label>{{salaryRangeName}}</ion-label>\n    </ion-item> -->\n    <!-- Renda -->\n    <!-------------------------------RANGES-------------------------------->\n    <!------------------------ TODOS OS CAMPOS ------------------------->\n    <ion-grid>\n      <ion-row *ngIf="editing && useGame">\n        <ion-col text-center>\n          <button ion-button block class="button-background" type="submit" (click)="saveRespondentInfo()"\n            [disabled]="!respondentForm.valid">\n            <ion-icon id="button-profile-update-game" class="text-button">\n              Salvar\n            </ion-icon>\n          </button>\n        </ion-col>\n      </ion-row>\n      <ion-row *ngIf="!editing && useGame">\n        <ion-col text-center>\n          <button ion-button block class="button-background" type="submit" (click)="saveRespondentInfo()"\n            [disabled]="!respondentForm.valid">\n            <ion-icon id="button-profile-register-game" class="text-button">\n              Salvar\n            </ion-icon>\n          </button>\n        </ion-col>\n      </ion-row>\n      <ion-row *ngIf="editing && !useGame">\n        <ion-col text-center>\n          <button ion-button block class="button-background" type="submit" (click)="saveRespondentInfo()"\n            [disabled]="!respondentForm.valid">\n            <ion-icon id="button-profile-update-not-game" class="text-button">\n              Salvar\n            </ion-icon>\n          </button>\n        </ion-col>\n      </ion-row>\n      <ion-row *ngIf="!editing && !useGame">\n        <ion-col text-center>\n          <button ion-button block class="button-background" type="submit" (click)="saveRespondentInfo()"\n            [disabled]="!respondentForm.valid">\n            <ion-icon id="button-profile-register-not-game" class="text-button">\n              Salvar\n            </ion-icon>\n          </button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </form>\n</ion-content>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\respondent-profile\respondent-profile.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* MenuController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_8__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_city_city__["a" /* CityProvider */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_9__providers_respondent_respondent__["a" /* RespondentProvider */], __WEBPACK_IMPORTED_MODULE_7__providers_neighborhood_neighborhood__["a" /* NeighborhoodProvider */], __WEBPACK_IMPORTED_MODULE_10__providers_prioritization_prioritization__["a" /* PrioritizationProvider */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_11__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_12__providers_rest_rest__["a" /* RestProvider */]])
+    ], RespondentProfilePage);
+    return RespondentProfilePage;
+}());
+
+var ResidenceTime = /** @class */ (function () {
+    function ResidenceTime() {
+    }
+    return ResidenceTime;
+}());
+
+var SalaryRange = /** @class */ (function () {
+    function SalaryRange() {
+    }
+    return SalaryRange;
+}());
+
+var AgeRange = /** @class */ (function () {
+    function AgeRange() {
+    }
+    return AgeRange;
+}());
+
+var Discipline = /** @class */ (function () {
+    function Discipline() {
+    }
+    return Discipline;
+}());
+
+var Respondent = /** @class */ (function () {
+    function Respondent() {
+    }
+    return Respondent;
+}());
+
+//# sourceMappingURL=respondent-profile.js.map
+
+/***/ }),
+
+/***/ 444:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_module__ = __webpack_require__(445);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__app_module__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives__ = __webpack_require__(446);
+/* unused harmony namespace reexport */
+
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 445:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BrMaskerModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_brmasker_ionic_3__ = __webpack_require__(432);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_brmasker_ionic_services__ = __webpack_require__(433);
+
+
+
+
+var BrMaskerModule = (function () {
+    function BrMaskerModule() {
+    }
+    return BrMaskerModule;
+}());
+
+BrMaskerModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["J" /* NgModule */], args: [{
+                declarations: [
+                    __WEBPACK_IMPORTED_MODULE_2__directives_brmasker_ionic_3__["a" /* BrMaskerIonic3 */],
+                    __WEBPACK_IMPORTED_MODULE_3__directives_brmasker_ionic_services__["a" /* BrMaskerIonicServices3 */]
+                ],
+                exports: [
+                    __WEBPACK_IMPORTED_MODULE_2__directives_brmasker_ionic_3__["a" /* BrMaskerIonic3 */],
+                    __WEBPACK_IMPORTED_MODULE_3__directives_brmasker_ionic_services__["a" /* BrMaskerIonicServices3 */]
+                ],
+                imports: [
+                    __WEBPACK_IMPORTED_MODULE_0__angular_common__["b" /* CommonModule */]
+                ],
+                schemas: [
+                    __WEBPACK_IMPORTED_MODULE_1__angular_core__["i" /* CUSTOM_ELEMENTS_SCHEMA */]
+                ],
+                providers: [__WEBPACK_IMPORTED_MODULE_3__directives_brmasker_ionic_services__["a" /* BrMaskerIonicServices3 */]]
+            },] },
+];
+/** @nocollapse */
+BrMaskerModule.ctorParameters = function () { return []; };
+//# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ 446:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__brmasker_ionic_3__ = __webpack_require__(432);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__brmasker_ionic_services__ = __webpack_require__(433);
+/* unused harmony namespace reexport */
+
+
+//# sourceMappingURL=index.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=1.js.map

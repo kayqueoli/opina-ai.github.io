@@ -1,1 +1,720 @@
-webpackJsonp([5],{267:function(l,n,e){"use strict";function u(l){return Z._19(0,[(l()(),Z.Z(0,0,null,null,9,"ion-col",[["class","menu-icon-col-not-game col"],["col-2",""],["offset-1",""]],null,null,null,null,null)),Z.Y(1,16384,null,0,N.a,[],null,null),(l()(),Z._18(-1,null,["\n        "])),(l()(),Z.Z(3,0,null,null,5,"button",[["clear",""],["ion-button",""]],null,[[null,"click"]],function(l,n,e){var u=!0;if("click"===n){u=!1!==l.component.openMenu()&&u}return u},T.b,T.a)),Z.Y(4,1097728,null,0,V.a,[[8,""],H.a,Z.j,Z.z],{clear:[0,"clear"]},null),(l()(),Z._18(-1,0,["\n          "])),(l()(),Z.Z(6,0,null,0,1,"ion-icon",[["class","menu-icon"],["name","md-menu"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Z.Y(7,147456,null,0,X.a,[H.a,Z.j,Z.z],{name:[0,"name"]},null),(l()(),Z._18(-1,0,["\n        "])),(l()(),Z._18(-1,null,["\n      "]))],function(l,n){l(n,4,0,"");l(n,7,0,"md-menu")},function(l,n){l(n,6,0,Z._11(n,7)._hidden)})}function t(l){return Z._19(0,[(l()(),Z.Z(0,0,null,null,9,"ion-col",[["class","menu-icon-col col"],["col-2",""],["offset-1",""]],null,null,null,null,null)),Z.Y(1,16384,null,0,N.a,[],null,null),(l()(),Z._18(-1,null,["\n        "])),(l()(),Z.Z(3,0,null,null,5,"button",[["clear",""],["ion-button",""]],null,[[null,"click"]],function(l,n,e){var u=!0;if("click"===n){u=!1!==l.component.openMenu()&&u}return u},T.b,T.a)),Z.Y(4,1097728,null,0,V.a,[[8,""],H.a,Z.j,Z.z],{clear:[0,"clear"]},null),(l()(),Z._18(-1,0,["\n          "])),(l()(),Z.Z(6,0,null,0,1,"ion-icon",[["class","menu-icon"],["name","md-menu"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Z.Y(7,147456,null,0,X.a,[H.a,Z.j,Z.z],{name:[0,"name"]},null),(l()(),Z._18(-1,0,["\n        "])),(l()(),Z._18(-1,null,["\n      "]))],function(l,n){l(n,4,0,"");l(n,7,0,"md-menu")},function(l,n){l(n,6,0,Z._11(n,7)._hidden)})}function i(l){return Z._19(0,[(l()(),Z.Z(0,0,null,null,4,"ion-col",[["class","col"],["col-6",""]],null,null,null,null,null)),Z.Y(1,16384,null,0,N.a,[],null,null),(l()(),Z._18(-1,null,["\n        "])),(l()(),Z.Z(3,0,null,null,0,"img",[["class","img-responsive img-not-game"],["src","assets/imgs/header-logo.png"]],null,null,null,null,null)),(l()(),Z._18(-1,null,["\n      "]))],null,null)}function a(l){return Z._19(0,[(l()(),Z.Z(0,0,null,null,4,"ion-col",[["class","col"],["col-6",""]],null,null,null,null,null)),Z.Y(1,16384,null,0,N.a,[],null,null),(l()(),Z._18(-1,null,["\n        "])),(l()(),Z.Z(3,0,null,null,0,"img",[["class","img-responsive"],["src","assets/imgs/header-logo.png"]],null,null,null,null,null)),(l()(),Z._18(-1,null,["\n      "]))],null,null)}function o(l){return Z._19(0,[(l()(),Z.Z(0,0,null,null,9,"ion-col",[["class","col"],["col-2",""]],null,null,null,null,null)),Z.Y(1,16384,null,0,N.a,[],null,null),(l()(),Z._18(-1,null,["\n        "])),(l()(),Z.Z(3,0,null,null,5,"button",[["class","button-help-questionary-list"],["clear",""],["ion-button",""]],null,[[null,"click"]],function(l,n,e){var u=!0;if("click"===n){u=!1!==l.component.help()&&u}return u},T.b,T.a)),Z.Y(4,1097728,null,0,V.a,[[8,""],H.a,Z.j,Z.z],{clear:[0,"clear"]},null),(l()(),Z._18(-1,0,["\n          "])),(l()(),Z.Z(6,0,null,0,1,"ion-icon",[["class","icon-help button-help-questionary-list"],["name","help-circle"],["role","img"]],[[2,"hide",null]],null,null,null,null)),Z.Y(7,147456,null,0,X.a,[H.a,Z.j,Z.z],{name:[0,"name"]},null),(l()(),Z._18(-1,0,["\n        "])),(l()(),Z._18(-1,null,["\n      "]))],function(l,n){l(n,4,0,"");l(n,7,0,"help-circle")},function(l,n){l(n,6,0,Z._11(n,7)._hidden)})}function s(l){return Z._19(0,[(l()(),Z.Z(0,0,null,null,24,"ion-row",[["class","row"]],null,null,null,null,null)),Z.Y(1,16384,null,0,W.a,[],null,null),(l()(),Z._18(-1,null,["\n      "])),(l()(),Z.Z(3,0,null,null,1,"h1",[["class","text-questionary-list"],["text-center",""]],null,null,null,null,null)),(l()(),Z._18(4,null,["Questionários - ",""])),(l()(),Z._18(-1,null,["\n      "])),(l()(),Z.Z(6,0,null,null,4,"ion-col",[["class","text-questionary-list col"],["col-3",""]],null,null,null,null,null)),Z.Y(7,16384,null,0,N.a,[],null,null),(l()(),Z._18(-1,null,["\n        "])),(l()(),Z.Z(9,0,null,null,0,"img",[["class","text-img"],["src","assets/gifs/gif-a-4-crop.gif"]],null,null,null,null,null)),(l()(),Z._18(-1,null,["\n      "])),(l()(),Z._18(-1,null,["\n      "])),(l()(),Z.Z(12,0,null,null,11,"ion-col",[["class","text-questionary-list-game col"],["col-9",""]],null,null,null,null,null)),Z.Y(13,16384,null,0,N.a,[],null,null),(l()(),Z._18(-1,null,["\n        "])),(l()(),Z.Z(15,0,null,null,7,"h5",[],null,null,null,null,null)),(l()(),Z._18(-1,null,["Responda os questionários para conseguir "])),(l()(),Z.Z(17,0,null,null,1,"strong",[],null,null,null,null,null)),(l()(),Z._18(-1,null,["pontos"])),(l()(),Z._18(-1,null,[" para aumentar seu "])),(l()(),Z.Z(20,0,null,null,1,"strong",[],null,null,null,null,null)),(l()(),Z._18(-1,null,["nível"])),(l()(),Z._18(-1,null,[" de\n          participação! Você só poderá responder cada questionário uma vez."])),(l()(),Z._18(-1,null,["\n      "])),(l()(),Z._18(-1,null,["\n    "]))],null,function(l,n){l(n,4,0,n.component.plan.name)})}function r(l){return Z._19(0,[(l()(),Z.Z(0,0,null,null,13,"ion-row",[["class","row"]],null,null,null,null,null)),Z.Y(1,16384,null,0,W.a,[],null,null),(l()(),Z._18(-1,null,["\n      "])),(l()(),Z.Z(3,0,null,null,1,"h1",[["class","text-questionary-list"],["text-center",""]],null,null,null,null,null)),(l()(),Z._18(4,null,["Questionários - ",""])),(l()(),Z._18(-1,null,["\n      "])),(l()(),Z.Z(6,0,null,null,6,"ion-col",[["class","text-questionary-list col"],["col-12",""]],null,null,null,null,null)),Z.Y(7,16384,null,0,N.a,[],null,null),(l()(),Z._18(-1,null,["\n        "])),(l()(),Z._18(-1,null,["\n        "])),(l()(),Z.Z(10,0,null,null,1,"h4",[],null,null,null,null,null)),(l()(),Z._18(-1,null,["Escolha um dos questionários abaixo para nos contar sua opinião e contribuir com a autoavaliação do POSCOMP.\n          Você só poderá responder cada questionário uma vez."])),(l()(),Z._18(-1,null,["\n      "])),(l()(),Z._18(-1,null,["\n    "]))],null,function(l,n){l(n,4,0,n.component.plan.name)})}function c(l){return Z._19(0,[(l()(),Z.Z(0,0,null,null,0,"img",[["class","questionary-img-list"]],[[8,"src",4]],null,null,null,null))],null,function(l,n){l(n,0,0,Z._2(1,"assets/imgs/",n.parent.parent.context.$implicit.icon,"-selected.png"))})}function d(l){return Z._19(0,[(l()(),Z.Z(0,0,null,null,0,"img",[["class","questionary-img-list"]],[[8,"src",4]],null,null,null,null))],null,function(l,n){l(n,0,0,Z._2(1,"assets/imgs/",n.parent.parent.context.$implicit.icon,".png"))})}function p(l){return Z._19(0,[(l()(),Z.Z(0,0,null,null,8,"ion-thumbnail",[["item-start",""]],null,null,null,null,null)),Z.Y(1,16384,null,0,J.a,[],null,null),(l()(),Z._18(-1,null,["\n              "])),(l()(),Z.U(16777216,null,null,1,null,c)),Z.Y(4,16384,null,0,K.i,[Z.I,Z.F],{ngIf:[0,"ngIf"]},null),(l()(),Z._18(-1,null,["\n              "])),(l()(),Z.U(16777216,null,null,1,null,d)),Z.Y(7,16384,null,0,K.i,[Z.I,Z.F],{ngIf:[0,"ngIf"]},null),(l()(),Z._18(-1,null,["\n            "]))],function(l,n){l(n,4,0,n.parent.context.$implicit.answered);l(n,7,0,!n.parent.context.$implicit.answered)},null)}function g(l){return Z._19(0,[(l()(),Z.Z(0,0,null,null,1,"h2",[["class","text-questionary"]],null,null,null,null,null)),(l()(),Z._18(1,null,["",""]))],null,function(l,n){l(n,1,0,n.parent.parent.context.$implicit.name)})}function _(l){return Z._19(0,[(l()(),Z.Z(0,0,null,null,1,"h2",[],null,null,null,null,null)),(l()(),Z._18(1,null,["",""]))],null,function(l,n){l(n,1,0,n.parent.parent.context.$implicit.name)})}function f(l){return Z._19(0,[(l()(),Z.Z(0,0,null,null,8,"ion-label",[["text-left",""],["text-wrap",""]],null,null,null,null,null)),Z.Y(1,16384,[[2,4]],0,ll.a,[H.a,Z.j,Z.z,[8,null],[8,null],[8,null],[8,null]],null,null),(l()(),Z._18(-1,null,["\n              "])),(l()(),Z.U(16777216,null,null,1,null,g)),Z.Y(4,16384,null,0,K.i,[Z.I,Z.F],{ngIf:[0,"ngIf"]},null),(l()(),Z._18(-1,null,["\n              "])),(l()(),Z.U(16777216,null,null,1,null,_)),Z.Y(7,16384,null,0,K.i,[Z.I,Z.F],{ngIf:[0,"ngIf"]},null),(l()(),Z._18(-1,null,["\n            "]))],function(l,n){var e=n.component;l(n,4,0,!e.useGame);l(n,7,0,e.useGame)},null)}function m(l){return Z._19(0,[(l()(),Z.Z(0,0,null,null,1,"h2",[["class","text-questionary"]],null,null,null,null,null)),(l()(),Z._18(1,null,["",""]))],null,function(l,n){l(n,1,0,n.parent.parent.context.$implicit.name)})}function h(l){return Z._19(0,[(l()(),Z.Z(0,0,null,null,1,"h2",[],null,null,null,null,null)),(l()(),Z._18(1,null,["",""]))],null,function(l,n){l(n,1,0,n.parent.parent.context.$implicit.name)})}function v(l){return Z._19(0,[(l()(),Z.Z(0,0,null,null,4,"div",[],null,null,null,null,null)),(l()(),Z._18(-1,null,["\n                "])),(l()(),Z.Z(2,0,null,null,1,"p",[],null,null,null,null,null)),(l()(),Z._18(-1,null,["Respondido!"])),(l()(),Z._18(-1,null,["\n              "]))],null,null)}function b(l){return Z._19(0,[(l()(),Z.Z(0,0,null,null,11,"ion-label",[["class","label-result"],["text-left",""],["text-wrap",""]],null,null,null,null,null)),Z.Y(1,16384,[[2,4]],0,ll.a,[H.a,Z.j,Z.z,[8,null],[8,null],[8,null],[8,null]],null,null),(l()(),Z._18(-1,null,["\n              "])),(l()(),Z.U(16777216,null,null,1,null,m)),Z.Y(4,16384,null,0,K.i,[Z.I,Z.F],{ngIf:[0,"ngIf"]},null),(l()(),Z._18(-1,null,["\n              "])),(l()(),Z.U(16777216,null,null,1,null,h)),Z.Y(7,16384,null,0,K.i,[Z.I,Z.F],{ngIf:[0,"ngIf"]},null),(l()(),Z._18(-1,null,["\n              "])),(l()(),Z.U(16777216,null,null,1,null,v)),Z.Y(10,16384,null,0,K.i,[Z.I,Z.F],{ngIf:[0,"ngIf"]},null),(l()(),Z._18(-1,null,["\n            "]))],function(l,n){var e=n.component;l(n,4,0,!e.useGame);l(n,7,0,e.useGame);l(n,10,0,e.useGame)},null)}function y(l){return Z._19(0,[(l()(),Z.Z(0,0,null,null,6,"ion-label",[["class","label-result-button"],["text-right",""],["text-wrap",""]],null,null,null,null,null)),Z.Y(1,16384,[[2,4]],0,ll.a,[H.a,Z.j,Z.z,[8,null],[8,null],[8,null],[8,null]],null,null),(l()(),Z._18(-1,null,["\n              "])),(l()(),Z.Z(3,0,null,null,2,"button",[["class","button-result"],["icon-only",""],["ion-button",""],["text-wrap",""]],null,[[null,"click"]],function(l,n,e){var u=!0;if("click"===n){u=!1!==l.component.getResults(l.parent.context.$implicit)&&u}return u},T.b,T.a)),Z.Y(4,1097728,null,0,V.a,[[8,""],H.a,Z.j,Z.z],null,null),(l()(),Z._18(-1,0,["\n                Ver resultados\n              "])),(l()(),Z._18(-1,null,["\n            "]))],null,null)}function I(l){return Z._19(0,[(l()(),Z.Z(0,0,null,null,1,"ion-radio",[],[[2,"radio-disabled",null]],[[null,"ionSelect"],[null,"click"]],function(l,n,e){var u=!0,t=l.component;if("click"===n){u=!1!==Z._11(l,1)._click(e)&&u}if("ionSelect"===n){u=!1!==t.setQuestionary(l.parent.context.$implicit)&&u}return u},nl.b,nl.a)),Z.Y(1,245760,null,0,el.a,[ul.a,H.a,Z.j,Z.z,[2,tl.a],[2,il.a]],{disabled:[0,"disabled"]},{ionSelect:"ionSelect"})],function(l,n){l(n,1,0,Z._2(1,"",n.parent.context.$implicit.answered,""))},function(l,n){l(n,0,0,Z._11(n,1)._disabled)})}function P(l){return Z._19(0,[(l()(),Z.Z(0,0,null,null,21,"ion-item",[["class","questionary-item-list item item-block"]],null,null,null,al.b,al.a)),Z.Y(1,1097728,null,3,tl.a,[ul.a,H.a,Z.j,Z.z,[2,ol.a]],null,null),Z._16(603979776,2,{contentLabel:0}),Z._16(603979776,3,{_buttons:1}),Z._16(603979776,4,{_icons:1}),Z.Y(5,16384,null,0,sl.a,[],null,null),(l()(),Z._18(-1,2,["\n            "])),(l()(),Z.U(16777216,null,0,1,null,p)),Z.Y(8,16384,null,0,K.i,[Z.I,Z.F],{ngIf:[0,"ngIf"]},null),(l()(),Z._18(-1,2,["\n            "])),(l()(),Z.U(16777216,null,1,1,null,f)),Z.Y(11,16384,null,0,K.i,[Z.I,Z.F],{ngIf:[0,"ngIf"]},null),(l()(),Z._18(-1,2,["\n            "])),(l()(),Z.U(16777216,null,1,1,null,b)),Z.Y(14,16384,null,0,K.i,[Z.I,Z.F],{ngIf:[0,"ngIf"]},null),(l()(),Z._18(-1,2,["\n            "])),(l()(),Z.U(16777216,null,1,1,null,y)),Z.Y(17,16384,null,0,K.i,[Z.I,Z.F],{ngIf:[0,"ngIf"]},null),(l()(),Z._18(-1,2,["\n            "])),(l()(),Z.U(16777216,null,4,1,null,I)),Z.Y(20,16384,null,0,K.i,[Z.I,Z.F],{ngIf:[0,"ngIf"]},null),(l()(),Z._18(-1,2,["\n          "]))],function(l,n){l(n,8,0,n.component.useGame);l(n,11,0,!n.context.$implicit.answered);l(n,14,0,n.context.$implicit.answered);l(n,17,0,n.context.$implicit.answered);l(n,20,0,!n.context.$implicit.answered)},null)}function Y(l){return Z._19(0,[(l()(),Z.Z(0,0,null,null,21,"ion-footer",[["class","footer-not-game"]],null,null,null,null,null)),Z.Y(1,16384,null,0,rl.a,[H.a,Z.j,Z.z,[2,cl.a]],null,null),(l()(),Z._18(-1,null,["\n  "])),(l()(),Z.Z(3,0,null,null,14,"ion-grid",[["class","grid"]],null,null,null,null,null)),Z.Y(4,16384,null,0,dl.a,[],null,null),(l()(),Z._18(-1,null,["\n    "])),(l()(),Z.Z(6,0,null,null,10,"ion-row",[["class","row"]],null,null,null,null,null)),Z.Y(7,16384,null,0,W.a,[],null,null),(l()(),Z._18(-1,null,["\n      "])),(l()(),Z.Z(9,0,null,null,6,"button",[["class","button-background"],["full",""],["ion-button",""]],[[8,"disabled",0]],[[null,"click"]],function(l,n,e){var u=!0;if("click"===n){u=!1!==l.component.navigate()&&u}return u},T.b,T.a)),Z.Y(10,1097728,null,0,V.a,[[8,""],H.a,Z.j,Z.z],{full:[0,"full"]},null),(l()(),Z._18(-1,0,["\n        "])),(l()(),Z.Z(12,0,null,0,2,"ion-icon",[["class","text-button"],["role","img"]],[[8,"id",0],[2,"hide",null]],null,null,null,null)),Z.Y(13,147456,null,0,X.a,[H.a,Z.j,Z.z],null,null),(l()(),Z._18(-1,null,["\n          Continuar\n        "])),(l()(),Z._18(-1,0,["\n      "])),(l()(),Z._18(-1,null,["\n    "])),(l()(),Z._18(-1,null,["\n  "])),(l()(),Z._18(-1,null,["\n  "])),(l()(),Z.Z(19,0,null,null,1,"ion-navbar",[["class","toolbar-progress toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,pl.b,pl.a)),Z.Y(20,49152,null,0,gl.a,[_l.a,[2,cl.a],[2,fl.a],H.a,Z.j,Z.z],null,null),(l()(),Z._18(-1,null,["\n"]))],function(l,n){l(n,10,0,"")},function(l,n){var e=n.component;l(n,9,0,e.btnContinueDisabled);l(n,12,0,Z._2(1,"button-questionary-list-not-game-",e.questionary.id,""),Z._11(n,13)._hidden);l(n,19,0,Z._11(n,20)._hidden,Z._11(n,20)._sbPadding)})}function w(l){return Z._19(0,[(l()(),Z.Z(0,0,null,null,46,"ion-footer",[],null,null,null,null,null)),Z.Y(1,16384,null,0,rl.a,[H.a,Z.j,Z.z,[2,cl.a]],null,null),(l()(),Z._18(-1,null,["\n  "])),(l()(),Z.Z(3,0,null,null,14,"ion-grid",[["class","grid"]],null,null,null,null,null)),Z.Y(4,16384,null,0,dl.a,[],null,null),(l()(),Z._18(-1,null,["\n    "])),(l()(),Z.Z(6,0,null,null,10,"ion-row",[["class","row"]],null,null,null,null,null)),Z.Y(7,16384,null,0,W.a,[],null,null),(l()(),Z._18(-1,null,["\n      "])),(l()(),Z.Z(9,0,null,null,6,"button",[["class","button-background"],["full",""],["ion-button",""]],[[8,"disabled",0]],[[null,"click"]],function(l,n,e){var u=!0;if("click"===n){u=!1!==l.component.navigate()&&u}return u},T.b,T.a)),Z.Y(10,1097728,null,0,V.a,[[8,""],H.a,Z.j,Z.z],{full:[0,"full"]},null),(l()(),Z._18(-1,0,["\n        "])),(l()(),Z.Z(12,0,null,0,2,"ion-icon",[["class","text-button"],["role","img"]],[[8,"id",0],[2,"hide",null]],null,null,null,null)),Z.Y(13,147456,null,0,X.a,[H.a,Z.j,Z.z],null,null),(l()(),Z._18(-1,null,["\n          Continuar\n        "])),(l()(),Z._18(-1,0,["\n      "])),(l()(),Z._18(-1,null,["\n    "])),(l()(),Z._18(-1,null,["\n  "])),(l()(),Z._18(-1,null,["\n  "])),(l()(),Z.Z(19,0,null,null,26,"ion-navbar",[["class","toolbar-progress toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,pl.b,pl.a)),Z.Y(20,49152,null,0,gl.a,[_l.a,[2,cl.a],[2,fl.a],H.a,Z.j,Z.z],null,null),(l()(),Z._18(-1,3,["\n    "])),(l()(),Z.Z(22,0,null,3,5,"ion-title",[["class","toolbar-point"],["text-center",""]],null,null,null,ml.b,ml.a)),Z.Y(23,49152,null,0,hl.a,[H.a,Z.j,Z.z,[2,vl.a],[2,gl.a]],null,null),(l()(),Z._18(-1,0,["\n      "])),(l()(),Z.Z(25,0,null,0,1,"ion-icon",[["name","md-ribbon"],["range-right",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),Z.Y(26,147456,null,0,X.a,[H.a,Z.j,Z.z],{name:[0,"name"]},null),(l()(),Z._18(27,0,["\n      "," pontos\n    "])),(l()(),Z._18(-1,3,["\n    "])),(l()(),Z.Z(29,0,null,3,12,"ion-range",[["class","progress-bar"],["disabled",""]],[[2,"range-disabled",null],[2,"range-pressed",null],[2,"range-has-pin",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,e){var u=!0;if("ngModelChange"===n){u=!1!==(l.component.progress=e)&&u}return u},bl.b,bl.a)),Z.Y(30,1228800,null,0,yl.a,[ul.a,Il.a,[2,tl.a],H.a,Pl.a,Z.j,Z.z,Yl.a,Z.g],{disabled:[0,"disabled"],min:[1,"min"],max:[2,"max"],step:[3,"step"]},null),Z._14(1024,null,wl.i,function(l){return[l]},[yl.a]),Z.Y(32,671744,null,0,wl.m,[[8,null],[8,null],[8,null],[2,wl.i]],{isDisabled:[0,"isDisabled"],model:[1,"model"]},{update:"ngModelChange"}),Z._14(2048,null,wl.j,null,[wl.m]),Z.Y(34,16384,null,0,wl.k,[wl.j],null,null),(l()(),Z._18(-1,null,["\n      "])),(l()(),Z.Z(36,0,null,0,1,"ion-icon",[["name","logo-buffer"],["range-left",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),Z.Y(37,147456,null,0,X.a,[H.a,Z.j,Z.z],{name:[0,"name"]},null),(l()(),Z._18(-1,null,["\n      "])),(l()(),Z.Z(39,0,null,1,1,"ion-icon",[["range-right",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),Z.Y(40,147456,null,0,X.a,[H.a,Z.j,Z.z],null,null),(l()(),Z._18(-1,null,["\n    "])),(l()(),Z._18(-1,3,["\n    "])),(l()(),Z.Z(43,0,null,3,1,"div",[["class","progres-text-uper"],["text-center",""]],null,null,null,null,null)),(l()(),Z._18(44,null,[""," de ","\n      questionários respondidos"])),(l()(),Z._18(-1,3,["\n  "])),(l()(),Z._18(-1,null,["\n"]))],function(l,n){var e=n.component;l(n,10,0,"");l(n,26,0,"md-ribbon");l(n,30,0,"",0,100,1);l(n,32,0,"",e.progress);l(n,37,0,"logo-buffer")},function(l,n){var e=n.component;l(n,9,0,e.btnContinueDisabled);l(n,12,0,Z._2(1,"button-questionary-list-game-",e.questionary.id,""),Z._11(n,13)._hidden);l(n,19,0,Z._11(n,20)._hidden,Z._11(n,20)._sbPadding);l(n,25,0,Z._11(n,26)._hidden);l(n,27,0,e.points);l(n,29,0,Z._11(n,30)._disabled,Z._11(n,30)._pressed,Z._11(n,30)._pin,Z._11(n,34).ngClassUntouched,Z._11(n,34).ngClassTouched,Z._11(n,34).ngClassPristine,Z._11(n,34).ngClassDirty,Z._11(n,34).ngClassValid,Z._11(n,34).ngClassInvalid,Z._11(n,34).ngClassPending);l(n,36,0,Z._11(n,37)._hidden);l(n,39,0,Z._11(n,40)._hidden);l(n,44,0,e.answeredQuestionaries,e.totalQuestionaries)})}function x(l){return Z._19(0,[(l()(),Z.Z(0,0,null,null,25,"ion-header",[],null,null,null,null,null)),Z.Y(1,16384,null,0,xl.a,[H.a,Z.j,Z.z,[2,cl.a]],null,null),(l()(),Z._18(-1,null,["\n  "])),(l()(),Z.Z(3,0,null,null,21,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,pl.b,pl.a)),Z.Y(4,49152,null,0,gl.a,[_l.a,[2,cl.a],[2,fl.a],H.a,Z.j,Z.z],null,null),(l()(),Z._18(-1,3,["\n    "])),(l()(),Z.Z(6,0,null,3,17,"ion-row",[["class","row"]],null,null,null,null,null)),Z.Y(7,16384,null,0,W.a,[],null,null),(l()(),Z._18(-1,null,["\n      "])),(l()(),Z.U(16777216,null,null,1,null,u)),Z.Y(10,16384,null,0,K.i,[Z.I,Z.F],{ngIf:[0,"ngIf"]},null),(l()(),Z._18(-1,null,["\n      "])),(l()(),Z.U(16777216,null,null,1,null,t)),Z.Y(13,16384,null,0,K.i,[Z.I,Z.F],{ngIf:[0,"ngIf"]},null),(l()(),Z._18(-1,null,["\n      "])),(l()(),Z.U(16777216,null,null,1,null,i)),Z.Y(16,16384,null,0,K.i,[Z.I,Z.F],{ngIf:[0,"ngIf"]},null),(l()(),Z._18(-1,null,["\n      "])),(l()(),Z.U(16777216,null,null,1,null,a)),Z.Y(19,16384,null,0,K.i,[Z.I,Z.F],{ngIf:[0,"ngIf"]},null),(l()(),Z._18(-1,null,["\n      "])),(l()(),Z.U(16777216,null,null,1,null,o)),Z.Y(22,16384,null,0,K.i,[Z.I,Z.F],{ngIf:[0,"ngIf"]},null),(l()(),Z._18(-1,null,["\n    "])),(l()(),Z._18(-1,3,["\n  "])),(l()(),Z._18(-1,null,["\n"])),(l()(),Z._18(-1,null,["\n"])),(l()(),Z.Z(27,0,null,null,38,"ion-content",[["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,Zl.b,Zl.a)),Z.Y(28,4374528,null,0,Al.a,[H.a,Pl.a,Yl.a,Z.j,Z.z,_l.a,ql.a,Z.u,[2,cl.a],[2,fl.a]],null,null),(l()(),Z._18(-1,1,["\n  "])),(l()(),Z.Z(30,0,null,1,34,"ion-grid",[["class","grid"]],null,null,null,null,null)),Z.Y(31,16384,null,0,dl.a,[],null,null),(l()(),Z._18(-1,null,["\n    "])),(l()(),Z._18(-1,null,["\n    "])),(l()(),Z.U(16777216,null,null,1,null,s)),Z.Y(35,16384,null,0,K.i,[Z.I,Z.F],{ngIf:[0,"ngIf"]},null),(l()(),Z._18(-1,null,["\n    "])),(l()(),Z._18(-1,null,["\n    "])),(l()(),Z._18(-1,null,["\n    "])),(l()(),Z.U(16777216,null,null,1,null,r)),Z.Y(40,16384,null,0,K.i,[Z.I,Z.F],{ngIf:[0,"ngIf"]},null),(l()(),Z._18(-1,null,["\n    "])),(l()(),Z.Z(42,0,null,null,21,"ion-row",[["class","row"]],null,null,null,null,null)),Z.Y(43,16384,null,0,W.a,[],null,null),(l()(),Z._18(-1,null,["\n      "])),(l()(),Z._18(-1,null,["\n      "])),(l()(),Z.Z(46,0,null,null,16,"ion-col",[["class","col"],["col-12",""]],null,null,null,null,null)),Z.Y(47,16384,null,0,N.a,[],null,null),(l()(),Z._18(-1,null,["\n        "])),(l()(),Z._18(-1,null,["\n        "])),(l()(),Z.Z(50,0,null,null,10,"ion-list",[["radio-group",""],["role","radiogroup"]],null,null,null,null,null)),Z._14(5120,null,wl.i,function(l){return[l]},[il.a]),Z.Y(52,16384,null,0,Cl.a,[H.a,Z.j,Z.z,Pl.a,Ql.l,Yl.a],null,null),Z.Y(53,1064960,null,1,il.a,[Z.z,Z.j,Z.g],null,null),Z._16(335544320,1,{_header:0}),(l()(),Z._18(-1,null,["\n          "])),(l()(),Z._18(-1,null,["\n          "])),(l()(),Z.U(16777216,null,null,1,null,P)),Z.Y(58,802816,null,0,K.h,[Z.I,Z.F,Z.p],{ngForOf:[0,"ngForOf"]},null),(l()(),Z._18(-1,null,["\n          "])),(l()(),Z._18(-1,null,["\n        "])),(l()(),Z._18(-1,null,["\n        "])),(l()(),Z._18(-1,null,["\n      "])),(l()(),Z._18(-1,null,["\n    "])),(l()(),Z._18(-1,null,["\n  "])),(l()(),Z._18(-1,1,["\n"])),(l()(),Z._18(-1,null,["\n"])),(l()(),Z._18(-1,null,["\n"])),(l()(),Z.U(16777216,null,null,1,null,Y)),Z.Y(69,16384,null,0,K.i,[Z.I,Z.F],{ngIf:[0,"ngIf"]},null),(l()(),Z._18(-1,null,["\n"])),(l()(),Z._18(-1,null,["\n"])),(l()(),Z._18(-1,null,["\n"])),(l()(),Z.U(16777216,null,null,1,null,w)),Z.Y(74,16384,null,0,K.i,[Z.I,Z.F],{ngIf:[0,"ngIf"]},null),(l()(),Z._18(-1,null,["\n"]))],function(l,n){var e=n.component;l(n,10,0,!e.useGame);l(n,13,0,e.useGame);l(n,16,0,!e.useGame);l(n,19,0,e.useGame);l(n,22,0,e.useGame);l(n,35,0,e.useGame);l(n,40,0,!e.useGame);l(n,58,0,e.questionaries);l(n,69,0,!e.useGame);l(n,74,0,e.useGame)},function(l,n){l(n,3,0,Z._11(n,4)._hidden,Z._11(n,4)._sbPadding);l(n,27,0,Z._11(n,28).statusbarPadding,Z._11(n,28)._hasRefresher)})}Object.defineProperty(n,"__esModule",{value:!0});var Z=e(0),A=(e(3),e(54),e(70)),q=e(44),C=e(46),Q=e(32),k=e(49),z=e(144),G=e(138),O=e(18),j=function(){function l(l,n,e,u,t,i,a,o,s,r,c){var d=this;this.toastCtrl=l,this.menuCtrl=n,this.navCtrl=e,this.databaseProvider=u,this.questionProvider=t,this.storage=i,this.questionaryProvider=a,this.loadingCtrl=o,this.alertCtrl=s,this.priorizationProvider=r,this.restProvider=c,this.disciplineList=[],this.questionaries=[],this.questionary=new q.c,this.btnContinueDisabled=!0,this.answers=[],this.useGame=!1,this.answeredQuestionaries=0,this.totalQuestionaries=0,this.progress=0,this.plan=new k.a;this.databaseProvider.verifyEntities(["plan","questionaries","respondent"]).then(function(l){l.length>0&&0==l.filter(function(l){return 0==l}).length?d.setEntities():d.navigateBack()}).catch(function(){return d.navigateBack()}),this.storage.get("useGame").then(function(l){d.useGame=l,d.useGame&&d.storage.get("helpHome").then(function(l){null==l&&d.help()})}),this.storage.get("disciplineSelected").then(function(l){return d.disciplineList=l})}return l.prototype.getResults=function(l){this.loader=this.loadingCtrl.create(),this.loader.present(),this.navCtrl.push("ResultsPage",{questionary:l}).then(this.loader.dismiss())},l.prototype.openMenu=function(){this.menuCtrl.open()},l.prototype.presentToast=function(){this.toastCtrl.create({message:"Clique no icone em caso de dúvidas!",duration:4e3,position:"top"}).present()},l.prototype.setEntities=function(){var l=this;this.loader=this.loadingCtrl.create(),this.loader.present(),this.storage.get("plan").then(function(n){l.plan=n,l.questionaryProvider.getAllQuestionariesByPlan(l.plan).then(function(n){l.storage.set("questionaries",n),l.questionaries=n,l.storage.get("respondent").then(function(n){l.respondent=n,l.questionaryProvider.getAllPlanQuestionariesAnsweredByRespondent(l.plan,l.questionaries,l.respondent).then(function(n){if(null!=n){if("Discente evadido"==l.respondent.type)n=n.filter(function(l){return"POSCOMP - Evasão Discente"===l.name});else if("Discente formado"==l.respondent.type)n=n.filter(function(l){return"POSCOMP - Discente Egresso"===l.name});else if("Discente"==l.respondent.type){var e=[];l.disciplineList.forEach(function(l){n.filter(function(n){return n.name.endsWith(l.name)}).forEach(function(l){e.push(l)})}),n=n.filter(function(l){return"POSCOMP - Avaliação da Secretaria"===l.name||"POSCOMP - Avaliação da Coordenação"===l.name}),e.forEach(function(l){return n.push(l)})}else"Docente"==l.respondent.type&&(n=n.filter(function(l){return"POSCOMP - Avaliação da Secretaria"===l.name||"POSCOMP - Avaliação da Coordenação"===l.name}));for(var u=0;u<n.length;u++)n[u].answered&&(l.progress=l.progress+1);l.totalQuestionaries=n.length,l.answeredQuestionaries=l.progress,l.progress=l.progress/n.length,l.progress=100*l.progress,l.questionaries=n,l.loader.dismiss()}else l.questionaries=[],l.showAlertGetAllPlanQuestionariesAnsweredByRespondent()}).catch(function(n){console.error(n),l.restProvider.sendGoogleAnalyticsErrorData("QuestionariesListPage","setEntities",n),l.showAlertGetAllPlanQuestionariesAnsweredByRespondent()})}).catch(function(n){console.error(n),l.restProvider.sendGoogleAnalyticsErrorData("QuestionariesListPage","setEntities",n),l.showAlertGetRespondent()})}).catch(function(n){console.error(n),l.restProvider.sendGoogleAnalyticsErrorData("QuestionariesListPage","setEntities",n),l.showAlertGetAllQuestionariesByPlan()})}).catch(function(n){console.error(n),l.restProvider.sendGoogleAnalyticsErrorData("QuestionariesListPage","setEntities",n),l.showAlertGetAllPlan()}),this.storage.get("points").then(function(n){return l.points=n})},l.prototype.setQuestionary=function(l){this.questionary=l,this.btnContinueDisabled=!1},l.prototype.navigateBack=function(){this.navCtrl.setRoot("RespondentProfilePage",{})},l.prototype.navigate=function(){var l=this;this.loader=this.loadingCtrl.create(),this.loader.present(),this.storage.set("plan",this.plan).then(function(){l.questionProvider.getAllQuestionsByQuestionary(l.questionary,0).then(function(n){null!=n?(l.questions=n,null==l.questions[0].metricId?l.navigateQuestionaryPage():l.loadMetrics(l.questions[0].metricId)):l.showAlertGetAllQuestionsByQuestionaryNavigate()}).catch(function(n){console.error(n),l.restProvider.sendGoogleAnalyticsErrorData("QuestionariesListPage","navigate",n),l.showAlertGetAllQuestionsByQuestionaryNavigate()})}).catch(function(n){console.error(n),l.restProvider.sendGoogleAnalyticsErrorData("QuestionariesListPage","navigate",n),l.showAlertSetPlan()})},l.prototype.navigateQuestionaryPage=function(){this.navCtrl.push("QuestionaryPage",{points:this.points,questionary:this.questionary,currentQuestionIndex:0,currentQuestion:new z.a,answers:[],answersNeighborhoods:[],prioritizations:[]}).then(this.loader.dismiss())},l.prototype.navigatePrioritizationPage=function(){this.navCtrl.push("PrioritizationPage",{points:this.points,plan:this.plan,respondent:this.respondent,questionary:this.questionary,questions:this.questions,metricItems:this.metricItems,currentMetricItem:this.metricItems[0],currentMetricItemIndex:0,currentQuestionIndex:0,currentQuestion:this.questions[0],answers:this.answers,answersNeighborhoods:[],prioritizations:[]}).then(this.loader.dismiss())},l.prototype.loadMetrics=function(l){var n=this;this.priorizationProvider.getMetricItems(l).then(function(e){null!=e?(n.metricItems=e,n.priorizationProvider.getMetricValues().then(function(e){if(null!=e){for(var u=0;u<n.metricItems.length;u++)for(var t=n.metricItems[u],i=0;i<e.length;i++){var a=e[i];t.id==a.metricItemId&&n.metricItems[u].metricValues.push(a)}n.storage.set("metricItems",n.metricItems),n.insertAnswerAndNavigateToPrioritization()}else n.showAlertLoadMetrics(l)}).catch(function(e){console.error(e),n.restProvider.sendGoogleAnalyticsErrorData("QuestionariesListPage","loadMetrics",e),n.showAlertLoadMetrics(l)})):n.showAlertLoadMetrics(l)}).catch(function(e){console.error(e),n.restProvider.sendGoogleAnalyticsErrorData("QuestionariesListPage","loadMetrics",e),n.showAlertLoadMetrics(l)})},l.prototype.insertAnswerAndNavigateToPrioritization=function(){this.createAnswer(),this.navigatePrioritizationPage()},l.prototype.createAnswer=function(){var l=new q.a;l.plan=this.plan,l.questionary=this.questionary,l.question=this.questions[0],l.respondent=this.respondent,l.answer=1;var n=new Date;l.created_at=new Date(n.valueOf()-6e4*n.getTimezoneOffset()).toISOString(),l.isCompleted=!1,this.answers.push(l)},l.prototype.getAllQuestionsByQuestionary=function(l,n){var e=this;this.questionProvider.getAllQuestionsByQuestionary(l,n).then(function(u){null!=u?e.questions=u:e.showAlertGetAllQuestionsByQuestionary(l,n)}).catch(function(u){console.error(u),e.restProvider.sendGoogleAnalyticsErrorData("QuestionariesListPage","getAllQuestionsByQuestionary",u),e.showAlertGetAllQuestionsByQuestionary(l,n)})},l.prototype.showAlertLoadMetrics=function(l){var n=this;this.metricItems=[];this.alertCtrl.create({title:"Oops!",message:"Não foi possível acessar os dados do servidor. Por favor, tente novamente.",buttons:[{text:"Tentar novamente",handler:function(){n.loadMetrics(l)}}]}).present()},l.prototype.showAlertGetAllPlanQuestionariesAnsweredByRespondent=function(){var l=this;this.alertCtrl.create({title:"Oops!",message:"Não foi possível acessar os dados dos questionários. Por favor, tente novamente.",buttons:[{text:"Tentar novamente",handler:function(){l.setEntities()}}]}).present()},l.prototype.showAlertGetRespondent=function(){var l=this;this.alertCtrl.create({title:"Oops!",message:"Erro ao acessar os dados do respondente. Por favor, preencha novamente.",buttons:[{text:"Ok",handler:function(){l.navigateBack()}}]}).present()},l.prototype.showAlertGetAllQuestionariesByPlan=function(){var l=this;this.alertCtrl.create({title:"Oops!",message:"Não foi possível acessar os dados de questionários. Por favor, tente novamente.",buttons:[{text:"Ok",handler:function(){l.navCtrl.setRoot(A.a,{})}}]}).present()},l.prototype.showAlertGetAllPlan=function(){var l=this;this.alertCtrl.create({title:"Oops!",message:"Não foi possível os dados do plano. Por favor, tente novamente.",buttons:[{text:"Ok",handler:function(){l.navCtrl.setRoot(A.a,{})}}]}).present()},l.prototype.showAlertGetAllQuestionsByQuestionaryNavigate=function(){var l=this;this.alertCtrl.create({title:"Oops!",message:"Não foi possível acessar os questões do questionário. Por favor, tente novamente.",buttons:[{text:"Tentar novamente",handler:function(){l.navigate()}}]}).present()},l.prototype.showAlertSetPlan=function(){var l=this;this.alertCtrl.create({title:"Oops!",message:"Não foi possível armazenar os dados do plano. Por favor, tente novamente.",buttons:[{text:"Tentar novamente",handler:function(){l.navigate()}}]}).present()},l.prototype.showAlertGetAllQuestionsByQuestionary=function(l,n){var e=this;this.alertCtrl.create({title:"Oops!",message:"Não foi possível acessar os dados das questões. Por favor, tente novamente.",buttons:[{text:"Tentar novamente",handler:function(){e.getAllQuestionsByQuestionary(l,n)}}]}).present()},l.prototype.help=function(){var l=this;this.alertCtrl.create({title:"<div text-center>Olá! Bem vindo ao Opina Aí</div>",message:'<div class="alert-align-center"><img class="img-alert" src="assets/gifs/gif-a-3.gif"/></div><div class="dialogue-box"><div class="tdialogue-box-text"><div><strong>Bem vindo ao Opina Aí!</strong></div><div text-center>Sinta-se a vontade para contribuir com a <strong>autoavaliação do POSCOMP</strong> respondendo os questionários!</div><div text-center>Sua <strong>participação</strong> é muito importante!</div></div></div>',buttons:[{text:"Entendi, quero participar!",handler:function(){l.storage.get("helpHome").then(function(n){null==n&&(l.presentToast(),l.storage.set("helpHome",!0))})}}]}).present()},l}(),D=function(){return function(){}}(),F=e(207),M=e(208),B=e(209),U=e(210),E=e(211),S=e(212),L=e(213),R=e(214),$=e(215),N=e(66),T=e(25),V=e(17),H=e(1),X=e(30),W=e(68),J=e(145),K=e(10),ll=e(45),nl=e(218),el=e(74),ul=e(12),tl=e(13),il=e(59),al=e(96),ol=e(39),sl=e(56),rl=e(140),cl=e(5),dl=e(67),pl=e(139),gl=e(28),_l=e(7),fl=e(20),ml=e(216),hl=e(69),vl=e(40),bl=e(271),yl=e(136),Il=e(26),Pl=e(4),Yl=e(9),wl=e(16),xl=e(55),Zl=e(95),Al=e(22),ql=e(24),Cl=e(58),Ql=e(6),kl=e(73),zl=e(27),Gl=e(57),Ol=e(47),jl=Z.X({encapsulation:2,styles:[],data:{}}),Dl=Z.V("page-questionaries-list",j,function(l){return Z._19(0,[(l()(),Z.Z(0,0,null,null,1,"page-questionaries-list",[],null,null,null,x,jl)),Z.Y(1,49152,null,0,j,[kl.a,zl.a,fl.a,C.a,z.b,Q.b,q.d,Gl.a,Ol.a,G.a,O.a],null,null)],null,null)},{},{},[]),Fl=e(135),Ml=e(43);e.d(n,"QuestionariesListPageModuleNgFactory",function(){return Bl});var Bl=Z.W(D,[],function(l){return Z._7([Z._8(512,Z.i,Z.S,[[8,[F.a,M.a,B.a,U.a,E.a,S.a,L.a,R.a,$.a,Dl]],[3,Z.i],Z.s]),Z._8(4608,K.k,K.j,[Z.r,[2,K.s]]),Z._8(4608,wl.r,wl.r,[]),Z._8(4608,wl.d,wl.d,[]),Z._8(512,K.b,K.b,[]),Z._8(512,wl.p,wl.p,[]),Z._8(512,wl.g,wl.g,[]),Z._8(512,wl.n,wl.n,[]),Z._8(512,Fl.a,Fl.a,[]),Z._8(512,Fl.b,Fl.b,[]),Z._8(512,D,D,[]),Z._8(256,Ml.a,j,[])])})},271:function(l,n,e){"use strict";function u(l){return s._19(0,[(l()(),s.Z(0,0,null,null,1,"div",[["class","range-pin"],["role","presentation"]],null,null,null,null,null)),(l()(),s._18(1,null,["",""]))],null,function(l,n){l(n,1,0,n.component.val)})}function t(l){return s._19(0,[(l()(),s.U(16777216,null,null,1,null,u)),s.Y(1,16384,null,0,r.i,[s.I,s.F],{ngIf:[0,"ngIf"]},null),(l()(),s.Z(2,0,null,null,0,"div",[["class","range-knob"],["role","presentation"]],null,null,null,null,null))],function(l,n){l(n,1,0,n.component.pin)},null)}function i(l){return s._19(0,[(l()(),s.Z(0,0,null,null,0,"div",[["class","range-tick"],["role","presentation"]],[[4,"left",null],[2,"range-tick-active",null]],null,null,null,null))],null,function(l,n){l(n,0,0,n.context.$implicit.left,n.context.$implicit.active)})}function a(l){return s._19(0,[(l()(),s.Z(0,0,null,null,1,"div",[["class","range-knob-handle"],["role","slider"]],[[2,"range-knob-pressed",null],[2,"range-knob-min",null],[2,"range-knob-max",null],[4,"left",null],[1,"aria-valuenow",0],[1,"aria-valuemin",0],[1,"aria-valuemax",0],[1,"aria-disabled",0],[1,"aria-labelledby",0],[8,"tabIndex",0]],[[null,"ionIncrease"],[null,"ionDecrease"],[null,"keydown"]],function(l,n,e){var u=!0,t=l.component;if("keydown"===n){u=!1!==s._11(l,1)._keyup(e)&&u}if("ionIncrease"===n){u=!1!==t._keyChg(!0,!0)&&u}if("ionDecrease"===n){u=!1!==t._keyChg(!1,!0)&&u}return u},t,d)),s.Y(1,49152,null,0,c.a,[],{ratio:[0,"ratio"],pressed:[1,"pressed"],pin:[2,"pin"],min:[3,"min"],max:[4,"max"],val:[5,"val"],disabled:[6,"disabled"],labelId:[7,"labelId"]},{ionIncrease:"ionIncrease",ionDecrease:"ionDecrease"})],function(l,n){var e=n.component;l(n,1,0,e._ratioB,e._pressedB,e._pin,e._min,e._max,e._valB,e._disabled,e._labelId)},function(l,n){l(n,0,0,s._11(n,1).pressed,s._11(n,1).val===s._11(n,1).min||void 0===s._11(n,1).val,s._11(n,1).val===s._11(n,1).max,s._11(n,1)._x,s._11(n,1).val,s._11(n,1).min,s._11(n,1).max,s._11(n,1).disabled,s._11(n,1).labelId,s._11(n,1).disabled?-1:0)})}function o(l){return s._19(0,[s._16(402653184,1,{_slider:0}),s._10(null,0),(l()(),s.Z(2,0,[[1,0],["slider",1]],null,8,"div",[["class","range-slider"]],null,null,null,null,null)),(l()(),s.U(16777216,null,null,1,null,i)),s.Y(4,802816,null,0,r.h,[s.I,s.F,s.p],{ngForOf:[0,"ngForOf"]},null),(l()(),s.Z(5,0,null,null,0,"div",[["class","range-bar"],["role","presentation"]],null,null,null,null,null)),(l()(),s.Z(6,0,[["bar",1]],null,0,"div",[["class","range-bar range-bar-active"],["role","presentation"]],[[4,"left",null],[4,"right",null]],null,null,null,null)),(l()(),s.Z(7,0,null,null,1,"div",[["class","range-knob-handle"],["role","slider"]],[[2,"range-knob-pressed",null],[2,"range-knob-min",null],[2,"range-knob-max",null],[4,"left",null],[1,"aria-valuenow",0],[1,"aria-valuemin",0],[1,"aria-valuemax",0],[1,"aria-disabled",0],[1,"aria-labelledby",0],[8,"tabIndex",0]],[[null,"ionIncrease"],[null,"ionDecrease"],[null,"keydown"]],function(l,n,e){var u=!0,t=l.component;if("keydown"===n){u=!1!==s._11(l,8)._keyup(e)&&u}if("ionIncrease"===n){u=!1!==t._keyChg(!0,!1)&&u}if("ionDecrease"===n){u=!1!==t._keyChg(!1,!1)&&u}return u},t,d)),s.Y(8,49152,null,0,c.a,[],{ratio:[0,"ratio"],pressed:[1,"pressed"],pin:[2,"pin"],min:[3,"min"],max:[4,"max"],val:[5,"val"],disabled:[6,"disabled"],labelId:[7,"labelId"]},{ionIncrease:"ionIncrease",ionDecrease:"ionDecrease"}),(l()(),s.U(16777216,null,null,1,null,a)),s.Y(10,16384,null,0,r.i,[s.I,s.F],{ngIf:[0,"ngIf"]},null),s._10(null,1)],function(l,n){var e=n.component;l(n,4,0,e._ticks);l(n,8,0,e._ratioA,e._pressedA,e._pin,e._min,e._max,e._valA,e._disabled,e._labelId);l(n,10,0,e._dual)},function(l,n){var e=n.component;l(n,6,0,e._barL,e._barR);l(n,7,0,s._11(n,8).pressed,s._11(n,8).val===s._11(n,8).min||void 0===s._11(n,8).val,s._11(n,8).val===s._11(n,8).max,s._11(n,8)._x,s._11(n,8).val,s._11(n,8).min,s._11(n,8).max,s._11(n,8).disabled,s._11(n,8).labelId,s._11(n,8).disabled?-1:0)})}var s=e(0),r=e(10),c=e(137),d=s.X({encapsulation:2,styles:[],data:{}});e(16),e(136),e(12),e(26),e(13),e(1),e(4),e(9);e.d(n,"a",function(){return p}),n.b=o;var p=s.X({encapsulation:2,styles:[],data:{}})}});
+webpackJsonp([5],{
+
+/***/ 296:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrioritizationPageModule", function() { return PrioritizationPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__prioritization__ = __webpack_require__(441);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var PrioritizationPageModule = /** @class */ (function () {
+    function PrioritizationPageModule() {
+    }
+    PrioritizationPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__prioritization__["a" /* PrioritizationPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__prioritization__["a" /* PrioritizationPage */]),
+            ],
+        })
+    ], PrioritizationPageModule);
+    return PrioritizationPageModule;
+}());
+
+//# sourceMappingURL=prioritization.module.js.map
+
+/***/ }),
+
+/***/ 441:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PrioritizationPage; });
+/* unused harmony export Prioritization */
+/* unused harmony export MetricItem */
+/* unused harmony export MetricValue */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_questionary_questionary__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_prioritization_prioritization__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_home__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_answer_answer__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_rest_rest__ = __webpack_require__(12);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+
+
+var PrioritizationPage = /** @class */ (function () {
+    function PrioritizationPage(toastCtrl, menuCtrl, navCtrl, navParams, storage, alertCtrl, loadingCtrl, priorizationProvider, answerProvider, restProvider) {
+        var _this = this;
+        this.toastCtrl = toastCtrl;
+        this.menuCtrl = menuCtrl;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.storage = storage;
+        this.alertCtrl = alertCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.priorizationProvider = priorizationProvider;
+        this.answerProvider = answerProvider;
+        this.restProvider = restProvider;
+        this.btnContinueDisabled = true;
+        this.metricValueColor = "";
+        this.YES = 1;
+        this.disableSteps = false;
+        this.scaleView = false;
+        this.itemView = false;
+        this.checkBoxView = false;
+        this.useGame = false;
+        this.endQuestion = false;
+        this.storage.get('useGame').then(function (data) { return _this.useGame = data; });
+        this.getUserType();
+        this.prioritizations = navParams.get('prioritizations');
+        this.answers = navParams.get('answers');
+        this.answersNeighborhoods = navParams.get('answersNeighborhoods');
+        this.plan = navParams.get('plan');
+        this.questionary = navParams.get('questionary');
+        this.respondent = navParams.get('respondent');
+        this.currentMetricItem = navParams.get('currentMetricItem');
+        this.currentMetricItemIndex = navParams.get('currentMetricItemIndex');
+        this.currentQuestion = navParams.get('currentQuestion');
+        this.currentQuestionIndex = navParams.get('currentQuestionIndex');
+        this.neighborhoods = navParams.get('neighborhoods');
+        this.questions = navParams.get('questions');
+        this.metricItems = navParams.get('metricItems');
+        this.points = navParams.get('points');
+        this.selectedMetricValue = new MetricValue();
+        this.step = this.currentMetricItemIndex + 1;
+        this.totalSteps = this.metricItems.length;
+        if (this.totalSteps == 1)
+            this.disableSteps = true;
+        this.progress = ((this.currentQuestionIndex + 1) / this.questions.length) * 100;
+        this.totalQuestions = this.questions.length;
+        if (this.currentQuestionIndex + 1 >= this.questions.length) {
+            this.endQuestion = true;
+        }
+        if (this.currentQuestion.useNarrative == "0") {
+            this.currentQuestion.useNarrative = false;
+        }
+        else {
+            this.currentQuestion.useNarrative = true;
+        }
+        //---------------------MUITO IMPORTANTE---------------------
+        this.resolveMetricItem();
+        //---------------------MUITO IMPORTANTE---------------------
+    }
+    PrioritizationPage.prototype.getUserType = function () {
+        var _this = this;
+        this.storage.get('userType')
+            .then(function (data) {
+            if (data != null) {
+                _this.userType = data;
+            }
+            else {
+                var userType = new __WEBPACK_IMPORTED_MODULE_5__home_home__["b" /* UserType */]();
+                userType.id = null;
+                userType.name = null;
+                _this.userType = userType;
+            }
+        }).catch(function () {
+            var userType = new __WEBPACK_IMPORTED_MODULE_5__home_home__["b" /* UserType */]();
+            userType.id = null;
+            userType.name = null;
+            _this.userType = userType;
+        });
+    };
+    PrioritizationPage.prototype.ionViewDidLeave = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                this.points = this.points - 1;
+                return [2 /*return*/];
+            });
+        });
+    };
+    PrioritizationPage.prototype.presentToast = function () {
+        var toast = this.toastCtrl.create({
+            message: 'Clique no icone em caso de dúvidas!',
+            duration: 5000,
+            position: 'top'
+        });
+        toast.present();
+    };
+    PrioritizationPage.prototype.openMenu = function () {
+        this.menuCtrl.open();
+    };
+    //---------------------MUITO IMPORTANTE---------------------
+    //---------------DEFINE A EXIBIÇÃO DA RESPOSTA---------------
+    PrioritizationPage.prototype.resolveMetricItem = function () {
+        switch (this.currentMetricItem.name) {
+            case "Gravidade":
+                this.scaleView = true;
+                break;
+            case "Urgência":
+                this.scaleView = true;
+                break;
+            case "Tendência":
+                this.scaleView = true;
+                break;
+            case "Escala Qualitativa":
+                this.itemView = true;
+                break;
+            case "Escala de satisfação":
+                this.scaleView = true;
+                break;
+            case "Necessidade de Requalificação":
+                this.scaleView = true;
+                break;
+            case "Escala de qualidade":
+                this.scaleView = true;
+                break;
+            case "Escala de necessidade":
+                this.scaleView = true;
+                break;
+            case "Escala de concordancia":
+                this.scaleView = true;
+                break;
+            case "Melhorias para o comerciante":
+                this.scaleView = true;
+                break;
+            case "Escala de Satisfação":
+                this.scaleView = true;
+                break;
+            case "Avaliação do comerciante":
+                this.scaleView = true;
+                break;
+            case "Concordancia e discordancia":
+                this.itemView = true;
+                break;
+            case "Frequência Semanal":
+                this.itemView = true;
+                break;
+            case "Atrações do Centro":
+                this.checkBoxView = true;
+                break;
+            case "Motivos de não ir ao centro":
+                this.checkBoxView = true;
+                break;
+            case "Atrações do Centro 2":
+                this.checkBoxView = true;
+                break;
+            case "Equipamentos e comércios":
+                this.itemView = true;
+                break;
+            case "Ramo de atividade comercial":
+                this.itemView = true;
+                break;
+            case "Motivação de escolha para o comerciante":
+                this.itemView = true;
+                break;
+            case "Atividades exercidas pelos pedestres":
+                this.itemView = true;
+                break;
+            case "Pontos fortes para o comerciante":
+                this.checkBoxView = true;
+                break;
+            case "Pontos fracos para o comerciante":
+                this.checkBoxView = true;
+                break;
+            case "Ausências do Centro":
+                this.itemView = true;
+                break;
+            case "Necessidades do Centro":
+                this.checkBoxView = true;
+                break;
+            case "Atividades dos pedestres no Centro":
+                this.checkBoxView = true;
+                break;
+            case "Pontos fortes da rua":
+                this.checkBoxView = true;
+                break;
+            case "Pontos fracos da rua":
+                this.checkBoxView = true;
+                break;
+            case "Frequência de uso dos espaços públicos":
+                this.itemView = true;
+                break;
+            case "POSCOMP - Escala 1":
+                this.scaleView = true;
+                break;
+            case "POSCOMP - Escala 2":
+                this.scaleView = true;
+                break;
+            case "POSCOMP - Escala 3":
+                this.scaleView = true;
+                break;
+        }
+    };
+    //---------------DEFINE A EXIBIÇÃO DA RESPOSTA---------------
+    //---------------------MUITO IMPORTANTE---------------------
+    PrioritizationPage.prototype.getDescriptionByPriorization = function () {
+        //------------------------------DEFINIÇÃO DE MÉTRICA------------------------------
+        switch (this.currentMetricItem.name) {
+            case "Gravidade":
+                return "Quão grave esse problema poderá se tornar caso nada seja feito?";
+            case "Urgência":
+                return "A resolução deste problema pode esperar ou deve ser realizada imediatamente?";
+            case "Tendência":
+                return "Se esse problema não for resolvido agora, ele vai piorar pouco a pouco ou vai piorar bruscamente?";
+            case "Escala Qualitativa":
+                return "O quanto você concorda com a afirmação?";
+            default:
+                return "";
+        }
+        //------------------------------DEFINIÇÃO DE MÉTRICA------------------------------
+    };
+    PrioritizationPage.prototype.selectMetricValue = function (metricValue) {
+        this.selectedMetricValue = metricValue;
+        this.setMetricValueColor();
+        this.btnContinueDisabled = false;
+        this.scrollToBottom();
+    };
+    PrioritizationPage.prototype.setMetricValueColor = function () {
+        switch (this.selectedMetricValue.icon.toString().substr(0, 1)) {
+            case '1': {
+                this.metricValueColor = "metric_value_1";
+                break;
+            }
+            case '2': {
+                this.metricValueColor = "metric_value_2";
+                break;
+            }
+            case '3': {
+                this.metricValueColor = "metric_value_3";
+                break;
+            }
+            case '4': {
+                this.metricValueColor = "metric_value_4";
+                break;
+            }
+            case '5': {
+                this.metricValueColor = "metric_value_5";
+                break;
+            }
+            default: {
+                this.metricValueColor = "metric_value_default";
+                break;
+            }
+        }
+    };
+    PrioritizationPage.prototype.isMetricValueSelected = function (metricValue) {
+        if (!!this.selectedMetricValue) {
+            return this.selectedMetricValue.value == metricValue.value;
+        }
+        else {
+            return false;
+        }
+    };
+    PrioritizationPage.prototype.updateMultiMetricValue = function (metricValue, checked) {
+        var _this = this;
+        if (checked) {
+            if (metricValue.name == "Nenhum dos anteriores" || metricValue.name == "Nenhuma das anteriores") {
+                this.currentMetricItem.metricValues.forEach(function (metric) {
+                    _this.removeMultiMetricValue(metric);
+                });
+                var length_1 = this.checkBox.length;
+                var cont_1 = 1;
+                this.checkBox.forEach(function (box) {
+                    if (cont_1 < length_1) {
+                        box.checked = false;
+                        cont_1++;
+                    }
+                });
+            }
+            else {
+                if (this.checkBox.last.checked) {
+                    var metricRemove = this.currentMetricItem.metricValues.find(function (metric) {
+                        return (metric.name == "Nenhum dos anteriores" || metric.name == "Nenhuma das anteriores");
+                    });
+                    if (metricRemove) {
+                        this.checkBox.last.checked = false;
+                        this.removeMultiMetricValue(metricRemove);
+                    }
+                }
+            }
+            this.createMultiMetricValue(metricValue);
+        }
+        else {
+            this.removeMultiMetricValue(metricValue);
+        }
+    };
+    PrioritizationPage.prototype.createMultiMetricValue = function (metricValue) {
+        var prioritization = new Prioritization();
+        prioritization.plan = this.plan;
+        prioritization.questionary = this.questionary;
+        prioritization.question = this.currentQuestion;
+        prioritization.respondent = this.respondent;
+        prioritization.metricItem = this.currentMetricItem;
+        prioritization.metricValue = metricValue;
+        var dateTime = new Date();
+        prioritization.created_at = new Date(dateTime.valueOf() - dateTime.getTimezoneOffset() * 60000).toISOString();
+        this.prioritizations.push(prioritization);
+        this.btnContinueDisabled = false;
+    };
+    PrioritizationPage.prototype.removeMultiMetricValue = function (metricValue) {
+        var _this = this;
+        this.prioritizations =
+            this.prioritizations.filter(function (prioritization) {
+                return !(prioritization.plan.id == _this.plan.id
+                    && prioritization.questionary.id == _this.questionary.id
+                    && prioritization.respondent.id == _this.respondent.id
+                    && prioritization.question.id == _this.currentQuestion.id
+                    && prioritization.metricItem.id == _this.currentMetricItem.id
+                    && prioritization.metricValue.id == metricValue.id);
+            });
+        var cont = 0;
+        this.checkBox.forEach(function (box) {
+            if (box.checked)
+                cont++;
+        });
+        if (cont == 0) {
+            this.btnContinueDisabled = true;
+        }
+    };
+    PrioritizationPage.prototype.nextStep = function () {
+        if (!this.checkBoxView) {
+            this.deletePrioritization();
+            this.createPrioritization();
+        }
+        this.navigate();
+    };
+    PrioritizationPage.prototype.createPrioritization = function () {
+        var prioritization = new Prioritization();
+        prioritization.plan = this.plan;
+        prioritization.questionary = this.questionary;
+        prioritization.question = this.currentQuestion;
+        prioritization.respondent = this.respondent;
+        prioritization.metricItem = this.currentMetricItem;
+        prioritization.metricValue = this.selectedMetricValue;
+        var dateTime = new Date();
+        prioritization.created_at = new Date(dateTime.valueOf() - dateTime.getTimezoneOffset() * 60000).toISOString();
+        this.prioritizations.push(prioritization);
+    };
+    PrioritizationPage.prototype.deletePrioritization = function () {
+        var _this = this;
+        this.prioritizations =
+            this.prioritizations.filter(function (prioritization) {
+                return !(prioritization.plan.id == _this.plan.id
+                    && prioritization.questionary.id == _this.questionary.id
+                    && prioritization.respondent.id == _this.respondent.id
+                    && prioritization.question.id == _this.currentQuestion.id
+                    && prioritization.metricItem.id == _this.currentMetricItem.id);
+            });
+    };
+    PrioritizationPage.prototype.createAnswer = function (plan, questionary, currentQuestion, respondent, questionAnswer) {
+        var answer = new __WEBPACK_IMPORTED_MODULE_2__providers_questionary_questionary__["a" /* Answer */]();
+        answer.plan = plan;
+        answer.questionary = questionary;
+        answer.question = currentQuestion;
+        answer.respondent = respondent;
+        answer.answer = questionAnswer;
+        var dateTime = new Date();
+        answer.created_at = new Date(dateTime.valueOf() - dateTime.getTimezoneOffset() * 60000).toISOString();
+        answer.isCompleted = false;
+        this.answers.push(answer);
+    };
+    PrioritizationPage.prototype.loadMetrics = function (metricId) {
+        var _this = this;
+        //------------------------CARREGA OS ITENS DE MÉTRICAS-----------------------------
+        //1 - GUT, 2 - ESCALA QUALITATIVA, (3-17) - Métricas do questionário de teste
+        this.priorizationProvider.getMetricItems(metricId)
+            .then(function (metricItems) {
+            if (metricItems != null) {
+                _this.metricItems = metricItems;
+                //------------------------CARREGA OS VALORES DE MÉTRICA-----------------------------
+                _this.priorizationProvider.getMetricValues()
+                    .then(function (result) {
+                    if (result != null) {
+                        //------------------------ASSOCIA OS VALORES AOS ITENS-----------------------------
+                        for (var i = 0; i < _this.metricItems.length; i++) {
+                            var metricItem = _this.metricItems[i];
+                            for (var j = 0; j < result.length; j++) {
+                                var metricValue = result[j];
+                                if (metricItem.id == metricValue.metricItemId) {
+                                    _this.metricItems[i].metricValues.push(metricValue);
+                                }
+                            }
+                        }
+                        //------------------------SALVA OS ITENS DE MÉTRICA-----------------------------
+                        _this.storage.set('metricItems', _this.metricItems);
+                        _this.insertAnswerAndNavigateToPrioritization();
+                    }
+                    else {
+                        _this.showAlertLoadMetrics(metricId);
+                    }
+                }).catch(function (error) {
+                    console.error(error);
+                    _this.restProvider.sendGoogleAnalyticsErrorData('PrioritizationPage', 'loadMetrics', error);
+                    _this.showAlertLoadMetrics(metricId);
+                });
+            }
+            else {
+                _this.showAlertLoadMetrics(metricId);
+            }
+        }).catch(function (error) {
+            console.error(error);
+            _this.restProvider.sendGoogleAnalyticsErrorData('PrioritizationPage', 'loadMetrics', error);
+            _this.showAlertLoadMetrics(metricId);
+        });
+    };
+    PrioritizationPage.prototype.insertAnswerAndNavigateToPrioritization = function () {
+        this.createAnswer(this.plan, this.questionary, this.questions[this.currentQuestionIndex + 1], this.respondent, this.YES);
+        this.navigatePrioritizationPage(this.plan, this.respondent, this.questionary, this.neighborhoods, this.questions, this.metricItems, this.metricItems[0], 0, this.currentQuestionIndex + 1, this.questions[this.currentQuestionIndex + 1], this.answers, this.answersNeighborhoods, this.prioritizations);
+    };
+    PrioritizationPage.prototype.showAlertLoadMetrics = function (metricId) {
+        var _this = this;
+        this.metricItems = [];
+        var alert = this.alertCtrl.create({
+            title: 'Oops!',
+            message: 'Não foi possível acessar os dados do servidor. Por favor, tente novamente.',
+            buttons: [{
+                    text: "Tentar novamente",
+                    handler: function () {
+                        _this.loadMetrics(metricId);
+                    }
+                }]
+        });
+        alert.present();
+    };
+    PrioritizationPage.prototype.showAlertInsertAnswers = function () {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'Oops!',
+            message: 'Não foi possível enviar os dados para o servidor. Por favor, tente novamente.',
+            buttons: [{
+                    text: "Tentar novamente",
+                    handler: function () {
+                        _this.finishQuestionary();
+                    }
+                }]
+        });
+        alert.present();
+    };
+    PrioritizationPage.prototype.navigate = function () {
+        this.loader = this.loadingCtrl.create();
+        this.loader.present();
+        this.points = this.points + 1;
+        //O plano esta habilitado pra usar a escala GUT
+        if (this.plan.usePrioritization == true) {
+            //Se a resposta for YES vai para a página de priorization com GUT
+            if (this.currentMetricItemIndex + 1 < this.metricItems.length) {
+                this.navigatePrioritizationPage(this.plan, this.respondent, this.questionary, this.neighborhoods, this.questions, this.metricItems, this.metricItems[this.currentMetricItemIndex + 1], this.currentMetricItemIndex + 1, this.currentQuestionIndex, this.currentQuestion, this.answers, this.answersNeighborhoods, this.prioritizations);
+                //Se não, vai para a página do questionário
+            }
+            else {
+                if (this.currentQuestionIndex + 1 < this.questions.length) {
+                    this.navigateQuestionaryPage();
+                    //acabaram as perguntas, mandar para thank-you page
+                }
+                else {
+                    this.navigateThankYouPage();
+                }
+            }
+            //O plano não esta habilitado para usar a escala GUT
+            //Nesse caso pode usar outras métricas
+        }
+        else {
+            if (this.currentQuestionIndex + 1 < this.questions.length) {
+                //se metric_id for nulo, navega para página de questionário
+                if (this.questions[this.currentQuestionIndex + 1].metricId == null) {
+                    this.navigateQuestionaryPage();
+                    //Se houver metric_id, carrega as métricas específicas  e navega para página de priorization
+                }
+                else {
+                    this.loadMetrics(this.questions[this.currentQuestionIndex + 1].metricId);
+                }
+            }
+            else {
+                this.navigateThankYouPage();
+            }
+        }
+    };
+    PrioritizationPage.prototype.navigatePrioritizationPage = function (plan, respondent, questionary, neighborhoods, questions, metricItems, currentMetricItem, currentMetricItemIndex, currentQuestionIndex, currentQuestion, answers, answersNeighborhoods, prioritizations) {
+        // Navegação para página do questinário
+        this.navCtrl.push('PrioritizationPage', {
+            points: this.points,
+            plan: plan,
+            respondent: respondent,
+            questionary: questionary,
+            neighborhoods: neighborhoods,
+            questions: questions,
+            metricItems: metricItems,
+            currentMetricItem: currentMetricItem,
+            currentMetricItemIndex: currentMetricItemIndex,
+            currentQuestionIndex: currentQuestionIndex,
+            currentQuestion: currentQuestion,
+            answers: answers,
+            answersNeighborhoods: answersNeighborhoods,
+            prioritizations: prioritizations
+        }).then(this.loader.dismiss());
+    };
+    PrioritizationPage.prototype.finishQuestionary = function () {
+        var _this = this;
+        this.answerProvider.insertAnswersData(this.answers, this.answersNeighborhoods, this.prioritizations, this.userType, this.useGame, this.points)
+            .then(function (data) {
+            if (data != null) {
+                _this.storage.set('points', _this.points);
+            }
+            else {
+                _this.showAlertInsertAnswers();
+                _this.loader.dismiss();
+            }
+        }).catch(function (error) {
+            console.error(error);
+            _this.restProvider.sendGoogleAnalyticsErrorData('PrioritizationPage', 'finishQuestionary', error);
+            _this.showAlertInsertAnswers();
+            _this.loader.dismiss();
+        });
+    };
+    PrioritizationPage.prototype.navigateThankYouPage = function () {
+        this.finishQuestionary();
+        //Navegação para pagina de agradecimento
+        this.navCtrl.setRoot('ThankyouPage', {
+            questions: this.questions,
+            questionary: this.questionary,
+            points: this.points,
+            answers: this.answers,
+            answersNeighborhoods: this.answersNeighborhoods,
+            prioritizations: this.prioritizations
+        }).then(this.loader.dismiss());
+    };
+    PrioritizationPage.prototype.navigateQuestionaryPage = function () {
+        //Navegação para página do questionário
+        this.navCtrl.push('QuestionaryPage', {
+            points: this.points,
+            respondent: this.respondent,
+            questionary: this.questionary,
+            neighborhoods: this.neighborhoods,
+            currentQuestionIndex: this.currentQuestionIndex + 1,
+            currentQuestion: this.questions[this.currentQuestionIndex + 1],
+            metricItems: this.metricItems,
+            answers: this.answers,
+            answersNeighborhoods: this.answersNeighborhoods,
+            prioritizations: this.prioritizations
+        }).then(this.loader.dismiss());
+    };
+    PrioritizationPage.prototype.scrollToBottom = function () {
+        if (!!this.content) {
+            var content_1 = this.content;
+            setTimeout(function () {
+                content_1.scrollToBottom(100);
+            }, 100);
+        }
+    };
+    PrioritizationPage.prototype.help = function () {
+        // this.currentQuestion.narrative = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at elit ut nulla congue venenatis. Maecenas tortor urna, consequat ac tortor ut, imperdiet hendrerit orci. Proin odio est, feugiat eu laoreet vel, dictum eget elit. Proin blandit interdum urna et commodo. Nullam eget orci ac neque rhoncus aliquam vitae sit amet mauris. ";
+        var alert = this.alertCtrl.create({
+            title: '<div text-center>Então, vamos soltar a imaginação!</div>',
+            message: '<div class="dialogue-box box-question"><div class="tdialogue-box-text">'
+                + '<div text-center>' + this.currentQuestion.narrative + '</div>'
+                + '</div></div>'
+                + '<div class="alert-align-center"><img class="img-alert img-question" src="assets/gifs/gif-c-2.gif" /></div>',
+            buttons: [{
+                    text: "Ok!",
+                    handler: function () {
+                    }
+                }]
+        });
+        alert.present();
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Content */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Content */])
+    ], PrioritizationPage.prototype, "content", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* ViewChildren */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Checkbox */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* QueryList */])
+    ], PrioritizationPage.prototype, "checkBox", void 0);
+    PrioritizationPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-prioritization',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\prioritization\prioritization.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col col-2 class="menu-icon-col" *ngIf="useGame">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-2 class="menu-icon-col-not-game"  *ngIf="!useGame">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-6  *ngIf="useGame"> \n        <img class="img-responsive" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col col-6  *ngIf="!useGame">\n        <img class="img-responsive img-not-game" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col col-2>\n        <button class="button-help-priorization" *ngIf="currentQuestion.useNarrative && useGame" ion-button clear\n          (click)="help()">\n          <ion-icon class="icon-help button-help-priorization" name="alert"></ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row class="context-area">\n      <ion-col col-3 class="context-area-img">\n        <img class="context-area-icon" src="assets/imgs/{{currentQuestion.contextAreaIcon}}" />\n      </ion-col>\n      <ion-col col-9 class="context-area-container">\n        <h1>\n          {{currentQuestion.contextArea}}\n        </h1>\n      </ion-col>\n    </ion-row>\n    <!-- Enunciado da questão -->\n    <div class="hr"></div>\n    <ion-row class="margin-top-30">\n      <ion-col *ngIf="!useGame" col-12 text-justify class="question">\n        <h1>{{currentQuestion.name}}</h1>\n      </ion-col>\n      <ion-col *ngIf="useGame" col-12 text-justify class="question">\n        <h1>{{currentQuestion.question}}</h1>\n      </ion-col>\n      <ion-col col-12 text-center *ngIf="scaleView">\n        <h3>{{getDescriptionByPriorization()}}</h3>\n        <h2 class="{{metricValueColor}}">{{selectedMetricValue.name}}</h2>\n      </ion-col>\n    </ion-row>\n    <!-- Enunciado da questão -->\n    <!-- Seleção pela escala do emotion -->\n    <ion-grid class="grid-priorization">\n      <ion-row *ngIf="scaleView" class="metric-row" text-center margin-bottom>\n        <ion-col *ngFor="let metricValue of currentMetricItem.metricValues">\n          <img *ngIf="!isMetricValueSelected(metricValue)" class="img-responsive" src="assets/imgs/{{metricValue.icon}}"\n            (click)="selectMetricValue(metricValue)" />\n          <img *ngIf="isMetricValueSelected(metricValue)" class="img-responsive"\n            src="assets/imgs/{{metricValue.iconSelected}}" (click)="selectMetricValue(metricValue)" />\n        </ion-col>\n      </ion-row>\n      <!-- Seleção pela escala do emotion -->\n      <!-- Seleção por itens -->\n      <ion-row *ngIf="itemView" class="metric-row item-row" margin-bottom>\n        <ion-col col-12>\n          <ion-list radio-group>\n            <ion-item *ngFor="let metricValue of currentMetricItem.metricValues" class="radio-item">\n              <ion-label text-wrap text-left>{{metricValue.name}}</ion-label>\n              <ion-radio (ionSelect)="selectMetricValue(metricValue)"></ion-radio>\n            </ion-item>\n          </ion-list>\n        </ion-col>\n      </ion-row>\n      <!-- Seleção por itens -->\n      <!-- Seleção por checkbox -->\n      <ion-row *ngIf="checkBoxView" class="metric-row checkbox-row" margin-bottom>\n        <ion-col col-12>\n          <ion-list radio-group>\n            <ion-item *ngFor="let metricValue of currentMetricItem.metricValues" class="item-checkbox">\n              <ion-label text-wrap text-left class="item-checkbox-text">{{metricValue.name}}</ion-label>\n              <ion-checkbox (ionChange)="updateMultiMetricValue(metricValue,$event.checked)"></ion-checkbox>\n            </ion-item>\n          </ion-list>\n        </ion-col>\n      </ion-row>\n      <!-- Seleção por checkbox -->\n    </ion-grid>\n    <ion-row *ngIf="useGame && !endQuestion">\n      <ion-col col-12 text-center>\n        <button ion-button full class="button-background-game" (click)="nextStep()" [disabled]="btnContinueDisabled">\n          <ion-icon id="button-question-game-{{currentQuestion.id}}" class="text-button">\n            Continuar\n          </ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="!useGame && !endQuestion">\n      <ion-col col-12 text-center>\n        <button ion-button full class="button-background-no-game" (click)="nextStep()" [disabled]="btnContinueDisabled">\n          <ion-icon id="button-question-{{currentQuestion.id}}" class="text-button">\n            Continuar\n          </ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="useGame && endQuestion">\n      <ion-col col-12 text-center class="margin-top-10">\n        <button ion-button full class="button-background-game" (click)="nextStep()" [disabled]="btnContinueDisabled">\n          <ion-icon id="button-finish-game-{{questionary.id}}" class="text-button">\n            Finalizar\n          </ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="!useGame && endQuestion">\n      <ion-col col-12 text-center class="margin-top-10">\n        <button ion-button full class="button-background-no-game" (click)="nextStep()" [disabled]="btnContinueDisabled">\n          <ion-icon id="button-finish-{{questionary.id}}" class="text-button">\n            Finalizar\n          </ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n<ion-footer>\n  <ion-navbar class="toolbar-progress">\n    <div *ngIf="!disableSteps" text-center class="progres-text-uper">{{step}} de {{totalSteps}}</div>\n    <ion-range *ngIf="!disableSteps" class="step-bar" [min]="0" [max]="metricItems.length" [step]="1" [(ngModel)]="step"\n      disabled>\n      <ion-icon range-right></ion-icon>\n    </ion-range>\n    <ion-title *ngIf="useGame" text-center>\n      <ion-icon range-right name="md-ribbon"></ion-icon>\n      {{points}} pontos\n    </ion-title>\n    <ion-range *ngIf="useGame" class="progress-bar" [min]="0" [max]="100" [step]="1" [(ngModel)]="progress" disabled>\n      <ion-icon range-left name="md-clipboard"></ion-icon>\n      <ion-icon range-right></ion-icon>\n    </ion-range>\n    <div *ngIf="useGame" text-center class="progres-text-down">{{currentQuestionIndex + 1}} de {{totalQuestions}}\n      questões</div>\n  </ion-navbar>\n</ion-footer>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\prioritization\prioritization.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* MenuController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3__providers_prioritization_prioritization__["a" /* PrioritizationProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_answer_answer__["a" /* AnswerProvider */], __WEBPACK_IMPORTED_MODULE_7__providers_rest_rest__["a" /* RestProvider */]])
+    ], PrioritizationPage);
+    return PrioritizationPage;
+}());
+
+var Prioritization = /** @class */ (function () {
+    function Prioritization() {
+    }
+    return Prioritization;
+}());
+
+var MetricItem = /** @class */ (function () {
+    function MetricItem() {
+    }
+    return MetricItem;
+}());
+
+var MetricValue = /** @class */ (function () {
+    function MetricValue() {
+    }
+    return MetricValue;
+}());
+
+//# sourceMappingURL=prioritization.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=5.js.map
