@@ -27602,11 +27602,11 @@ page-questionary ion-col.context-area-container.col {
 }
 
 page-questionary .fixed-content {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 
 page-questionary .scroll-content {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 
 @media only screen and (min-device-width: 320px) {
