@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrioritizationPageModule", function() { return PrioritizationPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__prioritization__ = __webpack_require__(440);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__prioritization__ = __webpack_require__(438);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -27,7 +27,7 @@ var PrioritizationPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__prioritization__["a" /* PrioritizationPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__prioritization__["a" /* PrioritizationPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__prioritization__["a" /* PrioritizationPage */]),
             ],
         })
     ], PrioritizationPageModule);
@@ -38,7 +38,7 @@ var PrioritizationPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 440:
+/***/ 438:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -206,103 +206,16 @@ var PrioritizationPage = /** @class */ (function () {
     //---------------------MUITO IMPORTANTE---------------------
     //---------------DEFINE A EXIBIÇÃO DA RESPOSTA---------------
     PrioritizationPage.prototype.resolveMetricItem = function () {
-        switch (this.currentMetricItem.name) {
-            case "Gravidade":
+        switch (this.currentMetricItem.metricType) {
+            //Escalas
+            case "scaleView":
                 this.scaleView = true;
                 break;
-            case "Urgência":
-                this.scaleView = true;
-                break;
-            case "Tendência":
-                this.scaleView = true;
-                break;
-            case "Escala Qualitativa":
+            case "itemView":
                 this.itemView = true;
                 break;
-            case "Escala de satisfação":
-                this.scaleView = true;
-                break;
-            case "Necessidade de Requalificação":
-                this.scaleView = true;
-                break;
-            case "Escala de qualidade":
-                this.scaleView = true;
-                break;
-            case "Escala de necessidade":
-                this.scaleView = true;
-                break;
-            case "Escala de concordancia":
-                this.scaleView = true;
-                break;
-            case "Melhorias para o comerciante":
-                this.scaleView = true;
-                break;
-            case "Escala de Satisfação":
-                this.scaleView = true;
-                break;
-            case "Avaliação do comerciante":
-                this.scaleView = true;
-                break;
-            case "Concordancia e discordancia":
-                this.itemView = true;
-                break;
-            case "Frequência Semanal":
-                this.itemView = true;
-                break;
-            case "Atrações do Centro":
+            case "checkBoxView":
                 this.checkBoxView = true;
-                break;
-            case "Motivos de não ir ao centro":
-                this.checkBoxView = true;
-                break;
-            case "Atrações do Centro 2":
-                this.checkBoxView = true;
-                break;
-            case "Equipamentos e comércios":
-                this.itemView = true;
-                break;
-            case "Ramo de atividade comercial":
-                this.itemView = true;
-                break;
-            case "Motivação de escolha para o comerciante":
-                this.itemView = true;
-                break;
-            case "Atividades exercidas pelos pedestres":
-                this.itemView = true;
-                break;
-            case "Pontos fortes para o comerciante":
-                this.checkBoxView = true;
-                break;
-            case "Pontos fracos para o comerciante":
-                this.checkBoxView = true;
-                break;
-            case "Ausências do Centro":
-                this.itemView = true;
-                break;
-            case "Necessidades do Centro":
-                this.checkBoxView = true;
-                break;
-            case "Atividades dos pedestres no Centro":
-                this.checkBoxView = true;
-                break;
-            case "Pontos fortes da rua":
-                this.checkBoxView = true;
-                break;
-            case "Pontos fracos da rua":
-                this.checkBoxView = true;
-                break;
-            case "Frequência de uso dos espaços públicos":
-                this.itemView = true;
-                break;
-            case "POSCOMP - Escala 1":
-                this.scaleView = true;
-                break;
-            case "POSCOMP - Escala 2":
-                this.scaleView = true;
-                break;
-            case "POSCOMP - Escala 3":
-                this.scaleView = true;
-                break;
         }
     };
     //---------------DEFINE A EXIBIÇÃO DA RESPOSTA---------------
@@ -316,7 +229,7 @@ var PrioritizationPage = /** @class */ (function () {
                 return "A resolução deste problema pode esperar ou deve ser realizada imediatamente?";
             case "Tendência":
                 return "Se esse problema não for resolvido agora, ele vai piorar pouco a pouco ou vai piorar bruscamente?";
-            case "Escala Qualitativa":
+            case "Escala qualitativa":
                 return "O quanto você concorda com a afirmação?";
             default:
                 return "";
@@ -473,47 +386,24 @@ var PrioritizationPage = /** @class */ (function () {
         answer.isCompleted = false;
         this.answers.push(answer);
     };
+    //Carrega as métricas e vai para a página de priorização
     PrioritizationPage.prototype.loadMetrics = function (metricId) {
         var _this = this;
         //------------------------CARREGA OS ITENS DE MÉTRICAS-----------------------------
         //1 - GUT, 2 - ESCALA QUALITATIVA, (3-17) - Métricas do questionário de teste
-        this.priorizationProvider.getMetricItems(metricId)
+        this.priorizationProvider.getMetricValuesMetric(metricId)
             .then(function (metricItems) {
             if (metricItems != null) {
                 _this.metricItems = metricItems;
-                //------------------------CARREGA OS VALORES DE MÉTRICA-----------------------------
-                _this.priorizationProvider.getMetricValues()
-                    .then(function (result) {
-                    if (result != null) {
-                        //------------------------ASSOCIA OS VALORES AOS ITENS-----------------------------
-                        for (var i = 0; i < _this.metricItems.length; i++) {
-                            var metricItem = _this.metricItems[i];
-                            for (var j = 0; j < result.length; j++) {
-                                var metricValue = result[j];
-                                if (metricItem.id == metricValue.metricItemId) {
-                                    _this.metricItems[i].metricValues.push(metricValue);
-                                }
-                            }
-                        }
-                        //------------------------SALVA OS ITENS DE MÉTRICA-----------------------------
-                        _this.storage.set('metricItems', _this.metricItems);
-                        _this.insertAnswerAndNavigateToPrioritization();
-                    }
-                    else {
-                        _this.showAlertLoadMetrics(metricId);
-                    }
-                }).catch(function (error) {
-                    console.error(error);
-                    _this.restProvider.sendGoogleAnalyticsErrorData('PrioritizationPage', 'loadMetrics', error);
-                    _this.showAlertLoadMetrics(metricId);
-                });
+                _this.storage.set('metricItems', _this.metricItems);
+                _this.insertAnswerAndNavigateToPrioritization();
             }
             else {
                 _this.showAlertLoadMetrics(metricId);
             }
         }).catch(function (error) {
             console.error(error);
-            _this.restProvider.sendGoogleAnalyticsErrorData('PrioritizationPage', 'loadMetrics', error);
+            _this.restProvider.sendGoogleAnalyticsErrorData('QuestionariesListPage', 'loadMetrics', error);
             _this.showAlertLoadMetrics(metricId);
         });
     };
@@ -668,7 +558,9 @@ var PrioritizationPage = /** @class */ (function () {
             message: '<div class="dialogue-box box-question"><div class="tdialogue-box-text">'
                 + '<div text-center>' + this.currentQuestion.narrative + '</div>'
                 + '</div></div>'
-                + '<div class="alert-align-center"><img class="img-alert img-question" src="assets/gifs/gif-c-2.gif" /></div>',
+                + '<div class="alert-align-center">'
+                + '<img class="img-alert img-question" src="assets/gifs/gif-c-2.gif" />'
+                + '</div>',
             buttons: [{
                     text: "Ok!",
                     handler: function () {
@@ -678,18 +570,18 @@ var PrioritizationPage = /** @class */ (function () {
         alert.present();
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Content */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Content */])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Content */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Content */])
     ], PrioritizationPage.prototype, "content", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* ViewChildren */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Checkbox */]),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* ViewChildren */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Checkbox */]),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* QueryList */])
     ], PrioritizationPage.prototype, "checkBox", void 0);
     PrioritizationPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-prioritization',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\prioritization\prioritization.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col col-2 class="menu-icon-col" *ngIf="useGame">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-2 class="menu-icon-col-not-game"  *ngIf="!useGame">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-6  *ngIf="useGame"> \n        <img class="img-responsive" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col col-6  *ngIf="!useGame">\n        <img class="img-responsive img-not-game" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col col-2>\n        <button class="button-help-priorization" *ngIf="currentQuestion.useNarrative && useGame" ion-button clear\n          (click)="help()">\n          <ion-icon class="icon-help button-help-priorization" name="alert"></ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row class="context-area">\n      <ion-col col-3 class="context-area-img">\n        <img class="context-area-icon" src="assets/imgs/{{currentQuestion.contextAreaIcon}}" />\n      </ion-col>\n      <ion-col col-9 class="context-area-container">\n        <h1>\n          {{currentQuestion.contextArea}}\n        </h1>\n      </ion-col>\n    </ion-row>\n    <!-- Enunciado da questão -->\n    <div class="hr"></div>\n    <ion-row class="margin-top-30">\n      <ion-col *ngIf="!useGame" col-12 text-justify class="question">\n        <h1>{{currentQuestion.name}}</h1>\n      </ion-col>\n      <ion-col *ngIf="useGame" col-12 text-justify class="question">\n        <h1>{{currentQuestion.question}}</h1>\n      </ion-col>\n      <ion-col col-12 text-center *ngIf="scaleView">\n        <h3>{{getDescriptionByPriorization()}}</h3>\n        <h2 class="{{metricValueColor}}">{{selectedMetricValue.name}}</h2>\n      </ion-col>\n    </ion-row>\n    <!-- Enunciado da questão -->\n    <!-- Seleção pela escala do emotion -->\n    <ion-grid class="grid-priorization">\n      <ion-row *ngIf="scaleView" class="metric-row" text-center margin-bottom>\n        <ion-col *ngFor="let metricValue of currentMetricItem.metricValues">\n          <img *ngIf="!isMetricValueSelected(metricValue)" class="img-responsive" src="assets/imgs/{{metricValue.icon}}"\n            (click)="selectMetricValue(metricValue)" />\n          <img *ngIf="isMetricValueSelected(metricValue)" class="img-responsive"\n            src="assets/imgs/{{metricValue.iconSelected}}" (click)="selectMetricValue(metricValue)" />\n        </ion-col>\n      </ion-row>\n      <!-- Seleção pela escala do emotion -->\n      <!-- Seleção por itens -->\n      <ion-row *ngIf="itemView" class="metric-row item-row" margin-bottom>\n        <ion-col col-12>\n          <ion-list radio-group>\n            <ion-item *ngFor="let metricValue of currentMetricItem.metricValues" class="radio-item">\n              <ion-label text-wrap text-left>{{metricValue.name}}</ion-label>\n              <ion-radio (ionSelect)="selectMetricValue(metricValue)"></ion-radio>\n            </ion-item>\n          </ion-list>\n        </ion-col>\n      </ion-row>\n      <!-- Seleção por itens -->\n      <!-- Seleção por checkbox -->\n      <ion-row *ngIf="checkBoxView" class="metric-row checkbox-row" margin-bottom>\n        <ion-col col-12>\n          <ion-list radio-group>\n            <ion-item *ngFor="let metricValue of currentMetricItem.metricValues" class="item-checkbox">\n              <ion-label text-wrap text-left class="item-checkbox-text">{{metricValue.name}}</ion-label>\n              <ion-checkbox (ionChange)="updateMultiMetricValue(metricValue,$event.checked)"></ion-checkbox>\n            </ion-item>\n          </ion-list>\n        </ion-col>\n      </ion-row>\n      <!-- Seleção por checkbox -->\n    </ion-grid>\n    <ion-row *ngIf="useGame && !endQuestion">\n      <ion-col col-12 text-center>\n        <button ion-button full class="button-background-game" (click)="nextStep()" [disabled]="btnContinueDisabled">\n          <ion-icon id="button-question-game-{{currentQuestion.id}}" class="text-button">\n            Continuar\n          </ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="!useGame && !endQuestion">\n      <ion-col col-12 text-center>\n        <button ion-button full class="button-background-no-game" (click)="nextStep()" [disabled]="btnContinueDisabled">\n          <ion-icon id="button-question-{{currentQuestion.id}}" class="text-button">\n            Continuar\n          </ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="useGame && endQuestion">\n      <ion-col col-12 text-center class="margin-top-10">\n        <button ion-button full class="button-background-game" (click)="nextStep()" [disabled]="btnContinueDisabled">\n          <ion-icon id="button-finish-game-{{questionary.id}}" class="text-button">\n            Finalizar\n          </ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="!useGame && endQuestion">\n      <ion-col col-12 text-center class="margin-top-10">\n        <button ion-button full class="button-background-no-game" (click)="nextStep()" [disabled]="btnContinueDisabled">\n          <ion-icon id="button-finish-{{questionary.id}}" class="text-button">\n            Finalizar\n          </ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n<ion-footer>\n  <ion-navbar class="toolbar-progress">\n    <div *ngIf="!disableSteps" text-center class="progres-text-uper">{{step}} de {{totalSteps}}</div>\n    <ion-range *ngIf="!disableSteps" class="step-bar" [min]="0" [max]="metricItems.length" [step]="1" [(ngModel)]="step"\n      disabled>\n      <ion-icon range-right></ion-icon>\n    </ion-range>\n    <ion-title *ngIf="useGame" text-center>\n      <ion-icon range-right name="md-ribbon"></ion-icon>\n      {{points}} pontos\n    </ion-title>\n    <ion-range *ngIf="useGame" class="progress-bar" [min]="0" [max]="100" [step]="1" [(ngModel)]="progress" disabled>\n      <ion-icon range-left name="md-clipboard"></ion-icon>\n      <ion-icon range-right></ion-icon>\n    </ion-range>\n    <div *ngIf="useGame" text-center class="progres-text-down">{{currentQuestionIndex + 1}} de {{totalQuestions}}\n      questões</div>\n  </ion-navbar>\n</ion-footer>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\prioritization\prioritization.html"*/,
+            selector: 'page-prioritization',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\prioritization\prioritization.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col col-2 class="menu-icon-col" *ngIf="useGame">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-2 class="menu-icon-col-not-game"  *ngIf="!useGame">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-6  *ngIf="useGame"> \n        <img class="img-responsive" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col col-6  *ngIf="!useGame">\n        <img class="img-responsive img-not-game" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col col-2>\n        <button class="button-help-priorization" *ngIf="currentQuestion.useNarrative && useGame" ion-button clear\n          (click)="help()">\n          <ion-icon class="icon-help button-help-priorization" name="alert"></ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row class="context-area">\n      <ion-col col-3 class="context-area-img">\n        <img class="context-area-icon" src="assets/imgs/{{currentQuestion.contextAreaIcon}}" />\n      </ion-col>\n      <ion-col col-9 class="context-area-container">\n        <h1>\n          {{currentQuestion.contextArea}}\n        </h1>\n      </ion-col>\n    </ion-row>\n    <!-- Enunciado da questão -->\n    <div class="hr"></div>\n    <ion-row class="margin-top-30">\n      <ion-col *ngIf="!useGame" col-12 text-justify class="question">\n        <h3 text-justify>{{currentQuestion.description}}</h3>\n        <h1>{{currentQuestion.name}}</h1>\n      </ion-col>\n      <ion-col *ngIf="useGame" col-12 text-justify class="question">\n        <h3 text-justify>{{currentQuestion.description}}</h3>\n        <h1>{{currentQuestion.question}}</h1>\n      </ion-col>\n      <ion-col col-12 text-center *ngIf="scaleView">\n        <h3>{{getDescriptionByPriorization()}}</h3>\n        <h2 class="{{metricValueColor}}">{{selectedMetricValue.name}}</h2>\n      </ion-col>\n    </ion-row>\n    <!-- Enunciado da questão -->\n    <!-- Seleção pela escala do emotion -->\n    <ion-grid class="grid-priorization">\n      <ion-row *ngIf="scaleView" class="metric-row" text-center margin-bottom>\n        <ion-col *ngFor="let metricValue of currentMetricItem.metricValues">\n          <img *ngIf="!isMetricValueSelected(metricValue)" class="img-responsive" src="assets/imgs/{{metricValue.icon}}"\n            (click)="selectMetricValue(metricValue)" />\n          <img *ngIf="isMetricValueSelected(metricValue)" class="img-responsive"\n            src="assets/imgs/{{metricValue.iconSelected}}" (click)="selectMetricValue(metricValue)" />\n        </ion-col>\n      </ion-row>\n      <!-- Seleção pela escala do emotion -->\n      <!-- Seleção por itens -->\n      <ion-row *ngIf="itemView" class="metric-row item-row" margin-bottom>\n        <ion-col col-12>\n          <ion-list radio-group>\n            <ion-item *ngFor="let metricValue of currentMetricItem.metricValues" class="radio-item">\n              <ion-label text-wrap text-left>{{metricValue.name}}</ion-label>\n              <ion-radio (ionSelect)="selectMetricValue(metricValue)"></ion-radio>\n            </ion-item>\n          </ion-list>\n        </ion-col>\n      </ion-row>\n      <!-- Seleção por itens -->\n      <!-- Seleção por checkbox -->\n      <ion-row *ngIf="checkBoxView" class="metric-row checkbox-row" margin-bottom>\n        <ion-col col-12>\n          <ion-list radio-group>\n            <ion-item *ngFor="let metricValue of currentMetricItem.metricValues" class="item-checkbox">\n              <ion-label text-wrap text-left class="item-checkbox-text">{{metricValue.name}}</ion-label>\n              <ion-checkbox (ionChange)="updateMultiMetricValue(metricValue,$event.checked)"></ion-checkbox>\n            </ion-item>\n          </ion-list>\n        </ion-col>\n      </ion-row>\n      <!-- Seleção por checkbox -->\n    </ion-grid>\n    <ion-row *ngIf="useGame && !endQuestion">\n      <ion-col col-12 text-center>\n        <button ion-button full class="button-background-game" (click)="nextStep()" [disabled]="btnContinueDisabled">\n          <ion-icon id="button-question-game-{{currentQuestion.id}}" class="text-button">\n            Continuar\n          </ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="!useGame && !endQuestion">\n      <ion-col col-12 text-center>\n        <button ion-button full class="button-background-no-game" (click)="nextStep()" [disabled]="btnContinueDisabled">\n          <ion-icon id="button-question-{{currentQuestion.id}}" class="text-button">\n            Continuar\n          </ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="useGame && endQuestion">\n      <ion-col col-12 text-center class="margin-top-10">\n        <button ion-button full class="button-background-game" (click)="nextStep()" [disabled]="btnContinueDisabled">\n          <ion-icon id="button-finish-game-{{questionary.id}}" class="text-button">\n            Finalizar\n          </ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="!useGame && endQuestion">\n      <ion-col col-12 text-center class="margin-top-10">\n        <button ion-button full class="button-background-no-game" (click)="nextStep()" [disabled]="btnContinueDisabled">\n          <ion-icon id="button-finish-{{questionary.id}}" class="text-button">\n            Finalizar\n          </ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n<ion-footer>\n  <ion-navbar class="toolbar-progress">\n    <div *ngIf="!disableSteps" text-center class="progres-text-uper">{{step}} de {{totalSteps}}</div>\n    <ion-range *ngIf="!disableSteps" class="step-bar" [min]="0" [max]="metricItems.length" [step]="1" [(ngModel)]="step"\n      disabled>\n      <ion-icon range-right></ion-icon>\n    </ion-range>\n    <ion-title *ngIf="useGame" text-center>\n      <ion-icon range-right name="md-ribbon"></ion-icon>\n      {{points}} pontos\n    </ion-title>\n    <ion-range *ngIf="useGame" class="progress-bar" [min]="0" [max]="100" [step]="1" [(ngModel)]="progress" disabled>\n      <ion-icon range-left name="md-clipboard"></ion-icon>\n      <ion-icon range-right></ion-icon>\n    </ion-range>\n    <div *ngIf="useGame" text-center class="progres-text-down">{{currentQuestionIndex + 1}} de {{totalQuestions}}\n      questões</div>\n  </ion-navbar>\n</ion-footer>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\prioritization\prioritization.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* MenuController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3__providers_prioritization_prioritization__["a" /* PrioritizationProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_answer_answer__["a" /* AnswerProvider */], __WEBPACK_IMPORTED_MODULE_7__providers_rest_rest__["a" /* RestProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* MenuController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3__providers_prioritization_prioritization__["a" /* PrioritizationProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_answer_answer__["a" /* AnswerProvider */], __WEBPACK_IMPORTED_MODULE_7__providers_rest_rest__["a" /* RestProvider */]])
     ], PrioritizationPage);
     return PrioritizationPage;
 }());

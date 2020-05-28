@@ -1,4 +1,4 @@
-webpackJsonp([8],{
+webpackJsonp([9],{
 
 /***/ 109:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -12,7 +12,7 @@ webpackJsonp([8],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_city_city__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_plan_plan__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_questionary_questionary__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_database_database__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_database_database__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_rest_rest__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -258,7 +258,9 @@ var HomePage = /** @class */ (function () {
     HomePage.prototype.help = function () {
         var alert = this.alertCtrl.create({
             title: '<div text-center>Nos conte sobre você!</div>',
-            message: '<div class="alert-align-center"><img class="img-alert" src="assets/imgs/publicdomainq-presenter.png"/></div>'
+            message: '<div class="alert-align-center">'
+                + '<img class="img-alert" src="assets/imgs/publicdomainq-presenter.png"/>'
+                + '</div>'
                 + '<div class="alert-align-center"><strong>Vamos nos conhecer um pouco melhor...</strong></div>'
                 + '<div text-center>Nos conte sobre você!</div>'
                 + '<div text-center>Onde você mora?</div>'
@@ -380,7 +382,7 @@ var HomePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'page-home',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col offset-2 col-6>\n        <img class="img-responsive" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col offset-1 col-2>\n        <button ion-button clear (click)="help()">\n          <ion-icon class="icon-help" name="help-circle"></ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-12 text-center class="text-home">\n        <h1>Bem vindo!</h1>\n        <h5>Por favor, nos informe quem é você e selecione uma cidade para responder os questionários.</h5>\n      </ion-col>\n    </ion-row>\n    <ion-row class="margin-top-30-percent">\n      <ion-col col-12>\n\n        <ion-item>\n          <ion-label>Quem é você?</ion-label>\n          <ion-select [(ngModel)]="userType">\n            <ion-option *ngFor="let userType of userTypes" [value]="userType" (ionSelect)="selectUserType(userType)">\n              {{userType.name}}</ion-option>\n          </ion-select>\n        </ion-item>\n\n        <ion-item class="margin-top-30">\n          <ion-label>Selecione a cidade</ion-label>\n          <ion-select [(ngModel)]="city" disabled="{{userType == null}}">\n            <ion-option *ngFor="let city of cities" [value]="city" (ionSelect)="getAllPlansByCity(city)">{{city.name}}\n            </ion-option>\n          </ion-select>\n        </ion-item>\n\n        <ion-item class="margin-top-30">\n          <ion-label>Selecione o plano</ion-label>\n          <ion-select [(ngModel)]="plan" disabled="{{city == null}}">\n            <ion-option *ngFor="let plan of plans" [value]="plan"\n              (ionSelect)="getAllQuestionariesByPlan(plan); enableBtnContinue();">{{plan.name}}</ion-option>\n          </ion-select>\n        </ion-item>\n\n        <ion-item class="margin-top-30">\n          <ion-label>Você reside em zona rural?</ion-label>\n          <ion-toggle [disabled]="btnContinueDisabled" (ionChange)="changeZone()" [(ngModel)]="isRuralZone"\n            checked="false"></ion-toggle>\n        </ion-item>\n        \n        <button ion-button full class="button-background margin-top-30" (click)="navigateProfilePage()"\n          [disabled]="btnContinueDisabled">Continuar</button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ToastController */], __WEBPACK_IMPORTED_MODULE_3__providers_city_city__["a" /* CityProvider */], __WEBPACK_IMPORTED_MODULE_4__providers_plan_plan__["b" /* PlanProvider */], __WEBPACK_IMPORTED_MODULE_5__providers_questionary_questionary__["d" /* QuestionaryProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_6__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_7__providers_rest_rest__["a" /* RestProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* ToastController */], __WEBPACK_IMPORTED_MODULE_3__providers_city_city__["a" /* CityProvider */], __WEBPACK_IMPORTED_MODULE_4__providers_plan_plan__["b" /* PlanProvider */], __WEBPACK_IMPORTED_MODULE_5__providers_questionary_questionary__["d" /* QuestionaryProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_6__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_7__providers_rest_rest__["a" /* RestProvider */]])
     ], HomePage);
     return HomePage;
 }());
@@ -410,7 +412,7 @@ var UserType = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jssha___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_jssha__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_app_version__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_intro_intro__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_intro_intro__ = __webpack_require__(56);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -664,7 +666,7 @@ var RestProvider = /** @class */ (function () {
     };
     RestProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_network__["a" /* Network */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* Platform */], __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_6__ionic_native_app_version__["a" /* AppVersion */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_network__["a" /* Network */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* Platform */], __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_6__ionic_native_app_version__["a" /* AppVersion */]])
     ], RestProvider);
     return RestProvider;
 }());
@@ -708,34 +710,38 @@ webpackEmptyAsyncContext.id = 121;
 var map = {
 	"../pages/about/about.module": [
 		291,
+		7
+	],
+	"../pages/achievement/achievement.module": [
+		292,
 		6
 	],
 	"../pages/intro/intro.module": [
 		294,
-		7
+		8
 	],
 	"../pages/prioritization/prioritization.module": [
 		295,
 		5
 	],
 	"../pages/questionaries-list/questionaries-list.module": [
-		297,
+		296,
 		4
 	],
 	"../pages/questionary/questionary.module": [
-		296,
+		297,
 		3
 	],
 	"../pages/respondent-profile/respondent-profile.module": [
-		298,
+		299,
 		1
 	],
 	"../pages/results/results.module": [
-		293,
+		298,
 		0
 	],
 	"../pages/thankyou/thankyou.module": [
-		292,
+		293,
 		2
 	]
 };
@@ -791,6 +797,20 @@ var PrioritizationProvider = /** @class */ (function () {
             }, function (error) {
                 console.error(error);
                 _this.restProvider.sendGoogleAnalyticsErrorData('PrioritizationProvider', 'getMetricItems', error);
+                resolve(error);
+            });
+        });
+    };
+    PrioritizationProvider.prototype.getMetricValuesMetric = function (metricId) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            //metricID : 1 - GUT | 2 - Escala qualitativa | (3-18) - Métricas do questionário de teste
+            _this.http.get(_this.restProvider.API_URL + "get-all-metric-values-by-metric.php?metric=" + metricId, { headers: _this.restProvider.headers })
+                .subscribe(function (data) {
+                resolve(data);
+            }, function (error) {
+                console.error(error);
+                _this.restProvider.sendGoogleAnalyticsErrorData('PrioritizationProvider', 'getMetricValuesMetric', error);
                 resolve(error);
             });
         });
@@ -1143,29 +1163,34 @@ var RespondentProvider = /** @class */ (function () {
             var json = {
                 "cpf": respondent.cpf ? respondent.cpf : null,
                 "email": respondent.email ? respondent.email : null,
+                "phone": respondent.phone ? respondent.phone : null,
+                "whatsapp": respondent.whatsapp ? respondent.whatsapp : null,
+                "gender": respondent.gender ? respondent.gender : null,
+                "age_range": respondent.ageRange ? respondent.ageRange : null,
+                "salary_range": respondent.salaryRange ? respondent.salaryRange : null,
+                "residence_city_id": respondent.residenceCity ? respondent.residenceCity.id : null,
                 "residence_time_range": respondent.residenceTimeRange ? respondent.residenceTimeRange : null,
                 "residence_neighborhood_id": respondent.residenceNeighborhood ? respondent.residenceNeighborhood.id : null,
                 "job_city_id": respondent.jobCity ? respondent.jobCity.id : null,
                 "job_neighborhood_id": respondent.jobNeighborhood ? respondent.jobNeighborhood.id : null,
-                "salary_range": respondent.salaryRange ? respondent.salaryRange : null,
-                //-----------------NOVOS CAMPOS-----------------
+                "job_name": respondent.jobName ? respondent.jobName : null,
+                "job_address": respondent.jobAddress ? respondent.jobAddress : null,
+                //----------------- CASE 1 - POSCOMP -----------------
                 "name": respondent.name ? respondent.name : null,
-                "age_range": respondent.ageRange ? respondent.ageRange : null,
-                "gender": respondent.gender ? respondent.gender : null,
-                "phone": respondent.phone ? respondent.phone : null,
                 "code": respondent.code ? respondent.code : null,
-                "points": respondent.points ? respondent.points : null,
+                "course_name": respondent.courseName ? respondent.courseName : null,
                 "course_entry": respondent.courseEntry ? respondent.courseEntry : null,
                 "course_left": respondent.courseLeft ? respondent.courseLeft : null,
-                "course_name": respondent.courseName ? respondent.courseName : null,
-                "residence_city_id": respondent.residenceCity ? respondent.residenceCity.id : null,
-                "job_address": respondent.jobAddress ? respondent.jobAddress : null,
-                "job_name": respondent.jobName ? respondent.jobName : null,
-                "whatsapp": respondent.whatsapp ? respondent.whatsapp : null,
-                "game_type": respondent.gameType ? respondent.gameType : null,
-                //-----------------NOVOS CAMPOS-----------------
+                //----------------- CASE 2 - UNIFEI -----------------
+                "residence_type": respondent.residenceType ? respondent.residenceType : null,
+                "have_children": respondent.haveChildren,
+                "residence_members": respondent.residenceMembers ? respondent.residenceMembers : null,
+                "have_job": respondent.haveJob,
+                "financial_assistance": respondent.financialAssistance ? respondent.financialAssistance : null,
                 //-----------------CAMPOS OBRIGATÓRIOS-----------------
                 "type": respondent.type ? respondent.type : null,
+                "game_type": respondent.gameType ? respondent.gameType : null,
+                "points": respondent.points ? respondent.points : null,
                 "case_test": respondent.caseTest ? respondent.caseTest : null,
                 "created_at": createdAt ? createdAt : null,
                 "token": token
@@ -1192,34 +1217,39 @@ var RespondentProvider = /** @class */ (function () {
             // let token = this.restProvider.cryptography(respondent.id + respondent.email + respondent.residenceTimeRange + respondent.residenceNeighborhood.id + respondent.salaryRange + updatedAt);
             var token = _this.restProvider.cryptography(respondent.id + respondent.type + respondent.caseTest + updatedAt);
             var json = {
+                "id": respondent.id ? respondent.id : null,
                 "cpf": respondent.cpf ? respondent.cpf : null,
                 "email": respondent.email ? respondent.email : null,
+                "phone": respondent.phone ? respondent.phone : null,
+                "whatsapp": respondent.whatsapp ? respondent.whatsapp : null,
+                "gender": respondent.gender ? respondent.gender : null,
+                "age_range": respondent.ageRange ? respondent.ageRange : null,
+                "salary_range": respondent.salaryRange ? respondent.salaryRange : null,
+                "residence_city_id": respondent.residenceCity ? respondent.residenceCity.id : null,
                 "residence_time_range": respondent.residenceTimeRange ? respondent.residenceTimeRange : null,
                 "residence_neighborhood_id": respondent.residenceNeighborhood ? respondent.residenceNeighborhood.id : null,
                 "job_city_id": respondent.jobCity ? respondent.jobCity.id : null,
                 "job_neighborhood_id": respondent.jobNeighborhood ? respondent.jobNeighborhood.id : null,
-                "salary_range": respondent.salaryRange ? respondent.salaryRange : null,
-                //-----------------NOVOS CAMPOS-----------------
+                "job_name": respondent.jobName ? respondent.jobName : null,
+                "job_address": respondent.jobAddress ? respondent.jobAddress : null,
+                //----------------- CASE 1 - POSCOMP -----------------
                 "name": respondent.name ? respondent.name : null,
-                "age_range": respondent.ageRange ? respondent.ageRange : null,
-                "gender": respondent.gender ? respondent.gender : null,
-                "phone": respondent.phone ? respondent.phone : null,
                 "code": respondent.code ? respondent.code : null,
-                "points": respondent.points ? respondent.points : null,
                 "course_entry": respondent.courseEntry ? respondent.courseEntry : null,
                 "course_left": respondent.courseLeft ? respondent.courseLeft : null,
                 "course_name": respondent.courseName ? respondent.courseName : null,
-                "residence_city_id": respondent.residenceCity ? respondent.residenceCity.id : null,
-                "job_address": respondent.jobAddress ? respondent.jobAddress : null,
-                "job_name": respondent.jobName ? respondent.jobName : null,
-                "whatsapp": respondent.whatsapp ? respondent.whatsapp : null,
-                "game_type": respondent.gameType ? respondent.gameType : null,
-                //-----------------NOVOS CAMPOS-----------------
+                //----------------- CASE 2 - UNIFEI -----------------
+                "residence_type": respondent.residenceType ? respondent.residenceType : null,
+                "have_children": respondent.haveChildren,
+                "residence_members": respondent.residenceMembers ? respondent.residenceMembers : null,
+                "have_job": respondent.haveJob,
+                "financial_assistance": respondent.financialAssistance ? respondent.financialAssistance : null,
                 //-----------------CAMPOS OBRIGATÓRIOS-----------------
                 "type": respondent.type ? respondent.type : null,
+                "points": respondent.points ? respondent.points : null,
+                "game_type": respondent.gameType ? respondent.gameType : null,
                 "case_test": respondent.caseTest ? respondent.caseTest : null,
                 "updated_at": updatedAt ? updatedAt : null,
-                "id": respondent.id ? respondent.id : null,
                 "token": token
                 //-----------------CAMPOS OBRIGATÓRIOS-----------------
             };
@@ -1273,7 +1303,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_splash_screen__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_database_database__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_database_database__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_rest_rest__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_storage__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_city_city__ = __webpack_require__(57);
@@ -1287,7 +1317,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__providers_answer_answer__ = __webpack_require__(210);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_network__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_app_version__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_intro_intro__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_intro_intro__ = __webpack_require__(56);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1328,22 +1358,23 @@ var AppModule = /** @class */ (function () {
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/about/about.module#AboutPageModule', name: 'AboutPage', segment: 'about', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/achievement/achievement.module#AchievementPageModule', name: 'AchievementPage', segment: 'achievement', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/thankyou/thankyou.module#ThankyouPageModule', name: 'ThankyouPage', segment: 'thankyou', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/results/results.module#ResultsPageModule', name: 'ResultsPage', segment: 'results/:param', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/intro/intro.module#IntroPageModule', name: 'IntroPage', segment: 'intro', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/prioritization/prioritization.module#PrioritizationPageModule', name: 'PrioritizationPage', segment: 'prioritization', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/questionary/questionary.module#QuestionaryPageModule', name: 'QuestionaryPage', segment: 'questionary', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/questionaries-list/questionaries-list.module#QuestionariesListPageModule', name: 'QuestionariesListPage', segment: 'questionaries-list', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/questionary/questionary.module#QuestionaryPageModule', name: 'QuestionaryPage', segment: 'questionary', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/results/results.module#ResultsPageModule', name: 'ResultsPage', segment: 'results/:param', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/respondent-profile/respondent-profile.module#RespondentProfilePageModule', name: 'RespondentProfilePage', segment: 'respondent-profile', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_15__angular_common_http__["b" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_9__ionic_storage__["a" /* IonicStorageModule */].forRoot()
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicApp */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicApp */]],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */],
@@ -1352,7 +1383,7 @@ var AppModule = /** @class */ (function () {
             providers: [
                 __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_6__ionic_native_splash_screen__["a" /* SplashScreen */],
-                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicErrorHandler */] },
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* IonicErrorHandler */] },
                 __WEBPACK_IMPORTED_MODULE_7__providers_database_database__["a" /* DatabaseProvider */],
                 __WEBPACK_IMPORTED_MODULE_8__providers_rest_rest__["a" /* RestProvider */],
                 __WEBPACK_IMPORTED_MODULE_10__providers_city_city__["a" /* CityProvider */],
@@ -1381,7 +1412,7 @@ var AppModule = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_intro_intro__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_intro_intro__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__ = __webpack_require__(207);
@@ -1445,13 +1476,13 @@ var MyApp = /** @class */ (function () {
         alert.present();
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* Nav */])
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* Nav */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\app\app.html"*/'<ion-menu [content]="content">\n\n  <ion-header>\n\n    <ion-toolbar>\n\n      <ion-title>Menu</ion-title>\n\n    </ion-toolbar>\n\n  </ion-header>\n\n\n\n  <ion-content>\n\n    <ion-list>\n\n      <button class="menu-questionnary" ion-item (click)="navigateQuestionaryList()" menuClose>\n\n        <ion-icon range-left name="ios-list" class="menu-questionnary">\n\n        </ion-icon>\n\n        Questionários\n\n      </button>\n\n      <button class="menu-profile" ion-item (click)="navigateProfile()" menuClose>\n\n        <ion-icon range-left name="md-person" class="menu-profile">\n\n        </ion-icon>\n\n        Perfil\n\n      </button>\n\n      <button class="menu-about" ion-item (click)="navigateToAbout()" menuClose>\n\n        <ion-icon range-left name="md-information-circle" class="menu-about">\n\n        </ion-icon>\n\n        Sobre\n\n      </button>\n\n      <button class="menu-data-clear" ion-item (click)="refreshData()" menuClose>\n\n        <ion-icon range-left name="md-remove-circle" class="menu-data-clear">\n\n        </ion-icon>\n\n        Limpar dados\n\n      </button>\n\n    </ion-list>\n\n  </ion-content>\n\n\n\n</ion-menu>\n\n\n\n<ion-nav id="nav" #content [root]="rootPage"></ion-nav>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\app\app.html"*/'<ion-menu [content]="content">\n\n  <ion-header>\n\n    <ion-toolbar>\n\n      <ion-title>Menu</ion-title>\n\n    </ion-toolbar>\n\n  </ion-header>\n\n\n\n  <ion-content>\n\n    <ion-list>\n\n      <button class="menu-questionnary" ion-item (click)="navigateQuestionaryList()" menuClose>\n\n        <ion-icon range-left name="ios-list" class="menu-questionnary">\n\n        </ion-icon>\n\n        Questionários\n\n      </button>\n\n      <button class="menu-profile" ion-item (click)="navigateProfile()" menuClose>\n\n        <ion-icon range-left name="md-person" class="menu-profile">\n\n        </ion-icon>\n\n        Perfil\n\n      </button>\n\n      <button class="menu-about" ion-item (click)="navigateToAbout()" menuClose>\n\n        <ion-icon range-left name="md-information-circle" class="menu-about">\n\n        </ion-icon>\n\n        Sobre\n\n      </button>\n\n      <!-- <button class="menu-data-clear" ion-item (click)="refreshData()" menuClose>\n\n        <ion-icon range-left name="md-remove-circle" class="menu-data-clear">\n\n        </ion-icon>\n\n        Limpar dados\n\n      </button> -->\n\n    </ion-list>\n\n  </ion-content>\n\n\n\n</ion-menu>\n\n\n\n<ion-nav id="nav" #content [root]="rootPage"></ion-nav>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\app\app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* Platform */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_5__providers_rest_rest__["a" /* RestProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* Platform */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_5__providers_rest_rest__["a" /* RestProvider */]])
     ], MyApp);
     return MyApp;
 }());
@@ -1582,6 +1613,71 @@ var AnswerNeighborhood = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DatabaseProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(35);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var DatabaseProvider = /** @class */ (function () {
+    function DatabaseProvider(http, storage) {
+        this.http = http;
+        this.storage = storage;
+    }
+    DatabaseProvider.prototype.verifyEntities = function (entities) {
+        var _this = this;
+        var promises_array = [];
+        var _loop_1 = function (i) {
+            promises_array.push(new Promise(function (resolve) {
+                _this.storage.get(entities[i])
+                    .then(function (data) {
+                    if (data != null) {
+                        resolve(true);
+                    }
+                    else {
+                        i = 9999;
+                        resolve(false);
+                    }
+                })
+                    .catch(function () {
+                    i = 9999;
+                    resolve(false);
+                });
+            }));
+            out_i_1 = i;
+        };
+        var out_i_1;
+        for (var i = 0; i < entities.length; i++) {
+            _loop_1(i);
+            i = out_i_1;
+        }
+        return Promise.all(promises_array);
+    };
+    DatabaseProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
+    ], DatabaseProvider);
+    return DatabaseProvider;
+}());
+
+//# sourceMappingURL=database.js.map
+
+/***/ }),
+
+/***/ 56:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IntroPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
@@ -1590,7 +1686,7 @@ var AnswerNeighborhood = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_questionary_questionary__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_city_city__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_plan_plan__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_database_database__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_database_database__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_rest_rest__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1641,7 +1737,7 @@ var IntroPage = /** @class */ (function () {
     IntroPage.prototype.checkTrigger = function () {
         var _this = this;
         //temporário
-        this.useGamification();
+        // this.useGamification();
         // this.dontuseGamification();
         //Temporário
         this.storage.get('useGame').then(function (data) {
@@ -1719,7 +1815,8 @@ var IntroPage = /** @class */ (function () {
                                     _this.questionaries = [];
                                     _this.plans.forEach(function (p) {
                                         //IMPORTANTE - SELEÇÃO DO PLANO
-                                        if (p.name == "Avaliação POSCOMP") {
+                                        // if (p.name == "Avaliação POSCOMP") {
+                                        if (p.name == "Avaliação Saúde Mental - UNIFEI") {
                                             _this.plan = p;
                                             _this.questionaryProvider.getAllQuestionariesByPlan(_this.plan)
                                                 .then(function (questionaries) {
@@ -1947,84 +2044,19 @@ var IntroPage = /** @class */ (function () {
         alert.present();
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Slides */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Slides */])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Slides */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* Slides */])
     ], IntroPage.prototype, "slides", void 0);
     IntroPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'page-intro',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\intro\intro.html"*/'<ion-header>\n  <div (ionChange)="checkTrigger()" id="trigger"></div>\n  <ion-navbar>\n    <div offset-3 col-6 text-center>\n      <img class="img-responsive" src="assets/imgs/header-logo.png" />\n    </div>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-slides pager (ionSlideTap)="nextSlide($event)">\n    <!-- Slide 0 - Sem gamificação-->\n    <ion-slide padding *ngIf="!useGame">\n      <div class="slide-header">\n        <!-- <h1 class="title-box-no-game">Reurbanização do centro de Pouso Alegre</h1> -->\n        <!------------------------ CASE POSCOMP ------------------------>\n        <h1 class="title-box-no-game">Autoavaliação do Programa de Mestrado em \n          Ciência e Tecnologia da Computação (POSCOMP)</h1>\n        <!------------------------ CASE POSCOMP ------------------------>\n      </div>\n      <div class="dialogue-box dialogue-box-not-game">\n        <div class="tdialogue-box-text">\n          <!-- <p class="text-dialog">\n            Bem vindo a <strong>pesquisa de opinião</strong> sobre a reurbanização do centro de <strong>Pouso\n              Alegre</strong>!\n          </p>\n          <p class="text-dialog">\n            Responda os questionários para que nós possamos entender suas necessidades.\n          </p> -->\n          <!------------------------ CASE POSCOMP ------------------------>\n          <p class="text-dialog">\n            Bem vindo! Esta é uma <strong>pesquisa de opinião</strong> para a autoavaliação do \n            <strong>POSCOMP</strong> da UNIFEI!\n          </p>\n          <p class="text-dialog">\n            Nos ajude a <strong>avaliar o programa</strong> contribuindo com sua participação nessa pesquisa!\n          </p>\n          <!------------------------ CASE POSCOMP ------------------------>\n        </div>\n      </div>\n      <button ion-button margin-bottom (click)="skip()">\n        <ion-icon id="button-participate-not-game" class="text-button">\n          Participar\n        </ion-icon>\n      </button>\n    </ion-slide>\n    <!-- Slide 0 - Sem gamificação-->\n    <!-- Slide 1 -->\n    <ion-slide class="slide-img" padding *ngIf="useGame">\n      <div class="arrow-right">\n        <ion-icon float-right name="ios-arrow-forward"></ion-icon>\n      </div>\n      <div class="slide-header">\n        <h1 class="title-box">Olá, seja bem vindo!</h1>\n      </div>\n      <img class="img-responsive img-slide-game" src="assets/imgs/intro10.jpg" />\n      <div class="dialogue-box">\n        <div class="tdialogue-box-text">\n          <!-- <p class="text-dialog">\n            Olá! Que bom que você quer participar da pesquisa de opinião para a reurbanização do centro de Pouso Alegre!\n          </p>\n          <p class="text-dialog">\n            Vamos entender o que é a reurbanização?\n          </p> -->\n          <!------------------------ CASE POSCOMP ------------------------>\n          <p class="text-dialog">\n            Olá! Que bom que você quer participar da pesquisa de opinião para a \n            <strong>autoavaliação do POSCOMP</strong>!\n          </p>\n          <p class="text-dialog">\n            Vamos entender o que é a <strong>autoavaliação</strong>?\n            <!------------------------ CASE POSCOMP ------------------------>\n          </p>\n        </div>\n      </div>\n      <div class="slide-header">\n        <div padding-bottom text-right>\n          <a class="button-skip-game" (click)="skip()">pular</a>\n          <ion-icon name="arrow-dropright"></ion-icon>\n        </div>\n      </div>\n    </ion-slide>\n    <!-- Slide 1 -->\n    <!-- Slide 2 -->\n    <ion-slide class="slide-img" padding *ngIf="useGame">\n      <div class="arrow-left">\n        <ion-icon float-left name="ios-arrow-back"></ion-icon>\n      </div>\n      <div class="arrow-right">\n        <ion-icon float-right name="ios-arrow-forward"></ion-icon>\n      </div>\n      <div class="slide-header">\n        <!-- <h1 class="title-box">Você sabe o que é reurbanização?</h1> -->\n        <!------------------------ CASE POSCOMP ------------------------>\n        <h1 class="title-box">Autoavaliação do POSCOMP</h1>\n        <!------------------------ CASE POSCOMP ------------------------>\n      </div>\n      <img class="img-responsive img-slide-game" src="assets/imgs/intro7.jpg" />\n      <div class="dialogue-box">\n        <div class="tdialogue-box-text">\n          <!-- <p class="text-dialog">\n            Com o crescimento da cidade a área central tem apresentado problemas:\n          </p>\n          <p class="text-dialog">\n            Desgaste da rua, calçadas estreitas e falta de semáforos e faixas de pedestres.\n          </p> -->\n          <!------------------------ CASE POSCOMP ------------------------>\n          <p class="text-dialog">\n            A <strong>autoavaliação</strong> é realizada para monitorar o <strong>desempenho</strong>\n            e melhorar a <strong>qualidade</strong> do programa de mestrado.\n          </p>\n          <!------------------------ CASE POSCOMP ------------------------>\n        </div>\n      </div>\n      <div class="slide-header">\n        <div padding-bottom text-right>\n          <a class="button-skip-game" (click)="skip()">pular</a>\n          <ion-icon name="arrow-dropright"></ion-icon>\n        </div>\n      </div>\n    </ion-slide>\n    <!-- Slide 2 -->\n    <!-- Slide 3 -->\n    <ion-slide class="slide-img" padding *ngIf="useGame">\n      <div class="arrow-left">\n        <ion-icon float-left name="ios-arrow-back"></ion-icon>\n      </div>\n      <div class="arrow-right">\n        <ion-icon float-right name="ios-arrow-forward"></ion-icon>\n      </div>\n      <div class="slide-header">\n        <!-- <h1 class="title-box">A reurbanização da área central</h1> -->\n        <!------------------------ CASE POSCOMP ------------------------>\n        <h1 class="title-box">Autoavaliação do POSCOMP</h1>\n        <!------------------------ CASE POSCOMP ------------------------>\n      </div>\n      <img class="img-responsive img-slide-game" src="assets/imgs/intro9.jpg" />\n      <div class="dialogue-box">\n        <div class="tdialogue-box-text">\n          <!-- <p class="text-dialog">\n            A <strong>reurbanização</strong>\n            é um processo de organização da infraestrutura de uma região para garantir o desenvolvimento humano das\n            cidades.\n          </p> -->\n          <!------------------------ CASE POSCOMP ------------------------>\n          <p class="text-dialog">\n           Um dos <strong>intrumentos</strong> que estamos utilizando são os\n           <strong>questionários</strong> em colaboração com os alunos, ex-alunos e professores.\n          </p>\n          <!------------------------ CASE POSCOMP ------------------------>\n        </div>\n      </div>\n      <div class="slide-header">\n        <div padding-bottom text-right>\n          <a class="button-skip-game" (click)="skip()">pular</a>\n          <ion-icon name="arrow-dropright"></ion-icon>\n        </div>\n      </div>\n    </ion-slide>\n    <!-- Slide 3 -->\n    <!-- Slide 4 -->\n    <ion-slide class="slide-img" padding *ngIf="useGame">\n      <div class="arrow-left">\n        <ion-icon float-left name="ios-arrow-back"></ion-icon>\n      </div>\n      <div class="arrow-right">\n        <ion-icon float-right name="ios-arrow-forward"></ion-icon>\n      </div>\n      <div class="slide-header">\n        <h1 class="title-box">Sua opinião é importante!</h1>\n      </div>\n      <img class="img-responsive img-slide-game" src="assets/imgs/intro3.jpg" />\n      <div class="dialogue-box">\n        <div class="tdialogue-box-text">\n          <p class="text-dialog">\n            Sua <strong>participação</strong> tem muita importância!\n          </p>\n          <!-- <p class="text-dialog">\n            Essa pesquisa de opinião possibilitará uma analise detalhada da sua necessidade como cidadão de Pouso Alegre\n          </p> -->\n          <!------------------------ CASE POSCOMP ------------------------>\n          <p class="text-dialog">\n            Essa pesquisa de opinião contribuirá com a \n            <strong>melhoria</strong> do <strong>programa de mestrado</strong>\n          </p>\n          <!------------------------ CASE POSCOMP ------------------------>\n        </div>\n      </div>\n      <div class="slide-header">\n        <div padding-bottom text-right>\n          <a class="button-skip-game" (click)="skip()">pular</a>\n          <ion-icon name="arrow-dropright"></ion-icon>\n        </div>\n      </div>\n    </ion-slide>\n    <!-- Slide 4 -->\n    <!-- Slide 5 -->\n    <ion-slide *ngIf="useGame" class="slide-img" padding>\n      <div class="arrow-left">\n        <ion-icon float-left name="ios-arrow-back"></ion-icon>\n      </div>\n      <!-- Pontuação -->\n      <ion-grid>\n        <ion-row class="title-last-row">\n          <ion-col col-3>\n            <img class="img-award" src="assets/imgs/premio1.png" />\n          </ion-col>\n          <ion-col text-justify col-9>\n            <h2 class="title-box-last">Consiga pontos para aumentar seu nível de\n              <strong>participação</strong>!</h2>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n      <!-- Pontuação -->\n      <img class="img-responsive-last" src="assets/imgs/intro4.jpg" />\n      <div class="dialogue-box-last">\n        <div class="tdialogue-box-text">\n          <p class="text-dialog-last">\n            Respondendo os questionários você coleta pontos que refletem na sua <strong>participação</strong>!\n          </p>\n          <p class="text-dialog-last">\n            Envie sua <strong>opinião</strong> para nós!\n          </p>\n        </div>\n      </div>\n      <button ion-button margin-bottom (click)="skip()">\n        <ion-icon id="button-participate-game" class="text-button">\n          Participar!\n        </ion-icon>\n      </button>\n    </ion-slide>\n    <!-- Slide 5 -->\n  </ion-slides>\n</ion-content>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\intro\intro.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5__providers_city_city__["a" /* CityProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_plan_plan__["b" /* PlanProvider */], __WEBPACK_IMPORTED_MODULE_4__providers_questionary_questionary__["d" /* QuestionaryProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */], __WEBPACK_IMPORTED_MODULE_7__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_8__providers_rest_rest__["a" /* RestProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5__providers_city_city__["a" /* CityProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_plan_plan__["b" /* PlanProvider */], __WEBPACK_IMPORTED_MODULE_4__providers_questionary_questionary__["d" /* QuestionaryProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */], __WEBPACK_IMPORTED_MODULE_7__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_8__providers_rest_rest__["a" /* RestProvider */]])
     ], IntroPage);
     return IntroPage;
 }());
 
 //# sourceMappingURL=intro.js.map
-
-/***/ }),
-
-/***/ 56:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DatabaseProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(35);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var DatabaseProvider = /** @class */ (function () {
-    function DatabaseProvider(http, storage) {
-        this.http = http;
-        this.storage = storage;
-    }
-    DatabaseProvider.prototype.verifyEntities = function (entities) {
-        var _this = this;
-        var promises_array = [];
-        var _loop_1 = function (i) {
-            promises_array.push(new Promise(function (resolve) {
-                _this.storage.get(entities[i])
-                    .then(function (data) {
-                    if (data != null) {
-                        resolve(true);
-                    }
-                    else {
-                        i = 9999;
-                        resolve(false);
-                    }
-                })
-                    .catch(function () {
-                    i = 9999;
-                    resolve(false);
-                });
-            }));
-            out_i_1 = i;
-        };
-        var out_i_1;
-        for (var i = 0; i < entities.length; i++) {
-            _loop_1(i);
-            i = out_i_1;
-        }
-        return Promise.all(promises_array);
-    };
-    DatabaseProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
-    ], DatabaseProvider);
-    return DatabaseProvider;
-}());
-
-//# sourceMappingURL=database.js.map
 
 /***/ }),
 

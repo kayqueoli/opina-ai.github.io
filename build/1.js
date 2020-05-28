@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 298:
+/***/ 299:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,8 +8,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RespondentProfilePageModule", function() { return RespondentProfilePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__respondent_profile__ = __webpack_require__(443);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(444);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__respondent_profile__ = __webpack_require__(445);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(446);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -29,7 +29,7 @@ var RespondentProfilePageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__respondent_profile__["a" /* RespondentProfilePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__respondent_profile__["a" /* RespondentProfilePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__respondent_profile__["a" /* RespondentProfilePage */]),
                 __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__["a" /* BrMaskerModule */]
             ],
         })
@@ -41,7 +41,7 @@ var RespondentProfilePageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 432:
+/***/ 433:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -377,7 +377,7 @@ BrMaskerIonic3.propDecorators = {
 
 /***/ }),
 
-/***/ 433:
+/***/ 434:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -564,7 +564,7 @@ BrMaskerIonicServices3.ctorParameters = function () { return []; };
 
 /***/ }),
 
-/***/ 443:
+/***/ 445:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -574,7 +574,7 @@ BrMaskerIonicServices3.ctorParameters = function () { return []; };
 /* unused harmony export AgeRange */
 /* unused harmony export Discipline */
 /* unused harmony export Respondent */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__intro_intro__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__intro_intro__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(17);
@@ -584,7 +584,7 @@ BrMaskerIonicServices3.ctorParameters = function () { return []; };
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operators_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_operators_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_city_city__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_neighborhood_neighborhood__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_database_database__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_database_database__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_respondent_respondent__ = __webpack_require__(215);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_prioritization_prioritization__ = __webpack_require__(209);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_storage__ = __webpack_require__(35);
@@ -628,12 +628,16 @@ var RespondentProfilePage = /** @class */ (function () {
         this.restProvider = restProvider;
         this.respondentId = 0;
         this.respondentCode = null;
-        this.isCommerce = false;
         this.userType = "cidadão";
-        this.case_test = "POSCOMP";
+        this.caseTest = "Avaliação Saúde Mental - UNIFEI";
         this.ageRangeName = "";
+        this.residenceTimeName = "";
+        this.salaryRangeName = "";
         this.disciplineList = [];
         this.disciplineSelected = [];
+        this.residenceTypeList = [];
+        this.residenceMembersList = [];
+        this.financialAssistanceList = [];
         this.genderList = [];
         this.courseEntryList = [];
         this.courseLeftList = [];
@@ -643,12 +647,11 @@ var RespondentProfilePage = /** @class */ (function () {
         this.residenceTimeList = [];
         this.salaryRangeList = [];
         this.ageRangeList = [];
-        this.residenceTimeName = "";
-        this.salaryRangeName = "";
         this.metricItems = [];
-        this.jobNeighborhoodDisabled = true;
-        this.courseDisabled = true;
         this.isSameJobCity = "hide";
+        this.isCommerce = false;
+        this.courseDisabled = true;
+        this.jobNeighborhoodDisabled = true;
         this.useGame = false;
         this.editing = false;
         this.hideField = false;
@@ -658,30 +661,48 @@ var RespondentProfilePage = /** @class */ (function () {
         this.isDocent = false;
         this.storage.get('useGame').then(function (data) { return _this.useGame = data; });
         this.storage.set('isRuralZone', false);
-        this.createForm();
-        this.createDisciplineList();
-        this.createCourseList();
         this.createUserTypeList();
-        this.loadMetrics();
-        // this.getAllCities();
-        // this.loadResidenceTime();
-        // this.loadSalaryRange();
-        // this.loadAgeRange();
+        this.createResidenceTypeList();
+        this.createResidenceMembersList();
+        this.createFinancialAssistanceList();
+        this.createForm();
+        // this.createDisciplineList();
+        // this.createResidenceTimeRange();
+        // this.createSalaryRange();
+        // this.createAgeRange();
         // this.createGenderList();
+        // this.loadAllCities();
         this.loader = this.loadingCtrl.create();
         this.loader.present();
         setTimeout(function () {
             _this.existsRespondent();
+            _this.loader.dismiss();
         }, 1000);
     }
+    // ---------------- CRIAÇÃO DO FORMULÁRIO ----------------
     RespondentProfilePage.prototype.createForm = function () {
+        var financialAssistanceCheck = [];
+        this.financialAssistanceList.forEach(function () {
+            financialAssistanceCheck.push(false);
+        });
         this.respondentForm = this.formBuilder.group({
-            code: [''],
-            courseEntry: [''],
-            courseLeft: [''],
+            // ------------ CASE 2 - UNIFEI ------------
             userType: [''],
-            name: [''],
-            isDiscentConcluded: ['']
+            courseName: [''],
+            residenceType: [''],
+            residenceMembers: [''],
+            haveChildren: [false],
+            haveJob: [false],
+            financialAssistance: this.formBuilder.array(financialAssistanceCheck)
+            // ------------ CASE 2 - UNIFEI ------------
+            // ------------ CASE 1 - POSCOMP ------------
+            // code: [''],
+            // courseEntry: [''],
+            // courseLeft: [''],
+            // userType: [''],
+            // name: [''],
+            // isDiscentConcluded: [false]
+            // ------------ CASE 1 - POSCOMP ------------
             // cpf: ['', [Validators.required], this.validateCPF.bind(this)],
             // email: [''],
             // courseName: [''],
@@ -697,11 +718,76 @@ var RespondentProfilePage = /** @class */ (function () {
             // age: [''],
             // gender: [''],
             // phone: [''],
-            // isCommerce: ['']
+            // isCommerce: [false]
         });
         // this.respondentForm.controls['residenceTimeRange'].setValue(0);
         // this.respondentForm.controls['salaryRange'].setValue(0);
     };
+    RespondentProfilePage.prototype.setFormData = function () {
+        var _this = this;
+        var entities = ['city', 'plan', 'isRuralZone', 'questionaries'];
+        this.databaseProvider.verifyEntities(entities)
+            .then(function (data) {
+            if (data.length > 0 && data.filter(function (data) { return data == false; }).length == 0) {
+                _this.setEntities();
+            }
+            else {
+                _this.navigateBack();
+            }
+        })
+            .catch(function (error) {
+            console.error(error);
+            _this.restProvider.sendGoogleAnalyticsErrorData('RespondentProfilePage', 'setFormData', error);
+            _this.navigateBack();
+        });
+    };
+    RespondentProfilePage.prototype.setEntities = function () {
+        var _this = this;
+        this.storage.get('city')
+            .then(function (data) {
+            if (data != null) {
+                _this.city = data;
+                _this.cityName = _this.city.name;
+                _this.storage.get('plan')
+                    .then(function (data) {
+                    if (data != null) {
+                        _this.plan = data;
+                        _this.storage.get('questionaries')
+                            .then(function (data) {
+                            _this.questionaries = data;
+                            if (data != null) {
+                                _this.storage.get('points')
+                                    .then(function (data) {
+                                    if (data != null) {
+                                        _this.points = data;
+                                        _this.resolveLevel();
+                                    }
+                                    else {
+                                        _this.navigateBack();
+                                    }
+                                })
+                                    .catch(function () { return _this.navigateBack(); });
+                            }
+                            else {
+                                _this.navigateBack();
+                            }
+                        })
+                            .catch(function () { return _this.navigateBack(); });
+                    }
+                    else {
+                        _this.navigateBack();
+                    }
+                })
+                    .catch(function () { return _this.navigateBack(); });
+            }
+            else {
+                _this.navigateBack();
+            }
+        })
+            .catch(function () { return _this.navigateBack(); });
+    };
+    // ---------------- CRIAÇÃO DO FORMULÁRIO ----------------
+    // ---------------- INFORMAÇÕES DO RESPONDENTE ----------------
     RespondentProfilePage.prototype.existsRespondent = function () {
         var _this = this;
         this.storage.get('respondent')
@@ -709,13 +795,36 @@ var RespondentProfilePage = /** @class */ (function () {
             _this.setFormData();
             if (respondent != null) {
                 _this.editing = true;
+                _this.courseDisabled = false;
+                // ----------------- CASE 2 - UNIFEI -----------------
                 _this.respondentId = respondent.id;
-                _this.respondentCode = respondent.code;
-                _this.respondentForm.controls['name'].setValue(respondent.name);
-                _this.respondentForm.controls['code'].setValue(respondent.code);
-                _this.respondentForm.controls['courseEntry'].setValue(respondent.courseEntry);
-                _this.respondentForm.controls['courseLeft'].setValue(respondent.courseLeft);
                 _this.respondentForm.controls['userType'].setValue(respondent.type);
+                _this.respondentForm.controls['courseName'].setValue(respondent.courseName);
+                _this.respondentForm.controls['residenceType'].setValue(respondent.residenceType);
+                _this.respondentForm.controls['residenceMembers'].setValue(respondent.residenceMembers);
+                _this.respondentForm.controls['haveChildren'].setValue(respondent.haveChildren);
+                _this.respondentForm.controls['haveJob'].setValue(respondent.haveJob);
+                var financialAssistanceCheck_1 = _this.respondentForm.controls['financialAssistance'].value;
+                JSON.parse(respondent.financialAssistance).forEach(function (financialAssistance) {
+                    financialAssistanceCheck_1[financialAssistance.id] = true;
+                });
+                _this.respondentForm.controls['financialAssistance'].setValue(financialAssistanceCheck_1);
+                // this.respondentForm.controls['financialAssistance'].setValue(JSON.parse(respondent.financialAssistance));
+                // ----------------- CASE 2 - UNIFEI -----------------
+                // ----------------- CASE 1 - POSCOMP -----------------
+                // this.respondentId = respondent.id;
+                // this.respondentCode = respondent.code;
+                // this.respondentForm.controls['name'].setValue(respondent.name);
+                // this.respondentForm.controls['code'].setValue(respondent.code);
+                // this.respondentForm.controls['courseEntry'].setValue(respondent.courseEntry);
+                // this.respondentForm.controls['courseLeft'].setValue(respondent.courseLeft);
+                // this.respondentForm.controls['userType'].setValue(respondent.type);
+                // ----------------- CASE 1 - POSCOMP -----------------
+                // this.respondentCode = respondent.code;
+                // this.respondentForm.controls['name'].setValue(respondent.name);
+                // this.respondentForm.controls['code'].setValue(respondent.code);
+                // this.respondentForm.controls['courseEntry'].setValue(respondent.courseEntry);
+                // this.respondentForm.controls['courseLeft'].setValue(respondent.courseLeft);
                 // this.respondentForm.controls['cpf'].setValue(respondent.cpf);
                 // this.respondentForm.controls['email'].setValue(respondent.email);
                 // this.respondentForm.controls['residenceTimeRange'].setValue(respondent.residenceTimeRange);
@@ -732,23 +841,14 @@ var RespondentProfilePage = /** @class */ (function () {
                 // this.respondentForm.controls['whatsapp'].setValue(respondent.whatsapp);
                 _this.userType = respondent.type;
                 _this.resolveUsertype();
-                _this.resolveCheckBox();
-                // if (respondent.type == "comerciante") {
-                //   this.respondentForm.controls['isCommerce'].setValue(true);
-                //   this.isCommerce = true;
-                // } else {
-                //   this.respondentForm.controls['isCommerce'].setValue(false);
-                //   this.isCommerce = false;
-                // }
+                _this.resolveCheckBoxFinancialAssistence();
+                // this.resolveCheckBoxDiscipline();
                 // if (respondent.jobNeighborhood != null) {
                 //   this.respondentForm.controls['jobNeighborhood'].setValue(respondent.jobNeighborhood);
                 //   this.jobCity = respondent.jobCity;
                 //   this.loadJobNeighborhoods();
                 //   this.isSameJobCity = "";
                 // }
-            }
-            else {
-                _this.isCommerce = false;
             }
         });
     };
@@ -776,6 +876,17 @@ var RespondentProfilePage = /** @class */ (function () {
         var jobAddress = this.respondentForm.controls['jobAddress'];
         var jobName = this.respondentForm.controls['jobName'];
         var whatsapp = this.respondentForm.controls['whatsapp'];
+        var residenceType = this.respondentForm.controls['residenceType'];
+        var residenceMembers = this.respondentForm.controls['residenceMembers'];
+        var haveChildren = this.respondentForm.controls['haveChildren'];
+        var haveJob = this.respondentForm.controls['haveJob'];
+        var financialAssistance = this.respondentForm.controls['financialAssistance'];
+        var financialAssistanceSelected = [];
+        for (var i = 0; i < financialAssistance.value.length; i++) {
+            if (financialAssistance.value[i] === true) {
+                financialAssistanceSelected.push(this.financialAssistanceList[i]);
+            }
+        }
         //-----------------------MANTER SEMPRE TODOS OS CAMPOS--------------------------
         var gameType = null;
         if (this.useGame) {
@@ -794,6 +905,7 @@ var RespondentProfilePage = /** @class */ (function () {
             this.loader.dismiss();
         }
         else {
+            //-----------------------MANTER SEMPRE TODOS OS CAMPOS--------------------------
             var respondent_1 = new Respondent();
             respondent_1.cpf = cpf ? cpf.value : null;
             respondent_1.email = email ? email.value : null;
@@ -814,10 +926,16 @@ var RespondentProfilePage = /** @class */ (function () {
             respondent_1.jobAddress = jobAddress ? jobAddress.value : null;
             respondent_1.jobName = jobName ? jobName.value : null;
             respondent_1.whatsapp = whatsapp ? whatsapp.value : null;
+            respondent_1.residenceType = residenceType ? residenceType.value : null;
+            respondent_1.residenceMembers = residenceMembers ? residenceMembers.value : null;
+            respondent_1.haveChildren = haveChildren.value;
+            respondent_1.haveJob = haveJob.value;
+            respondent_1.financialAssistance = financialAssistance ? JSON.stringify(financialAssistanceSelected) : null;
             respondent_1.type = this.userType;
-            respondent_1.caseTest = this.case_test;
+            respondent_1.caseTest = this.caseTest;
             respondent_1.points = this.points;
             respondent_1.gameType = gameType;
+            //-----------------------MANTER SEMPRE TODOS OS CAMPOS--------------------------
             //---------------------- VERIFICA SE JA EXISTE UM ALUNO COM A MATRICULA -------------------------
             this.storage.set("disciplineSelected", this.disciplineSelected);
             this.respondentProvider.getRespondentByCode(respondent_1.code, this.respondentCode).then(function (repondentCode) {
@@ -871,730 +989,236 @@ var RespondentProfilePage = /** @class */ (function () {
             });
         }
     };
-    RespondentProfilePage.prototype.resolveUsertype = function () {
-        if (this.userType == "Discente formado") {
-            this.isDiscent = true;
-            this.isDiscentConcluded = true;
-            this.isDiscentEvaded = true;
-            this.isDocent = false;
-            this.respondentForm.controls['isDiscentConcluded'].setValue(true);
-            this.respondentForm.controls['userType'].setValue("Ex-aluno");
-        }
-        else if (this.userType == "Discente evadido") {
-            this.isDiscent = true;
-            this.isDiscentConcluded = false;
-            this.isDiscentEvaded = true;
-            this.isDocent = false;
-            this.respondentForm.controls['isDiscentConcluded'].setValue(false);
-            this.respondentForm.controls['userType'].setValue("Ex-aluno");
-        }
-        else if (this.userType == "Discente") {
-            this.isDiscent = true;
-            this.isDiscentConcluded = false;
-            this.isDiscentEvaded = false;
-            this.isDocent = false;
-            this.respondentForm.controls['isDiscentConcluded'].setValue(false);
-        }
-        else if (this.userType == "Docente") {
-            this.isDiscent = false;
-            this.isDiscentConcluded = false;
-            this.isDiscentEvaded = false;
-            this.isDocent = true;
-            this.respondentForm.controls['isDiscentConcluded'].setValue(false);
-        }
-    };
-    RespondentProfilePage.prototype.resolveCheckBox = function () {
+    RespondentProfilePage.prototype.tryAgainSaveRespondent = function () {
         var _this = this;
-        if (this.isDiscent && !this.isDiscentEvaded && !this.isDiscentConcluded) {
-            this.storage.get('disciplineSelected').then(function (data) {
-                if (data) {
-                    data.forEach(function (disc) {
-                        _this.checkBox.toArray()[disc.value].checked = true;
-                    });
-                }
-            });
-        }
+        var alert = this.alertCtrl.create({
+            title: 'Oops!',
+            message: 'Não foi possível salvar os seus dados. Por favor, tente novamente.',
+            buttons: [{
+                    text: "Tentar novamente",
+                    handler: function () {
+                        _this.saveRespondentInfo();
+                    }
+                }]
+        });
+        this.loader.dismiss();
+        alert.present();
     };
-    RespondentProfilePage.prototype.selectUserType = function (userType) {
-        this.userType = userType.value;
-        // if (this.userType == "Graduação") {
-        //   this.courseDisabled = false;
-        //   this.createCourseNameListGrad();
-        //   this.createCourseList();
-        // } else if (this.userType == "Pós-Graduação") {
-        //   this.courseDisabled = false;
-        //   this.createCourseNameListPosGrad();
-        //   this.createCourseList();
-        // }else{
-        //   this.courseDisabled = true;
-        //   // this.respondentForm.controls['courseName'].setValue(null);
-        //   this.respondentForm.controls['courseEntry'].setValue(null);
-        //   this.respondentForm.controls['courseLeft'].setValue(null);
-        //   this.courseNameList = [];
-        // }
-        if (this.userType == "Discente") {
-            this.isDiscent = true;
-            this.isDiscentEvaded = false;
-            this.isDiscentConcluded = false;
-            this.isDocent = false;
-            this.respondentForm.controls['courseEntry'].enable();
-            this.respondentForm.controls['courseEntry'].setValue(null);
-            this.respondentForm.controls['code'].enable();
-            this.respondentForm.controls['code'].setValue(null);
-            this.respondentForm.controls['courseLeft'].setValue(null);
-            this.respondentForm.controls['courseLeft'].disable();
-            this.respondentForm.controls['isDiscentConcluded'].setValue(false);
-        }
-        else if (this.userType == "Ex-aluno") {
-            this.userType = "Discente evadido";
-            this.isDiscent = true;
-            this.isDiscentEvaded = true;
-            this.isDiscentConcluded = false;
-            this.isDocent = false;
-            this.respondentForm.controls['courseEntry'].enable();
-            this.respondentForm.controls['courseEntry'].setValue(null);
-            this.respondentForm.controls['courseLeft'].enable();
-            this.respondentForm.controls['courseLeft'].setValue(null);
-            this.respondentForm.controls['code'].setValue(null);
-            this.respondentForm.controls['code'].disable();
-            this.respondentForm.controls['isDiscentConcluded'].setValue(false);
-        }
-        else {
-            this.isDiscent = false;
-            this.isDiscentEvaded = false;
-            this.isDiscentConcluded = false;
-            this.isDocent = true;
-            this.respondentForm.controls['courseEntry'].setValue(null);
-            this.respondentForm.controls['courseEntry'].disable();
-            this.respondentForm.controls['courseLeft'].setValue(null);
-            this.respondentForm.controls['courseLeft'].disable();
-            this.respondentForm.controls['code'].enable();
-            this.respondentForm.controls['code'].setValue(null);
-            this.respondentForm.controls['isDiscentConcluded'].setValue(false);
-        }
-        // this.scrollToBottom();
-    };
-    RespondentProfilePage.prototype.changeUserType = function () {
-        if (this.userType == "comerciante") {
-            // this.respondentForm.controls['isCommerce'].setValue(false);
-            this.isCommerce = false;
-            this.userType = "cidadão";
-        }
-        else {
-            // this.respondentForm.controls['isCommerce'].setValue(true);
-            this.isCommerce = true;
-            this.userType = "comerciante";
-        }
-    };
-    RespondentProfilePage.prototype.changeDiscentType = function () {
-        if (this.userType == "Discente formado") {
-            this.userType = "Discente evadido";
-            this.isDiscentConcluded = false;
-            this.respondentForm.controls['courseLeft'].setValue(null);
-            this.respondentForm.controls['courseLeft'].disable();
-            this.respondentForm.controls['isDiscentConcluded'].setValue(false);
-        }
-        else {
-            this.userType = "Discente formado";
-            this.isDiscentConcluded = true;
-            this.respondentForm.controls['courseLeft'].enable();
-            this.respondentForm.controls['courseLeft'].setValue(null);
-            this.respondentForm.controls['isDiscentConcluded'].setValue(true);
-        }
-        this.scrollToBottom();
-    };
-    RespondentProfilePage.prototype.updateDisciplineValue = function (disciplineSelect, checked) {
-        this.checkBox;
-        if (checked) {
-            this.disciplineSelected.push(disciplineSelect);
-        }
-        else {
-            this.disciplineSelected =
-                this.disciplineSelected.filter(function (discipline) { return !(discipline === disciplineSelect); });
-        }
-    };
-    RespondentProfilePage.prototype.verifyLevel = function () {
-        if (this.points > 0 && this.points <= 12) {
-            this.level = "Bronze";
-        }
-        if (this.points > 12 && this.points <= 21) {
-            this.level = "Prata";
-        }
-        if (this.points > 21) {
-            this.level = "Ouro";
-        }
-    };
-    RespondentProfilePage.prototype.createGenderList = function () {
-        var gender1 = {
-            value: "Masculino"
-        };
-        this.genderList.push(gender1);
-        var gender2 = {
-            value: "Feminino"
-        };
-        this.genderList.push(gender2);
-        var gender3 = {
-            value: "Outro"
-        };
-        this.genderList.push(gender3);
-    };
+    // ---------------- INFORMAÇÕES DO RESPONDENTE ----------------
+    // ---------------- CRIAÇÃO DAS LISTAS DOS SELECTS ----------------
     RespondentProfilePage.prototype.createUserTypeList = function () {
-        // let type1 = {
-        //   value: "Graduação"
-        // };
-        // this.userTypeList.push(type1);
-        // let type2 = {
-        //   value: "Pós-Graduação"
-        // };
-        // this.userTypeList.push(type2);
-        // let type3 = {
-        //   value: "Docente Graduação"
-        // };
-        // this.userTypeList.push(type3);
-        // let type4 = {
-        //   value: "Docente Pós-Graduação"
-        // };
-        // this.userTypeList.push(type4);
-        var type4 = {
-            value: "Docente"
-        };
-        this.userTypeList.push(type4);
-        var type5 = {
-            value: "Discente"
-        };
-        this.userTypeList.push(type5);
-        // let type7 = {
-        //   value: "Cidadão"
-        // };
-        // this.userTypeList.push(type7);
-        // let type8 = {
-        //   value: "Profissional"
-        // };
-        // this.userTypeList.push(type8);
-        // let type9 = {
-        //   value: "Voluntário"
-        // };
-        // this.userTypeList.push(type9);
-        var type10 = {
-            value: "Ex-aluno"
-        };
-        this.userTypeList.push(type10);
+        this.userTypeList = [];
+        this.userTypeList = [
+            { value: 'Graduação' },
+            { value: 'Mestrado' },
+            { value: 'Doutorado' }
+        ];
     };
-    RespondentProfilePage.prototype.createCourseList = function () {
+    RespondentProfilePage.prototype.createResidenceTypeList = function () {
+        this.residenceTypeList = [];
+        this.residenceTypeList = [
+            { value: 'Com a família' },
+            { value: 'República' },
+            { value: 'Kitnet' },
+            { value: 'Quarto alugado' },
+            { value: 'Quarto compartilhado' },
+            { value: 'Sozinho' }
+        ];
+    };
+    RespondentProfilePage.prototype.createResidenceMembersList = function () {
+        this.residenceMembersList = [];
+        this.residenceMembersList = [
+            { value: 'Nenhuma' },
+            { value: 'Uma pessoa' },
+            { value: 'Duas pessoas' },
+            { value: 'Três pessoas ' },
+            { value: 'Quatro pessoas' },
+            { value: 'Mais de quatro pessoas' }
+        ];
+    };
+    RespondentProfilePage.prototype.createFinancialAssistanceList = function () {
+        this.financialAssistanceList = [];
+        this.financialAssistanceList = [
+            { id: 0, value: 'Auxílio da DAE' },
+            { id: 1, value: 'Auxílio emergencial de Inclusão Digital' },
+            { id: 2, value: 'Bolsa de agências de fomento (CNPQ, CAPES, FAPEMIG ou outras)' },
+            { id: 3, value: 'Bolsa de Estágio' },
+            { id: 4, value: 'Ajuda de familiares ou amigos' },
+            { id: 5, value: 'Outros' }
+        ];
+    };
+    RespondentProfilePage.prototype.createCourseEntryLeftList = function () {
         this.courseEntryList = [];
+        this.courseEntryList = [
+            { value: '1º semestre - 2010' },
+            { value: '2º semestre - 2010' },
+            { value: '1º semestre - 2011' },
+            { value: '2º semestre - 2011' },
+            { value: '1º semestre - 2012' },
+            { value: '2º semestre - 2012' },
+            { value: '1º semestre - 2013' },
+            { value: '2º semestre - 2013' },
+            { value: '1º semestre - 2014' },
+            { value: '2º semestre - 2014' },
+            { value: '1º semestre - 2015' },
+            { value: '2º semestre - 2015' },
+            { value: '1º semestre - 2016' },
+            { value: '2º semestre - 2016' },
+            { value: '1º semestre - 2017' },
+            { value: '2º semestre - 2017' },
+            { value: '1º semestre - 2018' },
+            { value: '2º semestre - 2018' },
+            { value: '1º semestre - 2019' },
+            { value: '2º semestre - 2019' },
+            { value: '1º semestre - 2020' }
+        ];
         this.courseLeftList = [];
-        var courseEntry1 = {
-            value: "1º semestre - 2010"
-        };
-        this.courseEntryList.push(courseEntry1);
-        this.courseLeftList.push(courseEntry1);
-        var courseEntry2 = {
-            value: "2º semestre - 2010"
-        };
-        this.courseEntryList.push(courseEntry2);
-        this.courseLeftList.push(courseEntry2);
-        var courseEntry3 = {
-            value: "1º semestre - 2011"
-        };
-        this.courseEntryList.push(courseEntry3);
-        this.courseLeftList.push(courseEntry3);
-        var courseEntry4 = {
-            value: "2º semestre - 2011"
-        };
-        this.courseEntryList.push(courseEntry4);
-        this.courseLeftList.push(courseEntry4);
-        var courseEntry5 = {
-            value: "1º semestre - 2012"
-        };
-        this.courseEntryList.push(courseEntry5);
-        this.courseLeftList.push(courseEntry5);
-        var courseEntry6 = {
-            value: "2º semestre - 2012"
-        };
-        this.courseEntryList.push(courseEntry6);
-        this.courseLeftList.push(courseEntry6);
-        var courseEntry7 = {
-            value: "1º semestre - 2013"
-        };
-        this.courseEntryList.push(courseEntry7);
-        this.courseLeftList.push(courseEntry7);
-        var courseEntry8 = {
-            value: "2º semestre - 2013"
-        };
-        this.courseEntryList.push(courseEntry8);
-        this.courseLeftList.push(courseEntry8);
-        var courseEntry9 = {
-            value: "1º semestre - 2014"
-        };
-        this.courseEntryList.push(courseEntry9);
-        this.courseLeftList.push(courseEntry9);
-        var courseEntry10 = {
-            value: "2º semestre - 2014"
-        };
-        this.courseEntryList.push(courseEntry10);
-        this.courseLeftList.push(courseEntry10);
-        var courseEntry11 = {
-            value: "1º semestre - 2015"
-        };
-        this.courseEntryList.push(courseEntry11);
-        this.courseLeftList.push(courseEntry11);
-        var courseEntry12 = {
-            value: "2º semestre - 2015"
-        };
-        this.courseEntryList.push(courseEntry12);
-        this.courseLeftList.push(courseEntry12);
-        var courseEntry13 = {
-            value: "1º semestre - 2016"
-        };
-        this.courseEntryList.push(courseEntry13);
-        this.courseLeftList.push(courseEntry13);
-        var courseEntry14 = {
-            value: "2º semestre - 2016"
-        };
-        this.courseEntryList.push(courseEntry14);
-        this.courseLeftList.push(courseEntry14);
-        var courseEntry15 = {
-            value: "1º semestre - 2017"
-        };
-        this.courseEntryList.push(courseEntry15);
-        this.courseLeftList.push(courseEntry15);
-        var courseEntry16 = {
-            value: "2º semestre - 2017"
-        };
-        this.courseEntryList.push(courseEntry16);
-        this.courseLeftList.push(courseEntry16);
-        var courseEntry17 = {
-            value: "1º semestre - 2018"
-        };
-        this.courseEntryList.push(courseEntry17);
-        this.courseLeftList.push(courseEntry17);
-        var courseEntry18 = {
-            value: "2º semestre - 2018"
-        };
-        this.courseEntryList.push(courseEntry18);
-        this.courseLeftList.push(courseEntry18);
-        var courseEntry19 = {
-            value: "1º semestre - 2019"
-        };
-        this.courseEntryList.push(courseEntry19);
-        this.courseLeftList.push(courseEntry19);
-        var courseEntry20 = {
-            value: "2º semestre - 2019"
-        };
-        this.courseEntryList.push(courseEntry20);
-        this.courseLeftList.push(courseEntry20);
-        var courseEntry21 = {
-            value: "1º semestre - 2020"
-        };
-        this.courseEntryList.push(courseEntry21);
-        this.courseLeftList.push(courseEntry21);
+        this.courseLeftList = [
+            { value: '1º semestre - 2010' },
+            { value: '2º semestre - 2010' },
+            { value: '1º semestre - 2011' },
+            { value: '2º semestre - 2011' },
+            { value: '1º semestre - 2012' },
+            { value: '2º semestre - 2012' },
+            { value: '1º semestre - 2013' },
+            { value: '2º semestre - 2013' },
+            { value: '1º semestre - 2014' },
+            { value: '2º semestre - 2014' },
+            { value: '1º semestre - 2015' },
+            { value: '2º semestre - 2015' },
+            { value: '1º semestre - 2016' },
+            { value: '2º semestre - 2016' },
+            { value: '1º semestre - 2017' },
+            { value: '2º semestre - 2017' },
+            { value: '1º semestre - 2018' },
+            { value: '2º semestre - 2018' },
+            { value: '1º semestre - 2019' },
+            { value: '2º semestre - 2019' },
+            { value: '1º semestre - 2020' }
+        ];
     };
     RespondentProfilePage.prototype.createCourseNameListGrad = function () {
         this.courseNameList = [];
-        var courseEntry1 = {
-            value: "Administração"
-        };
-        this.courseNameList.push(courseEntry1);
-        var courseEntry2 = {
-            value: "Ciência da Computação"
-        };
-        this.courseNameList.push(courseEntry2);
-        var courseEntry3 = {
-            value: "Ciências Atmosféricas"
-        };
-        this.courseNameList.push(courseEntry3);
-        var courseEntry4 = {
-            value: "Ciências Biológicas"
-        };
-        this.courseNameList.push(courseEntry4);
-        var courseEntry5 = {
-            value: "Engenharia Ambiental"
-        };
-        this.courseNameList.push(courseEntry5);
-        var courseEntry6 = {
-            value: "Engenharia Ambiental – Itabira"
-        };
-        this.courseNameList.push(courseEntry6);
-        var courseEntry7 = {
-            value: "Engenharia Civil"
-        };
-        this.courseNameList.push(courseEntry7);
-        var courseEntry8 = {
-            value: "Engenharia da Mobilidade – Itabira"
-        };
-        this.courseNameList.push(courseEntry8);
-        var courseEntry9 = {
-            value: "Engenharia de Bioprocessos"
-        };
-        this.courseNameList.push(courseEntry9);
-        var courseEntry10 = {
-            value: "Engenharia de Computação"
-        };
-        this.courseNameList.push(courseEntry10);
-        var courseEntry11 = {
-            value: "Engenharia de Computação – Itabira"
-        };
-        this.courseNameList.push(courseEntry11);
-        var courseEntry12 = {
-            value: "Engenharia de Controle e Automação"
-        };
-        this.courseNameList.push(courseEntry12);
-        var courseEntry13 = {
-            value: "Engenharia de Controle e Automação – Itabira"
-        };
-        this.courseNameList.push(courseEntry13);
-        var courseEntry14 = {
-            value: "Engenharia de Energia"
-        };
-        this.courseNameList.push(courseEntry14);
-        var courseEntry15 = {
-            value: "Engenharia de Materiais"
-        };
-        this.courseNameList.push(courseEntry15);
-        var courseEntry16 = {
-            value: "Engenharia de Materiais – Itabira"
-        };
-        this.courseNameList.push(courseEntry16);
-        var courseEntry17 = {
-            value: "Engenharia de Produção"
-        };
-        this.courseNameList.push(courseEntry17);
-        var courseEntry18 = {
-            value: "Engenharia de Produção – Itabira"
-        };
-        this.courseNameList.push(courseEntry18);
-        var courseEntry19 = {
-            value: "Engenharia de Saúde e Segurança – Itabira"
-        };
-        this.courseNameList.push(courseEntry19);
-        var courseEntry20 = {
-            value: "Engenharia Elétrica"
-        };
-        this.courseNameList.push(courseEntry20);
-        var courseEntry21 = {
-            value: "Engenharia Elétrica – Itabira"
-        };
-        this.courseNameList.push(courseEntry21);
-        var courseEntry22 = {
-            value: "Engenharia Eletrônica"
-        };
-        this.courseNameList.push(courseEntry22);
-        var courseEntry23 = {
-            value: "Engenharia Hídrica"
-        };
-        this.courseNameList.push(courseEntry23);
-        var courseEntry24 = {
-            value: "Engenharia Mecânica"
-        };
-        this.courseNameList.push(courseEntry24);
-        var courseEntry25 = {
-            value: "Engenharia Mecânica – Itabira"
-        };
-        this.courseNameList.push(courseEntry25);
-        var courseEntry26 = {
-            value: "Engenharia Mecânica Aeronáutica"
-        };
-        this.courseNameList.push(courseEntry26);
-        var courseEntry27 = {
-            value: "Engenharia Química"
-        };
-        this.courseNameList.push(courseEntry27);
-        var courseEntry28 = {
-            value: "Física Bacharelado"
-        };
-        this.courseNameList.push(courseEntry28);
-        var courseEntry29 = {
-            value: "Física Licenciatura"
-        };
-        this.courseNameList.push(courseEntry29);
-        var courseEntry30 = {
-            value: "Matemática Bacharelado"
-        };
-        this.courseNameList.push(courseEntry30);
-        var courseEntry31 = {
-            value: "Matemática Licenciatura"
-        };
-        this.courseNameList.push(courseEntry31);
-        var courseEntry32 = {
-            value: "Química Bacharelado"
-        };
-        this.courseNameList.push(courseEntry32);
-        var courseEntry33 = {
-            value: "Química Licenciatura"
-        };
-        this.courseNameList.push(courseEntry33);
-        var courseEntry34 = {
-            value: "Sistemas de Informação"
-        };
-        this.courseNameList.push(courseEntry34);
+        this.courseNameList = [
+            { value: 'Administração' },
+            { value: 'Ciência da Computação' },
+            { value: 'Ciências Atmosféricas' },
+            { value: 'Ciências Biológicas' },
+            { value: 'Engenharia Ambiental' },
+            { value: 'Engenharia Ambiental – Itabira' },
+            { value: 'Engenharia Civil' },
+            { value: 'Engenharia da Mobilidade – Itabira' },
+            { value: 'Engenharia de Bioprocessos' },
+            { value: 'Engenharia de Computação' },
+            { value: 'Engenharia de Computação – Itabira' },
+            { value: 'Engenharia de Controle e Automação' },
+            { value: 'Engenharia de Controle e Automação – Itabira' },
+            { value: 'Engenharia de Energia' },
+            { value: 'Engenharia de Materiais' },
+            { value: 'Engenharia de Materiais – Itabira' },
+            { value: 'Engenharia de Produção' },
+            { value: 'Engenharia de Produção – Itabira' },
+            { value: 'Engenharia de Saúde e Segurança – Itabira' },
+            { value: 'Engenharia Elétrica' },
+            { value: 'Engenharia Elétrica – Itabira' },
+            { value: 'Engenharia Eletrônica' },
+            { value: 'Engenharia Hídrica' },
+            { value: 'Engenharia Mecânica' },
+            { value: 'Engenharia Mecânica – Itabira' },
+            { value: 'Engenharia Mecânica Aeronáutica' },
+            { value: 'Engenharia Química' },
+            { value: 'Física Bacharelado' },
+            { value: 'Física Licenciatura' },
+            { value: 'Matemática Bacharelado' },
+            { value: 'Matemática Licenciatura' },
+            { value: 'Química Bacharelado' },
+            { value: 'Química Licenciatura' },
+            { value: 'Sistemas de Informação' }
+        ];
     };
-    RespondentProfilePage.prototype.createCourseNameListPosGrad = function () {
+    RespondentProfilePage.prototype.createCourseNameListMest = function () {
         this.courseNameList = [];
-        var courseEntry1 = {
-            value: "Engenharia Elétrica (mestrado)"
-        };
-        this.courseNameList.push(courseEntry1);
-        var courseEntry2 = {
-            value: "Engenharia Elétrica (doutorado)"
-        };
-        this.courseNameList.push(courseEntry2);
-        var courseEntry3 = {
-            value: "Engenharia Mecânica (mestrado) "
-        };
-        this.courseNameList.push(courseEntry3);
-        var courseEntry4 = {
-            value: "Engenharia Mecânica (doutorado) "
-        };
-        this.courseNameList.push(courseEntry4);
-        var courseEntry5 = {
-            value: "Engenharia de Produção (mestrado)"
-        };
-        this.courseNameList.push(courseEntry5);
-        var courseEntry6 = {
-            value: "Engenharia de Produção (doutorado)"
-        };
-        this.courseNameList.push(courseEntry6);
-        var courseEntry7 = {
-            value: "Multicêntrico em Química de Minas Gerais (mestrado) "
-        };
-        this.courseNameList.push(courseEntry7);
-        var courseEntry8 = {
-            value: "Multicêntrico em Química de Minas Gerais (doutorado) "
-        };
-        this.courseNameList.push(courseEntry8);
-        var courseEntry9 = {
-            value: "Meio Ambiente e Recursos Hídricos (mestrado)"
-        };
-        this.courseNameList.push(courseEntry9);
-        var courseEntry10 = {
-            value: "Meio Ambiente e Recursos Hídricos (doutorado)"
-        };
-        this.courseNameList.push(courseEntry10);
-        var courseEntry11 = {
-            value: "Materiais para a Engenharia (mestrado)"
-        };
-        this.courseNameList.push(courseEntry11);
-        var courseEntry12 = {
-            value: "Materiais para a Engenharia (doutorado)"
-        };
-        this.courseNameList.push(courseEntry12);
-        var courseEntry13 = {
-            value: "Educação em Ciências (mestrado)"
-        };
-        this.courseNameList.push(courseEntry13);
-        var courseEntry14 = {
-            value: "Engenharia de Energia (mestrado)"
-        };
-        this.courseNameList.push(courseEntry14);
-        var courseEntry15 = {
-            value: "Ciência e Tecnologia da Computação (mestrado)"
-        };
-        this.courseNameList.push(courseEntry15);
-        var courseEntry16 = {
-            value: "Desenvolvimento, Tecnologias e Sociedade (mestrado)"
-        };
-        this.courseNameList.push(courseEntry16);
-        var courseEntry17 = {
-            value: "Matemática (mestrado)"
-        };
-        this.courseNameList.push(courseEntry17);
-        var courseEntry18 = {
-            value: "Física (mestrado)"
-        };
-        this.courseNameList.push(courseEntry18);
+        this.courseNameList = [
+            { value: 'Mestrado em Engenharia Elétrica' },
+            { value: 'Mestrado em Engenharia Mecânica' },
+            { value: 'Mestrado em Engenharia de Produção' },
+            { value: 'Mestrado em Multicêntrico em Química de Minas Gerais' },
+            { value: 'Mestrado em Meio Ambiente e Recursos Hídricos' },
+            { value: 'Mestrado em Materiais para a Engenharia' },
+            { value: 'Mestrado em Educação em Ciências' },
+            { value: 'Mestrado em Engenharia de Energia' },
+            { value: 'Mestrado em Ciência e Tecnologia da Computação' },
+            { value: 'Mestrado em Desenvolvimento, Tecnologias e Sociedade' },
+            { value: 'Mestrado em Matemática' },
+            { value: 'Mestrado em Física' }
+        ];
+    };
+    RespondentProfilePage.prototype.createCourseNameListDout = function () {
+        this.courseNameList = [];
+        this.courseNameList = [
+            { value: 'Doutorado em Engenharia Elétrica' },
+            { value: 'Doutorado em Engenharia Mecânica' },
+            { value: 'Doutorado em Engenharia de Produção' },
+            { value: 'Doutorado em Multicêntrico em Química de Minas Gerais' },
+            { value: 'Doutorado em Meio Ambiente e Recursos Hídricos' },
+            { value: 'Doutorado em Materiais para a Engenharia' },
+        ];
     };
     RespondentProfilePage.prototype.createDisciplineList = function () {
         this.disciplineList = [];
-        var disc1 = {
-            value: 0,
-            name: "Algoritmos e Estruturas de Dados"
-        };
-        this.disciplineList.push(disc1);
-        var disc2 = {
-            value: 1,
-            name: "Empreendedorismo Tecnológico"
-        };
-        this.disciplineList.push(disc2);
-        var disc3 = {
-            value: 2,
-            name: "Introdução a Otimização Inteira"
-        };
-        this.disciplineList.push(disc3);
-        var disc4 = {
-            value: 3,
-            name: "Robótica Móvel II"
-        };
-        this.disciplineList.push(disc4);
-        var disc5 = {
-            value: 4,
-            name: "Sistemas Operacionais"
-        };
-        this.disciplineList.push(disc5);
-        var disc6 = {
-            value: 5,
-            name: "Tópicos em Engenharia de Software"
-        };
-        this.disciplineList.push(disc6);
-        var disc7 = {
-            value: 6,
-            name: "Visualização de Informação"
-        };
-        this.disciplineList.push(disc7);
+        this.disciplineList = [
+            { value: 0, name: "Algoritmos e Estruturas de Dados" },
+            { value: 1, name: "Empreendedorismo Tecnológico" },
+            { value: 2, name: "Introdução a Otimização Inteira" },
+            { value: 3, name: "Robótica Móvel II" },
+            { value: 4, name: "Sistemas Operacionais" },
+            { value: 5, name: "Tópicos em Engenharia de Software" },
+            { value: 6, name: "Visualização de Informação" }
+        ];
     };
-    RespondentProfilePage.prototype.setFormData = function () {
-        var _this = this;
-        var entities = ['city', 'plan', 'isRuralZone', 'questionaries'];
-        this.databaseProvider.verifyEntities(entities)
-            .then(function (data) {
-            if (data.length > 0 && data.filter(function (data) { return data == false; }).length == 0) {
-                _this.setEntities();
-            }
-            else {
-                _this.navigateBack();
-            }
-        })
-            .catch(function (error) {
-            console.error(error);
-            _this.restProvider.sendGoogleAnalyticsErrorData('RespondentProfilePage', 'setFormData', error);
-            _this.navigateBack();
-        });
+    RespondentProfilePage.prototype.createGenderList = function () {
+        this.genderList = [];
+        this.genderList = [
+            { value: 'Masculino' },
+            { value: 'Feminino' },
+            { value: 'Outro' }
+        ];
     };
-    RespondentProfilePage.prototype.setEntities = function () {
-        var _this = this;
-        this.storage.get('city')
-            .then(function (data) {
-            if (data != null) {
-                _this.city = data;
-                _this.cityName = _this.city.name;
-                _this.storage.get('plan')
-                    .then(function (data) {
-                    if (data != null) {
-                        _this.plan = data;
-                        _this.storage.get('questionaries')
-                            .then(function (data) {
-                            _this.questionaries = data;
-                            if (data != null) {
-                                _this.storage.get('points')
-                                    .then(function (data) {
-                                    if (data != null) {
-                                        _this.points = data;
-                                        _this.verifyLevel();
-                                        _this.loadResidenceNeighborhoods();
-                                    }
-                                    else {
-                                        _this.navigateBack();
-                                    }
-                                })
-                                    .catch(function () { return _this.navigateBack(); });
-                            }
-                            else {
-                                _this.navigateBack();
-                            }
-                        })
-                            .catch(function () { return _this.navigateBack(); });
-                    }
-                    else {
-                        _this.navigateBack();
-                    }
-                })
-                    .catch(function () { return _this.navigateBack(); });
-            }
-            else {
-                _this.navigateBack();
-            }
-        })
-            .catch(function () { return _this.navigateBack(); });
+    RespondentProfilePage.prototype.createResidenceTimeRange = function () {
+        this.residenceTimeList = [];
+        this.residenceTimeList = [
+            { name: 'Menos de um 1 ano', value: 0 },
+            { name: 'De 1 a 5 anos', value: 1 },
+            { name: 'De 5 a 10 anos', value: 2 },
+            { name: 'De 10 a 20 anos', value: 3 },
+            { name: 'Mais de 20 anos', value: 4 }
+        ];
+        this.residenceTimeName = this.residenceTimeList[0].name;
     };
-    RespondentProfilePage.prototype.getAllCities = function () {
-        var _this = this;
-        this.cityProvider.getAllCities()
-            .then(function (cities) {
-            if (cities != null) {
-                _this.cities = _this.sortAscCollection(cities);
-            }
-            else {
-                _this.showAlertGetAllCities();
-            }
-        })
-            .catch(function (error) {
-            console.error(error);
-            _this.restProvider.sendGoogleAnalyticsErrorData('RespondentProfilePage', 'getAllCities', error);
-            _this.showAlertGetAllCities();
-        });
+    RespondentProfilePage.prototype.createAgeRange = function () {
+        this.ageRangeList = [];
+        this.ageRangeList = [
+            { name: 'Até 16 anos', value: 0 },
+            { name: 'Entre 16 e 25 anos', value: 1 },
+            { name: 'Entre 25 e 40 anos', value: 2 },
+            { name: 'Entre 40 e 60 anos', value: 3 },
+            { name: 'Acima de 60 anos', value: 4 }
+        ];
+        this.ageRangeName = this.ageRangeList[0].name;
     };
-    RespondentProfilePage.prototype.showAlertGetAllCities = function () {
-        var _this = this;
-        this.cities = [];
-        var alert = this.alertCtrl.create({
-            title: 'Oops!',
-            message: 'Não foi possível acessar os dados do servidor. Por favor, tente novamente.',
-            buttons: [{
-                    text: "Tentar novamente",
-                    handler: function () {
-                        _this.getAllCities();
-                    }
-                }]
-        });
-        alert.present();
+    RespondentProfilePage.prototype.createSalaryRange = function () {
+        this.salaryRangeList = [];
+        this.salaryRangeList = [
+            { name: 'Até 2 Salários Mínimos', value: 0 },
+            { name: 'De 2 a 4 Salários Mínimos', value: 1 },
+            { name: 'De 4 a 10 Salários Mínimos', value: 2 },
+            { name: 'De 10 a 20 Salários Mínimos', value: 3 },
+            { name: 'Acima de 20 Salários Mínimos', value: 4 }
+        ];
+        this.salaryRangeName = this.salaryRangeList[0].name;
     };
-    RespondentProfilePage.prototype.loadMetrics = function () {
-        var _this = this;
-        //------------------------CARREGA OS ITENS DE MÉTRICAS-----------------------------
-        //1 - GUT, 2 - ESCALA QUALITATIVA, (3-17) - Métricas do questionário de teste
-        this.priorizationProvider.getMetricItems(1)
-            .then(function (metricItems) {
-            if (metricItems != null) {
-                _this.metricItems = metricItems;
-                //------------------------CARREGA OS VALORES DE MÉTRICA-----------------------------
-                _this.priorizationProvider.getMetricValues()
-                    .then(function (result) {
-                    if (result != null) {
-                        //------------------------ASSOCIA OS VALORES AOS ITENS-----------------------------
-                        for (var i = 0; i < _this.metricItems.length; i++) {
-                            var metricItem = _this.metricItems[i];
-                            for (var j = 0; j < result.length; j++) {
-                                var metricValue = result[j];
-                                if (metricItem.id == metricValue.metricItemId) {
-                                    _this.metricItems[i].metricValues.push(metricValue);
-                                }
-                            }
-                        }
-                        //------------------------SALVA OS ITENS DE MÉTRICA-----------------------------
-                        _this.storage.set('metricItems', _this.metricItems);
-                    }
-                    else {
-                        _this.showAlertLoadMetrics();
-                    }
-                }).catch(function (error) {
-                    console.error(error);
-                    _this.restProvider.sendGoogleAnalyticsErrorData('RespondentProfilePage', 'loadMetrics', error);
-                    _this.showAlertLoadMetrics();
-                });
-            }
-            else {
-                _this.showAlertLoadMetrics();
-            }
-        }).catch(function (error) {
-            console.error(error);
-            _this.restProvider.sendGoogleAnalyticsErrorData('RespondentProfilePage', 'loadMetrics', error);
-            _this.showAlertLoadMetrics();
-        });
-    };
-    RespondentProfilePage.prototype.showAlertLoadMetrics = function () {
-        var _this = this;
-        this.metricItems = [];
-        var alert = this.alertCtrl.create({
-            title: 'Oops!',
-            message: 'Não foi possível acessar os dados do servidor. Por favor, tente novamente.',
-            buttons: [{
-                    text: "Tentar novamente",
-                    handler: function () {
-                        _this.loadMetrics();
-                    }
-                }]
-        });
-        alert.present();
-    };
+    // ---------------- CRIAÇÃO DAS LISTAS DOS SELECTS ----------------
+    // ---------------- CRIAÇÃO DAS LISTAS DOS BAIRROS ----------------
     RespondentProfilePage.prototype.loadResidenceNeighborhoods = function () {
         var _this = this;
         this.neighborhoodProvider.getAllNeighborhoodsByCity(this.city)
@@ -1613,32 +1237,6 @@ var RespondentProfilePage = /** @class */ (function () {
             _this.restProvider.sendGoogleAnalyticsErrorData('RespondentProfilePage', 'loadResidenceNeighborhoods', error);
             _this.showAlertLoadResidenceNeighborhoods();
         });
-    };
-    RespondentProfilePage.prototype.showAlertLoadResidenceNeighborhoods = function () {
-        var _this = this;
-        this.loader.dismiss();
-        this.residenceNeighborhoods = [];
-        var alert = this.alertCtrl.create({
-            title: 'Oops!',
-            message: 'Não foi possível acessar os dados do servidor. Por favor, tente novamente.',
-            buttons: [{
-                    text: "Tentar novamente",
-                    handler: function () {
-                        _this.loadResidenceNeighborhoods();
-                    }
-                }]
-        });
-        alert.present();
-    };
-    RespondentProfilePage.prototype.selectCity = function (city) {
-        this.jobCity = city;
-        if (this.compareFn(this.jobCity, this.city)) {
-            this.isSameJobCity = "";
-            // this.respondentForm.controls['jobNeighborhood'].setValue('');
-        }
-        else {
-            this.isSameJobCity = "hide";
-        }
     };
     RespondentProfilePage.prototype.loadJobNeighborhoods = function () {
         var _this = this;
@@ -1664,20 +1262,212 @@ var RespondentProfilePage = /** @class */ (function () {
             _this.showAlertLoadJobNeighborhoods();
         });
     };
-    RespondentProfilePage.prototype.showAlertLoadJobNeighborhoods = function () {
+    RespondentProfilePage.prototype.loadAllCities = function () {
         var _this = this;
-        this.jobNeighborhoods = [];
-        var alert = this.alertCtrl.create({
-            title: 'Oops!',
-            message: 'Não foi possível acessar os dados do servidor. Por favor, tente novamente.',
-            buttons: [{
-                    text: "Tentar novamente",
-                    handler: function () {
-                        _this.loadJobNeighborhoods();
-                    }
-                }]
+        this.cityProvider.getAllCities()
+            .then(function (cities) {
+            if (cities != null) {
+                _this.cities = _this.sortAscCollection(cities);
+            }
+            else {
+                _this.showAlertGetAllCities();
+            }
+        })
+            .catch(function (error) {
+            console.error(error);
+            _this.restProvider.sendGoogleAnalyticsErrorData('RespondentProfilePage', 'getAllCities', error);
+            _this.showAlertGetAllCities();
         });
-        alert.present();
+    };
+    // ---------------- CRIAÇÃO DAS LISTAS DOS BAIRROS ----------------
+    // ---------------- RESOLVE AS EXIBIÇÕES ----------------
+    RespondentProfilePage.prototype.resolveUsertype = function () {
+        // ----------------- CASE 2 - UNIFEI -----------------
+        if (this.userType == "Graduação") {
+            this.courseDisabled = false;
+            this.createCourseNameListGrad();
+        }
+        else if (this.userType == "Mestrado") {
+            this.courseDisabled = false;
+            this.createCourseNameListMest();
+        }
+        else if (this.userType == "Doutorado") {
+            this.courseDisabled = false;
+            this.createCourseNameListDout();
+        }
+        // ----------------- CASE 2 - UNIFEI -----------------
+        // ------------------- CASE 1 - POSCOMP -------------------
+        // if (this.userType == "Discente formado") {
+        //   this.isDiscent = true;
+        //   this.isDiscentConcluded = true;
+        //   this.isDiscentEvaded = true;
+        //   this.isDocent = false;
+        //   this.respondentForm.controls['isDiscentConcluded'].setValue(true);
+        //   this.respondentForm.controls['userType'].setValue("Ex-aluno");
+        // } else if (this.userType == "Discente evadido") {
+        //   this.isDiscent = true;
+        //   this.isDiscentConcluded = false;
+        //   this.isDiscentEvaded = true;
+        //   this.isDocent = false;
+        //   this.respondentForm.controls['isDiscentConcluded'].setValue(false);
+        //   this.respondentForm.controls['userType'].setValue("Ex-aluno");
+        // } else if (this.userType == "Discente") {
+        //   this.isDiscent = true;
+        //   this.isDiscentConcluded = false;
+        //   this.isDiscentEvaded = false;
+        //   this.isDocent = false;
+        //   this.respondentForm.controls['isDiscentConcluded'].setValue(false);
+        // } else if (this.userType == "Docente") {
+        //   this.isDiscent = false;
+        //   this.isDiscentConcluded = false;
+        //   this.isDiscentEvaded = false;
+        //   this.isDocent = true;
+        //   this.respondentForm.controls['isDiscentConcluded'].setValue(false);
+        // }
+        // ------------------- CASE 1 - POSCOMP -------------------
+    };
+    RespondentProfilePage.prototype.resolveCheckBoxDiscipline = function () {
+        var _this = this;
+        if (this.isDiscent && !this.isDiscentEvaded && !this.isDiscentConcluded) {
+            this.storage.get('disciplineSelected').then(function (data) {
+                if (data) {
+                    data.forEach(function (disc) {
+                        _this.checkBox.toArray()[disc.value].checked = true;
+                    });
+                }
+            });
+        }
+    };
+    RespondentProfilePage.prototype.resolveCheckBoxFinancialAssistence = function () {
+        var _this = this;
+        if (this.isDiscent && !this.isDiscentEvaded && !this.isDiscentConcluded) {
+            this.storage.get('disciplineSelected').then(function (data) {
+                if (data) {
+                    data.forEach(function (disc) {
+                        _this.checkBox.toArray()[disc.value].checked = true;
+                    });
+                }
+            });
+        }
+    };
+    RespondentProfilePage.prototype.resolveLevel = function () {
+        if (this.points > 0 && this.points <= 12) {
+            this.level = "Bronze";
+        }
+        if (this.points > 12 && this.points <= 21) {
+            this.level = "Prata";
+        }
+        if (this.points > 21) {
+            this.level = "Ouro";
+        }
+    };
+    // ---------------- RESOLVE AS EXIBIÇÕES ----------------
+    RespondentProfilePage.prototype.changeDiscentType = function () {
+        if (this.userType == "Discente formado") {
+            this.userType = "Discente evadido";
+            this.isDiscentConcluded = false;
+            this.respondentForm.controls['courseLeft'].setValue(null);
+            this.respondentForm.controls['courseLeft'].disable();
+            this.respondentForm.controls['isDiscentConcluded'].setValue(false);
+        }
+        else {
+            this.userType = "Discente formado";
+            this.isDiscentConcluded = true;
+            this.respondentForm.controls['courseLeft'].enable();
+            this.respondentForm.controls['courseLeft'].setValue(null);
+            this.respondentForm.controls['isDiscentConcluded'].setValue(true);
+        }
+        this.scrollToBottom();
+    };
+    // ---------------- SELEÇÕES E VALIDAÇÕES ----------------
+    RespondentProfilePage.prototype.selectUserType = function (userType) {
+        this.userType = userType.value;
+        // ----------------- CASE 2 - UNIFEI -----------------
+        if (this.userType == "Graduação") {
+            this.courseDisabled = false;
+            this.createCourseNameListGrad();
+        }
+        else if (this.userType == "Mestrado") {
+            this.courseDisabled = false;
+            this.createCourseNameListMest();
+        }
+        else if (this.userType == "Doutorado") {
+            this.courseDisabled = false;
+            this.createCourseNameListDout();
+        }
+        // ----------------- CASE 2 - UNIFEI -----------------
+        // ----------------- CASE 1 - POSCOMP -----------------
+        // if (this.userType == "Discente") {
+        //   this.isDiscent = true;
+        //   this.isDiscentEvaded = false;
+        //   this.isDiscentConcluded = false;
+        //   this.isDocent = false;
+        //   this.respondentForm.controls['courseEntry'].enable();
+        //   this.respondentForm.controls['courseEntry'].setValue(null);
+        //   this.respondentForm.controls['code'].enable();
+        //   this.respondentForm.controls['code'].setValue(null);
+        //   this.respondentForm.controls['courseLeft'].setValue(null);
+        //   this.respondentForm.controls['courseLeft'].disable();
+        //   this.respondentForm.controls['isDiscentConcluded'].setValue(false);
+        // } else if (this.userType == "Ex-aluno") {
+        //   this.userType = "Discente evadido";
+        //   this.isDiscent = true;
+        //   this.isDiscentEvaded = true;
+        //   this.isDiscentConcluded = false;
+        //   this.isDocent = false;
+        //   this.respondentForm.controls['courseEntry'].enable();
+        //   this.respondentForm.controls['courseEntry'].setValue(null);
+        //   this.respondentForm.controls['courseLeft'].enable();
+        //   this.respondentForm.controls['courseLeft'].setValue(null);
+        //   this.respondentForm.controls['code'].setValue(null);
+        //   this.respondentForm.controls['code'].disable();
+        //   this.respondentForm.controls['isDiscentConcluded'].setValue(false);
+        // } else {
+        //   this.isDiscent = false;
+        //   this.isDiscentEvaded = false;
+        //   this.isDiscentConcluded = false;
+        //   this.isDocent = true;
+        //   this.respondentForm.controls['courseEntry'].setValue(null);
+        //   this.respondentForm.controls['courseEntry'].disable();
+        //   this.respondentForm.controls['courseLeft'].setValue(null);
+        //   this.respondentForm.controls['courseLeft'].disable();
+        //   this.respondentForm.controls['code'].enable();
+        //   this.respondentForm.controls['code'].setValue(null);
+        //   this.respondentForm.controls['isDiscentConcluded'].setValue(false);
+        // }
+        // ----------------- CASE 1 - POSCOMP -----------------
+    };
+    RespondentProfilePage.prototype.changeUserType = function () {
+        if (this.userType == "comerciante") {
+            // this.respondentForm.controls['isCommerce'].setValue(false);
+            this.isCommerce = false;
+            this.userType = "cidadão";
+        }
+        else {
+            // this.respondentForm.controls['isCommerce'].setValue(true);
+            this.isCommerce = true;
+            this.userType = "comerciante";
+        }
+    };
+    RespondentProfilePage.prototype.updateDisciplineValue = function (disciplineSelect, checked) {
+        this.checkBox;
+        if (checked) {
+            this.disciplineSelected.push(disciplineSelect);
+        }
+        else {
+            this.disciplineSelected =
+                this.disciplineSelected.filter(function (discipline) { return !(discipline === disciplineSelect); });
+        }
+    };
+    RespondentProfilePage.prototype.selectCity = function (city) {
+        this.jobCity = city;
+        if (this.compareFn(this.jobCity, this.city)) {
+            this.isSameJobCity = "";
+            // this.respondentForm.controls['jobNeighborhood'].setValue('');
+        }
+        else {
+            this.isSameJobCity = "hide";
+        }
     };
     RespondentProfilePage.prototype.validate = function (cpf) {
         cpf = cpf.replace(/[^\d]+/g, '');
@@ -1718,26 +1508,6 @@ var RespondentProfilePage = /** @class */ (function () {
         var isValid = this.validate(control.value.toString());
         return Object(__WEBPACK_IMPORTED_MODULE_4_rxjs_observable_of__["of"])(!isValid).pipe(Object(__WEBPACK_IMPORTED_MODULE_5_rxjs_operators_map__["map"])(function (result) { return result ? { invalid: true } : null; }));
     };
-    RespondentProfilePage.prototype.sortAscCollection = function (collection) {
-        return collection.sort(function (a, b) {
-            return a.name.localeCompare(b.name);
-        });
-    };
-    RespondentProfilePage.prototype.tryAgainSaveRespondent = function () {
-        var _this = this;
-        var alert = this.alertCtrl.create({
-            title: 'Oops!',
-            message: 'Não foi possível salvar os seus dados. Por favor, tente novamente.',
-            buttons: [{
-                    text: "Tentar novamente",
-                    handler: function () {
-                        _this.saveRespondentInfo();
-                    }
-                }]
-        });
-        this.loader.dismiss();
-        alert.present();
-    };
     RespondentProfilePage.prototype.getResidenceTimeNameByValue = function (event) {
         var residenceTimeChosen = event.value;
         this.residenceTimeName = this.residenceTimeList[residenceTimeChosen].name;
@@ -1750,81 +1520,67 @@ var RespondentProfilePage = /** @class */ (function () {
         var ageRageChoosen = event.value;
         this.ageRangeName = this.ageRangeList[ageRageChoosen].name;
     };
-    RespondentProfilePage.prototype.loadResidenceTime = function () {
-        var residenceTime = new ResidenceTime();
-        residenceTime.name = "Menos de um 1 ano";
-        residenceTime.value = 0;
-        this.residenceTimeList.push(residenceTime);
-        residenceTime = new ResidenceTime();
-        residenceTime.name = "De 1 a 5 anos";
-        residenceTime.value = 1;
-        this.residenceTimeList.push(residenceTime);
-        residenceTime = new ResidenceTime();
-        residenceTime.name = "De 5 a 10 anos";
-        residenceTime.value = 2;
-        this.residenceTimeList.push(residenceTime);
-        residenceTime = new ResidenceTime();
-        residenceTime.name = "De 10 a 20 anos";
-        residenceTime.value = 3;
-        this.residenceTimeList.push(residenceTime);
-        residenceTime = new ResidenceTime();
-        residenceTime.name = "Mais de 20 anos";
-        residenceTime.value = 4;
-        this.residenceTimeList.push(residenceTime);
-        this.residenceTimeName = this.residenceTimeList[0].name;
+    // ---------------- SELEÇÕES E VALIDAÇÕES ----------------
+    // ---------------- MENSAGENS DE ERRO ----------------
+    RespondentProfilePage.prototype.showAlertGetAllCities = function () {
+        var _this = this;
+        this.cities = [];
+        var alert = this.alertCtrl.create({
+            title: 'Oops!',
+            message: 'Não foi possível acessar os dados do servidor. Por favor, tente novamente.',
+            buttons: [{
+                    text: "Tentar novamente",
+                    handler: function () {
+                        _this.loadAllCities();
+                    }
+                }]
+        });
+        alert.present();
     };
-    RespondentProfilePage.prototype.loadAgeRange = function () {
-        var ageRange = new AgeRange();
-        ageRange.name = "Até 16 anos";
-        ageRange.value = 0;
-        this.ageRangeList.push(ageRange);
-        ageRange = new AgeRange();
-        ageRange.name = "Entre 16 e 25 anos";
-        ageRange.value = 1;
-        this.ageRangeList.push(ageRange);
-        ageRange = new AgeRange();
-        ageRange.name = "Entre 25 e 40 anos";
-        ageRange.value = 2;
-        this.ageRangeList.push(ageRange);
-        ageRange = new AgeRange();
-        ageRange.name = "Entre 40 e 60 anos";
-        ageRange.value = 3;
-        this.ageRangeList.push(ageRange);
-        ageRange = new AgeRange();
-        ageRange.name = "Acima de 60 anos";
-        ageRange.value = 4;
-        this.ageRangeList.push(ageRange);
-        this.ageRangeName = this.ageRangeList[0].name;
+    RespondentProfilePage.prototype.showAlertLoadResidenceNeighborhoods = function () {
+        var _this = this;
+        this.loader.dismiss();
+        this.residenceNeighborhoods = [];
+        var alert = this.alertCtrl.create({
+            title: 'Oops!',
+            message: 'Não foi possível acessar os dados do servidor. Por favor, tente novamente.',
+            buttons: [{
+                    text: "Tentar novamente",
+                    handler: function () {
+                        _this.loadResidenceNeighborhoods();
+                    }
+                }]
+        });
+        alert.present();
     };
-    RespondentProfilePage.prototype.loadSalaryRange = function () {
-        var salaryRange = new SalaryRange();
-        salaryRange.name = "Até 2 Salários Mínimos";
-        salaryRange.value = 0;
-        this.salaryRangeList.push(salaryRange);
-        salaryRange = new SalaryRange();
-        salaryRange.name = "De 2 a 4 Salários Mínimos";
-        salaryRange.value = 1;
-        this.salaryRangeList.push(salaryRange);
-        salaryRange = new SalaryRange();
-        salaryRange.name = "De 4 a 10 Salários Mínimos";
-        salaryRange.value = 2;
-        this.salaryRangeList.push(salaryRange);
-        salaryRange = new SalaryRange();
-        salaryRange.name = "De 10 a 20 Salários Mínimos";
-        salaryRange.value = 3;
-        this.salaryRangeList.push(salaryRange);
-        salaryRange = new SalaryRange();
-        salaryRange.name = "Acima de 20 Salários Mínimos";
-        salaryRange.value = 4;
-        this.salaryRangeList.push(salaryRange);
-        this.salaryRangeName = this.salaryRangeList[0].name;
+    RespondentProfilePage.prototype.showAlertLoadJobNeighborhoods = function () {
+        var _this = this;
+        this.jobNeighborhoods = [];
+        var alert = this.alertCtrl.create({
+            title: 'Oops!',
+            message: 'Não foi possível acessar os dados do servidor. Por favor, tente novamente.',
+            buttons: [{
+                    text: "Tentar novamente",
+                    handler: function () {
+                        _this.loadJobNeighborhoods();
+                    }
+                }]
+        });
+        alert.present();
     };
+    // ---------------- MENSAGENS DE ERRO ----------------
+    // ---------------- OPERAÇÕES DE ROTINA ----------------
     RespondentProfilePage.prototype.navigate = function (respondent) {
         this.storage.set('respondent', respondent);
         this.navCtrl.setRoot('QuestionariesListPage', {}).then(this.loader.dismiss());
     };
     RespondentProfilePage.prototype.navigateBack = function () {
         this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_0__intro_intro__["a" /* IntroPage */], {}).then(this.loader.dismiss());
+    };
+    RespondentProfilePage.prototype.sortAscCollection = function (collection) {
+        return collection.sort(function (a, b) {
+            return a.name.localeCompare(b.name);
+        });
     };
     RespondentProfilePage.prototype.openMenu = function () {
         this.menuCtrl.open();
@@ -1841,18 +1597,18 @@ var RespondentProfilePage = /** @class */ (function () {
         }
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* Content */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* Content */])
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* Content */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* Content */])
     ], RespondentProfilePage.prototype, "content", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_10" /* ViewChildren */])(__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* Checkbox */]),
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_10" /* ViewChildren */])(__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* Checkbox */]),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__angular_core__["U" /* QueryList */])
     ], RespondentProfilePage.prototype, "checkBox", void 0);
     RespondentProfilePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
-            selector: 'page-respondent-profile',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\respondent-profile\respondent-profile.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-row>\n\n      <ion-col offset-1 col-2 class="menu-icon-col-not-game" *ngIf="!useGame">\n\n        <button ion-button clear (click)="openMenu()">\n\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n\n        </button>\n\n      </ion-col>\n\n      <ion-col offset-1 col-2 class="menu-icon-col" *ngIf="useGame">\n\n        <button ion-button clear (click)="openMenu()">\n\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n\n        </button>\n\n      </ion-col>\n\n      <ion-col col-6 *ngIf="!useGame">\n\n        <img class="img-responsive img-not-game" src="assets/imgs/header-logo.png" />\n\n      </ion-col>\n\n      <ion-col col-6 *ngIf="useGame">\n\n        <img class="img-responsive" src="assets/imgs/header-logo.png" />\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <h2 *ngIf="useGame" class="profile-title profile-title-game" col-12 text-center>Perfil do respondente</h2>\n\n  <h2 *ngIf="!useGame" class="profile-title" col-12 text-center>Perfil do respondente</h2>\n\n  <!-- Pontuação -->\n\n  <div *ngIf="useGame" class="level-panel">\n\n    <!-- Com Pontuação -->\n\n    <ion-item *ngIf="points > 0" text-wrap>\n\n      <ion-thumbnail item-start>\n\n        <img *ngIf="level == \'Ouro\'" class="img-responsive" src="assets/imgs/level3.png" />\n\n        <img *ngIf="level == \'Prata\'" class="img-responsive" src="assets/imgs/level2.png" />\n\n        <img *ngIf="level == \'Bronze\'" class="img-responsive" src="assets/imgs/level1.png" />\n\n      </ion-thumbnail>\n\n      <ion-label>\n\n        <h2>Você está no nível <strong>{{level}}</strong> de Participação!</h2>\n\n        <p><b>Sua pontuação</b></p>\n\n        <ion-badge>{{points}} pontos</ion-badge>\n\n      </ion-label>\n\n    </ion-item>\n\n    <!-- Com Pontuação -->\n\n    <!-- Sem pontuação -->\n\n    <ion-item *ngIf="points == 0" text-wrap>\n\n      <ion-thumbnail item-start>\n\n        <img class="img-responsive" src="assets/imgs/level0.png" />\n\n      </ion-thumbnail>\n\n      <ion-label>\n\n        <h2>Responda os questionários para aumentar o <b>nível</b> de <b>Participação</b>!</h2>\n\n        <p><b>Sua pontuação</b></p>\n\n        <ion-badge>{{points}} pontos</ion-badge>\n\n      </ion-label>\n\n    </ion-item>\n\n    <!-- Sem pontuação -->\n\n  </div>\n\n  <!-- Pontuação -->\n\n  <h3 *ngIf="useGame" class="subtitle subtitle-game" col-12 text-center>Por favor informe os seus dados</h3>\n\n  <h3 *ngIf="!useGame" class="subtitle" col-12 text-center>Por favor informe os seus dados</h3>\n\n  <form [formGroup]="respondentForm">\n\n    <!-----------------------CASE POSCOMP----------------------->\n\n    <!-- Tipo de Respondente -->\n\n    <ion-item>\n\n      <ion-label floating>Por favor, selecione o tipo de respondente</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'userType\']" required >\n\n        <ion-option *ngFor="let userType of userTypeList" [value]="userType.value"\n\n          (ionSelect)="selectUserType(userType)">\n\n          {{userType.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <!-- Tipo de Respondente -->\n\n    <!-- Nome -->\n\n    <ion-item>\n\n      <ion-label floating>Nome</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'name\']" required></ion-input>\n\n    </ion-item>\n\n    <!-- Nome -->\n\n    <!-- Discente formado ou evadido -->\n\n    <ion-item *ngIf="isDiscent && isDiscentEvaded">\n\n      <ion-label>você se formou no curso?</ion-label>\n\n      <ion-checkbox item-end (ionChange)="changeDiscentType()"\n\n        [formControl]="respondentForm.controls[\'isDiscentConcluded\']"></ion-checkbox>\n\n    </ion-item>\n\n    <!-- Discente formado ou evadido -->\n\n    <!-- Ano e semestre de ingresso -->\n\n    <ion-item *ngIf="isDiscent">\n\n      <ion-label floating>Por favor, selecione o ano e semestre de ingresso</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseEntry\']" required>\n\n        <ion-option *ngFor="let courseEntry of courseEntryList" [value]="courseEntry.value">\n\n          {{courseEntry.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <!-- Ano e semestre de ingresso -->\n\n    <!-- Ano e semestre de conclusão -->\n\n    <ion-item *ngIf="isDiscent && isDiscentConcluded">\n\n      <ion-label floating>Por favor, selecione o ano e semestre de conclusão</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseLeft\']" required>\n\n        <ion-option *ngFor="let courseLeft of courseLeftList" [value]="courseLeft.value">\n\n          {{courseLeft.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <!-- Ano e semestre de conclusão -->\n\n    <!-- Número de matricula -->\n\n    <ion-item *ngIf="isDiscent && !isDiscentEvaded && !isDiscentConcluded">\n\n      <ion-label floating>Número de matrícula</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'code\']"\n\n        [brmasker]="{mask: \'000000000000\', type:\'num\', len: 12}" type="text" required>\n\n      </ion-input>\n\n    </ion-item>\n\n    <!-- Número de matricula -->\n\n    <!-- SIAPE -->\n\n    <ion-item *ngIf="isDocent">\n\n      <ion-label floating>SIAPE</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'code\']"\n\n        [brmasker]="{mask: \'000000000000\', type:\'num\', len: 15}" type="text" required>\n\n      </ion-input>\n\n    </ion-item>\n\n    <!-- SIAPE -->\n\n    <!-- Disciplinas -->\n\n    <ion-row class="metric-row" *ngIf="isDiscent && !isDiscentEvaded && !isDiscentConcluded">\n\n      <ion-col col-12>\n\n        <h3 class="subtitle check-box-subtitle" col-12 text-center>Quais disciplinas você cursou no 2º semestre de 2019?\n\n        </h3>\n\n        <ion-list radio-group>\n\n          <ion-item *ngFor="let discipline of disciplineList" class="item-checkbox">\n\n            <ion-label text-wrap text-left class="item-checkbox-text">{{discipline.name}}</ion-label>\n\n            <ion-checkbox (ionChange)="updateDisciplineValue(discipline,$event.checked)"></ion-checkbox>\n\n          </ion-item>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n    <!-- Disciplinas -->\n\n    <!-----------------------CASE POSCOMP----------------------->\n\n    <!------------------------ TODOS OS CAMPOS ------------------------->\n\n    <!-----------------------INFORMAÇÕES PESSOAIS----------------------->\n\n    <!-- CPF -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>CPF</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'cpf\']" type="text"\n\n        [brmasker]="{mask: \'000.000.000-00\', type:\'num\', len: 14}" required>\n\n      </ion-input>\n\n      <div class="validator-error"\n\n        *ngIf="respondentForm.controls[\'cpf\'].hasError(\'required\') && respondentForm.controls[\'cpf\'].touched">* CPF é\n\n        obrigatório!\n\n      </div>\n\n      <div class="validator-error"\n\n        *ngIf="respondentForm.controls[\'cpf\'].hasError(\'invalid\') && respondentForm.controls[\'cpf\'].touched">* CPF é\n\n        inválido!\n\n      </div>\n\n    </ion-item> -->\n\n    <!-- CPF -->\n\n    <!-- Nome -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Nome</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'name\']"></ion-input>\n\n    </ion-item> -->\n\n    <!-- Nome -->\n\n    <!-- Genero -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Gênero</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'gender\']">\n\n        <ion-option *ngFor="let gender of genderList" [value]="gender.value">\n\n          {{gender.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Genero -->\n\n    <!-- Email -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Email</ion-label>\n\n      <ion-input [email]="true" [formControl]="respondentForm.controls[\'email\']" type="email"></ion-input>\n\n    </ion-item> -->\n\n    <!-- Email -->\n\n    <!-- Telefone -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Telefone</ion-label>\n\n      <ion-input [brmasker]="{mask: \'(00)00000-0000\', type:\'num\', len: 15}"\n\n        [formControl]="respondentForm.controls[\'phone\']"></ion-input>\n\n    </ion-item> -->\n\n    <!-- Telefone -->\n\n    <!-- WhatsApp -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>WhatsApp</ion-label>\n\n      <ion-input [brmasker]="{mask: \'(00)00000-0000\', type:\'num\', len: 15}"\n\n        [formControl]="respondentForm.controls[\'whatsapp\']"></ion-input>\n\n    </ion-item> -->\n\n    <!-- WhatsApp -->\n\n    <!-- Cidade de residência -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Cidade de Residência</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'residenceCity\']">\n\n        <ion-option *ngFor="let residenceCity of cities" [value]="residenceCity">\n\n          {{residenceCity.name}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Cidade de residência -->\n\n    <!-- Bairro de residencia -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Bairro de Residência</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'residenceNeighborhood\']" [compareWith]="compareFn">\n\n        <ion-option *ngFor="let residenceNeighborhood of residenceNeighborhoods" [value]="residenceNeighborhood">\n\n          {{residenceNeighborhood.name}}\n\n        </ion-option>\n\n      </ion-select>\n\n      <div class="validator-error"\n\n        *ngIf="respondentForm.controls[\'residenceNeighborhood\'].hasError(\'required\') && respondentForm.controls[\'residenceNeighborhood\'].touched">\n\n        * Bairro de Residência é obrigatório!\n\n      </div>\n\n    </ion-item> -->\n\n    <!-- Bairro de residencia -->\n\n    <!-----------------------INFORMAÇÕES PESSOAIS----------------------->\n\n    <!-----------------------INFORMAÇÕES DE TRABALHO----------------------->\n\n    <!-- Comerciante ou não -->\n\n    <!-- <ion-item>\n\n    <ion-label>Possui comércio no centro?</ion-label>\n\n    <ion-checkbox item-end (ionChange)="changeUserType()" [(ngModel)]="isCommerce"></ion-checkbox>\n\n  </ion-item> -->\n\n    <!-- Comerciante ou não -->\n\n    <!-- Cidade de trabalho -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Cidade de Trabalho</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'jobCity\']" (ionChange)="loadJobNeighborhoods()"\n\n        [compareWith]="compareFn">\n\n        <ion-option *ngFor="let jobCity of cities" [value]="jobCity" (ionSelect)="selectCity(jobCity)">\n\n          {{jobCity.name}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Cidade de trabalho -->\n\n    <!-- Nome da Empresa -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Nome da empresa</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'jobName\']"></ion-input>\n\n    </ion-item> -->\n\n    <!-- Nome da Empresa -->\n\n    <!-- Endereço da Empresa -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Endereço da empresa</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'jobAddress\']"></ion-input>\n\n    </ion-item> -->\n\n    <!-- Endereço da Empresa -->\n\n    <!-- Bairro de trabalho -->\n\n    <!-- <div class="{{isSameJobCity}}">\n\n      <ion-item>\n\n        <ion-label floating>Bairro de Trabalho</ion-label>\n\n        <ion-select [formControl]="respondentForm.controls[\'jobNeighborhood\']" [disabled]="jobNeighborhoodDisabled"\n\n          [compareWith]="compareFn">\n\n          <ion-option *ngFor="let jobNeighborhood of jobNeighborhoods" [value]="jobNeighborhood">\n\n            {{jobNeighborhood.name}}\n\n          </ion-option>\n\n        </ion-select>\n\n      </ion-item>\n\n    </div> -->\n\n    <!-- Bairro de trabalho -->\n\n    <!-----------------------INFORMAÇÕES DE TRABALHO----------------------->\n\n    <!-----------------------INFORMAÇÕES ACADÊMICAS----------------------->\n\n    <!-- Tipo de Respondente -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Nível</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'userType\']">\n\n        <ion-option *ngFor="let userType of userTypeList" [value]="userType.value"\n\n          (ionSelect)="selectUserType(userType)">\n\n          {{userType.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Tipo de Respondente -->\n\n    <!-- Discente formado ou evadido -->\n\n    <!-- <ion-item *ngIf="isDiscent">\n\n      <ion-label>Formou no curso?</ion-label>\n\n      <ion-checkbox item-end (ionChange)="changeDiscentType()"></ion-checkbox>\n\n    </ion-item> -->\n\n    <!-- Discente formado ou evadido -->\n\n    <!-- Número de matricula -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Número de matrícula</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'code\']"\n\n        [brmasker]="{mask: \'000000000000\', type:\'num\', len: 12}" type ="text" required>\n\n      </ion-input>\n\n    </ion-item> -->\n\n    <!-- Número de matricula -->\n\n    <!-- Curso -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Curso</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseName\']" [disabled]="courseDisabled">\n\n        <ion-option *ngFor="let courseName of courseNameList" [value]="courseName.value">\n\n          {{courseName.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Curso -->\n\n    <!-- Ano e semestre de ingresso -->\n\n    <!-- <ion-item *ngIf="isDiscent">\n\n      <ion-label floating>Ano e semestre de ingresso</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseEntry\']" [disabled]="courseDisabled">\n\n        <ion-option *ngFor="let courseEntry of courseEntryList" [value]="courseEntry.value">\n\n          {{courseEntry.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Ano e semestre de ingresso -->\n\n    <!-- Ano e semestre de conclusão -->\n\n    <!-- <ion-item *ngIf="isDiscent && isDiscentEvaded">\n\n      <ion-label floating>Ano e semestre de conclusão</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseLeft\']">\n\n        <ion-option *ngFor="let courseLeft of courseLeftList" [value]="courseLeft.value">\n\n          {{courseLeft.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Ano e semestre de conclusão -->\n\n    <!-- Idade -->\n\n    <!-- <ion-item>\n\n      <ion-label>Idade</ion-label>\n\n      <ion-range snaps="true" [min]="0" [max]="4" [step]="1" (ionChange)="getAgeRangeByValue($event)"\n\n        [formControl]="respondentForm.controls[\'age\']">\n\n      </ion-range>\n\n      <ion-label>{{ageRangeName}}</ion-label>\n\n    </ion-item> -->\n\n    <!-- Idade -->\n\n    <!-----------------------INFORMAÇÕES ACADÊMICAS----------------------->\n\n    <!-------------------------------RANGES-------------------------------->\n\n    <!-- Tempo de residência -->\n\n    <!-- <ion-item>\n\n      <ion-label>Tempo de Residência</ion-label>\n\n      <ion-range snaps="true" [min]="0" [max]="4" [step]="1" (ionChange)="getResidenceTimeNameByValue($event)"\n\n        [formControl]="respondentForm.controls[\'residenceTimeRange\']">\n\n      </ion-range>\n\n      <ion-label>{{residenceTimeName}}</ion-label>\n\n    </ion-item> -->\n\n    <!-- Tempo de residência -->\n\n    <!-- Renda -->\n\n    <!-- <ion-item>\n\n      <ion-label>Renda</ion-label>\n\n      <ion-range snaps="true" [min]="0" [max]="4" [step]="1" (ionChange)="getSalaryRangeNameByValue($event)"\n\n        [formControl]="respondentForm.controls[\'salaryRange\']">\n\n      </ion-range>\n\n      <ion-label>{{salaryRangeName}}</ion-label>\n\n    </ion-item> -->\n\n    <!-- Renda -->\n\n    <!-------------------------------RANGES-------------------------------->\n\n    <!------------------------ TODOS OS CAMPOS ------------------------->\n\n    <ion-grid>\n\n      <ion-row *ngIf="editing && useGame">\n\n        <ion-col text-center>\n\n          <button ion-button block class="button-background" type="submit" (click)="saveRespondentInfo()"\n\n            [disabled]="!respondentForm.valid">\n\n            <ion-icon id="button-profile-update-game" class="text-button">\n\n              Salvar\n\n            </ion-icon>\n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row *ngIf="!editing && useGame">\n\n        <ion-col text-center>\n\n          <button ion-button block class="button-background" type="submit" (click)="saveRespondentInfo()"\n\n            [disabled]="!respondentForm.valid">\n\n            <ion-icon id="button-profile-register-game" class="text-button">\n\n              Salvar\n\n            </ion-icon>\n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row *ngIf="editing && !useGame">\n\n        <ion-col text-center>\n\n          <button ion-button block class="button-background" type="submit" (click)="saveRespondentInfo()"\n\n            [disabled]="!respondentForm.valid">\n\n            <ion-icon id="button-profile-update-not-game" class="text-button">\n\n              Salvar\n\n            </ion-icon>\n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row *ngIf="!editing && !useGame">\n\n        <ion-col text-center>\n\n          <button ion-button block class="button-background" type="submit" (click)="saveRespondentInfo()"\n\n            [disabled]="!respondentForm.valid">\n\n            <ion-icon id="button-profile-register-not-game" class="text-button">\n\n              Salvar\n\n            </ion-icon>\n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n  </form>\n\n</ion-content>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\respondent-profile\respondent-profile.html"*/,
+            selector: 'page-respondent-profile',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\respondent-profile\respondent-profile.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-row>\n\n      <ion-col offset-1 col-2 class="menu-icon-col-not-game" *ngIf="!useGame">\n\n        <button ion-button clear (click)="openMenu()">\n\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n\n        </button>\n\n      </ion-col>\n\n      <ion-col offset-1 col-2 class="menu-icon-col" *ngIf="useGame">\n\n        <button ion-button clear (click)="openMenu()">\n\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n\n        </button>\n\n      </ion-col>\n\n      <ion-col col-6 *ngIf="!useGame">\n\n        <img class="img-responsive img-not-game" src="assets/imgs/header-logo.png" />\n\n      </ion-col>\n\n      <ion-col col-6 *ngIf="useGame">\n\n        <img class="img-responsive" src="assets/imgs/header-logo.png" />\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <h2 *ngIf="useGame" class="profile-title profile-title-game" col-12 text-center>Perfil do respondente</h2>\n\n  <h2 *ngIf="!useGame" class="profile-title" col-12 text-center>Perfil do respondente</h2>\n\n  <!-- Pontuação -->\n\n  <div *ngIf="useGame" class="level-panel">\n\n    <!-- Com Pontuação -->\n\n    <ion-item *ngIf="points > 0" text-wrap>\n\n      <ion-thumbnail item-start>\n\n        <img *ngIf="level == \'Ouro\'" class="img-responsive" src="assets/imgs/level3.png" />\n\n        <img *ngIf="level == \'Prata\'" class="img-responsive" src="assets/imgs/level2.png" />\n\n        <img *ngIf="level == \'Bronze\'" class="img-responsive" src="assets/imgs/level1.png" />\n\n      </ion-thumbnail>\n\n      <ion-label>\n\n        <h2>Você está no nível <strong>{{level}}</strong> de Participação!</h2>\n\n        <p><b>Sua pontuação</b></p>\n\n        <ion-badge>{{points}} pontos</ion-badge>\n\n      </ion-label>\n\n    </ion-item>\n\n    <!-- Com Pontuação -->\n\n    <!-- Sem pontuação -->\n\n    <ion-item *ngIf="points == 0" text-wrap>\n\n      <ion-thumbnail item-start>\n\n        <img class="img-responsive" src="assets/imgs/level0.png" />\n\n      </ion-thumbnail>\n\n      <ion-label>\n\n        <h2>Responda os questionários para aumentar o <b>nível</b> de <b>Participação</b>!</h2>\n\n        <p><b>Sua pontuação</b></p>\n\n        <ion-badge>{{points}} pontos</ion-badge>\n\n      </ion-label>\n\n    </ion-item>\n\n    <!-- Sem pontuação -->\n\n  </div>\n\n  <!-- Pontuação -->\n\n  <h3 *ngIf="useGame" class="subtitle subtitle-game" col-12 text-center>Por favor informe os seus dados</h3>\n\n  <h3 *ngIf="!useGame" class="subtitle" col-12 text-center>Por favor informe os seus dados</h3>\n\n  <form [formGroup]="respondentForm">\n\n    <!-----------------------CASE 2 - UNIFEI----------------------->\n\n    <!-- Tipo de Respondente -->\n\n    <ion-item>\n\n      <ion-label floating>Qual o seu vínculo com a Universidade?</ion-label>\n\n      <ion-select formControlName = "userType" required>\n\n        <ion-option *ngFor="let userType of userTypeList" [value]="userType.value"\n\n          (ionSelect)="selectUserType(userType)">\n\n          {{userType.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <!-- Tipo de Respondente -->\n\n    <!-- Curso -->\n\n    <ion-item>\n\n      <ion-label floating>Qual o seu curso?</ion-label>\n\n      <ion-select formControlName ="courseName" required [disabled]="courseDisabled">\n\n        <ion-option *ngFor="let courseName of courseNameList" [value]="courseName.value">\n\n          {{courseName.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <!-- Curso -->\n\n    <!-- Onde mora -->\n\n    <ion-item>\n\n      <ion-label floating>Onde você mora?</ion-label>\n\n      <ion-select formControlName = "residenceType" required>\n\n        <ion-option *ngFor="let residenceType of residenceTypeList" [value]="residenceType.value">\n\n          {{residenceType.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <!-- Onde mora -->\n\n    <!-- Com quem mora -->\n\n    <ion-item>\n\n      <ion-label floating>Quantas pessoas residem com você?</ion-label>\n\n      <ion-select formControlName = "residenceMembers" required>\n\n        <ion-option *ngFor="let residenceMembers of residenceMembersList" [value]="residenceMembers.value">\n\n          {{residenceMembers.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <!-- Com quem mora -->\n\n    <!-- Possui filhos -->\n\n    <ion-item>\n\n      <ion-label>Possui filhos?</ion-label>\n\n      <ion-checkbox item-end formControlName = "haveChildren">\n\n      </ion-checkbox>\n\n    </ion-item>\n\n    <!-- Possui filhos -->\n\n    <!-- Possui vínculo empregatício -->\n\n    <ion-item>\n\n      <ion-label>Possui vínculo empregatício?</ion-label>\n\n      <ion-checkbox item-end formControlName = "haveJob">\n\n      </ion-checkbox>\n\n    </ion-item>\n\n    <!-- Possui vínculo empregatício -->\n\n    <!-- Assistencia financeira -->\n\n    <ion-row class="metric-row">\n\n      <ion-col col-12>\n\n        <h3 class="subtitle check-box-subtitle" col-12 text-center>Você está recebendo algum auxílio financeiro?\n\n        </h3>\n\n        <ion-list radio-group>\n\n          <ion-item *ngFor="let financialAssistance of financialAssistanceList; let i = index" class="item-checkbox">\n\n            <ion-label text-wrap text-left class="item-checkbox-text">{{financialAssistance.value}}</ion-label>\n\n            <ion-checkbox item-end [formControl]="respondentForm.controls[\'financialAssistance\'].controls[i]">\n\n            </ion-checkbox>\n\n          </ion-item>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n    <!-- Assistencia financeira -->\n\n    <!-----------------------CASE 2 - UNIFEI----------------------->\n\n    <!-----------------------CASE 1 - POSCOMP----------------------->\n\n    <!-- Tipo de Respondente -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Por favor, selecione o tipo de respondente</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'userType\']" required [disabled]="editing">\n\n        <ion-option *ngFor="let userType of userTypeList" [value]="userType.value"\n\n          (ionSelect)="selectUserType(userType)">\n\n          {{userType.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Tipo de Respondente -->\n\n    <!-- Nome -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Nome</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'name\']" required></ion-input>\n\n    </ion-item> -->\n\n    <!-- Nome -->\n\n    <!-- Discente formado ou evadido -->\n\n    <!-- <ion-item *ngIf="isDiscent && isDiscentEvaded">\n\n      <ion-label>você se formou no curso?</ion-label>\n\n      <ion-checkbox item-end (ionChange)="changeDiscentType()"\n\n        [formControl]="respondentForm.controls[\'isDiscentConcluded\']"></ion-checkbox>\n\n    </ion-item> -->\n\n    <!-- Discente formado ou evadido -->\n\n    <!-- Ano e semestre de ingresso -->\n\n    <!-- <ion-item *ngIf="isDiscent">\n\n      <ion-label floating>Por favor, selecione o ano e semestre de ingresso</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseEntry\']" required>\n\n        <ion-option *ngFor="let courseEntry of courseEntryList" [value]="courseEntry.value">\n\n          {{courseEntry.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Ano e semestre de ingresso -->\n\n    <!-- Ano e semestre de conclusão -->\n\n    <!-- <ion-item *ngIf="isDiscent && isDiscentConcluded">\n\n      <ion-label floating>Por favor, selecione o ano e semestre de conclusão</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseLeft\']" required>\n\n        <ion-option *ngFor="let courseLeft of courseLeftList" [value]="courseLeft.value">\n\n          {{courseLeft.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Ano e semestre de conclusão -->\n\n    <!-- Número de matricula -->\n\n    <!-- <ion-item *ngIf="isDiscent && !isDiscentEvaded && !isDiscentConcluded">\n\n      <ion-label floating>Número de matrícula</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'code\']"\n\n        [brmasker]="{mask: \'000000000000\', type:\'num\', len: 12}" type="text" required>\n\n      </ion-input>\n\n    </ion-item> -->\n\n    <!-- Número de matricula -->\n\n    <!-- SIAPE -->\n\n    <!-- <ion-item *ngIf="isDocent">\n\n      <ion-label floating>SIAPE</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'code\']"\n\n        [brmasker]="{mask: \'000000000000\', type:\'num\', len: 15}" type="text" required>\n\n      </ion-input>\n\n    </ion-item> -->\n\n    <!-- SIAPE -->\n\n    <!-- Disciplinas -->\n\n    <!-- <ion-row class="metric-row" *ngIf="isDiscent && !isDiscentEvaded && !isDiscentConcluded">\n\n      <ion-col col-12>\n\n        <h3 class="subtitle check-box-subtitle" col-12 text-center>Quais disciplinas você cursou no 2º semestre de 2019?\n\n        </h3>\n\n        <ion-list radio-group>\n\n          <ion-item *ngFor="let discipline of disciplineList" class="item-checkbox">\n\n            <ion-label text-wrap text-left class="item-checkbox-text">{{discipline.name}}</ion-label>\n\n            <ion-checkbox (ionChange)="updateDisciplineValue(discipline,$event.checked)"></ion-checkbox>\n\n          </ion-item>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row> -->\n\n    <!-- Disciplinas -->\n\n    <!-----------------------CASE 1 - POSCOMP----------------------->\n\n    <!------------------------ TODOS OS CAMPOS ------------------------->\n\n    <!-----------------------INFORMAÇÕES PESSOAIS----------------------->\n\n    <!-- CPF -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>CPF</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'cpf\']" type="text"\n\n        [brmasker]="{mask: \'000.000.000-00\', type:\'num\', len: 14}" required>\n\n      </ion-input>\n\n      <div class="validator-error"\n\n        *ngIf="respondentForm.controls[\'cpf\'].hasError(\'required\') && respondentForm.controls[\'cpf\'].touched">* CPF é\n\n        obrigatório!\n\n      </div>\n\n      <div class="validator-error"\n\n        *ngIf="respondentForm.controls[\'cpf\'].hasError(\'invalid\') && respondentForm.controls[\'cpf\'].touched">* CPF é\n\n        inválido!\n\n      </div>\n\n    </ion-item> -->\n\n    <!-- CPF -->\n\n    <!-- Nome -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Nome</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'name\']"></ion-input>\n\n    </ion-item> -->\n\n    <!-- Nome -->\n\n    <!-- Genero -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Gênero</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'gender\']">\n\n        <ion-option *ngFor="let gender of genderList" [value]="gender.value">\n\n          {{gender.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Genero -->\n\n    <!-- Email -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Email</ion-label>\n\n      <ion-input [email]="true" [formControl]="respondentForm.controls[\'email\']" type="email"></ion-input>\n\n    </ion-item> -->\n\n    <!-- Email -->\n\n    <!-- Telefone -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Telefone</ion-label>\n\n      <ion-input [brmasker]="{mask: \'(00)00000-0000\', type:\'num\', len: 15}"\n\n        [formControl]="respondentForm.controls[\'phone\']"></ion-input>\n\n    </ion-item> -->\n\n    <!-- Telefone -->\n\n    <!-- WhatsApp -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>WhatsApp</ion-label>\n\n      <ion-input [brmasker]="{mask: \'(00)00000-0000\', type:\'num\', len: 15}"\n\n        [formControl]="respondentForm.controls[\'whatsapp\']"></ion-input>\n\n    </ion-item> -->\n\n    <!-- WhatsApp -->\n\n    <!-- Cidade de residência -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Cidade de Residência</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'residenceCity\']">\n\n        <ion-option *ngFor="let residenceCity of cities" [value]="residenceCity">\n\n          {{residenceCity.name}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Cidade de residência -->\n\n    <!-- Bairro de residencia -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Bairro de Residência</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'residenceNeighborhood\']" [compareWith]="compareFn">\n\n        <ion-option *ngFor="let residenceNeighborhood of residenceNeighborhoods" [value]="residenceNeighborhood">\n\n          {{residenceNeighborhood.name}}\n\n        </ion-option>\n\n      </ion-select>\n\n      <div class="validator-error"\n\n        *ngIf="respondentForm.controls[\'residenceNeighborhood\'].hasError(\'required\') && respondentForm.controls[\'residenceNeighborhood\'].touched">\n\n        * Bairro de Residência é obrigatório!\n\n      </div>\n\n    </ion-item> -->\n\n    <!-- Bairro de residencia -->\n\n    <!-----------------------INFORMAÇÕES PESSOAIS----------------------->\n\n    <!-----------------------INFORMAÇÕES DE TRABALHO----------------------->\n\n    <!-- Comerciante ou não -->\n\n    <!-- <ion-item>\n\n    <ion-label>Possui comércio no centro?</ion-label>\n\n    <ion-checkbox item-end (ionChange)="changeUserType()" [(ngModel)]="isCommerce"></ion-checkbox>\n\n    </ion-item> -->\n\n    <!-- Comerciante ou não -->\n\n    <!-- Cidade de trabalho -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Cidade de Trabalho</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'jobCity\']" (ionChange)="loadJobNeighborhoods()"\n\n        [compareWith]="compareFn">\n\n        <ion-option *ngFor="let jobCity of cities" [value]="jobCity" (ionSelect)="selectCity(jobCity)">\n\n          {{jobCity.name}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Cidade de trabalho -->\n\n    <!-- Nome da Empresa -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Nome da empresa</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'jobName\']"></ion-input>\n\n    </ion-item> -->\n\n    <!-- Nome da Empresa -->\n\n    <!-- Endereço da Empresa -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Endereço da empresa</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'jobAddress\']"></ion-input>\n\n    </ion-item> -->\n\n    <!-- Endereço da Empresa -->\n\n    <!-- Bairro de trabalho -->\n\n    <!-- <div class="{{isSameJobCity}}">\n\n      <ion-item>\n\n        <ion-label floating>Bairro de Trabalho</ion-label>\n\n        <ion-select [formControl]="respondentForm.controls[\'jobNeighborhood\']" [disabled]="jobNeighborhoodDisabled"\n\n          [compareWith]="compareFn">\n\n          <ion-option *ngFor="let jobNeighborhood of jobNeighborhoods" [value]="jobNeighborhood">\n\n            {{jobNeighborhood.name}}\n\n          </ion-option>\n\n        </ion-select>\n\n      </ion-item>\n\n    </div> -->\n\n    <!-- Bairro de trabalho -->\n\n    <!-----------------------INFORMAÇÕES DE TRABALHO----------------------->\n\n    <!-----------------------INFORMAÇÕES ACADÊMICAS----------------------->\n\n    <!-- Tipo de Respondente -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Nível</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'userType\']">\n\n        <ion-option *ngFor="let userType of userTypeList" [value]="userType.value"\n\n          (ionSelect)="selectUserType(userType)">\n\n          {{userType.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Tipo de Respondente -->\n\n    <!-- Discente formado ou evadido -->\n\n    <!-- <ion-item *ngIf="isDiscent">\n\n      <ion-label>Formou no curso?</ion-label>\n\n      <ion-checkbox item-end (ionChange)="changeDiscentType()"></ion-checkbox>\n\n    </ion-item> -->\n\n    <!-- Discente formado ou evadido -->\n\n    <!-- Número de matricula -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Número de matrícula</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'code\']"\n\n        [brmasker]="{mask: \'000000000000\', type:\'num\', len: 12}" type ="text" required>\n\n      </ion-input>\n\n    </ion-item> -->\n\n    <!-- Número de matricula -->\n\n    <!-- Curso -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Curso</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseName\']" [disabled]="courseDisabled">\n\n        <ion-option *ngFor="let courseName of courseNameList" [value]="courseName.value">\n\n          {{courseName.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Curso -->\n\n    <!-- Ano e semestre de ingresso -->\n\n    <!-- <ion-item *ngIf="isDiscent">\n\n      <ion-label floating>Ano e semestre de ingresso</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseEntry\']" [disabled]="courseDisabled">\n\n        <ion-option *ngFor="let courseEntry of courseEntryList" [value]="courseEntry.value">\n\n          {{courseEntry.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Ano e semestre de ingresso -->\n\n    <!-- Ano e semestre de conclusão -->\n\n    <!-- <ion-item *ngIf="isDiscent && isDiscentEvaded">\n\n      <ion-label floating>Ano e semestre de conclusão</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseLeft\']">\n\n        <ion-option *ngFor="let courseLeft of courseLeftList" [value]="courseLeft.value">\n\n          {{courseLeft.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Ano e semestre de conclusão -->\n\n    <!-- Idade -->\n\n    <!-- <ion-item>\n\n      <ion-label>Idade</ion-label>\n\n      <ion-range snaps="true" [min]="0" [max]="4" [step]="1" (ionChange)="getAgeRangeByValue($event)"\n\n        [formControl]="respondentForm.controls[\'age\']">\n\n      </ion-range>\n\n      <ion-label>{{ageRangeName}}</ion-label>\n\n    </ion-item> -->\n\n    <!-- Idade -->\n\n    <!-----------------------INFORMAÇÕES ACADÊMICAS----------------------->\n\n    <!-------------------------------RANGES-------------------------------->\n\n    <!-- Tempo de residência -->\n\n    <!-- <ion-item>\n\n      <ion-label>Tempo de Residência</ion-label>\n\n      <ion-range snaps="true" [min]="0" [max]="4" [step]="1" (ionChange)="getResidenceTimeNameByValue($event)"\n\n        [formControl]="respondentForm.controls[\'residenceTimeRange\']">\n\n      </ion-range>\n\n      <ion-label>{{residenceTimeName}}</ion-label>\n\n    </ion-item> -->\n\n    <!-- Tempo de residência -->\n\n    <!-- Renda -->\n\n    <!-- <ion-item>\n\n      <ion-label>Renda</ion-label>\n\n      <ion-range snaps="true" [min]="0" [max]="4" [step]="1" (ionChange)="getSalaryRangeNameByValue($event)"\n\n        [formControl]="respondentForm.controls[\'salaryRange\']">\n\n      </ion-range>\n\n      <ion-label>{{salaryRangeName}}</ion-label>\n\n    </ion-item> -->\n\n    <!-- Renda -->\n\n    <!-------------------------------RANGES-------------------------------->\n\n    <!------------------------ TODOS OS CAMPOS ------------------------->\n\n    <ion-grid>\n\n      <ion-row *ngIf="editing && useGame">\n\n        <ion-col text-center>\n\n          <button ion-button block class="button-background" type="submit" (click)="saveRespondentInfo()"\n\n            [disabled]="!respondentForm.valid">\n\n            <ion-icon id="button-profile-update-game" class="text-button">\n\n              Salvar\n\n            </ion-icon>\n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row *ngIf="!editing && useGame">\n\n        <ion-col text-center>\n\n          <button ion-button block class="button-background" type="submit" (click)="saveRespondentInfo()"\n\n            [disabled]="!respondentForm.valid">\n\n            <ion-icon id="button-profile-register-game" class="text-button">\n\n              Salvar\n\n            </ion-icon>\n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row *ngIf="editing && !useGame">\n\n        <ion-col text-center>\n\n          <button ion-button block class="button-background" type="submit" (click)="saveRespondentInfo()"\n\n            [disabled]="!respondentForm.valid">\n\n            <ion-icon id="button-profile-update-not-game" class="text-button">\n\n              Salvar\n\n            </ion-icon>\n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row *ngIf="!editing && !useGame">\n\n        <ion-col text-center>\n\n          <button ion-button block class="button-background" type="submit" (click)="saveRespondentInfo()"\n\n            [disabled]="!respondentForm.valid">\n\n            <ion-icon id="button-profile-register-not-game" class="text-button">\n\n              Salvar\n\n            </ion-icon>\n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n  </form>\n\n</ion-content>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\respondent-profile\respondent-profile.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* MenuController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_8__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_city_city__["a" /* CityProvider */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_9__providers_respondent_respondent__["a" /* RespondentProvider */], __WEBPACK_IMPORTED_MODULE_7__providers_neighborhood_neighborhood__["a" /* NeighborhoodProvider */], __WEBPACK_IMPORTED_MODULE_10__providers_prioritization_prioritization__["a" /* PrioritizationProvider */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_11__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_12__providers_rest_rest__["a" /* RestProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* MenuController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_8__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_city_city__["a" /* CityProvider */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_9__providers_respondent_respondent__["a" /* RespondentProvider */], __WEBPACK_IMPORTED_MODULE_7__providers_neighborhood_neighborhood__["a" /* NeighborhoodProvider */], __WEBPACK_IMPORTED_MODULE_10__providers_prioritization_prioritization__["a" /* PrioritizationProvider */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_11__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_12__providers_rest_rest__["a" /* RestProvider */]])
     ], RespondentProfilePage);
     return RespondentProfilePage;
 }());
@@ -1891,13 +1647,13 @@ var Respondent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 444:
+/***/ 446:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_module__ = __webpack_require__(445);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_module__ = __webpack_require__(447);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__app_module__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives__ = __webpack_require__(446);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives__ = __webpack_require__(448);
 /* unused harmony namespace reexport */
 
 
@@ -1905,15 +1661,15 @@ var Respondent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 445:
+/***/ 447:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BrMaskerModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_brmasker_ionic_3__ = __webpack_require__(432);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_brmasker_ionic_services__ = __webpack_require__(433);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_brmasker_ionic_3__ = __webpack_require__(433);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_brmasker_ionic_services__ = __webpack_require__(434);
 
 
 
@@ -1949,13 +1705,13 @@ BrMaskerModule.ctorParameters = function () { return []; };
 
 /***/ }),
 
-/***/ 446:
+/***/ 448:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__brmasker_ionic_3__ = __webpack_require__(432);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__brmasker_ionic_3__ = __webpack_require__(433);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__brmasker_ionic_services__ = __webpack_require__(433);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__brmasker_ionic_services__ = __webpack_require__(434);
 /* unused harmony namespace reexport */
 
 

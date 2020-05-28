@@ -25763,6 +25763,18 @@ ion-footer .toolbar-background {
 
 .alert-radio-label {
   font-size: 1.2em;
+  padding-left: 7.5% !important;
+  padding-bottom: 4% !important;
+  padding-top: 0 !important;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  white-space: unset !important;
 }
 
 .alert-wrapper {
@@ -25956,6 +25968,10 @@ page-about .img-link {
   max-width: 100%;
 }
 
+page-about .img-top {
+  margin-top: 6%;
+}
+
 @media only screen and (min-device-width: 320px) {
   page-about .img-responsive.img-center {
     width: 200%;
@@ -25968,6 +25984,9 @@ page-about .img-link {
   page-about .font-size-p {
     font-size: 1em;
   }
+  page-about .img-top {
+    margin-top: 4%;
+  }
 }
 
 @media only screen and (min-device-width: 375px) {
@@ -25977,12 +25996,31 @@ page-about .img-link {
 }
 
 @media only screen and (min-device-width: 400px) {
+  page-about .menu-icon.icon.icon-md.ion-md-menu {
+    font-size: 2.4em !important;
+  }
+  page-about .button-clear-md {
+    margin-top: 13%;
+  }
   page-about .font-size-p {
-    font-size: 1.4em;
+    font-size: 1.2em;
+  }
+}
+
+@media only screen and (min-device-width: 480px) {
+  page-about .button-clear-md {
+    margin-top: 17%;
+  }
+  page-about .menu-icon.icon.icon-md.ion-md-menu {
+    font-size: 2.7em !important;
   }
 }
 
 @media only screen and (min-device-width: 500px) {
+  page-about .button-clear-md {
+    margin-top: 2%;
+    margin-left: 130%;
+  }
   page-about .img-responsive.img-center {
     margin-left: -1%;
     max-width: 80%;
@@ -25991,18 +26029,15 @@ page-about .img-link {
     background-color: #18607f;
   }
   page-about .toolbar-content.toolbar-content-md img.img-responsive {
-    max-width: 250px;
+    max-width: 32%;
     margin-left: 20%;
   }
   page-about ion-icon.menu-icon.icon.icon-md.ion-md-menu {
     font-size: 40px;
     margin-top: 30%;
   }
-  page-about .toolbar-content-md img.img-responsive {
-    margin-top: 2%;
-  }
   page-about .toolbar-content.toolbar-content-md img.img-responsive {
-    margin-top: 0%;
+    margin-top: 1%;
   }
   page-about ion-footer.footer.footer-md {
     height: 18%;
@@ -26025,6 +26060,141 @@ page-about .img-link {
   }
   page-about .margin-top-30 {
     margin-top: 0px;
+  }
+}
+
+page-achievement ion-icon.menu-icon.icon.icon-md.ion-md-menu {
+  font-size: 2em;
+}
+
+page-achievement ion-col.menu-icon-col.col {
+  margin-left: 7%;
+}
+
+page-achievement .img-responsive.img-not-game {
+  margin-top: 5%;
+}
+
+page-achievement .text-img {
+  max-width: 150%;
+  max-height: 100%;
+  border-radius: 20%;
+  margin-left: -25%;
+}
+
+page-achievement .back-button-icon-md {
+  color: white;
+}
+
+page-achievement .menu-icon.icon.icon-md.ion-md-menu {
+  font-size: 2em;
+  color: white;
+}
+
+page-achievement h5 {
+  font-size: 0.9em;
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 2.5%;
+  padding-left: 4%;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.25);
+  box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.25);
+  margin-left: 3%;
+}
+
+@media only screen and (min-device-width: 320px) {
+  page-achievement .back-button.show-back-button {
+    margin-right: -10%;
+    margin-left: 0;
+  }
+  page-achievement .img-responsive.img-center {
+    width: 200%;
+    height: 100%;
+    margin-left: -50%;
+  }
+}
+
+@media only screen and (min-device-width: 360px) {
+  page-achievement .back-button.show-back-button {
+    margin-right: -8%;
+    margin-left: 2%;
+  }
+  page-achievement .text-img {
+    max-width: 115%;
+    margin-left: 1%;
+  }
+  page-achievement .menu-icon.icon.icon-md.ion-md-menu {
+    font-size: 2.2em !important;
+  }
+}
+
+@media only screen and (min-device-width: 375px) {
+  page-achievement .text-img {
+    max-width: 145%;
+    margin-left: -20%;
+  }
+  page-achievement .menu-icon.icon.icon-md.ion-md-menu {
+    font-size: 2.4em !important;
+  }
+}
+
+@media only screen and (min-device-width: 400px) {
+  page-achievement .back-button.show-back-button {
+    margin-right: -7%;
+    margin-left: 3%;
+  }
+  page-achievement .menu-icon.icon.icon-md.ion-md-menu {
+    font-size: 2.5em !important;
+  }
+}
+
+@media only screen and (min-device-width: 480px) {
+  page-achievement .back-button.show-back-button {
+    margin-right: -7%;
+    margin-left: 6%;
+  }
+  page-achievement ion-col.menu-icon-col-not-game.col {
+    margin-left: 6%;
+  }
+  page-achievement .menu-icon.icon.icon-md.ion-md-menu {
+    font-size: 2.6em !important;
+  }
+}
+
+@media only screen and (min-device-width: 500px) {
+  page-achievement .grid {
+    max-width: 50%;
+  }
+  page-achievement .back-button.show-back-button {
+    padding-right: 6%;
+    padding-left: 22%;
+  }
+  page-achievement .text-questionary-list-game h5 {
+    font-size: 1.22em;
+    text-align: justify;
+  }
+  page-achievement .text-img {
+    max-width: 75%;
+    border-radius: 20%;
+    margin-left: 40%;
+  }
+  page-achievement ion-icon.menu-icon.icon.icon-md.ion-md-menu {
+    font-size: 40px;
+    margin-top: 30%;
+  }
+  page-achievement .toolbar-content.toolbar-content-md img.img-responsive.img-responsive.img-view {
+    margin-left: 35%;
+  }
+  page-achievement .toolbar-content.toolbar-content-md img.img-responsive {
+    margin-top: 1.5%;
+    max-width: 32%;
+    width: 80%;
+    margin-left: -12%;
+  }
+  page-achievement .img-responsive.img-center {
+    margin-left: -1%;
+    max-width: 80%;
   }
 }
 
@@ -26555,11 +26725,17 @@ page-prioritization .progres-text-down {
 }
 
 page-prioritization .question h1 {
-  font-size: 2rem;
+  font-size: 1.8rem;
+  background: #fff;
+  border: 1px solid #eeeeee42;
+  padding: 3%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.34);
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.25);
 }
 
 page-prioritization .question h3 {
-  font-size: 1.5rem;
+  font-size: 1.2em;
 }
 
 page-prioritization .radio-icon.radio-checked {
@@ -26649,6 +26825,9 @@ page-prioritization h1 {
 }
 
 @media only screen and (min-device-width: 320px) {
+  page-prioritization .item-radio {
+    font-size: 1.1em;
+  }
   page-prioritization ion-item.item-checkbox {
     font-size: 1em;
     margin-bottom: 0;
@@ -26692,7 +26871,7 @@ page-prioritization h1 {
     margin-left: 0;
   }
   page-prioritization .question h1 {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
   page-prioritization .grid-priorization.grid img {
     width: 90%;
@@ -26718,6 +26897,13 @@ page-prioritization h1 {
 }
 
 @media only screen and (min-device-width: 360px) {
+  page-prioritization .question h1 {
+    font-size: 1.8rem;
+  }
+  page-prioritization .context-area-container h1 {
+    font-size: 1.6em;
+    margin-top: 6% !important;
+  }
   page-prioritization .range-md {
     margin-top: -1%;
   }
@@ -26735,6 +26921,13 @@ page-prioritization h1 {
 }
 
 @media only screen and (min-device-width: 375px) {
+  page-prioritization .context-area-container h1 {
+    font-size: 1.6em;
+    margin-top: 6% !important;
+  }
+  page-prioritization .question h1 {
+    font-size: 2rem;
+  }
   page-prioritization .toolbar-title-md {
     font-size: 1.4rem;
   }
@@ -26744,6 +26937,9 @@ page-prioritization h1 {
 }
 
 @media only screen and (min-device-width: 400px) {
+  page-prioritization .question h3 {
+    font-size: 1.5em;
+  }
   page-prioritization .img-responsive {
     margin-top: 5% !important;
     margin-left: 1%;
@@ -26755,7 +26951,8 @@ page-prioritization h1 {
     margin-top: 2%;
   }
   page-prioritization .context-area-container h1 {
-    font-size: 1.8em;
+    font-size: 1.7em;
+    margin-top: 1%;
   }
   page-prioritization .question h1 {
     font-size: 2.1rem;
@@ -26770,6 +26967,10 @@ page-prioritization h1 {
 }
 
 @media only screen and (min-device-width: 480px) {
+  page-prioritization .context-area-container h1 {
+    font-size: 2em;
+    margin-top: 1%;
+  }
   page-prioritization ion-row.metric-row.checkbox-row.row {
     max-width: 100%;
   }
@@ -26800,6 +27001,14 @@ page-prioritization h1 {
 }
 
 @media only screen and (min-device-width: 500px) {
+  page-prioritization .question h3 {
+    max-width: 45%;
+    margin-left: 28%;
+  }
+  page-prioritization .context-area-container h1 {
+    margin-top: 0% !important;
+    font-size: 1.75em;
+  }
   page-prioritization ion-item.item-checkbox {
     font-size: 1.15em;
   }
@@ -26814,7 +27023,10 @@ page-prioritization h1 {
     margin-bottom: 0.5%;
   }
   page-prioritization .question h1 {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
+    max-width: 45%;
+    margin-left: 28%;
+    padding: 1%;
   }
   page-prioritization button.button-help-priorization.button.button-md.button-clear.button-clear-md {
     margin-left: -50%;
@@ -26886,37 +27098,29 @@ page-prioritization h1 {
     float: unset;
   }
   page-prioritization .button-background-game {
-    width: 50%;
-    margin-left: 25%;
+    max-width: 35%;
+    margin-left: 33%;
   }
   page-prioritization .button-background-no-game {
-    width: 50%;
-    margin-left: 25%;
+    max-width: 35%;
+    margin-left: 33%;
   }
 }
 
 @media only screen and (max-device-width: 320px) {
   page-prioritization .item-radio.item-md ion-label {
     margin-left: 2%;
-    border-bottom: 1px solid #dedede;
     padding-bottom: 1%;
   }
   page-prioritization .checkbox-md + .item-inner ion-label {
     margin-left: 5%;
-  }
-  page-prioritization .item-md {
-    margin-bottom: -4%;
   }
 }
 
 @media only screen and (max-device-width: 360px) {
   page-prioritization .item-radio.item-md ion-label {
     margin-left: 0;
-    border-bottom: 1px solid #dedede;
     padding-bottom: 3%;
-  }
-  page-prioritization .item-md {
-    margin-bottom: -2%;
   }
   page-prioritization ion-item.item-checkbox.item.item-block.item-md {
     padding-left: 2%;
@@ -27150,6 +27354,23 @@ page-questionaries-list button.button-help-questionary-list.button.button-md.but
 
 page-questionaries-list ion-footer.footer-not-game.footer.footer-md {
   height: 14%;
+}
+
+page-questionaries-list .achievement {
+  color: #00ff4b;
+  font-size: 2.4em;
+}
+
+page-questionaries-list .achievement-row.row {
+  background-color: #147bab;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.25);
+  box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.25);
+}
+
+page-questionaries-list .button-achievement.button {
+  padding: 10%;
+  margin: 0;
 }
 
 @media only screen and (min-device-width: 320px) {
@@ -27532,6 +27753,12 @@ page-questionary .progres-text-uper {
 
 page-questionary .question h1 {
   font-size: 1.8rem;
+  background: #fff;
+  border: 1px solid #eeeeee42;
+  padding: 3%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.34);
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.25);
 }
 
 page-questionary .question h3 {
@@ -27723,6 +27950,9 @@ page-questionary .scroll-content {
   }
   page-questionary .question h1 {
     font-size: 2.1rem;
+    max-width: 45%;
+    margin-left: 28%;
+    padding: 1%;
   }
   page-questionary button.button-help-question.button.button-md.button-clear.button-clear-md {
     margin-left: -55%;
@@ -27786,12 +28016,12 @@ page-questionary .scroll-content {
     float: unset;
   }
   page-questionary .button-background-game {
-    width: 50%;
-    margin-left: 25%;
+    width: 35%;
+    margin-left: 33%;
   }
   page-questionary .button-background-no-game {
-    width: 50%;
-    margin-left: 25%;
+    width: 35%;
+    margin-left: 33%;
   }
 }
 
@@ -27984,7 +28214,7 @@ page-respondent-profile .range-md .range-tick-active {
     font-size: 1.8rem;
   }
   page-respondent-profile .toolbar-content.toolbar-content-md img.img-responsive {
-    max-width: 250px;
+    max-width: 32%;
     margin-left: 1%;
   }
   page-respondent-profile ion-icon.menu-icon.icon.icon-md.ion-md-menu {
@@ -28034,7 +28264,7 @@ page-results ion-navbar.toolbar-progress.toolbar.toolbar-md {
 }
 
 page-results ion-icon.menu-icon.icon.icon-md.ion-md-menu {
-  font-size: 30px;
+  font-size: 2em;
 }
 
 page-results ion-col.menu-icon-col.col {
@@ -28050,7 +28280,7 @@ page-results .img-responsive.img-not-game {
 }
 
 page-results ion-col.menu-icon-col-not-game.col {
-  margin-left: 2%;
+  margin-left: 4%;
 }
 
 page-results .font-size-p {
@@ -28107,19 +28337,39 @@ page-results .item-md.item-block .item-inner {
 }
 
 page-results .item-label-floating .select-md {
-  background-color: #e6e6e67d;
+  background: #fff;
+  border: 1px solid #a5a5a5;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.23);
+  box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.23);
+  margin-left: 1%;
+  margin-bottom: 2%;
+  padding-left: 2%;
 }
 
 @media only screen and (min-device-width: 320px) {
+  page-results .menu-icon-col-not-game.col {
+    margin-left: 5%;
+  }
+  page-results .back-button.show-back-button {
+    margin-right: -10%;
+    margin-left: 0;
+  }
+  page-results .item.item-block.item-md.item-checkbox {
+    font-size: 0.95em;
+  }
   page-results .item-md h4 {
     font-size: 1.3rem;
   }
   page-results .item-md {
     padding-left: 0;
     margin-top: 2%;
+    font-size: 1em;
   }
   page-results .label-md {
     margin: 0;
+    color: black !important;
+    font-size: 1.2em;
   }
   page-results .text-questionary-list-game {
     font-size: 1.35rem;
@@ -28170,6 +28420,13 @@ page-results .item-label-floating .select-md {
 }
 
 @media only screen and (min-device-width: 360px) {
+  page-results .back-button.show-back-button {
+    margin-right: -8%;
+    margin-left: 2%;
+  }
+  page-results .menu-icon.icon.icon-md.ion-md-menu {
+    font-size: 2.2em !important;
+  }
   page-results h3.subtitle.subtitle-game {
     font-size: 1.3em;
   }
@@ -28192,6 +28449,15 @@ page-results .item-label-floating .select-md {
 }
 
 @media only screen and (min-device-width: 375px) {
+  page-results .item.item-block.item-md.item-checkbox {
+    font-size: 1.1em;
+  }
+  page-results .menu-icon.icon.icon-md.ion-md-menu {
+    font-size: 2.4em !important;
+  }
+  page-results .button-md.button-clear.button-clear-md {
+    margin-top: 13%;
+  }
   page-results h3.subtitle.subtitle-game {
     font-size: 1.4em;
   }
@@ -28225,6 +28491,16 @@ page-results .item-label-floating .select-md {
 }
 
 @media only screen and (min-device-width: 400px) {
+  page-results .back-button.show-back-button {
+    margin-right: -7%;
+    margin-left: 3%;
+  }
+  page-results .menu-icon.icon.icon-md.ion-md-menu {
+    font-size: 2.5em !important;
+  }
+  page-results .button-md.button-clear.button-clear-md {
+    margin-top: 17%;
+  }
   page-results .text-img {
     max-width: 115%;
     margin-left: -5%;
@@ -28250,6 +28526,19 @@ page-results .item-label-floating .select-md {
 }
 
 @media only screen and (min-device-width: 480px) {
+  page-results ion-col.menu-icon-col-not-game.col {
+    margin-left: 6%;
+  }
+  page-results .back-button.show-back-button {
+    margin-right: -7%;
+    margin-left: 6%;
+  }
+  page-results .button-md.button-clear.button-clear-md {
+    margin-top: 20%;
+  }
+  page-results .menu-icon.icon.icon-md.ion-md-menu {
+    font-size: 2.6em !important;
+  }
   page-results .card-content-md {
     font-size: 1.8rem;
   }
@@ -28284,6 +28573,36 @@ page-results .item-label-floating .select-md {
 }
 
 @media only screen and (min-device-width: 500px) {
+  page-results .toolbar-content.toolbar-content-md img.img-responsive.img-responsive.img-view {
+    margin-left: 35%;
+  }
+  page-results button.button-view.button.button-md.button-clear.button-clear-md {
+    margin-left: 120%;
+    margin-top: 3%;
+  }
+  page-results .back-button.show-back-button {
+    padding-right: 6%;
+    padding-left: 22%;
+  }
+  page-results .item.item-block.item-md.item-checkbox {
+    max-width: 49%;
+    margin-left: 26%;
+    margin-top: 0;
+  }
+  page-results .button-md.button-clear.button-clear-md {
+    margin-top: 0;
+    margin-left: 0;
+  }
+  page-results .toolbar-content.toolbar-content-md img.img-responsive {
+    margin-top: 1.5%;
+    max-width: 32%;
+    width: 80%;
+    margin-left: -12%;
+  }
+  page-results .img-responsive.img-center {
+    margin-left: -1%;
+    max-width: 80%;
+  }
   page-results .row-person {
     margin-bottom: -8.5%;
   }
@@ -28326,26 +28645,12 @@ page-results .item-label-floating .select-md {
     max-width: 45%;
     margin-left: 28%;
   }
-  page-results .img-responsive.img-center {
-    margin-left: -1%;
-    max-width: 80%;
-  }
   page-results ion-navbar.toolbar.toolbar-md ion-col.col {
     background-color: #18607f;
-  }
-  page-results .toolbar-content.toolbar-content-md img.img-responsive {
-    max-width: 250px;
-    margin-left: 20%;
   }
   page-results ion-icon.menu-icon.icon.icon-md.ion-md-menu {
     font-size: 40px;
     margin-top: 30%;
-  }
-  page-results .toolbar-content-md img.img-responsive {
-    margin-top: 2%;
-  }
-  page-results .toolbar-content.toolbar-content-md img.img-responsive {
-    margin-top: 0%;
   }
   page-results ion-footer {
     height: 5%;
@@ -28360,9 +28665,6 @@ page-results .item-label-floating .select-md {
   }
   page-results img#facebook-link {
     margin-left: 72%;
-  }
-  page-results .img-responsive {
-    width: 80%;
   }
   page-results .font-size-p {
     font-size: 1.2em;
@@ -28540,6 +28842,11 @@ page-thankyou .text-img {
 }
 
 @media only screen and (min-device-width: 320px) {
+  page-thankyou h5.text-questionay-list-not-game {
+    padding: 2.5%;
+    max-width: 90%;
+    margin-left: 5%;
+  }
   page-thankyou .text-img {
     max-width: 135%;
     max-height: 100%;
@@ -28594,7 +28901,9 @@ page-thankyou .text-img {
     margin-top: 7%;
   }
   page-thankyou img.img-responsive.img-not-game {
-    margin-left: 25%;
+    margin-left: 12%;
+    max-width: 80%;
+    margin-top: 2%;
   }
   page-thankyou img.img-responsive-no-game {
     max-width: 180px;
@@ -28751,6 +29060,11 @@ page-thankyou .text-img {
 }
 
 @media only screen and (min-device-width: 500px) {
+  page-thankyou h5.text-questionay-list-not-game {
+    padding: 1.5%;
+    max-width: 40%;
+    margin-left: 30%;
+  }
   page-thankyou .text-img {
     max-width: 33%;
     margin-left: 138%;
@@ -28875,6 +29189,11 @@ page-thankyou .text-img {
   page-thankyou img.img-responsive {
     margin-top: 0;
     max-width: 220px;
+  }
+  page-thankyou .toolbar-content.toolbar-content-md img.img-not-game {
+    margin-left: 25% !important;
+    margin-top: 2%;
+    margin-bottom: 1%;
   }
   page-thankyou .toolbar-content.toolbar-content-md img.img-responsive {
     max-width: 250px;

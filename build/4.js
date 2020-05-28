@@ -1,6 +1,6 @@
 webpackJsonp([4],{
 
-/***/ 297:
+/***/ 296:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuestionariesListPageModule", function() { return QuestionariesListPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__questionaries_list__ = __webpack_require__(442);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__questionaries_list__ = __webpack_require__(439);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -27,7 +27,7 @@ var QuestionariesListPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__questionaries_list__["a" /* QuestionariesListPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__questionaries_list__["a" /* QuestionariesListPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__questionaries_list__["a" /* QuestionariesListPage */]),
             ],
         })
     ], QuestionariesListPageModule);
@@ -38,17 +38,17 @@ var QuestionariesListPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 442:
+/***/ 439:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QuestionariesListPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__intro_intro__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__intro_intro__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_questionary_questionary__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_questionary_questionary__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_database_database__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_database_database__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_plan_plan__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_question_question__ = __webpack_require__(211);
@@ -306,36 +306,12 @@ var QuestionariesListPage = /** @class */ (function () {
         var _this = this;
         //------------------------CARREGA OS ITENS DE MÉTRICAS-----------------------------
         //1 - GUT, 2 - ESCALA QUALITATIVA, (3-17) - Métricas do questionário de teste
-        this.priorizationProvider.getMetricItems(metricId)
+        this.priorizationProvider.getMetricValuesMetric(metricId)
             .then(function (metricItems) {
             if (metricItems != null) {
                 _this.metricItems = metricItems;
-                //------------------------CARREGA OS VALORES DE MÉTRICA-----------------------------
-                _this.priorizationProvider.getMetricValues()
-                    .then(function (result) {
-                    if (result != null) {
-                        //------------------------ASSOCIA OS VALORES AOS ITENS-----------------------------
-                        for (var i = 0; i < _this.metricItems.length; i++) {
-                            var metricItem = _this.metricItems[i];
-                            for (var j = 0; j < result.length; j++) {
-                                var metricValue = result[j];
-                                if (metricItem.id == metricValue.metricItemId) {
-                                    _this.metricItems[i].metricValues.push(metricValue);
-                                }
-                            }
-                        }
-                        //------------------------SALVA OS ITENS DE MÉTRICA-----------------------------
-                        _this.storage.set('metricItems', _this.metricItems);
-                        _this.insertAnswerAndNavigateToPrioritization();
-                    }
-                    else {
-                        _this.showAlertLoadMetrics(metricId);
-                    }
-                }).catch(function (error) {
-                    console.error(error);
-                    _this.restProvider.sendGoogleAnalyticsErrorData('QuestionariesListPage', 'loadMetrics', error);
-                    _this.showAlertLoadMetrics(metricId);
-                });
+                _this.storage.set('metricItems', _this.metricItems);
+                _this.insertAnswerAndNavigateToPrioritization();
             }
             else {
                 _this.showAlertLoadMetrics(metricId);
@@ -493,6 +469,14 @@ var QuestionariesListPage = /** @class */ (function () {
         });
         alert.present();
     };
+    QuestionariesListPage.prototype.showModal = function () {
+        this.loader = this.loadingCtrl.create();
+        this.loader.present();
+        this.navCtrl.push('AchievementPage', {
+            points: this.points,
+            plan: this.plan,
+        }).then(this.loader.dismiss());
+    };
     //Mensagem motivadora da narrativa
     QuestionariesListPage.prototype.help = function () {
         var _this = this;
@@ -500,7 +484,12 @@ var QuestionariesListPage = /** @class */ (function () {
             title: '<div text-center>Olá! Bem vindo ao Opina Aí</div>',
             message: 
             //----------------------MENSAGEM------------------
-            '<div class="alert-align-center"><img class="img-alert" src="assets/gifs/gif-a-3.gif"/></div>'
+            '<div class="alert-align-center">'
+                // + '<img class="img-alert" src="assets/gifs/gif-a-3.gif"/>'
+                + '<video width="320" height="240" loop="true" muted="true" autoplay="true">'
+                + '<source src="https://opina-ai-api.com/assets/videos/a3.Explaining.mp4" type="video/mp4">'
+                + '</video>'
+                + '</div>'
                 + '<div class="dialogue-box"><div class="tdialogue-box-text">'
                 + '<div><strong>Bem vindo ao Opina Aí!</strong></div>'
                 // + '<div text-center>Sinta-se a vontade para contribuir com sua <strong>cidade</strong> respondendo os questionários!</div>'
@@ -527,9 +516,9 @@ var QuestionariesListPage = /** @class */ (function () {
     };
     QuestionariesListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({
-            selector: 'page-questionaries-list',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\questionaries-list\questionaries-list.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col offset-1 col-2 class="menu-icon-col-not-game" *ngIf="!useGame">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col offset-1 col-2 class="menu-icon-col" *ngIf="useGame">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-6 *ngIf="!useGame">\n        <img class="img-responsive img-not-game" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col col-6 *ngIf="useGame">\n        <img class="img-responsive" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col col-2 *ngIf="useGame">\n        <button ion-button clear (click)="help()" class="button-help-questionary-list">\n          <ion-icon class="icon-help button-help-questionary-list" name="help-circle"></ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-grid>\n    <!-------------------------- USE GAME -------------------------->\n    <ion-row *ngIf="useGame">\n      <h1 class="text-questionary-list" text-center>Questionários - {{plan.name}}</h1>\n      <ion-col col-3 class="text-questionary-list">\n        <img class="text-img" src="assets/gifs/gif-a-4-crop.gif">\n      </ion-col>\n      <ion-col col-9 class="text-questionary-list-game">\n        <h5>Responda os questionários para conseguir <strong>pontos</strong> para aumentar seu <strong>nível</strong> de\n          participação! Você só poderá responder cada questionário uma vez.</h5>\n      </ion-col>\n    </ion-row>\n    <!-------------------------- USE GAME -------------------------->\n    <!-------------------------- NO GAME -------------------------->\n    <ion-row *ngIf="!useGame">\n      <h1 class="text-questionary-list" text-center>Questionários - {{plan.name}}</h1>\n      <ion-col col-12 class="text-questionary-list">\n        <!-- <h5>Escolha um questionário abaixo para nos contar sua opinião sobre a requalificação do centro de Pouso Alegre.\n        </h5> -->\n        <h4>Escolha um dos questionários abaixo para nos contar sua opinião e contribuir com a autoavaliação do POSCOMP.\n          Você só poderá responder cada questionário uma vez.</h4>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <!-------------------------- NO GAME -------------------------->\n      <ion-col col-12>\n        <!-- Lista de questionários -->\n        <ion-list radio-group>\n          <!-- Item da lista -->\n          <ion-item *ngFor="let questionary of questionaries" class="questionary-item-list">\n            <ion-thumbnail *ngIf="useGame" item-start>\n              <img *ngIf="questionary.answered" class="questionary-img-list"\n                src="assets/imgs/{{questionary.icon}}-selected.png">\n              <img *ngIf="!questionary.answered" class="questionary-img-list"\n                src="assets/imgs/{{questionary.icon}}.png">\n            </ion-thumbnail>\n            <ion-label *ngIf="!questionary.answered" text-wrap text-left>\n              <h2 class="text-questionary" *ngIf="!useGame">{{questionary.name}}</h2>\n              <h2 *ngIf="useGame">{{questionary.name}}</h2>\n            </ion-label>\n            <ion-label *ngIf="questionary.answered" text-wrap text-left class="label-result">\n              <h2 class="text-questionary" *ngIf="!useGame">{{questionary.name}}</h2>\n              <h2 *ngIf="useGame">{{questionary.name}}</h2>\n              <div *ngIf="useGame">\n                <p>Respondido!</p>\n              </div>\n            </ion-label>\n            <ion-label *ngIf="questionary.answered" text-right text-wrap class="label-result-button">\n              <button ion-button icon-only text-wrap class="button-result" (click)="getResults(questionary)">\n                Ver resultados\n              </button>\n            </ion-label>\n            <ion-radio disabled="{{questionary.answered}}" *ngIf="!questionary.answered"\n              (ionSelect)="setQuestionary(questionary)"></ion-radio>\n          </ion-item>\n          <!-- Item da lista -->\n        </ion-list>\n        <!-- Lista de questionários -->\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n<!-------------------------- NO GAME -------------------------->\n<ion-footer class="footer-not-game" *ngIf="!useGame">\n  <ion-grid>\n    <ion-row>\n      <button ion-button full class="button-background" (click)="navigate()" [disabled]="btnContinueDisabled">\n        <ion-icon id="button-questionary-list-not-game-{{questionary.id}}" class="text-button">\n          Continuar\n        </ion-icon>\n      </button>\n    </ion-row>\n  </ion-grid>\n  <ion-navbar class="toolbar-progress"></ion-navbar>\n</ion-footer>\n<!-------------------------- NO GAME -------------------------->\n<!-------------------------- USE GAME -------------------------->\n<ion-footer *ngIf="useGame">\n  <ion-grid>\n    <ion-row>\n      <button ion-button full class="button-background" (click)="navigate()" [disabled]="btnContinueDisabled">\n        <ion-icon id="button-questionary-list-game-{{questionary.id}}" class="text-button">\n          Continuar\n        </ion-icon>\n      </button>\n    </ion-row>\n  </ion-grid>\n  <ion-navbar class="toolbar-progress">\n    <ion-title text-center class="toolbar-point">\n      <ion-icon range-right name="md-ribbon"></ion-icon>\n      {{points}} pontos\n    </ion-title>\n    <ion-range class="progress-bar" [min]="0" [max]="100" [step]="1" [(ngModel)]="progress" disabled>\n      <ion-icon range-left name="logo-buffer"></ion-icon>\n      <ion-icon range-right></ion-icon>\n    </ion-range>\n    <div text-center class="progres-text-uper">{{answeredQuestionaries}} de {{totalQuestionaries}}\n      questionários respondidos</div>\n  </ion-navbar>\n</ion-footer>\n<!-------------------------- USE GAME -------------------------->'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\questionaries-list\questionaries-list.html"*/,
+            selector: 'page-questionaries-list',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\questionaries-list\questionaries-list.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col offset-1 col-2 class="menu-icon-col-not-game" *ngIf="!useGame">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col offset-1 col-2 class="menu-icon-col" *ngIf="useGame">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-6 *ngIf="!useGame">\n        <img class="img-responsive img-not-game" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col col-6 *ngIf="useGame">\n        <img class="img-responsive" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col col-2 *ngIf="useGame">\n        <button ion-button clear (click)="help()" class="button-help-questionary-list">\n          <ion-icon class="icon-help button-help-questionary-list" name="help-circle"></ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-grid>\n    <!-------------------------- USE GAME -------------------------->\n    <ion-row *ngIf="useGame">\n      <h1 class="text-questionary-list" text-center>Questionários - {{plan.name}}</h1>\n      <ion-col col-3 class="text-questionary-list">\n        <img class="text-img" src="assets/gifs/gif-a-4-crop.gif">\n      </ion-col>\n      <ion-col col-9 class="text-questionary-list-game">\n        <h5>Responda os questionários para conseguir <strong>pontos</strong> para aumentar seu <strong>nível</strong> de\n          participação! Você só poderá responder cada questionário uma vez.</h5>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="useGame" class="achievement-row" text-center>\n      <ion-col col-2 >\n        <button ion-button class="button-achievement" clear (click)="showModal()" >\n          <ion-icon  class="achievement" name="help-circle"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-2 >\n        <button ion-button class="button-achievement" clear (click)="showModal()">\n          <ion-icon class="achievement" name="help-circle"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-2 >\n        <button ion-button class="button-achievement" clear (click)="showModal()">\n          <ion-icon class="achievement" name="help-circle"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-2 >\n        <button ion-button class="button-achievement" clear (click)="showModal()" >\n          <ion-icon  class="achievement" name="help-circle"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-2 >\n        <button ion-button  class="button-achievement" clear (click)="showModal()">\n          <ion-icon class="achievement" name="help-circle"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-2 >\n        <button ion-button class="button-achievement" clear (click)="showModal()">\n          <ion-icon class="achievement" name="help-circle"></ion-icon>\n        </button>\n      </ion-col>\n      <!-- <ion-col *ngFor="let metricValue of currentMetricItem.metricValues">\n        <img *ngIf="!isMetricValueSelected(metricValue)" class="img-responsive" src="assets/imgs/{{metricValue.icon}}"\n          (click)="selectMetricValue(metricValue)" />\n        <img *ngIf="isMetricValueSelected(metricValue)" class="img-responsive"\n          src="assets/imgs/{{metricValue.iconSelected}}" (click)="selectMetricValue(metricValue)" />\n      </ion-col> -->\n    </ion-row>\n    <!-------------------------- USE GAME -------------------------->\n    <!-------------------------- NO GAME -------------------------->\n    <ion-row *ngIf="!useGame">\n      <h1 class="text-questionary-list" text-center>Questionários - {{plan.name}}</h1>\n      <ion-col col-12 class="text-questionary-list">\n        <!-- <h5>Escolha um questionário abaixo para nos contar sua opinião sobre a requalificação do centro de Pouso Alegre.\n        </h5> -->\n        <h4>Escolha um dos questionários abaixo para nos contar sua opinião e contribuir com a autoavaliação do POSCOMP.\n          Você só poderá responder cada questionário uma vez.</h4>\n      </ion-col>\n    </ion-row>\n    <!-------------------------- NO GAME -------------------------->\n    <ion-row>\n      <ion-col col-12>\n        <!-- Lista de questionários -->\n        <ion-list radio-group>\n          <!-- Item da lista -->\n          <ion-item *ngFor="let questionary of questionaries" class="questionary-item-list">\n            <ion-thumbnail *ngIf="useGame" item-start>\n              <img *ngIf="questionary.answered" class="questionary-img-list"\n                src="assets/imgs/{{questionary.icon}}-selected.png">\n              <img *ngIf="!questionary.answered" class="questionary-img-list"\n                src="assets/imgs/{{questionary.icon}}.png">\n            </ion-thumbnail>\n            <ion-label *ngIf="!questionary.answered" text-wrap text-left>\n              <h2 class="text-questionary" *ngIf="!useGame">{{questionary.name}}</h2>\n              <h2 *ngIf="useGame">{{questionary.name}}</h2>\n            </ion-label>\n            <ion-label *ngIf="questionary.answered" text-wrap text-left class="label-result">\n              <h2 class="text-questionary" *ngIf="!useGame">{{questionary.name}}</h2>\n              <h2 *ngIf="useGame">{{questionary.name}}</h2>\n              <div *ngIf="useGame">\n                <p>Respondido!</p>\n              </div>\n            </ion-label>\n            <ion-label *ngIf="questionary.answered" text-right text-wrap class="label-result-button">\n              <button ion-button icon-only text-wrap class="button-result" (click)="getResults(questionary)">\n                Ver resultados\n              </button>\n            </ion-label>\n            <ion-radio disabled="{{questionary.answered}}" *ngIf="!questionary.answered"\n              (ionSelect)="setQuestionary(questionary)"></ion-radio>\n          </ion-item>\n          <!-- Item da lista -->\n        </ion-list>\n        <!-- Lista de questionários -->\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n<!-------------------------- NO GAME -------------------------->\n<ion-footer class="footer-not-game" *ngIf="!useGame">\n  <ion-grid>\n    <ion-row>\n      <button ion-button full class="button-background" (click)="navigate()" [disabled]="btnContinueDisabled">\n        <ion-icon id="button-questionary-list-not-game-{{questionary.id}}" class="text-button">\n          Continuar\n        </ion-icon>\n      </button>\n    </ion-row>\n  </ion-grid>\n  <ion-navbar class="toolbar-progress"></ion-navbar>\n</ion-footer>\n<!-------------------------- NO GAME -------------------------->\n<!-------------------------- USE GAME -------------------------->\n<ion-footer *ngIf="useGame">\n  <ion-grid>\n    <ion-row>\n      <button ion-button full class="button-background" (click)="navigate()" [disabled]="btnContinueDisabled">\n        <ion-icon id="button-questionary-list-game-{{questionary.id}}" class="text-button">\n          Continuar\n        </ion-icon>\n      </button>\n    </ion-row>\n  </ion-grid>\n  <ion-navbar class="toolbar-progress">\n    <ion-title text-center class="toolbar-point">\n      <ion-icon range-right name="md-ribbon"></ion-icon>\n      {{points}} pontos\n    </ion-title>\n    <ion-range class="progress-bar" [min]="0" [max]="100" [step]="1" [(ngModel)]="progress" disabled>\n      <ion-icon range-left name="logo-buffer"></ion-icon>\n      <ion-icon range-right></ion-icon>\n    </ion-range>\n    <div text-center class="progres-text-uper">{{answeredQuestionaries}} de {{totalQuestionaries}}\n      questionários respondidos</div>\n  </ion-navbar>\n</ion-footer>\n<!-------------------------- USE GAME -------------------------->'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\questionaries-list\questionaries-list.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["p" /* ToastController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* MenuController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_5__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_8__providers_question_question__["b" /* QuestionProvider */], __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_4__providers_questionary_questionary__["d" /* QuestionaryProvider */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_9__providers_prioritization_prioritization__["a" /* PrioritizationProvider */], __WEBPACK_IMPORTED_MODULE_10__providers_rest_rest__["a" /* RestProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["q" /* ToastController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* MenuController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_5__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_8__providers_question_question__["b" /* QuestionProvider */], __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_4__providers_questionary_questionary__["d" /* QuestionaryProvider */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_9__providers_prioritization_prioritization__["a" /* PrioritizationProvider */], __WEBPACK_IMPORTED_MODULE_10__providers_rest_rest__["a" /* RestProvider */]])
     ], QuestionariesListPage);
     return QuestionariesListPage;
 }());
