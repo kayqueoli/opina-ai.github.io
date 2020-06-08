@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 291:
+/***/ 292:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ThankyouPageModule", function() { return ThankyouPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__thankyou__ = __webpack_require__(435);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__thankyou__ = __webpack_require__(436);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +38,7 @@ var ThankyouPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 435:
+/***/ 436:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -81,10 +81,12 @@ var ThankyouPage = /** @class */ (function () {
             _this.useGame = data;
             if (_this.useGame) {
                 _this.resolvePerson();
-                _this.form_url = "https://bit.ly/avaliacao-usabilidade-game";
+                _this.form_url = "https://bit.ly/avaliacao-gamificacao";
+                // this.form_url = "https://bit.ly/avaliacao-usabilidade-game";
             }
             else {
-                _this.form_url = "https://bit.ly/avaliacao-usabilidade";
+                _this.form_url = "https://bit.ly/avaliacao-gamificacao";
+                // this.form_url = "https://bit.ly/avaliacao-usabilidade";
             }
         });
         if (this.useGame) {
@@ -241,8 +243,7 @@ var ThankyouPage = /** @class */ (function () {
             //----------------------MENSAGEM------------------
             '<div class="alert-align-center"><img class="img-alert" src="assets/gifs/gif-c-4.webp"/></div>'
                 + '<div class="dialogue-box"><div class="tdialogue-box-text">'
-                // + '<div><strong>Você utilizou a versão gamificada do aplicativo</strong></div>'
-                // + '<div text-center>Por favor, nos ajude a avaliar a gamificação respondendo o <strong>formulário: </strong><a style="font-size:1.5rem" href="https://forms.gle/Z8RVkQvHitHyjrwGA"><strong>Avaliação da gamificação</strong></a></div>'
+                + '<div><strong>Você utilizou a versão gamificada do aplicativo</strong></div>'
                 + '<div text-center>Por favor, nos ajude a avaliar a <strong>gamificação do aplicativo</strong> respondendo o <strong>formulário: <a style="font-size:1.5rem" href="' + this.form_url + '"><strong>Avaliação da gamificação</strong></a></div>'
                 + '<div text-center></div>'
                 + '</div></div>',
