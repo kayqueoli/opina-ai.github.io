@@ -440,8 +440,8 @@ var RestProvider = /** @class */ (function () {
         this.appVersionControl = appVersionControl;
         this.isConnected = true;
         // API_URL: string = "https://api.neiru.org/";
-        this.API_URL = "https://opina-ai-api.000webhostapp.com/";
-        // API_URL: string = "https://opina-ai-api.com/";
+        // API_URL: string = "https://opina-ai-api.000webhostapp.com/";
+        this.API_URL = "https://opina-ai-api.com/";
         // API_URL: string = "http://localhost/neiru-surveys-api/";
         this.googleAnalytics = window;
         this.createHeader();
@@ -1749,7 +1749,7 @@ var IntroPage = /** @class */ (function () {
     IntroPage.prototype.checkTrigger = function () {
         var _this = this;
         //temporário
-        this.useGamification();
+        // this.useGamification();
         // this.dontuseGamification();
         //Temporário
         this.storage.get('useGame').then(function (data) {
