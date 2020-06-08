@@ -26493,7 +26493,7 @@ page-intro .title-box-no-game {
   margin-top: 1.8rem;
   font-size: 3rem;
   color: white;
-  text-shadow: 2px 2px black;
+  text-shadow: 1px 1px black;
 }
 
 page-intro .text-dialog {
@@ -26564,6 +26564,10 @@ page-intro .arrow-right {
   font-size: 5rem;
   z-index: 2;
   color: white;
+}
+
+page-intro .dialogue-box.dialogue-box-not-game {
+  text-align: justify;
 }
 
 @media only screen and (min-device-width: 320px) {
@@ -28235,7 +28239,7 @@ page-questionary .grid-questionary {
 }
 
 page-questionary img.img-responsive.max-width-200 {
-  max-width: 150px;
+  max-width: 85%;
 }
 
 page-questionary textarea.text-input.text-input-md {
@@ -28262,6 +28266,11 @@ page-questionary .fixed-content {
 
 page-questionary .scroll-content {
   margin-bottom: 0 !important;
+}
+
+page-questionary p.questionary-answer-text {
+  margin-top: 8%;
+  margin-bottom: -5%;
 }
 
 @media only screen and (min-device-width: 320px) {
@@ -28369,6 +28378,9 @@ page-questionary .scroll-content {
 }
 
 @media only screen and (min-device-width: 500px) {
+  page-questionary img.img-responsive.max-width-200 {
+    max-width: 135px;
+  }
   page-questionary .range-md .range-slider {
     margin-top: 0;
     margin-bottom: 0.5%;
@@ -29616,6 +29628,7 @@ page-thankyou .text-img {
   }
   page-thankyou .grid {
     margin-top: -1%;
+    max-width: 55%;
   }
   page-thankyou h2 {
     margin-top: 0.2rem;

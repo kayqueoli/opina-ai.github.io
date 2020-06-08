@@ -1605,7 +1605,6 @@ var RespondentProfilePage = /** @class */ (function () {
                 '<p>Kayque Willy Reis de Oliveira e Melise Maria Veiga de Paula</p>' +
                 '<p>Programa de Mestrado em Ci&ecirc;ncia e Tecnologia da Computa&ccedil;&atilde;o &ndash; Universidade Federal de Itajub&aacute;</p>' +
                 '<p>kayque-willy@hotmail.com e melise@unifei.edu.br</p>' +
-                '<p>&nbsp;</p>' +
                 '<p>Fl&aacute;via Ludovico de Matos e Thamiris Daniel dos Santos</p>' +
                 '<p>Psic&oacute;logas &ndash; Universidade Federal de Itajub&aacute;</p>' +
                 '<p>psicologia@unifei.edu.br</p>' +
