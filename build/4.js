@@ -1,6 +1,6 @@
 webpackJsonp([4],{
 
-/***/ 294:
+/***/ 295:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuestionariesListPageModule", function() { return QuestionariesListPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__questionaries_list__ = __webpack_require__(437);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__questionaries_list__ = __webpack_require__(438);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +38,7 @@ var QuestionariesListPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 437:
+/***/ 438:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -233,11 +233,11 @@ var QuestionariesListPage = /** @class */ (function () {
     QuestionariesListPage.prototype.loadAchievement = function () {
         this.achievementList = [];
         this.achievementList = [
-            { id: 1, icon: "0", unlocked: true, name: "Dicas para estimular sua inteligência emocional" },
-            { id: 2, icon: "1", unlocked: true, name: "Dicas para lidar com o estresse" },
-            { id: 3, icon: "2", unlocked: true, name: "Dicas para se proteger do medo" },
-            { id: 4, icon: "3", unlocked: true, name: "Dicas para melhorar a qualidade do sono" },
-            { id: 5, icon: "4", unlocked: true, name: "Estratégias para facilitar o aprendizado e memorização" }
+            { id: 1, icon: "0", unlocked: false, name: "Dicas para estimular sua inteligência emocional" },
+            { id: 2, icon: "1", unlocked: false, name: "Dicas para lidar com o estresse" },
+            { id: 3, icon: "2", unlocked: false, name: "Dicas para se proteger do medo" },
+            { id: 4, icon: "3", unlocked: false, name: "Dicas para melhorar a qualidade do sono" },
+            { id: 5, icon: "4", unlocked: false, name: "Estratégias para facilitar o aprendizado e memorização" }
         ];
         this.storage.set('achievementList', this.achievementList);
     };
