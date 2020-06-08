@@ -25752,8 +25752,29 @@ ion-footer .toolbar-background {
   margin-top: 50%;
 }
 
-.alert-head {
-  background-image: url("../assets/imgs/background.png");
+.achievement-alert .alert-head {
+  padding-top: 2% !important;
+  padding-bottom: 8% !important;
+}
+
+.achievement-alert .alert-button {
+  color: #5261688a;
+}
+
+.achievement-alert .img-alert {
+  max-width: 48%;
+  margin-top: -2%;
+  margin-bottom: -25%;
+}
+
+.achievement-alert .tdialogue-box-text {
+  text-align: center;
+  font-size: 1.1em;
+  margin-top: 15%;
+}
+
+button.alert-button.alert-button-md.achievement-alert-button-confirm.alert-button-default.alert-button-default-md {
+  color: #488aff;
 }
 
 .alert-md .alert-head {
@@ -25761,25 +25782,8 @@ ion-footer .toolbar-background {
   padding: 10px 15px 10px;
 }
 
-.alert-radio-label {
-  font-size: 1.2em;
-  padding-left: 7.5% !important;
-  padding-bottom: 4% !important;
-  padding-top: 0 !important;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  white-space: unset !important;
-}
-
-.alert-wrapper {
-  max-width: 360px !important;
-  text-align: justify;
+.alert-head {
+  background-color: #18607f;
 }
 
 .alert-title {
@@ -25798,6 +25802,33 @@ ion-footer .toolbar-background {
   font-size: 1.1em;
   max-height: 400px;
   padding: 0 24px 0 24px;
+}
+
+.alert-wrapper {
+  max-width: 360px !important;
+  text-align: justify;
+}
+
+.alert-radio-label {
+  font-size: 1.2em;
+  padding-left: 7.5% !important;
+  padding-bottom: 4.5% !important;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  white-space: unset !important;
+}
+
+.alert-md .alert-button-group {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 img.img-alert {
@@ -26078,8 +26109,8 @@ page-achievement .img-responsive.img-not-game {
 page-achievement .text-img {
   max-width: 150%;
   max-height: 100%;
-  border-radius: 20%;
-  margin-left: -25%;
+  border-radius: 30%;
+  margin-left: -45%;
 }
 
 page-achievement .back-button-icon-md {
@@ -26091,19 +26122,110 @@ page-achievement .menu-icon.icon.icon-md.ion-md-menu {
   color: white;
 }
 
-page-achievement h5 {
-  font-size: 0.9em;
+page-achievement .text-ballon {
   background: #fff;
   border: 1px solid #eee;
-  padding: 2.5%;
-  padding-left: 4%;
-  border-radius: 5px;
+  padding: 7% 6% 2% 5%;
+  border-radius: 5%;
   -webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.25);
   box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.25);
-  margin-left: 3%;
+  font-size: 1.3rem;
+  text-align: justify;
+  margin-left: 0%;
+  width: 100%;
+  margin-top: -4%;
+}
+
+page-achievement h1.subtitle.subtitle-game {
+  margin-bottom: 0;
+  margin-top: -5%;
+  padding: 0;
+  font-size: 1.6em;
+}
+
+page-achievement h4.subtitle.subtitle-game {
+  padding: 0;
+  font-size: 1.4em;
+  margin-bottom: 8%;
+}
+
+page-achievement button.button-background {
+  width: 90%;
+  margin-left: 16.5px;
+}
+
+page-achievement ion-footer.footer-not-game.footer.footer-md {
+  height: 14%;
+}
+
+page-achievement .text-button {
+  font: 400 13.3333px Arial;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  -webkit-font-kerning: none;
+  font-kerning: none;
+  font-family: inherit;
+  border: rgba(158, 158, 158, 0);
+  border-style: solid;
+  border-left-width: 35px;
+  border-right-width: 35px;
+  border-top-width: 7px;
+  border-bottom-width: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+page-achievement .button-arrow-icon.icon.icon-md.ion-md-menu {
+  color: #567da1;
+}
+
+page-achievement .button-arrow-icon.icon.icon-md {
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 2.9em;
+}
+
+page-achievement .img-achieve-row {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+page-achievement .button-arrow.button.button-md.button-default.button-default-md {
+  height: 11em;
+  background-color: unset;
+  color: #488aff;
+  -webkit-box-shadow: unset;
+  box-shadow: unset;
 }
 
 @media only screen and (min-device-width: 320px) {
+  page-achievement h4.subtitle.subtitle-game {
+    font-size: 1.3em;
+  }
+  page-achievement h1.subtitle.subtitle-game {
+    font-size: 1.5em;
+  }
+  page-achievement button.button-background.button-md {
+    max-height: 2em;
+  }
+  page-achievement .text-ballon h5 {
+    font-size: 1em;
+    margin-bottom: 0;
+  }
+  page-achievement img.img-responsive.img-achievement {
+    max-width: 100%;
+  }
+  page-achievement .text-img {
+    max-width: 195%;
+  }
+  page-achievement img.img-responsive.img-header {
+    margin-left: 30%;
+    margin-top: 6%;
+  }
   page-achievement .back-button.show-back-button {
     margin-right: -10%;
     margin-left: 0;
@@ -26116,13 +26238,17 @@ page-achievement h5 {
 }
 
 @media only screen and (min-device-width: 360px) {
+  page-achievement .text-ballon h5 {
+    margin-top: -6% !important;
+    font-size: 1.6rem;
+  }
+  page-achievement .text-img {
+    max-width: 160%;
+    margin-left: -36%;
+  }
   page-achievement .back-button.show-back-button {
     margin-right: -8%;
     margin-left: 2%;
-  }
-  page-achievement .text-img {
-    max-width: 115%;
-    margin-left: 1%;
   }
   page-achievement .menu-icon.icon.icon-md.ion-md-menu {
     font-size: 2.2em !important;
@@ -26130,9 +26256,31 @@ page-achievement h5 {
 }
 
 @media only screen and (min-device-width: 375px) {
+  page-achievement .button-arrow-icon.icon.icon-md {
+    font-size: 3.4em;
+  }
+  page-achievement h1.subtitle.subtitle-game {
+    font-size: 1.9em;
+  }
+  page-achievement h3.subtitle.subtitle-game {
+    font-size: 1.6em;
+  }
+  page-achievement button.button-background.button-md {
+    max-height: 2.4em;
+  }
+  page-achievement .text-button {
+    font-size: 1.2em;
+  }
+  page-achievement h5 {
+    margin-top: -3% !important;
+  }
+  page-achievement img.img-responsive.img-header {
+    margin-left: 30%;
+    margin-top: 4%;
+  }
   page-achievement .text-img {
-    max-width: 145%;
-    margin-left: -20%;
+    max-width: 168%;
+    margin-left: -30%;
   }
   page-achievement .menu-icon.icon.icon-md.ion-md-menu {
     font-size: 2.4em !important;
@@ -26140,6 +26288,24 @@ page-achievement h5 {
 }
 
 @media only screen and (min-device-width: 400px) {
+  page-achievement h4.subtitle.subtitle-game {
+    font-size: 1.65em;
+  }
+  page-achievement .button-arrow-icon.icon.icon-md {
+    font-size: 4em;
+  }
+  page-achievement .text-ballon h5 {
+    font-size: 1.85rem;
+  }
+  page-achievement .text-ballon {
+    padding: 9% 5% 5% 5%;
+  }
+  page-achievement .text-button {
+    font-size: 1.3em;
+  }
+  page-achievement .text-img {
+    max-width: 172%;
+  }
   page-achievement .back-button.show-back-button {
     margin-right: -7%;
     margin-left: 3%;
@@ -26150,6 +26316,29 @@ page-achievement h5 {
 }
 
 @media only screen and (min-device-width: 480px) {
+  page-achievement h4.subtitle.subtitle-game {
+    font-size: 2em;
+  }
+  page-achievement .button-arrow-icon.icon.icon-md {
+    font-size: 4.8em;
+  }
+  page-achievement h1.subtitle.subtitle-game {
+    font-size: 2.5em;
+  }
+  page-achievement button.button-arrow.button.button-md.button-clear.button-clear-md {
+    margin-top: 3%;
+    margin-bottom: 0;
+    font-size: 2.2rem;
+  }
+  page-achievement .text-button {
+    font-size: 1.3em;
+  }
+  page-achievement .text-ballon h5 {
+    font-size: 2.1rem;
+  }
+  page-achievement button.button.button-md.button-clear.button-clear-md {
+    margin-top: 30%;
+  }
   page-achievement .back-button.show-back-button {
     margin-right: -7%;
     margin-left: 6%;
@@ -26163,6 +26352,61 @@ page-achievement h5 {
 }
 
 @media only screen and (min-device-width: 500px) {
+  page-achievement h5 {
+    font-size: 1.35em;
+  }
+  page-achievement img.img-responsive.img-achievement {
+    max-width: 50%;
+    margin-top: 0;
+    margin-bottom: -2%;
+  }
+  page-achievement .text-img {
+    max-width: 112%;
+    border-radius: 20%;
+    margin-top: -22%;
+    margin-left: -10%;
+  }
+  page-achievement .text-ballon {
+    padding: 7% 3% 3% 3%;
+    max-width: 65%;
+  }
+  page-achievement .text-button {
+    font-size: 1.3em;
+  }
+  page-achievement h4.subtitle.subtitle-game {
+    margin-bottom: 5%;
+    margin-top: 1%;
+    font-size: 1.65em;
+  }
+  page-achievement h3.subtitle.subtitle-game {
+    font-size: 1.8em;
+    margin-bottom: 0%;
+  }
+  page-achievement .text-questionary-list-game h5 {
+    width: 100%;
+    font-size: 1.5em;
+    text-align: justify;
+  }
+  page-achievement h1.subtitle.subtitle-game {
+    margin-top: -2%;
+    font-size: 1.8em;
+  }
+  page-achievement ion-header .toolbar-background {
+    background-color: #18607f;
+    background-image: none;
+  }
+  page-achievement button.button.button-md.button-clear.button-clear-md {
+    margin-top: -2%;
+  }
+  page-achievement ion-col.menu-icon-col.col {
+    margin-left: 2%;
+  }
+  page-achievement .toolbar-content.toolbar-content-md img.img-responsive {
+    margin-top: 1%;
+    max-width: 35%;
+    width: 80%;
+    margin-left: 17%;
+  }
   page-achievement .grid {
     max-width: 50%;
   }
@@ -26170,27 +26414,12 @@ page-achievement h5 {
     padding-right: 6%;
     padding-left: 22%;
   }
-  page-achievement .text-questionary-list-game h5 {
-    font-size: 1.22em;
-    text-align: justify;
-  }
-  page-achievement .text-img {
-    max-width: 75%;
-    border-radius: 20%;
-    margin-left: 40%;
-  }
   page-achievement ion-icon.menu-icon.icon.icon-md.ion-md-menu {
     font-size: 40px;
     margin-top: 30%;
   }
   page-achievement .toolbar-content.toolbar-content-md img.img-responsive.img-responsive.img-view {
     margin-left: 35%;
-  }
-  page-achievement .toolbar-content.toolbar-content-md img.img-responsive {
-    margin-top: 1.5%;
-    max-width: 32%;
-    width: 80%;
-    margin-left: -12%;
   }
   page-achievement .img-responsive.img-center {
     margin-left: -1%;
@@ -26343,7 +26572,7 @@ page-intro .arrow-right {
   }
   page-intro .title-box-last {
     margin-top: 1.8rem;
-    font-size: 1.3em;
+    font-size: 1.55em;
   }
   page-intro h1.title-box-no-game {
     font-size: 2.2rem;
@@ -26352,39 +26581,11 @@ page-intro .arrow-right {
     font-size: 1.4rem;
   }
   page-intro .text-dialog-last {
-    margin: 1%;
-    font-size: 0.93em;
+    margin: 2%;
+    font-size: 0.95em;
   }
   page-intro ion-slide.slide-img img {
     width: 70%;
-  }
-  page-intro .img-responsive-last {
-    width: 65% !important;
-  }
-  page-intro .img-responsive.img-slide-game {
-    width: 70%;
-  }
-  page-intro .img-award {
-    width: 100% !important;
-    margin-top: 15%;
-  }
-}
-
-@media only screen and (min-device-width: 360px) {
-  page-intro h1.title-box-no-game {
-    font-size: 2.5rem;
-  }
-  page-intro .title-box {
-    font-size: 2.3em;
-  }
-  page-intro .title-box-last {
-    font-size: 1.6em;
-  }
-  page-intro .text-dialog {
-    font-size: 1.7rem;
-  }
-  page-intro .text-dialog-last {
-    font-size: 1.2em;
   }
   page-intro .img-responsive-last {
     width: 75% !important;
@@ -26394,7 +26595,35 @@ page-intro .arrow-right {
   }
   page-intro .img-award {
     width: 100% !important;
-    margin-top: 15%;
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-device-width: 360px) {
+  page-intro h1.title-box-no-game {
+    font-size: 2.5rem;
+  }
+  page-intro .title-box {
+    font-size: 2em;
+  }
+  page-intro .title-box-last {
+    font-size: 1.5em;
+  }
+  page-intro .text-dialog {
+    font-size: 1.5rem;
+  }
+  page-intro .text-dialog-last {
+    font-size: 1.1em;
+  }
+  page-intro .img-responsive-last {
+    width: 70% !important;
+  }
+  page-intro .img-responsive.img-slide-game {
+    width: 70%;
+  }
+  page-intro .img-award {
+    width: 100% !important;
+    margin-top: 0;
   }
 }
 
@@ -26424,17 +26653,20 @@ page-intro .arrow-right {
     font-size: 2rem;
   }
   page-intro .text-dialog-last {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
   page-intro .img-responsive.img-slide-game {
-    width: 90%;
+    width: 80%;
   }
   page-intro .img-responsive-last {
-    width: 90% !important;
+    width: 80% !important;
   }
 }
 
 @media only screen and (min-device-width: 480px) {
+  page-intro .img-responsive-last {
+    width: 77% !important;
+  }
   page-intro .title-box {
     font-size: 3.3em;
   }
@@ -26442,26 +26674,45 @@ page-intro .arrow-right {
     font-size: 2.3em;
   }
   page-intro .text-dialog {
-    font-size: 1.7em;
+    font-size: 1.65em;
   }
   page-intro .text-dialog-last {
-    font-size: 1.7em;
+    font-size: 1.55em;
   }
   page-intro a.button-skip-game {
     font-size: 1.5em;
   }
   page-intro .img-responsive.img-slide-game {
-    width: 93%;
+    width: 85%;
   }
   page-intro .text-button {
     font: 400 13.3333px Arial;
+    font-size: 1.2em;
   }
   page-intro .button.button-md.button-default.button-default-md {
-    width: 50%;
+    width: 60%;
   }
 }
 
 @media only screen and (min-device-width: 500px) {
+  page-intro [padding] h2:first-child {
+    margin-top: 0;
+    font-size: 1.8em;
+  }
+  page-intro img.img-responsive-last {
+    max-width: 40%;
+    margin-top: -8%;
+    width: unset;
+  }
+  page-intro .img-award {
+    width: 55% !important;
+    margin-top: 0;
+    margin-right: -40%;
+  }
+  page-intro .grid-last {
+    padding-bottom: 4%;
+    margin-top: -3%;
+  }
   page-intro .dialogue-box.dialogue-box-not-game {
     margin-bottom: 8%;
     margin-top: 8%;
@@ -26470,7 +26721,7 @@ page-intro .arrow-right {
     font-size: 1em;
   }
   page-intro .text-dialog-last {
-    font-size: 1.3em;
+    font-size: 1em;
   }
   page-intro .text-dialog {
     font-size: 1.1em;
@@ -26512,18 +26763,10 @@ page-intro .arrow-right {
   page-intro ion-slide.slide-img img {
     width: 55%;
   }
-  page-intro img.img-award {
-    width: 80% !important;
-  }
-  page-intro img.img-responsive-last {
-    max-width: 270px;
-    margin-top: -5%;
-    width: unset;
-  }
   page-intro .toolbar-content.toolbar-content-md {
     background-color: #18607c;
   }
-  page-intro page-intro .title-box {
+  page-intro .title-box {
     font-size: 2.4rem;
   }
   page-intro h5:first-child {
@@ -26535,9 +26778,6 @@ page-intro .arrow-right {
   }
   page-intro .title-box-last {
     font-size: 2em;
-  }
-  page-intro [padding] h2:first-child {
-    margin-top: 5%;
   }
 }
 
@@ -27213,7 +27453,8 @@ page-questionaries-list .range-md.range-disabled .range-bar-active {
 
 page-questionaries-list .range-md .range-slider {
   height: 42px;
-  margin-bottom: 16px;
+  margin-bottom: 6%;
+  margin-top: -1%;
 }
 
 page-questionaries-list .range-md .range-knob-handle {
@@ -27229,11 +27470,11 @@ page-questionaries-list ion-icon.icon-help.icon.icon-md.ion-md-help-circle {
   color: white;
   -webkit-box-shadow: 0 0 0 white;
   box-shadow: 0 0 0 white;
-  -webkit-animation: pulse 2s infinite;
-  animation: pulse 2s infinite;
   border-radius: 100%;
   width: 26px;
   height: 26px;
+  -webkit-animation: pulse 2s infinite;
+  animation: pulse 2s infinite;
   -webkit-animation-iteration-count: 2;
   animation-iteration-count: 2;
 }
@@ -27267,6 +27508,40 @@ page-questionaries-list ion-icon.icon-help.icon.icon-md.ion-md-help-circle:hover
   100% {
     -webkit-box-shadow: 0 0 0 0 white;
     box-shadow: 0 0 0 0 white;
+  }
+}
+
+page-questionaries-list .sonar-wave {
+  position: absolute;
+  width: 55%;
+  height: 40%;
+  border-radius: 100%;
+  background-color: white;
+  opacity: 0;
+  z-index: -1;
+  -webkit-animation: sonarWave 2s linear infinite;
+  animation: sonarWave 2s linear infinite;
+}
+
+@-webkit-keyframes sonarWave {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    -webkit-transform: scale(3);
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+@keyframes sonarWave {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    -webkit-transform: scale(3);
+    transform: scale(3);
+    opacity: 0;
   }
 }
 
@@ -27358,14 +27633,14 @@ page-questionaries-list ion-footer.footer-not-game.footer.footer-md {
 
 page-questionaries-list .achievement {
   color: #00ff4b;
-  font-size: 2.4em;
+  font-size: 2em;
 }
 
-page-questionaries-list .achievement-row.row {
-  background-color: #147bab;
-  border-radius: 5px;
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.25);
-  box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.25);
+page-questionaries-list .achievement-col.col {
+  padding: 0;
+  margin-top: -2%;
+  margin-bottom: -2%;
+  height: 10%;
 }
 
 page-questionaries-list .button-achievement.button {
@@ -27373,7 +27648,84 @@ page-questionaries-list .button-achievement.button {
   margin: 0;
 }
 
+page-questionaries-list .reward__item {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  background-color: #1c7cb9;
+  border: 1.4px solid black;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 -4px rgba(0, 0, 0, 0.25), inset 0 -56px 2px #1e7ca9, inset -3px 0 2px #5ea1cb, inset 3px 0 2px #5ea1cb, inset 0 3px 2px #5ea1cb, inset 0 30px rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 -4px rgba(0, 0, 0, 0.25), inset 0 -56px 2px #1e7ca9, inset -3px 0 2px #5ea1cb, inset 3px 0 2px #5ea1cb, inset 0 3px 2px #5ea1cb, inset 0 30px rgba(255, 255, 255, 0.25);
+}
+
+page-questionaries-list .reward__item .reward__specify {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  color: white;
+  text-align: center;
+  text-shadow: 0 -1px 1px #000, -1px 0 1px #000, 1px 0 1px #000, 0 2px 1px #000;
+  font-family: "Arial Black";
+  font-weight: bold;
+  font-size: 10px;
+}
+
+page-questionaries-list .reward_text {
+  color: white;
+  text-shadow: 0 -1px 1px #343434, -1px 0 1px #000000, 1px 0 1px #000000, 0 2px 1px #000;
+  font-family: "Arial Black";
+  font-size: 1em;
+}
+
+page-questionaries-list .reward_text.title.title-md {
+  margin-top: -2.5%;
+  margin-bottom: -2%;
+}
+
+page-questionaries-list .img-level {
+  max-width: 75%;
+  margin-right: 0%;
+  margin-bottom: -15%;
+  margin-top: -23%;
+}
+
+page-questionaries-list .row-level.row {
+  margin-right: -2%;
+  margin-left: -3%;
+  margin-bottom: -1%;
+  max-width: 23%;
+}
+
+page-questionaries-list .badge-level-col.col {
+  padding-bottom: 0;
+  margin-bottom: -3%;
+}
+
 @media only screen and (min-device-width: 320px) {
+  page-questionaries-list .progres-text-uper {
+    font-size: 1.45rem;
+    padding-left: 12%;
+  }
+  page-questionaries-list .achievement-row.row {
+    max-width: 90%;
+    margin-left: 5%;
+  }
   page-questionaries-list .label-result-button {
     margin-left: 26%;
   }
@@ -27408,6 +27760,9 @@ page-questionaries-list .button-achievement.button {
 }
 
 @media only screen and (min-device-width: 360px) {
+  page-questionaries-list .progres-text-uper {
+    font-size: 1.5rem;
+  }
   page-questionaries-list .text-img {
     max-width: 115%;
     margin-left: 1%;
@@ -27440,6 +27795,13 @@ page-questionaries-list .button-achievement.button {
 }
 
 @media only screen and (min-device-width: 375px) {
+  page-questionaries-list .achievement {
+    font-size: 2.3em;
+  }
+  page-questionaries-list .achievement-col.col {
+    margin-top: -1%;
+    margin-bottom: -1%;
+  }
   page-questionaries-list .text-img {
     max-width: 145%;
     margin-left: -20%;
@@ -27466,6 +27828,20 @@ page-questionaries-list .button-achievement.button {
 }
 
 @media only screen and (min-device-width: 400px) {
+  page-questionaries-list .row-level.row {
+    margin-bottom: -2%;
+  }
+  page-questionaries-list .progres-text-uper {
+    font-size: 1.65rem;
+    padding-bottom: 1%;
+  }
+  page-questionaries-list .achievement-col.col {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  page-questionaries-list .achievement {
+    font-size: 2.6em;
+  }
   page-questionaries-list .img-responsive.img-not-game {
     margin-left: 20%;
     margin-top: 6%;
@@ -27504,6 +27880,19 @@ page-questionaries-list .button-achievement.button {
 }
 
 @media only screen and (min-device-width: 480px) {
+  page-questionaries-list .row-level.row {
+    margin-bottom: -3%;
+  }
+  page-questionaries-list .progres-text-uper {
+    font-size: 1.8rem;
+  }
+  page-questionaries-list .achievement {
+    font-size: 2.9em;
+  }
+  page-questionaries-list .achievement-col.col {
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
   page-questionaries-list .item-md ion-thumbnail img {
     width: 90px;
     height: 90px;
@@ -27533,6 +27922,49 @@ page-questionaries-list .button-achievement.button {
 }
 
 @media only screen and (min-device-width: 500px) {
+  page-questionaries-list .badge-level-col.col {
+    margin-bottom: 3%;
+  }
+  page-questionaries-list .range-md .range-slider {
+    margin-bottom: 1%;
+    margin-top: 0.5%;
+    max-width: 50%;
+  }
+  page-questionaries-list .progres-text-uper {
+    font-size: 1.65rem;
+    padding-bottom: 0%;
+    padding-left: 0;
+  }
+  page-questionaries-list .row-level.row {
+    margin-right: -8%;
+    margin-left: 12%;
+  }
+  page-questionaries-list .img-level {
+    max-width: 16%;
+    margin-right: 0%;
+    margin-bottom: -5%;
+    margin-top: -15%;
+  }
+  page-questionaries-list .toolbar-title-md {
+    margin-bottom: -0.5%;
+  }
+  page-questionaries-list .button-achievement.button {
+    margin-bottom: 5%;
+    padding-top: 0px;
+    padding-right: 0.85em;
+    padding-bottom: 0px;
+    padding-left: 1.1em;
+  }
+  page-questionaries-list .achievement-col.col {
+    margin-left: -1%;
+  }
+  page-questionaries-list .achievement {
+    font-size: 2.3em;
+  }
+  page-questionaries-list .achievement-row.row {
+    max-width: 50%;
+    margin-left: 28%;
+  }
   page-questionaries-list .text-img {
     max-width: 62%;
     border-radius: 20%;
@@ -27607,10 +28039,6 @@ page-questionaries-list .button-achievement.button {
   }
   page-questionaries-list .questionary-item-list h2 {
     font-size: 1.8rem;
-  }
-  page-questionaries-list .range-md .range-slider {
-    margin-bottom: 12px;
-    margin-top: -7px;
   }
   page-questionaries-list .text-button {
     font-size: 1.4em;
@@ -28119,6 +28547,16 @@ page-respondent-profile .range-md .range-tick-active {
   background: #488aff;
 }
 
+page-respondent-profile .item-checkbox-text.term-checbox-legend.label.label-md {
+  font-size: 1.2em;
+  margin-bottom: 2%;
+  margin-top: -2%;
+}
+
+page-respondent-profile h3.subtitle.check-box-subtitle.term-title {
+  margin-top: -6%;
+}
+
 @media only screen and (min-device-width: 320px) {
   page-respondent-profile .item.item-md .checkbox-md {
     margin-right: 5%;
@@ -28185,6 +28623,14 @@ page-respondent-profile .range-md .range-tick-active {
 }
 
 @media only screen and (min-device-width: 500px) {
+  page-respondent-profile img.img-responsive.img-achievement {
+    max-width: 55% !important;
+    margin-top: 2%;
+  }
+  page-respondent-profile h3.subtitle.check-box-subtitle.term-title {
+    margin-top: -2%;
+    margin-bottom: 2%;
+  }
   page-respondent-profile .item-checkbox.item.item-block.item-md {
     font-size: 1.1em;
   }
