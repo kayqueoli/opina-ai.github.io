@@ -84,12 +84,12 @@ var AchievementPage = /** @class */ (function () {
             case 1:
                 this.storyList = [
                     {
-                        subtitle: '',
+                        subtitle: 'Inteligência emocional',
                         gif: 'achieve-1',
                         quote: 'A <strong>inteligência emocional</strong> é a habilidade de reconhecer as nossas emoções e a expressão das emoções das pessoas que convivemos, além da maneira de como gerenciamos esses sentimentos.'
                     },
                     {
-                        subtitle: '',
+                        subtitle: 'Inteligência emocional',
                         gif: 'achieve-1',
                         quote: 'Não é uma capacidade inata e nós podemos desenvolvê-la ao longo da nossa vida, desde que tenhamos alguns estímulos e empreguemos alguns esforços e reflexões nesse sentido.'
                     },
@@ -133,39 +133,44 @@ var AchievementPage = /** @class */ (function () {
             case 2:
                 this.storyList = [
                     {
-                        subtitle: '',
+                        subtitle: 'Estresse',
                         gif: 'achieve-9',
-                        quote: 'O excesso de notícias a que estamos expostos sobre a pandemia, a mudança de rotina, o recolhimento domiciliar, as infinitas listas do que temos que fazer e produzir e as consequências econômicas, sociais e políticas a partir desse novo cenário podem desencadear ou aumentar desconfortos emocionais como o estresse. Vamos conferir algumas estratégias ajudar você a lidar com os fatores que causam estresse e também táticas para reduzir as reações físicas e emocionais excessivas:'
+                        quote: 'O excesso de notícias a que estamos expostos sobre a pandemia, a mudança de rotina, o recolhimento domiciliar, as infinitas listas do que temos que fazer e produzir e as consequências econômicas, sociais e políticas a partir desse novo cenário podem desencadear ou aumentar desconfortos emocionais como o estresse.'
+                    },
+                    {
+                        subtitle: 'Estresse',
+                        gif: 'achieve-9',
+                        quote: 'Vamos conferir algumas estratégias ajudar você a lidar com os fatores que causam estresse e também táticas para reduzir as reações físicas e emocionais excessivas.'
                     },
                     {
                         subtitle: 'Mantenha uma rotina',
                         gif: 'achieve-10',
-                        quote: 'Manter uma rotina incluindo exercícios físicos e alimentação equilibrada.'
+                        quote: 'Mantenha uma rotina incluindo exercícios físicos e alimentação equilibrada.'
                     },
                     {
                         subtitle: 'Repense a maneira de como se exepressa',
                         gif: 'achieve-11',
-                        quote: 'Repensar a maneira de como expressamos verbalmente as nossas emoções sobre as situações adversas.'
+                        quote: 'Repense a maneira de como expressamos verbalmente as nossas emoções pode nos ajudar a lidar com siutações diversas.'
                     },
                     {
                         subtitle: 'Mantenha contato social remoto',
                         gif: 'achieve-12',
-                        quote: 'Manter o contato social remoto pela internet com seus amigos e familiares mesmo com o distanciamento físico.'
+                        quote: 'Mantenha o contato social remoto pela internet com seus amigos e familiares mesmo com o distanciamento físico.'
                     },
                     {
                         subtitle: 'Se informe em fontes seguras',
                         gif: 'achieve-13',
-                        quote: 'Informar-se em fontes seguras sobre o Coronavírus, evitando sobrecarrega mento de informações falsas.'
+                        quote: 'Informe-se em fontes seguras sobre o Coronavírus, evitando sobrecarrega mento de informações falsas.'
                     },
                     {
                         subtitle: 'Evite o excesso de informações',
                         gif: 'achieve-14',
-                        quote: 'Evitar passar o dia inteiro vendo notícias sobre a Pandemia, procure reservar apenas uma parte do seu dia para isso.'
+                        quote: 'Evite passar o dia inteiro vendo notícias sobre a Pandemia, procure reservar apenas uma parte do seu dia para isso.'
                     },
                     {
                         subtitle: 'Faça o que sempre gostou',
                         gif: 'achieve-15',
-                        quote: 'Separar um tempo para fazer atividades prazerosas que você sempre gostou de fazer, tanto sozinho quanto em família. '
+                        quote: 'Separe um tempo para fazer atividades prazerosas que você sempre gostou de fazer, tanto sozinho quanto em família. '
                             + 'Procure descobrir atividades prazerosas que sempre teve vontade de fazer em casa.'
                     },
                 ];
@@ -173,9 +178,14 @@ var AchievementPage = /** @class */ (function () {
             case 3:
                 this.storyList = [
                     {
-                        subtitle: '',
+                        subtitle: 'O medo',
                         gif: 'achieve-16',
-                        quote: 'O medo exerce uma função de preservar a vida, mas, em excesso, pode causar doenças físicas e emocionais. Quando o medo é intenso ou desproporcional, ele se torna prejudicial à nossa saúde, aumentando o estresse e a ansiedade. Também pode gerar várias doenças psiquiátricas ou intensificar os sintomas de doenças preexistentes. Vamos conferir algumas dicas para se proteger do medo:'
+                        quote: 'O medo exerce uma função de preservar a vida, mas, em excesso, pode causar doenças físicas e emocionais. Quando o medo é intenso ou desproporcional, ele se torna prejudicial à nossa saúde, aumentando o estresse e a ansiedade.'
+                    },
+                    {
+                        subtitle: 'O medo',
+                        gif: 'achieve-16',
+                        quote: 'Também pode gerar várias doenças psiquiátricas ou intensificar os sintomas de doenças preexistentes. Vamos conferir algumas dicas para se proteger do medo.'
                     },
                     {
                         subtitle: 'Escolha fontes de informações confiáveis',
@@ -222,14 +232,14 @@ var AchievementPage = /** @class */ (function () {
             case 4:
                 this.storyList = [
                     {
-                        subtitle: '',
+                        subtitle: 'O sono',
                         gif: 'achieve-26',
-                        quote: 'O sono é uma necessidade física vital. Por meio do sono, ocorre um processo natural que tem um importante papel na recuperação da energia, na concentração, na consolidação da memória e nos processos de aprendizagem. Ter uma boa noite de sono tem um impacto benéfico no nosso dia-a-dia, pois uma ou várias noites mal dormidas podem acarretar dificuldades de concentração, diminuição da atenção e um impacto negativo na capacidade psicomotora. Além disso, as perturbações do sono podem desencadear alterações significativas no funcionamento físico, ocupacional, cognitivo e social, além de comprometer consideravelmente a nossa qualidade de vida.'
+                        quote: 'O sono é uma necessidade física vital. Ter uma boa noite de sono tem um impacto benéfico no nosso dia-a-dia, pois uma ou várias noites mal dormidas podem acarretar dificuldades de concentração, diminuição da atenção e um impacto negativo na capacidade psicomotora.'
                     },
                     {
-                        subtitle: '',
+                        subtitle: 'O sono',
                         gif: 'achieve-26',
-                        quote: 'Para aquelas pessoas que têm apresentado dificuldades para dormir, algumas adaptações e mudanças de comportamento podem ajudar a melhorar a qualidade do sono. São elas:'
+                        quote: 'Além disso, as perturbações do sono podem desencadear alterações significativas no funcionamento físico, ocupacional, cognitivo e social, além de comprometer consideravelmente a nossa qualidade de vida.'
                     },
                     {
                         subtitle: 'Sempre durma no horário',
@@ -266,9 +276,9 @@ var AchievementPage = /** @class */ (function () {
             case 5:
                 this.storyList = [
                     {
-                        subtitle: '',
+                        subtitle: 'Estratégias para melhorar o aprendizado',
                         gif: 'achieve-33',
-                        quote: 'Vamos conferir algumas estratégias para garantir o aprendizado de forma saudável e viável durante o período da pandemia de COVID-19:'
+                        quote: 'Vamos conferir algumas estratégias para garantir o aprendizado de forma saudável e viável durante o período da pandemia de COVID-19.'
                     },
                     {
                         subtitle: 'Procure seguir uma rotina',
@@ -321,9 +331,9 @@ var AchievementPage = /** @class */ (function () {
                         quote: 'Não se isole emocionalmente das pessoas que são importantes para você, e quando acabar de fazer as atividades acadêmicas do dia, relaxe! Assista um filme ou série, escute música e converse com seus amigos e familiares.'
                     },
                     {
-                        subtitle: '',
+                        subtitle: 'Estratégias para ajudar na memorização',
                         gif: 'achieve-43',
-                        quote: 'Vamos conferir algumas técnicas que podem ajudá-lo na memorização dos conteúdos das disciplinas:'
+                        quote: 'Vamos conferir algumas técnicas que podem ajudá-lo na memorização dos conteúdos das disciplinas.'
                     },
                     {
                         subtitle: 'Sempre revise o conteúdo das aulas',
@@ -397,7 +407,7 @@ var AchievementPage = /** @class */ (function () {
     };
     AchievementPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-achievement',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\achievement\achievement.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col col-1 class="menu-icon-col">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-6>\n        <img class="img-responsive img-header" src="assets/imgs/header-logo.png" />\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-12 text-justify>\n        <h1 class="subtitle subtitle-game" col-12 text-center>{{achievement.name}}</h1>\n      </ion-col>\n    </ion-row>\n    <ion-row text-center class="img-achieve-row">\n      <ion-col col-2 text-center class="text-questionary-list-game">\n        <button class="button-arrow" ion-button icon-only icon-end (click)="previous()" [disabled]="position == 0">\n          <ion-icon name="ios-arrow-dropleft-circle" class="menu-icon button-arrow-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-8 text-center class="text-questionary-list-game">\n        <img class="img-responsive img-achievement"\n          src="assets/imgs/game/achieve-list/{{storyList[position].gif}}.jpg" />\n      </ion-col>\n      <ion-col col-2 text-center class="text-questionary-list-game">\n        <button class="button-arrow" ion-button icon-only icon-end (click)="next()"\n          [disabled]="position == (storyList.length -1)">\n          <ion-icon name="ios-arrow-dropright-circle" class="menu-icon button-arrow-icon"></ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 text-justify>\n        <h4 class="subtitle subtitle-game" col-12 text-center>{{storyList[position].subtitle}}</h4>\n      </ion-col>\n    </ion-row>\n    <ion-row class="person-footer">\n      <ion-col col-3 class="text-questionary-list">\n        <img class="text-img" src="assets/gifs/{{personAnimation}}.webp">\n      </ion-col>\n      <ion-col col-9 class="text-questionary-list-game text-ballon">\n        <h5 [innerHTML]="storyList[position].quote"></h5>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n<ion-footer class="footer-not-game">\n  <ion-grid>\n    <ion-row>\n      <button ion-button full class="button-background" (click)="navigateBack()">\n        <ion-icon class="text-button">\n          Voltar\n        </ion-icon>\n      </button>\n    </ion-row>\n  </ion-grid>\n  <ion-navbar class="toolbar-progress"></ion-navbar>\n</ion-footer>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\achievement\achievement.html"*/,
+            selector: 'page-achievement',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\achievement\achievement.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col col-1 class="menu-icon-col">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-6>\n        <img class="img-responsive img-header" src="assets/imgs/header-logo.png" />\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-12 text-justify>\n        <h1 class="subtitle subtitle-game" col-12 text-center>{{achievement.name}}</h1>\n      </ion-col>\n    </ion-row>\n    <ion-row text-center class="img-achieve-row">\n      <ion-col col-2 text-center class="text-questionary-list-game">\n        <button class="button-arrow" ion-button icon-only icon-end (click)="previous()" [disabled]="position == 0">\n          <ion-icon name="ios-arrow-dropleft-circle" class="menu-icon button-arrow-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-18 text-center class="text-questionary-list-game">\n        <img class="img-responsive img-achievement"\n          src="assets/imgs/game/achieve-list/{{storyList[position].gif}}.jpg" />\n      </ion-col>\n      <ion-col col-2 text-center class="text-questionary-list-game">\n        <button class="button-arrow" ion-button icon-only icon-end (click)="next()"\n          [disabled]="position == (storyList.length -1)">\n          <ion-icon name="ios-arrow-dropright-circle" class="menu-icon button-arrow-icon"></ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n    <ion-row class="person-footer">\n      <ion-col col-3 class="text-questionary-list">\n        <img class="text-img" src="assets/gifs/{{personAnimation}}.webp">\n      </ion-col>\n      <ion-col col-9 class="text-questionary-list-game text-ballon">\n        <h4 class="subtitle subtitle-game" col-12 text-center>{{storyList[position].subtitle}}</h4>\n        <h5 [innerHTML]="storyList[position].quote"></h5>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n<ion-footer class="footer-not-game">\n  <ion-grid>\n    <ion-row>\n      <button ion-button full class="button-background" (click)="navigateBack()">\n        <ion-icon class="text-button">\n          Voltar\n        </ion-icon>\n      </button>\n    </ion-row>\n  </ion-grid>\n  <ion-navbar class="toolbar-progress"></ion-navbar>\n</ion-footer>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\achievement\achievement.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* MenuController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* RestProvider */]])
     ], AchievementPage);
