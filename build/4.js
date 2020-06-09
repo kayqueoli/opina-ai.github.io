@@ -534,6 +534,7 @@ var QuestionariesListPage = /** @class */ (function () {
                 }]
         });
         alert.present();
+        this.restProvider.sendGoogleAnalyticsEventTag('Questionary List', 'Clicou na conquista bloqueada', '', 'Game');
     };
     QuestionariesListPage.prototype.showAchievementUnlock = function (achievement) {
         var _this = this;
@@ -541,7 +542,7 @@ var QuestionariesListPage = /** @class */ (function () {
             title: '<img class="img-alert" src="assets/imgs/game/achievement-msg-' + achievement.icon + '.png"/>',
             cssClass: 'achievement-alert',
             message: '<div class="tdialogue-box-text">'
-                + '<div><strong>Você desbloqueou uma dica!</strong></div>'
+                + '<div><strong>Você desbloqueou uma dica:</strong></div>'
                 + '<div><strong>' + achievement.name + '</strong></div>'
                 + '<div text-center>Confira agora!</div>'
                 + '</div>',
@@ -560,6 +561,7 @@ var QuestionariesListPage = /** @class */ (function () {
                     text: 'Ver a dica!',
                     cssClass: 'achievement-alert-button-confirm',
                     handler: function () {
+                        _this.restProvider.sendGoogleAnalyticsEventTag('Questionary List', 'Clicou na conquista pela dialog | ' + achievement.name, '', 'Game');
                         _this.storage.set('achievementList', _this.achievementList).then(function () {
                             _this.getAchievement(achievement);
                         });
@@ -569,6 +571,7 @@ var QuestionariesListPage = /** @class */ (function () {
         alert.present();
     };
     QuestionariesListPage.prototype.getAchievement = function (achievement) {
+        this.restProvider.sendGoogleAnalyticsEventTag('Questionary List', 'Clicou na conquista | ' + achievement.name, '', 'Game');
         this.loader = this.loadingCtrl.create();
         this.loader.present();
         this.navCtrl.push('AchievementPage', {

@@ -1,6 +1,6 @@
 webpackJsonp([6],{
 
-/***/ 295:
+/***/ 294:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AchievementPageModule", function() { return AchievementPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__achievement__ = __webpack_require__(438);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__achievement__ = __webpack_require__(437);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +38,7 @@ var AchievementPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 438:
+/***/ 437:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -46,6 +46,7 @@ var AchievementPageModule = /** @class */ (function () {
 /* unused harmony export Story */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -57,12 +58,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var AchievementPage = /** @class */ (function () {
-    function AchievementPage(navCtrl, navParams, menuCtrl, loadingCtrl) {
+    function AchievementPage(navCtrl, navParams, menuCtrl, loadingCtrl, restProvider) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.menuCtrl = menuCtrl;
         this.loadingCtrl = loadingCtrl;
+        this.restProvider = restProvider;
         this.position = 0;
         this.storyList = [];
         this.achievement = navParams.get('achievement');
@@ -364,6 +367,8 @@ var AchievementPage = /** @class */ (function () {
     AchievementPage.prototype.next = function () {
         if (this.position < this.storyList.length)
             this.position++;
+        if (this.position == (this.storyList.length - 1))
+            this.restProvider.sendGoogleAnalyticsEventTag('Achievement', 'Viu a dica até o final | ' + this.achievement.name, '', 'Game');
         this.talkAnimation();
     };
     AchievementPage.prototype.previous = function () {
@@ -382,6 +387,7 @@ var AchievementPage = /** @class */ (function () {
         }, 12000);
     };
     AchievementPage.prototype.navigateBack = function () {
+        this.restProvider.sendGoogleAnalyticsEventTag('Achievement', 'Clicou no botão voltar inferior', '', 'Game');
         this.loader = this.loadingCtrl.create();
         this.loader.present();
         this.navCtrl.setRoot('QuestionariesListPage', {}).then(this.loader.dismiss());
@@ -393,7 +399,7 @@ var AchievementPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'page-achievement',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\achievement\achievement.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col col-1 class="menu-icon-col">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-6>\n        <img class="img-responsive img-header" src="assets/imgs/header-logo.png" />\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-12 text-justify>\n        <h1 class="subtitle subtitle-game" col-12 text-center>{{achievement.name}}</h1>\n      </ion-col>\n    </ion-row>\n    <ion-row text-center class="img-achieve-row">\n      <ion-col col-2 text-center class="text-questionary-list-game">\n        <button class="button-arrow" ion-button icon-only icon-end (click)="previous()" [disabled]="position == 0">\n          <ion-icon name="ios-arrow-dropleft-circle" class="menu-icon button-arrow-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-8 text-center class="text-questionary-list-game">\n        <img class="img-responsive img-achievement"\n          src="assets/imgs/game/achieve-list/{{storyList[position].gif}}.jpg" />\n      </ion-col>\n      <ion-col col-2 text-center class="text-questionary-list-game">\n        <button class="button-arrow" ion-button icon-only icon-end (click)="next()"\n          [disabled]="position == (storyList.length -1)">\n          <ion-icon name="ios-arrow-dropright-circle" class="menu-icon button-arrow-icon"></ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 text-justify>\n        <h4 class="subtitle subtitle-game" col-12 text-center>{{storyList[position].subtitle}}</h4>\n      </ion-col>\n    </ion-row>\n    <ion-row class="person-footer">\n      <ion-col col-3 class="text-questionary-list">\n        <img class="text-img" src="assets/gifs/{{personAnimation}}.webp">\n      </ion-col>\n      <ion-col col-9 class="text-questionary-list-game text-ballon">\n        <h5 [innerHTML]="storyList[position].quote"></h5>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n<ion-footer class="footer-not-game">\n  <ion-grid>\n    <ion-row>\n      <button ion-button full class="button-background" (click)="navigateBack()">\n        <ion-icon class="text-button">\n          Voltar\n        </ion-icon>\n      </button>\n    </ion-row>\n  </ion-grid>\n  <ion-navbar class="toolbar-progress"></ion-navbar>\n</ion-footer>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\achievement\achievement.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* MenuController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* LoadingController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* MenuController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* RestProvider */]])
     ], AchievementPage);
     return AchievementPage;
 }());

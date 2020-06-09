@@ -457,6 +457,14 @@ var RestProvider = /** @class */ (function () {
             'event_value': error.name,
         });
     };
+    RestProvider.prototype.sendGoogleAnalyticsEventTag = function (category, action, value, label) {
+        this.googleAnalytics.gtag('event', 'code', {
+            'event_category': category,
+            'event_label': label,
+            'event_action': action,
+            'event_value': value,
+        });
+    };
     RestProvider.prototype.checkConnection = function () {
         var _this = this;
         this.isConnected = this.network.type != 'none';
@@ -725,7 +733,7 @@ var map = {
 		7
 	],
 	"../pages/achievement/achievement.module": [
-		295,
+		294,
 		6
 	],
 	"../pages/intro/intro.module": [
@@ -733,7 +741,7 @@ var map = {
 		8
 	],
 	"../pages/prioritization/prioritization.module": [
-		294,
+		295,
 		5
 	],
 	"../pages/questionaries-list/questionaries-list.module": [
@@ -1375,8 +1383,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/about/about.module#AboutPageModule', name: 'AboutPage', segment: 'about', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/thankyou/thankyou.module#ThankyouPageModule', name: 'ThankyouPage', segment: 'thankyou', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/intro/intro.module#IntroPageModule', name: 'IntroPage', segment: 'intro', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/prioritization/prioritization.module#PrioritizationPageModule', name: 'PrioritizationPage', segment: 'prioritization', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/achievement/achievement.module#AchievementPageModule', name: 'AchievementPage', segment: 'achievement', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/prioritization/prioritization.module#PrioritizationPageModule', name: 'PrioritizationPage', segment: 'prioritization', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/questionaries-list/questionaries-list.module#QuestionariesListPageModule', name: 'QuestionariesListPage', segment: 'questionaries-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/questionary/questionary.module#QuestionaryPageModule', name: 'QuestionaryPage', segment: 'questionary', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/results/results.module#ResultsPageModule', name: 'ResultsPage', segment: 'results/:param', priority: 'low', defaultHistory: [] },
@@ -1750,7 +1758,7 @@ var IntroPage = /** @class */ (function () {
         var _this = this;
         //temporário
         this.useGamification();
-        // this.dontuseGkayqamification();
+        // this.dontuseGamification();
         //Temporário
         this.storage.get('useGame').then(function (data) {
             console.log("checkTrigger");
