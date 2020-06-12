@@ -28747,6 +28747,14 @@ page-results ion-icon.menu-icon.icon.icon-md.ion-md-menu {
   font-size: 2em;
 }
 
+page-results ion-icon.icon.icon-md.ion-md-arrow-dropdown {
+  color: #619aff;
+}
+
+page-results ion-icon.icon.icon-md.ion-md-arrow-dropup {
+  color: #619aff;
+}
+
 page-results ion-col.menu-icon-col.col {
   margin-left: 7%;
 }
@@ -29055,6 +29063,9 @@ page-results .item-label-floating .select-md {
 }
 
 @media only screen and (min-device-width: 500px) {
+  page-results .row-options.row {
+    margin-right: 25%;
+  }
   page-results .toolbar-content.toolbar-content-md img.img-responsive.img-responsive.img-view {
     margin-left: 35%;
   }
