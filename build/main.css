@@ -25878,6 +25878,9 @@ a {
 }
 
 @media only screen and (min-device-width: 320px) {
+  .alert-md.consent-form {
+    font-size: 1.25rem;
+  }
   .dialogue-box {
     font-size: 0.9em;
   }
@@ -25890,6 +25893,9 @@ a {
 }
 
 @media only screen and (min-device-width: 360px) {
+  .alert-md.consent-form {
+    font-size: 1.35rem;
+  }
   img.img-alert {
     max-width: 75%;
   }
@@ -26584,7 +26590,7 @@ page-intro .dialogue-box.dialogue-box-not-game {
 
 @media only screen and (min-device-width: 320px) {
   page-intro .title-box {
-    font-size: 2em;
+    font-size: 1.8em;
   }
   page-intro .title-box-last {
     margin-top: 1.8rem;
@@ -26660,7 +26666,7 @@ page-intro .dialogue-box.dialogue-box-not-game {
     font-size: 1.9em;
   }
   page-intro .title-box {
-    font-size: 2.7em;
+    font-size: 2.4em;
   }
   page-intro h1.title-box-no-game {
     font-size: 3.1rem;
@@ -26680,11 +26686,14 @@ page-intro .dialogue-box.dialogue-box-not-game {
 }
 
 @media only screen and (min-device-width: 480px) {
+  page-intro .dialogue-box {
+    font-size: 1.4rem;
+  }
   page-intro .img-responsive-last {
     width: 77% !important;
   }
   page-intro .title-box {
-    font-size: 3.3em;
+    font-size: 2.8em;
   }
   page-intro .title-box-last {
     font-size: 2.3em;
@@ -26757,16 +26766,17 @@ page-intro .dialogue-box.dialogue-box-not-game {
     margin-top: 1%;
   }
   page-intro h1.title-box {
-    font-size: 40px;
+    font-size: 1.9em;
   }
   page-intro h1.title-box-no-game {
-    margin-bottom: 5%;
+    margin-bottom: -5%;
     font-size: 1.7em;
   }
   page-intro .dialogue-box {
     margin-left: 15%;
     margin-right: 15%;
     margin-top: 0.5rem;
+    font-size: 1.5rem;
   }
   page-intro .dialogue-box-last {
     margin-left: 15%;
@@ -28839,7 +28849,8 @@ page-results .item-label-floating .select-md {
   page-results .label-md {
     margin: 0;
     color: black !important;
-    font-size: 1.2em;
+    font-size: 1.4rem;
+    padding-left: 3%;
   }
   page-results .text-questionary-list-game {
     font-size: 1.35rem;
@@ -28860,7 +28871,8 @@ page-results .item-label-floating .select-md {
     margin-bottom: 0;
   }
   page-results h4 {
-    font-size: 1.2em;
+    margin-bottom: 0;
+    font-size: 1.5rem;
   }
   page-results h1.subtitle.subtitle-game {
     margin-bottom: 0;
@@ -29074,14 +29086,14 @@ page-results .item-label-floating .select-md {
     max-width: 80%;
   }
   page-results .row-person {
-    margin-bottom: -8.5%;
+    margin-bottom: 0;
   }
   page-results h3.subtitle.subtitle-game {
     font-size: 1.85em;
     margin-bottom: 0.5%;
   }
   page-results .text-img {
-    max-width: 62%;
+    max-width: 38%;
     max-height: 55%;
     border-radius: 20%;
     margin-left: 127%;
@@ -29089,6 +29101,11 @@ page-results .item-label-floating .select-md {
   page-results h5 {
     width: 82%;
     padding-left: 2%;
+  }
+  page-results h4 {
+    font-size: 1.5rem;
+    margin-left: 26%;
+    margin-bottom: -2%;
   }
   page-results h1.text-questionary-list {
     margin-left: 10%;

@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 292:
+/***/ 293:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ThankyouPageModule", function() { return ThankyouPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__thankyou__ = __webpack_require__(436);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__thankyou__ = __webpack_require__(437);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +38,7 @@ var ThankyouPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 436:
+/***/ 437:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -85,24 +85,32 @@ var ThankyouPage = /** @class */ (function () {
                 // this.form_url = "https://bit.ly/avaliacao-usabilidade-game";
             }
             else {
-                _this.form_url = "https://bit.ly/avaliacao-gamificacao";
+                _this.form_url = "https://bit.ly/avaliacao-nao-gamificado";
                 // this.form_url = "https://bit.ly/avaliacao-usabilidade";
             }
-        });
-        if (this.useGame) {
-            this.storage.get('showForm').then(function (data) {
+            _this.storage.get('showForm').then(function (data) {
                 if (!data) {
                     var showFormCont = 1;
                     _this.storage.set('showForm', showFormCont);
-                    _this.showForm();
+                    if (_this.useGame) {
+                        _this.showForm();
+                    }
+                    else {
+                        _this.showFormNotGame();
+                    }
                 }
                 else if (data < 3) {
                     data++;
                     _this.storage.set('showForm', data);
-                    _this.showForm();
+                    if (_this.useGame) {
+                        _this.showForm();
+                    }
+                    else {
+                        _this.showFormNotGame();
+                    }
                 }
             });
-        }
+        });
         this.getUserType();
         this.points = navParams.get('points');
         this.answers = navParams.get('answers');
@@ -119,7 +127,7 @@ var ThankyouPage = /** @class */ (function () {
         this.personQuote =
             'Por favor, nos ajude a avaliar a <strong>gamificação do aplicativo</strong> respondendo o '
                 + '<strong>formulário</strong>: '
-                + '<a *ngIf="useGame" href="' + this.form_url + '">Avaliação da gamificação</a>';
+                + '<a *ngIf="useGame" href="' + this.form_url + '">Avaliação da Gamificação</a>';
     };
     ThankyouPage.prototype.talkAnimation = function () {
         var _this = this;
@@ -156,9 +164,8 @@ var ThankyouPage = /** @class */ (function () {
                 + '</div>'
                 + '<div class="dialogue-box"><div class="tdialogue-box-text">'
                 + '<div text-center><strong>Ainda não acabou!</strong></div>'
-                // + '<div text-center>Você pode responder outros <strong>questionários</strong> e continuar contribuindo!</div>'
-                + '<div text-center>Por favor, nos ajude a avaliar a <strong>gamificação do aplicativo</strong> respondendo o <strong>formulário: <a style="font-size:1.5rem" href="' + this.form_url + '"><strong>Avaliação da gamificação</strong></a></div>'
                 + '<div text-center>Você pode responder outros <strong>questionários</strong> e continuar liberando as <strong>dicas de saúde mental</strong>!</div>'
+                + '<div text-center>Por favor, nos ajude a avaliar a <strong>gamificação do aplicativo</strong> respondendo o <strong>formulário: <a style="font-size:1.5rem" href="' + this.form_url + '"><strong>Avaliação da gamificação</strong></a></div>'
                 + '</div></div>',
             //----------------------MENSAGEM------------------
             buttons: [{
@@ -257,13 +264,35 @@ var ThankyouPage = /** @class */ (function () {
         });
         alert.present();
     };
+    //Mensagem motivadora da narrativa
+    ThankyouPage.prototype.showFormNotGame = function () {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: '<div text-center>Nos ajude a avaliar o aplicativo!</div>',
+            message: 
+            //----------------------MENSAGEM------------------
+            '<div class="tdialogue-box-text">'
+                + '<div text-center>Por favor, nos ajude a avaliar a <strong>usabilidade do aplicativo</strong> respondendo o <strong>formulário: <a style="font-size:1.5rem" href="' + this.form_url + '"><strong>Avaliação da Usabilidade</strong></a></div>'
+                + '<div text-center></div>'
+                + '</div>',
+            //----------------------MENSAGEM------------------
+            buttons: [{
+                    text: "sair",
+                    handler: function () {
+                        _this.talkAnimation();
+                    }
+                }]
+        });
+        alert.present();
+    };
     ThankyouPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
-            selector: 'page-thankyou',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\thankyou\thankyou.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col col-2 class="menu-icon-col" *ngIf="useGame">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-2 class="menu-icon-col-not-game" *ngIf="!useGame">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-6 *ngIf="useGame">\n        <img class="img-responsive img-header" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col col-9 *ngIf="!useGame">\n        <img class="img-responsive img-not-game" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col offset-1 col-2 class="col-button-help">\n        <button class="button-help-thankyou" *ngIf="useGame" ion-button clear (click)="help()">\n          <ion-icon class="icon-help button-help-thankyou" name="alert"></ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col *ngIf="!useGame" col-6 offset-3 text-center class="img-thank-you-no-game">\n        <img src="assets/imgs/intro/thank-you.png" class="img-responsive-no-game">\n      </ion-col>\n      <ion-col *ngIf="useGame" col-6 offset-3 text-center class="img-thank-you-game">\n        <img src="assets/imgs/intro/thank-you.png" class="img-responsive-game">\n      </ion-col>\n    </ion-row>\n    <ion-row > \n      <ion-col *ngIf="useGame" col-12 text-center class="level">\n        <!-- Pontuação -->\n        <ion-item *ngIf="points > 0" text-wrap>\n          <ion-thumbnail item-start>\n            <img class="img-responsive" src="assets/imgs/game/{{levelImg}}.png" />\n          </ion-thumbnail>\n          <ion-label>\n            <h2>Você está no nível <strong>{{level}}</strong> de Participação!</h2>\n            <p><b>Sua pontuação</b></p>\n            <ion-badge>{{points}} pontos</ion-badge>\n          </ion-label>\n        </ion-item>\n        <!-- Pontuação -->\n        <!-- Pontuação -->\n        <ion-item *ngIf="points == 0" text-wrap>\n          <ion-thumbnail item-start>\n            <img class="img-responsive" src="assets/imgs/game/{{levelImg}}.png" />\n          </ion-thumbnail>\n          <ion-label>\n            <h2>Responda os questionários para aumentar o <b>nível</b> de <b>Participação</b>!</h2>\n            <p><b>Sua pontuação</b></p>\n            <ion-badge>{{points}} pontos</ion-badge>\n          </ion-label>\n        </ion-item>\n        <!-- Pontuação -->\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 text-center class="text-form-game">\n        <ion-row *ngIf="useGame" class="row-person">\n          <ion-col col-3 class="text-questionary-list">\n            <img class="text-img" src="assets/gifs/{{personAnimation}}.webp">\n          </ion-col>\n          <ion-col col-9 class="text-questionary-list-game">\n            <h5 [innerHTML]="personQuote"></h5>\n          </ion-col>\n        </ion-row>\n        <!-- <ion-row *ngIf="!useGame" text-center> -->\n          <!-- <h5 class="text-questionay-list-not-game">\n            Por favor, nos ajude a avaliar a <strong>usabilidade do aplicativo</strong> respondendo o\n            <strong>formulário</strong>:\n            <a *ngIf="!useGame" href="{{form_url}}">Avaliação da usabilidade</a>\n          </h5> -->\n          <!-- <p>\n            Você utilizou a versão <strong>gamificada</strong> do aplicativo!\n          </p>\n          <p>\n            Por favor, nos ajude a avaliar essa versão respondendo o <strong>formulário</strong>:\n          </p>\n          <p>\n            <a href="https://forms.gle/Z8RVkQvHitHyjrwGA">Avaliação da gamificação</a>\n          </p> -->\n        <!-- </ion-row> -->\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 text-center class="text-bottom-game">\n        <img class="img-responsive img-center" src="assets/imgs/intro/intro4.jpg" />\n        <h2>Continue participando!</h2>\n        <p>\n          Você pode continuar participando respondendo outros <strong>questionários</strong> \n          para desbloquear as <strong>dicas de saúde mental</strong>!\n        </p>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n<!-------------------------- NO GAME -------------------------->\n<ion-footer *ngIf="!useGame" class="footer-not-game">\n  <ion-grid class="button-finish-grid">\n    <ion-row>\n      <ion-col col-12 text-center class="margin-top-10">\n        <button ion-button full class="button-background" (click)="finishQuestionary()">\n          <ion-icon id="button-thank-you-{{questionary.id}}" class="text-button">\n            Vamos lá!\n          </ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-navbar class="toolbar-progress">\n  </ion-navbar>\n</ion-footer>\n<!-------------------------- NO GAME -------------------------->\n<!-------------------------- USE GAME -------------------------->\n<ion-footer *ngIf="useGame">\n  <ion-grid class="button-finish-grid">\n    <ion-row>\n      <ion-col col-12 text-center class="margin-top-10">\n        <button ion-button full class="button-background" (click)="finishQuestionary()">\n          <ion-icon id="button-thank-you-game-{{questionary.id}}" class="text-button">\n            Vamos lá!\n          </ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-navbar class="toolbar-progress">\n    <ion-title text-center>\n      <ion-icon range-right name="md-ribbon"></ion-icon>\n      {{points}} pontos\n    </ion-title>\n    <ion-range class="progress-bar" [min]="0" [max]="100" [step]="1" [(ngModel)]="progress" disabled>\n      <ion-icon range-left name="md-clipboard"></ion-icon>\n      <ion-icon range-right></ion-icon>\n    </ion-range>\n    <div text-center class="progres-text-uper">{{totalQuestions}} de {{totalQuestions}} questões</div>\n  </ion-navbar>\n</ion-footer>\n<!-------------------------- USE GAME -------------------------->'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\thankyou\thankyou.html"*/,
+            selector: 'page-thankyou',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\thankyou\thankyou.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col col-2 class="menu-icon-col" *ngIf="useGame">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-2 class="menu-icon-col-not-game" *ngIf="!useGame">\n        <button ion-button clear (click)="openMenu()">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-6 *ngIf="useGame">\n        <img class="img-responsive img-header" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col col-9 *ngIf="!useGame">\n        <img class="img-responsive img-not-game" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col offset-1 col-2 class="col-button-help">\n        <button class="button-help-thankyou" *ngIf="useGame" ion-button clear (click)="help()">\n          <ion-icon class="icon-help button-help-thankyou" name="alert"></ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col *ngIf="!useGame" col-6 offset-3 text-center class="img-thank-you-no-game">\n        <img src="assets/imgs/intro/thank-you.png" class="img-responsive-no-game">\n      </ion-col>\n      <ion-col *ngIf="useGame" col-6 offset-3 text-center class="img-thank-you-game">\n        <img src="assets/imgs/intro/thank-you.png" class="img-responsive-game">\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col *ngIf="useGame" col-12 text-center class="level">\n        <!-- Pontuação -->\n        <ion-item *ngIf="points > 0" text-wrap>\n          <ion-thumbnail item-start>\n            <img class="img-responsive" src="assets/imgs/game/{{levelImg}}.png" />\n          </ion-thumbnail>\n          <ion-label>\n            <h2>Você está no nível <strong>{{level}}</strong> de Participação!</h2>\n            <p><b>Sua pontuação</b></p>\n            <ion-badge>{{points}} pontos</ion-badge>\n          </ion-label>\n        </ion-item>\n        <!-- Pontuação -->\n        <!-- Pontuação -->\n        <ion-item *ngIf="points == 0" text-wrap>\n          <ion-thumbnail item-start>\n            <img class="img-responsive" src="assets/imgs/game/{{levelImg}}.png" />\n          </ion-thumbnail>\n          <ion-label>\n            <h2>Responda os questionários para aumentar o <b>nível</b> de <b>Participação</b>!</h2>\n            <p><b>Sua pontuação</b></p>\n            <ion-badge>{{points}} pontos</ion-badge>\n          </ion-label>\n        </ion-item>\n        <!-- Pontuação -->\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 text-center class="text-form-game">\n        <ion-row *ngIf="useGame" class="row-person">\n          <ion-col col-3 class="text-questionary-list">\n            <img class="text-img" src="assets/gifs/{{personAnimation}}.webp">\n          </ion-col>\n          <ion-col col-9 class="text-questionary-list-game">\n            <h5 [innerHTML]="personQuote"></h5>\n          </ion-col>\n        </ion-row>\n        <ion-row *ngIf="!useGame" text-center>\n          <h5 class="text-questionay-list-not-game">\n            Por favor, nos ajude a avaliar a <strong>usabilidade do aplicativo</strong> respondendo o\n            <strong>formulário</strong>:\n            <a *ngIf="!useGame" href="{{form_url}}">Avaliação da usabilidade</a>\n          </h5>\n        </ion-row>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 text-center class="text-bottom-game">\n        <img class="img-responsive img-center" src="assets/imgs/intro/intro4.jpg" />\n        <h2>Continue participando!</h2>\n        <p>\n          Você pode continuar participando respondendo outros <strong>questionários</strong>\n          para desbloquear as <strong>dicas de saúde mental</strong>!\n        </p>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n<!-------------------------- NO GAME -------------------------->\n<ion-footer *ngIf="!useGame" class="footer-not-game">\n  <ion-grid class="button-finish-grid">\n    <ion-row>\n      <ion-col col-12 text-center class="margin-top-10">\n        <button ion-button full class="button-background" (click)="finishQuestionary()">\n          <ion-icon id="button-thank-you-{{questionary.id}}" class="text-button">\n            Vamos lá!\n          </ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-navbar class="toolbar-progress">\n  </ion-navbar>\n</ion-footer>\n<!-------------------------- NO GAME -------------------------->\n<!-------------------------- USE GAME -------------------------->\n<ion-footer *ngIf="useGame">\n  <ion-grid class="button-finish-grid">\n    <ion-row>\n      <ion-col col-12 text-center class="margin-top-10">\n        <button ion-button full class="button-background" (click)="finishQuestionary()">\n          <ion-icon id="button-thank-you-game-{{questionary.id}}" class="text-button">\n            Vamos lá!\n          </ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-navbar class="toolbar-progress">\n    <ion-title text-center>\n      <ion-icon range-right name="md-ribbon"></ion-icon>\n      {{points}} pontos\n    </ion-title>\n    <ion-range class="progress-bar" [min]="0" [max]="100" [step]="1" [(ngModel)]="progress" disabled>\n      <ion-icon range-left name="md-clipboard"></ion-icon>\n      <ion-icon range-right></ion-icon>\n    </ion-range>\n    <div text-center class="progres-text-uper">{{totalQuestions}} de {{totalQuestions}} questões</div>\n  </ion-navbar>\n</ion-footer>\n<!-------------------------- USE GAME -------------------------->'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\thankyou\thankyou.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* MenuController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_answer_answer__["a" /* AnswerProvider */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* MenuController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["o" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__providers_answer_answer__["a" /* AnswerProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_answer_answer__["a" /* AnswerProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* LoadingController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* AlertController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */]) === "function" && _g || Object])
     ], ThankyouPage);
     return ThankyouPage;
+    var _a, _b, _c, _d, _e, _f, _g;
 }());
 
 //# sourceMappingURL=thankyou.js.map

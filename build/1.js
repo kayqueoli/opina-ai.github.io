@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RespondentProfilePageModule", function() { return RespondentProfilePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__respondent_profile__ = __webpack_require__(445);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__respondent_profile__ = __webpack_require__(301);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(446);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -26,10 +26,10 @@ var RespondentProfilePageModule = /** @class */ (function () {
     RespondentProfilePageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__respondent_profile__["a" /* RespondentProfilePage */],
+                __WEBPACK_IMPORTED_MODULE_2__respondent_profile__["b" /* RespondentProfilePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__respondent_profile__["a" /* RespondentProfilePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__respondent_profile__["b" /* RespondentProfilePage */]),
                 __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__["a" /* BrMaskerModule */]
             ],
         })
@@ -41,546 +41,23 @@ var RespondentProfilePageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 433:
+/***/ 301:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export BrMaskModel */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BrMaskerIonic3; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(17);
-
-
-var BrMaskModel = (function () {
-    function BrMaskModel() {
-        this.type = 'alfa';
-        this.decimal = 2;
-        this.decimalCaracter = ",";
-        this.userCaracters = false;
-        this.numberAndTousand = false;
-    }
-    return BrMaskModel;
-}());
-
-var BrMaskerIonic3 = (function () {
-    function BrMaskerIonic3(_renderer, _elementRef) {
-        this._renderer = _renderer;
-        this._elementRef = _elementRef;
-        this.brmasker = new BrMaskModel();
-    }
-    BrMaskerIonic3.prototype.inputKeyup = function (event) {
-        var value = this.returnValue(event.target.value);
-        this.writeValue(value);
-        event.target.value = value;
-    };
-    BrMaskerIonic3.prototype.inputOnblur = function (event) {
-        var value = this.returnValue(event.value);
-        this.writeValue(value);
-        event.value = value;
-    };
-    BrMaskerIonic3.prototype.inputFocus = function (event) {
-        var value = this.returnValue(event.value);
-        this.writeValue(value);
-        event.value = value;
-    };
-    BrMaskerIonic3.prototype.ngOnInit = function () {
-        if (!this.brmasker.type) {
-            this.brmasker.type = 'all';
-        }
-        if (!this.brmasker.decimal) {
-            this.brmasker.decimal = 2;
-        }
-        if (!this.brmasker.decimalCaracter) {
-            this.brmasker.decimalCaracter = ',';
-        }
-    };
-    BrMaskerIonic3.prototype.writeValue = function (fn) {
-        this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', fn);
-    };
-    BrMaskerIonic3.prototype.registerOnChange = function (fn) {
-        return;
-    };
-    BrMaskerIonic3.prototype.registerOnTouched = function (fn) {
-        return;
-    };
-    BrMaskerIonic3.prototype.setDisabledState = function (isDisabled) {
-        if (isDisabled) {
-            this._renderer.setElementAttribute(this._elementRef.nativeElement, 'disabled', 'true');
-        }
-        else {
-            this._renderer.setElementAttribute(this._elementRef.nativeElement, 'disabled', 'false');
-        }
-    };
-    BrMaskerIonic3.prototype.writeCreateValue = function (value, config) {
-        if (config === void 0) { config = new BrMaskModel(); }
-        if (value && config.phone) {
-            return value.replace(/^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/gi, '$1 ($2) $3-$4');
-        }
-        if (value && config.money) {
-            return this.writeValueMoney(value, config);
-        }
-        if (value && config.person) {
-            return this.writeValuePerson(value);
-        }
-        if (value && config.percent) {
-            return this.writeValuePercent(value);
-        }
-        if (value && config.mask) {
-            this.brmasker.mask = config.mask;
-            if (config.len) {
-                this.brmasker.len = config.len;
-            }
-            return this.onInput(value);
-        }
-        return value;
-    };
-    BrMaskerIonic3.prototype.writeValuePercent = function (value) {
-        value.replace(/\D/gi, '');
-        value.replace(/%/gi, '');
-        return value.replace(/([0-9]{0})$/gi, '%$1');
-    };
-    BrMaskerIonic3.prototype.writeValuePerson = function (value) {
-        if (value.length <= 11) {
-            return value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/gi, '\$1.\$2.\$3\-\$4');
-        }
-        else {
-            return value.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/gi, '\$1.\$2.\$3\/\$4\-\$5');
-        }
-    };
-    BrMaskerIonic3.prototype.writeValueMoney = function (value, config) {
-        if (config === void 0) { config = new BrMaskModel(); }
-        return this.moneyMask(value, config);
-    };
-    BrMaskerIonic3.prototype.returnValue = function (value) {
-        if (!this.brmasker.mask) {
-            this.brmasker.mask = '';
-        }
-        if (value) {
-            var v = value;
-            if (this.brmasker.type == 'alfa') {
-                v = v.replace(/\d/gi, '');
-            }
-            if (this.brmasker.type == 'num') {
-                v = v.replace(/\D/gi, '');
-            }
-            if (this.brmasker.money) {
-                return this.moneyMask(this.onInput(v), this.brmasker);
-            }
-            if (this.brmasker.phone) {
-                return this.phoneMask(v);
-            }
-            if (this.brmasker.phoneNotDDD) {
-                return this.phoneNotDDDMask(v);
-            }
-            if (this.brmasker.person) {
-                return this.peapollMask(v);
-            }
-            if (this.brmasker.percent) {
-                return this.percentMask(v);
-            }
-            if (this.brmasker.numberAndTousand) {
-                return this.thousand(v);
-            }
-            if (this.brmasker.userCaracters) {
-                return this.usingSpecialCharacters(v, this.brmasker.mask, this.brmasker.len);
-            }
-            return this.onInput(v);
-        }
-        else {
-            return '';
-        }
-    };
-    BrMaskerIonic3.prototype.percentMask = function (v) {
-        var tmp = v;
-        tmp = tmp.replace(/\D/gi, '');
-        tmp = tmp.replace(/%/gi, '');
-        tmp = tmp.replace(/([0-9]{0})$/gi, '%$1');
-        return tmp;
-    };
-    BrMaskerIonic3.prototype.phoneMask = function (v) {
-        var n = v;
-        if (n.length > 14) {
-            this.brmasker.len = 15;
-            this.brmasker.mask = '(99) 99999-9999';
-            n = n.replace(/\D/gi, '');
-            n = n.replace(/(\d{2})(\d)/gi, '$1 $2');
-            n = n.replace(/(\d{5})(\d)/gi, '$1-$2');
-            n = n.replace(/(\d{4})(\d)/gi, '$1$2');
-        }
-        else {
-            this.brmasker.len = 14;
-            this.brmasker.mask = '(99) 9999-9999';
-            n = n.replace(/\D/gi, '');
-            n = n.replace(/(\d{2})(\d)/gi, '$1 $2');
-            n = n.replace(/(\d{4})(\d)/gi, '$1-$2');
-            n = n.replace(/(\d{4})(\d)/gi, '$1$2');
-        }
-        return this.onInput(n);
-    };
-    BrMaskerIonic3.prototype.phoneNotDDDMask = function (v) {
-        var n = v;
-        if (n.length > 9) {
-            this.brmasker.len = 10;
-            this.brmasker.mask = '99999-9999';
-            n = n.replace(/\D/gi, '');
-            n = n.replace(/(\d{5})(\d)/gi, '$1-$2');
-            n = n.replace(/(\d{4})(\d)/gi, '$1$2');
-        }
-        else {
-            this.brmasker.len = 9;
-            this.brmasker.mask = '9999-9999';
-            n = n.replace(/\D/gi, '');
-            n = n.replace(/(\d{4})(\d)/gi, '$1-$2');
-            n = n.replace(/(\d{4})(\d)/gi, '$1$2');
-        }
-        return this.onInput(n);
-    };
-    BrMaskerIonic3.prototype.peapollMask = function (v) {
-        var n = v;
-        if (n.length > 14) {
-            this.brmasker.len = 18;
-            this.brmasker.mask = '99.999.999/9999-99';
-            n = n.replace(/\D/gi, '');
-            n = n.replace(/(\d{2})(\d)/gi, '$1.$2');
-            n = n.replace(/(\d{3})(\d)/gi, '$1.$2');
-            n = n.replace(/(\d{3})(\d)/gi, '$1/$2');
-            n = n.replace(/(\d{4})(\d{1,4})$/gi, '$1-$2');
-            n = n.replace(/(\d{2})(\d{1,2})$/gi, '$1$2');
-        }
-        else {
-            this.brmasker.len = 14;
-            this.brmasker.mask = '999.999.999-99';
-            n = n.replace(/\D/gi, '');
-            n = n.replace(/(\d{3})(\d)/gi, '$1.$2');
-            n = n.replace(/(\d{3})(\d)/gi, '$1.$2');
-            n = n.replace(/(\d{3})(\d{1,2})$/gi, '$1-$2');
-        }
-        return this.onInput(n);
-    };
-    BrMaskerIonic3.prototype.moneyMask = function (value, config) {
-        var decimal = config.decimal || this.brmasker.decimal;
-        value = value
-            .replace(/\D/gi, '')
-            .replace(new RegExp("([0-9]{" + decimal + "})$", "g"), config.decimalCaracter + '$1');
-        if (value.length === decimal + 1) {
-            return "0" + value; // leading 0 so we're not left with something weird like ",50"
-        }
-        else if (value.length > decimal + 2 && value.charAt(0) === '0') {
-            return value.substr(1); // remove leading 0 when we don't need it anymore
-        }
-        if (config.thousand && value.length > (Number(4) + Number(config.decimal))) {
-            value = value.replace(new RegExp("([0-9]{3})" + config.decimalCaracter + "([0-9]{" + config.decimal + "}$)", "g"), config.thousand + "$1" + config.decimalCaracter + "$2");
-        }
-        if (config.thousand && value.length > (Number(8) + Number(config.decimal))) {
-            value = value.replace(new RegExp("([0-9]{3})" + config.thousand + "([0-9]{3})" + config.decimalCaracter + "([0-9]{" + config.decimal + "}$)", "g"), config.thousand + "$1" + config.thousand + "$2" + config.decimalCaracter + "$3");
-        }
-        return value;
-    };
-    BrMaskerIonic3.prototype.onInput = function (value) {
-        var ret = this.formatField(value, this.brmasker.mask, this.brmasker.len);
-        return ret;
-        // if (ret) {
-        //   this.element.nativeElement.value = ret;
-        // }
-    };
-    BrMaskerIonic3.prototype.thousand = function (value) {
-        var val = value.replace(/\D/gi, '');
-        var reverse = val.toString().split('').reverse().join('');
-        var thousands = reverse.match(/\d{1,3}/g);
-        if (thousands) {
-            return thousands.join("" + (this.brmasker.thousand || '.')).split('').reverse().join('');
-        }
-        return val;
-    };
-    BrMaskerIonic3.prototype.usingSpecialCharacters = function (campo, Mascara, tamanho) {
-        if (!tamanho) {
-            tamanho = 99999999999;
-        }
-        var boleanoMascara;
-        var exp = /\-|\.|\,| /gi;
-        var campoSoNumeros = campo.toString().replace(exp, '');
-        var posicaoCampo = 0;
-        var NovoValorCampo = '';
-        var TamanhoMascara = campoSoNumeros.length;
-        for (var i = 0; i < TamanhoMascara; i++) {
-            if (i < tamanho) {
-                boleanoMascara = ((Mascara.charAt(i) === '-') || (Mascara.charAt(i) === '.') || (Mascara.charAt(i) === ','));
-                if (boleanoMascara) {
-                    NovoValorCampo += Mascara.charAt(i);
-                    TamanhoMascara++;
-                }
-                else {
-                    NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
-                    posicaoCampo++;
-                }
-            }
-        }
-        return NovoValorCampo;
-    };
-    BrMaskerIonic3.prototype.formatField = function (campo, Mascara, tamanho) {
-        if (!tamanho) {
-            tamanho = 99999999999;
-        }
-        var boleanoMascara;
-        var exp = /\-|\.|\/|\(|\)|\,|\*|\+|\@|\#|\$|\&|\%|\:| /gi;
-        var campoSoNumeros = campo.toString().replace(exp, '');
-        var posicaoCampo = 0;
-        var NovoValorCampo = '';
-        var TamanhoMascara = campoSoNumeros.length;
-        for (var i = 0; i < TamanhoMascara; i++) {
-            if (i < tamanho) {
-                boleanoMascara = ((Mascara.charAt(i) === '-') || (Mascara.charAt(i) === '.') || (Mascara.charAt(i) === '/'));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '(') || (Mascara.charAt(i) === ')') || (Mascara.charAt(i) === ' '));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === ',') || (Mascara.charAt(i) === '*') || (Mascara.charAt(i) === '+'));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '@') || (Mascara.charAt(i) === '#') || (Mascara.charAt(i) === ':'));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '$') || (Mascara.charAt(i) === '&') || (Mascara.charAt(i) === '%'));
-                if (boleanoMascara) {
-                    NovoValorCampo += Mascara.charAt(i);
-                    TamanhoMascara++;
-                }
-                else {
-                    NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
-                    posicaoCampo++;
-                }
-            }
-        }
-        return NovoValorCampo;
-    };
-    return BrMaskerIonic3;
-}());
-
-BrMaskerIonic3.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: '[brmasker]',
-                providers: [
-                    {
-                        provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* NG_VALUE_ACCESSOR */],
-                        useExisting: BrMaskerIonic3,
-                        multi: true
-                    }
-                ]
-            },] },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
-];
-/** @nocollapse */
-BrMaskerIonic3.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["W" /* Renderer */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
-]; };
-BrMaskerIonic3.propDecorators = {
-    'brmasker': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'inputKeyup': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* HostListener */], args: ['keyup', ['$event'],] },],
-    'inputOnblur': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* HostListener */], args: ['ionBlur', ['$event'],] },],
-    'inputFocus': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* HostListener */], args: ['ionFocus', ['$event'],] },],
-};
-//# sourceMappingURL=brmasker-ionic-3.js.map
-
-/***/ }),
-
-/***/ 434:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export BrMaskServicesModel */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BrMaskerIonicServices3; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-
-var BrMaskServicesModel = (function () {
-    function BrMaskServicesModel() {
-        this.type = 'alfa';
-        this.decimal = 2;
-        this.decimalCaracter = ",";
-        this.userCaracters = false;
-        this.numberAndTousand = false;
-    }
-    return BrMaskServicesModel;
-}());
-
-var BrMaskerIonicServices3 = (function () {
-    function BrMaskerIonicServices3() {
-        this.brmasker = new BrMaskServicesModel();
-    }
-    BrMaskerIonicServices3.prototype.ngOnInit = function () {
-        if (!this.brmasker.type) {
-            this.brmasker.type = 'all';
-        }
-        if (!this.brmasker.decimal) {
-            this.brmasker.decimal = 2;
-        }
-        if (!this.brmasker.decimalCaracter) {
-            this.brmasker.decimalCaracter = ',';
-        }
-    };
-    BrMaskerIonicServices3.prototype.writeCreateValue = function (value, config) {
-        if (config === void 0) { config = new BrMaskServicesModel(); }
-        if (value && config.phone) {
-            return value.replace(/^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/gi, '$1 ($2) $3-$4');
-        }
-        if (value && config.money) {
-            return this.writeValueMoney(value, config);
-        }
-        if (value && config.person) {
-            return this.writeValuePerson(value);
-        }
-        if (value && config.percent) {
-            return this.writeValuePercent(value);
-        }
-        if (value && config.numberAndTousand) {
-            return this.writeValueNumberAndThousand(value);
-        }
-        if (value && config.userCaracters) {
-            return this.writeValueusingSpecialCharacters(value);
-        }
-        if (value && config.mask) {
-            this.brmasker.mask = config.mask;
-            if (config.len) {
-                this.brmasker.len = config.len;
-            }
-            return this.onInput(value);
-        }
-        return value;
-    };
-    BrMaskerIonicServices3.prototype.writeValuePercent = function (value) {
-        value.replace(/\D/gi, '');
-        value.replace(/%/gi, '');
-        return value.replace(/([0-9]{0})$/gi, '%$1');
-    };
-    BrMaskerIonicServices3.prototype.writeValuePerson = function (value) {
-        if (value.length <= 11) {
-            return value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/gi, '\$1.\$2.\$3\-\$4');
-        }
-        else {
-            return value.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/gi, '\$1.\$2.\$3\/\$4\-\$5');
-        }
-    };
-    BrMaskerIonicServices3.prototype.writeValueMoney = function (value, config) {
-        if (config === void 0) { config = new BrMaskServicesModel(); }
-        return this.moneyMask(value, config);
-    };
-    BrMaskerIonicServices3.prototype.writeValueNumberAndThousand = function (value, config) {
-        if (config === void 0) { config = new BrMaskServicesModel(); }
-        return this.thousand(value);
-    };
-    BrMaskerIonicServices3.prototype.writeValueusingSpecialCharacters = function (value, config) {
-        if (config === void 0) { config = new BrMaskServicesModel(); }
-        return this.usingSpecialCharacters(value, config.mask, config.len);
-    };
-    BrMaskerIonicServices3.prototype.moneyMask = function (value, config) {
-        var decimal = config.decimal || this.brmasker.decimal;
-        value = value
-            .replace(/\D/gi, '')
-            .replace(new RegExp("([0-9]{" + decimal + "})$", "g"), config.decimalCaracter + '$1');
-        if (value.length === decimal + 1) {
-            return "0" + value; // leading 0 so we're not left with something weird like ",50"
-        }
-        else if (value.length > decimal + 2 && value.charAt(0) === '0') {
-            return value.substr(1); // remove leading 0 when we don't need it anymore
-        }
-        if (config.thousand && value.length > (Number(4) + Number(config.decimal))) {
-            value = value.replace(new RegExp("([0-9]{3})" + config.decimalCaracter + "([0-9]{" + config.decimal + "}$)", "g"), config.thousand + "$1" + config.decimalCaracter + "$2");
-        }
-        if (config.thousand && value.length > (Number(8) + Number(config.decimal))) {
-            value = value.replace(new RegExp("([0-9]{3})" + config.thousand + "([0-9]{3})" + config.decimalCaracter + "([0-9]{" + config.decimal + "}$)", "g"), config.thousand + "$1" + config.thousand + "$2" + config.decimalCaracter + "$3");
-        }
-        return value;
-    };
-    BrMaskerIonicServices3.prototype.onInput = function (value) {
-        var ret = this.formatField(value, this.brmasker.mask, this.brmasker.len);
-        return ret;
-    };
-    BrMaskerIonicServices3.prototype.thousand = function (value) {
-        var val = value.replace(/\D/gi, '');
-        var reverse = val.toString().split('').reverse().join('');
-        var thousands = reverse.match(/\d{1,3}/g);
-        val = thousands.join("" + (this.brmasker.thousand || '.')).split('').reverse().join('');
-        return val;
-    };
-    BrMaskerIonicServices3.prototype.usingSpecialCharacters = function (campo, Mascara, tamanho) {
-        if (!tamanho) {
-            tamanho = 99999999999;
-        }
-        var boleanoMascara;
-        var exp = /\-|\.|\,| /gi;
-        var campoSoNumeros = campo.toString().replace(exp, '');
-        var posicaoCampo = 0;
-        var NovoValorCampo = '';
-        var TamanhoMascara = campoSoNumeros.length;
-        for (var i = 0; i < TamanhoMascara; i++) {
-            if (i < tamanho) {
-                boleanoMascara = ((Mascara.charAt(i) === '-') || (Mascara.charAt(i) === '.') || (Mascara.charAt(i) === ','));
-                if (boleanoMascara) {
-                    NovoValorCampo += Mascara.charAt(i);
-                    TamanhoMascara++;
-                }
-                else {
-                    NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
-                    posicaoCampo++;
-                }
-            }
-        }
-        return NovoValorCampo;
-    };
-    BrMaskerIonicServices3.prototype.formatField = function (campo, Mascara, tamanho) {
-        if (!tamanho) {
-            tamanho = 99999999999;
-        }
-        var boleanoMascara;
-        var exp = /\-|\.|\/|\(|\)|\,|\*|\+|\@|\#|\$|\&|\%|\:| /gi;
-        var campoSoNumeros = campo.toString().replace(exp, '');
-        var posicaoCampo = 0;
-        var NovoValorCampo = '';
-        var TamanhoMascara = campoSoNumeros.length;
-        for (var i = 0; i < TamanhoMascara; i++) {
-            if (i < tamanho) {
-                boleanoMascara = ((Mascara.charAt(i) === '-') || (Mascara.charAt(i) === '.') || (Mascara.charAt(i) === '/'));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '(') || (Mascara.charAt(i) === ')') || (Mascara.charAt(i) === ' '));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === ',') || (Mascara.charAt(i) === '*') || (Mascara.charAt(i) === '+'));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '@') || (Mascara.charAt(i) === '#') || (Mascara.charAt(i) === ':'));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '$') || (Mascara.charAt(i) === '&') || (Mascara.charAt(i) === '%'));
-                if (boleanoMascara) {
-                    NovoValorCampo += Mascara.charAt(i);
-                    TamanhoMascara++;
-                }
-                else {
-                    NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
-                    posicaoCampo++;
-                }
-            }
-        }
-        return NovoValorCampo;
-    };
-    return BrMaskerIonicServices3;
-}());
-
-BrMaskerIonicServices3.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: '[brmasker]',
-            },] },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
-];
-/** @nocollapse */
-BrMaskerIonicServices3.ctorParameters = function () { return []; };
-//# sourceMappingURL=brmasker-ionic-services.js.map
-
-/***/ }),
-
-/***/ 445:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RespondentProfilePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return RespondentProfilePage; });
 /* unused harmony export ResidenceTime */
 /* unused harmony export SalaryRange */
 /* unused harmony export AgeRange */
 /* unused harmony export Discipline */
-/* unused harmony export Respondent */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Respondent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__intro_intro__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_of__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_of__ = __webpack_require__(212);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_observable_of__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operators_map__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operators_map__ = __webpack_require__(211);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operators_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_operators_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_city_city__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_neighborhood_neighborhood__ = __webpack_require__(214);
@@ -626,7 +103,7 @@ var RespondentProfilePage = /** @class */ (function () {
         this.respondentId = 0;
         this.respondentCode = null;
         this.userType = "cidadão";
-        this.caseTest = "Avaliação Saúde Mental - UNIFEI";
+        this.caseTest = "Levantamento acerca da Saúde Mental - UNIFEI";
         this.ageRangeName = "";
         this.residenceTimeName = "";
         this.salaryRangeName = "";
@@ -665,6 +142,7 @@ var RespondentProfilePage = /** @class */ (function () {
         this.createResidenceMembersList();
         this.createFinancialAssistanceList();
         this.createForm();
+        this.createCourseSemester();
         // this.createDisciplineList();
         // this.createResidenceTimeRange();
         // this.createSalaryRange();
@@ -688,6 +166,7 @@ var RespondentProfilePage = /** @class */ (function () {
             // ------------ CASE 2 - UNIFEI ------------
             userType: [''],
             courseName: [''],
+            courseEntry: [''],
             residenceType: [''],
             residenceMembers: [''],
             haveChildren: [false],
@@ -801,6 +280,7 @@ var RespondentProfilePage = /** @class */ (function () {
                 _this.respondentId = respondent.id;
                 _this.respondentForm.controls['userType'].setValue(respondent.type);
                 _this.respondentForm.controls['courseName'].setValue(respondent.courseName);
+                _this.respondentForm.controls['courseEntry'].setValue(respondent.courseEntry);
                 _this.respondentForm.controls['residenceType'].setValue(respondent.residenceType);
                 _this.respondentForm.controls['residenceMembers'].setValue(respondent.residenceMembers);
                 _this.respondentForm.controls['haveChildren'].setValue(respondent.haveChildren);
@@ -1049,55 +529,77 @@ var RespondentProfilePage = /** @class */ (function () {
             { id: 5, value: 'Outros' }
         ];
     };
-    RespondentProfilePage.prototype.createCourseEntryLeftList = function () {
+    RespondentProfilePage.prototype.createCourseSemester = function () {
         this.courseEntryList = [];
         this.courseEntryList = [
-            { value: '1º semestre - 2010' },
-            { value: '2º semestre - 2010' },
-            { value: '1º semestre - 2011' },
-            { value: '2º semestre - 2011' },
-            { value: '1º semestre - 2012' },
-            { value: '2º semestre - 2012' },
-            { value: '1º semestre - 2013' },
-            { value: '2º semestre - 2013' },
-            { value: '1º semestre - 2014' },
-            { value: '2º semestre - 2014' },
-            { value: '1º semestre - 2015' },
-            { value: '2º semestre - 2015' },
-            { value: '1º semestre - 2016' },
-            { value: '2º semestre - 2016' },
-            { value: '1º semestre - 2017' },
-            { value: '2º semestre - 2017' },
-            { value: '1º semestre - 2018' },
-            { value: '2º semestre - 2018' },
-            { value: '1º semestre - 2019' },
-            { value: '2º semestre - 2019' },
-            { value: '1º semestre - 2020' }
+            { value: '1º período' },
+            { value: '2º período' },
+            { value: '3º período' },
+            { value: '4º período' },
+            { value: '5º período' },
+            { value: '6º período' },
+            { value: '7º período' },
+            { value: '8º período' },
+            { value: '9º período' },
+            { value: '10º período' },
+            { value: '11º período' },
+            { value: '12º período' },
+            { value: '13º período' },
+            { value: '14º período' },
+            { value: '15º período' },
+            { value: '16º período' },
+            { value: '17º período' },
+            { value: '18º período' },
+            { value: '19º período' },
+            { value: '20º período' }
         ];
-        this.courseLeftList = [];
-        this.courseLeftList = [
-            { value: '1º semestre - 2010' },
-            { value: '2º semestre - 2010' },
-            { value: '1º semestre - 2011' },
-            { value: '2º semestre - 2011' },
-            { value: '1º semestre - 2012' },
-            { value: '2º semestre - 2012' },
-            { value: '1º semestre - 2013' },
-            { value: '2º semestre - 2013' },
-            { value: '1º semestre - 2014' },
-            { value: '2º semestre - 2014' },
-            { value: '1º semestre - 2015' },
-            { value: '2º semestre - 2015' },
-            { value: '1º semestre - 2016' },
-            { value: '2º semestre - 2016' },
-            { value: '1º semestre - 2017' },
-            { value: '2º semestre - 2017' },
-            { value: '1º semestre - 2018' },
-            { value: '2º semestre - 2018' },
-            { value: '1º semestre - 2019' },
-            { value: '2º semestre - 2019' },
-            { value: '1º semestre - 2020' }
-        ];
+        // this.courseEntryList = [
+        //   { value: '1º semestre - 2010' },
+        //   { value: '2º semestre - 2010' },
+        //   { value: '1º semestre - 2011' },
+        //   { value: '2º semestre - 2011' },
+        //   { value: '1º semestre - 2012' },
+        //   { value: '2º semestre - 2012' },
+        //   { value: '1º semestre - 2013' },
+        //   { value: '2º semestre - 2013' },
+        //   { value: '1º semestre - 2014' },
+        //   { value: '2º semestre - 2014' },
+        //   { value: '1º semestre - 2015' },
+        //   { value: '2º semestre - 2015' },
+        //   { value: '1º semestre - 2016' },
+        //   { value: '2º semestre - 2016' },
+        //   { value: '1º semestre - 2017' },
+        //   { value: '2º semestre - 2017' },
+        //   { value: '1º semestre - 2018' },
+        //   { value: '2º semestre - 2018' },
+        //   { value: '1º semestre - 2019' },
+        //   { value: '2º semestre - 2019' },
+        //   { value: '1º semestre - 2020' }
+        // ];
+        // this.courseLeftList = [];
+        // this.courseLeftList = [
+        //   { value: '1º semestre - 2010' },
+        //   { value: '2º semestre - 2010' },
+        //   { value: '1º semestre - 2011' },
+        //   { value: '2º semestre - 2011' },
+        //   { value: '1º semestre - 2012' },
+        //   { value: '2º semestre - 2012' },
+        //   { value: '1º semestre - 2013' },
+        //   { value: '2º semestre - 2013' },
+        //   { value: '1º semestre - 2014' },
+        //   { value: '2º semestre - 2014' },
+        //   { value: '1º semestre - 2015' },
+        //   { value: '2º semestre - 2015' },
+        //   { value: '1º semestre - 2016' },
+        //   { value: '2º semestre - 2016' },
+        //   { value: '1º semestre - 2017' },
+        //   { value: '2º semestre - 2017' },
+        //   { value: '1º semestre - 2018' },
+        //   { value: '2º semestre - 2018' },
+        //   { value: '1º semestre - 2019' },
+        //   { value: '2º semestre - 2019' },
+        //   { value: '1º semestre - 2020' }
+        // ];
     };
     RespondentProfilePage.prototype.createCourseNameListGrad = function () {
         this.courseNameList = [];
@@ -1579,37 +1081,38 @@ var RespondentProfilePage = /** @class */ (function () {
         var _this = this;
         this.isTermRead = true;
         var confirm = this.alertCtrl.create({
+            cssClass: 'consent-form',
             title: 'Termo de consentimento',
-            message: '<p><strong>Termo de Consentimento</strong></p>' +
-                '<p><strong>Pesquisadores respons&aacute;veis:</strong> Kayque Willy Reis de Oliveira, Melise Maria Veiga de Paula, Fl&aacute;via Ludovico de Matos e Thamiris Daniel dos Santos.</p>' +
-                '<p>Voc&ecirc; est&aacute; sendo convidado(a) a participar de uma pesquisa autoaplic&aacute;vel com o objetivo&nbsp; de investigar estrat&eacute;gias de enfrentamento e o impacto da pandemia do novo Coronav&iacute;rus (COVID-19) na sa&uacute;de mental dos alunos de gradua&ccedil;&atilde;o e p&oacute;s-gradua&ccedil;&atilde;o da Universidade Federal de Itajub&aacute;. Sua participa&ccedil;&atilde;o nesse estudo &eacute; volunt&aacute;ria e muito importante para n&oacute;s. Fique tranquilo, se voc&ecirc; n&atilde;o quiser ou n&atilde;o puder participar, ou ainda, se quiser desistir depois de iniciar, isso n&atilde;o vai trazer nenhum problema para voc&ecirc;. Voc&ecirc; n&atilde;o ser&aacute; identificado, garantido o sigilo e anonimato das informa&ccedil;&otilde;es. Voc&ecirc; pode conhecer os resultados a qualquer momento, basta entrar em contato atrav&eacute;s do email (kayque-willy@hotmail.com).</p>' +
-                '<p>&nbsp;<strong>Tempo para responder as perguntas:</strong> em torno de X minutos.</p>' +
-                '<p>&nbsp;<strong>Esteja ciente que:</strong></p>' +
-                '<ol>' +
+            message: '<p style="text-align: center;"><strong>Termo de Consentimento</strong></p>' +
+                '<p style="text-align: justify;"><strong>Pesquisadores respons&aacute;veis:</strong> Kayque Willy Reis de Oliveira, Melise Maria Veiga de Paula, Fl&aacute;via Ludovico de Matos e Thamiris Daniel dos Santos.</p>' +
+                '<p style="text-align: justify;">Voc&ecirc; est&aacute; sendo convidado(a) a participar de uma pesquisa autoaplic&aacute;vel com o objetivo de investigar estrat&eacute;gias de enfrentamento e o impacto da pandemia do novo Coronav&iacute;rus (COVID-19) na sa&uacute;de mental dos alunos de gradua&ccedil;&atilde;o e p&oacute;s-gradua&ccedil;&atilde;o da Universidade Federal de Itajub&aacute;.</p>' +
+                '<p style="text-align: justify;">Sua participa&ccedil;&atilde;o nesse estudo &eacute; volunt&aacute;ria e muito importante para n&oacute;s. Fique tranquilo, se voc&ecirc; n&atilde;o quiser ou n&atilde;o puder participar, ou ainda, se quiser desistir depois de iniciar, isso n&atilde;o vai trazer nenhum problema para voc&ecirc;. Voc&ecirc; n&atilde;o ser&aacute; identificado, garantido o sigilo e anonimato das informa&ccedil;&otilde;es. Voc&ecirc; pode conhecer os resultados a qualquer momento, basta entrar em contato atrav&eacute;s do email (kayque-willy@hotmail.com).</p>' +
+                '<p style="text-align: justify;">&nbsp;<strong>Tempo para responder as perguntas:</strong> em torno de 10 minutos.</p>' +
+                '<p style="text-align: justify;">&nbsp;<strong>Esteja ciente que:</strong></p>' +
+                '<ol style="text-align: justify;">' +
                 '<li>O estudo tem como objetivo compreender os aspectos psicol&oacute;gicos da sa&uacute;de mental como: sintomas gerais, sintomas depressivos, sintomas ap&oacute;s a Pandemia, qualidade de vida, uso da religiosidade ou espiritualidade, ansiedade, otimismo e pessimismo dos alunos durante a pandemia do novo Coronav&iacute;rus (COVID-19).</li>' +
                 '</ol>' +
-                '<ol start="2">' +
+                '<ol style="text-align: justify;" start="2">' +
                 '<li>Os resultados do estudo poder&atilde;o trazer um melhor entendimento para os profissionais de Psicologia da UNIFEI na oferta de servi&ccedil;os adequados &agrave;s necessidades atuais dos discentes, para como melhorar a sa&uacute;de mental, qualidade de vida e bem-estar dos alunos.</li>' +
                 '</ol>' +
-                '<ol start="3">' +
+                '<ol style="text-align: justify;" start="3">' +
                 '<li>A sua participa&ccedil;&atilde;o nesta pesquisa n&atilde;o implica no tratamento de alguma doen&ccedil;a. Os question&aacute;rios ser&atilde;o usados apenas para esse estudo e n&atilde;o v&atilde;o impactar qualquer que seja o tratamento que esteja fazendo.</li>' +
                 '</ol>' +
-                '<ol start="4">' +
+                '<ol style="text-align: justify;" start="4">' +
                 '<li>Voc&ecirc; ir&aacute; responder perguntas sobre seus sentimentos, pensamentos e comportamentos durante o isolamento social. S&atilde;o esperados riscos m&iacute;nimos com a sua participa&ccedil;&atilde;o nessa pesquisa, envolvendo apenas a possibilidade de desconforto ou constrangimento que, por ventura, venha a surgir ao responder alguma quest&atilde;o.</li>' +
                 '</ol>' +
-                '<ol start="5">' +
-                '<li>Os resultados ficar&atilde;o sob a guarda dos pesquisadores respons&aacute;veis e do Servi&ccedil;o de Psicologia da Universidade Federal de Itajub&aacute;, n&atilde;o sendo permitido que outras pessoas tenham acesso. Os pesquisadores poder&atilde;o apresentar ou publicar os resultados desse estudo em revistas cient&iacute;ficas, mas tamb&eacute;m em ve&iacute;culos de acesso f&aacute;cil como revistas populares, r&aacute;dio ou TV para a popula&ccedil;&atilde;o que participou da pesquisa. Vale ressaltar que voc&ecirc; n&atilde;o ser&aacute; identificado.</li>' +
+                '<ol style="text-align: justify;" start="5">' +
+                '<li>Os resultados ficar&atilde;o sob a guarda dos pesquisadores respons&aacute;veis e do Servi&ccedil;o de Psicologia da Universidade Federal de Itajub&aacute;, e a divulga&ccedil;&atilde;o dos resultados ser&aacute; feita de forma a n&atilde;o identificar os volunt&aacute;rios, dentro dos procedimentos &eacute;ticos para fins de estudo, sendo garantida a privacidade dos participantes. Os pesquisadores poder&atilde;o apresentar ou publicar os resultados desse estudo em eventos e revistas cient&iacute;ficas, mas tamb&eacute;m em ve&iacute;culos de acesso f&aacute;cil como revistas populares, r&aacute;dio ou TV. Vale ressaltar que toda divulga&ccedil;&atilde;o somente ser&aacute; realizada com o objetivo de contribuir para a cria&ccedil;&atilde;o de estrat&eacute;gias de supera&ccedil;&atilde;o das dificuldades emocionais da comunidade acad&ecirc;mica.</li>' +
                 '</ol>' +
-                '<p>&nbsp;</p>' +
-                '<p><strong>Os pesquisadores estar&atilde;o a sua disposi&ccedil;&atilde;o para qualquer esclarecimento que considere necess&aacute;rio</strong><strong>:</strong></p>' +
-                '<p>Kayque Willy Reis de Oliveira e Melise Maria Veiga de Paula</p>' +
-                '<p>Programa de Mestrado em Ci&ecirc;ncia e Tecnologia da Computa&ccedil;&atilde;o &ndash; Universidade Federal de Itajub&aacute;</p>' +
-                '<p>kayque-willy@hotmail.com e melise@unifei.edu.br</p>' +
-                '<p>Fl&aacute;via Ludovico de Matos e Thamiris Daniel dos Santos</p>' +
-                '<p>Psic&oacute;logas &ndash; Universidade Federal de Itajub&aacute;</p>' +
-                '<p>psicologia@unifei.edu.br</p>' +
-                '<p>(35) 3629 1008/1793</p>' +
-                '<p>&nbsp;</p>',
+                '<p style="text-align: justify;"><strong>Os pesquisadores estar&atilde;o a sua disposi&ccedil;&atilde;o para qualquer esclarecimento que considere necess&aacute;rio</strong><strong>:</strong></p>' +
+                '<p style="text-align: justify;">Kayque Willy Reis de Oliveira e Melise Maria Veiga de Paula</p>' +
+                '<p style="text-align: justify;">Programa de Mestrado em Ci&ecirc;ncia e Tecnologia da Computa&ccedil;&atilde;o &ndash; Universidade Federal de Itajub&aacute;</p>' +
+                '<p style="text-align: justify;">kayque-willy@hotmail.com e melise@unifei.edu.br</p>' +
+                '<p style="text-align: justify;">&nbsp;</p>' +
+                '<p style="text-align: justify;">Fl&aacute;via Ludovico de Matos e Thamiris Daniel dos Santos</p>' +
+                '<p style="text-align: justify;">Psic&oacute;logas &ndash; Universidade Federal de Itajub&aacute;</p>' +
+                '<p style="text-align: justify;">psicologia@unifei.edu.br</p>' +
+                '<p style="text-align: justify;">(35) 3629 1008/1793</p>',
             buttons: [
                 {
                     text: 'Não aceito',
@@ -1663,7 +1166,7 @@ var RespondentProfilePage = /** @class */ (function () {
     ], RespondentProfilePage.prototype, "checkBox", void 0);
     RespondentProfilePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
-            selector: 'page-respondent-profile',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\respondent-profile\respondent-profile.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-row>\n\n      <ion-col offset-1 col-2 class="menu-icon-col-not-game" *ngIf="!useGame">\n\n        <button ion-button clear (click)="openMenu()">\n\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n\n        </button>\n\n      </ion-col>\n\n      <ion-col offset-1 col-2 class="menu-icon-col" *ngIf="useGame">\n\n        <button ion-button clear (click)="openMenu()">\n\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n\n        </button>\n\n      </ion-col>\n\n      <ion-col col-6 *ngIf="!useGame">\n\n        <img class="img-responsive img-not-game" src="assets/imgs/header-logo.png" />\n\n      </ion-col>\n\n      <ion-col col-6 *ngIf="useGame">\n\n        <img class="img-responsive" src="assets/imgs/header-logo.png" />\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <h2 *ngIf="useGame" class="profile-title profile-title-game" col-12 text-center>Perfil do respondente</h2>\n\n  <h2 *ngIf="!useGame" class="profile-title" col-12 text-center>Perfil do respondente</h2>\n\n  <!-- Pontuação -->\n\n  <div *ngIf="useGame" class="level-panel">\n\n    <!-- Com Pontuação -->\n\n    <ion-item *ngIf="points > 0" text-wrap>\n\n      <ion-thumbnail item-start>\n\n        <img class="img-responsive" src="assets/imgs/game/{{levelImg}}.png" />\n\n      </ion-thumbnail>\n\n      <ion-label>\n\n        <h2>Você está no nível <strong>{{level}}</strong> de Participação!</h2>\n\n        <p><b>Sua pontuação</b></p>\n\n        <ion-badge>{{points}} pontos</ion-badge>\n\n      </ion-label>\n\n    </ion-item>\n\n    <!-- Com Pontuação -->\n\n    <!-- Sem pontuação -->\n\n    <ion-item *ngIf="points == 0" text-wrap>\n\n      <ion-thumbnail item-start>\n\n        <img class="img-responsive" src="assets/imgs/game/{{levelImg}}.png" />\n\n      </ion-thumbnail>\n\n      <ion-label>\n\n        <h2>Responda os questionários para aumentar o <b>nível</b> de <b>Participação</b>!</h2>\n\n        <p><b>Sua pontuação</b></p>\n\n        <ion-badge>{{points}} pontos</ion-badge>\n\n      </ion-label>\n\n    </ion-item>\n\n    <!-- Sem pontuação -->\n\n  </div>\n\n  <!-- Pontuação -->\n\n  <h3 *ngIf="useGame" class="subtitle subtitle-game" col-12 text-center>Por favor informe os seus dados</h3>\n\n  <h3 *ngIf="!useGame" class="subtitle" col-12 text-center>Por favor informe os seus dados</h3>\n\n  <form [formGroup]="respondentForm">\n\n    <!-----------------------CASE 2 - UNIFEI----------------------->\n\n    <!-- Tipo de Respondente -->\n\n    <ion-item>\n\n      <ion-label floating>Qual o seu vínculo com a Universidade?</ion-label>\n\n      <ion-select formControlName="userType" required>\n\n        <ion-option *ngFor="let userType of userTypeList" [value]="userType.value"\n\n          (ionSelect)="selectUserType(userType)">\n\n          {{userType.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <!-- Tipo de Respondente -->\n\n    <!-- Curso -->\n\n    <ion-item>\n\n      <ion-label floating>Qual o seu curso?</ion-label>\n\n      <ion-select formControlName="courseName" required [disabled]="courseDisabled">\n\n        <ion-option *ngFor="let courseName of courseNameList" [value]="courseName.value">\n\n          {{courseName.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <!-- Curso -->\n\n    <!-- Onde mora -->\n\n    <ion-item>\n\n      <ion-label floating>Onde você mora?</ion-label>\n\n      <ion-select formControlName="residenceType" required>\n\n        <ion-option *ngFor="let residenceType of residenceTypeList" [value]="residenceType.value">\n\n          {{residenceType.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <!-- Onde mora -->\n\n    <!-- Com quem mora -->\n\n    <ion-item>\n\n      <ion-label floating>Quantas pessoas residem com você?</ion-label>\n\n      <ion-select formControlName="residenceMembers" required>\n\n        <ion-option *ngFor="let residenceMembers of residenceMembersList" [value]="residenceMembers.value">\n\n          {{residenceMembers.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <!-- Com quem mora -->\n\n    <!-- Possui filhos -->\n\n    <ion-item>\n\n      <ion-label>Possui filhos?</ion-label>\n\n      <ion-checkbox item-end formControlName="haveChildren">\n\n      </ion-checkbox>\n\n    </ion-item>\n\n    <!-- Possui filhos -->\n\n    <!-- Possui vínculo empregatício -->\n\n    <ion-item>\n\n      <ion-label>Possui vínculo empregatício?</ion-label>\n\n      <ion-checkbox item-end formControlName="haveJob">\n\n      </ion-checkbox>\n\n    </ion-item>\n\n    <!-- Possui vínculo empregatício -->\n\n    <!-- Assistencia financeira -->\n\n    <ion-row class="metric-row">\n\n      <ion-col col-12>\n\n        <h3 class="subtitle check-box-subtitle" col-12 text-center>Você está recebendo algum auxílio financeiro?\n\n        </h3>\n\n        <ion-list radio-group>\n\n          <ion-item *ngFor="let financialAssistance of financialAssistanceList; let i = index" class="item-checkbox">\n\n            <ion-label text-wrap text-left class="item-checkbox-text">{{financialAssistance.value}}</ion-label>\n\n            <ion-checkbox item-end [formControl]="respondentForm.controls[\'financialAssistance\'].controls[i]">\n\n            </ion-checkbox>\n\n          </ion-item>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n    <!-- Assistencia financeira -->\n\n    <!-- Termo de consentimento -->\n\n    <ion-row class="metric-row">\n\n      <ion-col col-12>\n\n        <h3 class="subtitle check-box-subtitle term-title" col-12 text-center>Termo de consentimento</h3>\n\n        <ion-label text-center text-wrap class="item-checkbox-text term-checbox-legend">Esta pesquisa possui um \n\n          termo de consentimento <a (click)="showTerm()">clique aqui para ler</a></ion-label>\n\n        <ion-list radio-group>\n\n          <ion-item class="item-checkbox">\n\n            <ion-label text-wrap text-left class="item-checkbox-text">Concordo com o termo de consentimento\n\n            </ion-label>\n\n            <ion-checkbox item-end formControlName="term" [disabled]="!isTermRead" required>\n\n            </ion-checkbox>\n\n          </ion-item>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n    <!-- Termo de consentimento -->\n\n    <!-----------------------CASE 2 - UNIFEI----------------------->\n\n    <!-----------------------CASE 1 - POSCOMP----------------------->\n\n    <!-- Tipo de Respondente -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Por favor, selecione o tipo de respondente</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'userType\']" required [disabled]="editing">\n\n        <ion-option *ngFor="let userType of userTypeList" [value]="userType.value"\n\n          (ionSelect)="selectUserType(userType)">\n\n          {{userType.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Tipo de Respondente -->\n\n    <!-- Nome -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Nome</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'name\']" required></ion-input>\n\n    </ion-item> -->\n\n    <!-- Nome -->\n\n    <!-- Discente formado ou evadido -->\n\n    <!-- <ion-item *ngIf="isDiscent && isDiscentEvaded">\n\n      <ion-label>você se formou no curso?</ion-label>\n\n      <ion-checkbox item-end (ionChange)="changeDiscentType()"\n\n        [formControl]="respondentForm.controls[\'isDiscentConcluded\']"></ion-checkbox>\n\n    </ion-item> -->\n\n    <!-- Discente formado ou evadido -->\n\n    <!-- Ano e semestre de ingresso -->\n\n    <!-- <ion-item *ngIf="isDiscent">\n\n      <ion-label floating>Por favor, selecione o ano e semestre de ingresso</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseEntry\']" required>\n\n        <ion-option *ngFor="let courseEntry of courseEntryList" [value]="courseEntry.value">\n\n          {{courseEntry.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Ano e semestre de ingresso -->\n\n    <!-- Ano e semestre de conclusão -->\n\n    <!-- <ion-item *ngIf="isDiscent && isDiscentConcluded">\n\n      <ion-label floating>Por favor, selecione o ano e semestre de conclusão</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseLeft\']" required>\n\n        <ion-option *ngFor="let courseLeft of courseLeftList" [value]="courseLeft.value">\n\n          {{courseLeft.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Ano e semestre de conclusão -->\n\n    <!-- Número de matricula -->\n\n    <!-- <ion-item *ngIf="isDiscent && !isDiscentEvaded && !isDiscentConcluded">\n\n      <ion-label floating>Número de matrícula</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'code\']"\n\n        [brmasker]="{mask: \'000000000000\', type:\'num\', len: 12}" type="text" required>\n\n      </ion-input>\n\n    </ion-item> -->\n\n    <!-- Número de matricula -->\n\n    <!-- SIAPE -->\n\n    <!-- <ion-item *ngIf="isDocent">\n\n      <ion-label floating>SIAPE</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'code\']"\n\n        [brmasker]="{mask: \'000000000000\', type:\'num\', len: 15}" type="text" required>\n\n      </ion-input>\n\n    </ion-item> -->\n\n    <!-- SIAPE -->\n\n    <!-- Disciplinas -->\n\n    <!-- <ion-row class="metric-row" *ngIf="isDiscent && !isDiscentEvaded && !isDiscentConcluded">\n\n      <ion-col col-12>\n\n        <h3 class="subtitle check-box-subtitle" col-12 text-center>Quais disciplinas você cursou no 2º semestre de 2019?\n\n        </h3>\n\n        <ion-list radio-group>\n\n          <ion-item *ngFor="let discipline of disciplineList" class="item-checkbox">\n\n            <ion-label text-wrap text-left class="item-checkbox-text">{{discipline.name}}</ion-label>\n\n            <ion-checkbox (ionChange)="updateDisciplineValue(discipline,$event.checked)"></ion-checkbox>\n\n          </ion-item>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row> -->\n\n    <!-- Disciplinas -->\n\n    <!-----------------------CASE 1 - POSCOMP----------------------->\n\n    <!------------------------ TODOS OS CAMPOS ------------------------->\n\n    <!-----------------------INFORMAÇÕES PESSOAIS----------------------->\n\n    <!-- CPF -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>CPF</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'cpf\']" type="text"\n\n        [brmasker]="{mask: \'000.000.000-00\', type:\'num\', len: 14}" required>\n\n      </ion-input>\n\n      <div class="validator-error"\n\n        *ngIf="respondentForm.controls[\'cpf\'].hasError(\'required\') && respondentForm.controls[\'cpf\'].touched">* CPF é\n\n        obrigatório!\n\n      </div>\n\n      <div class="validator-error"\n\n        *ngIf="respondentForm.controls[\'cpf\'].hasError(\'invalid\') && respondentForm.controls[\'cpf\'].touched">* CPF é\n\n        inválido!\n\n      </div>\n\n    </ion-item> -->\n\n    <!-- CPF -->\n\n    <!-- Nome -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Nome</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'name\']"></ion-input>\n\n    </ion-item> -->\n\n    <!-- Nome -->\n\n    <!-- Genero -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Gênero</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'gender\']">\n\n        <ion-option *ngFor="let gender of genderList" [value]="gender.value">\n\n          {{gender.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Genero -->\n\n    <!-- Email -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Email</ion-label>\n\n      <ion-input [email]="true" [formControl]="respondentForm.controls[\'email\']" type="email"></ion-input>\n\n    </ion-item> -->\n\n    <!-- Email -->\n\n    <!-- Telefone -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Telefone</ion-label>\n\n      <ion-input [brmasker]="{mask: \'(00)00000-0000\', type:\'num\', len: 15}"\n\n        [formControl]="respondentForm.controls[\'phone\']"></ion-input>\n\n    </ion-item> -->\n\n    <!-- Telefone -->\n\n    <!-- WhatsApp -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>WhatsApp</ion-label>\n\n      <ion-input [brmasker]="{mask: \'(00)00000-0000\', type:\'num\', len: 15}"\n\n        [formControl]="respondentForm.controls[\'whatsapp\']"></ion-input>\n\n    </ion-item> -->\n\n    <!-- WhatsApp -->\n\n    <!-- Cidade de residência -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Cidade de Residência</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'residenceCity\']">\n\n        <ion-option *ngFor="let residenceCity of cities" [value]="residenceCity">\n\n          {{residenceCity.name}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Cidade de residência -->\n\n    <!-- Bairro de residencia -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Bairro de Residência</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'residenceNeighborhood\']" [compareWith]="compareFn">\n\n        <ion-option *ngFor="let residenceNeighborhood of residenceNeighborhoods" [value]="residenceNeighborhood">\n\n          {{residenceNeighborhood.name}}\n\n        </ion-option>\n\n      </ion-select>\n\n      <div class="validator-error"\n\n        *ngIf="respondentForm.controls[\'residenceNeighborhood\'].hasError(\'required\') && respondentForm.controls[\'residenceNeighborhood\'].touched">\n\n        * Bairro de Residência é obrigatório!\n\n      </div>\n\n    </ion-item> -->\n\n    <!-- Bairro de residencia -->\n\n    <!-----------------------INFORMAÇÕES PESSOAIS----------------------->\n\n    <!-----------------------INFORMAÇÕES DE TRABALHO----------------------->\n\n    <!-- Comerciante ou não -->\n\n    <!-- <ion-item>\n\n    <ion-label>Possui comércio no centro?</ion-label>\n\n    <ion-checkbox item-end (ionChange)="changeUserType()" [(ngModel)]="isCommerce"></ion-checkbox>\n\n    </ion-item> -->\n\n    <!-- Comerciante ou não -->\n\n    <!-- Cidade de trabalho -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Cidade de Trabalho</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'jobCity\']" (ionChange)="loadJobNeighborhoods()"\n\n        [compareWith]="compareFn">\n\n        <ion-option *ngFor="let jobCity of cities" [value]="jobCity" (ionSelect)="selectCity(jobCity)">\n\n          {{jobCity.name}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Cidade de trabalho -->\n\n    <!-- Nome da Empresa -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Nome da empresa</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'jobName\']"></ion-input>\n\n    </ion-item> -->\n\n    <!-- Nome da Empresa -->\n\n    <!-- Endereço da Empresa -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Endereço da empresa</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'jobAddress\']"></ion-input>\n\n    </ion-item> -->\n\n    <!-- Endereço da Empresa -->\n\n    <!-- Bairro de trabalho -->\n\n    <!-- <div class="{{isSameJobCity}}">\n\n      <ion-item>\n\n        <ion-label floating>Bairro de Trabalho</ion-label>\n\n        <ion-select [formControl]="respondentForm.controls[\'jobNeighborhood\']" [disabled]="jobNeighborhoodDisabled"\n\n          [compareWith]="compareFn">\n\n          <ion-option *ngFor="let jobNeighborhood of jobNeighborhoods" [value]="jobNeighborhood">\n\n            {{jobNeighborhood.name}}\n\n          </ion-option>\n\n        </ion-select>\n\n      </ion-item>\n\n    </div> -->\n\n    <!-- Bairro de trabalho -->\n\n    <!-----------------------INFORMAÇÕES DE TRABALHO----------------------->\n\n    <!-----------------------INFORMAÇÕES ACADÊMICAS----------------------->\n\n    <!-- Tipo de Respondente -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Nível</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'userType\']">\n\n        <ion-option *ngFor="let userType of userTypeList" [value]="userType.value"\n\n          (ionSelect)="selectUserType(userType)">\n\n          {{userType.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Tipo de Respondente -->\n\n    <!-- Discente formado ou evadido -->\n\n    <!-- <ion-item *ngIf="isDiscent">\n\n      <ion-label>Formou no curso?</ion-label>\n\n      <ion-checkbox item-end (ionChange)="changeDiscentType()"></ion-checkbox>\n\n    </ion-item> -->\n\n    <!-- Discente formado ou evadido -->\n\n    <!-- Número de matricula -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Número de matrícula</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'code\']"\n\n        [brmasker]="{mask: \'000000000000\', type:\'num\', len: 12}" type ="text" required>\n\n      </ion-input>\n\n    </ion-item> -->\n\n    <!-- Número de matricula -->\n\n    <!-- Curso -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Curso</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseName\']" [disabled]="courseDisabled">\n\n        <ion-option *ngFor="let courseName of courseNameList" [value]="courseName.value">\n\n          {{courseName.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Curso -->\n\n    <!-- Ano e semestre de ingresso -->\n\n    <!-- <ion-item *ngIf="isDiscent">\n\n      <ion-label floating>Ano e semestre de ingresso</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseEntry\']" [disabled]="courseDisabled">\n\n        <ion-option *ngFor="let courseEntry of courseEntryList" [value]="courseEntry.value">\n\n          {{courseEntry.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Ano e semestre de ingresso -->\n\n    <!-- Ano e semestre de conclusão -->\n\n    <!-- <ion-item *ngIf="isDiscent && isDiscentEvaded">\n\n      <ion-label floating>Ano e semestre de conclusão</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseLeft\']">\n\n        <ion-option *ngFor="let courseLeft of courseLeftList" [value]="courseLeft.value">\n\n          {{courseLeft.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Ano e semestre de conclusão -->\n\n    <!-- Idade -->\n\n    <!-- <ion-item>\n\n      <ion-label>Idade</ion-label>\n\n      <ion-range snaps="true" [min]="0" [max]="4" [step]="1" (ionChange)="getAgeRangeByValue($event)"\n\n        [formControl]="respondentForm.controls[\'age\']">\n\n      </ion-range>\n\n      <ion-label>{{ageRangeName}}</ion-label>\n\n    </ion-item> -->\n\n    <!-- Idade -->\n\n    <!-----------------------INFORMAÇÕES ACADÊMICAS----------------------->\n\n    <!-------------------------------RANGES-------------------------------->\n\n    <!-- Tempo de residência -->\n\n    <!-- <ion-item>\n\n      <ion-label>Tempo de Residência</ion-label>\n\n      <ion-range snaps="true" [min]="0" [max]="4" [step]="1" (ionChange)="getResidenceTimeNameByValue($event)"\n\n        [formControl]="respondentForm.controls[\'residenceTimeRange\']">\n\n      </ion-range>\n\n      <ion-label>{{residenceTimeName}}</ion-label>\n\n    </ion-item> -->\n\n    <!-- Tempo de residência -->\n\n    <!-- Renda -->\n\n    <!-- <ion-item>\n\n      <ion-label>Renda</ion-label>\n\n      <ion-range snaps="true" [min]="0" [max]="4" [step]="1" (ionChange)="getSalaryRangeNameByValue($event)"\n\n        [formControl]="respondentForm.controls[\'salaryRange\']">\n\n      </ion-range>\n\n      <ion-label>{{salaryRangeName}}</ion-label>\n\n    </ion-item> -->\n\n    <!-- Renda -->\n\n    <!-------------------------------RANGES-------------------------------->\n\n    <!------------------------ TODOS OS CAMPOS ------------------------->\n\n    <ion-grid>\n\n      <ion-row *ngIf="editing && useGame">\n\n        <ion-col text-center>\n\n          <button ion-button block class="button-background" type="submit" (click)="saveRespondentInfo()"\n\n            [disabled]="!respondentForm.valid">\n\n            <ion-icon id="button-profile-update-game" class="text-button">\n\n              Salvar\n\n            </ion-icon>\n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row *ngIf="!editing && useGame">\n\n        <ion-col text-center>\n\n          <button ion-button block class="button-background" type="submit" (click)="saveRespondentInfo()"\n\n            [disabled]="!respondentForm.valid">\n\n            <ion-icon id="button-profile-register-game" class="text-button">\n\n              Salvar\n\n            </ion-icon>\n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row *ngIf="editing && !useGame">\n\n        <ion-col text-center>\n\n          <button ion-button block class="button-background" type="submit" (click)="saveRespondentInfo()"\n\n            [disabled]="!respondentForm.valid">\n\n            <ion-icon id="button-profile-update-not-game" class="text-button">\n\n              Salvar\n\n            </ion-icon>\n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row *ngIf="!editing && !useGame">\n\n        <ion-col text-center>\n\n          <button ion-button block class="button-background" type="submit" (click)="saveRespondentInfo()"\n\n            [disabled]="!respondentForm.valid">\n\n            <ion-icon id="button-profile-register-not-game" class="text-button">\n\n              Salvar\n\n            </ion-icon>\n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n  </form>\n\n</ion-content>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\respondent-profile\respondent-profile.html"*/,
+            selector: 'page-respondent-profile',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\respondent-profile\respondent-profile.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-row>\n\n      <ion-col offset-1 col-2 class="menu-icon-col-not-game" *ngIf="!useGame">\n\n        <button ion-button clear (click)="openMenu()">\n\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n\n        </button>\n\n      </ion-col>\n\n      <ion-col offset-1 col-2 class="menu-icon-col" *ngIf="useGame">\n\n        <button ion-button clear (click)="openMenu()">\n\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n\n        </button>\n\n      </ion-col>\n\n      <ion-col col-6 *ngIf="!useGame">\n\n        <img class="img-responsive img-not-game" src="assets/imgs/header-logo.png" />\n\n      </ion-col>\n\n      <ion-col col-6 *ngIf="useGame">\n\n        <img class="img-responsive" src="assets/imgs/header-logo.png" />\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <h2 *ngIf="useGame" class="profile-title profile-title-game" col-12 text-center>Perfil do respondente</h2>\n\n  <h2 *ngIf="!useGame" class="profile-title" col-12 text-center>Perfil do respondente</h2>\n\n  <!-- Pontuação -->\n\n  <div *ngIf="useGame" class="level-panel">\n\n    <!-- Com Pontuação -->\n\n    <ion-item *ngIf="points > 0" text-wrap>\n\n      <ion-thumbnail item-start>\n\n        <img class="img-responsive" src="assets/imgs/game/{{levelImg}}.png" />\n\n      </ion-thumbnail>\n\n      <ion-label>\n\n        <h2>Você está no nível <strong>{{level}}</strong> de Participação!</h2>\n\n        <p><b>Sua pontuação</b></p>\n\n        <ion-badge>{{points}} pontos</ion-badge>\n\n      </ion-label>\n\n    </ion-item>\n\n    <!-- Com Pontuação -->\n\n    <!-- Sem pontuação -->\n\n    <ion-item *ngIf="points == 0" text-wrap>\n\n      <ion-thumbnail item-start>\n\n        <img class="img-responsive" src="assets/imgs/game/{{levelImg}}.png" />\n\n      </ion-thumbnail>\n\n      <ion-label>\n\n        <h2>Responda os questionários para aumentar o <b>nível</b> de <b>Participação</b>!</h2>\n\n        <p><b>Sua pontuação</b></p>\n\n        <ion-badge>{{points}} pontos</ion-badge>\n\n      </ion-label>\n\n    </ion-item>\n\n    <!-- Sem pontuação -->\n\n  </div>\n\n  <!-- Pontuação -->\n\n  <h3 *ngIf="useGame" class="subtitle subtitle-game" col-12 text-center>Por favor informe os seus dados</h3>\n\n  <h3 *ngIf="!useGame" class="subtitle" col-12 text-center>Por favor informe os seus dados</h3>\n\n  <form [formGroup]="respondentForm">\n\n    <!-----------------------CASE 2 - UNIFEI----------------------->\n\n    <!-- Tipo de Respondente -->\n\n    <ion-item>\n\n      <ion-label floating>Qual o seu vínculo com a Universidade?</ion-label>\n\n      <ion-select formControlName="userType" required>\n\n        <ion-option *ngFor="let userType of userTypeList" [value]="userType.value"\n\n          (ionSelect)="selectUserType(userType)">\n\n          {{userType.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <!-- Tipo de Respondente -->\n\n    <!-- Curso -->\n\n    <ion-item>\n\n      <ion-label floating>Qual o seu curso?</ion-label>\n\n      <ion-select formControlName="courseName" required [disabled]="courseDisabled">\n\n        <ion-option *ngFor="let courseName of courseNameList" [value]="courseName.value">\n\n          {{courseName.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <!-- Curso -->\n\n    <!-- Período -->\n\n    <ion-item>\n\n      <ion-label floating>Por favor, selecione o seu período atual</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseEntry\']" required [disabled]="courseDisabled">\n\n        <ion-option *ngFor="let courseEntry of courseEntryList" [value]="courseEntry.value">\n\n          {{courseEntry.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <!-- Período -->\n\n    <!-- Onde mora -->\n\n    <ion-item>\n\n      <ion-label floating>Onde você mora?</ion-label>\n\n      <ion-select formControlName="residenceType" required>\n\n        <ion-option *ngFor="let residenceType of residenceTypeList" [value]="residenceType.value">\n\n          {{residenceType.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <!-- Onde mora -->\n\n    <!-- Com quem mora -->\n\n    <ion-item>\n\n      <ion-label floating>Quantas pessoas residem com você?</ion-label>\n\n      <ion-select formControlName="residenceMembers" required>\n\n        <ion-option *ngFor="let residenceMembers of residenceMembersList" [value]="residenceMembers.value">\n\n          {{residenceMembers.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <!-- Com quem mora -->\n\n    <!-- Possui filhos -->\n\n    <ion-item>\n\n      <ion-label>Possui filhos?</ion-label>\n\n      <ion-checkbox item-end formControlName="haveChildren">\n\n      </ion-checkbox>\n\n    </ion-item>\n\n    <!-- Possui filhos -->\n\n    <!-- Possui vínculo empregatício -->\n\n    <ion-item>\n\n      <ion-label>Possui vínculo empregatício?</ion-label>\n\n      <ion-checkbox item-end formControlName="haveJob">\n\n      </ion-checkbox>\n\n    </ion-item>\n\n    <!-- Possui vínculo empregatício -->\n\n    <!-- Assistencia financeira -->\n\n    <ion-row class="metric-row">\n\n      <ion-col col-12>\n\n        <h3 class="subtitle check-box-subtitle" col-12 text-center>Você está recebendo algum auxílio financeiro?\n\n        </h3>\n\n        <ion-list radio-group>\n\n          <ion-item *ngFor="let financialAssistance of financialAssistanceList; let i = index" class="item-checkbox">\n\n            <ion-label text-wrap text-left class="item-checkbox-text">{{financialAssistance.value}}</ion-label>\n\n            <ion-checkbox item-end [formControl]="respondentForm.controls[\'financialAssistance\'].controls[i]">\n\n            </ion-checkbox>\n\n          </ion-item>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n    <!-- Assistencia financeira -->\n\n    <!-- Termo de consentimento -->\n\n    <ion-row class="metric-row">\n\n      <ion-col col-12>\n\n        <h3 class="subtitle check-box-subtitle term-title" col-12 text-center>Termo de consentimento</h3>\n\n        <ion-label text-center text-wrap class="item-checkbox-text term-checbox-legend">Esta pesquisa possui um\n\n          termo de consentimento <a (click)="showTerm()">clique aqui para ler</a></ion-label>\n\n        <ion-list radio-group>\n\n          <ion-item class="item-checkbox">\n\n            <ion-label text-wrap text-left class="item-checkbox-text">Concordo com o termo de consentimento\n\n            </ion-label>\n\n            <ion-checkbox item-end formControlName="term" [disabled]="!isTermRead" required>\n\n            </ion-checkbox>\n\n          </ion-item>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n    <!-- Termo de consentimento -->\n\n    <!-----------------------CASE 2 - UNIFEI----------------------->\n\n    <!-----------------------CASE 1 - POSCOMP----------------------->\n\n    <!-- Tipo de Respondente -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Por favor, selecione o tipo de respondente</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'userType\']" required [disabled]="editing">\n\n        <ion-option *ngFor="let userType of userTypeList" [value]="userType.value"\n\n          (ionSelect)="selectUserType(userType)">\n\n          {{userType.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Tipo de Respondente -->\n\n    <!-- Nome -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Nome</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'name\']" required></ion-input>\n\n    </ion-item> -->\n\n    <!-- Nome -->\n\n    <!-- Discente formado ou evadido -->\n\n    <!-- <ion-item *ngIf="isDiscent && isDiscentEvaded">\n\n      <ion-label>você se formou no curso?</ion-label>\n\n      <ion-checkbox item-end (ionChange)="changeDiscentType()"\n\n        [formControl]="respondentForm.controls[\'isDiscentConcluded\']"></ion-checkbox>\n\n    </ion-item> -->\n\n    <!-- Discente formado ou evadido -->\n\n    <!-- Ano e semestre de ingresso -->\n\n    <!-- <ion-item *ngIf="isDiscent">\n\n      <ion-label floating>Por favor, selecione o ano e semestre de ingresso</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseEntry\']" required>\n\n        <ion-option *ngFor="let courseEntry of courseEntryList" [value]="courseEntry.value">\n\n          {{courseEntry.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Ano e semestre de ingresso -->\n\n    <!-- Ano e semestre de conclusão -->\n\n    <!-- <ion-item *ngIf="isDiscent && isDiscentConcluded">\n\n      <ion-label floating>Por favor, selecione o ano e semestre de conclusão</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseLeft\']" required>\n\n        <ion-option *ngFor="let courseLeft of courseLeftList" [value]="courseLeft.value">\n\n          {{courseLeft.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Ano e semestre de conclusão -->\n\n    <!-- Número de matricula -->\n\n    <!-- <ion-item *ngIf="isDiscent && !isDiscentEvaded && !isDiscentConcluded">\n\n      <ion-label floating>Número de matrícula</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'code\']"\n\n        [brmasker]="{mask: \'000000000000\', type:\'num\', len: 12}" type="text" required>\n\n      </ion-input>\n\n    </ion-item> -->\n\n    <!-- Número de matricula -->\n\n    <!-- SIAPE -->\n\n    <!-- <ion-item *ngIf="isDocent">\n\n      <ion-label floating>SIAPE</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'code\']"\n\n        [brmasker]="{mask: \'000000000000\', type:\'num\', len: 15}" type="text" required>\n\n      </ion-input>\n\n    </ion-item> -->\n\n    <!-- SIAPE -->\n\n    <!-- Disciplinas -->\n\n    <!-- <ion-row class="metric-row" *ngIf="isDiscent && !isDiscentEvaded && !isDiscentConcluded">\n\n      <ion-col col-12>\n\n        <h3 class="subtitle check-box-subtitle" col-12 text-center>Quais disciplinas você cursou no 2º semestre de 2019?\n\n        </h3>\n\n        <ion-list radio-group>\n\n          <ion-item *ngFor="let discipline of disciplineList" class="item-checkbox">\n\n            <ion-label text-wrap text-left class="item-checkbox-text">{{discipline.name}}</ion-label>\n\n            <ion-checkbox (ionChange)="updateDisciplineValue(discipline,$event.checked)"></ion-checkbox>\n\n          </ion-item>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row> -->\n\n    <!-- Disciplinas -->\n\n    <!-----------------------CASE 1 - POSCOMP----------------------->\n\n    <!------------------------ TODOS OS CAMPOS ------------------------->\n\n    <!-----------------------INFORMAÇÕES PESSOAIS----------------------->\n\n    <!-- CPF -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>CPF</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'cpf\']" type="text"\n\n        [brmasker]="{mask: \'000.000.000-00\', type:\'num\', len: 14}" required>\n\n      </ion-input>\n\n      <div class="validator-error"\n\n        *ngIf="respondentForm.controls[\'cpf\'].hasError(\'required\') && respondentForm.controls[\'cpf\'].touched">* CPF é\n\n        obrigatório!\n\n      </div>\n\n      <div class="validator-error"\n\n        *ngIf="respondentForm.controls[\'cpf\'].hasError(\'invalid\') && respondentForm.controls[\'cpf\'].touched">* CPF é\n\n        inválido!\n\n      </div>\n\n    </ion-item> -->\n\n    <!-- CPF -->\n\n    <!-- Nome -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Nome</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'name\']"></ion-input>\n\n    </ion-item> -->\n\n    <!-- Nome -->\n\n    <!-- Genero -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Gênero</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'gender\']">\n\n        <ion-option *ngFor="let gender of genderList" [value]="gender.value">\n\n          {{gender.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Genero -->\n\n    <!-- Email -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Email</ion-label>\n\n      <ion-input [email]="true" [formControl]="respondentForm.controls[\'email\']" type="email"></ion-input>\n\n    </ion-item> -->\n\n    <!-- Email -->\n\n    <!-- Telefone -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Telefone</ion-label>\n\n      <ion-input [brmasker]="{mask: \'(00)00000-0000\', type:\'num\', len: 15}"\n\n        [formControl]="respondentForm.controls[\'phone\']"></ion-input>\n\n    </ion-item> -->\n\n    <!-- Telefone -->\n\n    <!-- WhatsApp -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>WhatsApp</ion-label>\n\n      <ion-input [brmasker]="{mask: \'(00)00000-0000\', type:\'num\', len: 15}"\n\n        [formControl]="respondentForm.controls[\'whatsapp\']"></ion-input>\n\n    </ion-item> -->\n\n    <!-- WhatsApp -->\n\n    <!-- Cidade de residência -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Cidade de Residência</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'residenceCity\']">\n\n        <ion-option *ngFor="let residenceCity of cities" [value]="residenceCity">\n\n          {{residenceCity.name}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Cidade de residência -->\n\n    <!-- Bairro de residencia -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Bairro de Residência</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'residenceNeighborhood\']" [compareWith]="compareFn">\n\n        <ion-option *ngFor="let residenceNeighborhood of residenceNeighborhoods" [value]="residenceNeighborhood">\n\n          {{residenceNeighborhood.name}}\n\n        </ion-option>\n\n      </ion-select>\n\n      <div class="validator-error"\n\n        *ngIf="respondentForm.controls[\'residenceNeighborhood\'].hasError(\'required\') && respondentForm.controls[\'residenceNeighborhood\'].touched">\n\n        * Bairro de Residência é obrigatório!\n\n      </div>\n\n    </ion-item> -->\n\n    <!-- Bairro de residencia -->\n\n    <!-----------------------INFORMAÇÕES PESSOAIS----------------------->\n\n    <!-----------------------INFORMAÇÕES DE TRABALHO----------------------->\n\n    <!-- Comerciante ou não -->\n\n    <!-- <ion-item>\n\n    <ion-label>Possui comércio no centro?</ion-label>\n\n    <ion-checkbox item-end (ionChange)="changeUserType()" [(ngModel)]="isCommerce"></ion-checkbox>\n\n    </ion-item> -->\n\n    <!-- Comerciante ou não -->\n\n    <!-- Cidade de trabalho -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Cidade de Trabalho</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'jobCity\']" (ionChange)="loadJobNeighborhoods()"\n\n        [compareWith]="compareFn">\n\n        <ion-option *ngFor="let jobCity of cities" [value]="jobCity" (ionSelect)="selectCity(jobCity)">\n\n          {{jobCity.name}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Cidade de trabalho -->\n\n    <!-- Nome da Empresa -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Nome da empresa</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'jobName\']"></ion-input>\n\n    </ion-item> -->\n\n    <!-- Nome da Empresa -->\n\n    <!-- Endereço da Empresa -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Endereço da empresa</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'jobAddress\']"></ion-input>\n\n    </ion-item> -->\n\n    <!-- Endereço da Empresa -->\n\n    <!-- Bairro de trabalho -->\n\n    <!-- <div class="{{isSameJobCity}}">\n\n      <ion-item>\n\n        <ion-label floating>Bairro de Trabalho</ion-label>\n\n        <ion-select [formControl]="respondentForm.controls[\'jobNeighborhood\']" [disabled]="jobNeighborhoodDisabled"\n\n          [compareWith]="compareFn">\n\n          <ion-option *ngFor="let jobNeighborhood of jobNeighborhoods" [value]="jobNeighborhood">\n\n            {{jobNeighborhood.name}}\n\n          </ion-option>\n\n        </ion-select>\n\n      </ion-item>\n\n    </div> -->\n\n    <!-- Bairro de trabalho -->\n\n    <!-----------------------INFORMAÇÕES DE TRABALHO----------------------->\n\n    <!-----------------------INFORMAÇÕES ACADÊMICAS----------------------->\n\n    <!-- Tipo de Respondente -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Nível</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'userType\']">\n\n        <ion-option *ngFor="let userType of userTypeList" [value]="userType.value"\n\n          (ionSelect)="selectUserType(userType)">\n\n          {{userType.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Tipo de Respondente -->\n\n    <!-- Discente formado ou evadido -->\n\n    <!-- <ion-item *ngIf="isDiscent">\n\n      <ion-label>Formou no curso?</ion-label>\n\n      <ion-checkbox item-end (ionChange)="changeDiscentType()"></ion-checkbox>\n\n    </ion-item> -->\n\n    <!-- Discente formado ou evadido -->\n\n    <!-- Número de matricula -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Número de matrícula</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'code\']"\n\n        [brmasker]="{mask: \'000000000000\', type:\'num\', len: 12}" type ="text" required>\n\n      </ion-input>\n\n    </ion-item> -->\n\n    <!-- Número de matricula -->\n\n    <!-- Curso -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Curso</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseName\']" [disabled]="courseDisabled">\n\n        <ion-option *ngFor="let courseName of courseNameList" [value]="courseName.value">\n\n          {{courseName.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Curso -->\n\n    <!-- Ano e semestre de ingresso -->\n\n    <!-- <ion-item *ngIf="isDiscent">\n\n      <ion-label floating>Ano e semestre de ingresso</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseEntry\']" [disabled]="courseDisabled">\n\n        <ion-option *ngFor="let courseEntry of courseEntryList" [value]="courseEntry.value">\n\n          {{courseEntry.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Ano e semestre de ingresso -->\n\n    <!-- Ano e semestre de conclusão -->\n\n    <!-- <ion-item *ngIf="isDiscent && isDiscentEvaded">\n\n      <ion-label floating>Ano e semestre de conclusão</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseLeft\']">\n\n        <ion-option *ngFor="let courseLeft of courseLeftList" [value]="courseLeft.value">\n\n          {{courseLeft.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Ano e semestre de conclusão -->\n\n    <!-- Idade -->\n\n    <!-- <ion-item>\n\n      <ion-label>Idade</ion-label>\n\n      <ion-range snaps="true" [min]="0" [max]="4" [step]="1" (ionChange)="getAgeRangeByValue($event)"\n\n        [formControl]="respondentForm.controls[\'age\']">\n\n      </ion-range>\n\n      <ion-label>{{ageRangeName}}</ion-label>\n\n    </ion-item> -->\n\n    <!-- Idade -->\n\n    <!-----------------------INFORMAÇÕES ACADÊMICAS----------------------->\n\n    <!-------------------------------RANGES-------------------------------->\n\n    <!-- Tempo de residência -->\n\n    <!-- <ion-item>\n\n      <ion-label>Tempo de Residência</ion-label>\n\n      <ion-range snaps="true" [min]="0" [max]="4" [step]="1" (ionChange)="getResidenceTimeNameByValue($event)"\n\n        [formControl]="respondentForm.controls[\'residenceTimeRange\']">\n\n      </ion-range>\n\n      <ion-label>{{residenceTimeName}}</ion-label>\n\n    </ion-item> -->\n\n    <!-- Tempo de residência -->\n\n    <!-- Renda -->\n\n    <!-- <ion-item>\n\n      <ion-label>Renda</ion-label>\n\n      <ion-range snaps="true" [min]="0" [max]="4" [step]="1" (ionChange)="getSalaryRangeNameByValue($event)"\n\n        [formControl]="respondentForm.controls[\'salaryRange\']">\n\n      </ion-range>\n\n      <ion-label>{{salaryRangeName}}</ion-label>\n\n    </ion-item> -->\n\n    <!-- Renda -->\n\n    <!-------------------------------RANGES-------------------------------->\n\n    <!------------------------ TODOS OS CAMPOS ------------------------->\n\n    <ion-grid>\n\n      <ion-row *ngIf="editing && useGame">\n\n        <ion-col text-center>\n\n          <button ion-button block class="button-background" type="submit" (click)="saveRespondentInfo()"\n\n            [disabled]="!respondentForm.valid">\n\n            <ion-icon id="button-profile-update-game" class="text-button">\n\n              Salvar\n\n            </ion-icon>\n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row *ngIf="!editing && useGame">\n\n        <ion-col text-center>\n\n          <button ion-button block class="button-background" type="submit" (click)="saveRespondentInfo()"\n\n            [disabled]="!respondentForm.valid">\n\n            <ion-icon id="button-profile-register-game" class="text-button">\n\n              Salvar\n\n            </ion-icon>\n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row *ngIf="editing && !useGame">\n\n        <ion-col text-center>\n\n          <button ion-button block class="button-background" type="submit" (click)="saveRespondentInfo()"\n\n            [disabled]="!respondentForm.valid">\n\n            <ion-icon id="button-profile-update-not-game" class="text-button">\n\n              Salvar\n\n            </ion-icon>\n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row *ngIf="!editing && !useGame">\n\n        <ion-col text-center>\n\n          <button ion-button block class="button-background" type="submit" (click)="saveRespondentInfo()"\n\n            [disabled]="!respondentForm.valid">\n\n            <ion-icon id="button-profile-register-not-game" class="text-button">\n\n              Salvar\n\n            </ion-icon>\n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n  </form>\n\n</ion-content>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\respondent-profile\respondent-profile.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* MenuController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */], __WEBPACK_IMPORTED_MODULE_8__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_city_city__["a" /* CityProvider */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_9__providers_respondent_respondent__["a" /* RespondentProvider */], __WEBPACK_IMPORTED_MODULE_7__providers_neighborhood_neighborhood__["a" /* NeighborhoodProvider */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_10__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_11__providers_rest_rest__["a" /* RestProvider */]])
     ], RespondentProfilePage);
@@ -1704,6 +1207,529 @@ var Respondent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ 434:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export BrMaskModel */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BrMaskerIonic3; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(17);
+
+
+var BrMaskModel = (function () {
+    function BrMaskModel() {
+        this.type = 'alfa';
+        this.decimal = 2;
+        this.decimalCaracter = ",";
+        this.userCaracters = false;
+        this.numberAndTousand = false;
+    }
+    return BrMaskModel;
+}());
+
+var BrMaskerIonic3 = (function () {
+    function BrMaskerIonic3(_renderer, _elementRef) {
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this.brmasker = new BrMaskModel();
+    }
+    BrMaskerIonic3.prototype.inputKeyup = function (event) {
+        var value = this.returnValue(event.target.value);
+        this.writeValue(value);
+        event.target.value = value;
+    };
+    BrMaskerIonic3.prototype.inputOnblur = function (event) {
+        var value = this.returnValue(event.value);
+        this.writeValue(value);
+        event.value = value;
+    };
+    BrMaskerIonic3.prototype.inputFocus = function (event) {
+        var value = this.returnValue(event.value);
+        this.writeValue(value);
+        event.value = value;
+    };
+    BrMaskerIonic3.prototype.ngOnInit = function () {
+        if (!this.brmasker.type) {
+            this.brmasker.type = 'all';
+        }
+        if (!this.brmasker.decimal) {
+            this.brmasker.decimal = 2;
+        }
+        if (!this.brmasker.decimalCaracter) {
+            this.brmasker.decimalCaracter = ',';
+        }
+    };
+    BrMaskerIonic3.prototype.writeValue = function (fn) {
+        this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', fn);
+    };
+    BrMaskerIonic3.prototype.registerOnChange = function (fn) {
+        return;
+    };
+    BrMaskerIonic3.prototype.registerOnTouched = function (fn) {
+        return;
+    };
+    BrMaskerIonic3.prototype.setDisabledState = function (isDisabled) {
+        if (isDisabled) {
+            this._renderer.setElementAttribute(this._elementRef.nativeElement, 'disabled', 'true');
+        }
+        else {
+            this._renderer.setElementAttribute(this._elementRef.nativeElement, 'disabled', 'false');
+        }
+    };
+    BrMaskerIonic3.prototype.writeCreateValue = function (value, config) {
+        if (config === void 0) { config = new BrMaskModel(); }
+        if (value && config.phone) {
+            return value.replace(/^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/gi, '$1 ($2) $3-$4');
+        }
+        if (value && config.money) {
+            return this.writeValueMoney(value, config);
+        }
+        if (value && config.person) {
+            return this.writeValuePerson(value);
+        }
+        if (value && config.percent) {
+            return this.writeValuePercent(value);
+        }
+        if (value && config.mask) {
+            this.brmasker.mask = config.mask;
+            if (config.len) {
+                this.brmasker.len = config.len;
+            }
+            return this.onInput(value);
+        }
+        return value;
+    };
+    BrMaskerIonic3.prototype.writeValuePercent = function (value) {
+        value.replace(/\D/gi, '');
+        value.replace(/%/gi, '');
+        return value.replace(/([0-9]{0})$/gi, '%$1');
+    };
+    BrMaskerIonic3.prototype.writeValuePerson = function (value) {
+        if (value.length <= 11) {
+            return value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/gi, '\$1.\$2.\$3\-\$4');
+        }
+        else {
+            return value.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/gi, '\$1.\$2.\$3\/\$4\-\$5');
+        }
+    };
+    BrMaskerIonic3.prototype.writeValueMoney = function (value, config) {
+        if (config === void 0) { config = new BrMaskModel(); }
+        return this.moneyMask(value, config);
+    };
+    BrMaskerIonic3.prototype.returnValue = function (value) {
+        if (!this.brmasker.mask) {
+            this.brmasker.mask = '';
+        }
+        if (value) {
+            var v = value;
+            if (this.brmasker.type == 'alfa') {
+                v = v.replace(/\d/gi, '');
+            }
+            if (this.brmasker.type == 'num') {
+                v = v.replace(/\D/gi, '');
+            }
+            if (this.brmasker.money) {
+                return this.moneyMask(this.onInput(v), this.brmasker);
+            }
+            if (this.brmasker.phone) {
+                return this.phoneMask(v);
+            }
+            if (this.brmasker.phoneNotDDD) {
+                return this.phoneNotDDDMask(v);
+            }
+            if (this.brmasker.person) {
+                return this.peapollMask(v);
+            }
+            if (this.brmasker.percent) {
+                return this.percentMask(v);
+            }
+            if (this.brmasker.numberAndTousand) {
+                return this.thousand(v);
+            }
+            if (this.brmasker.userCaracters) {
+                return this.usingSpecialCharacters(v, this.brmasker.mask, this.brmasker.len);
+            }
+            return this.onInput(v);
+        }
+        else {
+            return '';
+        }
+    };
+    BrMaskerIonic3.prototype.percentMask = function (v) {
+        var tmp = v;
+        tmp = tmp.replace(/\D/gi, '');
+        tmp = tmp.replace(/%/gi, '');
+        tmp = tmp.replace(/([0-9]{0})$/gi, '%$1');
+        return tmp;
+    };
+    BrMaskerIonic3.prototype.phoneMask = function (v) {
+        var n = v;
+        if (n.length > 14) {
+            this.brmasker.len = 15;
+            this.brmasker.mask = '(99) 99999-9999';
+            n = n.replace(/\D/gi, '');
+            n = n.replace(/(\d{2})(\d)/gi, '$1 $2');
+            n = n.replace(/(\d{5})(\d)/gi, '$1-$2');
+            n = n.replace(/(\d{4})(\d)/gi, '$1$2');
+        }
+        else {
+            this.brmasker.len = 14;
+            this.brmasker.mask = '(99) 9999-9999';
+            n = n.replace(/\D/gi, '');
+            n = n.replace(/(\d{2})(\d)/gi, '$1 $2');
+            n = n.replace(/(\d{4})(\d)/gi, '$1-$2');
+            n = n.replace(/(\d{4})(\d)/gi, '$1$2');
+        }
+        return this.onInput(n);
+    };
+    BrMaskerIonic3.prototype.phoneNotDDDMask = function (v) {
+        var n = v;
+        if (n.length > 9) {
+            this.brmasker.len = 10;
+            this.brmasker.mask = '99999-9999';
+            n = n.replace(/\D/gi, '');
+            n = n.replace(/(\d{5})(\d)/gi, '$1-$2');
+            n = n.replace(/(\d{4})(\d)/gi, '$1$2');
+        }
+        else {
+            this.brmasker.len = 9;
+            this.brmasker.mask = '9999-9999';
+            n = n.replace(/\D/gi, '');
+            n = n.replace(/(\d{4})(\d)/gi, '$1-$2');
+            n = n.replace(/(\d{4})(\d)/gi, '$1$2');
+        }
+        return this.onInput(n);
+    };
+    BrMaskerIonic3.prototype.peapollMask = function (v) {
+        var n = v;
+        if (n.length > 14) {
+            this.brmasker.len = 18;
+            this.brmasker.mask = '99.999.999/9999-99';
+            n = n.replace(/\D/gi, '');
+            n = n.replace(/(\d{2})(\d)/gi, '$1.$2');
+            n = n.replace(/(\d{3})(\d)/gi, '$1.$2');
+            n = n.replace(/(\d{3})(\d)/gi, '$1/$2');
+            n = n.replace(/(\d{4})(\d{1,4})$/gi, '$1-$2');
+            n = n.replace(/(\d{2})(\d{1,2})$/gi, '$1$2');
+        }
+        else {
+            this.brmasker.len = 14;
+            this.brmasker.mask = '999.999.999-99';
+            n = n.replace(/\D/gi, '');
+            n = n.replace(/(\d{3})(\d)/gi, '$1.$2');
+            n = n.replace(/(\d{3})(\d)/gi, '$1.$2');
+            n = n.replace(/(\d{3})(\d{1,2})$/gi, '$1-$2');
+        }
+        return this.onInput(n);
+    };
+    BrMaskerIonic3.prototype.moneyMask = function (value, config) {
+        var decimal = config.decimal || this.brmasker.decimal;
+        value = value
+            .replace(/\D/gi, '')
+            .replace(new RegExp("([0-9]{" + decimal + "})$", "g"), config.decimalCaracter + '$1');
+        if (value.length === decimal + 1) {
+            return "0" + value; // leading 0 so we're not left with something weird like ",50"
+        }
+        else if (value.length > decimal + 2 && value.charAt(0) === '0') {
+            return value.substr(1); // remove leading 0 when we don't need it anymore
+        }
+        if (config.thousand && value.length > (Number(4) + Number(config.decimal))) {
+            value = value.replace(new RegExp("([0-9]{3})" + config.decimalCaracter + "([0-9]{" + config.decimal + "}$)", "g"), config.thousand + "$1" + config.decimalCaracter + "$2");
+        }
+        if (config.thousand && value.length > (Number(8) + Number(config.decimal))) {
+            value = value.replace(new RegExp("([0-9]{3})" + config.thousand + "([0-9]{3})" + config.decimalCaracter + "([0-9]{" + config.decimal + "}$)", "g"), config.thousand + "$1" + config.thousand + "$2" + config.decimalCaracter + "$3");
+        }
+        return value;
+    };
+    BrMaskerIonic3.prototype.onInput = function (value) {
+        var ret = this.formatField(value, this.brmasker.mask, this.brmasker.len);
+        return ret;
+        // if (ret) {
+        //   this.element.nativeElement.value = ret;
+        // }
+    };
+    BrMaskerIonic3.prototype.thousand = function (value) {
+        var val = value.replace(/\D/gi, '');
+        var reverse = val.toString().split('').reverse().join('');
+        var thousands = reverse.match(/\d{1,3}/g);
+        if (thousands) {
+            return thousands.join("" + (this.brmasker.thousand || '.')).split('').reverse().join('');
+        }
+        return val;
+    };
+    BrMaskerIonic3.prototype.usingSpecialCharacters = function (campo, Mascara, tamanho) {
+        if (!tamanho) {
+            tamanho = 99999999999;
+        }
+        var boleanoMascara;
+        var exp = /\-|\.|\,| /gi;
+        var campoSoNumeros = campo.toString().replace(exp, '');
+        var posicaoCampo = 0;
+        var NovoValorCampo = '';
+        var TamanhoMascara = campoSoNumeros.length;
+        for (var i = 0; i < TamanhoMascara; i++) {
+            if (i < tamanho) {
+                boleanoMascara = ((Mascara.charAt(i) === '-') || (Mascara.charAt(i) === '.') || (Mascara.charAt(i) === ','));
+                if (boleanoMascara) {
+                    NovoValorCampo += Mascara.charAt(i);
+                    TamanhoMascara++;
+                }
+                else {
+                    NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
+                    posicaoCampo++;
+                }
+            }
+        }
+        return NovoValorCampo;
+    };
+    BrMaskerIonic3.prototype.formatField = function (campo, Mascara, tamanho) {
+        if (!tamanho) {
+            tamanho = 99999999999;
+        }
+        var boleanoMascara;
+        var exp = /\-|\.|\/|\(|\)|\,|\*|\+|\@|\#|\$|\&|\%|\:| /gi;
+        var campoSoNumeros = campo.toString().replace(exp, '');
+        var posicaoCampo = 0;
+        var NovoValorCampo = '';
+        var TamanhoMascara = campoSoNumeros.length;
+        for (var i = 0; i < TamanhoMascara; i++) {
+            if (i < tamanho) {
+                boleanoMascara = ((Mascara.charAt(i) === '-') || (Mascara.charAt(i) === '.') || (Mascara.charAt(i) === '/'));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '(') || (Mascara.charAt(i) === ')') || (Mascara.charAt(i) === ' '));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === ',') || (Mascara.charAt(i) === '*') || (Mascara.charAt(i) === '+'));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '@') || (Mascara.charAt(i) === '#') || (Mascara.charAt(i) === ':'));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '$') || (Mascara.charAt(i) === '&') || (Mascara.charAt(i) === '%'));
+                if (boleanoMascara) {
+                    NovoValorCampo += Mascara.charAt(i);
+                    TamanhoMascara++;
+                }
+                else {
+                    NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
+                    posicaoCampo++;
+                }
+            }
+        }
+        return NovoValorCampo;
+    };
+    return BrMaskerIonic3;
+}());
+
+BrMaskerIonic3.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
+                selector: '[brmasker]',
+                providers: [
+                    {
+                        provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* NG_VALUE_ACCESSOR */],
+                        useExisting: BrMaskerIonic3,
+                        multi: true
+                    }
+                ]
+            },] },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
+];
+/** @nocollapse */
+BrMaskerIonic3.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["W" /* Renderer */], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
+]; };
+BrMaskerIonic3.propDecorators = {
+    'brmasker': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
+    'inputKeyup': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* HostListener */], args: ['keyup', ['$event'],] },],
+    'inputOnblur': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* HostListener */], args: ['ionBlur', ['$event'],] },],
+    'inputFocus': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* HostListener */], args: ['ionFocus', ['$event'],] },],
+};
+//# sourceMappingURL=brmasker-ionic-3.js.map
+
+/***/ }),
+
+/***/ 435:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export BrMaskServicesModel */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BrMaskerIonicServices3; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+
+var BrMaskServicesModel = (function () {
+    function BrMaskServicesModel() {
+        this.type = 'alfa';
+        this.decimal = 2;
+        this.decimalCaracter = ",";
+        this.userCaracters = false;
+        this.numberAndTousand = false;
+    }
+    return BrMaskServicesModel;
+}());
+
+var BrMaskerIonicServices3 = (function () {
+    function BrMaskerIonicServices3() {
+        this.brmasker = new BrMaskServicesModel();
+    }
+    BrMaskerIonicServices3.prototype.ngOnInit = function () {
+        if (!this.brmasker.type) {
+            this.brmasker.type = 'all';
+        }
+        if (!this.brmasker.decimal) {
+            this.brmasker.decimal = 2;
+        }
+        if (!this.brmasker.decimalCaracter) {
+            this.brmasker.decimalCaracter = ',';
+        }
+    };
+    BrMaskerIonicServices3.prototype.writeCreateValue = function (value, config) {
+        if (config === void 0) { config = new BrMaskServicesModel(); }
+        if (value && config.phone) {
+            return value.replace(/^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/gi, '$1 ($2) $3-$4');
+        }
+        if (value && config.money) {
+            return this.writeValueMoney(value, config);
+        }
+        if (value && config.person) {
+            return this.writeValuePerson(value);
+        }
+        if (value && config.percent) {
+            return this.writeValuePercent(value);
+        }
+        if (value && config.numberAndTousand) {
+            return this.writeValueNumberAndThousand(value);
+        }
+        if (value && config.userCaracters) {
+            return this.writeValueusingSpecialCharacters(value);
+        }
+        if (value && config.mask) {
+            this.brmasker.mask = config.mask;
+            if (config.len) {
+                this.brmasker.len = config.len;
+            }
+            return this.onInput(value);
+        }
+        return value;
+    };
+    BrMaskerIonicServices3.prototype.writeValuePercent = function (value) {
+        value.replace(/\D/gi, '');
+        value.replace(/%/gi, '');
+        return value.replace(/([0-9]{0})$/gi, '%$1');
+    };
+    BrMaskerIonicServices3.prototype.writeValuePerson = function (value) {
+        if (value.length <= 11) {
+            return value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/gi, '\$1.\$2.\$3\-\$4');
+        }
+        else {
+            return value.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/gi, '\$1.\$2.\$3\/\$4\-\$5');
+        }
+    };
+    BrMaskerIonicServices3.prototype.writeValueMoney = function (value, config) {
+        if (config === void 0) { config = new BrMaskServicesModel(); }
+        return this.moneyMask(value, config);
+    };
+    BrMaskerIonicServices3.prototype.writeValueNumberAndThousand = function (value, config) {
+        if (config === void 0) { config = new BrMaskServicesModel(); }
+        return this.thousand(value);
+    };
+    BrMaskerIonicServices3.prototype.writeValueusingSpecialCharacters = function (value, config) {
+        if (config === void 0) { config = new BrMaskServicesModel(); }
+        return this.usingSpecialCharacters(value, config.mask, config.len);
+    };
+    BrMaskerIonicServices3.prototype.moneyMask = function (value, config) {
+        var decimal = config.decimal || this.brmasker.decimal;
+        value = value
+            .replace(/\D/gi, '')
+            .replace(new RegExp("([0-9]{" + decimal + "})$", "g"), config.decimalCaracter + '$1');
+        if (value.length === decimal + 1) {
+            return "0" + value; // leading 0 so we're not left with something weird like ",50"
+        }
+        else if (value.length > decimal + 2 && value.charAt(0) === '0') {
+            return value.substr(1); // remove leading 0 when we don't need it anymore
+        }
+        if (config.thousand && value.length > (Number(4) + Number(config.decimal))) {
+            value = value.replace(new RegExp("([0-9]{3})" + config.decimalCaracter + "([0-9]{" + config.decimal + "}$)", "g"), config.thousand + "$1" + config.decimalCaracter + "$2");
+        }
+        if (config.thousand && value.length > (Number(8) + Number(config.decimal))) {
+            value = value.replace(new RegExp("([0-9]{3})" + config.thousand + "([0-9]{3})" + config.decimalCaracter + "([0-9]{" + config.decimal + "}$)", "g"), config.thousand + "$1" + config.thousand + "$2" + config.decimalCaracter + "$3");
+        }
+        return value;
+    };
+    BrMaskerIonicServices3.prototype.onInput = function (value) {
+        var ret = this.formatField(value, this.brmasker.mask, this.brmasker.len);
+        return ret;
+    };
+    BrMaskerIonicServices3.prototype.thousand = function (value) {
+        var val = value.replace(/\D/gi, '');
+        var reverse = val.toString().split('').reverse().join('');
+        var thousands = reverse.match(/\d{1,3}/g);
+        val = thousands.join("" + (this.brmasker.thousand || '.')).split('').reverse().join('');
+        return val;
+    };
+    BrMaskerIonicServices3.prototype.usingSpecialCharacters = function (campo, Mascara, tamanho) {
+        if (!tamanho) {
+            tamanho = 99999999999;
+        }
+        var boleanoMascara;
+        var exp = /\-|\.|\,| /gi;
+        var campoSoNumeros = campo.toString().replace(exp, '');
+        var posicaoCampo = 0;
+        var NovoValorCampo = '';
+        var TamanhoMascara = campoSoNumeros.length;
+        for (var i = 0; i < TamanhoMascara; i++) {
+            if (i < tamanho) {
+                boleanoMascara = ((Mascara.charAt(i) === '-') || (Mascara.charAt(i) === '.') || (Mascara.charAt(i) === ','));
+                if (boleanoMascara) {
+                    NovoValorCampo += Mascara.charAt(i);
+                    TamanhoMascara++;
+                }
+                else {
+                    NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
+                    posicaoCampo++;
+                }
+            }
+        }
+        return NovoValorCampo;
+    };
+    BrMaskerIonicServices3.prototype.formatField = function (campo, Mascara, tamanho) {
+        if (!tamanho) {
+            tamanho = 99999999999;
+        }
+        var boleanoMascara;
+        var exp = /\-|\.|\/|\(|\)|\,|\*|\+|\@|\#|\$|\&|\%|\:| /gi;
+        var campoSoNumeros = campo.toString().replace(exp, '');
+        var posicaoCampo = 0;
+        var NovoValorCampo = '';
+        var TamanhoMascara = campoSoNumeros.length;
+        for (var i = 0; i < TamanhoMascara; i++) {
+            if (i < tamanho) {
+                boleanoMascara = ((Mascara.charAt(i) === '-') || (Mascara.charAt(i) === '.') || (Mascara.charAt(i) === '/'));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '(') || (Mascara.charAt(i) === ')') || (Mascara.charAt(i) === ' '));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === ',') || (Mascara.charAt(i) === '*') || (Mascara.charAt(i) === '+'));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '@') || (Mascara.charAt(i) === '#') || (Mascara.charAt(i) === ':'));
+                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '$') || (Mascara.charAt(i) === '&') || (Mascara.charAt(i) === '%'));
+                if (boleanoMascara) {
+                    NovoValorCampo += Mascara.charAt(i);
+                    TamanhoMascara++;
+                }
+                else {
+                    NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
+                    posicaoCampo++;
+                }
+            }
+        }
+        return NovoValorCampo;
+    };
+    return BrMaskerIonicServices3;
+}());
+
+BrMaskerIonicServices3.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
+                selector: '[brmasker]',
+            },] },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
+];
+/** @nocollapse */
+BrMaskerIonicServices3.ctorParameters = function () { return []; };
+//# sourceMappingURL=brmasker-ionic-services.js.map
+
+/***/ }),
+
 /***/ 446:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1725,8 +1751,8 @@ var Respondent = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BrMaskerModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_brmasker_ionic_3__ = __webpack_require__(433);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_brmasker_ionic_services__ = __webpack_require__(434);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_brmasker_ionic_3__ = __webpack_require__(434);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_brmasker_ionic_services__ = __webpack_require__(435);
 
 
 
@@ -1766,9 +1792,9 @@ BrMaskerModule.ctorParameters = function () { return []; };
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__brmasker_ionic_3__ = __webpack_require__(433);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__brmasker_ionic_3__ = __webpack_require__(434);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__brmasker_ionic_services__ = __webpack_require__(434);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__brmasker_ionic_services__ = __webpack_require__(435);
 /* unused harmony namespace reexport */
 
 

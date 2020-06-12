@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuestionariesListPageModule", function() { return QuestionariesListPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__questionaries_list__ = __webpack_require__(439);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__questionaries_list__ = __webpack_require__(440);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +38,7 @@ var QuestionariesListPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 439:
+/***/ 440:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -52,7 +52,7 @@ var QuestionariesListPageModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_database_database__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_plan_plan__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_question_question__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_question_question__ = __webpack_require__(213);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_prioritization_prioritization__ = __webpack_require__(210);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_rest_rest__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -595,18 +595,18 @@ var QuestionariesListPage = /** @class */ (function () {
     QuestionariesListPage.prototype.help = function () {
         var _this = this;
         var alert = this.alertCtrl.create({
-            title: '<div text-center>Olá! Bem vindo ao Opina Aí</div>',
+            title: '<div text-center>Olá! Bem vindo(a) ao Opina Aí</div>',
             message: 
             //----------------------MENSAGEM------------------
             '<div class="alert-align-center">'
                 + '<img class="img-alert" src="assets/gifs/gif-a-3.webp"/>'
                 + '</div>'
                 + '<div class="dialogue-box"><div class="tdialogue-box-text">'
-                + '<div><strong>Bem vindo ao Opina Aí!</strong></div>'
+                + '<div><strong>Bem vindo(a) ao Opina Aí!</strong></div>'
                 // + '<div text-center>Sinta-se a vontade para contribuir com sua <strong>cidade</strong> respondendo os questionários!</div>'
                 // + '<div text-center>Sua <strong>participação</strong> é muito importante!</div>'
                 // + '</div></div>',
-                + '<div text-center>Sinta-se a vontade para contribuir com a pesquisa para a <strong>avaliação da saúde mental</strong> respondendo os questionários!</div>'
+                + '<div text-center>Sinta-se a vontade para contribuir com a pesquisa para o <strong>levantamento acerca da saúde mental</strong> respondendo os questionários!</div>'
                 + '<div text-center>Sua <strong>participação</strong> é muito importante!</div>'
                 + '</div></div>',
             //----------------------MENSAGEM------------------

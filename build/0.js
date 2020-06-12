@@ -7,7 +7,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResultsPageModule", function() { return ResultsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__results__ = __webpack_require__(441);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__results__ = __webpack_require__(442);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2131,7 +2131,7 @@ var ResultsPageModule = /** @class */ (function () {
             try {
                 oldLocale = globalLocale._abbr;
                 aliasedRequire = require;
-                __webpack_require__(444)("./" + name);
+                __webpack_require__(445)("./" + name);
                 getSetGlobalLocale(oldLocale);
             } catch (e) {
                 // mark as not found to avoid repeating expensive file require call causing high CPU
@@ -5711,10 +5711,1175 @@ var ResultsPageModule = /** @class */ (function () {
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(443)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(444)(module)))
 
 /***/ }),
 /* 301 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return RespondentProfilePage; });
+/* unused harmony export ResidenceTime */
+/* unused harmony export SalaryRange */
+/* unused harmony export AgeRange */
+/* unused harmony export Discipline */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Respondent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__intro_intro__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_of__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_observable_of__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operators_map__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operators_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_operators_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_city_city__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_neighborhood_neighborhood__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_database_database__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_respondent_respondent__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_storage__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_rest_rest__ = __webpack_require__(12);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+var RespondentProfilePage = /** @class */ (function () {
+    function RespondentProfilePage(menuCtrl, navCtrl, databaseProvider, cityProvider, formBuilder, respondentProvider, neighborhoodProvider, alertCtrl, storage, loadingCtrl, restProvider) {
+        var _this = this;
+        this.menuCtrl = menuCtrl;
+        this.navCtrl = navCtrl;
+        this.databaseProvider = databaseProvider;
+        this.cityProvider = cityProvider;
+        this.formBuilder = formBuilder;
+        this.respondentProvider = respondentProvider;
+        this.neighborhoodProvider = neighborhoodProvider;
+        this.alertCtrl = alertCtrl;
+        this.storage = storage;
+        this.loadingCtrl = loadingCtrl;
+        this.restProvider = restProvider;
+        this.respondentId = 0;
+        this.respondentCode = null;
+        this.userType = "cidadão";
+        this.caseTest = "Levantamento acerca da Saúde Mental - UNIFEI";
+        this.ageRangeName = "";
+        this.residenceTimeName = "";
+        this.salaryRangeName = "";
+        this.levelImg = "level0";
+        this.disciplineList = [];
+        this.disciplineSelected = [];
+        this.residenceTypeList = [];
+        this.residenceMembersList = [];
+        this.financialAssistanceList = [];
+        this.genderList = [];
+        this.courseEntryList = [];
+        this.courseLeftList = [];
+        this.courseNameList = [];
+        this.userTypeList = [];
+        this.cities = [];
+        this.residenceTimeList = [];
+        this.salaryRangeList = [];
+        this.ageRangeList = [];
+        this.metricItems = [];
+        this.isSameJobCity = "hide";
+        this.isCommerce = false;
+        this.courseDisabled = true;
+        this.jobNeighborhoodDisabled = true;
+        this.useGame = false;
+        this.editing = false;
+        this.hideField = false;
+        this.isDiscent = false;
+        this.isDiscentEvaded = false;
+        this.isDiscentConcluded = false;
+        this.isDocent = false;
+        this.isTermRead = false;
+        this.storage.get('useGame').then(function (data) { return _this.useGame = data; });
+        this.storage.set('isRuralZone', false);
+        this.createUserTypeList();
+        this.createResidenceTypeList();
+        this.createResidenceMembersList();
+        this.createFinancialAssistanceList();
+        this.createForm();
+        this.createCourseSemester();
+        // this.createDisciplineList();
+        // this.createResidenceTimeRange();
+        // this.createSalaryRange();
+        // this.createAgeRange();
+        // this.createGenderList();
+        // this.loadAllCities();
+        this.loader = this.loadingCtrl.create();
+        this.loader.present();
+        setTimeout(function () {
+            _this.existsRespondent();
+            _this.loader.dismiss();
+        }, 1000);
+    }
+    // ---------------- CRIAÇÃO DO FORMULÁRIO ----------------
+    RespondentProfilePage.prototype.createForm = function () {
+        var financialAssistanceCheck = [];
+        this.financialAssistanceList.forEach(function () {
+            financialAssistanceCheck.push(false);
+        });
+        this.respondentForm = this.formBuilder.group({
+            // ------------ CASE 2 - UNIFEI ------------
+            userType: [''],
+            courseName: [''],
+            courseEntry: [''],
+            residenceType: [''],
+            residenceMembers: [''],
+            haveChildren: [false],
+            haveJob: [false],
+            term: [false, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].requiredTrue],
+            financialAssistance: this.formBuilder.array(financialAssistanceCheck)
+            // ------------ CASE 2 - UNIFEI ------------
+            // ------------ CASE 1 - POSCOMP ------------
+            // code: [''],
+            // courseEntry: [''],
+            // courseLeft: [''],
+            // userType: [''],
+            // name: [''],
+            // isDiscentConcluded: [false]
+            // ------------ CASE 1 - POSCOMP ------------
+            // cpf: ['', [Validators.required], this.validateCPF.bind(this)],
+            // email: [''],
+            // courseName: [''],
+            // residenceCity: [''],
+            // jobAddress: [''],
+            // jobName: [''],
+            // whatsapp: [''],
+            // residenceTimeRange: [''],
+            // residenceNeighborhood: ['', [Validators.required]],
+            // jobCity: [''],
+            // jobNeighborhood: [''],
+            // salaryRange: [''],
+            // age: [''],
+            // gender: [''],
+            // phone: [''],
+            // isCommerce: [false]
+        });
+        // this.respondentForm.controls['residenceTimeRange'].setValue(0);
+        // this.respondentForm.controls['salaryRange'].setValue(0);
+    };
+    RespondentProfilePage.prototype.setFormData = function () {
+        var _this = this;
+        var entities = ['city', 'plan', 'isRuralZone', 'questionaries'];
+        this.databaseProvider.verifyEntities(entities)
+            .then(function (data) {
+            if (data.length > 0 && data.filter(function (data) { return data == false; }).length == 0) {
+                _this.setEntities();
+            }
+            else {
+                _this.navigateBack();
+            }
+        })
+            .catch(function (error) {
+            console.error(error);
+            _this.restProvider.sendGoogleAnalyticsErrorData('RespondentProfilePage', 'setFormData', error);
+            _this.navigateBack();
+        });
+    };
+    RespondentProfilePage.prototype.setEntities = function () {
+        var _this = this;
+        this.storage.get('city')
+            .then(function (data) {
+            if (data != null) {
+                _this.city = data;
+                _this.cityName = _this.city.name;
+                _this.storage.get('plan')
+                    .then(function (data) {
+                    if (data != null) {
+                        _this.plan = data;
+                        _this.storage.get('questionaries')
+                            .then(function (data) {
+                            _this.questionaries = data;
+                            if (data != null) {
+                                _this.storage.get('points')
+                                    .then(function (data) {
+                                    if (data != null) {
+                                        _this.points = data;
+                                        _this.resolveLevel();
+                                    }
+                                    else {
+                                        _this.navigateBack();
+                                    }
+                                })
+                                    .catch(function () { return _this.navigateBack(); });
+                            }
+                            else {
+                                _this.navigateBack();
+                            }
+                        })
+                            .catch(function () { return _this.navigateBack(); });
+                    }
+                    else {
+                        _this.navigateBack();
+                    }
+                })
+                    .catch(function () { return _this.navigateBack(); });
+            }
+            else {
+                _this.navigateBack();
+            }
+        })
+            .catch(function () { return _this.navigateBack(); });
+    };
+    // ---------------- CRIAÇÃO DO FORMULÁRIO ----------------
+    // ---------------- INFORMAÇÕES DO RESPONDENTE ----------------
+    RespondentProfilePage.prototype.existsRespondent = function () {
+        var _this = this;
+        this.storage.get('respondent')
+            .then(function (respondent) {
+            _this.setFormData();
+            if (respondent != null) {
+                _this.editing = true;
+                _this.isTermRead = true;
+                _this.courseDisabled = false;
+                // ----------------- CASE 2 - UNIFEI -----------------
+                _this.respondentId = respondent.id;
+                _this.respondentForm.controls['userType'].setValue(respondent.type);
+                _this.respondentForm.controls['courseName'].setValue(respondent.courseName);
+                _this.respondentForm.controls['courseEntry'].setValue(respondent.courseEntry);
+                _this.respondentForm.controls['residenceType'].setValue(respondent.residenceType);
+                _this.respondentForm.controls['residenceMembers'].setValue(respondent.residenceMembers);
+                _this.respondentForm.controls['haveChildren'].setValue(respondent.haveChildren);
+                _this.respondentForm.controls['haveJob'].setValue(respondent.haveJob);
+                var financialAssistanceCheck_1 = _this.respondentForm.controls['financialAssistance'].value;
+                JSON.parse(respondent.financialAssistance).forEach(function (financialAssistance) {
+                    financialAssistanceCheck_1[financialAssistance.id] = true;
+                });
+                _this.respondentForm.controls['financialAssistance'].setValue(financialAssistanceCheck_1);
+                _this.respondentForm.controls['term'].setValue(true);
+                // this.respondentForm.controls['financialAssistance'].setValue(JSON.parse(respondent.financialAssistance));
+                // ----------------- CASE 2 - UNIFEI -----------------
+                // ----------------- CASE 1 - POSCOMP -----------------
+                // this.respondentId = respondent.id;
+                // this.respondentCode = respondent.code;
+                // this.respondentForm.controls['name'].setValue(respondent.name);
+                // this.respondentForm.controls['code'].setValue(respondent.code);
+                // this.respondentForm.controls['courseEntry'].setValue(respondent.courseEntry);
+                // this.respondentForm.controls['courseLeft'].setValue(respondent.courseLeft);
+                // this.respondentForm.controls['userType'].setValue(respondent.type);
+                // ----------------- CASE 1 - POSCOMP -----------------
+                // this.respondentCode = respondent.code;
+                // this.respondentForm.controls['name'].setValue(respondent.name);
+                // this.respondentForm.controls['code'].setValue(respondent.code);
+                // this.respondentForm.controls['courseEntry'].setValue(respondent.courseEntry);
+                // this.respondentForm.controls['courseLeft'].setValue(respondent.courseLeft);
+                // this.respondentForm.controls['cpf'].setValue(respondent.cpf);
+                // this.respondentForm.controls['email'].setValue(respondent.email);
+                // this.respondentForm.controls['residenceTimeRange'].setValue(respondent.residenceTimeRange);
+                // this.respondentForm.controls['salaryRange'].setValue(respondent.salaryRange);
+                // this.respondentForm.controls['residenceNeighborhood'].setValue(respondent.residenceNeighborhood);
+                // this.respondentForm.controls['jobCity'].setValue(respondent.jobCity);
+                // this.respondentForm.controls['age'].setValue(respondent.ageRange);
+                // this.respondentForm.controls['gender'].setValue(respondent.gender);
+                // this.respondentForm.controls['phone'].setValue(respondent.phone);
+                // this.respondentForm.controls['courseName'].setValue(respondent.courseName);
+                // this.respondentForm.controls['residenceCity'].setValue(respondent.residenceCity);
+                // this.respondentForm.controls['jobAddress'].setValue(respondent.jobAddress);
+                // this.respondentForm.controls['jobName'].setValue(respondent.jobName);
+                // this.respondentForm.controls['whatsapp'].setValue(respondent.whatsapp);
+                _this.userType = respondent.type;
+                _this.resolveUsertype();
+                _this.resolveCheckBoxFinancialAssistence();
+                // this.resolveCheckBoxDiscipline();
+                // if (respondent.jobNeighborhood != null) {
+                //   this.respondentForm.controls['jobNeighborhood'].setValue(respondent.jobNeighborhood);
+                //   this.jobCity = respondent.jobCity;
+                //   this.loadJobNeighborhoods();
+                //   this.isSameJobCity = "";
+                // }
+            }
+        });
+    };
+    RespondentProfilePage.prototype.saveRespondentInfo = function () {
+        var _this = this;
+        this.loader = this.loadingCtrl.create();
+        this.loader.present();
+        //-----------------------MANTER SEMPRE TODOS OS CAMPOS--------------------------
+        var cpf = this.respondentForm.controls['cpf'];
+        var email = this.respondentForm.controls['email'];
+        var residenceNeighborhood = this.respondentForm.controls['residenceNeighborhood'];
+        var residenceTimeRange = this.respondentForm.controls['residenceTimeRange'];
+        var jobCity = this.respondentForm.controls['jobCity'];
+        var jobNeighborhood = this.respondentForm.controls['jobNeighborhood'];
+        var salaryRange = this.respondentForm.controls['salaryRange'];
+        var age = this.respondentForm.controls['age'];
+        var gender = this.respondentForm.controls['gender'];
+        var name = this.respondentForm.controls['name'];
+        var phone = this.respondentForm.controls['phone'];
+        var code = this.respondentForm.controls['code'];
+        var courseEntry = this.respondentForm.controls['courseEntry'];
+        var courseLeft = this.respondentForm.controls['courseLeft'];
+        var courseName = this.respondentForm.controls['courseName'];
+        var residenceCity = this.respondentForm.controls['residenceCity'];
+        var jobAddress = this.respondentForm.controls['jobAddress'];
+        var jobName = this.respondentForm.controls['jobName'];
+        var whatsapp = this.respondentForm.controls['whatsapp'];
+        var residenceType = this.respondentForm.controls['residenceType'];
+        var residenceMembers = this.respondentForm.controls['residenceMembers'];
+        var haveChildren = this.respondentForm.controls['haveChildren'];
+        var haveJob = this.respondentForm.controls['haveJob'];
+        var financialAssistance = this.respondentForm.controls['financialAssistance'];
+        var financialAssistanceSelected = [];
+        for (var i = 0; i < financialAssistance.value.length; i++) {
+            if (financialAssistance.value[i] === true) {
+                financialAssistanceSelected.push(this.financialAssistanceList[i]);
+            }
+        }
+        //-----------------------MANTER SEMPRE TODOS OS CAMPOS--------------------------
+        var gameType = null;
+        if (this.useGame) {
+            gameType = "game";
+        }
+        else {
+            gameType = "not game";
+        }
+        if (!this.respondentForm.valid) {
+            if (!cpf.valid) {
+                cpf.markAsTouched();
+            }
+            if (!residenceNeighborhood.valid) {
+                residenceNeighborhood.markAsTouched();
+            }
+            this.loader.dismiss();
+        }
+        else {
+            //-----------------------MANTER SEMPRE TODOS OS CAMPOS--------------------------
+            var respondent_1 = new Respondent();
+            respondent_1.cpf = cpf ? cpf.value : null;
+            respondent_1.email = email ? email.value : null;
+            respondent_1.residenceTimeRange = residenceTimeRange ? residenceTimeRange.value : null;
+            respondent_1.residenceNeighborhood = residenceNeighborhood ? residenceNeighborhood.value : null;
+            respondent_1.jobCity = jobCity ? jobCity.value : null;
+            respondent_1.jobNeighborhood = jobNeighborhood ? jobNeighborhood.value : null;
+            respondent_1.salaryRange = salaryRange ? salaryRange.value : null;
+            respondent_1.ageRange = age ? age.value : null;
+            respondent_1.gender = gender ? gender.value : null;
+            respondent_1.name = name ? name.value : null;
+            respondent_1.phone = phone ? phone.value : null;
+            respondent_1.code = code ? code.value : null;
+            respondent_1.courseEntry = courseEntry ? courseEntry.value : null;
+            respondent_1.courseLeft = courseLeft ? courseLeft.value : null;
+            respondent_1.courseName = courseName ? courseName.value : null;
+            respondent_1.residenceCity = residenceCity ? residenceCity.value : null;
+            respondent_1.jobAddress = jobAddress ? jobAddress.value : null;
+            respondent_1.jobName = jobName ? jobName.value : null;
+            respondent_1.whatsapp = whatsapp ? whatsapp.value : null;
+            respondent_1.residenceType = residenceType ? residenceType.value : null;
+            respondent_1.residenceMembers = residenceMembers ? residenceMembers.value : null;
+            respondent_1.haveChildren = haveChildren.value;
+            respondent_1.haveJob = haveJob.value;
+            respondent_1.financialAssistance = financialAssistance ? JSON.stringify(financialAssistanceSelected) : null;
+            respondent_1.type = this.userType;
+            respondent_1.caseTest = this.caseTest;
+            respondent_1.points = this.points;
+            respondent_1.gameType = gameType;
+            //-----------------------MANTER SEMPRE TODOS OS CAMPOS--------------------------
+            //---------------------- VERIFICA SE JA EXISTE UM ALUNO COM A MATRICULA -------------------------
+            this.storage.set("disciplineSelected", this.disciplineSelected);
+            this.respondentProvider.getRespondentByCode(respondent_1.code, this.respondentCode).then(function (repondentCode) {
+                if (!repondentCode) {
+                    //---------------------- VERIFICA SE O RESPONDENTE ESTÁ CADASTRADO -------------------------
+                    _this.respondentProvider.getRespondentById(_this.respondentId).then(function (result) {
+                        if (!result) {
+                            //------------- INSERE O RESPONDENTE  -------------
+                            _this.respondentProvider.insertRespondent(respondent_1)
+                                .then(function (data) {
+                                respondent_1.id = data.id;
+                                _this.navigate(respondent_1);
+                            }).catch(function (error) {
+                                console.error(error);
+                                _this.restProvider.sendGoogleAnalyticsErrorData('RespondentProfilePage', 'saveRespondentInfo', error);
+                                _this.tryAgainSaveRespondent();
+                            });
+                        }
+                        else {
+                            //------------- ATUALIZA O RESPONDENTE -------------
+                            respondent_1.id = result.id;
+                            respondent_1.type = result.type;
+                            _this.respondentProvider.updateRespondent(respondent_1)
+                                .then(function () {
+                                _this.navigate(respondent_1);
+                            }).catch(function (error) {
+                                console.error(error);
+                                _this.restProvider.sendGoogleAnalyticsErrorData('RespondentProfilePage', 'saveRespondentInfo', error);
+                                _this.tryAgainSaveRespondent();
+                            });
+                        }
+                    }).catch(function (error) {
+                        console.error(error);
+                        _this.restProvider.sendGoogleAnalyticsErrorData('RespondentProfilePage', 'saveRespondentInfo', error);
+                        _this.tryAgainSaveRespondent();
+                    });
+                }
+                else {
+                    //------------- ATUALIZA O RESPONDENTE -------------
+                    respondent_1.id = repondentCode.id;
+                    respondent_1.type = repondentCode.type;
+                    _this.respondentProvider.updateRespondent(respondent_1)
+                        .then(function () {
+                        _this.navigate(respondent_1);
+                    }).catch(function (error) {
+                        console.error(error);
+                        _this.restProvider.sendGoogleAnalyticsErrorData('RespondentProfilePage', 'saveRespondentInfo', error);
+                        _this.tryAgainSaveRespondent();
+                    });
+                }
+            });
+        }
+    };
+    RespondentProfilePage.prototype.tryAgainSaveRespondent = function () {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'Oops!',
+            message: 'Não foi possível salvar os seus dados. Por favor, tente novamente.',
+            buttons: [{
+                    text: "Tentar novamente",
+                    handler: function () {
+                        _this.saveRespondentInfo();
+                    }
+                }]
+        });
+        this.loader.dismiss();
+        alert.present();
+    };
+    // ---------------- INFORMAÇÕES DO RESPONDENTE ----------------
+    // ---------------- CRIAÇÃO DAS LISTAS DOS SELECTS ----------------
+    RespondentProfilePage.prototype.createUserTypeList = function () {
+        this.userTypeList = [];
+        this.userTypeList = [
+            { value: 'Graduação' },
+            { value: 'Mestrado' },
+            { value: 'Doutorado' }
+        ];
+    };
+    RespondentProfilePage.prototype.createResidenceTypeList = function () {
+        this.residenceTypeList = [];
+        this.residenceTypeList = [
+            { value: 'Com a família' },
+            { value: 'República' },
+            { value: 'Kitnet' },
+            { value: 'Quarto alugado' },
+            { value: 'Quarto compartilhado' },
+            { value: 'Sozinho' }
+        ];
+    };
+    RespondentProfilePage.prototype.createResidenceMembersList = function () {
+        this.residenceMembersList = [];
+        this.residenceMembersList = [
+            { value: 'Nenhuma' },
+            { value: 'Uma pessoa' },
+            { value: 'Duas pessoas' },
+            { value: 'Três pessoas ' },
+            { value: 'Quatro pessoas' },
+            { value: 'Mais de quatro pessoas' }
+        ];
+    };
+    RespondentProfilePage.prototype.createFinancialAssistanceList = function () {
+        this.financialAssistanceList = [];
+        this.financialAssistanceList = [
+            { id: 0, value: 'Auxílio da DAE' },
+            { id: 1, value: 'Auxílio emergencial de Inclusão Digital' },
+            { id: 2, value: 'Bolsa de agências de fomento (CNPQ, CAPES, FAPEMIG ou outras)' },
+            { id: 3, value: 'Bolsa de Estágio' },
+            { id: 4, value: 'Ajuda de familiares ou amigos' },
+            { id: 5, value: 'Outros' }
+        ];
+    };
+    RespondentProfilePage.prototype.createCourseSemester = function () {
+        this.courseEntryList = [];
+        this.courseEntryList = [
+            { value: '1º período' },
+            { value: '2º período' },
+            { value: '3º período' },
+            { value: '4º período' },
+            { value: '5º período' },
+            { value: '6º período' },
+            { value: '7º período' },
+            { value: '8º período' },
+            { value: '9º período' },
+            { value: '10º período' },
+            { value: '11º período' },
+            { value: '12º período' },
+            { value: '13º período' },
+            { value: '14º período' },
+            { value: '15º período' },
+            { value: '16º período' },
+            { value: '17º período' },
+            { value: '18º período' },
+            { value: '19º período' },
+            { value: '20º período' }
+        ];
+        // this.courseEntryList = [
+        //   { value: '1º semestre - 2010' },
+        //   { value: '2º semestre - 2010' },
+        //   { value: '1º semestre - 2011' },
+        //   { value: '2º semestre - 2011' },
+        //   { value: '1º semestre - 2012' },
+        //   { value: '2º semestre - 2012' },
+        //   { value: '1º semestre - 2013' },
+        //   { value: '2º semestre - 2013' },
+        //   { value: '1º semestre - 2014' },
+        //   { value: '2º semestre - 2014' },
+        //   { value: '1º semestre - 2015' },
+        //   { value: '2º semestre - 2015' },
+        //   { value: '1º semestre - 2016' },
+        //   { value: '2º semestre - 2016' },
+        //   { value: '1º semestre - 2017' },
+        //   { value: '2º semestre - 2017' },
+        //   { value: '1º semestre - 2018' },
+        //   { value: '2º semestre - 2018' },
+        //   { value: '1º semestre - 2019' },
+        //   { value: '2º semestre - 2019' },
+        //   { value: '1º semestre - 2020' }
+        // ];
+        // this.courseLeftList = [];
+        // this.courseLeftList = [
+        //   { value: '1º semestre - 2010' },
+        //   { value: '2º semestre - 2010' },
+        //   { value: '1º semestre - 2011' },
+        //   { value: '2º semestre - 2011' },
+        //   { value: '1º semestre - 2012' },
+        //   { value: '2º semestre - 2012' },
+        //   { value: '1º semestre - 2013' },
+        //   { value: '2º semestre - 2013' },
+        //   { value: '1º semestre - 2014' },
+        //   { value: '2º semestre - 2014' },
+        //   { value: '1º semestre - 2015' },
+        //   { value: '2º semestre - 2015' },
+        //   { value: '1º semestre - 2016' },
+        //   { value: '2º semestre - 2016' },
+        //   { value: '1º semestre - 2017' },
+        //   { value: '2º semestre - 2017' },
+        //   { value: '1º semestre - 2018' },
+        //   { value: '2º semestre - 2018' },
+        //   { value: '1º semestre - 2019' },
+        //   { value: '2º semestre - 2019' },
+        //   { value: '1º semestre - 2020' }
+        // ];
+    };
+    RespondentProfilePage.prototype.createCourseNameListGrad = function () {
+        this.courseNameList = [];
+        this.courseNameList = [
+            { value: 'Administração' },
+            { value: 'Ciência da Computação' },
+            { value: 'Ciências Atmosféricas' },
+            { value: 'Ciências Biológicas' },
+            { value: 'Engenharia Ambiental' },
+            { value: 'Engenharia Ambiental – Itabira' },
+            { value: 'Engenharia Civil' },
+            { value: 'Engenharia da Mobilidade – Itabira' },
+            { value: 'Engenharia de Bioprocessos' },
+            { value: 'Engenharia de Computação' },
+            { value: 'Engenharia de Computação – Itabira' },
+            { value: 'Engenharia de Controle e Automação' },
+            { value: 'Engenharia de Controle e Automação – Itabira' },
+            { value: 'Engenharia de Energia' },
+            { value: 'Engenharia de Materiais' },
+            { value: 'Engenharia de Materiais – Itabira' },
+            { value: 'Engenharia de Produção' },
+            { value: 'Engenharia de Produção – Itabira' },
+            { value: 'Engenharia de Saúde e Segurança – Itabira' },
+            { value: 'Engenharia Elétrica' },
+            { value: 'Engenharia Elétrica – Itabira' },
+            { value: 'Engenharia Eletrônica' },
+            { value: 'Engenharia Hídrica' },
+            { value: 'Engenharia Mecânica' },
+            { value: 'Engenharia Mecânica – Itabira' },
+            { value: 'Engenharia Mecânica Aeronáutica' },
+            { value: 'Engenharia Química' },
+            { value: 'Física Bacharelado' },
+            { value: 'Física Licenciatura' },
+            { value: 'Matemática Bacharelado' },
+            { value: 'Matemática Licenciatura' },
+            { value: 'Química Bacharelado' },
+            { value: 'Química Licenciatura' },
+            { value: 'Sistemas de Informação' }
+        ];
+    };
+    RespondentProfilePage.prototype.createCourseNameListMest = function () {
+        this.courseNameList = [];
+        this.courseNameList = [
+            { value: 'Mestrado em Engenharia Elétrica' },
+            { value: 'Mestrado em Engenharia Mecânica' },
+            { value: 'Mestrado em Engenharia de Produção' },
+            { value: 'Mestrado em Multicêntrico em Química de Minas Gerais' },
+            { value: 'Mestrado em Meio Ambiente e Recursos Hídricos' },
+            { value: 'Mestrado em Materiais para a Engenharia' },
+            { value: 'Mestrado em Educação em Ciências' },
+            { value: 'Mestrado em Engenharia de Energia' },
+            { value: 'Mestrado em Ciência e Tecnologia da Computação' },
+            { value: 'Mestrado em Desenvolvimento, Tecnologias e Sociedade' },
+            { value: 'Mestrado em Matemática' },
+            { value: 'Mestrado em Física' }
+        ];
+    };
+    RespondentProfilePage.prototype.createCourseNameListDout = function () {
+        this.courseNameList = [];
+        this.courseNameList = [
+            { value: 'Doutorado em Engenharia Elétrica' },
+            { value: 'Doutorado em Engenharia Mecânica' },
+            { value: 'Doutorado em Engenharia de Produção' },
+            { value: 'Doutorado em Multicêntrico em Química de Minas Gerais' },
+            { value: 'Doutorado em Meio Ambiente e Recursos Hídricos' },
+            { value: 'Doutorado em Materiais para a Engenharia' },
+        ];
+    };
+    RespondentProfilePage.prototype.createDisciplineList = function () {
+        this.disciplineList = [];
+        this.disciplineList = [
+            { value: 0, name: "Algoritmos e Estruturas de Dados" },
+            { value: 1, name: "Empreendedorismo Tecnológico" },
+            { value: 2, name: "Introdução a Otimização Inteira" },
+            { value: 3, name: "Robótica Móvel II" },
+            { value: 4, name: "Sistemas Operacionais" },
+            { value: 5, name: "Tópicos em Engenharia de Software" },
+            { value: 6, name: "Visualização de Informação" }
+        ];
+    };
+    RespondentProfilePage.prototype.createGenderList = function () {
+        this.genderList = [];
+        this.genderList = [
+            { value: 'Masculino' },
+            { value: 'Feminino' },
+            { value: 'Outro' }
+        ];
+    };
+    RespondentProfilePage.prototype.createResidenceTimeRange = function () {
+        this.residenceTimeList = [];
+        this.residenceTimeList = [
+            { name: 'Menos de um 1 ano', value: 0 },
+            { name: 'De 1 a 5 anos', value: 1 },
+            { name: 'De 5 a 10 anos', value: 2 },
+            { name: 'De 10 a 20 anos', value: 3 },
+            { name: 'Mais de 20 anos', value: 4 }
+        ];
+        this.residenceTimeName = this.residenceTimeList[0].name;
+    };
+    RespondentProfilePage.prototype.createAgeRange = function () {
+        this.ageRangeList = [];
+        this.ageRangeList = [
+            { name: 'Até 16 anos', value: 0 },
+            { name: 'Entre 16 e 25 anos', value: 1 },
+            { name: 'Entre 25 e 40 anos', value: 2 },
+            { name: 'Entre 40 e 60 anos', value: 3 },
+            { name: 'Acima de 60 anos', value: 4 }
+        ];
+        this.ageRangeName = this.ageRangeList[0].name;
+    };
+    RespondentProfilePage.prototype.createSalaryRange = function () {
+        this.salaryRangeList = [];
+        this.salaryRangeList = [
+            { name: 'Até 2 Salários Mínimos', value: 0 },
+            { name: 'De 2 a 4 Salários Mínimos', value: 1 },
+            { name: 'De 4 a 10 Salários Mínimos', value: 2 },
+            { name: 'De 10 a 20 Salários Mínimos', value: 3 },
+            { name: 'Acima de 20 Salários Mínimos', value: 4 }
+        ];
+        this.salaryRangeName = this.salaryRangeList[0].name;
+    };
+    // ---------------- CRIAÇÃO DAS LISTAS DOS SELECTS ----------------
+    // ---------------- CRIAÇÃO DAS LISTAS DOS BAIRROS ----------------
+    RespondentProfilePage.prototype.loadResidenceNeighborhoods = function () {
+        var _this = this;
+        this.neighborhoodProvider.getAllNeighborhoodsByCity(this.city)
+            .then(function (neighborhoods) {
+            if (neighborhoods != null) {
+                _this.residenceNeighborhoods = _this.sortAscCollection(neighborhoods);
+                _this.storage.set('neighborhoods', _this.residenceNeighborhoods);
+                _this.loader.dismiss();
+            }
+            else {
+                _this.showAlertLoadResidenceNeighborhoods();
+            }
+        })
+            .catch(function (error) {
+            console.error(error);
+            _this.restProvider.sendGoogleAnalyticsErrorData('RespondentProfilePage', 'loadResidenceNeighborhoods', error);
+            _this.showAlertLoadResidenceNeighborhoods();
+        });
+    };
+    RespondentProfilePage.prototype.loadJobNeighborhoods = function () {
+        var _this = this;
+        this.neighborhoodProvider.getAllNeighborhoodsByCity(this.jobCity)
+            .then(function (neighborhoods) {
+            if (neighborhoods != null) {
+                _this.jobNeighborhoodDisabled = false;
+                _this.jobNeighborhoods = _this.sortAscCollection(neighborhoods);
+                if (_this.compareFn(_this.jobCity, _this.city)) {
+                    _this.isSameJobCity = "";
+                }
+                else {
+                    _this.isSameJobCity = "hide";
+                }
+            }
+            else {
+                _this.showAlertLoadJobNeighborhoods();
+            }
+        })
+            .catch(function (error) {
+            console.error(error);
+            _this.restProvider.sendGoogleAnalyticsErrorData('RespondentProfilePage', 'loadJobNeighborhoods', error);
+            _this.showAlertLoadJobNeighborhoods();
+        });
+    };
+    RespondentProfilePage.prototype.loadAllCities = function () {
+        var _this = this;
+        this.cityProvider.getAllCities()
+            .then(function (cities) {
+            if (cities != null) {
+                _this.cities = _this.sortAscCollection(cities);
+            }
+            else {
+                _this.showAlertGetAllCities();
+            }
+        })
+            .catch(function (error) {
+            console.error(error);
+            _this.restProvider.sendGoogleAnalyticsErrorData('RespondentProfilePage', 'getAllCities', error);
+            _this.showAlertGetAllCities();
+        });
+    };
+    // ---------------- CRIAÇÃO DAS LISTAS DOS BAIRROS ----------------
+    // ---------------- RESOLVE AS EXIBIÇÕES ----------------
+    RespondentProfilePage.prototype.resolveUsertype = function () {
+        // ----------------- CASE 2 - UNIFEI -----------------
+        if (this.userType == "Graduação") {
+            this.courseDisabled = false;
+            this.createCourseNameListGrad();
+        }
+        else if (this.userType == "Mestrado") {
+            this.courseDisabled = false;
+            this.createCourseNameListMest();
+        }
+        else if (this.userType == "Doutorado") {
+            this.courseDisabled = false;
+            this.createCourseNameListDout();
+        }
+        // ----------------- CASE 2 - UNIFEI -----------------
+        // ------------------- CASE 1 - POSCOMP -------------------
+        // if (this.userType == "Discente formado") {
+        //   this.isDiscent = true;
+        //   this.isDiscentConcluded = true;
+        //   this.isDiscentEvaded = true;
+        //   this.isDocent = false;
+        //   this.respondentForm.controls['isDiscentConcluded'].setValue(true);
+        //   this.respondentForm.controls['userType'].setValue("Ex-aluno");
+        // } else if (this.userType == "Discente evadido") {
+        //   this.isDiscent = true;
+        //   this.isDiscentConcluded = false;
+        //   this.isDiscentEvaded = true;
+        //   this.isDocent = false;
+        //   this.respondentForm.controls['isDiscentConcluded'].setValue(false);
+        //   this.respondentForm.controls['userType'].setValue("Ex-aluno");
+        // } else if (this.userType == "Discente") {
+        //   this.isDiscent = true;
+        //   this.isDiscentConcluded = false;
+        //   this.isDiscentEvaded = false;
+        //   this.isDocent = false;
+        //   this.respondentForm.controls['isDiscentConcluded'].setValue(false);
+        // } else if (this.userType == "Docente") {
+        //   this.isDiscent = false;
+        //   this.isDiscentConcluded = false;
+        //   this.isDiscentEvaded = false;
+        //   this.isDocent = true;
+        //   this.respondentForm.controls['isDiscentConcluded'].setValue(false);
+        // }
+        // ------------------- CASE 1 - POSCOMP -------------------
+    };
+    RespondentProfilePage.prototype.resolveCheckBoxDiscipline = function () {
+        var _this = this;
+        if (this.isDiscent && !this.isDiscentEvaded && !this.isDiscentConcluded) {
+            this.storage.get('disciplineSelected').then(function (data) {
+                if (data) {
+                    data.forEach(function (disc) {
+                        _this.checkBox.toArray()[disc.value].checked = true;
+                    });
+                }
+            });
+        }
+    };
+    RespondentProfilePage.prototype.resolveCheckBoxFinancialAssistence = function () {
+        var _this = this;
+        if (this.isDiscent && !this.isDiscentEvaded && !this.isDiscentConcluded) {
+            this.storage.get('disciplineSelected').then(function (data) {
+                if (data) {
+                    data.forEach(function (disc) {
+                        _this.checkBox.toArray()[disc.value].checked = true;
+                    });
+                }
+            });
+        }
+    };
+    RespondentProfilePage.prototype.resolveLevel = function () {
+        if (this.points > 0 && this.points <= 12) {
+            this.level = "Bronze";
+            this.levelImg = "level1";
+        }
+        if (this.points > 12 && this.points <= 21) {
+            this.level = "Prata";
+            this.levelImg = "level2";
+        }
+        if (this.points > 21) {
+            this.level = "Ouro";
+            this.levelImg = "level3";
+        }
+    };
+    // ---------------- RESOLVE AS EXIBIÇÕES ----------------
+    RespondentProfilePage.prototype.changeDiscentType = function () {
+        if (this.userType == "Discente formado") {
+            this.userType = "Discente evadido";
+            this.isDiscentConcluded = false;
+            this.respondentForm.controls['courseLeft'].setValue(null);
+            this.respondentForm.controls['courseLeft'].disable();
+            this.respondentForm.controls['isDiscentConcluded'].setValue(false);
+        }
+        else {
+            this.userType = "Discente formado";
+            this.isDiscentConcluded = true;
+            this.respondentForm.controls['courseLeft'].enable();
+            this.respondentForm.controls['courseLeft'].setValue(null);
+            this.respondentForm.controls['isDiscentConcluded'].setValue(true);
+        }
+        this.scrollToBottom();
+    };
+    // ---------------- SELEÇÕES E VALIDAÇÕES ----------------
+    RespondentProfilePage.prototype.selectUserType = function (userType) {
+        this.userType = userType.value;
+        // ----------------- CASE 2 - UNIFEI -----------------
+        if (this.userType == "Graduação") {
+            this.courseDisabled = false;
+            this.createCourseNameListGrad();
+        }
+        else if (this.userType == "Mestrado") {
+            this.courseDisabled = false;
+            this.createCourseNameListMest();
+        }
+        else if (this.userType == "Doutorado") {
+            this.courseDisabled = false;
+            this.createCourseNameListDout();
+        }
+        // ----------------- CASE 2 - UNIFEI -----------------
+        // ----------------- CASE 1 - POSCOMP -----------------
+        // if (this.userType == "Discente") {
+        //   this.isDiscent = true;
+        //   this.isDiscentEvaded = false;
+        //   this.isDiscentConcluded = false;
+        //   this.isDocent = false;
+        //   this.respondentForm.controls['courseEntry'].enable();
+        //   this.respondentForm.controls['courseEntry'].setValue(null);
+        //   this.respondentForm.controls['code'].enable();
+        //   this.respondentForm.controls['code'].setValue(null);
+        //   this.respondentForm.controls['courseLeft'].setValue(null);
+        //   this.respondentForm.controls['courseLeft'].disable();
+        //   this.respondentForm.controls['isDiscentConcluded'].setValue(false);
+        // } else if (this.userType == "Ex-aluno") {
+        //   this.userType = "Discente evadido";
+        //   this.isDiscent = true;
+        //   this.isDiscentEvaded = true;
+        //   this.isDiscentConcluded = false;
+        //   this.isDocent = false;
+        //   this.respondentForm.controls['courseEntry'].enable();
+        //   this.respondentForm.controls['courseEntry'].setValue(null);
+        //   this.respondentForm.controls['courseLeft'].enable();
+        //   this.respondentForm.controls['courseLeft'].setValue(null);
+        //   this.respondentForm.controls['code'].setValue(null);
+        //   this.respondentForm.controls['code'].disable();
+        //   this.respondentForm.controls['isDiscentConcluded'].setValue(false);
+        // } else {
+        //   this.isDiscent = false;
+        //   this.isDiscentEvaded = false;
+        //   this.isDiscentConcluded = false;
+        //   this.isDocent = true;
+        //   this.respondentForm.controls['courseEntry'].setValue(null);
+        //   this.respondentForm.controls['courseEntry'].disable();
+        //   this.respondentForm.controls['courseLeft'].setValue(null);
+        //   this.respondentForm.controls['courseLeft'].disable();
+        //   this.respondentForm.controls['code'].enable();
+        //   this.respondentForm.controls['code'].setValue(null);
+        //   this.respondentForm.controls['isDiscentConcluded'].setValue(false);
+        // }
+        // ----------------- CASE 1 - POSCOMP -----------------
+    };
+    RespondentProfilePage.prototype.changeUserType = function () {
+        if (this.userType == "comerciante") {
+            // this.respondentForm.controls['isCommerce'].setValue(false);
+            this.isCommerce = false;
+            this.userType = "cidadão";
+        }
+        else {
+            // this.respondentForm.controls['isCommerce'].setValue(true);
+            this.isCommerce = true;
+            this.userType = "comerciante";
+        }
+    };
+    RespondentProfilePage.prototype.updateDisciplineValue = function (disciplineSelect, checked) {
+        this.checkBox;
+        if (checked) {
+            this.disciplineSelected.push(disciplineSelect);
+        }
+        else {
+            this.disciplineSelected =
+                this.disciplineSelected.filter(function (discipline) { return !(discipline === disciplineSelect); });
+        }
+    };
+    RespondentProfilePage.prototype.selectCity = function (city) {
+        this.jobCity = city;
+        if (this.compareFn(this.jobCity, this.city)) {
+            this.isSameJobCity = "";
+            // this.respondentForm.controls['jobNeighborhood'].setValue('');
+        }
+        else {
+            this.isSameJobCity = "hide";
+        }
+    };
+    RespondentProfilePage.prototype.validate = function (cpf) {
+        cpf = cpf.replace(/[^\d]+/g, '');
+        if (cpf == '')
+            return false;
+        // Elimina CPFs invalidos conhecidos
+        if (cpf.length != 11 ||
+            cpf == "00000000000" ||
+            cpf == "11111111111" ||
+            cpf == "22222222222" ||
+            cpf == "33333333333" ||
+            cpf == "44444444444" ||
+            cpf == "55555555555" ||
+            cpf == "66666666666" ||
+            cpf == "77777777777" ||
+            cpf == "88888888888" ||
+            cpf == "99999999999")
+            return false;
+        // Valida 1o digito
+        var add = 0;
+        for (var i = 0; i < 9; i++)
+            add += parseInt(cpf.charAt(i)) * (10 - i);
+        var rev = 11 - (add % 11);
+        if (rev == 10 || rev == 11)
+            rev = 0;
+        if (rev != parseInt(cpf.charAt(9)))
+            return false;
+        // Valida 2o digito
+        add = 0;
+        for (var i = 0; i < 10; i++)
+            add += parseInt(cpf.charAt(i)) * (11 - i);
+        rev = 11 - (add % 11);
+        if (rev == 10 || rev == 11)
+            rev = 0;
+        return rev == parseInt(cpf.charAt(10));
+    };
+    RespondentProfilePage.prototype.validateCPF = function (control) {
+        var isValid = this.validate(control.value.toString());
+        return Object(__WEBPACK_IMPORTED_MODULE_4_rxjs_observable_of__["of"])(!isValid).pipe(Object(__WEBPACK_IMPORTED_MODULE_5_rxjs_operators_map__["map"])(function (result) { return result ? { invalid: true } : null; }));
+    };
+    RespondentProfilePage.prototype.getResidenceTimeNameByValue = function (event) {
+        var residenceTimeChosen = event.value;
+        this.residenceTimeName = this.residenceTimeList[residenceTimeChosen].name;
+    };
+    RespondentProfilePage.prototype.getSalaryRangeNameByValue = function (event) {
+        var salaryRangeChosen = event.value;
+        this.salaryRangeName = this.salaryRangeList[salaryRangeChosen].name;
+    };
+    RespondentProfilePage.prototype.getAgeRangeByValue = function (event) {
+        var ageRageChoosen = event.value;
+        this.ageRangeName = this.ageRangeList[ageRageChoosen].name;
+    };
+    // ---------------- SELEÇÕES E VALIDAÇÕES ----------------
+    // ---------------- MENSAGENS DE ERRO ----------------
+    RespondentProfilePage.prototype.showAlertGetAllCities = function () {
+        var _this = this;
+        this.cities = [];
+        var alert = this.alertCtrl.create({
+            title: 'Oops!',
+            message: 'Não foi possível acessar os dados do servidor. Por favor, tente novamente.',
+            buttons: [{
+                    text: "Tentar novamente",
+                    handler: function () {
+                        _this.loadAllCities();
+                    }
+                }]
+        });
+        alert.present();
+    };
+    RespondentProfilePage.prototype.showAlertLoadResidenceNeighborhoods = function () {
+        var _this = this;
+        this.loader.dismiss();
+        this.residenceNeighborhoods = [];
+        var alert = this.alertCtrl.create({
+            title: 'Oops!',
+            message: 'Não foi possível acessar os dados do servidor. Por favor, tente novamente.',
+            buttons: [{
+                    text: "Tentar novamente",
+                    handler: function () {
+                        _this.loadResidenceNeighborhoods();
+                    }
+                }]
+        });
+        alert.present();
+    };
+    RespondentProfilePage.prototype.showAlertLoadJobNeighborhoods = function () {
+        var _this = this;
+        this.jobNeighborhoods = [];
+        var alert = this.alertCtrl.create({
+            title: 'Oops!',
+            message: 'Não foi possível acessar os dados do servidor. Por favor, tente novamente.',
+            buttons: [{
+                    text: "Tentar novamente",
+                    handler: function () {
+                        _this.loadJobNeighborhoods();
+                    }
+                }]
+        });
+        alert.present();
+    };
+    // ---------------- MENSAGENS DE ERRO ----------------
+    // ---------------- OPERAÇÕES DE ROTINA ----------------
+    RespondentProfilePage.prototype.showTerm = function () {
+        var _this = this;
+        this.isTermRead = true;
+        var confirm = this.alertCtrl.create({
+            cssClass: 'consent-form',
+            title: 'Termo de consentimento',
+            message: '<p style="text-align: center;"><strong>Termo de Consentimento</strong></p>' +
+                '<p style="text-align: justify;"><strong>Pesquisadores respons&aacute;veis:</strong> Kayque Willy Reis de Oliveira, Melise Maria Veiga de Paula, Fl&aacute;via Ludovico de Matos e Thamiris Daniel dos Santos.</p>' +
+                '<p style="text-align: justify;">Voc&ecirc; est&aacute; sendo convidado(a) a participar de uma pesquisa autoaplic&aacute;vel com o objetivo de investigar estrat&eacute;gias de enfrentamento e o impacto da pandemia do novo Coronav&iacute;rus (COVID-19) na sa&uacute;de mental dos alunos de gradua&ccedil;&atilde;o e p&oacute;s-gradua&ccedil;&atilde;o da Universidade Federal de Itajub&aacute;.</p>' +
+                '<p style="text-align: justify;">Sua participa&ccedil;&atilde;o nesse estudo &eacute; volunt&aacute;ria e muito importante para n&oacute;s. Fique tranquilo, se voc&ecirc; n&atilde;o quiser ou n&atilde;o puder participar, ou ainda, se quiser desistir depois de iniciar, isso n&atilde;o vai trazer nenhum problema para voc&ecirc;. Voc&ecirc; n&atilde;o ser&aacute; identificado, garantido o sigilo e anonimato das informa&ccedil;&otilde;es. Voc&ecirc; pode conhecer os resultados a qualquer momento, basta entrar em contato atrav&eacute;s do email (kayque-willy@hotmail.com).</p>' +
+                '<p style="text-align: justify;">&nbsp;<strong>Tempo para responder as perguntas:</strong> em torno de 10 minutos.</p>' +
+                '<p style="text-align: justify;">&nbsp;<strong>Esteja ciente que:</strong></p>' +
+                '<ol style="text-align: justify;">' +
+                '<li>O estudo tem como objetivo compreender os aspectos psicol&oacute;gicos da sa&uacute;de mental como: sintomas gerais, sintomas depressivos, sintomas ap&oacute;s a Pandemia, qualidade de vida, uso da religiosidade ou espiritualidade, ansiedade, otimismo e pessimismo dos alunos durante a pandemia do novo Coronav&iacute;rus (COVID-19).</li>' +
+                '</ol>' +
+                '<ol style="text-align: justify;" start="2">' +
+                '<li>Os resultados do estudo poder&atilde;o trazer um melhor entendimento para os profissionais de Psicologia da UNIFEI na oferta de servi&ccedil;os adequados &agrave;s necessidades atuais dos discentes, para como melhorar a sa&uacute;de mental, qualidade de vida e bem-estar dos alunos.</li>' +
+                '</ol>' +
+                '<ol style="text-align: justify;" start="3">' +
+                '<li>A sua participa&ccedil;&atilde;o nesta pesquisa n&atilde;o implica no tratamento de alguma doen&ccedil;a. Os question&aacute;rios ser&atilde;o usados apenas para esse estudo e n&atilde;o v&atilde;o impactar qualquer que seja o tratamento que esteja fazendo.</li>' +
+                '</ol>' +
+                '<ol style="text-align: justify;" start="4">' +
+                '<li>Voc&ecirc; ir&aacute; responder perguntas sobre seus sentimentos, pensamentos e comportamentos durante o isolamento social. S&atilde;o esperados riscos m&iacute;nimos com a sua participa&ccedil;&atilde;o nessa pesquisa, envolvendo apenas a possibilidade de desconforto ou constrangimento que, por ventura, venha a surgir ao responder alguma quest&atilde;o.</li>' +
+                '</ol>' +
+                '<ol style="text-align: justify;" start="5">' +
+                '<li>Os resultados ficar&atilde;o sob a guarda dos pesquisadores respons&aacute;veis e do Servi&ccedil;o de Psicologia da Universidade Federal de Itajub&aacute;, e a divulga&ccedil;&atilde;o dos resultados ser&aacute; feita de forma a n&atilde;o identificar os volunt&aacute;rios, dentro dos procedimentos &eacute;ticos para fins de estudo, sendo garantida a privacidade dos participantes. Os pesquisadores poder&atilde;o apresentar ou publicar os resultados desse estudo em eventos e revistas cient&iacute;ficas, mas tamb&eacute;m em ve&iacute;culos de acesso f&aacute;cil como revistas populares, r&aacute;dio ou TV. Vale ressaltar que toda divulga&ccedil;&atilde;o somente ser&aacute; realizada com o objetivo de contribuir para a cria&ccedil;&atilde;o de estrat&eacute;gias de supera&ccedil;&atilde;o das dificuldades emocionais da comunidade acad&ecirc;mica.</li>' +
+                '</ol>' +
+                '<p style="text-align: justify;"><strong>Os pesquisadores estar&atilde;o a sua disposi&ccedil;&atilde;o para qualquer esclarecimento que considere necess&aacute;rio</strong><strong>:</strong></p>' +
+                '<p style="text-align: justify;">Kayque Willy Reis de Oliveira e Melise Maria Veiga de Paula</p>' +
+                '<p style="text-align: justify;">Programa de Mestrado em Ci&ecirc;ncia e Tecnologia da Computa&ccedil;&atilde;o &ndash; Universidade Federal de Itajub&aacute;</p>' +
+                '<p style="text-align: justify;">kayque-willy@hotmail.com e melise@unifei.edu.br</p>' +
+                '<p style="text-align: justify;">&nbsp;</p>' +
+                '<p style="text-align: justify;">Fl&aacute;via Ludovico de Matos e Thamiris Daniel dos Santos</p>' +
+                '<p style="text-align: justify;">Psic&oacute;logas &ndash; Universidade Federal de Itajub&aacute;</p>' +
+                '<p style="text-align: justify;">psicologia@unifei.edu.br</p>' +
+                '<p style="text-align: justify;">(35) 3629 1008/1793</p>',
+            buttons: [
+                {
+                    text: 'Não aceito',
+                    handler: function () {
+                        _this.respondentForm.controls['term'].setValue(false);
+                    }
+                },
+                {
+                    text: 'Aceito',
+                    handler: function () {
+                        _this.respondentForm.controls['term'].setValue(true);
+                    }
+                }
+            ]
+        });
+        confirm.present();
+    };
+    RespondentProfilePage.prototype.navigate = function (respondent) {
+        this.storage.set('respondent', respondent);
+        this.navCtrl.setRoot('QuestionariesListPage', {}).then(this.loader.dismiss());
+    };
+    RespondentProfilePage.prototype.navigateBack = function () {
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_0__intro_intro__["a" /* IntroPage */], {}).then(this.loader.dismiss());
+    };
+    RespondentProfilePage.prototype.sortAscCollection = function (collection) {
+        return collection.sort(function (a, b) {
+            return a.name.localeCompare(b.name);
+        });
+    };
+    RespondentProfilePage.prototype.openMenu = function () {
+        this.menuCtrl.open();
+    };
+    RespondentProfilePage.prototype.compareFn = function (e1, e2) {
+        return e1 && e2 ? e1.id === e2.id : e1 === e2;
+    };
+    RespondentProfilePage.prototype.scrollToBottom = function () {
+        if (!!this.content) {
+            var content_1 = this.content;
+            setTimeout(function () {
+                content_1.scrollToBottom(100);
+            }, 100);
+        }
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* Content */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* Content */])
+    ], RespondentProfilePage.prototype, "content", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_10" /* ViewChildren */])(__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* Checkbox */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__angular_core__["U" /* QueryList */])
+    ], RespondentProfilePage.prototype, "checkBox", void 0);
+    RespondentProfilePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
+            selector: 'page-respondent-profile',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\respondent-profile\respondent-profile.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-row>\n\n      <ion-col offset-1 col-2 class="menu-icon-col-not-game" *ngIf="!useGame">\n\n        <button ion-button clear (click)="openMenu()">\n\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n\n        </button>\n\n      </ion-col>\n\n      <ion-col offset-1 col-2 class="menu-icon-col" *ngIf="useGame">\n\n        <button ion-button clear (click)="openMenu()">\n\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n\n        </button>\n\n      </ion-col>\n\n      <ion-col col-6 *ngIf="!useGame">\n\n        <img class="img-responsive img-not-game" src="assets/imgs/header-logo.png" />\n\n      </ion-col>\n\n      <ion-col col-6 *ngIf="useGame">\n\n        <img class="img-responsive" src="assets/imgs/header-logo.png" />\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <h2 *ngIf="useGame" class="profile-title profile-title-game" col-12 text-center>Perfil do respondente</h2>\n\n  <h2 *ngIf="!useGame" class="profile-title" col-12 text-center>Perfil do respondente</h2>\n\n  <!-- Pontuação -->\n\n  <div *ngIf="useGame" class="level-panel">\n\n    <!-- Com Pontuação -->\n\n    <ion-item *ngIf="points > 0" text-wrap>\n\n      <ion-thumbnail item-start>\n\n        <img class="img-responsive" src="assets/imgs/game/{{levelImg}}.png" />\n\n      </ion-thumbnail>\n\n      <ion-label>\n\n        <h2>Você está no nível <strong>{{level}}</strong> de Participação!</h2>\n\n        <p><b>Sua pontuação</b></p>\n\n        <ion-badge>{{points}} pontos</ion-badge>\n\n      </ion-label>\n\n    </ion-item>\n\n    <!-- Com Pontuação -->\n\n    <!-- Sem pontuação -->\n\n    <ion-item *ngIf="points == 0" text-wrap>\n\n      <ion-thumbnail item-start>\n\n        <img class="img-responsive" src="assets/imgs/game/{{levelImg}}.png" />\n\n      </ion-thumbnail>\n\n      <ion-label>\n\n        <h2>Responda os questionários para aumentar o <b>nível</b> de <b>Participação</b>!</h2>\n\n        <p><b>Sua pontuação</b></p>\n\n        <ion-badge>{{points}} pontos</ion-badge>\n\n      </ion-label>\n\n    </ion-item>\n\n    <!-- Sem pontuação -->\n\n  </div>\n\n  <!-- Pontuação -->\n\n  <h3 *ngIf="useGame" class="subtitle subtitle-game" col-12 text-center>Por favor informe os seus dados</h3>\n\n  <h3 *ngIf="!useGame" class="subtitle" col-12 text-center>Por favor informe os seus dados</h3>\n\n  <form [formGroup]="respondentForm">\n\n    <!-----------------------CASE 2 - UNIFEI----------------------->\n\n    <!-- Tipo de Respondente -->\n\n    <ion-item>\n\n      <ion-label floating>Qual o seu vínculo com a Universidade?</ion-label>\n\n      <ion-select formControlName="userType" required>\n\n        <ion-option *ngFor="let userType of userTypeList" [value]="userType.value"\n\n          (ionSelect)="selectUserType(userType)">\n\n          {{userType.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <!-- Tipo de Respondente -->\n\n    <!-- Curso -->\n\n    <ion-item>\n\n      <ion-label floating>Qual o seu curso?</ion-label>\n\n      <ion-select formControlName="courseName" required [disabled]="courseDisabled">\n\n        <ion-option *ngFor="let courseName of courseNameList" [value]="courseName.value">\n\n          {{courseName.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <!-- Curso -->\n\n    <!-- Período -->\n\n    <ion-item>\n\n      <ion-label floating>Por favor, selecione o seu período atual</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseEntry\']" required [disabled]="courseDisabled">\n\n        <ion-option *ngFor="let courseEntry of courseEntryList" [value]="courseEntry.value">\n\n          {{courseEntry.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <!-- Período -->\n\n    <!-- Onde mora -->\n\n    <ion-item>\n\n      <ion-label floating>Onde você mora?</ion-label>\n\n      <ion-select formControlName="residenceType" required>\n\n        <ion-option *ngFor="let residenceType of residenceTypeList" [value]="residenceType.value">\n\n          {{residenceType.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <!-- Onde mora -->\n\n    <!-- Com quem mora -->\n\n    <ion-item>\n\n      <ion-label floating>Quantas pessoas residem com você?</ion-label>\n\n      <ion-select formControlName="residenceMembers" required>\n\n        <ion-option *ngFor="let residenceMembers of residenceMembersList" [value]="residenceMembers.value">\n\n          {{residenceMembers.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <!-- Com quem mora -->\n\n    <!-- Possui filhos -->\n\n    <ion-item>\n\n      <ion-label>Possui filhos?</ion-label>\n\n      <ion-checkbox item-end formControlName="haveChildren">\n\n      </ion-checkbox>\n\n    </ion-item>\n\n    <!-- Possui filhos -->\n\n    <!-- Possui vínculo empregatício -->\n\n    <ion-item>\n\n      <ion-label>Possui vínculo empregatício?</ion-label>\n\n      <ion-checkbox item-end formControlName="haveJob">\n\n      </ion-checkbox>\n\n    </ion-item>\n\n    <!-- Possui vínculo empregatício -->\n\n    <!-- Assistencia financeira -->\n\n    <ion-row class="metric-row">\n\n      <ion-col col-12>\n\n        <h3 class="subtitle check-box-subtitle" col-12 text-center>Você está recebendo algum auxílio financeiro?\n\n        </h3>\n\n        <ion-list radio-group>\n\n          <ion-item *ngFor="let financialAssistance of financialAssistanceList; let i = index" class="item-checkbox">\n\n            <ion-label text-wrap text-left class="item-checkbox-text">{{financialAssistance.value}}</ion-label>\n\n            <ion-checkbox item-end [formControl]="respondentForm.controls[\'financialAssistance\'].controls[i]">\n\n            </ion-checkbox>\n\n          </ion-item>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n    <!-- Assistencia financeira -->\n\n    <!-- Termo de consentimento -->\n\n    <ion-row class="metric-row">\n\n      <ion-col col-12>\n\n        <h3 class="subtitle check-box-subtitle term-title" col-12 text-center>Termo de consentimento</h3>\n\n        <ion-label text-center text-wrap class="item-checkbox-text term-checbox-legend">Esta pesquisa possui um\n\n          termo de consentimento <a (click)="showTerm()">clique aqui para ler</a></ion-label>\n\n        <ion-list radio-group>\n\n          <ion-item class="item-checkbox">\n\n            <ion-label text-wrap text-left class="item-checkbox-text">Concordo com o termo de consentimento\n\n            </ion-label>\n\n            <ion-checkbox item-end formControlName="term" [disabled]="!isTermRead" required>\n\n            </ion-checkbox>\n\n          </ion-item>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row>\n\n    <!-- Termo de consentimento -->\n\n    <!-----------------------CASE 2 - UNIFEI----------------------->\n\n    <!-----------------------CASE 1 - POSCOMP----------------------->\n\n    <!-- Tipo de Respondente -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Por favor, selecione o tipo de respondente</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'userType\']" required [disabled]="editing">\n\n        <ion-option *ngFor="let userType of userTypeList" [value]="userType.value"\n\n          (ionSelect)="selectUserType(userType)">\n\n          {{userType.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Tipo de Respondente -->\n\n    <!-- Nome -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Nome</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'name\']" required></ion-input>\n\n    </ion-item> -->\n\n    <!-- Nome -->\n\n    <!-- Discente formado ou evadido -->\n\n    <!-- <ion-item *ngIf="isDiscent && isDiscentEvaded">\n\n      <ion-label>você se formou no curso?</ion-label>\n\n      <ion-checkbox item-end (ionChange)="changeDiscentType()"\n\n        [formControl]="respondentForm.controls[\'isDiscentConcluded\']"></ion-checkbox>\n\n    </ion-item> -->\n\n    <!-- Discente formado ou evadido -->\n\n    <!-- Ano e semestre de ingresso -->\n\n    <!-- <ion-item *ngIf="isDiscent">\n\n      <ion-label floating>Por favor, selecione o ano e semestre de ingresso</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseEntry\']" required>\n\n        <ion-option *ngFor="let courseEntry of courseEntryList" [value]="courseEntry.value">\n\n          {{courseEntry.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Ano e semestre de ingresso -->\n\n    <!-- Ano e semestre de conclusão -->\n\n    <!-- <ion-item *ngIf="isDiscent && isDiscentConcluded">\n\n      <ion-label floating>Por favor, selecione o ano e semestre de conclusão</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseLeft\']" required>\n\n        <ion-option *ngFor="let courseLeft of courseLeftList" [value]="courseLeft.value">\n\n          {{courseLeft.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Ano e semestre de conclusão -->\n\n    <!-- Número de matricula -->\n\n    <!-- <ion-item *ngIf="isDiscent && !isDiscentEvaded && !isDiscentConcluded">\n\n      <ion-label floating>Número de matrícula</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'code\']"\n\n        [brmasker]="{mask: \'000000000000\', type:\'num\', len: 12}" type="text" required>\n\n      </ion-input>\n\n    </ion-item> -->\n\n    <!-- Número de matricula -->\n\n    <!-- SIAPE -->\n\n    <!-- <ion-item *ngIf="isDocent">\n\n      <ion-label floating>SIAPE</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'code\']"\n\n        [brmasker]="{mask: \'000000000000\', type:\'num\', len: 15}" type="text" required>\n\n      </ion-input>\n\n    </ion-item> -->\n\n    <!-- SIAPE -->\n\n    <!-- Disciplinas -->\n\n    <!-- <ion-row class="metric-row" *ngIf="isDiscent && !isDiscentEvaded && !isDiscentConcluded">\n\n      <ion-col col-12>\n\n        <h3 class="subtitle check-box-subtitle" col-12 text-center>Quais disciplinas você cursou no 2º semestre de 2019?\n\n        </h3>\n\n        <ion-list radio-group>\n\n          <ion-item *ngFor="let discipline of disciplineList" class="item-checkbox">\n\n            <ion-label text-wrap text-left class="item-checkbox-text">{{discipline.name}}</ion-label>\n\n            <ion-checkbox (ionChange)="updateDisciplineValue(discipline,$event.checked)"></ion-checkbox>\n\n          </ion-item>\n\n        </ion-list>\n\n      </ion-col>\n\n    </ion-row> -->\n\n    <!-- Disciplinas -->\n\n    <!-----------------------CASE 1 - POSCOMP----------------------->\n\n    <!------------------------ TODOS OS CAMPOS ------------------------->\n\n    <!-----------------------INFORMAÇÕES PESSOAIS----------------------->\n\n    <!-- CPF -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>CPF</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'cpf\']" type="text"\n\n        [brmasker]="{mask: \'000.000.000-00\', type:\'num\', len: 14}" required>\n\n      </ion-input>\n\n      <div class="validator-error"\n\n        *ngIf="respondentForm.controls[\'cpf\'].hasError(\'required\') && respondentForm.controls[\'cpf\'].touched">* CPF é\n\n        obrigatório!\n\n      </div>\n\n      <div class="validator-error"\n\n        *ngIf="respondentForm.controls[\'cpf\'].hasError(\'invalid\') && respondentForm.controls[\'cpf\'].touched">* CPF é\n\n        inválido!\n\n      </div>\n\n    </ion-item> -->\n\n    <!-- CPF -->\n\n    <!-- Nome -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Nome</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'name\']"></ion-input>\n\n    </ion-item> -->\n\n    <!-- Nome -->\n\n    <!-- Genero -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Gênero</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'gender\']">\n\n        <ion-option *ngFor="let gender of genderList" [value]="gender.value">\n\n          {{gender.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Genero -->\n\n    <!-- Email -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Email</ion-label>\n\n      <ion-input [email]="true" [formControl]="respondentForm.controls[\'email\']" type="email"></ion-input>\n\n    </ion-item> -->\n\n    <!-- Email -->\n\n    <!-- Telefone -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Telefone</ion-label>\n\n      <ion-input [brmasker]="{mask: \'(00)00000-0000\', type:\'num\', len: 15}"\n\n        [formControl]="respondentForm.controls[\'phone\']"></ion-input>\n\n    </ion-item> -->\n\n    <!-- Telefone -->\n\n    <!-- WhatsApp -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>WhatsApp</ion-label>\n\n      <ion-input [brmasker]="{mask: \'(00)00000-0000\', type:\'num\', len: 15}"\n\n        [formControl]="respondentForm.controls[\'whatsapp\']"></ion-input>\n\n    </ion-item> -->\n\n    <!-- WhatsApp -->\n\n    <!-- Cidade de residência -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Cidade de Residência</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'residenceCity\']">\n\n        <ion-option *ngFor="let residenceCity of cities" [value]="residenceCity">\n\n          {{residenceCity.name}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Cidade de residência -->\n\n    <!-- Bairro de residencia -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Bairro de Residência</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'residenceNeighborhood\']" [compareWith]="compareFn">\n\n        <ion-option *ngFor="let residenceNeighborhood of residenceNeighborhoods" [value]="residenceNeighborhood">\n\n          {{residenceNeighborhood.name}}\n\n        </ion-option>\n\n      </ion-select>\n\n      <div class="validator-error"\n\n        *ngIf="respondentForm.controls[\'residenceNeighborhood\'].hasError(\'required\') && respondentForm.controls[\'residenceNeighborhood\'].touched">\n\n        * Bairro de Residência é obrigatório!\n\n      </div>\n\n    </ion-item> -->\n\n    <!-- Bairro de residencia -->\n\n    <!-----------------------INFORMAÇÕES PESSOAIS----------------------->\n\n    <!-----------------------INFORMAÇÕES DE TRABALHO----------------------->\n\n    <!-- Comerciante ou não -->\n\n    <!-- <ion-item>\n\n    <ion-label>Possui comércio no centro?</ion-label>\n\n    <ion-checkbox item-end (ionChange)="changeUserType()" [(ngModel)]="isCommerce"></ion-checkbox>\n\n    </ion-item> -->\n\n    <!-- Comerciante ou não -->\n\n    <!-- Cidade de trabalho -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Cidade de Trabalho</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'jobCity\']" (ionChange)="loadJobNeighborhoods()"\n\n        [compareWith]="compareFn">\n\n        <ion-option *ngFor="let jobCity of cities" [value]="jobCity" (ionSelect)="selectCity(jobCity)">\n\n          {{jobCity.name}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Cidade de trabalho -->\n\n    <!-- Nome da Empresa -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Nome da empresa</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'jobName\']"></ion-input>\n\n    </ion-item> -->\n\n    <!-- Nome da Empresa -->\n\n    <!-- Endereço da Empresa -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Endereço da empresa</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'jobAddress\']"></ion-input>\n\n    </ion-item> -->\n\n    <!-- Endereço da Empresa -->\n\n    <!-- Bairro de trabalho -->\n\n    <!-- <div class="{{isSameJobCity}}">\n\n      <ion-item>\n\n        <ion-label floating>Bairro de Trabalho</ion-label>\n\n        <ion-select [formControl]="respondentForm.controls[\'jobNeighborhood\']" [disabled]="jobNeighborhoodDisabled"\n\n          [compareWith]="compareFn">\n\n          <ion-option *ngFor="let jobNeighborhood of jobNeighborhoods" [value]="jobNeighborhood">\n\n            {{jobNeighborhood.name}}\n\n          </ion-option>\n\n        </ion-select>\n\n      </ion-item>\n\n    </div> -->\n\n    <!-- Bairro de trabalho -->\n\n    <!-----------------------INFORMAÇÕES DE TRABALHO----------------------->\n\n    <!-----------------------INFORMAÇÕES ACADÊMICAS----------------------->\n\n    <!-- Tipo de Respondente -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Nível</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'userType\']">\n\n        <ion-option *ngFor="let userType of userTypeList" [value]="userType.value"\n\n          (ionSelect)="selectUserType(userType)">\n\n          {{userType.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Tipo de Respondente -->\n\n    <!-- Discente formado ou evadido -->\n\n    <!-- <ion-item *ngIf="isDiscent">\n\n      <ion-label>Formou no curso?</ion-label>\n\n      <ion-checkbox item-end (ionChange)="changeDiscentType()"></ion-checkbox>\n\n    </ion-item> -->\n\n    <!-- Discente formado ou evadido -->\n\n    <!-- Número de matricula -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Número de matrícula</ion-label>\n\n      <ion-input [formControl]="respondentForm.controls[\'code\']"\n\n        [brmasker]="{mask: \'000000000000\', type:\'num\', len: 12}" type ="text" required>\n\n      </ion-input>\n\n    </ion-item> -->\n\n    <!-- Número de matricula -->\n\n    <!-- Curso -->\n\n    <!-- <ion-item>\n\n      <ion-label floating>Curso</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseName\']" [disabled]="courseDisabled">\n\n        <ion-option *ngFor="let courseName of courseNameList" [value]="courseName.value">\n\n          {{courseName.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Curso -->\n\n    <!-- Ano e semestre de ingresso -->\n\n    <!-- <ion-item *ngIf="isDiscent">\n\n      <ion-label floating>Ano e semestre de ingresso</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseEntry\']" [disabled]="courseDisabled">\n\n        <ion-option *ngFor="let courseEntry of courseEntryList" [value]="courseEntry.value">\n\n          {{courseEntry.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Ano e semestre de ingresso -->\n\n    <!-- Ano e semestre de conclusão -->\n\n    <!-- <ion-item *ngIf="isDiscent && isDiscentEvaded">\n\n      <ion-label floating>Ano e semestre de conclusão</ion-label>\n\n      <ion-select [formControl]="respondentForm.controls[\'courseLeft\']">\n\n        <ion-option *ngFor="let courseLeft of courseLeftList" [value]="courseLeft.value">\n\n          {{courseLeft.value}}\n\n        </ion-option>\n\n      </ion-select>\n\n    </ion-item> -->\n\n    <!-- Ano e semestre de conclusão -->\n\n    <!-- Idade -->\n\n    <!-- <ion-item>\n\n      <ion-label>Idade</ion-label>\n\n      <ion-range snaps="true" [min]="0" [max]="4" [step]="1" (ionChange)="getAgeRangeByValue($event)"\n\n        [formControl]="respondentForm.controls[\'age\']">\n\n      </ion-range>\n\n      <ion-label>{{ageRangeName}}</ion-label>\n\n    </ion-item> -->\n\n    <!-- Idade -->\n\n    <!-----------------------INFORMAÇÕES ACADÊMICAS----------------------->\n\n    <!-------------------------------RANGES-------------------------------->\n\n    <!-- Tempo de residência -->\n\n    <!-- <ion-item>\n\n      <ion-label>Tempo de Residência</ion-label>\n\n      <ion-range snaps="true" [min]="0" [max]="4" [step]="1" (ionChange)="getResidenceTimeNameByValue($event)"\n\n        [formControl]="respondentForm.controls[\'residenceTimeRange\']">\n\n      </ion-range>\n\n      <ion-label>{{residenceTimeName}}</ion-label>\n\n    </ion-item> -->\n\n    <!-- Tempo de residência -->\n\n    <!-- Renda -->\n\n    <!-- <ion-item>\n\n      <ion-label>Renda</ion-label>\n\n      <ion-range snaps="true" [min]="0" [max]="4" [step]="1" (ionChange)="getSalaryRangeNameByValue($event)"\n\n        [formControl]="respondentForm.controls[\'salaryRange\']">\n\n      </ion-range>\n\n      <ion-label>{{salaryRangeName}}</ion-label>\n\n    </ion-item> -->\n\n    <!-- Renda -->\n\n    <!-------------------------------RANGES-------------------------------->\n\n    <!------------------------ TODOS OS CAMPOS ------------------------->\n\n    <ion-grid>\n\n      <ion-row *ngIf="editing && useGame">\n\n        <ion-col text-center>\n\n          <button ion-button block class="button-background" type="submit" (click)="saveRespondentInfo()"\n\n            [disabled]="!respondentForm.valid">\n\n            <ion-icon id="button-profile-update-game" class="text-button">\n\n              Salvar\n\n            </ion-icon>\n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row *ngIf="!editing && useGame">\n\n        <ion-col text-center>\n\n          <button ion-button block class="button-background" type="submit" (click)="saveRespondentInfo()"\n\n            [disabled]="!respondentForm.valid">\n\n            <ion-icon id="button-profile-register-game" class="text-button">\n\n              Salvar\n\n            </ion-icon>\n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row *ngIf="editing && !useGame">\n\n        <ion-col text-center>\n\n          <button ion-button block class="button-background" type="submit" (click)="saveRespondentInfo()"\n\n            [disabled]="!respondentForm.valid">\n\n            <ion-icon id="button-profile-update-not-game" class="text-button">\n\n              Salvar\n\n            </ion-icon>\n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row *ngIf="!editing && !useGame">\n\n        <ion-col text-center>\n\n          <button ion-button block class="button-background" type="submit" (click)="saveRespondentInfo()"\n\n            [disabled]="!respondentForm.valid">\n\n            <ion-icon id="button-profile-register-not-game" class="text-button">\n\n              Salvar\n\n            </ion-icon>\n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n  </form>\n\n</ion-content>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\respondent-profile\respondent-profile.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* MenuController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavController */], __WEBPACK_IMPORTED_MODULE_8__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_city_city__["a" /* CityProvider */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_9__providers_respondent_respondent__["a" /* RespondentProvider */], __WEBPACK_IMPORTED_MODULE_7__providers_neighborhood_neighborhood__["a" /* NeighborhoodProvider */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_10__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_11__providers_rest_rest__["a" /* RestProvider */]])
+    ], RespondentProfilePage);
+    return RespondentProfilePage;
+}());
+
+var ResidenceTime = /** @class */ (function () {
+    function ResidenceTime() {
+    }
+    return ResidenceTime;
+}());
+
+var SalaryRange = /** @class */ (function () {
+    function SalaryRange() {
+    }
+    return SalaryRange;
+}());
+
+var AgeRange = /** @class */ (function () {
+    function AgeRange() {
+    }
+    return AgeRange;
+}());
+
+var Discipline = /** @class */ (function () {
+    function Discipline() {
+    }
+    return Discipline;
+}());
+
+var Respondent = /** @class */ (function () {
+    function Respondent() {
+    }
+    return Respondent;
+}());
+
+//# sourceMappingURL=respondent-profile.js.map
+
+/***/ }),
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -5801,7 +6966,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 302 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -6006,7 +7171,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 303 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -6076,7 +7241,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 304 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -6146,7 +7311,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 305 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -6333,7 +7498,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 306 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -6404,7 +7569,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 307 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -6524,7 +7689,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 308 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -6594,7 +7759,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 309 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -6711,7 +7876,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 310 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -6868,7 +8033,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 311 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -6969,7 +8134,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 312 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -7036,7 +8201,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 313 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -7170,7 +8335,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 314 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -7308,7 +8473,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 315 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -7425,7 +8590,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 316 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -7590,7 +8755,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 317 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -7703,7 +8868,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 318 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -7890,7 +9055,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 319 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -7968,7 +9133,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 320 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -8081,7 +9246,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 321 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -8150,7 +9315,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 322 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -8241,7 +9406,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 323 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -8333,7 +9498,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 324 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -8422,7 +9587,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 325 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -8528,7 +9693,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 326 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -8648,7 +9813,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 327 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -8732,7 +9897,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 328 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -8812,7 +9977,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 329 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -8896,7 +10061,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 330 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -8980,7 +10145,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 331 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -9060,7 +10225,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 332 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -9144,7 +10309,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 333 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -9228,7 +10393,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 334 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -9312,7 +10477,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 335 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -9396,7 +10561,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 336 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -9516,7 +10681,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 337 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -9634,7 +10799,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 338 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -9754,7 +10919,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 339 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -9848,7 +11013,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 340 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -9927,7 +11092,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 341 */
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10053,7 +11218,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 342 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10189,7 +11354,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 343 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10263,7 +11428,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 344 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10335,7 +11500,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 345 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10429,7 +11594,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 346 */
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10514,7 +11679,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 347 */
+/* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10603,7 +11768,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 348 */
+/* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10696,7 +11861,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 349 */
+/* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10807,7 +11972,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 350 */
+/* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -10918,7 +12083,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 351 */
+/* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11008,7 +12173,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 352 */
+/* 353 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11148,7 +12313,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 353 */
+/* 354 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11288,7 +12453,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 354 */
+/* 355 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11425,7 +12590,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 355 */
+/* 356 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11535,7 +12700,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 356 */
+/* 357 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11670,7 +12835,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 357 */
+/* 358 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11840,7 +13005,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 358 */
+/* 359 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -11972,7 +13137,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 359 */
+/* 360 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12080,7 +13245,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 360 */
+/* 361 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12172,7 +13337,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 361 */
+/* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12327,7 +13492,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 362 */
+/* 363 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12449,7 +13614,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 363 */
+/* 364 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12529,7 +13694,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 364 */
+/* 365 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12693,7 +13858,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 365 */
+/* 366 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12785,7 +13950,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 366 */
+/* 367 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12893,7 +14058,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 367 */
+/* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -12991,7 +14156,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 368 */
+/* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13109,7 +14274,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 369 */
+/* 370 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13248,7 +14413,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 370 */
+/* 371 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13339,7 +14504,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 371 */
+/* 372 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13473,7 +14638,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 372 */
+/* 373 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13573,7 +14738,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 373 */
+/* 374 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13724,7 +14889,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 374 */
+/* 375 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13805,7 +14970,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 375 */
+/* 376 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -13944,7 +15109,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 376 */
+/* 377 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14053,7 +15218,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 377 */
+/* 378 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14187,7 +15352,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 378 */
+/* 379 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14262,7 +15427,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 379 */
+/* 380 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14364,7 +15529,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 380 */
+/* 381 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14460,7 +15625,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 381 */
+/* 382 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14575,7 +15740,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 382 */
+/* 383 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14793,7 +15958,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 383 */
+/* 384 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14884,7 +16049,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 384 */
+/* 385 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -14976,7 +16141,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 385 */
+/* 386 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15047,7 +16212,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 386 */
+/* 387 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15154,7 +16319,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 387 */
+/* 388 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15229,7 +16394,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 388 */
+/* 389 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15365,7 +16530,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 389 */
+/* 390 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15483,7 +16648,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 390 */
+/* 391 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15601,7 +16766,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 391 */
+/* 392 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15675,7 +16840,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 392 */
+/* 393 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15774,7 +16939,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 393 */
+/* 394 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -15911,7 +17076,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 394 */
+/* 395 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16056,7 +17221,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 395 */
+/* 396 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16132,7 +17297,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 396 */
+/* 397 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16204,7 +17369,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 397 */
+/* 398 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16292,7 +17457,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 398 */
+/* 399 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16511,7 +17676,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 399 */
+/* 400 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16608,7 +17773,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 400 */
+/* 401 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16681,7 +17846,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 401 */
+/* 402 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16765,7 +17930,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 402 */
+/* 403 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -16925,7 +18090,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 403 */
+/* 404 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17111,7 +18276,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 404 */
+/* 405 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17192,7 +18357,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 405 */
+/* 406 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17325,7 +18490,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 406 */
+/* 407 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17456,7 +18621,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 407 */
+/* 408 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17555,7 +18720,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 408 */
+/* 409 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17639,7 +18804,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 409 */
+/* 410 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17709,7 +18874,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 410 */
+/* 411 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17854,7 +19019,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 411 */
+/* 412 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -17956,7 +19121,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 412 */
+/* 413 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18040,7 +19205,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 413 */
+/* 414 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18167,7 +19332,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 414 */
+/* 415 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18245,7 +19410,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 415 */
+/* 416 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18318,7 +19483,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 416 */
+/* 417 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18459,7 +19624,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 417 */
+/* 418 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18568,7 +19733,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 418 */
+/* 419 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18673,7 +19838,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 419 */
+/* 420 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18742,7 +19907,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 420 */
+/* 421 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -18811,7 +19976,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 421 */
+/* 422 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js language configuration
@@ -18937,7 +20102,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 422 */
+/* 423 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19116,7 +20281,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 423 */
+/* 424 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19214,7 +20379,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 424 */
+/* 425 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19281,7 +20446,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 425 */
+/* 426 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19350,7 +20515,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 426 */
+/* 427 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19443,7 +20608,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 427 */
+/* 428 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19530,7 +20695,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 428 */
+/* 429 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19599,7 +20764,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 429 */
+/* 430 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19720,7 +20885,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 430 */
+/* 431 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19837,7 +21002,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 431 */
+/* 432 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -19953,7 +21118,7 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 432 */
+/* 433 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -20068,7 +21233,6 @@ var ResultsPageModule = /** @class */ (function () {
 
 
 /***/ }),
-/* 433 */,
 /* 434 */,
 /* 435 */,
 /* 436 */,
@@ -20076,21 +21240,23 @@ var ResultsPageModule = /** @class */ (function () {
 /* 438 */,
 /* 439 */,
 /* 440 */,
-/* 441 */
+/* 441 */,
+/* 442 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResultsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_rest_rest__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_plan_plan__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_chart_js__ = __webpack_require__(442);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_chart_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_questionary_questionary__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_city_city__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_database_database__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__respondent_profile_respondent_profile__ = __webpack_require__(301);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_rest_rest__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_plan_plan__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_chart_js__ = __webpack_require__(443);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_chart_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_questionary_questionary__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_city_city__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_database_database__ = __webpack_require__(55);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20100,6 +21266,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -20126,11 +21293,16 @@ var ResultsPage = /** @class */ (function () {
         this.canvasListRender = [];
         this.questionaryResults = [];
         this.questionaries = [];
+        this.userTypeList = [];
+        this.courseEntryList = [];
+        this.courseNameList = [];
+        this.courseDisabled = true;
         this.showAll = false;
         this.showValues = false;
         this.showPercent = false;
         this.showPieChart = false;
         this.useGame = false;
+        this.respondent = new __WEBPACK_IMPORTED_MODULE_0__respondent_profile_respondent_profile__["a" /* Respondent */]();
         this.token = "2bcb43cbc8f6b7ef66331532881143fcbae60a879db3a8fb853f645bb24c2b3c";
         var questionary = navParams.get('questionary');
         var param = navParams.get('param');
@@ -20147,6 +21319,8 @@ var ResultsPage = /** @class */ (function () {
         if (param) {
             if (this.token == this.restProvider.cryptography(param)) {
                 this.showAll = true;
+                this.createUserTypeList();
+                this.createCourseSemesterList();
             }
             else {
                 this.navigateBack();
@@ -20159,20 +21333,16 @@ var ResultsPage = /** @class */ (function () {
     };
     ResultsPage.prototype.setEntities = function () {
         var _this = this;
-        console.log(this.showAll);
         this.loader = this.loadingCtrl.create();
         this.loader.present();
         if (this.showAll) {
             var entities = ['city', 'plan', 'questionaries'];
             this.databaseProvider.verifyEntities(entities)
                 .then(function (data) {
-                console.log(data);
                 if (data.length > 0 && data.filter(function (data) { return data == false; }).length == 0) {
-                    console.log('initQuestionaries');
                     _this.initQuestionaries();
                 }
                 else {
-                    console.log('loadQuestionaries');
                     _this.loadQuestionaries();
                 }
             });
@@ -20217,7 +21387,7 @@ var ResultsPage = /** @class */ (function () {
                                     plans.forEach(function (plan) {
                                         //IMPORTANTE - SELEÇÃO DO PLANO
                                         // if (p.name == "Avaliação POSCOMP") {
-                                        if (plan.name == "Avaliação Saúde Mental - UNIFEI") {
+                                        if (plan.name == "Levantamento acerca da Saúde Mental - UNIFEI") {
                                             _this.plan = plan;
                                             _this.planName = _this.plan.name;
                                             _this.questionaryProvider.getAllQuestionariesByPlan(_this.plan)
@@ -20261,6 +21431,111 @@ var ResultsPage = /** @class */ (function () {
             _this.showAlertGetQuestionaries();
         });
     };
+    ResultsPage.prototype.createUserTypeList = function () {
+        this.userTypeList = [];
+        this.userTypeList = [
+            { value: 'Todos' },
+            { value: 'Graduação' },
+            { value: 'Mestrado' },
+            { value: 'Doutorado' }
+        ];
+    };
+    ResultsPage.prototype.createCourseSemesterList = function () {
+        this.courseEntryList = [];
+        this.courseEntryList = [
+            { value: 'Todos' },
+            { value: '1º período' },
+            { value: '2º período' },
+            { value: '3º período' },
+            { value: '4º período' },
+            { value: '5º período' },
+            { value: '6º período' },
+            { value: '7º período' },
+            { value: '8º período' },
+            { value: '9º período' },
+            { value: '10º período' },
+            { value: '11º período' },
+            { value: '12º período' },
+            { value: '13º período' },
+            { value: '14º período' },
+            { value: '15º período' },
+            { value: '16º período' },
+            { value: '17º período' },
+            { value: '18º período' },
+            { value: '19º período' },
+            { value: '20º período' }
+        ];
+    };
+    ResultsPage.prototype.createCourseNameListGrad = function () {
+        this.courseNameList = [];
+        this.courseNameList = [
+            { value: 'Todos' },
+            { value: 'Administração' },
+            { value: 'Ciência da Computação' },
+            { value: 'Ciências Atmosféricas' },
+            { value: 'Ciências Biológicas' },
+            { value: 'Engenharia Ambiental' },
+            { value: 'Engenharia Ambiental – Itabira' },
+            { value: 'Engenharia Civil' },
+            { value: 'Engenharia da Mobilidade – Itabira' },
+            { value: 'Engenharia de Bioprocessos' },
+            { value: 'Engenharia de Computação' },
+            { value: 'Engenharia de Computação – Itabira' },
+            { value: 'Engenharia de Controle e Automação' },
+            { value: 'Engenharia de Controle e Automação – Itabira' },
+            { value: 'Engenharia de Energia' },
+            { value: 'Engenharia de Materiais' },
+            { value: 'Engenharia de Materiais – Itabira' },
+            { value: 'Engenharia de Produção' },
+            { value: 'Engenharia de Produção – Itabira' },
+            { value: 'Engenharia de Saúde e Segurança – Itabira' },
+            { value: 'Engenharia Elétrica' },
+            { value: 'Engenharia Elétrica – Itabira' },
+            { value: 'Engenharia Eletrônica' },
+            { value: 'Engenharia Hídrica' },
+            { value: 'Engenharia Mecânica' },
+            { value: 'Engenharia Mecânica – Itabira' },
+            { value: 'Engenharia Mecânica Aeronáutica' },
+            { value: 'Engenharia Química' },
+            { value: 'Física Bacharelado' },
+            { value: 'Física Licenciatura' },
+            { value: 'Matemática Bacharelado' },
+            { value: 'Matemática Licenciatura' },
+            { value: 'Química Bacharelado' },
+            { value: 'Química Licenciatura' },
+            { value: 'Sistemas de Informação' }
+        ];
+    };
+    ResultsPage.prototype.createCourseNameListMest = function () {
+        this.courseNameList = [];
+        this.courseNameList = [
+            { value: 'Todos' },
+            { value: 'Mestrado em Engenharia Elétrica' },
+            { value: 'Mestrado em Engenharia Mecânica' },
+            { value: 'Mestrado em Engenharia de Produção' },
+            { value: 'Mestrado em Multicêntrico em Química de Minas Gerais' },
+            { value: 'Mestrado em Meio Ambiente e Recursos Hídricos' },
+            { value: 'Mestrado em Materiais para a Engenharia' },
+            { value: 'Mestrado em Educação em Ciências' },
+            { value: 'Mestrado em Engenharia de Energia' },
+            { value: 'Mestrado em Ciência e Tecnologia da Computação' },
+            { value: 'Mestrado em Desenvolvimento, Tecnologias e Sociedade' },
+            { value: 'Mestrado em Matemática' },
+            { value: 'Mestrado em Física' }
+        ];
+    };
+    ResultsPage.prototype.createCourseNameListDout = function () {
+        this.courseNameList = [];
+        this.courseNameList = [
+            { value: 'Todos' },
+            { value: 'Doutorado em Engenharia Elétrica' },
+            { value: 'Doutorado em Engenharia Mecânica' },
+            { value: 'Doutorado em Engenharia de Produção' },
+            { value: 'Doutorado em Multicêntrico em Química de Minas Gerais' },
+            { value: 'Doutorado em Meio Ambiente e Recursos Hídricos' },
+            { value: 'Doutorado em Materiais para a Engenharia' },
+        ];
+    };
     ResultsPage.prototype.selectFirstQuestionary = function () {
         if (this.showAll && !this.questionarySelected) {
             this.questionarySelected = this.questionaries[0];
@@ -20272,11 +21547,59 @@ var ResultsPage = /** @class */ (function () {
         this.loader = this.loadingCtrl.create();
         this.loader.present();
         this.questionaryName = this.questionarySelected.name;
-        this.getQuestionaryResults(this.questionarySelected);
+        if (!this.respondent.type && !this.respondent.courseEntry && !this.respondent.courseName) {
+            this.getQuestionaryResults(this.questionarySelected);
+        }
+        else {
+            this.getQuestionaryCourseResults(this.questionarySelected, this.respondent);
+        }
+    };
+    ResultsPage.prototype.selectUserType = function () {
+        if (this.respondent.type == "Graduação") {
+            this.courseDisabled = false;
+            this.createCourseNameListGrad();
+        }
+        else if (this.respondent.type == "Mestrado") {
+            this.courseDisabled = false;
+            this.createCourseNameListMest();
+        }
+        else if (this.respondent.type == "Doutorado") {
+            this.courseDisabled = false;
+            this.createCourseNameListDout();
+        }
+        else {
+            this.courseDisabled = true;
+        }
+        this.getQuestionaryCourseResults(this.questionarySelected, this.respondent);
+    };
+    ResultsPage.prototype.selectCourseName = function () {
+        this.getQuestionaryCourseResults(this.questionarySelected, this.respondent);
+    };
+    ResultsPage.prototype.selectCourseEntry = function () {
+        this.getQuestionaryCourseResults(this.questionarySelected, this.respondent);
     };
     ResultsPage.prototype.getQuestionaryResults = function (questionary) {
         var _this = this;
         this.questionaryProvider.getAllResultsByQuestionary(questionary).then(function (data) {
+            _this.questionaryResults = data;
+            setTimeout(function () {
+                _this.canvasListRender = [];
+                _this.canvasList.forEach(function (element) {
+                    _this.canvasListRender.push(element.getNativeElement().children[0].getContext('2d'));
+                });
+                _this.generateBarCanvas();
+                _this.loader.dismiss();
+            }, 1000);
+        }).catch(function (error) {
+            console.error(error);
+            _this.restProvider.sendGoogleAnalyticsErrorData('ResultsPage', 'getQuestionaryResults', error);
+            _this.showAlertGetQuestionaries();
+            _this.loader.dismiss();
+        });
+    };
+    ResultsPage.prototype.getQuestionaryCourseResults = function (questionary, respondent) {
+        var _this = this;
+        this.questionaryProvider.getAllResultsByQuestionaryCourse(questionary, respondent).then(function (data) {
             _this.questionaryResults = data;
             setTimeout(function () {
                 _this.canvasListRender = [];
@@ -20392,7 +21715,7 @@ var ResultsPage = /** @class */ (function () {
                         'onComplete': function () {
                             var chartInstance = this.chart;
                             var ctx = chartInstance.ctx;
-                            ctx.font = __WEBPACK_IMPORTED_MODULE_5_chart_js__["Chart"].helpers.fontString(__WEBPACK_IMPORTED_MODULE_5_chart_js__["Chart"].defaults.global.defaultFontSize, __WEBPACK_IMPORTED_MODULE_5_chart_js__["Chart"].defaults.global.defaultFontStyle, __WEBPACK_IMPORTED_MODULE_5_chart_js__["Chart"].defaults.global.defaultFontFamily);
+                            ctx.font = __WEBPACK_IMPORTED_MODULE_6_chart_js__["Chart"].helpers.fontString(__WEBPACK_IMPORTED_MODULE_6_chart_js__["Chart"].defaults.global.defaultFontSize, __WEBPACK_IMPORTED_MODULE_6_chart_js__["Chart"].defaults.global.defaultFontStyle, __WEBPACK_IMPORTED_MODULE_6_chart_js__["Chart"].defaults.global.defaultFontFamily);
                             ctx.textAlign = "center";
                             ctx.textBaseline = "bottom";
                             var label = this.data.datasets[0].label;
@@ -20439,7 +21762,7 @@ var ResultsPage = /** @class */ (function () {
                 setLabel = 'Valores';
             }
             var canvas = _this.canvasListRender[i++];
-            _this.chart = new __WEBPACK_IMPORTED_MODULE_5_chart_js__["Chart"](canvas, {
+            _this.chart = new __WEBPACK_IMPORTED_MODULE_6_chart_js__["Chart"](canvas, {
                 type: 'bar',
                 data: {
                     labels: labels,
@@ -20549,7 +21872,7 @@ var ResultsPage = /** @class */ (function () {
             //Criação do grafico de pizza
             var totalValue = Math.max.apply(Math, setValues);
             var canvas = _this.canvasListRender[i++];
-            _this.chart = new __WEBPACK_IMPORTED_MODULE_5_chart_js__["Chart"](canvas, {
+            _this.chart = new __WEBPACK_IMPORTED_MODULE_6_chart_js__["Chart"](canvas, {
                 type: 'pie',
                 data: {
                     labels: labels,
@@ -20574,11 +21897,10 @@ var ResultsPage = /** @class */ (function () {
                         'onComplete': function () {
                             var chartInstance = this.chart;
                             var ctx = chartInstance.ctx;
-                            ctx.font = __WEBPACK_IMPORTED_MODULE_5_chart_js__["Chart"].helpers.fontString(__WEBPACK_IMPORTED_MODULE_5_chart_js__["Chart"].defaults.global.defaultFontSize, __WEBPACK_IMPORTED_MODULE_5_chart_js__["Chart"].defaults.global.defaultFontStyle, __WEBPACK_IMPORTED_MODULE_5_chart_js__["Chart"].defaults.global.defaultFontFamily);
+                            ctx.font = __WEBPACK_IMPORTED_MODULE_6_chart_js__["Chart"].helpers.fontString(__WEBPACK_IMPORTED_MODULE_6_chart_js__["Chart"].defaults.global.defaultFontSize, __WEBPACK_IMPORTED_MODULE_6_chart_js__["Chart"].defaults.global.defaultFontStyle, __WEBPACK_IMPORTED_MODULE_6_chart_js__["Chart"].defaults.global.defaultFontFamily);
                             ctx.textAlign = "center";
                             ctx.textBaseline = "bottom";
                             var label = this.data.datasets[0].label;
-                            console.log(this.data);
                             this.data.datasets.forEach(function (dataset, i) {
                                 var meta = chartInstance.controller.getDatasetMeta(i);
                                 meta.data.forEach(function (bar, index) {
@@ -20646,14 +21968,14 @@ var ResultsPage = /** @class */ (function () {
         this.menuCtrl.open();
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["_10" /* ViewChildren */])(__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["c" /* CardContent */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__angular_core__["U" /* QueryList */])
+        Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["_10" /* ViewChildren */])(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["c" /* CardContent */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_3__angular_core__["U" /* QueryList */])
     ], ResultsPage.prototype, "canvasList", void 0);
     ResultsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({
-            selector: 'page-results',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\results\results.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col offset-1 col-2 class="menu-icon-col-not-game" *ngIf="!useGame">\n        <button ion-button clear (click)="openMenu()"  *ngIf="showAll" class="button-view">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n        <button ion-button clear (click)="openMenu()" *ngIf="!showAll">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col offset-1 col-2 class="menu-icon-col" *ngIf="useGame">\n        <button ion-button clear (click)="openMenu()"  *ngIf="showAll" class="button-view">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n        <button ion-button clear (click)="openMenu()" *ngIf="!showAll" >\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col offset-1 col-6 *ngIf="useGame">\n        <img *ngIf="showAll" class="img-responsive img-view" src="assets/imgs/header-logo.png" />\n        <img *ngIf="!showAll" class="img-responsive" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col offset-1 col-6 *ngIf="!useGame">\n        <img *ngIf="showAll" class="img-responsive img-not-game img-view" src=" assets/imgs/header-logo.png" />\n        <img *ngIf="!showAll" class="img-responsive img-not-game" src=" assets/imgs/header-logo.png" />\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-12 text-justify>\n        <h1 class="subtitle subtitle-game" col-12 text-center>Visualização dos resultados</h1>\n      </ion-col>\n      <ion-col col-12 text-justify>\n        <h3 class="subtitle subtitle-game" col-12 text-center>{{planName}}</h3>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="showAll" class="row-select">\n      <ion-col col-12 text-justify>\n        <h4 text-center>Por favor, selecione um questionário</h4>\n        <ion-item>\n          <ion-label floating>Selecione o questionário</ion-label>\n          <ion-select [(ngModel)]="questionarySelected" (ngModelChange)="selectUserQuestionary()">\n            <ion-option *ngFor="let questionary of questionaries" [value]="questionary">\n              {{questionary.name}}\n            </ion-option>\n          </ion-select>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row class="row-select">\n      <ion-col col-12 text-justify>\n        <ion-item>\n          <ion-label>Exibir os valores no gráfico</ion-label>\n          <ion-checkbox item-end (ionChange)="changeChartValues()"></ion-checkbox>\n        </ion-item>\n        <ion-item>\n          <ion-label>Exibir os valores percentuais</ion-label>\n          <ion-checkbox item-end (ionChange)="changeChartPercent()"></ion-checkbox>\n        </ion-item>\n        <!-- <ion-item>\n          <ion-label>Exibir em gráfico de pizza</ion-label>\n          <ion-checkbox item-end (ionChange)="changeChartType()"></ion-checkbox>\n        </ion-item> -->\n      </ion-col>\n    </ion-row>\n    <ion-row class="questionary-title">\n      <ion-col col-12 text-justify>\n        <h3 class="subtitle subtitle-game" col-12 text-center>{{questionaryName}}</h3>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="useGame" class="row-person">\n      <ion-col col-3 class="text-questionary-list">\n        <img class="text-img" src="assets/gifs/gif-c-3-crop.webp">\n      </ion-col>\n      <ion-col col-9 class="text-questionary-list-game">\n        <h5>Esses são os resultados parciais do questionário <strong>{{questionaryName}}</strong>!</h5>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 text-justify>\n        <ion-list id="canvasList">\n          <ion-item *ngFor="let questionaryResult of questionaryResults">\n            <ion-card>\n              <ion-card-header text-justify text-wrap>\n                {{questionaryResult.name}}\n              </ion-card-header>\n              <h4 text-center text-wrap>Quantidade de respostas: {{questionaryResult.quant_answer}}</h4>\n              <ion-card-content>\n                <canvas id="canvas-{{questionaryResult.id}}"></canvas>\n              </ion-card-content>\n            </ion-card>\n          </ion-item>\n        </ion-list>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\results\results.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["n" /* Component */])({
+            selector: 'page-results',template:/*ion-inline-start:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\results\results.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-row>\n      <ion-col offset-1 col-2 class="menu-icon-col-not-game" *ngIf="!useGame">\n        <button ion-button clear (click)="openMenu()"  *ngIf="showAll" class="button-view">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n        <button ion-button clear (click)="openMenu()" *ngIf="!showAll">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col offset-1 col-2 class="menu-icon-col" *ngIf="useGame">\n        <button ion-button clear (click)="openMenu()"  *ngIf="showAll" class="button-view">\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n        <button ion-button clear (click)="openMenu()" *ngIf="!showAll" >\n          <ion-icon name="md-menu" class="menu-icon"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col offset-1 col-6 *ngIf="useGame">\n        <img *ngIf="showAll" class="img-responsive img-view" src="assets/imgs/header-logo.png" />\n        <img *ngIf="!showAll" class="img-responsive" src="assets/imgs/header-logo.png" />\n      </ion-col>\n      <ion-col offset-1 col-6 *ngIf="!useGame">\n        <img *ngIf="showAll" class="img-responsive img-not-game img-view" src=" assets/imgs/header-logo.png" />\n        <img *ngIf="!showAll" class="img-responsive img-not-game" src=" assets/imgs/header-logo.png" />\n      </ion-col>\n    </ion-row>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-12 text-justify>\n        <h1 class="subtitle subtitle-game" col-12 text-center>Visualização dos resultados</h1>\n      </ion-col>\n      <ion-col col-12 text-justify>\n        <h3 class="subtitle subtitle-game" col-12 text-center>{{planName}}</h3>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="showAll" class="row-select">\n      <ion-col col-12 text-justify>\n        <h4 text-left>Por favor, selecione um questionário</h4>\n        <ion-item>\n          <ion-label floating>Selecione o questionário</ion-label>\n          <ion-select [(ngModel)]="questionarySelected" (ngModelChange)="selectUserQuestionary()">\n            <ion-option *ngFor="let questionary of questionaries" [value]="questionary">\n              {{questionary.name}}\n            </ion-option>\n          </ion-select>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="showAll" class="row-select">\n      <ion-col col-12 text-justify>\n        <h4 text-left>Por favor, selecione o vínculo com a Universidade</h4>\n        <ion-item>\n          <ion-label floating>Selecione o vínculo com a Universidade</ion-label>\n          <ion-select [(ngModel)]="respondent.type" (ngModelChange)="selectUserType()">\n            <ion-option *ngFor="let userType of userTypeList" [value]="userType.value">\n              {{userType.value}}\n            </ion-option>\n          </ion-select>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="showAll" class="row-select">\n      <ion-col col-12 text-justify>\n        <h4 text-left>Por favor, selecione o curso</h4>\n        <ion-item>\n          <ion-label floating>Selecione o curso</ion-label>\n          <ion-select [(ngModel)]="respondent.courseName" (ngModelChange)="selectCourseName()" [disabled]="courseDisabled">\n            <ion-option *ngFor="let courseName of courseNameList" [value]="courseName.value">\n              {{courseName.value}}\n            </ion-option>\n          </ion-select>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="showAll" class="row-select">\n      <ion-col col-12 text-justify>\n        <h4 text-left>Por favor, selecione o período</h4>\n        <ion-item>\n          <ion-label floating>Selecione o período</ion-label>\n          <ion-select [(ngModel)]="respondent.courseEntry" (ngModelChange)="selectCourseEntry()" [disabled]="courseDisabled">\n            <ion-option *ngFor="let courseEntry of courseEntryList" [value]="courseEntry.value">\n              {{courseEntry.value}}\n            </ion-option>\n          </ion-select>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row class="row-select">\n      <ion-col col-12 text-justify>\n        <ion-item>\n          <ion-label>Exibir os valores no gráfico</ion-label>\n          <ion-checkbox item-end (ionChange)="changeChartValues()"></ion-checkbox>\n        </ion-item>\n        <ion-item>\n          <ion-label>Exibir os valores percentuais</ion-label>\n          <ion-checkbox item-end (ionChange)="changeChartPercent()"></ion-checkbox>\n        </ion-item>\n        <!-- <ion-item>\n          <ion-label>Exibir em gráfico de pizza</ion-label>\n          <ion-checkbox item-end (ionChange)="changeChartType()"></ion-checkbox>\n        </ion-item> -->\n      </ion-col>\n    </ion-row>\n    <ion-row class="questionary-title">\n      <ion-col col-12 text-justify>\n        <h3 class="subtitle subtitle-game" col-12 text-center>{{questionaryName}}</h3>\n      </ion-col>\n    </ion-row>\n    <!-- <ion-row *ngIf="useGame" class="row-person">\n      <ion-col col-3 class="text-questionary-list">\n        <img class="text-img" src="assets/gifs/gif-c-3-crop.webp">\n      </ion-col>\n      <ion-col col-9 class="text-questionary-list-game">\n        <h5>Esses são os resultados parciais do questionário <strong>{{questionaryName}}</strong>!</h5>\n      </ion-col>\n    </ion-row> -->\n    <ion-row>\n      <ion-col col-12 text-justify>\n        <ion-list id="canvasList">\n          <ion-item *ngFor="let questionaryResult of questionaryResults">\n            <ion-card>\n              <ion-card-header text-justify text-wrap>\n              {{questionaryResult.position}}. {{questionaryResult.name}}\n              </ion-card-header>\n              <h4 text-center text-wrap>Quantidade de respostas: {{questionaryResult.quant_answer}}</h4>\n              <ion-card-content>\n                <canvas id="canvas-{{questionaryResult.id}}"></canvas>\n              </ion-card-content>\n            </ion-card>\n          </ion-item>\n        </ion-list>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>'/*ion-inline-end:"D:\IONIC Projects\neiru_surveys_app-develop\src\pages\results\results.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_8__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_0__providers_rest_rest__["a" /* RestProvider */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["l" /* MenuController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["n" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["k" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["o" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_6__providers_questionary_questionary__["d" /* QuestionaryProvider */], __WEBPACK_IMPORTED_MODULE_7__providers_city_city__["a" /* CityProvider */], __WEBPACK_IMPORTED_MODULE_1__providers_plan_plan__["b" /* PlanProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_9__providers_database_database__["a" /* DatabaseProvider */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1__providers_rest_rest__["a" /* RestProvider */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["l" /* MenuController */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["n" /* NavController */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["k" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["o" /* NavParams */], __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_7__providers_questionary_questionary__["d" /* QuestionaryProvider */], __WEBPACK_IMPORTED_MODULE_8__providers_city_city__["a" /* CityProvider */], __WEBPACK_IMPORTED_MODULE_2__providers_plan_plan__["b" /* PlanProvider */]])
     ], ResultsPage);
     return ResultsPage;
 }());
@@ -20661,7 +21983,7 @@ var ResultsPage = /** @class */ (function () {
 //# sourceMappingURL=results.js.map
 
 /***/ }),
-/* 442 */
+/* 443 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -36818,7 +38140,7 @@ return src;
 
 
 /***/ }),
-/* 443 */
+/* 444 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -36846,274 +38168,274 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 444 */
+/* 445 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 301,
-	"./af.js": 301,
-	"./ar": 302,
-	"./ar-dz": 303,
-	"./ar-dz.js": 303,
-	"./ar-kw": 304,
-	"./ar-kw.js": 304,
-	"./ar-ly": 305,
-	"./ar-ly.js": 305,
-	"./ar-ma": 306,
-	"./ar-ma.js": 306,
-	"./ar-sa": 307,
-	"./ar-sa.js": 307,
-	"./ar-tn": 308,
-	"./ar-tn.js": 308,
-	"./ar.js": 302,
-	"./az": 309,
-	"./az.js": 309,
-	"./be": 310,
-	"./be.js": 310,
-	"./bg": 311,
-	"./bg.js": 311,
-	"./bm": 312,
-	"./bm.js": 312,
-	"./bn": 313,
-	"./bn.js": 313,
-	"./bo": 314,
-	"./bo.js": 314,
-	"./br": 315,
-	"./br.js": 315,
-	"./bs": 316,
-	"./bs.js": 316,
-	"./ca": 317,
-	"./ca.js": 317,
-	"./cs": 318,
-	"./cs.js": 318,
-	"./cv": 319,
-	"./cv.js": 319,
-	"./cy": 320,
-	"./cy.js": 320,
-	"./da": 321,
-	"./da.js": 321,
-	"./de": 322,
-	"./de-at": 323,
-	"./de-at.js": 323,
-	"./de-ch": 324,
-	"./de-ch.js": 324,
-	"./de.js": 322,
-	"./dv": 325,
-	"./dv.js": 325,
-	"./el": 326,
-	"./el.js": 326,
-	"./en-au": 327,
-	"./en-au.js": 327,
-	"./en-ca": 328,
-	"./en-ca.js": 328,
-	"./en-gb": 329,
-	"./en-gb.js": 329,
-	"./en-ie": 330,
-	"./en-ie.js": 330,
-	"./en-il": 331,
-	"./en-il.js": 331,
-	"./en-in": 332,
-	"./en-in.js": 332,
-	"./en-nz": 333,
-	"./en-nz.js": 333,
-	"./en-sg": 334,
-	"./en-sg.js": 334,
-	"./eo": 335,
-	"./eo.js": 335,
-	"./es": 336,
-	"./es-do": 337,
-	"./es-do.js": 337,
-	"./es-us": 338,
-	"./es-us.js": 338,
-	"./es.js": 336,
-	"./et": 339,
-	"./et.js": 339,
-	"./eu": 340,
-	"./eu.js": 340,
-	"./fa": 341,
-	"./fa.js": 341,
-	"./fi": 342,
-	"./fi.js": 342,
-	"./fil": 343,
-	"./fil.js": 343,
-	"./fo": 344,
-	"./fo.js": 344,
-	"./fr": 345,
-	"./fr-ca": 346,
-	"./fr-ca.js": 346,
-	"./fr-ch": 347,
-	"./fr-ch.js": 347,
-	"./fr.js": 345,
-	"./fy": 348,
-	"./fy.js": 348,
-	"./ga": 349,
-	"./ga.js": 349,
-	"./gd": 350,
-	"./gd.js": 350,
-	"./gl": 351,
-	"./gl.js": 351,
-	"./gom-deva": 352,
-	"./gom-deva.js": 352,
-	"./gom-latn": 353,
-	"./gom-latn.js": 353,
-	"./gu": 354,
-	"./gu.js": 354,
-	"./he": 355,
-	"./he.js": 355,
-	"./hi": 356,
-	"./hi.js": 356,
-	"./hr": 357,
-	"./hr.js": 357,
-	"./hu": 358,
-	"./hu.js": 358,
-	"./hy-am": 359,
-	"./hy-am.js": 359,
-	"./id": 360,
-	"./id.js": 360,
-	"./is": 361,
-	"./is.js": 361,
-	"./it": 362,
-	"./it-ch": 363,
-	"./it-ch.js": 363,
-	"./it.js": 362,
-	"./ja": 364,
-	"./ja.js": 364,
-	"./jv": 365,
-	"./jv.js": 365,
-	"./ka": 366,
-	"./ka.js": 366,
-	"./kk": 367,
-	"./kk.js": 367,
-	"./km": 368,
-	"./km.js": 368,
-	"./kn": 369,
-	"./kn.js": 369,
-	"./ko": 370,
-	"./ko.js": 370,
-	"./ku": 371,
-	"./ku.js": 371,
-	"./ky": 372,
-	"./ky.js": 372,
-	"./lb": 373,
-	"./lb.js": 373,
-	"./lo": 374,
-	"./lo.js": 374,
-	"./lt": 375,
-	"./lt.js": 375,
-	"./lv": 376,
-	"./lv.js": 376,
-	"./me": 377,
-	"./me.js": 377,
-	"./mi": 378,
-	"./mi.js": 378,
-	"./mk": 379,
-	"./mk.js": 379,
-	"./ml": 380,
-	"./ml.js": 380,
-	"./mn": 381,
-	"./mn.js": 381,
-	"./mr": 382,
-	"./mr.js": 382,
-	"./ms": 383,
-	"./ms-my": 384,
-	"./ms-my.js": 384,
-	"./ms.js": 383,
-	"./mt": 385,
-	"./mt.js": 385,
-	"./my": 386,
-	"./my.js": 386,
-	"./nb": 387,
-	"./nb.js": 387,
-	"./ne": 388,
-	"./ne.js": 388,
-	"./nl": 389,
-	"./nl-be": 390,
-	"./nl-be.js": 390,
-	"./nl.js": 389,
-	"./nn": 391,
-	"./nn.js": 391,
-	"./oc-lnc": 392,
-	"./oc-lnc.js": 392,
-	"./pa-in": 393,
-	"./pa-in.js": 393,
-	"./pl": 394,
-	"./pl.js": 394,
-	"./pt": 395,
-	"./pt-br": 396,
-	"./pt-br.js": 396,
-	"./pt.js": 395,
-	"./ro": 397,
-	"./ro.js": 397,
-	"./ru": 398,
-	"./ru.js": 398,
-	"./sd": 399,
-	"./sd.js": 399,
-	"./se": 400,
-	"./se.js": 400,
-	"./si": 401,
-	"./si.js": 401,
-	"./sk": 402,
-	"./sk.js": 402,
-	"./sl": 403,
-	"./sl.js": 403,
-	"./sq": 404,
-	"./sq.js": 404,
-	"./sr": 405,
-	"./sr-cyrl": 406,
-	"./sr-cyrl.js": 406,
-	"./sr.js": 405,
-	"./ss": 407,
-	"./ss.js": 407,
-	"./sv": 408,
-	"./sv.js": 408,
-	"./sw": 409,
-	"./sw.js": 409,
-	"./ta": 410,
-	"./ta.js": 410,
-	"./te": 411,
-	"./te.js": 411,
-	"./tet": 412,
-	"./tet.js": 412,
-	"./tg": 413,
-	"./tg.js": 413,
-	"./th": 414,
-	"./th.js": 414,
-	"./tl-ph": 415,
-	"./tl-ph.js": 415,
-	"./tlh": 416,
-	"./tlh.js": 416,
-	"./tr": 417,
-	"./tr.js": 417,
-	"./tzl": 418,
-	"./tzl.js": 418,
-	"./tzm": 419,
-	"./tzm-latn": 420,
-	"./tzm-latn.js": 420,
-	"./tzm.js": 419,
-	"./ug-cn": 421,
-	"./ug-cn.js": 421,
-	"./uk": 422,
-	"./uk.js": 422,
-	"./ur": 423,
-	"./ur.js": 423,
-	"./uz": 424,
-	"./uz-latn": 425,
-	"./uz-latn.js": 425,
-	"./uz.js": 424,
-	"./vi": 426,
-	"./vi.js": 426,
-	"./x-pseudo": 427,
-	"./x-pseudo.js": 427,
-	"./yo": 428,
-	"./yo.js": 428,
-	"./zh-cn": 429,
-	"./zh-cn.js": 429,
-	"./zh-hk": 430,
-	"./zh-hk.js": 430,
-	"./zh-mo": 431,
-	"./zh-mo.js": 431,
-	"./zh-tw": 432,
-	"./zh-tw.js": 432
+	"./af": 302,
+	"./af.js": 302,
+	"./ar": 303,
+	"./ar-dz": 304,
+	"./ar-dz.js": 304,
+	"./ar-kw": 305,
+	"./ar-kw.js": 305,
+	"./ar-ly": 306,
+	"./ar-ly.js": 306,
+	"./ar-ma": 307,
+	"./ar-ma.js": 307,
+	"./ar-sa": 308,
+	"./ar-sa.js": 308,
+	"./ar-tn": 309,
+	"./ar-tn.js": 309,
+	"./ar.js": 303,
+	"./az": 310,
+	"./az.js": 310,
+	"./be": 311,
+	"./be.js": 311,
+	"./bg": 312,
+	"./bg.js": 312,
+	"./bm": 313,
+	"./bm.js": 313,
+	"./bn": 314,
+	"./bn.js": 314,
+	"./bo": 315,
+	"./bo.js": 315,
+	"./br": 316,
+	"./br.js": 316,
+	"./bs": 317,
+	"./bs.js": 317,
+	"./ca": 318,
+	"./ca.js": 318,
+	"./cs": 319,
+	"./cs.js": 319,
+	"./cv": 320,
+	"./cv.js": 320,
+	"./cy": 321,
+	"./cy.js": 321,
+	"./da": 322,
+	"./da.js": 322,
+	"./de": 323,
+	"./de-at": 324,
+	"./de-at.js": 324,
+	"./de-ch": 325,
+	"./de-ch.js": 325,
+	"./de.js": 323,
+	"./dv": 326,
+	"./dv.js": 326,
+	"./el": 327,
+	"./el.js": 327,
+	"./en-au": 328,
+	"./en-au.js": 328,
+	"./en-ca": 329,
+	"./en-ca.js": 329,
+	"./en-gb": 330,
+	"./en-gb.js": 330,
+	"./en-ie": 331,
+	"./en-ie.js": 331,
+	"./en-il": 332,
+	"./en-il.js": 332,
+	"./en-in": 333,
+	"./en-in.js": 333,
+	"./en-nz": 334,
+	"./en-nz.js": 334,
+	"./en-sg": 335,
+	"./en-sg.js": 335,
+	"./eo": 336,
+	"./eo.js": 336,
+	"./es": 337,
+	"./es-do": 338,
+	"./es-do.js": 338,
+	"./es-us": 339,
+	"./es-us.js": 339,
+	"./es.js": 337,
+	"./et": 340,
+	"./et.js": 340,
+	"./eu": 341,
+	"./eu.js": 341,
+	"./fa": 342,
+	"./fa.js": 342,
+	"./fi": 343,
+	"./fi.js": 343,
+	"./fil": 344,
+	"./fil.js": 344,
+	"./fo": 345,
+	"./fo.js": 345,
+	"./fr": 346,
+	"./fr-ca": 347,
+	"./fr-ca.js": 347,
+	"./fr-ch": 348,
+	"./fr-ch.js": 348,
+	"./fr.js": 346,
+	"./fy": 349,
+	"./fy.js": 349,
+	"./ga": 350,
+	"./ga.js": 350,
+	"./gd": 351,
+	"./gd.js": 351,
+	"./gl": 352,
+	"./gl.js": 352,
+	"./gom-deva": 353,
+	"./gom-deva.js": 353,
+	"./gom-latn": 354,
+	"./gom-latn.js": 354,
+	"./gu": 355,
+	"./gu.js": 355,
+	"./he": 356,
+	"./he.js": 356,
+	"./hi": 357,
+	"./hi.js": 357,
+	"./hr": 358,
+	"./hr.js": 358,
+	"./hu": 359,
+	"./hu.js": 359,
+	"./hy-am": 360,
+	"./hy-am.js": 360,
+	"./id": 361,
+	"./id.js": 361,
+	"./is": 362,
+	"./is.js": 362,
+	"./it": 363,
+	"./it-ch": 364,
+	"./it-ch.js": 364,
+	"./it.js": 363,
+	"./ja": 365,
+	"./ja.js": 365,
+	"./jv": 366,
+	"./jv.js": 366,
+	"./ka": 367,
+	"./ka.js": 367,
+	"./kk": 368,
+	"./kk.js": 368,
+	"./km": 369,
+	"./km.js": 369,
+	"./kn": 370,
+	"./kn.js": 370,
+	"./ko": 371,
+	"./ko.js": 371,
+	"./ku": 372,
+	"./ku.js": 372,
+	"./ky": 373,
+	"./ky.js": 373,
+	"./lb": 374,
+	"./lb.js": 374,
+	"./lo": 375,
+	"./lo.js": 375,
+	"./lt": 376,
+	"./lt.js": 376,
+	"./lv": 377,
+	"./lv.js": 377,
+	"./me": 378,
+	"./me.js": 378,
+	"./mi": 379,
+	"./mi.js": 379,
+	"./mk": 380,
+	"./mk.js": 380,
+	"./ml": 381,
+	"./ml.js": 381,
+	"./mn": 382,
+	"./mn.js": 382,
+	"./mr": 383,
+	"./mr.js": 383,
+	"./ms": 384,
+	"./ms-my": 385,
+	"./ms-my.js": 385,
+	"./ms.js": 384,
+	"./mt": 386,
+	"./mt.js": 386,
+	"./my": 387,
+	"./my.js": 387,
+	"./nb": 388,
+	"./nb.js": 388,
+	"./ne": 389,
+	"./ne.js": 389,
+	"./nl": 390,
+	"./nl-be": 391,
+	"./nl-be.js": 391,
+	"./nl.js": 390,
+	"./nn": 392,
+	"./nn.js": 392,
+	"./oc-lnc": 393,
+	"./oc-lnc.js": 393,
+	"./pa-in": 394,
+	"./pa-in.js": 394,
+	"./pl": 395,
+	"./pl.js": 395,
+	"./pt": 396,
+	"./pt-br": 397,
+	"./pt-br.js": 397,
+	"./pt.js": 396,
+	"./ro": 398,
+	"./ro.js": 398,
+	"./ru": 399,
+	"./ru.js": 399,
+	"./sd": 400,
+	"./sd.js": 400,
+	"./se": 401,
+	"./se.js": 401,
+	"./si": 402,
+	"./si.js": 402,
+	"./sk": 403,
+	"./sk.js": 403,
+	"./sl": 404,
+	"./sl.js": 404,
+	"./sq": 405,
+	"./sq.js": 405,
+	"./sr": 406,
+	"./sr-cyrl": 407,
+	"./sr-cyrl.js": 407,
+	"./sr.js": 406,
+	"./ss": 408,
+	"./ss.js": 408,
+	"./sv": 409,
+	"./sv.js": 409,
+	"./sw": 410,
+	"./sw.js": 410,
+	"./ta": 411,
+	"./ta.js": 411,
+	"./te": 412,
+	"./te.js": 412,
+	"./tet": 413,
+	"./tet.js": 413,
+	"./tg": 414,
+	"./tg.js": 414,
+	"./th": 415,
+	"./th.js": 415,
+	"./tl-ph": 416,
+	"./tl-ph.js": 416,
+	"./tlh": 417,
+	"./tlh.js": 417,
+	"./tr": 418,
+	"./tr.js": 418,
+	"./tzl": 419,
+	"./tzl.js": 419,
+	"./tzm": 420,
+	"./tzm-latn": 421,
+	"./tzm-latn.js": 421,
+	"./tzm.js": 420,
+	"./ug-cn": 422,
+	"./ug-cn.js": 422,
+	"./uk": 423,
+	"./uk.js": 423,
+	"./ur": 424,
+	"./ur.js": 424,
+	"./uz": 425,
+	"./uz-latn": 426,
+	"./uz-latn.js": 426,
+	"./uz.js": 425,
+	"./vi": 427,
+	"./vi.js": 427,
+	"./x-pseudo": 428,
+	"./x-pseudo.js": 428,
+	"./yo": 429,
+	"./yo.js": 429,
+	"./zh-cn": 430,
+	"./zh-cn.js": 430,
+	"./zh-hk": 431,
+	"./zh-hk.js": 431,
+	"./zh-mo": 432,
+	"./zh-mo.js": 432,
+	"./zh-tw": 433,
+	"./zh-tw.js": 433
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -37129,7 +38451,7 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 444;
+webpackContext.id = 445;
 
 /***/ })
 ]));
