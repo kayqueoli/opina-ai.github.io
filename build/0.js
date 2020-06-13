@@ -5776,7 +5776,7 @@ var RespondentProfilePage = /** @class */ (function () {
         this.respondentId = 0;
         this.respondentCode = null;
         this.userType = "cidadão";
-        this.caseTest = "Levantamento acerca da Saúde Mental - UNIFEI";
+        this.caseTest = "Levantamento sobre a Saúde Mental - UNIFEI";
         this.ageRangeName = "";
         this.residenceTimeName = "";
         this.salaryRangeName = "";
@@ -6758,10 +6758,10 @@ var RespondentProfilePage = /** @class */ (function () {
             title: 'Termo de consentimento',
             message: '<p style="text-align: center;"><strong>Termo de Consentimento</strong></p>' +
                 '<p style="text-align: justify;"><strong>Pesquisadores respons&aacute;veis:</strong> Kayque Willy Reis de Oliveira, Melise Maria Veiga de Paula, Fl&aacute;via Ludovico de Matos e Thamiris Daniel dos Santos.</p>' +
-                '<p style="text-align: justify;">Voc&ecirc; est&aacute; sendo convidado(a) a participar de uma pesquisa autoaplic&aacute;vel com o objetivo de investigar estrat&eacute;gias de enfrentamento e o impacto da pandemia do novo Coronav&iacute;rus (COVID-19) na sa&uacute;de mental dos alunos de gradua&ccedil;&atilde;o e p&oacute;s-gradua&ccedil;&atilde;o da Universidade Federal de Itajub&aacute;.</p>' +
-                '<p style="text-align: justify;">Sua participa&ccedil;&atilde;o nesse estudo &eacute; volunt&aacute;ria e muito importante para n&oacute;s. Fique tranquilo, se voc&ecirc; n&atilde;o quiser ou n&atilde;o puder participar, ou ainda, se quiser desistir depois de iniciar, isso n&atilde;o vai trazer nenhum problema para voc&ecirc;. Voc&ecirc; n&atilde;o ser&aacute; identificado, garantido o sigilo e anonimato das informa&ccedil;&otilde;es. Voc&ecirc; pode conhecer os resultados a qualquer momento, basta entrar em contato atrav&eacute;s do email (kayque-willy@hotmail.com).</p>' +
-                '<p style="text-align: justify;">&nbsp;<strong>Tempo para responder as perguntas:</strong> em torno de 10 minutos.</p>' +
-                '<p style="text-align: justify;">&nbsp;<strong>Esteja ciente que:</strong></p>' +
+                '<p style="text-align: justify;">Voc&ecirc; est&aacute; sendo convidado(a) a participar de uma pesquisa autoaplic&aacute;vel com o objetivo de investigar estrat&eacute;gias de enfrentamento e o impacto da pandemia do novo Coronav&iacute;rus (COVID-19) na sa&uacute;de mental</p>' +
+                '<p style="text-align: justify;">dos alunos de gradua&ccedil;&atilde;o e p&oacute;s-gradua&ccedil;&atilde;o da Universidade Federal de Itajub&aacute;. Sua participa&ccedil;&atilde;o nesse estudo &eacute; volunt&aacute;ria e muito importante para n&oacute;s. Fique tranquilo, se voc&ecirc; n&atilde;o quiser ou n&atilde;o puder participar, ou ainda, se quiser desistir depois de iniciar, isso n&atilde;o vai trazer nenhum problema para voc&ecirc;. Voc&ecirc; n&atilde;o ser&aacute; identificado, garantido o sigilo e anonimato das informa&ccedil;&otilde;es. Voc&ecirc; pode conhecer os resultados a qualquer momento, basta entrar em contato atrav&eacute;s do email (kayque-willy@hotmail.com).</p>' +
+                '<p style="text-align: justify;"><strong>Tempo para responder as perguntas:</strong> em torno de 10 minutos.</p>' +
+                '<p style="text-align: justify;"><strong>Esteja ciente que:</strong></p>' +
                 '<ol style="text-align: justify;">' +
                 '<li>O estudo tem como objetivo compreender os aspectos psicol&oacute;gicos da sa&uacute;de mental como: sintomas gerais, sintomas depressivos, sintomas ap&oacute;s a Pandemia, qualidade de vida, uso da religiosidade ou espiritualidade, ansiedade, otimismo e pessimismo dos alunos durante a pandemia do novo Coronav&iacute;rus (COVID-19).</li>' +
                 '</ol>' +
@@ -6772,10 +6772,10 @@ var RespondentProfilePage = /** @class */ (function () {
                 '<li>A sua participa&ccedil;&atilde;o nesta pesquisa n&atilde;o implica no tratamento de alguma doen&ccedil;a. Os question&aacute;rios ser&atilde;o usados apenas para esse estudo e n&atilde;o v&atilde;o impactar qualquer que seja o tratamento que esteja fazendo.</li>' +
                 '</ol>' +
                 '<ol style="text-align: justify;" start="4">' +
-                '<li>Voc&ecirc; ir&aacute; responder perguntas sobre seus sentimentos, pensamentos e comportamentos durante o isolamento social. S&atilde;o esperados riscos m&iacute;nimos com a sua participa&ccedil;&atilde;o nessa pesquisa, envolvendo apenas a possibilidade de desconforto ou constrangimento que, por ventura, venha a surgir ao responder alguma quest&atilde;o.</li>' +
+                '<li>Voc&ecirc; ir&aacute; responder perguntas sobre seus sentimentos, pensamentos e comportamentos durante o isolamento social. H&aacute; um pequeno risco de voc&ecirc; se sentir ao responder alguma quest&atilde;o.</li>' +
                 '</ol>' +
                 '<ol style="text-align: justify;" start="5">' +
-                '<li>Os resultados ficar&atilde;o sob a guarda dos pesquisadores respons&aacute;veis e do Servi&ccedil;o de Psicologia da Universidade Federal de Itajub&aacute;, e a divulga&ccedil;&atilde;o dos resultados ser&aacute; feita de forma a n&atilde;o identificar os volunt&aacute;rios, dentro dos procedimentos &eacute;ticos para fins de estudo, sendo garantida a privacidade dos participantes. Os pesquisadores poder&atilde;o apresentar ou publicar os resultados desse estudo em eventos e revistas cient&iacute;ficas, mas tamb&eacute;m em ve&iacute;culos de acesso f&aacute;cil como revistas populares, r&aacute;dio ou TV. Vale ressaltar que toda divulga&ccedil;&atilde;o somente ser&aacute; realizada com o objetivo de contribuir para a cria&ccedil;&atilde;o de estrat&eacute;gias de supera&ccedil;&atilde;o das dificuldades emocionais da comunidade acad&ecirc;mica.</li>' +
+                '<li>Os resultados ficar&atilde;o sob a guarda dos pesquisadores respons&aacute;veis e do Servi&ccedil;o de Psicologia da Universidade Federal de Itajub&aacute; e guardados em local seguro. Sua privacidade est&aacute; garantida e a divulga&ccedil;&atilde;o dos resultados, assim como a coleta dos dados, ser&aacute; feita de forma a n&atilde;o identificar os volunt&aacute;rios, seguindo os procedimentos &eacute;ticos para fins de estudo. Os pesquisadores poder&atilde;o apresentar ou publicar os resultados desse estudo em eventos e revistas cient&iacute;ficas, mas tamb&eacute;m em ve&iacute;culos de acesso f&aacute;cil como revistas populares, r&aacute;dio ou TV. Vale ressaltar que toda divulga&ccedil;&atilde;o somente ser&aacute; realizada com o objetivo de contribuir para a cria&ccedil;&atilde;o de estrat&eacute;gias de supera&ccedil;&atilde;o das dificuldades emocionais da comunidade acad&ecirc;mica.</li>' +
                 '</ol>' +
                 '<p style="text-align: justify;"><strong>Os pesquisadores estar&atilde;o a sua disposi&ccedil;&atilde;o para qualquer esclarecimento que considere necess&aacute;rio</strong><strong>:</strong></p>' +
                 '<p style="text-align: justify;">Kayque Willy Reis de Oliveira e Melise Maria Veiga de Paula</p>' +
@@ -21388,7 +21388,7 @@ var ResultsPage = /** @class */ (function () {
                                     plans.forEach(function (plan) {
                                         //IMPORTANTE - SELEÇÃO DO PLANO
                                         // if (p.name == "Avaliação POSCOMP") {
-                                        if (plan.name == "Levantamento acerca da Saúde Mental - UNIFEI") {
+                                        if (plan.name == "Levantamento sobre a Saúde Mental - UNIFEI") {
                                             _this.plan = plan;
                                             _this.planName = _this.plan.name;
                                             _this.questionaryProvider.getAllQuestionariesByPlan(_this.plan)

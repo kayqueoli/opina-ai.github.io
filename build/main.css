@@ -26589,6 +26589,9 @@ page-intro .dialogue-box.dialogue-box-not-game {
 }
 
 @media only screen and (min-device-width: 320px) {
+  page-intro .text-dialog-not-game {
+    font-size: 1.3rem;
+  }
   page-intro .title-box {
     font-size: 1.6em;
   }
@@ -26597,7 +26600,7 @@ page-intro .dialogue-box.dialogue-box-not-game {
     font-size: 1.4em;
   }
   page-intro h1.title-box-no-game {
-    font-size: 2.2rem;
+    font-size: 1.9rem;
   }
   page-intro .text-dialog {
     font-size: 1.4rem;
@@ -26622,8 +26625,11 @@ page-intro .dialogue-box.dialogue-box-not-game {
 }
 
 @media only screen and (min-device-width: 360px) {
+  page-intro .text-dialog-not-game {
+    font-size: 1.35rem;
+  }
   page-intro h1.title-box-no-game {
-    font-size: 2.5rem;
+    font-size: 2.1rem;
   }
   page-intro .title-box {
     font-size: 1.6em;
@@ -26650,6 +26656,9 @@ page-intro .dialogue-box.dialogue-box-not-game {
 }
 
 @media only screen and (min-device-width: 375px) {
+  page-intro .text-dialog-not-game {
+    font-size: 1.5rem;
+  }
   page-intro .title-box {
     font-size: 1.75em;
   }
@@ -26657,7 +26666,7 @@ page-intro .dialogue-box.dialogue-box-not-game {
     font-size: 1.7em;
   }
   page-intro h1.title-box-no-game {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
   }
   page-intro .text-dialog {
     font-size: 1.6rem;
@@ -26671,6 +26680,9 @@ page-intro .dialogue-box.dialogue-box-not-game {
 }
 
 @media only screen and (min-device-width: 400px) {
+  page-intro p.text-dialog.text-dialog-not-game {
+    font-size: 1.6rem;
+  }
   page-intro .title-box-last {
     font-size: 1.7em;
   }
@@ -26678,7 +26690,7 @@ page-intro .dialogue-box.dialogue-box-not-game {
     font-size: 2.1em;
   }
   page-intro h1.title-box-no-game {
-    font-size: 3.1rem;
+    font-size: 2.6rem;
   }
   page-intro .text-dialog {
     font-size: 1.75rem;
@@ -26695,6 +26707,12 @@ page-intro .dialogue-box.dialogue-box-not-game {
 }
 
 @media only screen and (min-device-width: 480px) {
+  page-intro p.text-dialog.text-dialog-not-game {
+    font-size: 1.9rem;
+  }
+  page-intro h1.title-box-no-game {
+    font-size: 3rem;
+  }
   page-intro .dialogue-box {
     font-size: 1.4rem;
   }
@@ -26729,6 +26747,9 @@ page-intro .dialogue-box.dialogue-box-not-game {
 }
 
 @media only screen and (min-device-width: 500px) {
+  page-intro p.text-dialog.text-dialog-not-game {
+    font-size: 1.55rem !important;
+  }
   page-intro .title-box-last {
     font-size: 1.55em;
   }
@@ -26778,7 +26799,7 @@ page-intro .dialogue-box.dialogue-box-not-game {
   }
   page-intro h1.title-box-no-game {
     margin-bottom: -5%;
-    font-size: 1.7em;
+    font-size: 1.65em;
   }
   page-intro .dialogue-box {
     margin-left: 15%;
@@ -27005,10 +27026,6 @@ page-prioritization .question h1 {
   -webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.25);
 }
 
-page-prioritization .question h3 {
-  font-size: 1.2em;
-}
-
 page-prioritization .radio-icon.radio-checked {
   visibility: hidden;
 }
@@ -27096,6 +27113,12 @@ page-prioritization h1 {
 }
 
 @media only screen and (min-device-width: 320px) {
+  page-prioritization .question h3 {
+    font-size: 1.1em;
+  }
+  page-prioritization .question h1 {
+    font-size: 1.45rem;
+  }
   page-prioritization .item-radio {
     font-size: 1.1em;
   }
@@ -27141,9 +27164,6 @@ page-prioritization h1 {
     width: 1%;
     margin-left: 0;
   }
-  page-prioritization .question h1 {
-    font-size: 1.7rem;
-  }
   page-prioritization .grid-priorization.grid img {
     width: 90%;
   }
@@ -27168,8 +27188,11 @@ page-prioritization h1 {
 }
 
 @media only screen and (min-device-width: 360px) {
+  page-prioritization .question h3 {
+    font-size: 1.2em;
+  }
   page-prioritization .question h1 {
-    font-size: 1.8rem;
+    font-size: 1.55rem;
   }
   page-prioritization .context-area-container h1 {
     font-size: 1.6em;
@@ -27192,12 +27215,15 @@ page-prioritization h1 {
 }
 
 @media only screen and (min-device-width: 375px) {
+  page-prioritization .question h3 {
+    font-size: 1.25em;
+  }
+  page-prioritization .question h1 {
+    font-size: 1.7rem;
+  }
   page-prioritization .context-area-container h1 {
     font-size: 1.6em;
     margin-top: 6% !important;
-  }
-  page-prioritization .question h1 {
-    font-size: 2rem;
   }
   page-prioritization .toolbar-title-md {
     font-size: 1.4rem;
@@ -27209,7 +27235,10 @@ page-prioritization h1 {
 
 @media only screen and (min-device-width: 400px) {
   page-prioritization .question h3 {
-    font-size: 1.5em;
+    font-size: 1.4em;
+  }
+  page-prioritization .question h1 {
+    font-size: 1.9rem;
   }
   page-prioritization .img-responsive {
     margin-top: 5% !important;
@@ -27225,9 +27254,6 @@ page-prioritization h1 {
     font-size: 1.7em;
     margin-top: 1%;
   }
-  page-prioritization .question h1 {
-    font-size: 2.1rem;
-  }
   page-prioritization h2 {
     font-size: 2em;
     margin-top: 1%;
@@ -27238,6 +27264,12 @@ page-prioritization h1 {
 }
 
 @media only screen and (min-device-width: 480px) {
+  page-prioritization .question h3 {
+    font-size: 1.55em;
+  }
+  page-prioritization .question h1 {
+    font-size: 2rem;
+  }
   page-prioritization .context-area-container h1 {
     font-size: 2em;
     margin-top: 1%;
@@ -27259,9 +27291,6 @@ page-prioritization h1 {
   page-prioritization .button-clear-md {
     margin-top: 22%;
     margin-left: 28%;
-  }
-  page-prioritization .question h1 {
-    font-size: 2.5rem;
   }
   page-prioritization .progres-text-down {
     font-size: 1.3em;
@@ -27748,7 +27777,22 @@ page-questionaries-list .badge-level-col.col {
   margin-bottom: -3%;
 }
 
+page-questionaries-list h4.form {
+  margin-top: 1%;
+  margin-bottom: 0;
+}
+
+page-questionaries-list h4.form.form-game {
+  margin-bottom: 4%;
+  margin-top: 0%;
+  max-width: 90%;
+  margin-left: 5%;
+}
+
 @media only screen and (min-device-width: 320px) {
+  page-questionaries-list p.text-dialog.text-dialog-not-game {
+    font-size: 1.3rem;
+  }
   page-questionaries-list ion-header {
     height: 9% !important;
   }
@@ -27799,7 +27843,7 @@ page-questionaries-list .badge-level-col.col {
     font-size: 1.8rem;
   }
   page-questionaries-list h4 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
   page-questionaries-list .questionary-item-list h2.text-questionary {
     font-size: 1.4rem;
@@ -27859,7 +27903,7 @@ page-questionaries-list .badge-level-col.col {
     margin-left: 25%;
   }
   page-questionaries-list .text-questionary-list {
-    font-size: 1.3em;
+    font-size: 1.4em;
   }
   page-questionaries-list .questionary-item-list h2 {
     font-size: 0.9em;
@@ -27896,7 +27940,7 @@ page-questionaries-list .badge-level-col.col {
     height: 60px;
   }
   page-questionaries-list h4 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
   page-questionaries-list h5 {
     font-size: 1.1em;
@@ -27939,13 +27983,13 @@ page-questionaries-list .badge-level-col.col {
     margin-top: 6%;
   }
   page-questionaries-list .text-questionary-list {
-    font-size: 1.8em;
+    font-size: 1.55em;
   }
   page-questionaries-list .questionary-item-list h2 {
     font-size: 1em;
   }
   page-questionaries-list h4 {
-    font-size: 1.9rem;
+    font-size: 1.7rem;
   }
   page-questionaries-list h5 {
     font-size: 1.25em;
@@ -27994,10 +28038,10 @@ page-questionaries-list .badge-level-col.col {
     margin-top: 3%;
   }
   page-questionaries-list .text-questionary-list {
-    font-size: 3rem;
+    font-size: 2.45rem;
   }
   page-questionaries-list h4 {
-    font-size: 2.2rem;
+    font-size: 1.9rem;
   }
   page-questionaries-list h5 {
     font-size: 1.45em;
@@ -28014,6 +28058,17 @@ page-questionaries-list .badge-level-col.col {
 }
 
 @media only screen and (min-device-width: 500px) {
+  page-questionaries-list h4.form.form-game {
+    margin-bottom: 2%;
+    margin-top: 1%;
+    max-width: 74%;
+    margin-left: 14%;
+  }
+  page-questionaries-list h4 {
+    font-size: 1.75rem;
+    max-width: 74%;
+    margin-left: 13%;
+  }
   page-questionaries-list .item-md ion-thumbnail[item-start] {
     margin: 0px 10px 0px 0px;
   }
@@ -28368,6 +28423,9 @@ page-questionary p.questionary-answer-text {
 }
 
 @media only screen and (min-device-width: 320px) {
+  page-questionary .question h1 {
+    font-size: 1.55rem;
+  }
   page-questionary .toolbar-title-md {
     font-size: 1.3rem;
   }
@@ -28390,9 +28448,6 @@ page-questionary p.questionary-answer-text {
   page-questionary button.button-help-question.button.button-md.button-clear.button-clear-md {
     width: 40px;
     margin-left: 25%;
-  }
-  page-questionary .question h1 {
-    font-size: 1.9rem;
   }
   page-questionary .grid-priorization.grid img {
     width: 90%;
@@ -28417,6 +28472,9 @@ page-questionary p.questionary-answer-text {
 }
 
 @media only screen and (min-device-width: 360px) {
+  page-questionary .question h1 {
+    font-size: 1.7rem;
+  }
   page-questionary .range-md {
     margin-top: -1%;
   }
@@ -28432,11 +28490,14 @@ page-questionary p.questionary-answer-text {
 }
 
 @media only screen and (min-device-width: 375px) {
+  page-questionary .question h1 {
+    font-size: 1.8rem;
+  }
   page-questionary button.button-help-question.button.button-md.button-clear.button-clear-md {
     margin-left: 50%;
   }
   page-questionary .context-area-container h1 {
-    font-size: 1.7em;
+    font-size: 1.6em;
   }
   page-questionary .toolbar-title-md {
     font-size: 1.4rem;
@@ -28447,11 +28508,11 @@ page-questionary p.questionary-answer-text {
   page-questionary button.button-help-question.button.button-md.button-clear.button-clear-md {
     margin-left: 70%;
   }
-  page-questionary h1 {
-    font-size: 2.2rem;
+  page-questionary .question h1 {
+    font-size: 1.9rem;
   }
   page-questionary .context-area-container h1 {
-    font-size: 1.9em;
+    font-size: 1.75em;
   }
   page-questionary img.img-responsive {
     margin-top: 10%;
@@ -28460,6 +28521,12 @@ page-questionary p.questionary-answer-text {
 }
 
 @media only screen and (min-device-width: 480px) {
+  page-questionary img.img-responsive.max-width-200 {
+    max-width: 75%;
+  }
+  page-questionary .question h1 {
+    font-size: 2.1rem;
+  }
   page-questionary img.img-responsive {
     margin-top: 4%;
   }
