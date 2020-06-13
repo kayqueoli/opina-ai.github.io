@@ -26002,11 +26002,23 @@ page-about img {
 }
 
 page-about .img-link {
+  max-width: 35%;
+}
+
+page-about img#unifei-link {
   max-width: 100%;
 }
 
 page-about .img-top {
   margin-top: 6%;
+}
+
+page-about .row-icons.row {
+  text-align: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 @media only screen and (min-device-width: 320px) {
@@ -26054,6 +26066,12 @@ page-about .img-top {
 }
 
 @media only screen and (min-device-width: 500px) {
+  page-about img#unifei-link {
+    max-width: 36%;
+  }
+  page-about img#psicologia-link {
+    margin-right: 80%;
+  }
   page-about .button-clear-md {
     margin-top: 2%;
     margin-left: 130%;
@@ -26080,7 +26098,7 @@ page-about .img-top {
     height: 18%;
   }
   page-about ion-footer.footer.footer-md img {
-    width: 34%;
+    max-width: 13%;
     margin-left: 2%;
   }
   page-about img#facebook-link {
@@ -26590,6 +26608,12 @@ page-intro .dialogue-box.dialogue-box-not-game {
 
 @media only screen and (min-device-width: 320px) {
   page-intro .text-dialog-not-game {
+    font-size: 1.25rem !important;
+  }
+  page-intro img.img-responsive.img-header {
+    margin-top: 4%;
+  }
+  page-intro .text-dialog-not-game {
     font-size: 1.3rem;
   }
   page-intro .title-box {
@@ -26626,7 +26650,7 @@ page-intro .dialogue-box.dialogue-box-not-game {
 
 @media only screen and (min-device-width: 360px) {
   page-intro .text-dialog-not-game {
-    font-size: 1.35rem;
+    font-size: 1.35rem !important;
   }
   page-intro h1.title-box-no-game {
     font-size: 2.1rem;
@@ -26657,7 +26681,7 @@ page-intro .dialogue-box.dialogue-box-not-game {
 
 @media only screen and (min-device-width: 375px) {
   page-intro .text-dialog-not-game {
-    font-size: 1.5rem;
+    font-size: 1.4rem !important;
   }
   page-intro .title-box {
     font-size: 1.75em;
@@ -26666,7 +26690,7 @@ page-intro .dialogue-box.dialogue-box-not-game {
     font-size: 1.7em;
   }
   page-intro h1.title-box-no-game {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
   }
   page-intro .text-dialog {
     font-size: 1.6rem;
@@ -26681,7 +26705,7 @@ page-intro .dialogue-box.dialogue-box-not-game {
 
 @media only screen and (min-device-width: 400px) {
   page-intro p.text-dialog.text-dialog-not-game {
-    font-size: 1.6rem;
+    font-size: 1.55rem !important;
   }
   page-intro .title-box-last {
     font-size: 1.7em;
@@ -26690,7 +26714,7 @@ page-intro .dialogue-box.dialogue-box-not-game {
     font-size: 2.1em;
   }
   page-intro h1.title-box-no-game {
-    font-size: 2.6rem;
+    font-size: 2.55rem;
   }
   page-intro .text-dialog {
     font-size: 1.75rem;
@@ -26708,10 +26732,10 @@ page-intro .dialogue-box.dialogue-box-not-game {
 
 @media only screen and (min-device-width: 480px) {
   page-intro p.text-dialog.text-dialog-not-game {
-    font-size: 1.9rem;
+    font-size: 1.7rem !important;
   }
   page-intro h1.title-box-no-game {
-    font-size: 3rem;
+    font-size: 2.9rem;
   }
   page-intro .dialogue-box {
     font-size: 1.4rem;
@@ -26747,6 +26771,10 @@ page-intro .dialogue-box.dialogue-box-not-game {
 }
 
 @media only screen and (min-device-width: 500px) {
+  page-intro .toolbar-content.toolbar-content-md img.img-responsive {
+    margin-top: 1%;
+    max-width: 35%;
+  }
   page-intro p.text-dialog.text-dialog-not-game {
     font-size: 1.55rem !important;
   }
@@ -27840,7 +27868,7 @@ page-questionaries-list h4.form.form-game {
     height: 50px;
   }
   page-questionaries-list .text-questionary-list {
-    font-size: 1.8rem;
+    font-size: 1.55rem;
   }
   page-questionaries-list h4 {
     font-size: 1.4rem;
@@ -27849,7 +27877,7 @@ page-questionaries-list h4.form.form-game {
     font-size: 1.4rem;
   }
   page-questionaries-list h5 {
-    font-size: 0.9em;
+    font-size: 1.25rem;
     background: #fff;
     border: 1px solid #eee;
     padding: 2.5%;
@@ -27903,18 +27931,21 @@ page-questionaries-list h4.form.form-game {
     margin-left: 25%;
   }
   page-questionaries-list .text-questionary-list {
-    font-size: 1.4em;
+    font-size: 1.65rem;
   }
   page-questionaries-list .questionary-item-list h2 {
     font-size: 0.9em;
   }
   page-questionaries-list h5 {
     margin-top: 5%;
-    font-size: 1em;
+    font-size: 1.25rem;
   }
 }
 
 @media only screen and (min-device-width: 375px) {
+  page-questionaries-list .text-questionary-list {
+    font-size: 1.7rem;
+  }
   page-questionaries-list .img-level {
     max-width: 50%;
   }
@@ -27943,7 +27974,7 @@ page-questionaries-list h4.form.form-game {
     font-size: 1.5rem;
   }
   page-questionaries-list h5 {
-    font-size: 1.1em;
+    font-size: 1.4rem;
   }
   page-questionaries-list .questionary-item-list h2.text-questionary {
     font-size: 1.6rem;
@@ -27983,7 +28014,7 @@ page-questionaries-list h4.form.form-game {
     margin-top: 6%;
   }
   page-questionaries-list .text-questionary-list {
-    font-size: 1.55em;
+    font-size: 1.9rem;
   }
   page-questionaries-list .questionary-item-list h2 {
     font-size: 1em;
@@ -27992,7 +28023,7 @@ page-questionaries-list h4.form.form-game {
     font-size: 1.7rem;
   }
   page-questionaries-list h5 {
-    font-size: 1.25em;
+    font-size: 1.55rem;
   }
   page-questionaries-list .text-dialog {
     font-size: 2rem;
@@ -28038,13 +28069,13 @@ page-questionaries-list h4.form.form-game {
     margin-top: 3%;
   }
   page-questionaries-list .text-questionary-list {
-    font-size: 2.45rem;
+    font-size: 2.2rem;
   }
   page-questionaries-list h4 {
     font-size: 1.9rem;
   }
   page-questionaries-list h5 {
-    font-size: 1.45em;
+    font-size: 1.85rem;
   }
   page-questionaries-list .questionary-item-list h2.text-questionary {
     font-size: 2.1rem;
@@ -29479,20 +29510,49 @@ page-thankyou .text-img {
 }
 
 @media only screen and (min-device-width: 320px) {
+  page-thankyou .range-md {
+    margin-top: -8px;
+    margin-bottom: -5px;
+  }
+  page-thankyou .range-md .range-bar {
+    height: 16px;
+  }
+  page-thankyou .progres-text-uper {
+    font-size: 1.2rem;
+  }
+  page-thankyou .toolbar-title-md {
+    font-size: 1.2rem;
+  }
+  page-thankyou .item-md ion-thumbnail[item-start] {
+    margin: 8px 0px 8px 0;
+  }
+  page-thankyou .item-md h2 {
+    padding-top: 1%;
+    font-size: 0.7em;
+    font-size: 1.25rem;
+  }
+  page-thankyou .item-md ion-thumbnail img {
+    width: 65px;
+    height: 65px;
+  }
+  page-thankyou img.img-responsive-game.img-thank-you-game {
+    width: 130%;
+    margin-left: -13%;
+  }
   page-thankyou h5.text-questionay-list-not-game {
     padding: 2.5%;
     max-width: 90%;
     margin-left: 5%;
   }
   page-thankyou .text-img {
-    max-width: 135%;
+    max-width: 120%;
     max-height: 100%;
     border-radius: 20%;
-    margin-left: -25%;
+    margin-left: -8%;
     margin-top: -11%;
   }
   page-thankyou h5 {
-    font-size: 0.9em;
+    font-size: 1.3rem;
     background: #fff;
     border: 1px solid #eee;
     padding: 2.5%;
@@ -29505,9 +29565,6 @@ page-thankyou .text-img {
   }
   page-thankyou .text-questionary-list {
     font-size: 1.9rem;
-  }
-  page-thankyou .item-md h2 {
-    font-size: 0.7em;
   }
   page-thankyou .range-md .range-slider {
     margin-bottom: 0;
@@ -29569,9 +29626,20 @@ page-thankyou .text-img {
 }
 
 @media only screen and (min-device-width: 360px) {
+  page-thankyou h5 {
+    font-size: 1.35rem;
+  }
+  page-thankyou .item-md ion-thumbnail img {
+    width: 70px;
+    height: 70px;
+  }
+  page-thankyou img.img-responsive-game.img-thank-you-game {
+    width: 135%;
+    margin-left: -10%;
+  }
   page-thankyou .text-img {
-    max-width: 135%;
-    margin-left: -12%;
+    max-width: 113%;
+    margin-left: -4%;
   }
   page-thankyou .text-questionary-list {
     font-size: 1.5em;
@@ -29580,7 +29648,7 @@ page-thankyou .text-img {
     font-size: 1em;
   }
   page-thankyou ion-col.text-bottom-game.col {
-    font-size: 1.2em;
+    font-size: 1.4rem;
   }
   page-thankyou img.img-responsive-game {
     max-width: 250px;
@@ -29590,13 +29658,13 @@ page-thankyou .text-img {
     font-size: 1.2em;
   }
   page-thankyou .img-responsive.img-center {
-    width: 80%;
+    width: 70%;
   }
   page-thankyou img.img-responsive-no-game {
     max-width: 200px;
   }
   page-thankyou h2 {
-    font-size: 1.7em;
+    font-size: 1.9rem;
   }
   page-thankyou ion-col.col {
     font-size: 1.1em;
@@ -29604,15 +29672,27 @@ page-thankyou .text-img {
 }
 
 @media only screen and (min-device-width: 375px) {
+  page-thankyou .progres-text-uper {
+    font-size: 1.35rem;
+  }
+  page-thankyou .toolbar-title-md {
+    font-size: 1.35rem;
+  }
+  page-thankyou .text-bottom-game.col {
+    font-size: 1.45rem;
+  }
+  page-thankyou h5 {
+    font-size: 1.45rem;
+  }
   page-thankyou .text-img {
-    max-width: 135%;
-    margin-left: -20%;
+    max-width: 120%;
+    margin-left: -10%;
   }
   page-thankyou .item-md h2 {
     font-size: 1.1em;
   }
   page-thankyou .img-responsive.img-center {
-    width: 90%;
+    width: 75%;
   }
   page-thankyou .img-thank-you-no-game.col {
     margin-top: 6%;
@@ -29623,6 +29703,16 @@ page-thankyou .text-img {
 }
 
 @media only screen and (min-device-width: 400px) {
+  page-thankyou ion-col.text-bottom-game.col {
+    font-size: 1.5rem;
+  }
+  page-thankyou h5 {
+    font-size: 1.55rem;
+  }
+  page-thankyou .text-img {
+    max-width: 100%;
+    margin-left: 0%;
+  }
   page-thankyou .text-questionary-list {
     font-size: 1.2em;
   }
@@ -29653,6 +29743,12 @@ page-thankyou .text-img {
 }
 
 @media only screen and (min-device-width: 480px) {
+  page-thankyou ion-col.text-bottom-game.col {
+    font-size: 1.65rem;
+  }
+  page-thankyou h5 {
+    font-size: 1.7rem;
+  }
   page-thankyou .text-questionary-list {
     font-size: 3rem;
   }
@@ -29668,12 +29764,6 @@ page-thankyou .text-img {
   }
   page-thankyou .img-responsive.img-center {
     width: 100%;
-  }
-  page-thankyou ion-col.text-bottom-game.col {
-    font-size: 1.4em;
-  }
-  page-thankyou .text-form-game.col {
-    font-size: 1.4em;
   }
   page-thankyou img.img-responsive-game {
     margin-left: -5%;
@@ -29697,6 +29787,11 @@ page-thankyou .text-img {
 }
 
 @media only screen and (min-device-width: 500px) {
+  page-thankyou img.img-responsive-no-game {
+    max-width: 70%;
+    margin-left: 0;
+    margin-bottom: 4%;
+  }
   page-thankyou .row-person.row {
     -webkit-box-align: center;
     -webkit-align-items: center;
@@ -29705,8 +29800,8 @@ page-thankyou .text-img {
   }
   page-thankyou h5.text-questionay-list-not-game {
     padding: 1.5%;
-    max-width: 40%;
-    margin-left: 30%;
+    max-width: 65%;
+    margin-left: 17%;
   }
   page-thankyou .text-img {
     max-width: 50%;
@@ -29714,7 +29809,7 @@ page-thankyou .text-img {
     margin-top: 0%;
   }
   page-thankyou .text-questionary-list-game h5 {
-    font-size: 0.75em;
+    font-size: 1.7rem;
     text-align: justify;
     padding: 1.5%;
     margin-left: 0%;
