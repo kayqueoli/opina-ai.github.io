@@ -26956,6 +26956,20 @@ page-prioritization .step-bar.range.range-md.range-disabled .range-knob {
   width: 20px;
 }
 
+page-prioritization ion-col.scale-col.col {
+  padding: 0;
+}
+
+page-prioritization h6.scale-legend {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+page-prioritization .question h1 {
+  margin-top: 3%;
+}
+
 page-prioritization ion-icon.icon.icon-md {
   color: white;
 }
@@ -27118,7 +27132,11 @@ page-prioritization ion-col.context-area-container.col {
 }
 
 page-prioritization ion-row.metric-row.row img {
-  max-width: 50px;
+  max-width: 100%;
+}
+
+page-prioritization img.img-responsive.img-scale {
+  max-width: 70% !important;
 }
 
 page-prioritization ion-row.metric-row.row {
@@ -27138,6 +27156,10 @@ page-prioritization .grid-priorization {
 
 page-prioritization h1 {
   font-size: 2.3rem;
+}
+
+page-prioritization img.img-responsive.img-scale {
+  margin: 0;
 }
 
 @media only screen and (min-device-width: 320px) {
@@ -27216,6 +27238,9 @@ page-prioritization h1 {
 }
 
 @media only screen and (min-device-width: 360px) {
+  page-prioritization h6.scale-legend {
+    font-size: 1.25rem;
+  }
   page-prioritization .question h3 {
     font-size: 1.2em;
   }
@@ -27243,6 +27268,9 @@ page-prioritization h1 {
 }
 
 @media only screen and (min-device-width: 375px) {
+  page-prioritization h6.scale-legend {
+    font-size: 1.3rem;
+  }
   page-prioritization .question h3 {
     font-size: 1.25em;
   }
@@ -27262,6 +27290,9 @@ page-prioritization h1 {
 }
 
 @media only screen and (min-device-width: 400px) {
+  page-prioritization h6.scale-legend {
+    font-size: 1.45rem;
+  }
   page-prioritization .question h3 {
     font-size: 1.4em;
   }
@@ -27292,6 +27323,9 @@ page-prioritization h1 {
 }
 
 @media only screen and (min-device-width: 480px) {
+  page-prioritization h6.scale-legend {
+    font-size: 1.56rem;
+  }
   page-prioritization .question h3 {
     font-size: 1.55em;
   }
@@ -27329,6 +27363,16 @@ page-prioritization h1 {
 }
 
 @media only screen and (min-device-width: 500px) {
+  page-prioritization h6.scale-legend {
+    font-size: 1.75rem;
+    font-weight: 400;
+  }
+  page-prioritization .grid-priorization.grid img {
+    width: 60%;
+  }
+  page-prioritization img.img-responsive.img-scale {
+    max-width: 50% !important;
+  }
   page-prioritization .question h3 {
     max-width: 45%;
     margin-left: 28%;
@@ -28419,7 +28463,7 @@ page-questionary .grid-questionary {
 }
 
 page-questionary img.img-responsive.max-width-200 {
-  max-width: 85%;
+  max-width: 65%;
 }
 
 page-questionary textarea.text-input.text-input-md {
@@ -28444,7 +28488,7 @@ page-questionary .fixed-content {
   margin-bottom: 0 !important;
 }
 
-page-questionary .scroll-content {
+page-questionary ion-content.questionary-content .scroll-content {
   margin-bottom: 0 !important;
 }
 

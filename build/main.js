@@ -737,19 +737,19 @@ var map = {
 		6
 	],
 	"../pages/intro/intro.module": [
-		293,
+		292,
 		8
 	],
 	"../pages/prioritization/prioritization.module": [
-		296,
+		297,
 		5
 	],
 	"../pages/questionaries-list/questionaries-list.module": [
-		295,
+		296,
 		4
 	],
 	"../pages/questionary/questionary.module": [
-		297,
+		295,
 		3
 	],
 	"../pages/respondent-profile/respondent-profile.module": [
@@ -761,7 +761,7 @@ var map = {
 		0
 	],
 	"../pages/thankyou/thankyou.module": [
-		292,
+		293,
 		2
 	]
 };
@@ -964,8 +964,8 @@ var PrioritizationProvider = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return QuestionProvider; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Question; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QuestionProvider; });
+/* unused harmony export Question */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rest_rest__ = __webpack_require__(12);
@@ -1381,12 +1381,12 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/about/about.module#AboutPageModule', name: 'AboutPage', segment: 'about', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/thankyou/thankyou.module#ThankyouPageModule', name: 'ThankyouPage', segment: 'thankyou', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/intro/intro.module#IntroPageModule', name: 'IntroPage', segment: 'intro', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/thankyou/thankyou.module#ThankyouPageModule', name: 'ThankyouPage', segment: 'thankyou', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/achievement/achievement.module#AchievementPageModule', name: 'AchievementPage', segment: 'achievement', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/questionary/questionary.module#QuestionaryPageModule', name: 'QuestionaryPage', segment: 'questionary', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/questionaries-list/questionaries-list.module#QuestionariesListPageModule', name: 'QuestionariesListPage', segment: 'questionaries-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/prioritization/prioritization.module#PrioritizationPageModule', name: 'PrioritizationPage', segment: 'prioritization', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/questionary/questionary.module#QuestionaryPageModule', name: 'QuestionaryPage', segment: 'questionary', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/results/results.module#ResultsPageModule', name: 'ResultsPage', segment: 'results/:param', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/respondent-profile/respondent-profile.module#RespondentProfilePageModule', name: 'RespondentProfilePage', segment: 'respondent-profile', priority: 'low', defaultHistory: [] }
                     ]
@@ -1410,7 +1410,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_11__providers_plan_plan__["b" /* PlanProvider */],
                 __WEBPACK_IMPORTED_MODULE_12__providers_questionary_questionary__["d" /* QuestionaryProvider */],
                 __WEBPACK_IMPORTED_MODULE_13__providers_neighborhood_neighborhood__["a" /* NeighborhoodProvider */],
-                __WEBPACK_IMPORTED_MODULE_14__providers_question_question__["b" /* QuestionProvider */],
+                __WEBPACK_IMPORTED_MODULE_14__providers_question_question__["a" /* QuestionProvider */],
                 __WEBPACK_IMPORTED_MODULE_16__providers_respondent_respondent__["a" /* RespondentProvider */],
                 __WEBPACK_IMPORTED_MODULE_16__providers_respondent_respondent__["a" /* RespondentProvider */],
                 __WEBPACK_IMPORTED_MODULE_17__providers_prioritization_prioritization__["a" /* PrioritizationProvider */],
