@@ -382,36 +382,41 @@ var QuestionariesListPage = /** @class */ (function () {
     //Navegação para as perguntas
     QuestionariesListPage.prototype.navigate = function () {
         var _this = this;
-        this.loader = this.loadingCtrl.create();
-        this.loader.present();
-        this.storage.set('plan', this.plan).then(function () {
-            //Consulta as questões do questionário
-            _this.questionProvider.getAllQuestionsByQuestionary(_this.questionary, 0)
-                .then(function (result) {
-                if (result != null) {
-                    _this.questions = result;
-                    //se metric_id for nulo, navega para página de questionário
-                    if (_this.questions[0].metricId == null) {
-                        _this.navigateQuestionaryPage();
-                        //Se houver metric_id, carrega as métricas específicas  e navega para página de priorization
+        if (this.questionary) {
+            this.loader = this.loadingCtrl.create();
+            this.loader.present();
+            this.storage.set('plan', this.plan).then(function () {
+                //Consulta as questões do questionário
+                _this.questionProvider.getAllQuestionsByQuestionary(_this.questionary, 0)
+                    .then(function (result) {
+                    if (result != null) {
+                        _this.questions = result;
+                        //se metric_id for nulo, navega para página de questionário
+                        if (_this.questions[0].metricId == null) {
+                            _this.navigateQuestionaryPage();
+                            //Se houver metric_id, carrega as métricas específicas  e navega para página de priorization
+                        }
+                        else {
+                            _this.loadMetricsFromList(_this.questions[0].metricId);
+                        }
                     }
                     else {
-                        _this.loadMetricsFromList(_this.questions[0].metricId);
+                        _this.showAlertGetAllQuestionsByQuestionaryNavigate();
                     }
-                }
-                else {
+                }).catch(function (error) {
+                    console.error(error);
+                    _this.restProvider.sendGoogleAnalyticsErrorData('QuestionariesListPage', 'navigate', error);
                     _this.showAlertGetAllQuestionsByQuestionaryNavigate();
-                }
+                });
             }).catch(function (error) {
                 console.error(error);
                 _this.restProvider.sendGoogleAnalyticsErrorData('QuestionariesListPage', 'navigate', error);
-                _this.showAlertGetAllQuestionsByQuestionaryNavigate();
+                _this.showAlertSetPlan();
             });
-        }).catch(function (error) {
-            console.error(error);
-            _this.restProvider.sendGoogleAnalyticsErrorData('QuestionariesListPage', 'navigate', error);
-            _this.showAlertSetPlan();
-        });
+        }
+        else {
+            this.btnContinueDisabled = true;
+        }
     };
     //Navegação para página do questionário
     QuestionariesListPage.prototype.navigateQuestionaryPage = function () {
