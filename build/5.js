@@ -1,6 +1,6 @@
 webpackJsonp([5],{
 
-/***/ 297:
+/***/ 295:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrioritizationPageModule", function() { return PrioritizationPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__prioritization__ = __webpack_require__(441);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__prioritization__ = __webpack_require__(439);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +38,7 @@ var PrioritizationPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 441:
+/***/ 439:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -409,7 +409,24 @@ var PrioritizationPage = /** @class */ (function () {
             }
         }).catch(function (error) {
             console.error(error);
-            _this.restProvider.sendGoogleAnalyticsErrorData('QuestionariesListPage', 'loadMetrics', error);
+            _this.restProvider.sendGoogleAnalyticsErrorData('PrioritizationPage', 'loadMetrics', error);
+            _this.showAlertLoadMetrics(metricId);
+        });
+    };
+    //Carrega as métricas e vai para a página de priorização
+    PrioritizationPage.prototype.loadMetricsFromList = function (metricId) {
+        var _this = this;
+        //------------------------CARREGA OS ITENS DE MÉTRICAS-----------------------------
+        //1 - GUT, 2 - ESCALA QUALITATIVA, (3-17) - Métricas do questionário de teste
+        this.storage.get('metricItensList')
+            .then(function (data) {
+            var metricItems = data.filter(function (metricItem) { return (metricItem.metricId == metricId); });
+            _this.metricItems = metricItems;
+            _this.storage.set('metricItems', _this.metricItems);
+            _this.insertAnswerAndNavigateToPrioritization();
+        }).catch(function (error) {
+            console.error(error);
+            _this.restProvider.sendGoogleAnalyticsErrorData('PrioritizationPage', 'loadMetrics', error);
             _this.showAlertLoadMetrics(metricId);
         });
     };
@@ -426,7 +443,7 @@ var PrioritizationPage = /** @class */ (function () {
             buttons: [{
                     text: "Tentar novamente",
                     handler: function () {
-                        _this.loadMetrics(metricId);
+                        _this.loadMetricsFromList(metricId);
                     }
                 }]
         });
@@ -477,7 +494,7 @@ var PrioritizationPage = /** @class */ (function () {
                     //Se houver metric_id, carrega as métricas específicas  e navega para página de priorization
                 }
                 else {
-                    this.loadMetrics(this.questions[this.currentQuestionIndex + 1].metricId);
+                    this.loadMetricsFromList(this.questions[this.currentQuestionIndex + 1].metricId);
                 }
             }
             else {

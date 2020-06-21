@@ -625,8 +625,14 @@ var RestProvider = /** @class */ (function () {
                                                             .then(function () {
                                                             _this.storage.remove('showForm')
                                                                 .then(function () {
-                                                                console.log("Remoção de dados concluída");
-                                                                nav.setRoot(__WEBPACK_IMPORTED_MODULE_7__pages_intro_intro__["a" /* IntroPage */], {});
+                                                                _this.storage.remove('metricItensList')
+                                                                    .then(function () {
+                                                                    console.log("Remoção de dados concluída");
+                                                                    nav.setRoot(__WEBPACK_IMPORTED_MODULE_7__pages_intro_intro__["a" /* IntroPage */], {});
+                                                                })
+                                                                    .catch(function (error) {
+                                                                    console.error(error);
+                                                                });
                                                             })
                                                                 .catch(function (error) {
                                                                 console.error(error);
@@ -733,7 +739,7 @@ var map = {
 		7
 	],
 	"../pages/achievement/achievement.module": [
-		296,
+		294,
 		6
 	],
 	"../pages/intro/intro.module": [
@@ -741,15 +747,15 @@ var map = {
 		8
 	],
 	"../pages/prioritization/prioritization.module": [
-		297,
+		295,
 		5
 	],
 	"../pages/questionaries-list/questionaries-list.module": [
-		295,
+		297,
 		4
 	],
 	"../pages/questionary/questionary.module": [
-		294,
+		296,
 		3
 	],
 	"../pages/respondent-profile/respondent-profile.module": [
@@ -935,6 +941,19 @@ var PrioritizationProvider = /** @class */ (function () {
             });
         });
     };
+    PrioritizationProvider.prototype.getAllMetricItensValues = function () {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.http.get(_this.restProvider.API_URL + "get-all-metric-itens-values.php", { headers: _this.restProvider.headers })
+                .subscribe(function (data) {
+                resolve(data);
+            }, function (error) {
+                console.error(error);
+                _this.restProvider.sendGoogleAnalyticsErrorData('PrioritizationProvider', 'getAllMetricItensValues', error);
+                resolve(error);
+            });
+        });
+    };
     //-----------------------------IMPORTANTE-----------------------------
     PrioritizationProvider.prototype.getMetricValues = function () {
         var _this = this;
@@ -995,7 +1014,7 @@ var QuestionProvider = /** @class */ (function () {
                 resolve(data);
             }, function (error) {
                 console.error(error);
-                _this.restProvider.sendGoogleAnalyticsErrorData('QuestionProvider', 'getMetricItems', error);
+                _this.restProvider.sendGoogleAnalyticsErrorData('QuestionProvider', 'getAllQuestionsByQuestionary', error);
                 resolve(error);
             });
         });
@@ -1383,10 +1402,10 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/about/about.module#AboutPageModule', name: 'AboutPage', segment: 'about', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/intro/intro.module#IntroPageModule', name: 'IntroPage', segment: 'intro', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/thankyou/thankyou.module#ThankyouPageModule', name: 'ThankyouPage', segment: 'thankyou', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/questionary/questionary.module#QuestionaryPageModule', name: 'QuestionaryPage', segment: 'questionary', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/questionaries-list/questionaries-list.module#QuestionariesListPageModule', name: 'QuestionariesListPage', segment: 'questionaries-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/achievement/achievement.module#AchievementPageModule', name: 'AchievementPage', segment: 'achievement', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/prioritization/prioritization.module#PrioritizationPageModule', name: 'PrioritizationPage', segment: 'prioritization', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/questionary/questionary.module#QuestionaryPageModule', name: 'QuestionaryPage', segment: 'questionary', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/questionaries-list/questionaries-list.module#QuestionariesListPageModule', name: 'QuestionariesListPage', segment: 'questionaries-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/results/results.module#ResultsPageModule', name: 'ResultsPage', segment: 'results/:param', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/respondent-profile/respondent-profile.module#RespondentProfilePageModule', name: 'RespondentProfilePage', segment: 'respondent-profile', priority: 'low', defaultHistory: [] }
                     ]
@@ -1987,7 +2006,13 @@ var IntroPage = /** @class */ (function () {
                                                             .then(function () {
                                                             _this.storage.remove('showForm')
                                                                 .then(function () {
-                                                                console.log("Remoção de dados concluída");
+                                                                _this.storage.remove('metricItensList')
+                                                                    .then(function () {
+                                                                    console.log("Remoção de dados concluída");
+                                                                })
+                                                                    .catch(function (error) {
+                                                                    console.error(error);
+                                                                });
                                                             })
                                                                 .catch(function (error) {
                                                                 console.error(error);
