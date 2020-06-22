@@ -654,7 +654,12 @@ var RespondentProfilePage = /** @class */ (function () {
             { value: 'Mestrado em Ciência e Tecnologia da Computação' },
             { value: 'Mestrado em Desenvolvimento, Tecnologias e Sociedade' },
             { value: 'Mestrado em Matemática' },
-            { value: 'Mestrado em Física' }
+            { value: 'Mestrado em Física' },
+            { value: 'Mestrado Profissional em Engenharia de Produção' },
+            { value: 'Mestrado Profissional em Administração ' },
+            { value: 'Mestrado Profissional em Engenharia Hídrica' },
+            { value: 'Mestrado Profissional em Gestão e Regulação de Recursos Hídricos – PROFÁGUA' },
+            { value: 'Mestrado Profissional em Engenharia de Materiais ' }
         ];
     };
     RespondentProfilePage.prototype.createCourseNameListDout = function () {
@@ -666,6 +671,8 @@ var RespondentProfilePage = /** @class */ (function () {
             { value: 'Doutorado em Multicêntrico em Química de Minas Gerais' },
             { value: 'Doutorado em Meio Ambiente e Recursos Hídricos' },
             { value: 'Doutorado em Materiais para a Engenharia' },
+            { value: 'Doutorado em Materiais para a Engenharia - Itabira' },
+            { value: 'Doutorado em Multicêntrico em Química de Minas Gerais - Itabira' },
         ];
     };
     RespondentProfilePage.prototype.createDisciplineList = function () {
